@@ -1,0 +1,181 @@
+<library group="postProcess">
+
+	<fragmentShader name="bloom blur h">
+		<useWithPostProcessPipeline/>
+		<source>
+			<data>
+				// uniform
+				uniform sampler2D inData;
+				
+				// output
+				out vec4 outData;
+			</data>
+			<mainBody>
+				outData = 0.3000 * texture(inData, varUV) +
+						  0.2000 * texture(inData, varUV + inOutputTexelSize * vec2(-1.25, 0.0)) + 
+						  0.2000 * texture(inData, varUV + inOutputTexelSize * vec2( 1.25, 0.0)) +
+						  0.1500 * texture(inData, varUV + inOutputTexelSize * vec2(-2.5, 0.0)) +
+						  0.1500 * texture(inData, varUV + inOutputTexelSize * vec2( 2.5, 0.0));
+			</mainBody>
+		</source>
+		<outputs>
+			<output name="outData"/>
+		</outputs>
+	</fragmentShader>
+	<shaderProgram name="bloom blur h" fragmentShader="bloom blur h"/>
+
+	<fragmentShader name="bloom blur v">
+		<useWithPostProcessPipeline/>
+		<source>
+			<data>
+				// uniform
+				uniform sampler2D inData;
+				
+				// output
+				out vec4 outData;
+			</data>
+			<mainBody>
+				outData = 0.3000 * texture(inData, varUV) +
+						  0.2000 * texture(inData, varUV + inOutputTexelSize * vec2(0.0, -1.25)) + 
+						  0.2000 * texture(inData, varUV + inOutputTexelSize * vec2(0.0,  1.25)) +
+						  0.1500 * texture(inData, varUV + inOutputTexelSize * vec2(0.0, -2.5)) +
+						  0.1500 * texture(inData, varUV + inOutputTexelSize * vec2(0.0,  2.5));
+			</mainBody>
+		</source>
+		<outputs>
+			<output name="outData"/>
+		</outputs>
+	</fragmentShader>
+	<shaderProgram name="bloom blur v" fragmentShader="bloom blur v"/>
+
+	<fragmentShader name="filter bloom">
+		<useWithPostProcessPipeline/>
+		<source>
+			<data>
+				// uniform
+				uniform sampler2D inData;
+				
+				uniform HIGHP float time; // anti banding here?
+
+				uniform MEDIUMP vec3 filterBloomDot;
+				uniform MEDIUMP float filterBloomStrength;
+				uniform MEDIUMP float filterBloomThreshold;
+
+				// output
+				out vec4 outData;
+			</data>
+			<defaultValues>
+				<vector3 name="filterBloomDot" x="1.1" y="0.8" z="0.9"/>
+				<float name="filterBloomThreshold">0.9</float>
+				<float name="filterBloomStrength">5.0</float>
+			</defaultValues>
+			<mainBody>
+				outData = texture(inData, varUV);
+
+				vec3 filterBloom = outData.rgb;
+				float brightness = max(filterBloom.x * filterBloomDot.x, max(filterBloom.y * filterBloomDot.y, filterBloom.z * filterBloomDot.z));
+				brightness = clamp(filterBloomThreshold + filterBloomStrength * (brightness - filterBloomThreshold), 0.0, 1.0);
+				outData.rgb *= brightness;
+			</mainBody>
+		</source>
+		<outputs>
+			<output name="outData"/>
+		</outputs>
+	</fragmentShader>
+	<shaderProgram name="filter bloom" fragmentShader="filter bloom"/>
+	
+	<fragmentShader name="apply bloom">
+		<useWithPostProcessPipeline/>
+		<source>
+			<data>
+				// uniform
+				uniform sampler2D inData;
+				uniform sampler2D inBlurred;
+				
+				uniform HIGHP float time; // anti banding here?
+
+				uniform float applyBloomStrength;
+				
+				// output
+				out vec4 outData;
+			</data>
+			<defaultValues>
+				<float name="applyBloomStrength">0.4</float>
+			</defaultValues>
+			<mainBody>
+				vec3 colour = texture(inData, varUV).rgb;
+
+				vec3 blurred = texture(inBlurred, varUV).rgb;
+				
+				const float gamma = 2.2;
+				const float exposure = 1.0;
+				
+				colour += blurred * applyBloomStrength;
+				outData.rgb = colour;
+				/*
+				// tone mapping
+				vec3 result = vec3(1.0) - exp(-colour * exposure);
+				// also gamma correct while we're at it
+				result = pow(result, vec3(1.0 / gamma));
+				outData.rgb = result;
+				*/
+
+			#ifdef WITH_ANTI_BANDING
+				prepare_random_value_random(varPosition, time);
+				outData.rgb = apply_anti_banding_to(outData.rgb);
+			#endif
+			</mainBody>
+		</source>
+		<outputs>
+			<output name="outData"/>
+		</outputs>
+	</fragmentShader>
+	<shaderProgram name="apply bloom" fragmentShader="apply bloom"/>
+
+	<postProcess name="bloom">
+		<graph>
+			<inputNode name="input">
+				<output name="colour"/>
+			</inputNode>
+
+			<processorNode name="filter bloom" shaderProgram="filter bloom">
+				<input name="inData" connectToNode="input" connectToConnector="colour"/>
+			</processorNode>
+
+			<processorNode name="scale down" shaderProgram="scale down" processIfInputSizeAtLeast="64">
+				<input name="inData" connectToNode="filter bloom" connectToConnector="outData"/>
+			</processorNode>
+
+			<processorNode name="scale down 2" shaderProgram="scale down" processIfInputSizeAtLeast="64">
+				<input name="inData" connectToNode="scale down" connectToConnector="outData"/>
+			</processorNode>
+
+			<processorNode name="scale down 3" shaderProgram="scale down" processIfInputSizeAtLeast="64">
+				<input name="inData" connectToNode="scale down 2" connectToConnector="outData"/>
+			</processorNode>
+
+			<processorNode name="scale down 4" shaderProgram="scale down" processIfInputSizeAtLeast="64">
+				<input name="inData" connectToNode="scale down 3" connectToConnector="outData"/>
+			</processorNode>
+
+			<processorNode name="blur h" shaderProgram="bloom blur h">
+				<input name="inData" connectToNode="scale down 4" connectToConnector="outData"/>
+			</processorNode>
+			<processorNode name="blur v" shaderProgram="bloom blur v">
+				<input name="inData" connectToNode="blur h" connectToConnector="outData"/>
+			</processorNode>
+
+			<processorNode name="apply bloom" shaderProgram="apply bloom">
+				<input name="inData" connectToNode="input" connectToConnector="colour"/>
+				<input name="inBlurred" connectToNode="blur v" connectToConnector="outData"/>
+			</processorNode>
+
+			<outputNode name="output">
+				<input name="colour" connectToNode="apply bloom" connectToConnector="outData"/>
+			</outputNode>
+			
+		</graph>
+	</postProcess>
+</library>
+
+

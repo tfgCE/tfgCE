@@ -1,0 +1,35 @@
+<library group="loader hub">
+
+	<texture name="vivewand 150" file="assets\vivewand 150.tex" importFromFile="assets\_source\vivewand 150.tga" filteringMag="nearest" filteringMin="nearest" wrap="clamp"/> 
+
+	<texturePart name="vivewand 150" texture="vivewand 150">
+		<uv0 x="0t160" ty="147t148"/>
+		<uv1 x="159t160" ty="0t148"/>
+		<uvAnchor x="79t160" ty="74t148"/>
+	</texturePart>
+
+	<texture name="vivewand 150 colours" file="assets\vivewand 150 colours.tex" importFromFile="assets\_source\vivewand 150 colours.tga" filteringMag="nearest" filteringMin="nearest" wrap="clamp"/> 
+
+	<texturePart name="vivewand 150 colours" texture="vivewand 150 colours">
+		<uv0 x="0t160" ty="147t148"/>
+		<uv1 x="159t160" ty="0t148"/>
+		<uvAnchor x="79t160" ty="74t148"/>
+	</texturePart>
+
+	<texture name="touch 150" file="assets\touch 150.tex" importFromFile="assets\_source\touch 150.tga" filteringMag="nearest" filteringMin="nearest" wrap="clamp"/> 
+
+	<texturePart name="touch 150" texture="touch 150">
+		<uv0 x="0t151" ty="149t150"/>
+		<uv1 x="150t151" ty="0t150"/>
+		<uvAnchor x="75t151" ty="75t150"/>
+	</texturePart>
+
+	<texture name="touch 150 colours" file="assets\touch 150 colours.tex" importFromFile="assets\_source\touch 150 colours.tga" filteringMag="nearest" filteringMin="nearest" wrap="clamp"/> 
+
+	<texturePart name="touch 150 colours" texture="touch 150 colours">
+		<uv0 x="0t151" ty="149t150"/>
+		<uv1 x="150t151" ty="0t150"/>
+		<uvAnchor x="75t151" ty="75t150"/>
+	</texturePart>
+
+</library>

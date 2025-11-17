@@ -1,0 +1,38 @@
+<library group="ui canvas fonts">
+	gfx
+
+	<textureArray name="main very large" file="assets\main very large.tex"/>
+	<textureArray name="main large" file="assets\main large.tex"/>
+	<textureArray name="main small" file="assets\main small.tex"/>
+	
+	<font name="main very large">
+		<tags>main uiCanvas</tags>
+		<variableWidth x="160" y="200" spacingx="3" spacingy="3" verticalMargin="6" baseLinePt="0.25" leftMargin="16" rightMargin="16"/>
+		<texture use="main very large">
+			<compressCharacters/>
+			<rowAnsi/>
+			<.rowLocalisedCharacters setId="latin"/>			
+		</texture>
+	</font>
+
+	<font name="main large">
+		<tags>main uiCanvas</tags>
+		<variableWidth x="80" y="100" spacingx="3" spacingy="3" verticalMargin="6" baseLinePt="0.25" leftMargin="8" rightMargin="8"/>
+		<texture use="main large">
+			<compressCharacters/>
+			<rowAnsi/>
+			<.rowLocalisedCharacters setId="latin"/>			
+		</texture>
+	</font>
+
+	<font name="main small">
+		<tags>main uiCanvas</tags>
+		<variableWidth x="40" y="50" spacingx="3" spacingy="3" verticalMargin="6" baseLinePt="0.25" leftMargin="4" rightMargin="4"/>
+		<texture use="main small">
+			<compressCharacters/>
+			<rowAnsi/>
+			<.rowLocalisedCharacters setId="latin"/>			
+		</texture>
+	</font>
+
+</library>

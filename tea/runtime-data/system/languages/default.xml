@@ -1,0 +1,176 @@
+<library group="languages">
+	english
+	<localisedStrings language="en" sortId="50_en" name="English" localisedCharacterSetId="latin" localisedCharacterSetPriority="100">
+		<string id="! language code" autoTranslation="no">en</string>
+		<string id="! language code; oculus" autoTranslation="no">en_US</string>
+
+		<!--
+				&#160; space/blank
+		 -->
+
+		<string id="chars; degree" autoTranslation="no">°</string>
+
+		<string id="hub; vr mode sel; top">
+		TEA FOR GOD is created as a room-scale experience~
+		~
+		to move in the game world, you move in the real world~
+		~
+		for room-scale mode, the game requires info about your play-area. please make sure it is properly setup
+		</string>
+		<string id="hub; vr mode sel; room-scale">
+		room-scale mode~
+		~
+		move using your legs
+		</string>
+		<string id="hub; vr mode sel; room-scale; recommended">
+		room-scale mode~
+		move using your legs~
+		(recommended)
+		</string>
+		<string id="hub; vr mode sel; room-scale; not enough space">
+		room-scale mode~
+		move using your legs~
+		(not enough space)
+		</string>
+		<string id="hub; vr mode sel; standing">
+		standing mode~
+		~
+		move using joystick
+		</string>
+		<string id="hub; vr mode sel; bottom">
+		you can later change it in options/play-area
+		</string>
+		<string id="hub; cmf.msg+bsc.opt; top">
+		TEA FOR GOD contains flashing images and sequences~
+		~
+		here are a few very basic options~
+		to adjust the experience</string>
+		<string id="hub; cmf.msg+bsc.opt; bottom">
+		for more, visit options</string>
+		<string id="hub; cmf.msg+bsc.opt; subtitles; on">show subtitles</string>
+		<string id="hub; cmf.msg+bsc.opt; subtitles; off">no subtitles</string>
+		<string id="hub; cmf.msg+bsc.opt; flickering lights; on">flickering/strobing lights allowed</string>
+		<string id="hub; cmf.msg+bsc.opt; flickering lights; off">avoid flickering/strobing lights</string>
+		<string id="hub; cmf.msg+bsc.opt; camera rumble; on">allow (rare) camera shake</string>
+		<string id="hub; cmf.msg+bsc.opt; camera rumble; off">no camera shake</string>
+		<string id="hub; cmf.msg+bsc.opt; crouch; on">okay with crouching</string>
+		<string id="hub; cmf.msg+bsc.opt; crouch; off">avoid crouching</string>
+		<string id="hub; cmf.msg+bsc.opt; rotating elevators; on">okay with rotating elevators</string>
+		<string id="hub; cmf.msg+bsc.opt; rotating elevators; off">no rotating elevators</string>
+		<string id="hub; cmf.msg+bsc.opt; vignette; on">vignette for movement</string>
+		<string id="hub; cmf.msg+bsc.opt; vignette; off">no vignette</string>
+		<string id="hub; cmf.msg+bsc.opt; im.vr; on">joystick movement</string>
+		<string id="hub; cmf.msg+bsc.opt; im.vr; off">natural movement (room-scale)</string>
+		<string id="hub; cmf.msg+bsc.opt; im.vr; auto">auto select movement~(based on play-area size)</string>
+		<string id="hub; cmf.msg+bsc.opt; im.vr; auto; on">joystick movement~(auto based on play-area size)</string>
+		<string id="hub; cmf.msg+bsc.opt; im.vr; auto; off">natural movement (room-scale)~(auto based on play-area size)</string>
+		<string id="hub; cmf.msg+bsc.opt; continue">confirm and continue</string>
+		<string id="hub; cmf.msg+bsc.opt; continue; game is loading">confirm and continue~(game is loading)</string>
+
+		<string id="hub; common; tip; saving icon">when you see this icon~the game is saving your progress~~do not switch off the device</string>
+		<string id="hub; common; tip; help icon">some of the menus have this icon~~selecting it will provide you~with info about the window</string>
+		<string id="hub; common; tip; game modifiers">adjust the difficulty~with modifiers~~make it easier or harder</string>
+		<string id="hub; common; tip; game definitions">use bottom left button~to create a new game slot~to try a different game mode</string>
+		<string id="hub; common; tip; restart at any chapter">you can start the game at~any unlocked chapter~by selecting the chapter~with triangular buttons~in the right window</string>
+		<string id="hub; common; loading">loading...~~(game under development)</string>
+		<string id="hub; common; play area not detected">play-area not detected~~make sure your vr system~is set to room-scale~~move into a valid play-area</string>
+		<string id="hub; common; play area enlarged">play-area too small!~has been enlarged~to minimal size~~calibrate using~options/play-area/calibrate</string>
+		<string id="hub; common; play area forced scaled">play-area too small!~using horizontal scaling to meet minimal size~~calibrate using~options/play-area/calibrate</string>
+		<string id="hub; common; boundary unavailable">could not access~valid play-area info~~calibrate using~options/play-area/calibrate~or play standing</string>
+		<string id="hub; common; may have invalid boundary">play-area may be invalid~~calibrate using~options/play-area/calibrate~or play standing</string>
+		<string id="hub; common; sound not initialised">sound could not be initialized</string>
+		<string id="hub; common; report bugs question">would you like to automatically send crash reports?~~this may be changed in options/general</string>
+		<!--
+		<string id="hub; common; new build available">a new build is available~please update</string>
+		<string id="hub; common; new build available; you have">you have</string>
+		-->
+		<string id="hub; common; please wait">please wait...</string>
+		<string id="hub; common; loading tips">tips</string>
+		<string id="hub; common; move to valid position">move to a valid position</string>
+		<string id="hub; common; move to starting position">move to the starting position</string>
+		<string id="hub; common; start">start</string>
+		<string id="hub; common; back">back</string>
+		<string id="hub; common; exit">exit</string>
+		<string id="hub; common; continue">continue</string>
+		<string id="hub; common; yes">yes</string>
+		<string id="hub; common; no">no</string>
+		<string id="hub; common; ok">ok</string>
+		<string id="hub; common; cancel">cancel</string>
+		<string id="hub; common; apply">apply</string>
+		<string id="hub; common; or">or</string>
+		<string id="hub; common; on">☑</string>
+		<string id="hub; common; off">☐</string>
+		<string id="hub; common; not available">not available</string>
+		<string id="hub; common; not available; abbr">n/a</string>
+		<string id="hub; common; dismiss" textToTranslate="close">dismiss</string>
+
+		<string id="hub; common; key; backspace" autoTranslation="no">&lt;&lt;</string>
+		<string id="hub; common; key; clear">clear</string>
+		<string id="hub; common; key; enter">enter</string>
+		<string id="hub; common; key; space">space</string>
+		
+		<string id="hub; message set browser; close">close</string>
+		<string id="hub; message set browser; loading">loading</string>
+
+		<string id="hub; game checking">checking %gameEnvironment% account</string>
+		<string id="hub; game unavailable">the game is unavailable for your %gameEnvironment% account</string>
+		
+		game description texts
+		
+		<string id="! game desc; ! title" autoTranslation="no">Tea For God</string>
+		<string id="! game desc; ! title demo" autoTranslation="no">Tea For God Demo</string>
+		<string id="! game desc; demo info">This is the demo version.</string>
+		<string id="! game desc; demo info quest">This is the demo version. The full version is available here: https://www.oculus.com/experiences/quest/6323807174332876/</string>
+		<string id="! game desc; log line">God Emperor is held in a place beyond our world. Explore a huge strange complex while fighting hordes of robots. All while you keep walking around your room, bringing the immersion to another level. Customise your experience into an intense shooter, a roguelite explorer, a relaxing trek.</string>
+		<string id="! game desc; desc; key features">
+			Key features~
+			Use your own feet to move, no teleporting, no sliding.~
+			Adjusts to your play-area, no matter how small or how big it is.~
+			Customize your experience, make it as easy or as hard as you desire.~
+			Procedurally generated world with a linear story and handcrafted key scenes.~
+		</string>
+		<string id="! game desc; desc; impossible spaces">
+			Impossible spaces~
+			Tea For God utilises the concept of impossible spaces, a Euclidean orbifold. The world is composed of spaces that overlap each other making it possible to travel through a big world, while never leaving your play-area.
+		</string>
+		<string id="! game desc; desc; procedural generation">
+			Procedural generation~
+			It's the procedural generation that makes many things possible. To fully utilise impossible concepts, the game generates the world to fit within your play-area. The procedural generation doesn't stop with there. Almost everything you see is created with the use of procedural generation, carefully created algorithms that generate robots, how they look and move, devices, weapons and more.
+		</string>
+		<string id="! game desc; desc; play area">
+			Play-area~
+			As the game adjusts to the available space, there are some minimal requirements. The smallest space handled by the game is 1.8m x 1.2m (6ft x 4ft). If you have less than that, the game will use horizontal scaling to make the world appear larger, bringing the minimal space down to 90cm x 60cm (3ft x 2ft).
+		</string>
+		<string id="! game desc; desc; customizable experience">
+			Customizable experience~
+			There are two main game modes:~
+			Standard Rules. Easy to understand, navigation that guides you to your current objective. The gameplay systems are simpler and are explained with tutorials.~
+			Advanced Rules. More complex gameplay that requires exploration and experimenting. Resource managment gets harder as resources are scarcer. You have to find your own way through the world with use of the map.~
+			The second important setting is about what happens when you fail:~
+			Pause for a few seconds and continue.~
+			Restart at the last checkpoint.~
+			Restart the adventure.~
+			Besides that, there is a range of modifiers, which may make the game much easier (up to where you have infinite health and ammo and there are no robots, even the ones that do not harm you) or much harder (tougher, more aggressive enemies that are quicker to attack, no navigation aid and more).
+		</string>
+		<string id="! game desc; desc; world and story">
+			The world and the story~
+			As you venture further into the complex, you will listen to a recording that will introduce you to the world but will provide you with even more questions. For the answers, you will have to look alone. They won't be given on a silver plate. You're not welcome in this vast strange complex. You will fight hordes of robots, find unlikely allies. You will bring ritual tea for God. Just beware of the being that lurks in the darkness.
+		</string>
+		<string id="! game desc; long to 1000">
+			Tea For God is a VR adventure that uses impossible spaces with procedural generation to allow players infinite movement within their own room. Customizable gameplay can be anything between a relaxing long walk, an intense arcade shooter (checkpoint based) and a roguelite shooter-explorer.~
+			In the distant future, humankind has been united, ruled by God Emperor. Endowed with advanced technology we reached stars, colonised new worlds, went onto endless crusades against myriads of civilisations.~
+			Personal tragedies tend to be meaningless against the time. But once in a while, one person may start a fire that can change the fate of the whole universe. A man who lost his family, who holds God Emperor accountable for their death, seeking answers and vengeance, embarks onto his last journey to the place no human has ever left alive, where God Emperor is believed to reside.~
+		</string>
+		<string id="! game desc; short to 500">
+			Tea For God is a VR adventure that uses impossible spaces with procedural generation to allow players infinite movement within their own room. Customizable gameplay can be anything between a relaxing long walk, an intense arcade shooter (checkpoint based) and a roguelite shooter-explorer.~
+			Set in the distant future, it is a story about a man who has lost his family and embarks on his last journey to seek answers and vengeance.
+		</string>
+		<string id="! game desc; short to 300">
+			VR adventure that allows infinite movement within your own room. Customise your experience. Make it an intense shooter, a roguelite explorer, a relaxing trek.
+		</string>
+		<string id="! game desc; short to 100">
+			Explore a vast world by just simply walking, never leaving your own room.
+		</string>
+
+	</localisedStrings>
+</library>

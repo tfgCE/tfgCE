@@ -1,0 +1,34 @@
+<library group="hub">
+	<messageSet name="main loading tips" tags="loadingTips">
+		<message id="immobile vr" fixedOrder="0">
+			if your play area is too small, go to options and try one of suggested actions~
+			~
+			1. use horizontal scaling to make the play area appear larger~
+			~
+			2. use "joystick movement" to stand in one place and move with joysticks~
+			~
+			note: the game is developed with roomscale movement in mind and it is highly encouraged to play it this way
+		</message>
+		<message id="customisations" fixedOrder="100">
+			the game is highly customizable~
+			~
+			to adjust the difficulty, make the game harder or easier, select game modifiers from the main menu~
+			~
+			the options menu allows adjusting various aspects of the game: controls, play area buffer, haptics and more
+		</message>
+		<message id="stay safe" fixedOrder="200">
+			the game will keep you within the designated play area~
+			~
+			all the space beyond walkable surfaces might be outside the play area~
+			~
+			avoid going through bars, jumping over gaps, waving your arms above chasms			
+		</message>
+		<message id="stay safe 2" fixedOrder="210">
+			if you feel dizzy, unwell, take a break~
+			~
+			before you start the game, you always have an access to the shortened accessibility options~
+			~
+			for more, check the options menu
+		</message>
+	</messageSet>
+</library>

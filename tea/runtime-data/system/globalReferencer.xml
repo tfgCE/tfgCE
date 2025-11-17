@@ -1,0 +1,97 @@
+<library>
+	<globalReferences>
+		<postProcessChainDefinition id="post process chain default" libName="postProcessChain:default"/>
+		<postProcessChainDefinition id="post process chain fxaaOnly" libName="postProcessChain:fxaa"/>
+		<postProcessChainDefinition id="post process chain empty" libName="postProcessChain:empty"/>
+		
+		<environmentType id="default fallback environment" libName="sky box:default fallback"/>
+
+		<meshGenerator id="loader hub loading scene" libName="loading scenes:scene"/>
+		-
+		<.meshGenerator id="loader hub loading scene background" libName="loading scenes:palace far away"/>
+		<.environmentType id="loader hub loading scene environment" libName="loading scenes:environment"/>
+		-
+		<.meshGenerator id="loader hub loading scene background" libName="loading scenes:no palace"/>
+		<.environmentType id="loader hub loading scene environment" libName="loading scenes:environment"/>
+		-
+		<.meshGenerator id="loader hub loading scene background" libName="loading scenes:desert"/>
+		<.environmentType id="loader hub loading scene environment" libName="loading scenes:desert sun"/>
+		-
+		<.meshGenerator id="loader hub loading scene background" libName="loading scenes:temple"/>
+		<.environmentType id="loader hub loading scene environment" libName="loading scenes:temple environment"/>
+		-
+		<meshGenerator id="loader hub loading scene background" libName="loading scenes:cubes"/>
+		<environmentType id="loader hub loading scene environment" libName="loading scenes:cubes environment"/>
+		-
+
+		<material id="font mesh" libName="materials:font mesh"/>
+		<font id="loader text font" libName="fonts:tfg"/>
+
+		<material id="loader hub screen" libName="loader hub:hub screen"/>
+		<displayType id="loader hub display" libName="loader hub:display"/>
+		<meshStatic id="loader hub hand controller right" libName="loading scenes:hand r"/>
+		<meshStatic id="loader hub hand controller left" libName="loading scenes:hand l"/>
+		<meshStatic id="loader hub point hand controller right" libName="loading scenes:hand ph r"/>
+		<meshStatic id="loader hub point hand controller left" libName="loading scenes:hand ph l"/>
+		<meshStatic id="loader hub hand tracking right" libName="loading scenes:hand ht r"/>
+		<meshStatic id="loader hub hand tracking left" libName="loading scenes:hand ht l"/>
+		<texturePart id="loader hub cursor right" libName="loader hub:cursor right"/>
+		<texturePart id="loader hub cursor left" libName="loader hub:cursor left"/>
+		<texturePart id="loader hub logo big one line" libName="loader hub:logo big one line"/>
+		<texturePart id="loader hub help icon" libName="loader hub:help icon"/>
+		<texturePart id="loader hub tip restart at any chapter" libName="loader hub:tip restart at any chapter"/>
+		<sample id="loader hub click" libName="loader hub:click"/>
+		<sample id="loader hub move" libName="loader hub:click"/>
+		<meshStatic id="loader hub start head marker" libName="loading scenes:start head marker"/>
+		<meshStatic id="loader hub start head marker close" libName="loading scenes:start head marker close"/>
+		<meshStatic id="loader hub start head marker far" libName="loading scenes:start head marker far"/>
+
+		<texturePart id="loader hub controls vivewand" libName="loader hub:vivewand 150"/>
+		<texturePart id="loader hub controls vivewand colours" libName="loader hub:vivewand 150 colours"/>
+		<texturePart id="loader hub controls touch" libName="loader hub:touch 150"/>
+		<texturePart id="loader hub controls touch colours" libName="loader hub:touch 150 colours"/>
+
+		<!-- USE_DISPLAY_VR_SCENE
+		<meshGenerator id="display vr scene mesh generator" libName="displays:vr scene"/>
+		<material id="display vr scene material" libName="displays:vr scene"/>
+		-->
+		
+		<material id="vr tracking device material" libName="vr:tracking device"/>
+		<material id="vr tracking device left material" libName="vr:tracking device left"/>
+		<material id="vr tracking device right material" libName="vr:tracking device right"/>
+		<meshStatic id="vr controller" libName="vr:vr controller"/>
+		<meshStatic id="openvr__vr_controller_vive_1_5" libName="vr:vr controller"/>
+		
+		<shaderProgram id="less pixel prepare stencil" libName="lessPixel:prepare stencil"/>
+		<shaderProgram id="less pixel prepare resolve" libName="lessPixel:prepare resolve"/>
+		<shaderProgram id="less pixel resolve" libName="lessPixel:resolve"/>
+		<shaderProgram id="less pixel test resolve" libName="lessPixel:test resolve"/>
+
+		not used actually
+		<.font id="loader hub; font" libName="displays:default 24x32"/>
+
+		<font id="overlay info font" libName="displays:overlay system 24x32"/>
+
+		<texturePart id="language selection" libName="displays:language selection"/>
+		
+		<material id="schematics; material" libName="schematics:schematics"/>
+		<material id="schematics; material; overlay" libName="schematics:schematics for overlay"/>
+		
+		<sample id="music; loading music" libName="music:loading" mayFail="true"/>
+		<sample id="music; menu music" libName="music:loading" mayFail="true"/>
+
+		<texturePart id="hand gestures; open hand" libName="hub hand gestures:open hand"/>
+		<texturePart id="hand gestures; select" libName="hub hand gestures:select"/>
+		<texturePart id="hand gestures; grab" libName="hub hand gestures:grab"/>
+		<texturePart id="hand gestures; grab alt" libName="hub hand gestures:grab alt"/>
+		<texturePart id="hand gestures; open menu" libName="hub hand gestures:open menu"/>
+		<texturePart id="hand gestures; release" libName="hub hand gestures:release"/>
+		<texturePart id="hand gestures; pull energy" libName="hub hand gestures:pull energy"/>
+		<texturePart id="hand gestures; deploy main equipment" libName="hub hand gestures:deploy main equipment"/>
+		<texturePart id="hand gestures; use EXM" libName="hub hand gestures:use EXM"/>
+		<texturePart id="hand gestures; shoot" libName="hub hand gestures:shoot"/>
+		<texturePart id="hand gestures; shoot thumb" libName="hub hand gestures:shoot thumb"/>
+		<texturePart id="hand gestures; show overlay info" libName="hub hand gestures:show overlay info"/>
+
+	</globalReferences>
+</library>

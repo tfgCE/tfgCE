@@ -1,0 +1,7 @@
+<library group="postProcess">
+	<generateTexture file="anti banding noise.tex" format="rgba8" size="256 256" wrap="repeat">
+		<noise type="triangular" mono="true"/>
+	</generateTexture>
+</library>
+
+

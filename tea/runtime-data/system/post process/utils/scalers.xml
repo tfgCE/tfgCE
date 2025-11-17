@@ -1,0 +1,60 @@
+<library group="postProcess">
+	<fragmentShader name="scale down">
+		<useWithPostProcessPipeline/>
+		<source>
+			<data>
+				// uniform
+				uniform sampler2D inData;
+				
+				// output
+				out vec4 outData;
+			</data>
+			<mainBody>
+				outData = texture(inData, varUV);
+			</mainBody>
+		</source>
+		<outputs sizeMultiplier="0.5">
+			<output name="outData"/>
+		</outputs>
+	</fragmentShader>
+	<shaderProgram name="scale down" fragmentShader="scale down"/>
+
+	<fragmentShader name="scale up">
+		<useWithPostProcessPipeline/>
+		<source>
+			<data>
+				// uniform
+				uniform sampler2D inData;
+				
+				// output
+				out vec4 outData;
+			</data>
+			<mainBody>
+				outData = texture(inData, varUV);
+			</mainBody>
+		</source>
+		<outputs sizeMultiplier="2.0">
+			<output name="outData"/>
+		</outputs>
+	</fragmentShader>
+	<shaderProgram name="scale up" fragmentShader="scale up"/>
+
+	<postProcess name="scale test">
+		<graph>
+			<inputNode name="input">
+				<output name="colour"/>
+			</inputNode>
+			<processorNode name="scale down" shaderProgram="scale down">
+				<input name="inData" connectToNode="input" connectToConnector="colour"/>
+			</processorNode>
+			<processorNode name="scale up" shaderProgram="scale up">
+				<input name="inData" connectToNode="scale down" connectToConnector="outData"/>
+			</processorNode>
+			<outputNode name="output">
+				<input name="colour" connectToNode="scale up" connectToConnector="outData"/>
+			</outputNode>
+		</graph>
+	</postProcess>
+</library>
+
+

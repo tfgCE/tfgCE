@@ -1,0 +1,7 @@
+<library group="displays">
+	gfx
+	
+	<texture name="default default cursor" file="assets\default cursor.tex" importFromFile="assets\_source\default cursor.tga" filteringMag="linear" filteringMin="linear" wrap="clamp"/> 
+	<texture name="default waiting cursor" file="assets\waiting cursor.tex" importFromFile="assets\_source\waiting cursor.tga" filteringMag="linear" filteringMin="linear" wrap="clamp"/> 
+	
+</library>

@@ -1,0 +1,113 @@
+<library group="schematics">
+
+	shaders
+	=======
+	<vertexShader name="schematics static">
+		<useWithStatic/>
+		<useWithUIPipeline/>
+		<source>
+			<data>
+				// uniforms
+				uniform mat4 modelViewMatrix;
+				uniform vec4 modelViewClipPlanes[CLIP_PLANE_COUNT];
+				uniform int modelViewClipPlanesCount;
+				
+				// input
+				in LOWP vec4 inOColour;
+				
+				// output
+				out LOWP vec4 varColour;
+				
+				#ifndef GLES
+				out float gl_ClipDistance[CLIP_PLANE_COUNT];
+				#endif
+			</data>
+			<mainBody>
+				// calculate position
+				HIGHP vec4 prcPosition;
+				
+				prcPosition.xy = inAPosition.xy;
+				prcPosition.z = 0.0; // flat
+				prcPosition.w = 1.0;
+
+				prcPosition = modelViewMatrix * prcPosition;
+				HIGHP vec4 clipPosition = prcPosition;
+
+				// fill output
+				gl_Position = projectionMatrix * prcPosition;
+				
+				// just copy
+				varColour = inOColour;
+
+				// apply clipping
+				APPLY_CLIPPING;
+			</mainBody>
+		</source>
+	</vertexShader>
+
+	<fragmentShader name="schematics">
+		<useWithUIPipeline/>
+		<source>
+			<data>
+				// uniforms
+				uniform vec4 highlightColour; // a used as strength (for blending)
+				uniform vec4 totalColour; // applied at the end
+				uniform float useAlpha; // applied at the end
+				
+				// input
+				in LOWP vec4 varColour;
+
+				// output
+				out vec4 outData;
+			</data>
+			<defaultValues>
+				<colour name="highlightColour">none</colour>
+				<colour name="totalColour">white</colour>
+				<float name="useAlpha">1.0</float>
+			</defaultValues>
+			<mainBody>
+				vec4 colour = varColour;
+				colour.rgb = highlightColour.a * highlightColour.rgb + colour.rgb * (1.0 - highlightColour.a);
+				outData = colour * totalColour;
+				outData.a *= useAlpha;
+			</mainBody>
+		</source>
+		<outputs>
+			<output name="outData" filtering="nearest"/>
+		</outputs>
+	</fragmentShader>
+
+	
+	materials
+	=========
+	
+	for displays
+	<material name="schematics"
+		vertexShader="schematics static"
+		fragmentShader="schematics"
+		depthFunc="always"
+		faceDisplay="both"
+		srcBlendOp="srcAlpha"
+		destBlendOp="oneMinusSrcAlpha">
+		<for systemTagRequired="lowGraphics" depthMask="always" srcBlendOp="one" destBlendOp="zero"/>
+		<useWithStaticMesh/>
+		<.useWithSkinnedMesh/>
+		<.useWithSkinnedToSingleBoneMesh/>
+		<allowIndividualInstances/>
+	</material>
+	
+	for overlay
+	<material name="schematics for overlay"
+		vertexShader="schematics static"
+		fragmentShader="schematics"
+		depthFunc="always"
+		faceDisplay="both"
+		srcBlendOp="srcAlpha"
+		destBlendOp="oneMinusSrcAlpha">
+		<useWithStaticMesh/>
+		<.useWithSkinnedMesh/>
+		<.useWithSkinnedToSingleBoneMesh/>
+		<allowIndividualInstances/>
+	</material>
+
+</library>

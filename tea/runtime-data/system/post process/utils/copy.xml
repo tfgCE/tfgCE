@@ -1,0 +1,14 @@
+<library group="postProcess">
+	<postProcess name="colour copy">
+		<graph>
+			<inputNode name="input">
+				<output name="colour"/>
+			</inputNode>
+			<outputNode name="output">
+				<input name="colour copy" connectToNode="input" connectToConnector="colour"/>
+			</outputNode>
+		</graph>
+	</postProcess>
+</library>
+
+

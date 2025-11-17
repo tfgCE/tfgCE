@@ -1,0 +1,2 @@
+alignToTiles				will be aligned to tiles
+maxAxisDealignmentAngle		will be rotated/twisted, try to use it carefully with compact distance and without alignToTiles

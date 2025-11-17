@@ -1,0 +1,5 @@
+C:\Program files (x86)\Java\jre*\bin
+
+keytool -genkey -v -keystore tea_for_god_open.keystore -alias tea_for_god_open -keyalg RSA -keysize 2048 -validity 20000
+
+validity 20000 is 20000 days, roughly 54 years, I should be dead by then

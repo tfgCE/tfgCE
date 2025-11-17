@@ -1,0 +1,5 @@
+KEEP IT HIGH!
+
+ideas:
+
+keep rendered rooms to very low - it's better to pack them with objects

@@ -1,0 +1,57 @@
+<library group="displays">
+	<fragmentShader name="add vignette">
+		<useWithPostProcessPipeline/>
+		<source>
+			<data>
+				// uniform
+				uniform sampler2D inData;
+				
+				uniform float displayIntensity; // when switching on should go 0 to 1, when switching off should go even higher
+				uniform float displayIntensityColourUse; // how much displayIntensity affects colour
+				uniform float additionalDisplayIntensity; // when switching on should go 0 to 1, when switching off should go even higher
+				uniform vec2 scaleDisplayUV; // it actually scales UV so when scale display goes down, scale display UV should go up
+				
+				// output
+				out vec4 outData;
+			</data>
+			<defaultValues>
+				<float name="displayIntensity">1.0</float>
+				<float name="displayIntensityColourUse">1.0</float>
+				<float name="additionalDisplayIntensity">0.0</float>
+				<vector2 name="scaleDisplayUV" x="1.0" y="1.0"/>
+			</defaultValues>
+			<mainBody>
+				vec2 uv = (varUV - vec2(0.5, 0.5)) * scaleDisplayUV + vec2(0.5, 0.5);
+				vec4 inDataColour = 0.5 * texture(inData, uv).rgba
+								  + 0.25 * texture(inData, uv + inOutputTexelSize * vec2(0.0,  1.0)).rgba
+								  + 0.25 * texture(inData, uv + inOutputTexelSize * vec2(0.0, -1.0)).rgba;
+
+				inDataColour.r = min(1.0, inDataColour.r + additionalDisplayIntensity);
+				inDataColour.g = min(1.0, inDataColour.g + additionalDisplayIntensity);
+				inDataColour.b = min(1.0, inDataColour.b + additionalDisplayIntensity);
+				inDataColour.rgb *= 1.0 - displayIntensityColourUse * (1.0 - displayIntensity);
+				inDataColour.a *= displayIntensity;
+
+				float dist = min(min(uv.x, 1.0 - uv.x), min(uv.y, 1.0 - uv.y));
+				inDataColour *= max(0.0, min((dist - 0.01) * 60.0, 1.0));
+				
+				outData.rgb = inDataColour.rgb;
+				outData.a = inDataColour.a;
+			</mainBody>
+		</source>
+		<outputs>
+			<output name="outData" filtering="linear"/>
+		</outputs>
+	</fragmentShader>
+	<shaderProgram name="add vignette" fragmentShader="add vignette">
+	</shaderProgram>
+
+	<shaderProgram name="apply blur" fragmentShader="postProcess:apply blur">
+		<params>
+			<float name="applyBlurOriginalAmount">0.8</float>
+			<float name="applyBlurBlurredAmount">0.5</float>
+		</params>
+	</shaderProgram>
+</library>
+
+

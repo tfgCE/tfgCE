@@ -1,0 +1,27 @@
+<library group="shader function libs">
+	<shaderFunctionLib name="segment01">
+		vec2 segment01 is
+			x start
+			y length inverted (1 / length)
+		with this we can change value from world z to local n:
+			if z is at start, we have 0
+			if z is at start+length, we have 1
+			
+			n = (z - x) * y
+			
+		<source>
+			<function name="to_local_of_segment01">
+				<header>float to_local_of_segment01(float _world, vec2 _segment)</header>
+				<body>
+					return (_world - _segment.x) * _segment.y;
+				</body>
+			</function>
+			<function name="clamped_to_local_of_segment01">
+				<header>float clamped_to_local_of_segment01(float _world, vec2 _segment)</header>
+				<body>
+					return clamp((_world - _segment.x) * _segment.y, 0.0, 1.0);
+				</body>
+			</function>
+		</source>
+	</shaderFunctionLib>
+</library>

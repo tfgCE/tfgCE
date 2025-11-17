@@ -1,0 +1,46 @@
+<library>
+  <testConfig>
+  	<.params>
+		here so they can be overriden below
+		<vectorInt2 name="testOpenWorldCell" x="0" y="0"/>
+		<bool name="autoTestProcessAllJobs">true</bool> DOCs, navSys
+		<float name="autoTestInterval">420</float>
+
+		<bool name="testPilgrimageGameScript">false</bool>
+		<.libraryName name="testPilgrimage">pilgrimage, 01 arrival:pilgrimage</libraryName>
+		<.libraryName name="testPilgrimage">pilgrimage, 02 injection:pilgrimage</libraryName>
+		<libraryName name="testPilgrimage">pilgrimage, 03 outer rim:pilgrimage</libraryName>
+		<.libraryName name="testPilgrimage">pilgrimage, 04 train station:pilgrimage</libraryName>
+		<.libraryName name="testPilgrimage">pilgrimage, 06 ship:pilgrimage</libraryName>
+			<.vectorInt2 name="testOpenWorldCell" x="0" y="-4"/>
+		<.libraryName name="testPilgrimage">pilgrimage, 07 corrosion:pilgrimage</libraryName>
+		<.libraryName name="testPilgrimage">pilgrimage, xx template:pilgrimage</libraryName>
+		<.libraryName name="testPilgrimage">pilgrimage, xx template:pilgrimage</libraryName>
+		<.libraryName name="testPilgrimage">pilgrimage, 10 up:pilgrimage</libraryName>
+		<.libraryName name="testPilgrimage">pilgrimage, xx template:pilgrimage</libraryName>
+		<.libraryName name="testPilgrimage">pilgrimage, 12 another chance:pilgrimage</libraryName>
+		<.libraryName name="testPilgrimage">pilgrimage, up drop capsule:pilgrimage</libraryName>
+		<.libraryName name="testPilgrimage">pilgrimage, 13 breach:pilgrimage</libraryName>
+		<.libraryName name="testPilgrimage">pilgrimage, 14 heart:pilgrimage</libraryName>
+		<.libraryName name="testPilgrimage">pilgrimage, 15 tea for god:pilgrimage</libraryName>
+		<.libraryName name="testPilgrimage">pilgrimage, 16 back at ship:pilgrimage</libraryName>
+		
+		<libraryName name="testGameDefinition">game definition:arcade</libraryName>
+		<.libraryName name="testGameDefinition">game definition:main</libraryName>
+		<int name="testSeed">124563263</int>
+		
+		<string name="testGenerationTags">gm_invincible=1 gm_vulnerable=0 gm_noCrouch=0 gm_navigator=0 gm_highEnergy=0 gm_lowEnergy=0 gm_noEnemies=0 gm_tougherEnemies=0 gm_noOne=1 gm_quickTriggerEnemies=0 allowCrouch allowAnyCrouch</string>
+		<string name="testDifficultySettings">playerImmortal=1 weaponInfinite=1 npcs=0.000</string>
+
+		<float name="testMultiplePlayAreaMaxSize">7.0</float>
+		<float name="testMultiplePlayAreaSquarishChance">0.3</float>
+		<string name="testMultiplePlayAreaRectSizes">
+		{5.04, 3.87}
+		{3.68, 3.45}
+		</string>
+		{2.67, 2.54}
+		{3.33,3.33}
+		{2.1,2.1}
+	</params>
+  </testConfig>
+</library>

@@ -1,0 +1,272 @@
+<library group="lessPixel">
+	<shaderFunctionLib name="less pixel funcs">
+		<source>
+			<data>
+				// uniform
+				uniform float inRadius2x;
+				uniform float inRadius4x;
+				uniform float inRadius8x;
+				
+				// processing
+				vec2 off;
+				vec2 pattern;
+				vec2 pattern2;
+				vec2 pattern4;
+				vec2 patternMod2;
+				vec2 patternMod4;
+				vec2 radius2xAsp;
+				vec2 radius4xAsp;
+				vec2 radius8xAsp;
+				vec2 off2x;
+				vec2 off4x;
+				vec2 off8x;
+				float dist2x;
+				float dist4x;
+				float dist8x;
+			</data>
+			<defaultValues>
+				<float name="inRadius2x">0.25</float>
+				<float name="inRadius4x">0.75</float>
+				<float name="inRadius8x">0.95</float>
+			</defaultValues>
+			<function name="prepare">
+				<header>void prepare()</header>
+				<body>
+					pattern = varUV * inOutputSize;
+					patternMod2 = vec2(mod(pattern.x, 2.0), mod(pattern.y, 2.0));
+					patternMod4 = vec2(mod(pattern.x, 4.0), mod(pattern.y, 4.0));
+					vec2 useUV = (pattern - patternMod4) * inOutputTexelSize;
+					off = useUV - vec2(0.5, 0.5);
+					radius2xAsp = vec2(inRadius2x, inRadius2x * inOutputAspectRatio);
+					radius4xAsp = vec2(inRadius4x, inRadius4x * inOutputAspectRatio);
+					radius8xAsp = vec2(inRadius8x, inRadius8x * inOutputAspectRatio);
+					off2x = off / radius2xAsp;
+					off4x = off / radius4xAsp;
+					off8x = off / radius8xAsp;
+					dist2x = off2x.x * off2x.x + off2x.y * off2x.y;
+					dist4x = off4x.x * off4x.x + off4x.y * off4x.y;
+					dist8x = off8x.x * off8x.x + off8x.y * off8x.y;
+				</body>
+			</function>
+		</source>
+	</shaderFunctionLib>
+
+	<fragmentShader name="prepare stencil">
+		<useWithUIPipeline/>
+		<dependsOn>
+			<shaderFunctionLib name="less pixel funcs"/>
+		</dependsOn>
+		<source>
+			<data>
+				// uniform
+				uniform vec4 inColour;
+				
+				// output
+				out vec4 outData;
+			</data>
+			<defaultValues>
+				<colour name="inColour">magenta</colour>
+			</defaultValues>
+			<mainBody>
+				prepare();
+				if (dist2x > 1.0)
+				{
+					if (dist4x > 1.0)
+					{
+						if (dist8x > 1.0)
+						{
+							bool patX8x = patternMod4.x &gt; 0.5;
+							bool patY8x = patternMod4.y &gt; 0.5;
+							if (patX8x || patY8x)
+							{
+								discard;
+							}
+						}
+						else
+						{
+							bool patX = patternMod2.x &gt; 0.5;
+							bool patY = patternMod2.y &gt; 0.5;
+							if (patX || patY)
+							{
+								discard;
+							}
+						}
+					}
+					else
+					{
+						bool patX = patternMod2.x &gt; 0.5;
+						if (patX)
+						{
+							discard;
+						}
+					}
+				}
+				outData.rgba = inColour.rgba;
+			</mainBody>
+		</source>
+		<outputs>
+			<output name="outData" filtering="nearest"/>
+		</outputs>
+	</fragmentShader>
+	|
+	<shaderProgram name="prepare stencil" fragmentShader="prepare stencil"/>
+
+	<fragmentShader name="prepare resolve">
+		<useWithUIPipeline/>
+		<dependsOn>
+			<shaderFunctionLib name="less pixel funcs"/>
+		</dependsOn>
+		<source>
+			<data>
+				// output
+				out vec4 outData;
+			</data>
+			<mainBody>
+				outData = vec4(0,0,0,1);
+				
+				prepare();
+				if (dist2x > 1.0)
+				{
+					if (dist4x > 1.0)
+					{
+						if (dist8x > 1.0)
+						{
+							float patX4 = patternMod4.x - 0.5;
+							float patY4 = patternMod4.y - 0.5;
+							outData.rgb = vec3(patX4 * 0.25, patY4 * 0.25, 0.75);
+						}
+						else
+						{
+							float patX = patternMod2.x - 0.5;
+							float patY = patternMod2.y - 0.5;
+							outData.rgb = vec3(patX * 0.25, patY * 0.25, 0.50);
+						}
+					}
+					else
+					{
+						float patX = patternMod2.x - 0.5;
+						outData.rgb = vec3(patX * 0.25, 0, 0.25);
+					}
+				}
+			</mainBody>
+		</source>
+		<outputs>
+			<output name="outData" filtering="nearest"/>
+		</outputs>
+	</fragmentShader>
+	|
+	<shaderProgram name="prepare resolve" fragmentShader="prepare resolve"/>
+
+	<fragmentShader name="resolve">
+		<useWithUIPipeline/>
+		<source>
+			<data>
+				// uniform
+				uniform sampler2D inTexture;
+				uniform sampler2D inResolveHelper;
+				
+				// output
+				out vec4 outData;
+			</data>
+			<mainBody>
+				vec2 uv = varUV;
+				vec3 resHelp = texture(inResolveHelper, uv).rgb;
+				uv.x -= resHelp.x * 4.0 * inTextureTexelSize.x;
+				uv.y -= resHelp.y * 4.0 * inTextureTexelSize.y;
+				outData.rgba = texture(inTexture, uv);
+			</mainBody>
+		</source>
+		<outputs>
+			<output name="outData" filtering="nearest"/>
+		</outputs>
+	</fragmentShader>
+	|
+	<shaderProgram name="resolve" fragmentShader="resolve"/>
+
+	<fragmentShader name="test resolve">
+		<useWithUIPipeline/>
+		<source>
+			<data>
+				// uniform
+				uniform sampler2D inTexture;
+				uniform sampler2D inResolveHelper;
+				
+				// output
+				out vec4 outData;
+			</data>
+			<mainBody>
+				vec2 uv = varUV;
+				vec3 resHelp = texture(inResolveHelper, uv).rgb;
+				uv.x -= resHelp.x * 4.0 * inTextureTexelSize.x;
+				uv.y -= resHelp.y * 4.0 * inTextureTexelSize.y;
+				outData.rgba = texture(inTexture, uv);
+				if (resHelp.b &gt; 0.625)
+				{
+					outData.rgb = mix(outData.rgb, vec3(1,0,0), 0.2);
+				}
+				else if (resHelp.b &gt; 0.325)
+				{
+					outData.rgb = mix(outData.rgb, vec3(1,1,0), 0.2);
+				}
+				else if (resHelp.b &gt; 0.125)
+				{
+					outData.rgb = mix(outData.rgb, vec3(0,1,0), 0.2);
+				}
+			</mainBody>
+		</source>
+		<outputs>
+			<output name="outData" filtering="nearest"/>
+		</outputs>
+	</fragmentShader>
+	|
+	<shaderProgram name="test resolve" fragmentShader="test resolve"/>
+
+	<fragmentShader name="resolve old">
+		<useWithUIPipeline/>
+		<source>
+			<data>
+				// uniform
+				uniform sampler2D inTexture;
+				
+				uniform float inRadius;
+				uniform float inMod;
+				
+				// output
+				out vec4 outData;
+			</data>
+			<defaultValues>
+				<float name="inRadius">0.25</float>
+				<float name="inMod">2.0</float>
+			</defaultValues>
+			<mainBody>
+				vec2 uv = varUV;
+				{
+					vec2 off = varUV - vec2(0.5, 0.5);
+					vec2 radiusAsp = vec2(inRadius, inRadius * inOutputAspectRatio);
+					off /= radiusAsp;
+					float dist = off.x * off.x + off.y * off.y;
+					if (dist > 1.0)
+					{
+						float varUVtexx = varUV.x * inOutputSize.x;
+						float varUVtexxMod = mod(varUVtexx, inMod);
+						if (varUVtexxMod &gt; 0.5)
+						{
+							uv.x -= inTextureTexelSize.x * round(varUVtexxMod);
+						}
+					}
+				}
+				outData.rgba = texture(inTexture, uv);
+			</mainBody>
+		</source>
+		<outputs>
+			<output name="outData" filtering="nearest"/>
+		</outputs>
+	</fragmentShader>
+
+	<shaderProgram name="resolve old" fragmentShader="resolve old">
+		<params>
+			<!--<float name="radius">0.5</float>-->
+		</params>
+	</shaderProgram>
+
+</library>

@@ -1,0 +1,4205 @@
+<library group="bullshots">
+	<!--
+	<._section> frame for capturing gameplay, to see in vr what goes into the actual captured frame
+		<bullshot id="frame for capturing gameplay">
+			if there's no sound when recording, check OBS's audio inputs
+			<setting>no music</setting>
+			<.setting>allow accidental music</setting>
+			<setting>no RGI test settings</setting>
+			<setting>disable debug rendering</setting>
+			<setting>no development input</setting>
+			<setting>no development volume</setting>
+			<setting>disable highlights</setting>
+			<appearNonActive/>
+
+			<showFrame template="vr23"/> vr2 vr3 vr23
+			<showFrame><safeAreaPt x="0 to 1" y="0 to 1"/></showFrame>
+		</bullshot>
+	</_section>
+
+	<._section> frame for capturing screenshots
+		<bullshot id="frame for capturing gameplay">
+			<setting>no RGI test settings</setting>
+			<setting>disable debug rendering</setting>
+			<setting>no development input</setting>
+			<setting>no development volume</setting>
+			<appearNonActive/>
+
+			<showFrame template="vr23"/> vr2 vr3 vr23
+			<showFrame width="3840" height="2160"><safeAreaPt x="0 to 1" y="0 to 1"/></showFrame>
+		</bullshot>
+	</_section>
+
+	<._section> titles for trailer
+		<bullshot id="titles for trailer 01">
+			<appearNonActive/>
+
+			<testConfig> to start with something
+				<params>
+					<libraryName name="testGameScript">bullshots:trailer 01 main</libraryName>
+					<libraryName name="testPilgrimage">pilgrimage, 01 arrival:pilgrimage</libraryName>
+
+					<libraryName name="testGameDefinition">game definition:arcade</libraryName>
+					<vectorInt2 name="testOpenWorldCell" x="0" y="0"/>
+					<int name="testSeed">124563263</int>
+					<vector2 name="testPlayArea" x="6.00" y="6.00"/>
+					<float name="testTileSize">1.0</float>
+					<float name="testScaling">1.0</float>
+					<name name="testPreferredTileSize">auto</name>
+					<float name="testDoorHeight">2.000000000</float>
+					<bool name="testAllowCrouch">true</bool>
+					<bool name="testAllowAnyCrouch">true</bool>
+					<string name="testGenerationTags">gm_invincible=0 gm_vulnerable=0 gm_noCrouch=0 gm_navigator=0 gm_highEnergy=0 gm_lowEnergy=0 gm_noEnemies=0 gm_tougherEnemies=0 gm_noOne=0 gm_quickTriggerEnemies=0 allowCrouch allowAnyCrouch</string>
+					<string name="testDifficultySettings">playerImmortal=0 weaponInfinite=0 armourIneffective=0 nonDegradableWeaponParts=0 autoMapOnly=0 npcs=3.000 playerDamageGiven playerDamageTaken aiReactionTime lootHealth lootAmmo</string>
+				</params>
+			</testConfig>
+
+			<showFrame><safeAreaPt x="0 to 1" y="0 to 1"/></showFrame>
+
+			<titles
+				font="fonts:tfg"
+				fontHeightPt="0.1"
+				lineSpacingPt="0.15">
+				<atPt x="0.1" y="0.5"/>
+				<textPt x="0.0" y="0.5"/>
+				<comeTime>0.2</comeTime>
+				<stayTime>1.5</stayTime>
+				<awayTime>0.6</awayTime>
+				<comeDistPt>0.5 to 1.8</comeDistPt>
+				<awayDistPt>0.3 to 0.4</awayDistPt>
+				<comeCurve>
+					<p0 t="0.0" v="1.0"/>
+					<p1 t="0.0" v="0.7"/>
+					<p2 t="0.3" v="0.0"/>
+					<p3 t="1.0" v="0.0"/>
+				</comeCurve>
+				<awayCurve>
+					<p0 t="0.0" v="0.0"/>
+					<p1 t="0.0" v="0.7"/>
+					<p2 t="0.7" v="1.0"/>
+					<p3 t="1.0" v="1.0"/>
+				</awayCurve>
+
+				<paper>black</paper>
+
+				<title>
+					<text>use~your own feet~to move</text>
+					<randomGenrator base="6"/>
+					<atPt x="0.1" y="0.2"/>
+					<textPt x="0.0" y="0"/>
+					<comeMask y="1"/>
+					<awayMask x="1"/>
+					<comeDistPt>0.1 to 0.5</comeDistPt>
+					<awayDistPt>0.1 to 0.25</awayDistPt>
+					<comeUnifiedDir y="1"/>
+					<awayUnifiedDir x="1"/>
+				</title>
+				<title>
+					<text>no sliding</text>
+					<randomGenrator base="6"/>
+					<atPt x="0.1" y="0.8"/>
+					<textPt x="0.0" y="1.0"/>
+					<comeMask y="1"/>
+					<awayMask x="1"/>
+					<comeDistPt>0.1 to 0.5</comeDistPt>
+					<awayDistPt>0.1 to 0.25</awayDistPt>
+					<comeUnifiedDir y="-1"/>
+					<awayUnifiedDir x="1"/>
+				</title>
+				<title>
+					<text>no teleporting</text>
+					<randomGenrator base="6"/>
+					<atPt x="0.9" y="0.2"/>
+					<textPt x="1.0" y="0.0"/>
+					<comeMask y="1"/>
+					<awayMask x="1"/>
+					<comeDistPt>0.1 to 0.5</comeDistPt>
+					<awayDistPt>0.1 to 0.25</awayDistPt>
+					<comeUnifiedDir y="1"/>
+					<awayUnifiedDir x="-1"/>
+				</title>
+				<title>
+					<text>adapts to~your play area</text>
+					<randomGenrator base="4"/>
+					<atPt x="0.5" y="0.2"/>
+					<textPt x=".5" y="0.0"/>
+					<comeMask x="1"/>
+					<awayMask y="1"/>
+					<comeDistPt>0.1 to 0.5</comeDistPt>
+					<awayDistPt>0.1 to 0.25</awayDistPt>
+					<.comeUnifiedDir x="-1"/>
+					<awayUnifiedDir y="1"/>
+				</title>
+				<title>
+					<text>VR~ROOMSCALE~ADVENTURE</text>
+					<atPt x="0.1" y="0.5"/>
+					<textPt x="0.0" y="0.5"/>
+					<comeMask y="1"/>
+					<awayMask x="1"/>
+					<comeDistPt>0.1 to 0.2</comeDistPt>
+					<awayDistPt>0.1 to 0.25</awayDistPt>
+`					<awayUnifiedDir x="1"/>
+				</title>
+				<title>
+					<text>vast world~to explore</text>
+					<randomGenrator base="4"/>
+					<atPt x="0.9" y="0.2"/>
+					<textPt x="1" y="0"/>
+					<comeMask x="1"/>
+					<awayMask y="1"/>
+					<comeDistPt>0.1 to 0.5</comeDistPt>
+					<awayDistPt>0.1 to 0.25</awayDistPt>
+					<comeUnifiedDir x="-1"/>
+					<awayUnifiedDir y="1"/>
+				</title>
+				<title>
+					<text>deadly enemies</text>
+					<randomGenrator base="14"/>
+					<atPt x="0.1" y="0.8"/>
+					<textPt x="0" y="1"/>
+					<comeMask x="1"/>
+					<awayMask y="1"/>
+					<comeDistPt>0.1 to 0.5</comeDistPt>
+					<awayDistPt>0.1 to 0.25</awayDistPt>
+					<comeUnifiedDir x="1"/>
+					<awayUnifiedDir y="-1"/>
+				</title>
+				<title>
+					<text>unlikely allies</text>
+					<randomGenrator base="17"/>
+					<atPt x="0.9" y="0.2"/>
+					<textPt x="1" y="0"/>
+					<comeMask x="1"/>
+					<awayMask y="1"/>
+					<comeDistPt>0.1 to 0.5</comeDistPt>
+					<awayDistPt>0.1 to 0.25</awayDistPt>
+					<comeUnifiedDir x="-1"/>
+					<awayUnifiedDir y="1"/>
+				</title>
+				<title>
+					<text>customize~your~experience</text>
+					<atPt x="0.9" y="0.5"/>
+					<textPt x="1.0" y="0.5"/>
+					<comeMask y="1"/>
+					<awayMask x="1"/>
+					<comeDistPt>0.1 to 0.4</comeDistPt>
+					<awayDistPt>0.1 to 0.5</awayDistPt>
+					<awayUnifiedDir x="-1"/>
+				</title>
+				<title>
+					<text>arcade~shooter</text>
+					<atPt x="0.1" y="0.2"/>
+					<textPt x="0" y="0"/>
+					<comeMask x="1"/>
+					<awayMask x="1"/>
+					<comeDistPt>0.1 to 0.9</comeDistPt>
+					<awayDistPt>0.1 to 0.2</awayDistPt>
+					<comeUnifiedDir x="1"/>
+					<awayUnifiedDir/>
+					<randomGenrator base="1"/>
+				</title>
+				<title>
+					<text>roguelite~tinker</text>
+					<atPt x="0.9" y="0.8"/>
+					<textPt x="1" y="1"/>
+					<comeMask x="1"/>
+					<awayMask x="1"/>
+					<comeDistPt>0.1 to 0.9</comeDistPt>
+					<awayDistPt>0.1 to 0.2</awayDistPt>
+					<comeUnifiedDir x="-1"/>
+					<awayUnifiedDir/>
+					<randomGenrator base="27"/>
+				</title>
+				<title>
+					<text>relaxing~trek</text>
+					<atPt x="0.1" y="0.8"/>
+					<textPt x="0" y="1"/>
+					<comeMask x="1"/>
+					<awayMask x="1"/>
+					<comeDistPt>0.1 to 0.9</comeDistPt>
+					<awayDistPt>0.1 to 0.2</awayDistPt>
+					<comeUnifiedDir x="1"/>
+					<awayUnifiedDir/>
+					<randomGenrator base="4"/>
+				</title>
+				<title
+					fontHeightPt="0.07"
+					lineSpacingPt="0.2"
+					finalFontScale="2.15"
+					perWordComeTimeOffset="0.0 to 0.2">
+					>
+					<text>g o d</text>
+					<randomGenrator base="4"/>
+					<comeTime>0.2</comeTime>
+					<stayTime>1.0</stayTime>
+					<awayTime>1.0</awayTime>
+					<atPt x="0.5" y="0.3"/>
+					<textPt x="0.5" y="0.3"/>
+					<comeDistPt>0.1 to 0.3</comeDistPt>
+					<awayDistPt>0.01 to 0.05</awayDistPt>
+					<comeUnifiedDir y="-1"/>
+					<awayUnifiedDir/>
+					<awayMask y="1"/>
+				</title>
+				<title
+					fontHeightPt="0.07"
+					lineSpacingPt="0.2"
+					finalFontScale="2.15"
+					perWordComeTimeOffset="0.0 to 0.2">
+					>
+					<text>e m p e r o r</text>
+					<randomGenrator base="7"/>
+					<comeTime>0.2</comeTime>
+					<stayTime>1.0</stayTime>
+					<awayTime>1.0</awayTime>
+					<atPt x="0.5" y="0.3"/>
+					<textPt x="0.5" y="0.3"/>
+					<comeDistPt>0.1 to 0.3</comeDistPt>
+					<awayDistPt>0.01 to 0.05</awayDistPt>
+					<comeUnifiedDir y="-1"/>
+					<awayUnifiedDir/>
+					<awayMask y="1"/>
+				</title>
+				<title
+					fontHeightPt="0.07"
+					lineSpacingPt="0.2"
+					finalFontScale="2.15"
+					perWordComeTimeOffset="0.0 to 0.2">
+					>
+					<text>a w a i t s</text>
+					<randomGenrator base="4"/>
+					<comeTime>0.2</comeTime>
+					<stayTime>1.0</stayTime>
+					<awayTime>1.0</awayTime>
+					<atPt x="0.5" y="0.3"/>
+					<textPt x="0.5" y="0.3"/>
+					<comeDistPt>0.1 to 0.3</comeDistPt>
+					<awayDistPt>0.01 to 0.05</awayDistPt>
+					<comeUnifiedDir y="-1"/>
+					<awayUnifiedDir/>
+					<awayMask y="1"/>
+				</title>
+				<title
+					fontHeightPt="0.1"
+					lineSpacingPt="0.2"
+					finalFontScale="2.15"
+					perWordComeTimeOffset="0.0 to 1.0">
+					<text>t e a~f o r~g o d</text>
+					<comeTime>5.0</comeTime>
+					<stayTime>3.0</stayTime>
+					<awayTime>2.0</awayTime>
+					<atPt x="0.45" y="0.45"/>
+					<textPt x="0.5" y="0.5"/>
+					<comeDistPt>0.001 to 0.02</comeDistPt>
+					<awayDistPt>0.001 to 0.02</awayDistPt>
+					<comeUnifiedDir/>
+					<awayUnifiedDir/>
+					<randomGenrator base="28"/>
+				</title>
+				<title
+					fontHeightPt="0.1"
+					lineSpacingPt="0.15"
+					finalFontScale="1.0"
+					perWordComeTimeOffset="0.0 to 0.2">
+					<text>coming soon</text>
+					<randomGenrator base="28"/>
+					<comeTime>0.2</comeTime>
+					<stayTime>1.0</stayTime>
+					<awayTime>1.0</awayTime>
+					<atPt x="0.5" y="0.45"/>
+					<textPt x="0.5" y="0.45"/>
+					<comeDistPt>0.1 to 0.3</comeDistPt>
+					<awayDistPt>0.1 to 0.3</awayDistPt>
+					<awayUnifiedDir/>
+					<comeMask x="1"/>
+					<awayMask y="-1"/>
+				</title>
+				<title
+					fontHeightPt="0.1"
+					lineSpacingPt="0.15"
+					finalFontScale="1.0"
+					perWordComeTimeOffset="0.0 to 0.2">
+					<text>demo~available~now</text>
+					<randomGenrator base="28"/>
+					<comeTime>0.2</comeTime>
+					<stayTime>1.0</stayTime>
+					<awayTime>1.0</awayTime>
+					<atPt x="0.5" y="0.45"/>
+					<textPt x="0.5" y="0.45"/>
+					<comeDistPt>0.1 to 0.3</comeDistPt>
+					<awayDistPt>0.1 to 0.3</awayDistPt>
+					<awayUnifiedDir/>
+					<comeMask y="1"/>
+					<awayMask x="1"/>
+				</title>
+			</titles>
+		</bullshot>
+	</_section>
+
+	<._section> trailer 01 - desert / arrival
+		<bullshot id="trailer 01">
+			<testConfig>
+				<params>
+					<libraryName name="testGameScript">bullshots:trailer 01 main</libraryName>
+					<libraryName name="testPilgrimage">pilgrimage, 01 arrival:pilgrimage</libraryName>
+
+					<libraryName name="testGameDefinition">game definition:arcade</libraryName>
+					<vectorInt2 name="testOpenWorldCell" x="0" y="0"/>
+					<int name="testSeed">124563263</int>
+					<vector2 name="testPlayArea" x="6.00" y="6.00"/>
+					<float name="testTileSize">1.0</float>
+					<float name="testScaling">1.0</float>
+					<name name="testPreferredTileSize">auto</name>
+					<float name="testDoorHeight">2.000000000</float>
+					<bool name="testAllowCrouch">true</bool>
+					<bool name="testAllowAnyCrouch">true</bool>
+					<string name="testGenerationTags">gm_invincible=0 gm_vulnerable=0 gm_noCrouch=0 gm_navigator=0 gm_highEnergy=0 gm_lowEnergy=0 gm_noEnemies=0 gm_tougherEnemies=0 gm_noOne=0 gm_quickTriggerEnemies=0 allowCrouch allowAnyCrouch</string>
+					<string name="testDifficultySettings">playerImmortal=0 weaponInfinite=0 armourIneffective=0 nonDegradableWeaponParts=0 autoMapOnly=0 npcs=3.000 playerDamageGiven playerDamageTaken aiReactionTime lootHealth lootAmmo</string>
+				</params>
+			</testConfig>
+			<subStepDetails>1.0</subStepDetails>
+
+			<.showFrame template="3"/> vr2, vr3, vr23, 2, 3, 4/4v, gr, gt, g
+			<showFrame width="1920" height="1080" ><safeAreaPt x="0 to 1" y="0 to 1"/></showFrame>
+
+			<variables>
+				<libraryName name="useGearFromGameDefinition">game definition:bullshots</libraryName>
+				<int name="useGearFromGameDefinitionIdx">0</int>
+			</variables>
+			
+			<camera inRoom="desert"
+				fov="80"
+				nearZ="0.02">
+				<.keepCamera/>
+				<placement>
+					<translation x="-103.41" y="1251.35" z="14.44"/>
+					<rotation pitch="5.0" yaw="120.0" roll="-0.0"/>
+				</placement>
+			</camera>
+
+
+		</bullshot>
+		
+		<gameScript name="trailer 01 main">
+		====<trap name="bullshot 0"/>
+			<output>nothing</output>
+			<music requestNone="true"/>
+			<wait/>
+			
+		----<label id="reset objects"/>
+			<find tagged="01_artefact" storeVar="01_artefact"/>
+			<find tagged="01_full_barge_0" storeVar="01_full_barge_0"/>
+			<find tagged="01_full_barge_1" storeVar="01_full_barge_1"/>
+			<find tagged="01_empty_barge_0" storeVar="01_empty_barge_0"/>
+			<find tagged="01_players_tek" storeVar="01_players_tek"/>
+			<find tagged="01_tek_background_0" storeVar="01_tek_background_0"/>
+			
+			<teleport objectVar="01_tek_background_0"><toPlacement><location x="0" y="0" z="-300"/></toPlacement></teleport>
+			<teleport objectVar="01_players_tek"><toPlacement><location x="0" y="0" z="-300"/></toPlacement></teleport>
+			<teleport objectVar="01_empty_barge_0"><toPlacement><location x="0" y="0" z="-300"/></toPlacement></teleport>
+			<teleport objectVar="01_full_barge_0"><toPlacement><location x="0" y="0" z="-300"/></toPlacement></teleport>
+			<teleport objectVar="01_full_barge_1"><toPlacement><location x="0" y="0" z="-300"/></toPlacement></teleport>
+
+			<setObjectVar objectVar="01_artefact"><float name="slide_b">0</float></setObjectVar>
+			<setObjectVar objectVar="01_artefact"><float name="slide_c">0</float></setObjectVar>
+			<setObjectVar objectVar="01_artefact"><float name="slide_l">0</float></setObjectVar>
+			<setObjectVar objectVar="01_artefact"><float name="slide_t">0</float></setObjectVar>
+			<setObjectVar objectVar="01_artefact"><float name="slide_r">0</float></setObjectVar>
+
+			<returnSub/>
+			
+		====<trap name="bullshot 1"/>
+			<output>player's tek flies to artefact</output>
+			<goSubLabel id="reset objects"/>
+			<changeScript objectVar="01_players_tek" to="bullshots:players tek goes to artefact"/>
+			<changeScript objectVar="01_full_barge_1" to="bullshots:full barge comes from artefact"/>
+			<changeScript objectVar="01_empty_barge_0" to="bullshots:empty barge goes to artefact"/>
+			<forceCamera drop="true"/> to reset and force it
+			<forceCamera inRoom="desert" fov="40">
+				<placement>
+					<translation x="-103.41" y="351.35" z="4.44"/>
+					<rotation pitch="5.0" yaw="150.0" roll="-0.0"/>
+				</placement>
+			</forceCamera>
+			<wait for="5"/>
+			<forceCamera inRoom="desert" blendTime="5" blend="cubic">
+				<placement>
+					<translation x="-103.41" y="351.35" z="4.44"/>
+					<rotation pitch="5.0" yaw="16.0" roll="-0.0"/>
+				</placement>
+			</forceCamera>
+			<wait for="5"/>
+			
+		====<trap name="bullshot 2"/>
+			<output>player's tek flies to artefact - follow</output>
+			<goSubLabel id="reset objects"/>
+			<changeScript objectVar="01_players_tek" to="bullshots:players tek goes to artefact 2"/>
+			<changeScript objectVar="01_full_barge_1" to="bullshots:full barge comes from artefact"/>
+			<forceCamera drop="true"/> to reset and force it
+			<forceCamera inRoom="desert" fov="80" attachToObjectVar="01_players_tek">
+				<placement>
+					<translation x="-2" y="-0.5" z="0.25"/>
+					<rotation yaw="180"/>
+				</placement>
+			</forceCamera>
+			<wait for="8"/>
+			<forceCamera inRoom="desert" fov="80" attachToObjectVar="01_players_tek">
+				<placement>
+					<.translation x="1.2" y="0.9" z="0.8"/>
+					<translation x="-2" y="0.0" z="0.25"/>
+					<.translation x="0.8" y="1.0" z="0.68"/>
+					<.translation x="1.2" y="1.2" z="0.65"/>
+					<.rotation pitch="-10"/>
+				</placement>
+			</forceCamera>
+			<wait for="20"/>
+		
+		====<trap name="bullshot 3"/>
+			<output>player's tek flies to artefact - dock</output>
+			<goSubLabel id="reset objects"/>
+			<changeScript objectVar="01_players_tek" to="bullshots:players tek goes to artefact 3"/>
+			<forceCamera drop="true"/> to reset and force it
+			<forceCamera inRoom="desert" fov="80">
+				<placement>
+					<translation x="-112.41" y="1226.35" z="9.63"/>
+					<rotation pitch="13.0" yaw="50.0" roll="-3"/>
+				</placement>
+				<.placement>
+					<translation x="-108.41" y="1256.35" z="2.63"/>
+					<rotation pitch="33.0" yaw="130.0" roll="-0.0"/>
+				</placement>
+			</forceCamera>
+			<forceCamera inRoom="desert" fov="80" blendTime="20">
+				<placement>
+					<translation x="-98.41" y="1261.35" z="16.52"/>
+					<rotation pitch="-9.0" yaw="160.0" roll="-10"/>
+				</placement>
+			</forceCamera>
+		
+		====<trap name="bullshot 4"/>
+			<output>ready artefact to open</output>
+			<goSubLabel id="reset objects"/>
+			<forceCamera drop="true"/> to reset and force it
+			<forceCamera inRoom="desert" fov="80" attachToObjectVar="01_artefact">
+				<placement>
+					<translation y="-1.961" z="13.8437" x="-17"/>
+					<rotation pitch="0" yaw="90.0" roll="0"/>
+				</placement>
+			</forceCamera>
+
+			<output>close artefact</output>
+			<setObjectVar objectVar="01_artefact"><float name="slide_b">0</float></setObjectVar>
+			<setObjectVar objectVar="01_artefact"><float name="slide_c">0</float></setObjectVar>
+			<setObjectVar objectVar="01_artefact"><float name="slide_l">0</float></setObjectVar>
+			<setObjectVar objectVar="01_artefact"><float name="slide_t">0</float></setObjectVar>
+			<setObjectVar objectVar="01_artefact"><float name="slide_r">0</float></setObjectVar>
+			<wait for="5"/>
+			
+		====<trap name="bullshot 5"/>
+			<output>open artefact</output>
+			<goSubLabel id="reset objects"/>
+			<changeScript objectVar="01_artefact" to="bullshots:open artefact"/>
+			<forceCamera drop="true"/> to reset and force it
+			<forceCamera inRoom="desert" fov="80" attachToObjectVar="01_artefact">
+				<placement>
+					<translation y="-1.961" z="13.8437" x="-17"/>
+					<rotation pitch="0" yaw="90.0" roll="0"/>
+				</placement>
+			</forceCamera>
+			<forceCamera blendTime="25" attachToObjectVar="01_artefact">
+				<placement>
+					<translation y="-1.961" z="13.8437" x="-12"/>
+					<rotation pitch="0" yaw="90.0" roll="0"/>
+				</placement>
+			</forceCamera>
+
+			<wait for="20"/>
+			
+			<wait/>
+		</gameScript>
+
+		<gameScript name="open artefact">
+			<wait for="2"/>
+			<output>open actual artefact</output>
+			<setObjectVar><float name="slide_b">1</float></setObjectVar>
+			<wait for="0.3"/>
+			<setObjectVar><float name="slide_c">1</float></setObjectVar>
+			<wait for="0.1"/>
+			<setObjectVar><float name="slide_l">1</float></setObjectVar>
+			<wait for="0.4"/>
+			<setObjectVar><float name="slide_t">1</float></setObjectVar>
+			<wait for="0.15"/>
+			<setObjectVar><float name="slide_r">1</float></setObjectVar>
+			<wait for="15"/>
+			
+			<endScript/>
+		</gameScript>
+
+		<gameScript name="players tek goes to artefact">
+			<find tagged="01_artefact" storeVar="01_artefact"/>
+			<teleport>
+				<toPlacement>
+					<location x="-84" y="4" z="6"/>
+					<forward y="-1"/>
+					<up z="1" x="0.05"/>
+				</toPlacement>
+			</teleport>
+			<.setObjectVar>
+				<float name="railingDown">0</float>
+				<float name="deckOpen">0</float>
+				<bool name="displayActive">false</bool>
+			</setObjectVar>
+			<aiMessage name="h_craft; go to">
+				<copyParam from="01_artefact" as="matchToIMO"/>
+				<params>
+					<bool name="instantFacing">true</bool>
+					<bool name="instantTransitSpeed">true</bool>
+					<name name="matchSockets">dock vr anchor</name>
+					<vector3 name="targetSocketOffset" x="35" y="-0.5" z="0"/>
+					<float name="requestedTransitSpeedPt">1.6</float>
+				</params>
+			</aiMessage>
+			<wait/>
+			
+			<endScript/>
+		</gameScript>
+		
+		<gameScript name="players tek goes to artefact 2">
+			<find tagged="01_artefact" storeVar="01_artefact"/>
+			<teleport>
+				<toPlacement>
+					<location x="-67" y="450" z="10"/>
+					<forward y="-1"/>
+					<up z="1"/>
+				</toPlacement>
+			</teleport>
+			<.setObjectVar>
+				<float name="railingDown">1</float>
+				<float name="deckOpen">1</float>
+				<bool name="displayActive">true</bool>
+				<int name="messageIdx">2</int>
+			</setObjectVar>
+			<aiMessage name="h_craft; go to">
+				<copyParam from="01_artefact" as="matchToIMO"/>
+				<params>
+					<bool name="instantFacing">true</bool>
+					<bool name="instantTransitSpeed">true</bool>
+					<name name="matchSockets">dock vr anchor</name>
+					<name name="triggerOwnGameScriptTrap">approaching artefact 1 close</name>
+					<float name="triggerBelowDistance">100</float>
+					<vector3 name="targetSocketOffset" x="-10" y="0.5"/>
+					<bool name="maneuverThrough">true</bool>
+				</params>
+			</aiMessage>
+			<wait/>
+			
+			<endScript/>
+		</gameScript>
+		
+		<gameScript name="players tek goes to artefact 3">
+			<find tagged="01_artefact" storeVar="01_artefact"/>
+			<teleport>
+				<toPlacement>
+					<location x="-101" y="1230" z="14"/>
+					<forward y="-1"/>
+					<up z="1"/>
+				</toPlacement>
+			</teleport>
+			<aiMessage name="h_craft; go to">
+				<copyParam from="01_artefact" as="matchToIMO"/>
+				<params>
+					<bool name="instantFacing">true</bool>
+					<bool name="instantTransitSpeed">true</bool>
+					<float name="requestedTransitSpeedPt">0.25</float>
+					<name name="matchSockets">dock vr anchor</name>
+					<vector3 name="targetSocketOffset" x="-5" y="0.5"/>
+					<name name="triggerOwnGameScriptTrap">approaching artefact 2 closer</name>
+					<float name="triggerBelowDistance">5</float>
+					<float name="requestedManeuverSpeedPt">0.3</float>
+					<float name="requestedManeuverAccelPt">0.8</float>
+					<vector3 name="targetSocketOffset" x="-2" y="0.2"/>
+					<bool name="maneuverThrough">true</bool>
+				</params>
+			</aiMessage>
+			<wait/>
+
+		====<trap name="approaching artefact 2 closer"/>
+			<aiMessage name="h_craft; go to">
+				<copyParam from="01_artefact" as="matchToIMO"/>
+				<params>
+					<float name="requestedTransitSpeedPt">0.25</float>
+					<name name="matchSockets">dock vr anchor</name>
+					<name name="triggerOwnGameScriptTrap">approaching artefact 3 dock</name>
+					<float name="triggerBelowDistance">2</float>
+					<float name="requestedManeuverSpeedPt">0.3</float>
+					<float name="requestedManeuverAccelPt">0.8</float>
+					<vector3 name="targetSocketOffset" x="-2" y="0.2"/>
+					<bool name="maneuverThrough">true</bool>
+				</params>
+			</aiMessage>
+			<wait/>
+
+		====<trap name="approaching artefact 3 dock"/>
+			<aiMessage name="h_craft; go to">
+				<copyParam from="01_artefact" as="matchToIMO"/>
+				<params>
+					<name name="matchSockets">dock vr anchor</name>
+					<name name="triggerOwnGameScriptTrap">stopped 1</name>
+					<float name="requestedManeuverSpeedPt">0.1</float>
+					<float name="requestedManeuverAccelPt">0.3</float>
+				</params>
+			</aiMessage>
+			<wait/>
+			
+		====<trap name="stopped 1"/>
+			<wait/>
+			
+			<endScript/>
+		</gameScript>
+		
+		<gameScript name="full barge comes from artefact">
+			<teleport>
+				<toPlacement>
+					<location x="-80" y="525" z="10"/>
+					<forward y="-1"/>
+					<up z="1" x="0.05"/>
+				</toPlacement>
+			</teleport>
+			<aiMessage name="h_craft; go to">
+				<params>
+					<bool name="instantFacing">true</bool>
+					<bool name="instantTransitSpeed">true</bool>
+					<vector3 name="targetLoc" x="-115" y="60" z="10"/>
+					<.float name="requestedTransitSpeedPt">0.6</float>
+				</params>
+			</aiMessage>
+			<wait/>
+			
+			<endScript/>
+		</gameScript>
+
+		<gameScript name="empty barge goes to artefact">
+			<find tagged="01_artefact" storeVar="01_artefact"/>
+			<teleport>
+				<toPlacement>
+					<location x="-64" y="204" z="13"/>
+					<forward y="-1"/>
+					<up z="1" x="0.05"/>
+				</toPlacement>
+			</teleport>
+			<aiMessage name="h_craft; go to">
+				<copyParam from="01_artefact" as="matchToIMO"/>
+				<params>
+					<bool name="instantFacing">true</bool>
+					<bool name="instantTransitSpeed">true</bool>
+					<name name="matchSockets">dock vr anchor</name>
+					<vector3 name="targetSocketOffset" x="35" y="-0.5" z="-3"/>
+					<float name="requestedTransitSpeedPt">1.6</float>
+				</params>
+			</aiMessage>
+			<wait/>
+			
+			<endScript/>
+		</gameScript>
+
+	</_section>
+	
+	<._section> trailer scenes, robots minding their own business
+		<._section> charger at rift - not used
+			
+			<bullshot id="charger wanders">
+				<testConfig>
+					<params>
+						<libraryName name="testGameScript">bullshots:charger wanders</libraryName>
+						<vectorInt2 name="testOpenWorldCell" x="2" y="6"/>
+						<libraryName name="testPilgrimage">pilgrimage, 03 outer rim:pilgrimage</libraryName>
+						<int name="testSeed">124563263</int>
+						<vector2 name="testPlayArea" x="4.51" y="4.51"/>
+						<float name="testScaling">1.0</float>
+						<name name="testPreferredTileSize">auto</name>
+						<float name="testTileSize">0.9</float>
+						<float name="testDoorHeight">2.000000000</float>
+						<bool name="testAllowCrouch">true</bool>
+						<bool name="testAllowAnyCrouch">true</bool>
+						<string name="testGenerationTags">gm_invincible=1 gm_vulnerable=0 gm_noCrouch=0 gm_navigator=1 gm_highEnergy=0 gm_lowEnergy=0 gm_noEnemies=0 gm_tougherEnemies=0 gm_noOne=0 gm_quickTriggerEnemies=0 allowCrouch allowAnyCrouch</string>
+						<string name="testDifficultySettings">playerImmortal=0 weaponInfinite=0 armourIneffective=0 nonDegradableWeaponParts=0 autoMapOnly=1 npcs=3.000 playerDamageGiven playerDamageTaken aiReactionTime lootHealth lootAmmo</string>
+					</params>
+				</testConfig>
+				<subStepDetails>1.0</subStepDetails>
+				<offsetPlacementRelatively toParam="environment anchor"/>
+				
+				<.showFrame template="3"/> 2, 3, 4/4v, gr, gt, g
+				<showFrame><safeAreaPt x="0 to 1" y="0 to 1"/></showFrame>
+
+				<variables>
+					<libraryName name="useGearFromGameDefinition">game definition:bullshots</libraryName>
+					<int name="bullshotEnvironmentCycleIdx">6</int>
+					<float name="bullshotEnvironmentCyclePt">0.2</float>
+					<float name="bullshotNoonYaw">40.0</float>
+					<float name="bullshotNoonPitch">70.0</float>
+				</variables>
+
+				<camera inRoom="openWorldX=2 openWorldY=6 cellRoomIdx=3"
+					fov="45"
+					nearZ="0.3">
+					<keepCamera/>
+					<placement>
+						<translation x="-16" y="1.1382" z="-5"/>
+						<rotation pitch="-6.0" yaw="-180" roll="-0.0"/>
+					</placement>
+				</camera>
+				<objects> objects
+					<object name="player"
+						existingTagged="pilgrim"
+						inRoom="openWorldX=2 openWorldY=6 cellRoomIdx=5">
+						<lockPlacement/>
+						<placement>
+							<translation x="0.0" y="16.3" z="24.05"/>
+							<rotation pitch="0.00" yaw="0.00" roll="-0.00"/>
+						</placement>
+					</object>
+					<object name="charger 001" actorType="npcs:charger"
+						inRoom="openWorldX=2 openWorldY=6 cellRoomIdx=3"
+						tags="charger_001"
+						>
+						<.noAI/>
+						<placement>
+							<translation x="-19.12" y="-14.5464" z="-8.9235"/>
+							<rotation pitch="0.000000" yaw="0.000000" roll="-0.000000"/>
+						</placement>
+						<randomGenerator base="-1825424148" offset="-1773903766"/>
+						<parameters>
+							<.name name="bullshotEmissiveLayer">attack</name>
+						</parameters>
+					</object>
+					<object name="charger 001 destination" sceneryType="game:none scenery"
+						inRoom="openWorldX=2 openWorldY=6 cellRoomIdx=6"
+						tags="charger_001_dest"
+						>
+						<placement>
+							<translation x="-2" y="0.7" z="0"/>
+						</placement>
+						<randomGenerator base="1"/>
+					</object>
+					<.object name="inspecter 001" actorType="npcs:inspecter"
+						inRoom="openWorldX=2 openWorldY=6 cellRoomIdx=3"
+						tags="inspecter_001"
+						>
+						<.noAI/>
+						<placement>
+							<translation x="-12.053" y="-15.02" z="-4.565"/>
+							<rotation pitch="-90.000000" yaw="0.000000" roll="-0.000000"/>
+						</placement>
+						<randomGenerator base="-1825424148" offset="-1773903766"/>
+						<parameters>
+							<.name name="bullshotEmissiveLayer">attack</name>
+						</parameters>
+					</object>
+					<object name="inspecter 001 destination" sceneryType="game:none scenery"
+						inRoom="openWorldX=2 openWorldY=6 cellRoomIdx=3"
+						tags="inspecter_001_dest"
+						>
+						<placement>
+							<translation x="-13" y="-15.02" z="-3"/>
+						</placement>
+						<randomGenerator base="1"/>
+					</object>
+				</objects>
+			</bullshot>
+			
+			<gameScript name="charger wanders">
+			====<trap name="bullshot 0"/>
+				<goSubLabel id="reset objects"/>
+				<music requestNone="true"/>
+				<forceCamera drop="true"/> to reset and force it
+				<forceSoundCamera drop="true"/> to reset and force it
+				<wait/>
+				
+			----<label id="reset objects"/>
+				<find tagged="charger_001" storeVar="charger_001"/>
+				<find tagged="charger_001_dest" storeVar="charger_001_dest"/>
+				<find tagged="inspecter_001" storeVar="inspecter_001"/>
+				<find tagged="inspecter_001_dest" storeVar="inspecter_001_dest"/>
+				<find roomTagged="openWorldX=2 openWorldY=6 cellRoomIdx=3" storeVar="room_001"/>
+				
+				<teleport objectVar="charger_001" toRoomVar="room_001">
+					<offsetPlacementRelatively toParam="environment anchor"/>
+					<toPlacement>
+						<translation x="-19.12" y="-14.5464" z="-8.9235"/>
+						<rotation pitch="0.000000" yaw="0.000000" roll="-0.000000"/>
+					</toPlacement>
+				</teleport>
+				<locomotion objectVar="charger_001" stop="true"/>
+
+				<teleport objectVar="inspecter_001" toRoomVar="room_001">
+					<offsetPlacementRelatively toParam="environment anchor"/>
+					<toPlacement>
+						<translation x="-12.053" y="-15.02" z="-4.565"/>
+						<rotation pitch="-90.000000" yaw="0.000000" roll="-0.000000"/>
+					</toPlacement>
+				</teleport>
+				<setObjectVar objectVar="inspecter_001"><bool name="walkerShouldFall">false</bool></setObjectVar>
+				
+				<returnSub/>
+				
+			====<trap name="bullshot 1"/>
+				<output>inspecter close</output>
+				<goSubLabel id="reset objects"/>
+				<forceCamera drop="true"/> to reset and force it
+				<forceSoundCamera drop="true"/> to reset and force it
+				<forceCamera inRoomVar="room_001" fov="20">
+					<offsetPlacementRelatively toParam="environment anchor"/>
+					<placement>
+						<translation x="-12.55089" y="-12.98008" z="-3.837342"/>
+						<rotation pitch="-0.0" yaw="-180" roll="-0.0"/>
+					</placement>
+				</forceCamera>
+				<forceSoundCamera inRoomVar="room_001">
+					<offsetPlacementRelatively toParam="environment anchor"/>
+					<placement>
+						<translation x="-12.55089" y="-14" z="-3.837342"/>
+						<rotation pitch="-0.0" yaw="-180" roll="-0.0"/>
+					</placement>
+				</forceSoundCamera>
+				<setObjectVar objectVar="inspecter_001"><name name="scriptedBehaviour">gameScript</name></setObjectVar>
+				<locomotion objectVar="inspecter_001" stop="true"/>
+				<wait for="1"/>
+				<locomotion objectVar="inspecter_001" moveToObjectVar="inspecter_001_dest" moveToRadius="0.1"
+					relativeSpeed="0.4"
+					move3D="true" moveDirectly="true"/>
+				<wait/>
+				
+			====<trap name="bullshot 2"/>
+				<output>charger walks on balcony</output>
+				<goSubLabel id="reset objects"/>
+				<forceCamera drop="true"/> to reset and force it
+				<forceSoundCamera drop="true"/> to reset and force it
+				<forceCamera inRoomVar="room_001" fov="45">
+					<offsetPlacementRelatively toParam="environment anchor"/>
+					<placement>
+						<translation x="-16" y="1.1382" z="-5"/>
+						<rotation pitch="-6.0" yaw="-180" roll="-0.0"/>
+					</placement>
+				</forceCamera>
+				<forceSoundCamera inRoomVar="room_001">
+					<offsetPlacementRelatively toParam="environment anchor"/>
+					<placement>
+						<translation x="-19.50854" y="-14.5555" z="-7.6595"/>
+						<rotation pitch="-6.0" yaw="-180" roll="-0.0"/>
+					</placement>
+				</forceSoundCamera>
+				<setObjectVar objectVar="charger_001"><name name="scriptedBehaviour">gameScript</name></setObjectVar>
+				<locomotion objectVar="charger_001" stop="true"/>
+				<wait for="1"/>
+				<locomotion objectVar="charger_001" moveToObjectVar="charger_001_dest" moveToRadius="0.3"
+					relativeSpeed="0.7"
+					/>
+				<wait/>
+				
+				<wait/>
+			</gameScript>
+		</_section>
+
+		<._section> charger at tower
+			
+			<bullshot id="charger at tower">
+				<testConfig>
+					<params>
+						<libraryName name="testGameScript">bullshots:charger at tower</libraryName>
+						<vectorInt2 name="testOpenWorldCell" x="0" y="4"/>
+						<libraryName name="testPilgrimage">pilgrimage, 03 outer rim:pilgrimage</libraryName>
+						<int name="testSeed">124563263</int>
+						<vector2 name="testPlayArea" x="4.51" y="4.51"/>
+						<float name="testScaling">1.0</float>
+						<name name="testPreferredTileSize">auto</name>
+						<float name="testTileSize">0.9</float>
+						<float name="testDoorHeight">2.000000000</float>
+						<bool name="testAllowCrouch">true</bool>
+						<bool name="testAllowAnyCrouch">true</bool>
+						<string name="testGenerationTags">gm_invincible=1 gm_vulnerable=0 gm_noCrouch=0 gm_navigator=1 gm_highEnergy=0 gm_lowEnergy=0 gm_noEnemies=0 gm_tougherEnemies=0 gm_noOne=0 gm_quickTriggerEnemies=0 allowCrouch allowAnyCrouch</string>
+						<string name="testDifficultySettings">playerImmortal=0 weaponInfinite=0 armourIneffective=0 nonDegradableWeaponParts=0 autoMapOnly=1 npcs=3.000 playerDamageGiven playerDamageTaken aiReactionTime lootHealth lootAmmo</string>
+					</params>
+				</testConfig>
+				<subStepDetails>1.0</subStepDetails>
+				<offsetPlacementRelatively toParam="environment anchor"/>
+				
+				<.showFrame template="3"/> 2, 3, 4/4v, gr, gt, g
+				<showFrame><safeAreaPt x="0 to 1" y="0 to 1"/></showFrame>
+
+				<variables>
+					<libraryName name="useGearFromGameDefinition">game definition:bullshots</libraryName>
+					<int name="bullshotEnvironmentCycleIdx">6</int>
+					<float name="bullshotEnvironmentCyclePt">0.7</float>
+					<float name="bullshotNoonYaw">150.0</float>
+					<float name="bullshotNoonPitch">70.0</float>
+				</variables>
+
+				<camera inRoom="openWorldX=0 openWorldY=4 cellRoomIdx=3"
+					fov="27"
+					nearZ="0.3">
+					<.keepCamera/>
+					<placement>
+						<translation x="2.024" y="-29.78641" z="38.31"/>
+						<rotation pitch="-3" yaw="33.0" roll="-0.0"/>
+					</placement>
+				</camera>
+				<cells> cells
+					<cell at="2 5" regionType="places, well:well"/>
+					<cell at="3 7" regionType="places, tower:tower"/>
+				</cells>
+				<objects> objects
+					<object name="player"
+						existingTagged="pilgrim"
+						inRoom="openWorldX=0 openWorldY=4 cellRoomIdx=49">
+						<lockPlacement/>
+						<placement>
+							<translation x="-0.3" y="0.6" z="0"/>
+							<rotation pitch="0.00" yaw="0.00" roll="-0.00"/>
+						</placement>
+					</object>
+					<object name="charger 001" actorType="npcs:charger"
+						inRoom="openWorldX=0 openWorldY=4 cellRoomIdx=3"
+						tags="charger_001"
+						>
+						<placement>
+							<translation x="9.02" y="-12.77" z="36.37"/>
+							<rotation pitch="0.000000" yaw="150.000000" roll="-0.000000"/>
+						</placement>
+						<randomGenerator base="-1825424148" offset="-1773903766"/>
+						<parameters>
+							<.name name="bullshotEmissiveLayer">attack</name>
+						</parameters>
+					</object>
+					<object name="charger 001 destination" sceneryType="game:none scenery"
+						inRoom="openWorldX=0 openWorldY=4 cellRoomIdx=9"
+						tags="charger_001_dest"
+						>
+						<placement>
+							<translation x="0.7" y="-0.41" z="0"/>
+						</placement>
+						<randomGenerator base="1"/>
+					</object>
+					<.object name="airship 001" sceneryType="airships:airship bullshot"
+						inRoom="openWorldX=0 openWorldY=4 cellRoomIdx=3"
+						tags="airship_001"
+						>
+						<placement>
+							<translation x="450" y="590" z="100"/>
+							<rotation pitch="0.000000" yaw="150.000000" roll="-0.000000"/>
+						</placement>
+						<randomGenerator base="-1825424148" offset="-1773903766"/>
+						<parameters>
+							<.name name="bullshotEmissiveLayer">attack</name>
+						</parameters>
+					</object>
+				</objects>
+			</bullshot>
+			
+			<gameScript name="charger at tower">
+			====<trap name="bullshot 0"/>
+				<goSubLabel id="reset objects"/>
+				<music requestNone="true"/>
+				<wait/>
+				
+			----<label id="reset objects"/>
+				<find tagged="charger_001" storeVar="charger_001"/>
+				<find tagged="charger_001_dest" storeVar="charger_001_dest"/>
+				<.find tagged="airship_001" storeVar="airship_001"/>
+				<find roomTagged="openWorldX=0 openWorldY=4 cellRoomIdx=3" storeVar="room_001"/>
+				<find roomTagged="openWorldX=0 openWorldY=4 cellRoomIdx=10" storeVar="corridor_001"/>
+
+				<.teleport objectVar="charger_001" toRoomVar="corridor_001">
+					<offsetPlacementRelatively toParam="environment anchor"/>
+					<toPlacement>
+						<translation x="1.21" y="-1.34" z="0.0"/>
+						<rotation pitch="0.000000" yaw="90.000000" roll="-0.000000"/>
+					</toPlacement>
+				</teleport>
+				<teleport objectVar="charger_001" toRoomVar="room_001">
+					<offsetPlacementRelatively toParam="environment anchor"/>
+					<toPlacement>
+						<translation x="9.1668" y="-12.8811" z="36.3651"/>
+						<rotation pitch="0.000000" yaw="90.000000" roll="-0.000000"/>
+					</toPlacement>
+				</teleport>
+				<locomotion objectVar="charger_001" stop="true"/>
+				<.teleport objectVar="airship_001" toRoomVar="room_001">
+					<offsetPlacementRelatively toParam="environment anchor"/>
+					<toPlacement>
+						<translation x="450" y="590" z="100"/>
+						<rotation pitch="0.000000" yaw="150.000000" roll="-0.000000"/>
+					</toPlacement>
+				</teleport>
+				<.locomotion objectVar="airship_001" stop="true"/>
+
+				<returnSub/>
+				
+			====<trap name="bullshot 1"/>
+				<output>charger walks on balcony</output>
+				<goSubLabel id="reset objects"/>
+				<.locomotion objectVar="airship_001" moveToRadius="0.1"
+					absoluteSpeed="5">
+					<moveToLoc x="600" y="310" z="100" />
+				</locomotion>
+				<setObjectVar objectVar="charger_001"><name name="scriptedBehaviour">gameScript</name></setObjectVar>
+				<locomotion objectVar="charger_001" stop="true"/>
+				<wait for="1"/>
+				<locomotion objectVar="charger_001" moveToObjectVar="charger_001_dest" moveToRadius="0.1"/>
+				<wait/>
+				
+				<wait/>
+			</gameScript>
+		</_section>
+
+		<._section> barker at towers
+			
+			<bullshot id="at towers">
+				<testConfig>
+					<params>
+						<libraryName name="testGameScript">bullshots:at towers</libraryName>
+						<vectorInt2 name="testOpenWorldCell" x="-1" y="8"/>
+						<libraryName name="testPilgrimage">pilgrimage, 03 outer rim:pilgrimage</libraryName>
+						<int name="testSeed">124563263</int>
+						<vector2 name="testPlayArea" x="4.51" y="4.51"/>
+						<float name="testScaling">1.0</float>
+						<name name="testPreferredTileSize">auto</name>
+						<float name="testTileSize">0.9</float>
+						<float name="testDoorHeight">2.000000000</float>
+						<bool name="testAllowCrouch">true</bool>
+						<bool name="testAllowAnyCrouch">true</bool>
+						<string name="testGenerationTags">gm_invincible=1 gm_vulnerable=0 gm_noCrouch=0 gm_navigator=1 gm_highEnergy=0 gm_lowEnergy=0 gm_noEnemies=0 gm_tougherEnemies=0 gm_noOne=0 gm_quickTriggerEnemies=0 allowCrouch allowAnyCrouch</string>
+						<string name="testDifficultySettings">playerImmortal=0 weaponInfinite=0 armourIneffective=0 nonDegradableWeaponParts=0 autoMapOnly=1 npcs=3.000 playerDamageGiven playerDamageTaken aiReactionTime lootHealth lootAmmo</string>
+					</params>
+				</testConfig>
+				<subStepDetails>1.0</subStepDetails>
+				<offsetPlacementRelatively toParam="environment anchor"/>
+				
+				<.showFrame template="3"/> 2, 3, 4/4v, gr, gt, g
+				<showFrame><safeAreaPt x="0 to 1" y="0 to 1"/></showFrame>
+
+				<variables>
+					<libraryName name="useGearFromGameDefinition">game definition:bullshots</libraryName>
+					<int name="bullshotEnvironmentCycleIdx">6</int>
+					<float name="bullshotEnvironmentCyclePt">0.9</float>
+					<float name="bullshotNoonYaw">55.0</float>
+					<float name="bullshotNoonPitch">70.0</float>
+				</variables>
+
+				<camera inRoom="openWorldX=-1 openWorldY=8 cellRoomIdx=3"
+					fov="27">
+					<.keepCamera/>
+					<placement>
+						<translation x="-0.20189" y="-21.13945" z="33.767089"/>
+						<rotation pitch="-2.81" yaw="-27.3284" roll="-0.0"/>
+					</placement>
+				</camera>
+				<cells> cells
+					<cell at="2 5" regionType="places, well:well"/>
+					<cell at="3 7" regionType="places, tower:tower"/>
+				</cells>
+				<objects> objects
+					<object name="player"
+						existingTagged="pilgrim"
+						inRoom="openWorldX=-1 openWorldY=8 cellRoomIdx=49">
+						<lockPlacement/>
+						<placement>
+							<translation x="-0.3" y="0.6" z="0"/>
+							<rotation pitch="0.00" yaw="0.00" roll="-0.00"/>
+						</placement>
+					</object>
+					<object name="barker 001" actorType="npcs:barker"
+						inRoom="openWorldX=-1 openWorldY=8 cellRoomIdx=3"
+						tags="barker_001"
+						>
+						<placement>
+							<translation x="1" y="-18" z="33.8"/>
+							<rotation pitch="0.000000" yaw="0.000000" roll="-0.000000"/>
+						</placement>
+						<randomGenerator base="-1825424148" offset="-1773903766"/>
+						<parameters>
+							<.name name="bullshotEmissiveLayer">attack</name>
+						</parameters>
+					</object>
+					<object name="barker 001 destination" sceneryType="game:none scenery"
+						inRoom="openWorldX=-1 openWorldY=8 cellRoomIdx=3"
+						tags="barker_001_dest"
+						>
+						<placement>
+							<translation x="-1.2" y="-17.72 " z="33.868"/>
+							<rotatiion yaw="180"/>
+						</placement>
+						<randomGenerator base="1"/>
+					</object>
+				</objects>
+			</bullshot>
+			
+			<gameScript name="at towers">
+			====<trap name="bullshot 0"/>
+				<goSubLabel id="reset objects"/>
+				<music requestNone="true"/>
+				<wait/>
+				
+			----<label id="reset objects"/>
+				<find tagged="barker_001" storeVar="barker_001"/>
+				<find tagged="barker_001_dest" storeVar="barker_001_dest"/>
+				<find roomTagged="openWorldX=-1 openWorldY=8 cellRoomIdx=3" storeVar="room_001"/>
+				<find roomTagged="openWorldX=-1 openWorldY=8 cellRoomIdx=29" storeVar="corridor_001"/>
+
+				<teleport objectVar="barker_001" toRoomVar="room_001">
+					<offsetPlacementRelatively toParam="environment anchor"/>
+					<toPlacement>
+						<translation x="0.0" y="-17.5" z="33.8"/>
+						<rotation pitch="0.000000" yaw="-90.000000" roll="-0.000000"/>
+					</toPlacement>
+				</teleport>
+				<locomotion objectVar="barker_001" stop="true"/>
+
+				<returnSub/>
+				
+			====<trap name="bullshot 1"/>
+				<output>barker</output>
+				<goSubLabel id="reset objects"/>
+				<setObjectVar objectVar="barker_001"><name name="scriptedBehaviour">gameScript</name></setObjectVar>
+				<locomotion objectVar="barker_001" stop="true"/>
+				<wait for="1"/>
+				<locomotion objectVar="barker_001" moveToObjectVar="barker_001_dest" moveDirectly="true" moveToRadius="0.1" absoluteSpeed="0.4"/>
+				<wait/>
+				
+				<wait/>
+			</gameScript>
+		</_section>
+
+		<._section> at bridge
+			
+			<bullshot id="at bridge">
+				<testConfig>
+					<params>
+						<libraryName name="testGameScript">bullshots:at bridge</libraryName>
+						<vectorInt2 name="testOpenWorldCell" x="-3" y="2"/>
+						<libraryName name="testPilgrimage">pilgrimage, 03 outer rim:pilgrimage</libraryName>
+						<int name="testSeed">124563263</int>
+						<vector2 name="testPlayArea" x="4.51" y="4.51"/>
+						<float name="testScaling">1.0</float>
+						<name name="testPreferredTileSize">auto</name>
+						<float name="testTileSize">0.9</float>
+						<float name="testDoorHeight">2.000000000</float>
+						<bool name="testAllowCrouch">true</bool>
+						<bool name="testAllowAnyCrouch">true</bool>
+						<string name="testGenerationTags">gm_invincible=1 gm_vulnerable=0 gm_noCrouch=0 gm_navigator=1 gm_highEnergy=0 gm_lowEnergy=0 gm_noEnemies=0 gm_tougherEnemies=0 gm_noOne=0 gm_quickTriggerEnemies=0 allowCrouch allowAnyCrouch</string>
+						<string name="testDifficultySettings">playerImmortal=0 weaponInfinite=0 armourIneffective=0 nonDegradableWeaponParts=0 autoMapOnly=1 npcs=3.000 playerDamageGiven playerDamageTaken aiReactionTime lootHealth lootAmmo</string>
+					</params>
+				</testConfig>
+				<subStepDetails>1.0</subStepDetails>
+				<offsetPlacementRelatively toParam="environment anchor"/>
+				
+				<.showFrame template="3"/> 2, 3, 4/4v, gr, gt, g
+				<showFrame><safeAreaPt x="0 to 1" y="0 to 1"/></showFrame>
+
+				<variables>
+					<libraryName name="useGearFromGameDefinition">game definition:bullshots</libraryName>
+					<int name="bullshotEnvironmentCycleIdx">7</int>
+					<float name="bullshotEnvironmentCyclePt">0.6</float>
+					<float name="bullshotNoonYaw">10.0</float>
+					<float name="bullshotNoonPitch">70.0</float>
+				</variables>
+
+				<camera inRoom="openWorldX=-3 openWorldY=2 cellRoomIdx=3"
+					fov="27">
+					<keepCamera/>
+					<placement>
+						<translation x="-16.069" y="5.1046" z="4.285"/>
+						<rotation pitch="0.79" yaw="-67.86" roll="-0.0"/>
+					</placement>
+				</camera>
+				<cells> cells
+					<cell at="2 5" regionType="places, well:well"/>
+					<cell at="3 7" regionType="places, tower:tower"/>
+				</cells>
+				<objects> objects
+					<object name="player"
+						existingTagged="pilgrim"
+						inRoom="openWorldX=-3 openWorldY=2 cellRoomIdx=49">
+						<lockPlacement/>
+						<placement>
+							<translation x="-0.3" y="0.6" z="0"/>
+							<rotation pitch="0.00" yaw="0.00" roll="-0.00"/>
+						</placement>
+					</object>
+					<object name="enforcer 001" actorType="npcs:enforcer"
+						inRoom="openWorldX=-3 openWorldY=2 cellRoomIdx=3"
+						tags="enforcer_001"
+						>
+						<placement>
+							<translation x="-24.8" y="9.9" z="3.56"/>
+							<rotation pitch="0.000000" yaw="0.000000" roll="-0.000000"/>
+						</placement>
+						<randomGenerator base="-1825424148" offset="-1773903766"/>
+						<parameters>
+							<.name name="bullshotEmissiveLayer">attack</name>
+						</parameters>
+					</object>
+					<object name="airship 001" sceneryType="airships:airship bullshot"
+						inRoom="openWorldX=-3 openWorldY=2 cellRoomIdx=3"
+						tags="airship_001"
+						>
+						<placement>
+							<translation x="-200" y="120" z="90"/>
+							<rotation pitch="0.000000" yaw="150.000000" roll="-0.000000"/>
+						</placement>
+						<randomGenerator base="14" offset="12"/>
+						<parameters>
+							<.name name="bullshotEmissiveLayer">attack</name>
+						</parameters>
+					</object>
+				</objects>
+			</bullshot>
+			
+			<gameScript name="at bridge">
+			====<trap name="bullshot 0"/>
+				<goSubLabel id="reset objects"/>
+				<music requestNone="true"/>
+				<wait/>
+				
+			----<label id="reset objects"/>
+				<find tagged="enforcer_001" storeVar="enforcer_001"/>
+				<find roomTagged="openWorldX=-3 openWorldY=2 cellRoomIdx=3" storeVar="room_001"/>
+				<find tagged="airship_001" storeVar="airship_001"/>
+
+				<teleport objectVar="enforcer_001" toRoomVar="room_001">
+					<offsetPlacementRelatively toParam="environment anchor"/>
+					<toPlacement>
+						<translation x="-24.2" y="9.9" z="3.56"/>
+						<rotation pitch="0.000000" yaw="-90.000000" roll="-0.000000"/>
+					</toPlacement>
+				</teleport>
+				<locomotion objectVar="enforcer_001" stop="true"/>
+				<teleport objectVar="airship_001" toRoomVar="room_001">
+					<offsetPlacementRelatively toParam="environment anchor"/>
+					<toPlacement>
+						<translation x="-200" y="120" z="90"/>
+						<rotation pitch="0.000000" yaw="150.000000" roll="-0.000000"/>
+					</toPlacement>
+				</teleport>
+				<locomotion objectVar="airship_001" stop="true"/>
+				<setObjectVar objectVar="airship_001"><name name="scriptedBehaviour">reset</name></setObjectVar>
+				<emissive objectVar="airship_001" stop="true"/>
+				<changeScript objectVar="airship_001" to="bullshots:airship_001 emissive"/>
+				<triggerTrap name="airship_001 emissive reset"/>
+				
+				<returnSub/>
+				
+			====<trap name="bullshot 1"/>
+				<output>enforcer</output>
+				<goSubLabel id="reset objects"/>
+				<locomotion objectVar="enforcer_001" stop="true"/>
+				<setObjectVar objectVar="enforcer_001"><name name="scriptedBehaviour">scan</name></setObjectVar>
+				<forceCamera drop="true"/> to reset and force it
+				<forceCamera inRoomVar="room_001" fov="27">
+					<offsetPlacementRelatively toParam="environment anchor"/>
+					<placement>
+						<translation x="-16.069" y="5.1046" z="4.285"/>
+						<rotation pitch="0.79" yaw="-67.86" roll="-0.0"/>
+					</placement>
+				</forceCamera>
+				<wait/>
+				
+			====<trap name="bullshot 2"/>
+				<output>look up</output>
+				<locomotion objectVar="airship_001" moveToRadius="0.1"
+					absoluteSpeed="5">
+					<moveToLoc x="100" y="30" z="90" />
+				</locomotion>
+				<forceCamera drop="true"/> to reset and force it
+				<forceCamera inRoomVar="room_001" fov="27">
+					<offsetPlacementRelatively toParam="environment anchor"/>
+					<placement>
+						<translation x="-16.069" y="5.1046" z="4.285"/>
+						<rotation pitch="0.79" yaw="-67.86" roll="-0.0"/>
+					</placement>
+				</forceCamera>
+				<triggerTrap name="airship_001 emissive delayed"/>
+				<.forceCamera inRoomVar="room_001" fov="27" blendTime="5" blend="cubic">
+					<offsetPlacementRelatively toParam="environment anchor"/>
+					<placement>
+						<translation x="-16.069" y="5.1046" z="3.014"/>
+						<rotation pitch="18.657" yaw="-67.86" roll="-0.0"/>
+					</placement>
+				</forceCamera>
+				<forceCamera inRoomVar="room_001" fov="27" blendTime="7" blend="cubic">
+					<offsetPlacementRelatively toParam="environment anchor"/>
+					<placement>
+						<translation x="-16.069" y="5.1046" z="2.714"/>
+						<rotation pitch="24.657" yaw="-67.86" roll="-0.0"/>
+					</placement>
+				</forceCamera>
+				<wait/>
+
+				<wait/>
+			</gameScript>
+
+			<gameScript name="airship_001 emissive">
+			====<trap name="airship_001 emissive reset"/>
+				<emissive stop="true"/>
+				<wait/>
+				
+			====<trap name="airship_001 emissive delayed"/>
+				<wait for="4"/>
+				<emissive activate="siren"/>
+				<wait/>
+			</gameScript>
+		</_section>
+
+	</_section>
+
+	<._section> fly by at palace
+			
+		<bullshot id="fly by at palace">
+			<setting>airships</setting>
+			<testConfig>
+				<params>
+					<libraryName name="testGameScript">bullshots:fly by at palace</libraryName>
+					<vectorInt2 name="testOpenWorldCell" x="4" y="4"/>
+					<libraryName name="testPilgrimage">pilgrimage, 03 outer rim:pilgrimage</libraryName>
+					<int name="testSeed">124563263</int>
+					<vector2 name="testPlayArea" x="4.51" y="4.51"/>
+					<float name="testScaling">1.0</float>
+					<name name="testPreferredTileSize">auto</name>
+					<float name="testTileSize">0.9</float>
+					<float name="testDoorHeight">2.000000000</float>
+					<bool name="testAllowCrouch">true</bool>
+					<bool name="testAllowAnyCrouch">true</bool>
+					<string name="testGenerationTags">gm_invincible=1 gm_vulnerable=0 gm_noCrouch=0 gm_navigator=1 gm_highEnergy=0 gm_lowEnergy=0 gm_noEnemies=0 gm_tougherEnemies=0 gm_noOne=0 gm_quickTriggerEnemies=0 allowCrouch allowAnyCrouch</string>
+					<string name="testDifficultySettings">playerImmortal=1 weaponInfinite=0 armourIneffective=0 nonDegradableWeaponParts=0 autoMapOnly=1 npcs=3.000 playerDamageGiven playerDamageTaken aiReactionTime lootHealth lootAmmo</string>
+				</params>
+			</testConfig>
+			<subStepDetails>1.0</subStepDetails>
+			<offsetPlacementRelatively toParam="environment anchor"/>
+			
+			<.showFrame template="2"/> 2, 3, 4/4v, gr, gt, g
+			<showFrame><safeAreaPt x="0 to 1" y="0 to 1"/></showFrame>
+
+			<cells> cells
+				<cell at="4 3" regionType="places, towers:towers"/>
+				<cell at="5 5" regionType="places, towers:towers"/>
+				<cell at="5 6" regionType="places, crouch maze:crouch maze"/>
+			</cells>
+
+			<variables>
+				<libraryName name="useGearFromGameDefinition">game definition:bullshots</libraryName>
+				<int name="bullshotEnvironmentCycleIdx">7</int>
+				<float name="bullshotEnvironmentCyclePt">0.7</float>
+				<float name="bullshotNoonYaw">80.0</float>
+				<float name="bullshotNoonPitch">70.0</float>
+			</variables>
+
+			<camera inRoom="openWorldX=4 openWorldY=4 cellRoomIdx=3"
+				fov="27"
+				nearZ="0.3">
+				<keepCamera/>
+				<placement>
+					<translation x="2.024" y="-29.78641" z="38.31"/>
+					<rotation pitch="-3" yaw="33.0" roll="-0.0"/>
+				</placement>
+			</camera>
+			<objects> objects
+				<object name="player"
+					existingTagged="pilgrim"
+					inRoom="openWorldX=4 openWorldY=4 cellRoomIdx=3">
+					<lockPlacement/>
+					<placement>
+						<translation x="-0.3" y="0.6" z="0"/>
+						<rotation pitch="0.00" yaw="0.00" roll="-0.00"/>
+					</placement>
+				</object>
+			</objects>
+		</bullshot>
+		
+		<gameScript name="fly by at palace">
+		====<trap name="bullshot 0"/>
+			<music requestNone="true"/>
+			<wait/>
+			
+		====<trap name="bullshot 1"/>
+			<find roomTagged="openWorldX=4 openWorldY=4 cellRoomIdx=3" storeVar="outside_001"/>
+			<forceCamera drop="true"/> to reset and force it
+			<forceCamera inRoomVar="outside_001" fov="40">
+				<placement>
+					<translation x="15" y="-350" z="32"/>
+					<rotation pitch="-73" yaw="0.8" roll="-0.0"/>
+				</placement>
+			</forceCamera>
+			<forceCamera inRoomVar="outside_001" blendTime="10" rotationBlend="cubic out">
+				<placement>
+					<translation x="15" y="400" z="40"/>
+					<rotation pitch="18.0" yaw="1.4" roll="-0.0"/>
+				</placement>
+			</forceCamera>
+			<wait/>
+			
+			<wait/>
+		</gameScript>
+	</_section>
+
+	<._section> infested airship
+			
+		<bullshot id="infested airship">
+			<.setting>airships</setting>
+			<testConfig>
+				<params>
+					<libraryName name="testGameScript">bullshots:infested airship</libraryName>
+					<vectorInt2 name="testOpenWorldCell" x="18" y="5"/>
+					<libraryName name="testPilgrimage">pilgrimage, 03 outer rim:pilgrimage</libraryName>
+					<int name="testSeed">124563263</int>
+					<vector2 name="testPlayArea" x="4.51" y="4.51"/>
+					<float name="testScaling">1.0</float>
+					<name name="testPreferredTileSize">auto</name>
+					<float name="testTileSize">0.9</float>
+					<float name="testDoorHeight">2.000000000</float>
+					<bool name="testAllowCrouch">true</bool>
+					<bool name="testAllowAnyCrouch">true</bool>
+					<string name="testGenerationTags">gm_invincible=1 gm_vulnerable=0 gm_noCrouch=0 gm_navigator=1 gm_highEnergy=0 gm_lowEnergy=0 gm_noEnemies=0 gm_tougherEnemies=0 gm_noOne=0 gm_quickTriggerEnemies=0 allowCrouch allowAnyCrouch</string>
+					<string name="testDifficultySettings">playerImmortal=1 weaponInfinite=0 armourIneffective=0 nonDegradableWeaponParts=0 autoMapOnly=1 npcs=3.000 playerDamageGiven playerDamageTaken aiReactionTime lootHealth lootAmmo</string>
+				</params>
+			</testConfig>
+			<subStepDetails>1.0</subStepDetails>
+			<offsetPlacementRelatively toParam="environment anchor"/>
+			
+			<.showFrame template="2"/> 2, 3, 4/4v, gr, gt, g
+			<showFrame><safeAreaPt x="0 to 1" y="0 to 1"/></showFrame>
+
+			<cells> cells
+				<cell at="4 3" regionType="places, towers:towers"/>
+				<cell at="5 5" regionType="places, towers:towers"/>
+				<cell at="5 6" regionType="places, crouch maze:crouch maze"/>
+			</cells>
+
+			<variables>
+				<libraryName name="useGearFromGameDefinition">game definition:bullshots</libraryName>
+				<int name="bullshotEnvironmentCycleIdx">22</int>
+				<float name="bullshotEnvironmentCyclePt">0.7</float>
+				<float name="bullshotNoonYaw">100.0</float>
+				<float name="bullshotNoonPitch">50.0</float>
+			</variables>
+
+			<camera inRoom="openWorldX=18 openWorldY=5 cellRoomIdx=3"
+				fov="70"
+				nearZ="0.3">
+				<keepCamera/>
+				<placement>
+					<translation x="11.33" y="7.05" z="-15.68"/>
+					<rotation pitch="-7.6" yaw="-162.83" roll="0.0"/>
+				</placement>
+			</camera>
+			<objects> objects
+				<object name="player"
+					existingTagged="pilgrim"
+					inRoom="openWorldX=18 openWorldY=5 cellRoomIdx=3">
+					<lockPlacement/>
+					<placement>
+						<translation x="-0.3" y="0.6" z="0"/>
+						<rotation pitch="0.00" yaw="0.00" roll="-0.00"/>
+					</placement>
+				</object>
+				<object name="infested airship" sceneryType="airships:infested airship bullshot"
+					inRoom="openWorldX=18 openWorldY=5 cellRoomIdx=3"
+					tags="infested_airship_001"
+					>
+					<placement>
+						<translation x="70" y="-200" z="76.37"/>
+						<rotation pitch="0.000000" yaw="150.000000" roll="-0.000000"/>
+					</placement>
+					<randomGenerator base="-1825424148" offset="-1773903766"/>
+					<parameters>
+						<.name name="bullshotEmissiveLayer">attack</name>
+					</parameters>
+				</object>
+			</objects>
+		</bullshot>
+		
+		<gameScript name="infested airship">
+		====<trap name="bullshot 0"/>
+			<music requestNone="true"/>
+			<wait/>
+			
+		====<trap name="bullshot 1"/>
+			<find tagged="infested_airship_001" storeVar="infested_airship_001"/>
+			<find roomTagged="openWorldX=18 openWorldY=5 cellRoomIdx=3" storeVar="outside_001"/>
+			<teleport objectVar="infested_airship_001" toRoomVar="outside_001">
+				<offsetPlacementRelatively toParam="environment anchor"/>
+				<toPlacement>
+					<translation x="150" y="-230" z="48.37"/>
+					<rotation pitch="1" yaw="-45.000000" roll="-0.000000"/>
+				</toPlacement>
+			</teleport>
+			<locomotion objectVar="infested_airship_001" stop="true"/>
+			<wait for="0.01"/>
+			<setObjectVar objectVar="infested_airship_001"><name name="scriptedBehaviour">reset</name></setObjectVar>
+			<emissive objectVar="infested_airship_001" stop="true"/>
+			<emissive objectVar="infested_airship_001" activate="alarm"/>
+
+			<locomotion objectVar="infested_airship_001" dontControl="true"/>
+			<movementControl objectVar="infested_airship_001">
+				<requestedRelativeVelocity y="80"/>
+				<requestedRelativeRotation pitch="0.1" yaw="1.5" roll="2"/>
+			</movementControl>
+
+			<forceCamera drop="true"/> to reset and force it
+			<forceSoundCamera drop="true"/>
+			<forceSoundCamera inRoomVar="outside_001">
+				<offsetPlacementRelatively toParam="environment anchor"/>
+				<placement>
+					<translation x="-13" y="-20" z="12"/>
+					<rotation pitch="-7.6" yaw="-162.83" roll="0.0"/>
+				</placement>
+			</forceSoundCamera>
+			<forceCamera inRoomVar="outside_001" fov="70" time="1">
+				<offsetPlacementRelatively toParam="environment anchor"/>
+				<placement>
+					<translation x="11.33" y="7.05" z="-15.68"/>
+					<rotation pitch="-7.6" yaw="-162.83" roll="0.0"/>
+				</placement>
+			</forceCamera>
+			<forceCamera inRoomVar="outside_001" time="2.5" blendTime="4" blend="cubic">
+				<offsetPlacementRelatively toParam="environment anchor"/>
+				<placement>
+					<translation x="11.33" y="7.05" z="-15.68"/>
+					<rotation pitch="42" yaw="-140" roll="0.0"/>
+				</placement>
+			</forceCamera>
+			<forceCamera inRoomVar="outside_001" blendTime="1" time="10" atObjectVar="infested_airship_001" blend="cubic">
+				<offsetPlacementRelatively toParam="environment anchor"/>
+				<placement>
+					<translation x="11.33" y="7.05" z="-15.68"/>
+					<rotation pitch="12" yaw="-140" roll="0.0"/>
+				</placement>
+				<atRelPlacement>
+					<translation z="-10"/>
+				</atRelPlacement>
+			</forceCamera>
+			<!--
+			<forceCamera inRoomVar="outside_001" fov="70">
+				<placement>
+					<translation x="-9.76" y="139.65" z="2.39"/>
+					<rotation pitch="41" yaw="149" roll="10.0"/>
+				</placement>
+			</forceCamera>
+			<wait for="6"/>
+			<forceCamera inRoomVar="outside_001" blendTime="2.2" rotationBlend="cubic">
+				<placement>
+					<translation x="-9.76" y="138.65" z="2.39"/>
+					<rotation pitch="20" yaw="13" roll="-5"/>
+				</placement>
+			</forceCamera>
+			- - >
+			<wait/>
+			
+			<wait/>
+		</gameScript>
+	</_section>
+	
+	<_section> store assets
+		<_load> frames
+		---	oculus
+			restart
+			<._load filter="oculus - hero cover">		<_load filter="wide"/>								<_load filter="different cell"/>		</_load>
+			<._load filter="oculus - mini landscape">	<_load filter="wide"/> <_load filter="bitsmaller"/>	<_load filter="different cell"/>		</_load>
+			restart
+			<._load filter="oculus - icon">				<_load filter="icon"/>																		</_load>
+			<._load filter="oculus - cover landscape">	<_load filter="normal"/>																	</_load>
+			<._load filter="oculus - cover square">		<_load filter="normal"/>																	</_load>
+			<._load filter="oculus - cover portrait">	<_load filter="portrait"/>																	</_load>
+			restart
+			<._load filter="oculus - logo">				<_load filter="logo"/>																		</_load>
+
+		---	www
+			<._load filter="oculus - page background">	<_load filter="page"/>																		</_load>
+			restart
+			<._load filter="screenshot - tower fight">	<_load filter="normal"/> <_load filter="towers fight"/>	<_load filter="airfighersMid"/>																</_load>
+			
+		---	steam
+			restart
+			<._load filter="steam - store page - capsule header">			<_load filter="logo"/>		<_load filter="logo left"/>		<_load filter="airshipsTower"/>	</_load>
+			<_load filter="steam - store page - capsule small">			<_load filter="logo"/>		<_load filter="logo plain"/>	<_load filter="airshipsTower"/>
+						<_load filter="pilgrim relaxed"/>					<_load filter="pilgrim standing at tower's edge"/>											</_load>
+			<._load filter="steam - community - small">						<_load filter="logo"/>		<_load filter="logo plain"/>	<_load filter="airshipsTower"/>	</_load>
+			restart
+			<._load filter="steam - store page - capsule main">				<_load filter="normal"/>																	</_load>
+			<._load filter="steam - store page - capsule vertical">			<_load filter="normal"/>	<_load filter="store capsule"/>									</_load>
+			<._load filter="steam - library - library capsule">				<_load filter="portrait"/>	<_load filter="library capsule"/>								</_load>
+			restart					
+			<._load filter="steam - library - library hero">				<_load filter="wide"/>		<_load filter="different cell"/>					
+																			<_load filter="no logo"/>	<_load filter="library hero"/>									</_load>
+			<._load filter="steam - event - event cover">					<_load filter="wide"/>		<_load filter="different cell"/>					
+																			<_load filter="no logo"/>	<_load filter="event cover"/>									</_load>
+			just use big white logo	<._load filter="steam - library - library logo transparent">																		</_load>
+			restart
+			<._load filter="steam - community - icon">						<_load filter="no logo"/>	<_load filter="community icon"/><_load filter="airshipsTower"/>	</_load>
+
+		--- vive
+			<._load filter="vive - cover portrait">							<_load filter="portrait"/>	<_load filter="portrait hero"/>									</_load>
+
+		---	itch
+			restart
+			<._load filter="itch - banner">									<_load filter="logo"/>		<_load filter="logo plain"/>	<_load filter="airshipsTower"/>	</_load>
+			restart
+			<._load filter="itch - logo">									<_load filter="normal"/>																	</_load>
+
+		---	sidequest
+			restart
+			<!-- banner is okay, but should be added here - - >
+			<._load filter="sidequest - listing">							<_load filter="normal"/><_load filter="bit up"/>											</_load>
+
+																					
+		</_load>
+		
+		<_section noFilter="community icon">
+			<_section noFilter="logo">
+				<_section noFilter="page">
+					<_load>	content
+						<_load filter="airshipsTower"/>
+						<_load filter="airshipsMid"/>
+						<_load filter="airshipsHigh"/>
+						<_load filter="airshipsClose"/>
+					</_load>
+				</_section>
+			</_section>
+		</_section>
+		
+		<bullshot id="logos"> logos
+			<setting>bullshot guidance</setting>
+			<setting>fixed rotate randomly</setting>
+			<testConfig>
+				<params>
+					<vectorInt2 name="testOpenWorldCell" x="-5" y="4"/>
+					<int name="testCellRoomIdx">3</int>
+					<libraryName name="testPilgrimage">pilgrimage, 03 outer rim:pilgrimage</libraryName>
+					<libraryName name="testGameDefinition">game definition:main</libraryName>
+					<int name="testSeed">60860263</int>
+					<vector2 name="testPlayArea" x="3.30" y="3.30"/>
+					<float name="testScaling">1.0</float>
+					<name name="testPreferredTileSize">auto</name>
+					<float name="testTileSize">0.824999988</float>
+					<float name="testDoorHeight">2.000000000</float>
+					<bool name="testAllowCrouch">true</bool>
+					<bool name="testAllowAnyCrouch">true</bool>
+					<string name="testGenerationTags">gm_invincible=1 gm_vulnerable=0 gm_noCrouch=0 gm_navigator=1 gm_highEnergy=0 gm_lowEnergy=0 gm_noEnemies=0 gm_tougherEnemies=0 gm_noOne=0 gm_quickTriggerEnemies=0 allowCrouch allowAnyCrouch</string>
+					<string name="testDifficultySettings">playerImmortal=0 weaponInfinite=0 armourIneffective=0 nonDegradableWeaponParts=0 autoMapOnly=1 npcs=3.000 playerDamageGiven playerDamageTaken aiReactionTime lootHealth lootAmmo</string>
+				</params>
+			</testConfig>
+			<subStepDetails>1.0</subStepDetails>
+			<offsetPlacementRelatively toParam="environment anchor"/>
+			
+			<showFrame template="3"/> 2, 3, 4/4v, gr, gt, g
+			<_section filter="oculus - hero cover">		<showFrame width="3000" height="900" ><safeAreaPt x="0.30 to 0.70" y="0.25 to 0.75"/></showFrame></_section>
+			<_section filter="oculus - mini landscape">	<showFrame width="1080" height="360" ><safeAreaPt x="0.30 to 0.70" y="0.25 to 0.75"/></showFrame></_section>
+			<_section filter="oculus - cover landscape"><showFrame width="2560" height="1440"><safeAreaPt x="0.05 to 0.95" y="0.20 to 0.80"/></showFrame></_section>
+			<_section filter="oculus - cover square">	<showFrame width="1440" height="1440"><safeAreaPt x="0.07 to 0.93" y="0.20 to 0.93"/></showFrame></_section>
+			<_section filter="oculus - cover portrait">	<showFrame width="1008" height="1440"><safeAreaPt x="0.10 to 0.90" y="0.20 to 0.93"/></showFrame></_section>
+			<_section filter="oculus - icon">			<showFrame width="512"  height="512" >												 </showFrame></_section>
+			<_section filter="oculus - logo">			<showFrame width="1440" height="1440">												 </showFrame></_section>
+			<_section filter="oculus - page background"><showFrame width="1920" height="1080">												 </showFrame></_section>
+
+			<_section filter="steam - store page - capsule header"> 		<showFrame width="460"  height="215"><renderCentreOffsetPt x="0.24" y="-0.22"/>			</showFrame></_section>
+			<_section filter="steam - store page - capsule small"> 			<showFrame width="231"  height="87"><renderCentreOffsetPt x="0.23" y="-0.18"/>			</showFrame></_section>
+			<_section filter="steam - community - small">					<showFrame width="184"  height="69"><renderCentreOffsetPt x="0.23" y="-0.18"/>			</showFrame></_section>
+			<_section filter="steam - store page - capsule main"> 			<showFrame width="616"  height="353">							 						</showFrame></_section>
+			<_section filter="steam - store page - capsule vertical"> 		<showFrame width="374"  height="448"><renderCentreOffsetPt x="0.0" _y="0.025"/>			</showFrame></_section>
+			<_section filter="steam - library - library capsule">			<showFrame width="600"  height="900"><renderCentreOffsetPt x="0.0" _y="0.025"/>			</showFrame></_section>
+			<_section filter="steam - library - library hero">				<showFrame width="3840" height="1240"><safeAreaPt x="0.28 to 0.72" y="0.20 to 0.80"/>
+																												<renderCentreOffsetPt x="0.0" y="-0.13"/>			</showFrame></_section>
+			<_section filter="steam - library - library logo transparent">	<showFrame width="630"  height="360">							 						</showFrame></_section>
+			<_section filter="steam - event - event cover">					<showFrame width="800"  height="450"><renderCentreOffsetPt x="0.0" y="-0.3"/>			</showFrame></_section>
+			<_section filter="steam - community - icon">					<showFrame width="32"   height="32"><renderCentreOffsetPt x="0.05" y="-0.35"/>			</showFrame></_section>
+			
+			<_section filter="vive - cover portrait">						<showFrame width="316"  height="554"><renderCentreOffsetPt x="0.0" y="0.1"/>			</showFrame></_section>
+
+			<_section filter="itch - banner">								<showFrame width="1920" height="898"><renderCentreOffsetPt x="0.23" y="-0.18"/>			</showFrame></_section>
+			<_section filter="itch - logo">									<showFrame width="630" height="500">													</showFrame></_section>
+			
+			<_section filter="sidequest - listing">							<showFrame width="854" height="480">													</showFrame></_section>
+
+			<logos>
+				<_section noFilter="no logo">
+					<_section noFilter="page">
+						<_section filter="logo">
+							<_section filter="logo plain">
+								<logo
+									.texturePart="logo:logo white 2048 plus"
+									texturePart="logo:logo white w shadow 2048 plus"
+									sizePt="1.05">
+									<atPt x="0.36" y="0.5"/>
+								</logo>
+							</_section>
+							<_section noFilter="logo plain">
+								<_section filter="logo left">
+									<logo
+										.texturePart="logo:logo white 2048 plus"
+										texturePart="logo:logo white w shadow 2048 plus"
+										sizePt="0.85">
+										<atPt x="0.31" y="0.5"/>
+									</logo>
+								</_section>
+								<_section noFilter="logo left">
+									<logo
+										.texturePart="logo:logo white 2048 plus"
+										texturePart="logo:logo white w shadow 2048 plus"
+										sizePt="0.85">
+										<atPt x="0.5" y="0.5"/>
+									</logo>
+								</_section>
+							</_section>
+						</_section>
+						<_section noFilter="logo">
+							<_section filter="icon">
+								<logo
+									.texturePart="logo:logo white 2048 plus"
+									texturePart="logo:logo white w shadow 2048 plus"
+									sizePt="0.55">
+									<atPt x="0.5" y="0.30"/>
+								</logo>
+							</_section>
+							<_section noFilter="icon">
+								<_section noFilter="wide">
+									<_section filter="vive - cover portrait">
+										<logo
+											.texturePart="logo:logo white 2048 plus"
+											texturePart="logo:logo white w shadow 2048 plus"
+											sizePt="0.46">
+											<atPt x="0.5" y="0.525"/>
+										</logo>
+									</_section>
+									<_section noFilter="vive - cover portrait">
+										<_section filter="store capsule">
+											<logo
+												.texturePart="logo:logo white 2048 plus"
+												texturePart="logo:logo white w shadow 2048 plus"
+												sizePt="0.46">
+												<atPt x="0.5" y="0.40"/>
+											</logo>
+										</_section>
+										<_section noFilter="store capsule">
+											<_section filter="portrait">
+												<logo
+													.texturePart="logo:logo white 2048 plus"
+													texturePart="logo:logo white w shadow 2048 plus"
+													sizePt="0.57">
+													<atPt x="0.5" y="0.40"/>
+												</logo>
+											</_section>
+											<_section noFilter="portrait">
+												<logo
+													.texturePart="logo:logo white 2048 plus"
+													texturePart="logo:logo white w shadow 2048 plus"
+													sizePt="0.4">
+													<atPt x="0.5" y="0.40"/>
+												</logo>
+											</_section>
+										</_section>
+									</_section>
+								</_section>
+								<_section filter="wide">
+									<_section noFilter="bitsmaller">
+										<logo
+											.texturePart="logo:logo white 2048 plus"
+											texturePart="logo:logo white w shadow 2048 plus"
+											sizePt="0.4">
+											<atPt x="0.5" y="0.43"/>
+										</logo>
+									</_section>
+									<_section filter="bitsmaller">
+										<logo
+											.texturePart="logo:logo white 2048 plus"
+											texturePart="logo:logo white w shadow 2048 plus"
+											sizePt="0.36">
+											3000/900 = 3,333333333333333
+											1080/360 = 3
+											
+											new size = old size * 3 / 3,3333333333333333
+											
+											placement should be relative to centre
+											old y = 0,5 - 0,07
+											new y = 0,5 - 0,07 * new size / old size
+											<atPt x="0.5" y="0.437"/>
+										</logo>
+									</_section>
+								</_section>
+							</_section>
+						</_section>
+					</_section>
+				</_section>
+			</logos>
+			
+			<variables>
+				<libraryName name="useGearFromGameDefinition">game definition:bullshots</libraryName>
+				<_section noFilter="wide">
+					<int name="useGearFromGameDefinitionIdx">0</int>
+				</_section>
+				<_section filter="wide">
+					<int name="useGearFromGameDefinitionIdx">1</int>
+				</_section>
+				<!--
+				<int name="bullshotEnvironmentCycleIdx">7</int>
+				<float name="bullshotEnvironmentCyclePt">0.7</float>
+				<float name="bullshotNoonYaw">80.0</float>
+				<float name="bullshotNoonPitch">60.0</float>
+				- - >
+				<!--
+				<int name="bullshotEnvironmentCycleIdx">6</int>
+				<float name="bullshotEnvironmentCyclePt">0.5</float>
+				<float name="bullshotNoonYaw">86</float>
+				<float name="bullshotNoonPitch">2.0</float>
+				- - >
+				<_section filter="page">
+					<int name="bullshotEnvironmentCycleIdx">7</int>
+					<float name="bullshotEnvironmentCyclePt">0.44</float>
+					<float name="bullshotNoonYaw">78.9</float>
+					<float name="bullshotNoonPitch">60.0</float>
+				</_section>
+				<_section noFilter="page">
+					<_section filter="logo">
+						<int name="bullshotEnvironmentCycleIdx">7</int>
+						<float name="bullshotEnvironmentCyclePt">0.44</float>
+						<float name="bullshotNoonYaw">78.9</float>
+						<float name="bullshotNoonPitch">60.0</float>
+					</_section>
+					<_section noFilter="logo">
+						<_section filter="icon">
+							<int name="bullshotEnvironmentCycleIdx">7</int>
+							<float name="bullshotEnvironmentCyclePt">0.40</float>
+							<float name="bullshotNoonYaw">78.2</float>
+							<float name="bullshotNoonPitch">50.0</float>
+						</_section>
+						<_section noFilter="icon">
+							<_section noFilter="wide">
+								<_section filter="portrait">
+									<int name="bullshotEnvironmentCycleIdx">7</int>
+									<float name="bullshotEnvironmentCyclePt">0.40</float>
+									<float name="bullshotNoonYaw">81.2</float>
+									<float name="bullshotNoonPitch">50.0</float>
+								</_section>
+								<_section noFilter="portrait">
+									<int name="bullshotEnvironmentCycleIdx">7</int>
+									<float name="bullshotEnvironmentCyclePt">0.40</float>
+									<float name="bullshotNoonYaw">78.2</float>
+									<float name="bullshotNoonPitch">50.0</float>
+								</_section>
+							</_section>
+							<_section filter="wide">
+								<int name="bullshotEnvironmentCycleIdx">7</int>
+								<float name="bullshotEnvironmentCyclePt">0.45</float>
+								<float name="bullshotNoonYaw">79</float>
+								<float name="bullshotNoonPitch">50.0</float>
+							</_section>
+						</_section>
+					</_section>
+				</_section>
+			</variables>
+			<_section> cameras
+				<_section filter="page">
+					<camera inRoom="openWorldX=-5 openWorldY=4 cellRoomIdx=3"
+						fov="80"
+						nearZ="0.1">
+						<.keepCamera/>
+						<placement>
+							<translation x="0.0" y="-100" z="95"/>
+							<rotation pitch="5.0" yaw="0.0" roll="-0.0"/>
+						</placement>
+					</camera>
+				</_section>
+				<_section noFilter="page">
+					<_section filter="community icon">
+						<camera inRoom="openWorldX=-5 openWorldY=4 cellRoomIdx=3"
+							fov="40"
+							nearZ="0.1">
+							<.keepCamera/>
+							<placement>
+								<translation x="0.0" y="-100" z="95"/>
+								<rotation pitch="0.0" yaw="0.0" roll="-0.0"/>
+							</placement>
+						</camera>
+					</_section>
+					<_section noFilter="community icon">
+						<_section filter="event cover">
+							<camera inRoom="openWorldX=-5 openWorldY=4 cellRoomIdx=3"
+								fov="40"
+								nearZ="0.1">
+								<.keepCamera/>
+								<placement>
+									<translation x="-0.007" y="4.536" z="10.493"/>
+									<rotation pitch="0.0" yaw="0.0" roll="-0.0"/>
+								</placement>
+							</camera>
+						</_section>
+						<_section noFilter="event cover">
+							<_section filter="library hero">
+								<camera inRoom="openWorldX=-5 openWorldY=4 cellRoomIdx=3"
+									fov="80"
+									nearZ="0.1">
+									<.keepCamera/>
+									<placement>
+										<translation x="0.0" y="16" z="26"/>
+										<rotation pitch="0.0" yaw="0.0" roll="-0.0"/>
+									</placement>
+								</camera>
+							</_section>
+							<_section noFilter="library hero">
+								<_section filter="logo">
+									<_section filter="logo left">
+										<camera inRoom="openWorldX=-5 openWorldY=4 cellRoomIdx=3"
+											fov="40"
+											nearZ="0.1">
+											<.keepCamera/>
+											<placement>
+												<translation x="0.0" y="-100" z="95"/>
+												<rotation pitch="5.0" yaw="0.0" roll="-0.0"/>
+											</placement>
+										</camera>
+									</_section>
+									<_section noFilter="logo left">
+										<camera inRoom="openWorldX=-5 openWorldY=4 cellRoomIdx=3"
+											fov="50"
+											nearZ="0.1">
+											<.keepCamera/>
+											<placement>
+												<translation x="0.0" y="-100" z="95"/>
+												<rotation pitch="5.0" yaw="0.0" roll="-0.0"/>
+											</placement>
+										</camera>
+									</_section>
+								</_section>
+								<_section noFilter="logo">
+									<_section filter="icon">
+										<camera inRoom="openWorldX=-5 openWorldY=4 cellRoomIdx=3"
+											fov="50"
+											nearZ="0.1">
+											<.keepCamera/>
+											<placement>
+												<translation x="0.0" y="16" z="26"/>
+												<rotation pitch="5.0" yaw="0.0" roll="-0.0"/>
+											</placement>
+										</camera>
+									</_section>
+									<_section noFilter="icon">
+										<_section noFilter="wide">
+											<_section filter="bit up">
+												<camera inRoom="openWorldX=-5 openWorldY=4 cellRoomIdx=3"
+													fov="57"
+													nearZ="0.3">
+													<.keepCamera/>
+													<placement>
+														<translation x="0.0" y="8" z="25.25"/>
+														<rotation pitch="1.5" yaw="0.0" roll="-0.0"/>
+													</placement>
+												</camera>
+											</_section>
+											<_section noFilter="bit up">
+												<_section filter="towers fight">
+													<camera inRoom="openWorldX=-5 openWorldY=4 cellRoomIdx=3"
+														fov="40"
+														nearZ="0.3">
+														<.keepCamera/>
+														<placement>
+															<translation x="5.455" y="9.76" z="19.58"/>
+															<rotation pitch="9.26" yaw="-17.175" roll="-1.33"/>
+														</placement>
+													</camera>
+												</_section>
+												<_section noFilter="towers fight">
+													<_section filter="vive - cover portrait">
+														<camera inRoom="openWorldX=-5 openWorldY=4 cellRoomIdx=3"
+															fov="70"
+															nearZ="0.3">
+															<.keepCamera/>
+															<placement>
+																<translation x="0.0" y="8" z="25.25"/>
+																<rotation pitch="3.0" yaw="0.0" roll="-0.0"/>
+															</placement>
+														</camera>
+													</_section>
+													<_section noFilter="vive - cover portrait">
+														<camera inRoom="openWorldX=-5 openWorldY=4 cellRoomIdx=3"
+															fov="60"
+															nearZ="0.3">
+															<.keepCamera/>
+															<placement>
+																<translation x="0.0" y="8" z="25.25"/>
+																<rotation pitch="3.0" yaw="0.0" roll="-0.0"/>
+															</placement>
+														</camera>
+													</_section>
+												</_section>
+											</_section>
+										</_section>
+										<_section filter="wide"> wide camera
+											<camera inRoom="openWorldX=-5 openWorldY=4 cellRoomIdx=3"
+												fov="63"
+												nearZ="0.3">
+												<.keepCamera/>
+												<placement>
+													<translation x="0.0" y="4.50" z="10.55"/>
+													<rotation pitch="10.5" yaw="0.0" roll="0.0"/>
+												</placement>
+											</camera>
+										</_section>
+									</_section>
+								</_section>
+							</_section>
+						</_section>
+					</_section>
+				</_section>
+			</_section>
+			<_section> hands
+				<_section filter="towers fight">
+					<vr>
+						<handLeftBoneOS>
+							<translation x="-0.25" y="0.55" z="1.535"/>
+							<rotation pitch="26.0" yaw="62.0" roll="-72.0"/>
+							<.rotation pitch="55.0" yaw="50.0" roll="-60.0"/>
+							<.rotation pitch="35.0" yaw="50.0" roll="-60.0"/>
+							<.rotation pitch="35.0" yaw="70.0" roll="-40.0"/>
+							<.rotation pitch="30.0" yaw="60.0" roll="-35.0"/>
+						</handLeftBoneOS>
+						<handRightBoneOS>
+							<translation x="0.015" y="0.80" z="1.57"/>
+							<rotation pitch="15.0" yaw="-30.0" roll="65.0"/>
+						</handRightBoneOS>
+					</vr>
+				</_section>
+				<_section noFilter="towers fight">
+					<_section filter="icon">
+						<vr>
+							<handLeftBoneOS>
+								<translation x="-0.247" y="0.30" z="1.925"/>
+								<rotation pitch="20.0" yaw="70.0" roll="-65.0"/>
+								<.rotation pitch="55.0" yaw="50.0" roll="-60.0"/>
+								<.rotation pitch="35.0" yaw="50.0" roll="-60.0"/>
+								<.rotation pitch="35.0" yaw="70.0" roll="-40.0"/>
+								<.rotation pitch="30.0" yaw="60.0" roll="-35.0"/>
+							</handLeftBoneOS>
+							<handRightBoneOS>
+								<translation x="0.206" y="0.30" z="1.77"/>
+								<rotation pitch="65.0" yaw="-45.0" roll="85.0"/>
+							</handRightBoneOS>
+						</vr>
+					</_section>
+					<_section noFilter="icon">
+						<_section noFilter="wide"> normal hands
+							<_section filter="portrait">
+								<_section filter="portrait hero">
+									<vr>
+										<handLeftBoneOS>
+											<translation x="-0.18" y="0.30" z="1.925"/>
+											<rotation pitch="06.0" yaw="70.0" roll="-65.0"/>
+										</handLeftBoneOS>
+										<handRightBoneOS>
+											<translation x="0.165" y="0.30" z="1.77"/>
+											<rotation pitch="65.0" yaw="-25.0" roll="85.0"/>
+										</handRightBoneOS>
+									</vr>
+								</_section>
+								<_section noFilter="portrait hero">
+									<_section filter="library capsule">
+										<vr>
+											<handLeftBoneOS>
+												<translation x="-0.18" y="0.30" z="1.925"/>
+												<rotation pitch="06.0" yaw="70.0" roll="-65.0"/>
+											</handLeftBoneOS>
+											<handRightBoneOS>
+												<translation x="0.165" y="0.30" z="1.77"/>
+												<rotation pitch="65.0" yaw="-25.0" roll="85.0"/>
+											</handRightBoneOS>
+										</vr>
+									</_section>
+									<_section noFilter="library capsule">
+										<vr>
+											<handLeftBoneOS>
+												<translation x="-0.2" y="0.30" z="1.925"/>
+												<rotation pitch="06.0" yaw="70.0" roll="-65.0"/>
+												<.rotation pitch="55.0" yaw="50.0" roll="-60.0"/>
+												<.rotation pitch="35.0" yaw="50.0" roll="-60.0"/>
+												<.rotation pitch="35.0" yaw="70.0" roll="-40.0"/>
+												<.rotation pitch="30.0" yaw="60.0" roll="-35.0"/>
+											</handLeftBoneOS>
+											<handRightBoneOS>
+												<translation x="0.175" y="0.30" z="1.77"/>
+												<rotation pitch="65.0" yaw="-25.0" roll="85.0"/>
+											</handRightBoneOS>
+										</vr>
+									</_section>
+								</_section>
+							</_section>
+							<_section noFilter="portrait">
+								<_section filter="store capsule">
+									<vr>
+										<handLeftBoneOS>
+											<translation x="-0.21" y="0.30" z="1.925"/>
+											<rotation pitch="06.0" yaw="70.0" roll="-65.0"/>
+										</handLeftBoneOS>
+										<handRightBoneOS>
+											<translation x="0.195" y="0.30" z="1.77"/>
+											<rotation pitch="65.0" yaw="-25.0" roll="85.0"/>
+										</handRightBoneOS>
+									</vr>
+								</_section>
+								<_section noFilter="store capsule">
+									<vr>
+										<handLeftBoneOS>
+											<translation x="-0.25" y="0.30" z="1.925"/>
+											<rotation pitch="26.0" yaw="70.0" roll="-65.0"/>
+											<.rotation pitch="55.0" yaw="50.0" roll="-60.0"/>
+											<.rotation pitch="35.0" yaw="50.0" roll="-60.0"/>
+											<.rotation pitch="35.0" yaw="70.0" roll="-40.0"/>
+											<.rotation pitch="30.0" yaw="60.0" roll="-35.0"/>
+										</handLeftBoneOS>
+										<handRightBoneOS>
+											<translation x="0.215" y="0.30" z="1.77"/>
+											<rotation pitch="65.0" yaw="-45.0" roll="85.0"/>
+										</handRightBoneOS>
+									</vr>
+								</_section>
+							</_section>
+						</_section>
+					</_section>
+					<_section filter="wide"> wide hands
+						<_section filter="event cover">
+							<vr>
+								<handLeftBoneOS>
+									<translation x="-0.245" y="0.3" z="1.975"/>
+									<.rotation pitch="55.0" yaw="50.0" roll="-60.0"/>
+									<.rotation pitch="35.0" yaw="70.0" roll="-40.0"/>
+									<rotation pitch="20.0" yaw="70.0" roll="-45.0"/>
+								</handLeftBoneOS>
+								<handRightBoneOS>
+									<translation x="0.205" y="0.25" z="1.8"/>
+									<.rotation pitch="65.0" yaw="-45.0" roll="85.0"/>
+									<rotation pitch="70.0" yaw="-45.0" roll="85.0"/>
+								</handRightBoneOS>
+							</vr>
+						</_section>
+						<_section noFilter="event cover">
+							<vr>
+								<handLeftBoneOS>
+									<translation x="-0.265" y="0.3" z="1.975"/>
+									<.rotation pitch="55.0" yaw="50.0" roll="-60.0"/>
+									<.rotation pitch="35.0" yaw="70.0" roll="-40.0"/>
+									<rotation pitch="30.0" yaw="70.0" roll="-45.0"/>
+								</handLeftBoneOS>
+								<handRightBoneOS>
+									<translation x="0.205" y="0.25" z="1.8"/>
+									<.rotation pitch="65.0" yaw="-45.0" roll="85.0"/>
+									<rotation pitch="70.0" yaw="-45.0" roll="85.0"/>
+								</handRightBoneOS>
+							</vr>
+						</_section>
+					</_section>
+				</_section>
+			</_section>
+			<cells> cells
+				<cell at="-5 4" regionType="places, towers:towers"/>
+				<_section filter="different cell">
+					clear the closest surroundings
+					<cell at="-5 4" regionType="places, well:well"/>
+				</_section>
+				front
+				<cell at="-5 5" regionType="places, crouch maze:crouch maze"/>
+				<cell at="-5 6" regionType="places, well:well"/>
+				<cell at="-5 7" regionType="places, crouch maze:crouch maze"/>
+				sides
+				<cell at="-7 5" regionType="places, maze:maze"/>
+				<cell at="-6 5" regionType="places, crouch maze:crouch maze"/>
+				<cell at="-4 5" regionType="places, crouch maze:crouch maze"/>
+				<cell at="-3 5" regionType="places, maze:maze"/>
+				sides
+				<cell at="-7 6" regionType="places, towers:towers"/>
+				<cell at="-6 6" regionType="places, crouch maze:crouch maze"/>
+				<cell at="-4 6" regionType="places, crouch maze:crouch maze"/>
+				<cell at="-3 6" regionType="places, towers:towers"/>
+				sides
+				<cell at="-8 8" regionType="places, tower:tower"/>
+				<cell at="-2 8" regionType="places, tower:tower"/>
+				sides
+				<cell at="-7 7" regionType="places, towers:towers"/>
+				<cell at="-6 7" regionType="places, crouch maze:crouch maze"/>
+				<cell at="-4 7" regionType="places, crouch maze:crouch maze"/>
+				<cell at="-3 7" regionType="places, towers:towers"/>
+			</cells>
+			<objects> objects
+				<object name="player"
+					existingTagged="pilgrim"
+					inRoom="openWorldX=-5 openWorldY=4 cellRoomIdx=3">
+					<lockPlacement/>
+					<placement>
+						<_section filter="towers fight">
+							<translation x="5.47" y="9.67" z="17.99"/>
+							<rotation pitch="0.00" yaw="0.00" roll="-0.00"/>
+						</_section>
+						<_section noFilter="towers fight">
+							<_section filter="icon">
+								<translation x="0.0" y="16.3" z="24.05"/>
+								<rotation pitch="0.00" yaw="0.00" roll="-0.00"/>
+							</_section>
+							<_section noFilter="icon">
+								<_section noFilter="wide">
+									<translation x="0.0" y="8.25" z="23.31"/>
+									<rotation pitch="0.00" yaw="0.00" roll="-0.00"/>
+								</_section>
+								<_section filter="wide">
+									<translation x="0.0" y="4.80" z="8.7"/>
+									<rotation pitch="0.00" yaw="0.00" roll="-0.00"/>
+								</_section>
+							</_section>
+						</_section>
+					</placement>
+				</object>
+				<_section noFilter="different cell">
+					<object name="follower 001" actorType="npcs:follower"
+						inRoom="openWorldX=-5 openWorldY=4 cellRoomIdx=3"
+						>
+						<lockPlacement/>
+						<placement>
+							<_section noFilter="wide">
+								<translation x="1.300000" y="20.2400000" z="-8.360782"/>
+								<rotation pitch="150.000000" yaw="-40.000000" roll="-0.000000"/>
+							</_section>
+							<_section filter="wide">
+								<translation x="1.500000" y="20.2400000" z="-7.360782"/>
+								<rotation pitch="150.000000" yaw="-40.000000" roll="-0.000000"/>
+							</_section>
+						</placement>
+						<randomGenerator base="-1856129693" offset="-1355266470"/>
+						<pose>
+							<bone>
+							 <translation x="0.000000" y="0.000000" z="0.000000"/>
+							 <rotation pitch="0.000000" yaw="0.000000" roll="-0.000000"/>
+							</bone>
+							<bone>
+							 <translation x="0.000621" y="0.000000" z="0.800001"/>
+							 <rotation pitch="0.000000" yaw="-0.000000" roll="-0.192590"/>
+							</bone>
+							<bone>
+							 <translation x="0.000000" y="0.000000" z="0.573972"/>
+							 <rotation pitch="0.000000" yaw="-1.727356" roll="-0.000000"/>
+							</bone>
+							<bone>
+							 <translation x="0.000000" y="0.000000" z="0.000000"/>
+							 <rotation pitch="0.000000" yaw="0.000000" roll="-0.000000"/>
+							</bone>
+							<bone>
+							 <translation x="0.038547" y="0.038547" z="-0.150000"/>
+							 <rotation pitch="0.000000" yaw="69.352211" roll="0.000000"/>
+							</bone>
+							<bone>
+							 <translation x="-0.000000" y="0.054514" z="-0.050000"/>
+							 <rotation pitch="-70.877258" yaw="0.000002" roll="0.000002"/>
+							</bone>
+							<bone>
+							 <translation x="0.000000" y="0.300000" z="0.000000"/>
+							 <rotation pitch="-35.333294" yaw="0.000003" roll="-0.000005"/>
+							</bone>
+							<bone>
+							 <translation x="0.000000" y="0.330000" z="-0.000000"/>
+							 <rotation pitch="63.099266" yaw="-124.564453" roll="-127.614090"/>
+							</bone>
+							<bone>
+							 <translation x="0.038547" y="-0.038547" z="-0.150000"/>
+							 <rotation pitch="0.000000" yaw="81.683960" roll="-0.000000"/>
+							</bone>
+							<bone>
+							 <translation x="0.000000" y="0.054514" z="-0.050000"/>
+							 <rotation pitch="-64.766479" yaw="0.000000" roll="-0.000000"/>
+							</bone>
+							<bone>
+							 <translation x="0.000000" y="0.300000" z="-0.000000"/>
+							 <rotation pitch="-36.355053" yaw="0.000008" roll="-0.000003"/>
+							</bone>
+							<bone>
+							 <translation x="0.000000" y="0.330000" z="0.000000"/>
+							 <rotation pitch="35.085918" yaw="97.768631" roll="103.399254"/>
+							</bone>
+							<bone>
+							 <translation x="-0.038547" y="0.038547" z="-0.150000"/>
+							 <rotation pitch="0.000000" yaw="-18.270145" roll="-0.000000"/>
+							</bone>
+							<bone>
+							 <translation x="0.000000" y="0.054514" z="-0.050000"/>
+							 <rotation pitch="-61.925102" yaw="-0.000001" roll="-0.000001"/>
+							</bone>
+							<bone>
+							 <translation x="0.000000" y="0.300000" z="0.000000"/>
+							 <rotation pitch="-30.780104" yaw="-0.000001" roll="-0.000001"/>
+							</bone>
+							<bone>
+							 <translation x="-0.000000" y="0.330000" z="-0.000000"/>
+							 <rotation pitch="63.944809" yaw="-95.853142" roll="-96.306572"/>
+							</bone>
+							<bone>
+							 <translation x="-0.038547" y="-0.038547" z="-0.150000"/>
+							 <rotation pitch="0.000000" yaw="-141.320816" roll="-0.000000"/>
+							</bone>
+							<bone>
+							 <translation x="0.000000" y="0.054514" z="-0.050000"/>
+							 <rotation pitch="-63.957306" yaw="-0.000002" roll="0.000003"/>
+							</bone>
+							<bone>
+							 <translation x="0.000000" y="0.300000" z="-0.000000"/>
+							 <rotation pitch="-26.981451" yaw="0.000005" roll="-0.000005"/>
+							</bone>
+							<bone>
+							 <translation x="-0.000000" y="0.330000" z="0.000000"/>
+							 <rotation pitch="81.136490" yaw="96.958878" roll="96.890015"/>
+							</bone>
+						</pose>
+					</object>
+					<_section filter="towers fight">
+						<object name="enforcer 001" actorType="npcs:enforcer"
+							inRoom="openWorldX=-5 openWorldY=4 cellRoomIdx=3"
+							>
+							<noAI/>
+							<lockPlacement/>
+							<placement>
+								<translation x="1.100000" y="18.8400000" z="20.54"/>
+								<rotation pitch="0.000000" yaw="120.000000" roll="-0.000000"/>
+							</placement>
+							<randomGenerator base="-1825424148" offset="-1773903766"/>
+							<parameters>
+								<name name="bullshotEmissiveLayer">attack</name>
+							</parameters>
+							<pose>
+								<bone name="head">
+									<rotation pitch="-18.474487" yaw="37.562489" roll="-0.000000"/>
+								</bone>
+								<bone name="l_leg_0">
+									<rotation pitch="-70" yaw="-20" roll="10"/>
+								</bone>
+								<bone name="l_leg_1">
+									<rotation pitch="-50"/>
+								</bone>
+							</pose>
+						</object>
+						<object name="trigger 001" actorType="npcs:trigger"
+							inRoom="openWorldX=-5 openWorldY=4 cellRoomIdx=3"
+							>
+							<noAI/>
+							<lockPlacement/>
+							<placement>
+								<translation x="-0.800000" y="18.3400000" z="20.54"/>
+								<rotation pitch="0.000000" yaw="180.000000" roll="-0.000000"/>
+							</placement>
+							<randomGenerator base="-27567567" offset="-1773903766"/>
+							<parameters>
+								<name name="bullshotEmissiveLayer">attack</name>
+							</parameters>
+							<pose>
+								<bone name="head">
+									<rotation pitch="-0" yaw="-37.562489" roll="-0.000000"/>
+								</bone>
+								<bone name="rf_leg_0">
+									<rotation pitch="84" yaw="-10"/>
+								</bone>
+								<bone name="rf_leg_1">
+									<rotation pitch="-90"/>
+								</bone>
+							</pose>
+						</object>
+						<object name="scourer 001" actorType="npcs:scourer"
+							inRoom="openWorldX=-5 openWorldY=4 cellRoomIdx=3"
+							>
+							<noAI/>
+							<lockPlacement/>
+							<placement>
+								<translation x="-0.200000" y="18.3400000" z="-20.54"/>
+								<rotation pitch="0.000000" yaw="180.000000" roll="-0.000000"/>
+							</placement>
+							<randomGenerator base="-67567564" offset="-1773903766"/>
+							<parameters>
+								<name name="bullshotEmissiveLayer">attack</name>
+							</parameters>
+							<pose>
+								<bone name="head">
+									<rotation pitch="-0.474487" yaw="-7.562489" roll="-0.000000"/>
+								</bone>
+								<bone name="rf_leg_0">
+									<rotation pitch="-10" yaw="-10"/>
+								</bone>
+								<bone name="rf_leg_1">
+									<rotation pitch="20"/>
+								</bone>
+								<bone name="rf_leg_2">
+									<rotation pitch="-60"/>
+								</bone>
+								<bone name="lb_leg_0">
+									<rotation pitch="-40" yaw="-10"/>
+								</bone>
+								<bone name="lb_leg_1">
+									<rotation pitch="10"/>
+								</bone>
+								<bone name="lb_leg_2">
+									<rotation pitch="-30"/>
+								</bone>
+							</pose>
+						</object>
+					</_section>
+					<_section noFilter="towers fight">
+						<object name="enforcer 001" actorType="npcs:enforcer"
+							inRoom="openWorldX=-5 openWorldY=4 cellRoomIdx=3"
+							>
+							<noAI/>
+							<lockPlacement/>
+							<placement>
+								<translation x="1.000000" y="18.8400000" z="20.54"/>
+								<rotation pitch="0.000000" yaw="180.000000" roll="-0.000000"/>
+							</placement>
+							<randomGenerator base="-1825424148" offset="-1773903766"/>
+							<parameters>
+								<name name="bullshotEmissiveLayer">attack</name>
+							</parameters>
+							<pose>
+								<bone name="head">
+									<rotation pitch="18.474487" yaw="7.562489" roll="-0.000000"/>
+								</bone>
+								<bone name="l_leg_0">
+									<rotation pitch="-80" yaw="-20" roll="10"/>
+								</bone>
+								<bone name="l_leg_1">
+									<rotation pitch="-40"/>
+								</bone>
+							</pose>
+						</object>
+						<object name="trigger 001" actorType="npcs:trigger"
+							inRoom="openWorldX=-5 openWorldY=4 cellRoomIdx=3"
+							>
+							<noAI/>
+							<lockPlacement/>
+							<placement>
+								<translation x="-1.000000" y="19.3400000" z="20.54"/>
+								<rotation pitch="0.000000" yaw="180.000000" roll="-0.000000"/>
+							</placement>
+							<randomGenerator base="-27567567" offset="-1773903766"/>
+							<parameters>
+								<name name="bullshotEmissiveLayer">attack</name>
+							</parameters>
+							<pose>
+								<bone name="head">
+									<rotation pitch="-0" yaw="-7.562489" roll="-0.000000"/>
+								</bone>
+								<bone name="rf_leg_0">
+									<rotation pitch="84" yaw="-10"/>
+								</bone>
+								<bone name="rf_leg_1">
+									<rotation pitch="-90"/>
+								</bone>
+							</pose>
+						</object>
+						<object name="scourer 001" actorType="npcs:scourer"
+							inRoom="openWorldX=-5 openWorldY=4 cellRoomIdx=3"
+							>
+							<noAI/>
+							<lockPlacement/>
+							<placement>
+								<translation x="-0.200000" y="18.3400000" z="20.54"/>
+								<rotation pitch="0.000000" yaw="180.000000" roll="-0.000000"/>
+							</placement>
+							<randomGenerator base="-67567564" offset="-1773903766"/>
+							<parameters>
+								<name name="bullshotEmissiveLayer">attack</name>
+							</parameters>
+							<pose>
+								<bone name="head">
+									<rotation pitch="-0.474487" yaw="-7.562489" roll="-0.000000"/>
+								</bone>
+								<bone name="rf_leg_0">
+									<rotation pitch="-10" yaw="-10"/>
+								</bone>
+								<bone name="rf_leg_1">
+									<rotation pitch="20"/>
+								</bone>
+								<bone name="rf_leg_2">
+									<rotation pitch="-60"/>
+								</bone>
+								<bone name="lb_leg_0">
+									<rotation pitch="-40" yaw="-10"/>
+								</bone>
+								<bone name="lb_leg_1">
+									<rotation pitch="10"/>
+								</bone>
+								<bone name="lb_leg_2">
+									<rotation pitch="-30"/>
+								</bone>
+							</pose>
+						</object>
+					</_section>
+				</_section>
+				<_section> airships
+					<_section filter="airshipsClose">
+						<object name="airship close" sceneryType="airships:airship"
+							inRoom="openWorldX=-5 openWorldY=4 cellRoomIdx=3"
+							>
+							<noAI/>
+							<lockPlacement/>
+							<placement>
+								<_section filter="towers fight">
+									<translation x="75.000000" y="408.3400000" z="148.360783"/>
+									<rotation pitch="-10.000000" yaw="-182.000000" roll="-15.000000"/>
+								</_section>
+								<_section noFilter="towers fight">
+									<_section noFilter="wide">
+										<_section filter="portrait">
+											<translation x="57.000000" y="408.3400000" z="128.360783"/>
+											<rotation pitch="-10.000000" yaw="-182.000000" roll="-15.000000"/>
+										</_section>
+										<_section noFilter="portrait">
+											<translation x="75.000000" y="408.3400000" z="128.360783"/>
+											<rotation pitch="-10.000000" yaw="-182.000000" roll="-15.000000"/>
+										</_section>
+									</_section>
+									<_section filter="wide">
+										<translation x="75.000000" y="408.3400000" z="122.360783"/>
+										<rotation pitch="-10.000000" yaw="-182.000000" roll="-15.000000"/>
+									</_section>
+								</_section>
+							</placement>
+							<randomGenerator base="36346"/>
+							<randomGenerator base="3635016"/>
+							<materials>
+								<material index="0" material="materials:airship auto texture"> 
+									<float name="voxelSize">1</float>
+									<float name="emissivePower">3.0</float>
+									<colour name="emissiveColour">airship_lights</colour>
+									<colour name="emissiveBaseColour">airship_lights_base</colour>
+									<float name="emissiveBandUseTime">0.0</float>
+									<float name="emissiveBandFixedTime">0.8</float>
+								</material>
+							</materials>
+						</object>
+					</_section>
+					<_section filter="airshipsTower">
+						<object name="airship far at tower 1" sceneryType="airships:airship"
+							inRoom="openWorldX=-5 openWorldY=4 cellRoomIdx=3"
+							>
+							<noAI/>
+							<lockPlacement/>
+							<placement>
+								<translation x="500.000000" y="6500.3400000" z="3005.360783"/>
+								<rotation pitch="0.000000" yaw="-120.000000" roll="0.000000"/>
+							</placement>
+							<randomGenerator base="4746774"/>
+							<materials>
+								<material index="0" material="materials:airship auto texture"> 
+									<float name="voxelSize">1</float>
+									<float name="emissivePower">0.0</float>
+									<colour name="emissiveColour">airship_lights</colour>
+									<colour name="emissiveBaseColour">airship_lights_base</colour>
+								</material>
+							</materials>
+						</object>
+						<object name="airship far at tower 2" sceneryType="airships:airship"
+							inRoom="openWorldX=-5 openWorldY=4 cellRoomIdx=3"
+							>
+							<noAI/>
+							<lockPlacement/>
+							<placement>
+								<translation x="-400.000000" y="6800.3400000" z="2505.360783"/>
+								<rotation pitch="0.000000" yaw="-70.000000" roll="0.000000"/>
+							</placement>
+							<randomGenerator base="86784678"/>
+							<materials>
+								<material index="0" material="materials:airship auto texture"> 
+									<float name="voxelSize">1</float>
+									<float name="emissivePower">0.0</float>
+									<colour name="emissiveColour">airship_lights</colour>
+									<colour name="emissiveBaseColour">airship_lights_base</colour>
+								</material>
+							</materials>
+						</object>
+						<object name="airship far at tower 3" sceneryType="airships:airship"
+							inRoom="openWorldX=-5 openWorldY=4 cellRoomIdx=3"
+							>
+							<noAI/>
+							<lockPlacement/>
+							<placement>
+								<translation x="290.000000" y="6400.3400000" z="2005.360783"/>
+								<rotation pitch="0.000000" yaw="-110.000000" roll="0.000000"/>
+							</placement>
+							<randomGenerator base="45774474"/>
+							<materials>
+								<material index="0" material="materials:airship auto texture"> 
+									<float name="voxelSize">1</float>
+									<float name="emissivePower">0.0</float>
+									<colour name="emissiveColour">airship_lights</colour>
+									<colour name="emissiveBaseColour">airship_lights_base</colour>
+								</material>
+							</materials>
+						</object>
+						<object name="airship far at tower 4" sceneryType="airships:airship"
+							inRoom="openWorldX=-5 openWorldY=4 cellRoomIdx=3"
+							>
+							<noAI/>
+							<lockPlacement/>
+							<placement>
+								<translation x="-250.000000" y="6300.3400000" z="2805.360783"/>
+								<rotation pitch="0.000000" yaw="-60.000000" roll="0.000000"/>
+							</placement>
+							<randomGenerator base="45774474"/>
+							<materials>
+								<material index="0" material="materials:airship auto texture"> 
+									<float name="voxelSize">1</float>
+									<float name="emissivePower">0.0</float>
+									<colour name="emissiveColour">airship_lights</colour>
+									<colour name="emissiveBaseColour">airship_lights_base</colour>
+								</material>
+							</materials>
+						</object>
+					</_section>
+					<_section filter="airfighersMid">
+						<object name="airfighter 0" actorType="airfighter:airfighter"
+							inRoom="openWorldX=-5 openWorldY=4 cellRoomIdx=3"
+							>
+							<noAI/>
+							<lockPlacement/>
+							<pose>
+								<bone name="r_arm_0">
+									<rotation pitch="-140" yaw="0" roll="-0.000000"/>
+								</bone>
+								<bone name="r_arm_1">
+									<rotation pitch="-40" yaw="0" roll="-0.000000"/>
+								</bone>
+								<bone name="r_arm_2">
+									<rotation pitch="20" yaw="0" roll="-0.000000"/>
+								</bone>
+								<bone name="l_arm_0">
+									<rotation pitch="-130" yaw="0" roll="-0.000000"/>
+								</bone>
+								<bone name="l_arm_1">
+									<rotation pitch="-30" yaw="0" roll="-0.000000"/>
+								</bone>
+								<bone name="l_arm_2">
+									<rotation pitch="20" yaw="0" roll="-0.000000"/>
+								</bone>
+								<bone name="l_gun">
+									<rotation pitch="20" yaw="0" roll="-0.000000"/>
+								</bone>
+							</pose>
+							<placement>
+								<_section filter="towers fight">
+									<translation x="-31.100000" y="48.8400000" z="40.54"/>
+									<rotation pitch="0.000000" yaw="20.000000" roll="-10.000000"/>
+								</_section>
+								<_section noFilter="towers fight">
+									<translation x="1.100000" y="18.8400000" z="-220.54"/>
+									<rotation pitch="0.000000" yaw="120.000000" roll="-0.000000"/>
+								</_section>
+							</placement>
+							<randomGenerator base="25424232526"/>
+							<materials>
+								<material index="0" material="materials:unified fog"> body and eyes
+									<float name="voxelSize">0.3</float>
+									<float name="emissivePower">1.5</float>
+									<colour name="emissiveColour">ai_attack</colour>
+									<colour name="emissiveBaseColour">ai_attack</colour>
+								</material>
+								<material index="1" material="materials:no voxel unified fog"> engines
+									<float name="voxelSize">0.3</float>
+									<float name="emissivePower">1.5</float>
+									<colour name="emissiveColour">engine</colour>
+									<colour name="emissiveBaseColour">engine_base</colour>
+								</material>
+							</materials>
+						</object>
+					</_section>
+					<_section filter="airshipsMid">
+						<object name="airship far mid right" sceneryType="airships:airship"
+							inRoom="openWorldX=-5 openWorldY=4 cellRoomIdx=3"
+							>
+							<noAI/>
+							<lockPlacement/>
+							<placement>
+								<_section filter="towers fight">
+									<translation x="-540.000000" y="600.3400000" z="-315.360783"/>
+									<rotation pitch="0.000000" yaw="30.000000" roll="0.000000"/>
+								</_section>
+								<_section noFilter="towers fight">
+									<_section noFilter="wide">
+										<_section filter="portrait">
+											<translation x="340.000000" y="1100.3400000" z="215.360783"/>
+											<rotation pitch="0.000000" yaw="-110.000000" roll="0.000000"/>
+										</_section>
+										<_section noFilter="portrait">
+											<translation x="430.000000" y="1100.3400000" z="215.360783"/>
+											<rotation pitch="0.000000" yaw="-110.000000" roll="0.000000"/>
+										</_section>
+									</_section>
+									<_section filter="wide">
+										<translation x="745.000000" y="1100.3400000" z="220.360783"/>
+										<rotation pitch="0.000000" yaw="-110.000000" roll="0.000000"/>
+									</_section>
+								</_section>
+							</placement>
+							<randomGenerator base="25424232526"/>
+							<materials>
+								<material index="0" material="materials:airship auto texture"> 
+									<float name="voxelSize">1</float>
+									<float name="emissivePower">0.0</float>
+									<colour name="emissiveColour">airship_lights</colour>
+									<colour name="emissiveBaseColour">airship_lights_base</colour>
+								</material>
+							</materials>
+						</object>
+						<object name="airship far mid left" sceneryType="airships:airship"
+							inRoom="openWorldX=-5 openWorldY=4 cellRoomIdx=3"
+							>
+							<noAI/>
+							<lockPlacement/>
+							<placement>
+								<_section noFilter="wide">
+									<_section filter="portrait">
+										<translation x="-430.000000" y="1400.3400000" z="255.360783"/>
+										<rotation pitch="0.000000" yaw="-110.000000" roll="0.000000"/>
+									</_section>
+									<_section noFilter="portrait">
+										<translation x="-530.000000" y="1400.3400000" z="255.360783"/>
+										<rotation pitch="0.000000" yaw="-110.000000" roll="0.000000"/>
+									</_section>
+								</_section>
+								<_section filter="wide">
+									<translation x="-950.000000" y="1400.3400000" z="275.360783"/>
+									<rotation pitch="0.000000" yaw="-110.000000" roll="0.000000"/>
+								</_section>
+							</placement>
+							<randomGenerator base="5674567"/>
+							<materials>
+								<material index="0" material="materials:airship auto texture"> 
+									<float name="voxelSize">1</float>
+									<float name="emissivePower">0.0</float>
+									<colour name="emissiveColour">airship_lights</colour>
+									<colour name="emissiveBaseColour">airship_lights_base</colour>
+								</material>
+							</materials>
+						</object>
+					</_section>
+					<_section filter="airshipsHigh">
+						<object name="airship far high left" sceneryType="airships:airship"
+							inRoom="openWorldX=-5 openWorldY=4 cellRoomIdx=3"
+							>
+							<noAI/>
+							<lockPlacement/>
+							<placement>
+								<_section noFilter="wide">
+									<translation x="-1830.000000" y="3400.3400000" z="865.360783"/>
+									<rotation pitch="0.000000" yaw="-110.000000" roll="0.000000"/>
+								</_section>
+								<_section filter="wide">
+									<translation x="-3070.000000" y="3400.3400000" z="1415.360783"/>
+									<rotation pitch="0.000000" yaw="-110.000000" roll="0.000000"/>
+								</_section>
+							</placement>
+							<randomGenerator base="4637"/>
+							<materials>
+								<material index="0" material="materials:airship auto texture"> 
+									<float name="voxelSize">1</float>
+									<float name="emissivePower">0.0</float>
+									<colour name="emissiveColour">airship_lights</colour>
+									<colour name="emissiveBaseColour">airship_lights_base</colour>
+								</material>
+							</materials>
+						</object>
+						<object name="airship far high right" sceneryType="airships:airship"
+							inRoom="openWorldX=-5 openWorldY=4 cellRoomIdx=3"
+							>
+							<noAI/>
+							<lockPlacement/>
+							<placement>
+								<_section noFilter="wide">
+									<translation x="1830.000000" y="3400.3400000" z="865.360783"/>
+									<rotation pitch="0.000000" yaw="-10.000000" roll="0.000000"/>
+								</_section>
+								<_section filter="wide">
+									<translation x="3370.000000" y="3900.3400000" z="1565.360783"/>
+									<rotation pitch="0.000000" yaw="-10.000000" roll="0.000000"/>
+								</_section>
+							</placement>
+							<randomGenerator base="86379"/>
+							<materials>
+								<material index="0" material="materials:airship auto texture"> 
+									<float name="voxelSize">1</float>
+									<float name="emissivePower">0.0</float>
+									<colour name="emissiveColour">airship_lights</colour>
+									<colour name="emissiveBaseColour">airship_lights_base</colour>
+								</material>
+							</materials>
+						</object>
+					</_section>
+				</_section>
+			</objects>
+		</bullshot>
+	</_section>
+	-->
+	
+	<._section> store assets (2023.04)
+		<_load> frames
+		---	oculus
+			<._load filter="oculus - hero cover">							<_load filter="logo centre"/>
+																			<_load filter="airshipsTower"/>		<_load filter="airshipsMid_hide"/>
+																			<_load filter="airshipsHigh_hide"/>	<_load filter="airshipsClose_hide"/>
+																			<_load filter="pilgrim ready"/>
+																			<_load filter="camera - pilgrim on right - land wider"/>
+																			</_load>
+			<._load filter="oculus - mini landscape">						<_load filter="logo centre"/>
+																			<_load filter="airshipsTower"/>		<_load filter="airshipsMid_hide"/>
+																			<_load filter="airshipsHigh_hide"/>	<_load filter="airshipsClose_hide"/>
+																			<_load filter="pilgrim ready"/>
+																			<_load filter="camera - pilgrim on right - land"/>
+																			</_load>
+			<._load filter="oculus - icon">									<_load filter="logo bottom"/>
+																			<_load filter="airshipsTower"/>		<_load filter="airshipsMid"/>
+																			<_load filter="airshipsHigh"/>		<_load filter="airshipsClose_hide"/>
+																			<_load filter="airfighersMid"/>
+																			<_load filter="pilgrim ready"/>
+																			<_load filter="camera - pilgrim obstructs tower - oi"/>
+																			</_load>
+			<._load filter="oculus - cover landscape">						<_load filter="logo bottom"/>
+																			<_load filter="airshipsTower"/>		<_load filter="airshipsMid"/>
+																			<_load filter="airshipsHigh"/>		<_load filter="airshipsClose_hide"/>
+																			<_load filter="airfighersMid"/>
+																			<_load filter="pilgrim ready"/>
+																			<_load filter="camera - pilgrim obstructs tower - actual map level - oc"/>
+																			</_load>
+			<._load filter="oculus - cover square">							<_load filter="logo bottom"/>
+																			<_load filter="airshipsTower"/>		<_load filter="airshipsMid"/>
+																			<_load filter="airshipsHigh"/>		<_load filter="airshipsClose_hide"/>
+																			<_load filter="airfighersMid"/>
+																			<_load filter="pilgrim ready"/>
+																			<_load filter="camera - pilgrim obstructs tower - oc"/>
+																			</_load>
+			<._load filter="oculus - cover portrait">						<_load filter="logo bottom"/>
+																			<_load filter="airshipsTower"/>		<_load filter="airshipsMid"/>
+																			<_load filter="airshipsHigh"/>		<_load filter="airshipsClose_hide"/>
+																			<_load filter="airfighersMid"/>
+																			<_load filter="pilgrim ready"/>
+																			<_load filter="camera - pilgrim obstructs tower - oc - wider"/>
+																			</_load>
+	as was	<._load filter="oculus - logo">				</_load>
+
+		---	www
+	as was	<._load filter="oculus - page background">	</_load>
+			
+		---	steam
+			<._load filter="steam - store page - capsule header">			<_load filter="logo left - ch"/>
+																			<_load filter="airshipsTower"/>		<_load filter="airshipsMid_hide"/>
+																			<_load filter="airshipsHigh_hide"/>	<_load filter="airshipsClose_hide"/>
+																			<_load filter="pilgrim ready"/>
+																			<_load filter="camera - pilgrim on right - ch"/>
+																			</_load>
+			<._load filter="steam - store page - capsule small">				<_load filter="logo left"/>
+																			<_load filter="airshipsTower"/>		<_load filter="airshipsMid_hide"/>
+																			<_load filter="airshipsHigh_hide"/>	<_load filter="airshipsClose_hide"/>
+																			<_load filter="pilgrim ready"/>
+																			<_load filter="camera - pilgrim on right"/>
+																			</_load>
+			<._load filter="steam - community - small">						<_load filter="logo left"/>
+																			<_load filter="airshipsTower"/>		<_load filter="airshipsMid_hide"/>
+																			<_load filter="airshipsHigh_hide"/>	<_load filter="airshipsClose_hide"/>
+																			<_load filter="pilgrim ready"/>
+																			<_load filter="camera - pilgrim on right"/>
+																			</_load>
+			<._load filter="steam - store page - capsule main">				<_load filter="logo bottom"/>
+																			<_load filter="airshipsTower"/>		<_load filter="airshipsMid"/>
+																			<_load filter="airshipsHigh"/>		<_load filter="airshipsClose"/>
+																			<_load filter="airfighersMid"/>
+																			<_load filter="pilgrim ready"/>
+																			<_load filter="camera - pilgrim obstructs tower - actual map level"/>
+																			</_load>
+			<._load filter="steam - store page - capsule vertical">			<_load filter="logo bottom"/>
+																			<_load filter="airshipsTower"/>		<_load filter="airshipsMid"/>
+																			<_load filter="airshipsHigh"/>		<_load filter="airshipsClose_hide"/>
+																			<_load filter="pilgrim ready"/>
+																			<_load filter="camera - pilgrim obstructs tower"/>
+																			</_load>
+			<._load filter="steam - library - library capsule">				<_load filter="logo bottom"/>
+																			<_load filter="airshipsTower"/>		<_load filter="airshipsMid"/>
+																			<_load filter="airshipsHigh"/>		<_load filter="airshipsClose_hide"/>
+																			<_load filter="pilgrim ready"/>
+																			<_load filter="camera - pilgrim obstructs tower - tiny bit lower"/>
+																			</_load>
+	as was	<._load filter="steam - library - library hero">				</_load>
+	as was	<._load filter="steam - event - event cover">					</_load>
+			just use big white logo
+			<._load filter="steam - library - library logo transparent">	</_load>
+	as was	<._load filter="steam - community - icon">						</_load>
+
+		--- vive
+			<._load filter="vive - main capsule">							<_load filter="logo bottom"/>
+																			<_load filter="airshipsTower"/>		<_load filter="airshipsMid"/>
+																			<_load filter="airshipsHigh"/>		<_load filter="airshipsClose_hide"/>
+																			<_load filter="airfighersMid"/>
+																			<_load filter="pilgrim ready"/>
+																			<_load filter="camera - pilgrim obstructs tower - actual map level - oc"/>
+																			</_load>
+			<._load filter="vive - additional capsule">						<_load filter="logo bottom"/>
+																			<_load filter="airshipsTower"/>		<_load filter="airshipsMid"/>
+																			<_load filter="airshipsHigh"/>		<_load filter="airshipsClose_hide"/>
+																			<_load filter="airfighersMid"/>
+																			<_load filter="pilgrim ready"/>
+																			<_load filter="camera - pilgrim obstructs tower - much lower"/>
+																			</_load>
+			<._load filter="vive - portrait hero">							<_load filter="airshipsTower"/>		<_load filter="airshipsMid"/>
+																			<_load filter="airshipsHigh"/>		<_load filter="airshipsClose_hide"/>
+																			<_load filter="pilgrim ready"/>
+																			<_load filter="camera - pilgrim obstructs tower - much lower"/>
+																			</_load>
+			<._load filter="vive - hero landscape">							<_load filter="logo centre"/>
+																			<_load filter="airshipsTower"/>		<_load filter="airshipsMid_hide"/>
+																			<_load filter="airshipsHigh_hide"/>	<_load filter="airshipsClose_hide"/>
+																			<_load filter="pilgrim ready"/>
+																			<_load filter="camera - pilgrim on right - land"/>
+																			</_load>
+
+		---	pico
+			<._load filter="pico - icon">									<_load filter="logo bottom"/>
+																			<_load filter="airshipsTower"/>		<_load filter="airshipsMid"/>
+																			<_load filter="airshipsHigh"/>		<_load filter="airshipsClose_hide"/>
+																			<_load filter="airfighersMid"/>
+																			<_load filter="pilgrim ready"/>
+																			<_load filter="camera - pilgrim obstructs tower - oi"/>
+																			</_load>
+			<._load filter="pico - poster landscape">						<_load filter="logo bottom"/>
+																			<_load filter="airshipsTower"/>		<_load filter="airshipsMid"/>
+																			<_load filter="airshipsHigh"/>		<_load filter="airshipsClose"/>
+																			<_load filter="airfighersMid"/>
+																			<_load filter="pilgrim ready"/>
+																			<_load filter="camera - pilgrim obstructs tower - actual map level - vivepico"/>
+																			</_load>
+			<._load filter="pico - poster square">							<_load filter="logo bottom"/>
+																			<_load filter="airshipsTower"/>		<_load filter="airshipsMid"/>
+																			<_load filter="airshipsHigh"/>		<_load filter="airshipsClose_hide"/>
+																			<_load filter="airfighersMid"/>
+																			<_load filter="pilgrim ready"/>
+																			<_load filter="camera - pilgrim obstructs tower - oi"/>
+																			</_load>
+
+		---	itch
+			restart
+	todo	<._load filter="itch - banner">									</_load>
+			restart
+	todo	<._load filter="itch - logo">									</_load>
+
+		---	sidequest
+			restart
+			<!-- banner is okay, but should be added here -->
+	todo	<._load filter="sidequest - listing">							</_load>
+
+																					
+		</_load>
+		
+		<bullshot id="logos"> logos
+			<setting>bullshot guidance</setting>
+			<setting>fixed rotate randomly</setting>
+			<testConfig>
+				<params>
+					<vectorInt2 name="testOpenWorldCell" x="-5" y="4"/>
+					<int name="testCellRoomIdx">3</int>
+					<libraryName name="testPilgrimage">pilgrimage, 03 outer rim:pilgrimage</libraryName>
+					<libraryName name="testGameDefinition">game definition:main</libraryName>
+					<int name="testSeed">60860263</int>
+					<vector2 name="testPlayArea" x="3.30" y="3.30"/>
+					<float name="testScaling">1.0</float>
+					<name name="testPreferredTileSize">auto</name>
+					<float name="testTileSize">0.824999988</float>
+					<float name="testDoorHeight">2.000000000</float>
+					<bool name="testAllowCrouch">true</bool>
+					<bool name="testAllowAnyCrouch">true</bool>
+					<string name="testGenerationTags">gm_invincible=1 gm_vulnerable=0 gm_noCrouch=0 gm_navigator=1 gm_highEnergy=0 gm_lowEnergy=0 gm_noEnemies=0 gm_tougherEnemies=0 gm_noOne=0 gm_quickTriggerEnemies=0 allowCrouch allowAnyCrouch</string>
+					<string name="testDifficultySettings">playerImmortal=0 weaponInfinite=0 armourIneffective=0 nonDegradableWeaponParts=0 autoMapOnly=1 npcs=3.000 playerDamageGiven playerDamageTaken aiReactionTime lootHealth lootAmmo</string>
+
+					<int name="teaBoxSeed">9753967</int>
+				</params>
+			</testConfig>
+			<subStepDetails>1.0</subStepDetails>
+			<offsetPlacementRelatively toParam="environment anchor"/>
+			
+			<showFrame template="3"/> 2, 3, 4/4v, gr, gt, g
+			<_section filter="oculus - hero cover">		<showFrame width="3000" height="900" ><safeAreaPt x="0.30 to 0.70" y="0.25 to 0.75"/><renderCentreOffsetPt x="-0.25" y="-0.21"/></showFrame></_section>
+			<_section filter="oculus - mini landscape">	<showFrame width="1080" height="360" ><safeAreaPt x="0.30 to 0.70" y="0.25 to 0.75"/><renderCentreOffsetPt x="-0.25" y="-0.21"/></showFrame></_section>
+			<_section filter="oculus - cover landscape"><showFrame width="2560" height="1440"><safeAreaPt x="0.05 to 0.95" y="0.20 to 0.80"/></showFrame></_section>
+			<_section filter="oculus - cover square">	<showFrame width="1440" height="1440"><safeAreaPt x="0.07 to 0.93" y="0.20 to 0.93"/></showFrame></_section>
+			<_section filter="oculus - cover portrait">	<showFrame width="1008" height="1440"><safeAreaPt x="0.10 to 0.90" y="0.20 to 0.93"/></showFrame></_section>
+			<_section filter="oculus - icon">			<showFrame width="512"  height="512" >												 </showFrame></_section>
+			<_section filter="oculus - logo">			<showFrame width="1440" height="1440">												 </showFrame></_section>
+			<_section filter="oculus - page background"><showFrame width="1920" height="1080">												 </showFrame></_section>
+
+			<_section filter="steam - store page - capsule header"> 		<showFrame width="460"  height="215"><renderCentreOffsetPt x="0.02" y="-0.18"/>			</showFrame></_section>
+			<_section filter="steam - store page - capsule small"> 			<showFrame width="231"  height="87"><renderCentreOffsetPt x="-0.018" y="-0.18"/>			</showFrame></_section>
+			<_section filter="steam - community - small">					<showFrame width="184"  height="69"><renderCentreOffsetPt x="-0.018" y="-0.18"/>			</showFrame></_section>
+			<_section filter="steam - store page - capsule main"> 			<showFrame width="616"  height="353">							 						</showFrame></_section>
+			<_section filter="steam - store page - capsule vertical"> 		<showFrame width="374"  height="448"><renderCentreOffsetPt x="0.0" _y="0.025"/>			</showFrame></_section>
+			<_section filter="steam - library - library capsule">			<showFrame width="600"  height="900"><renderCentreOffsetPt x="0.0" _y="0.025"/>			</showFrame></_section>
+			<_section filter="steam - library - library hero">				<showFrame width="3840" height="1240"><safeAreaPt x="0.28 to 0.72" y="0.20 to 0.80"/>
+																												<renderCentreOffsetPt x="0.0" y="-0.13"/>			</showFrame></_section>
+			<_section filter="steam - library - library logo transparent">	<showFrame width="630"  height="360">							 						</showFrame></_section>
+			<_section filter="steam - event - event cover">					<showFrame width="800"  height="450"><renderCentreOffsetPt x="0.0" y="-0.3"/>			</showFrame></_section>
+			<_section filter="steam - community - icon">					<showFrame width="32"   height="32"><renderCentreOffsetPt x="0.05" y="-0.35"/>			</showFrame></_section>
+			
+			<_section filter="vive - main capsule">							<showFrame width="316"  height="178"><safeAreaPt x="0.08 to 0.92" y="0.2 to 0.80"/><renderCentreOffsetPt x="0.0" y="0.0"/>			</showFrame></_section>
+			<_section filter="vive - additional capsule">					<showFrame width="655"  height="369"><safeAreaPt x="0.00 to 1.00" y="0.271 to 1.00"/><renderCentreOffsetPt x="0.0" y="0.0"/>			</showFrame></_section>
+			<_section filter="vive - portrait hero">						<showFrame width="316"  height="554"><safeAreaPt x="0.08 to 0.92" y="0.322 to 0.95"/><renderCentreOffsetPt x="0.0" y="0.0"/>			</showFrame></_section>
+			<_section filter="vive - hero landscape">						<showFrame width="1432" height="550"><renderCentreOffsetPt x="-0.25" y="-0.21"/>		</showFrame></_section>
+
+			<_section filter="pico - icon">									<showFrame width="512"  height="512"><renderCentreOffsetPt x="0.0" y="0.0"/>			</showFrame></_section>
+			<_section filter="pico - poster landscape">						<showFrame width="1956" height="1100"><renderCentreOffsetPt x="0.0" y="0.0"/>			</showFrame></_section>
+			<_section filter="pico - poster square">						<showFrame width="1100" height="1100"><renderCentreOffsetPt x="0.0" y="0.0"/>			</showFrame></_section>
+
+			<_section filter="itch - banner">								<showFrame width="1920" height="898"><renderCentreOffsetPt x="0.23" y="-0.18"/>			</showFrame></_section>
+			<_section filter="itch - logo">									<showFrame width="630" height="500">													</showFrame></_section>
+			
+			<_section filter="sidequest - listing">							<showFrame width="854" height="480">													</showFrame></_section>
+
+			<logos>
+				<_section filter="logo left">
+					<logo
+						.texturePart="logo:logo white 2048 plus"
+						texturePart="logo:logo white w shadow 2048 plus"
+						sizePt="1.0">
+						<atPt x="0.1825" y="0.5"/>
+					</logo>
+				</_section>
+				<_section filter="logo left - ch">
+					<logo
+						.texturePart="logo:logo white 2048 plus"
+						texturePart="logo:logo white w shadow 2048 plus"
+						sizePt="1.0">
+						<atPt x="0.22" y="0.5"/>
+					</logo>
+				</_section>
+				<_section filter="logo centre">
+					<logo
+						.texturePart="logo:logo white 2048 plus"
+						texturePart="logo:logo white w shadow 2048 plus"
+						sizePt="0.5">
+						<atPt x="0.5" y="0.5"/>
+					</logo>
+				</_section>
+				<_section filter="logo bottom">
+					<logo
+						.texturePart="logo:logo white 2048 plus"
+						texturePart="logo:logo white w shadow 2048 plus">
+						<_section filter="oculus - cover landscape">
+							<sizePt>0.24</sizePt>
+							<atPt x="0.5" y="0.302"/>
+						</_section>
+						<_section filter="oculus - cover square">
+							<sizePt>0.24</sizePt>
+							<atPt x="0.5" y="0.302"/>
+						</_section>
+						<_section filter="oculus - cover portrait">
+							<sizePt>0.34</sizePt>
+							<atPt x="0.5" y="0.302"/>
+						</_section>
+						<_section filter="oculus - icon">
+							<sizePt>0.32</sizePt>
+							<atPt x="0.5" y="0.184"/>
+						</_section>
+						<_section filter="pico - icon">
+							<sizePt>0.32</sizePt>
+							<atPt x="0.5" y="0.184"/>
+						</_section>
+						<_section filter="pico - poster square">
+							<sizePt>0.32</sizePt>
+							<atPt x="0.5" y="0.184"/>
+						</_section>
+						<_section filter="steam - store page - capsule main">
+							<sizePt>0.29</sizePt>
+							<atPt x="0.5" y="0.183"/>
+						</_section>
+						<_section filter="steam - store page - capsule vertical">
+							<sizePt>0.35</sizePt>
+							<atPt x="0.5" y="0.196"/>
+						</_section>
+						<_section filter="steam - library - library capsule">
+							<sizePt>0.43</sizePt>
+							<atPt x="0.5" y="0.2085"/>
+						</_section>
+						<_section filter="vive - main capsule">
+							<sizePt>0.24</sizePt>
+							<atPt x="0.5" y="0.302"/>
+						</_section>
+						<_section filter="vive - additional capsule">
+							<sizePt>0.36</sizePt>
+							<atPt x="0.5" y="0.646"/>
+						</_section>
+						<_section filter="pico - poster landscape">
+							<sizePt>0.29</sizePt>
+							<atPt x="0.5" y="0.161"/>
+						</_section>
+					</logo>
+				</_section>
+			</logos>
+			
+			<variables>
+				<libraryName name="useGearFromGameDefinition">game definition:bullshots</libraryName>
+				<_section noFilter="wide">
+					<int name="useGearFromGameDefinitionIdx">0</int>
+				</_section>
+				<_section filter="wide">
+					<int name="useGearFromGameDefinitionIdx">1</int>
+				</_section>
+				<!--
+				<int name="bullshotEnvironmentCycleIdx">7</int>
+				<float name="bullshotEnvironmentCyclePt">0.7</float>
+				<float name="bullshotNoonYaw">80.0</float>
+				<float name="bullshotNoonPitch">60.0</float>
+				-->
+				<!--
+				<int name="bullshotEnvironmentCycleIdx">6</int>
+				<float name="bullshotEnvironmentCyclePt">0.5</float>
+				<float name="bullshotNoonYaw">86</float>
+				<float name="bullshotNoonPitch">2.0</float>
+				-->
+				<_section filter="page">
+					<int name="bullshotEnvironmentCycleIdx">7</int>
+					<float name="bullshotEnvironmentCyclePt">0.44</float>
+					<float name="bullshotNoonYaw">78.9</float>
+					<float name="bullshotNoonPitch">60.0</float>
+				</_section>
+				<_section noFilter="page">
+					<_section filter="logo">
+						<int name="bullshotEnvironmentCycleIdx">7</int>
+						<float name="bullshotEnvironmentCyclePt">0.44</float>
+						<float name="bullshotNoonYaw">78.9</float>
+						<float name="bullshotNoonPitch">60.0</float>
+					</_section>
+					<_section noFilter="logo">
+						<_section filter="icon">
+							<int name="bullshotEnvironmentCycleIdx">7</int>
+							<float name="bullshotEnvironmentCyclePt">0.40</float>
+							<float name="bullshotNoonYaw">78.2</float>
+							<float name="bullshotNoonPitch">50.0</float>
+						</_section>
+						<_section noFilter="icon">
+							<_section noFilter="wide">
+								<_section filter="portrait">
+									<int name="bullshotEnvironmentCycleIdx">7</int>
+									<float name="bullshotEnvironmentCyclePt">0.40</float>
+									<float name="bullshotNoonYaw">81.2</float>
+									<float name="bullshotNoonPitch">50.0</float>
+								</_section>
+								<_section noFilter="portrait">
+									<int name="bullshotEnvironmentCycleIdx">7</int>
+									<float name="bullshotEnvironmentCyclePt">0.40</float>
+									<float name="bullshotNoonYaw">78.2</float>
+									<float name="bullshotNoonPitch">50.0</float>
+								</_section>
+							</_section>
+							<_section filter="wide">
+								<int name="bullshotEnvironmentCycleIdx">7</int>
+								<float name="bullshotEnvironmentCyclePt">0.45</float>
+								<float name="bullshotNoonYaw">79</float>
+								<float name="bullshotNoonPitch">50.0</float>
+							</_section>
+						</_section>
+					</_section>
+				</_section>
+			</variables>
+			<_section> cameras
+				<_section filter="camera - pilgrim on right">
+					<camera inRoom="openWorldX=-5 openWorldY=4 cellRoomIdx=3"
+						fov="48"
+						nearZ="0.1">
+						<.keepCamera/>
+						<placement>
+							<translation x="-1.37" y="-3.72" z="310.029"/>
+							<rotation pitch="3.27" yaw="-6.32" roll="-0.0"/>
+						</placement>
+					</camera>
+				</_section>
+				<_section filter="camera - pilgrim on right - ch">
+					<camera inRoom="openWorldX=-5 openWorldY=4 cellRoomIdx=3"
+						fov="48"
+						nearZ="0.1">
+						<.keepCamera/>
+						<placement>
+							<translation x="-1.25" y="-3.7097" z="310.028"/>
+							<rotation pitch="3.27" yaw="-6.32" roll="-0.0"/>
+						</placement>
+					</camera>
+				</_section>
+				<_section filter="camera - pilgrim on right - land">
+					<camera inRoom="openWorldX=-5 openWorldY=4 cellRoomIdx=3"
+						fov="48"
+						nearZ="0.1">
+						<.keepCamera/>
+						<placement>
+							<translation x="-2.428" y="-3.814" z="309.99"/>
+							<rotation pitch="3.2" yaw="-6.32" roll="-0.0"/>
+						</placement>
+					</camera>
+				</_section>
+				<_section filter="camera - pilgrim on right - land wider">
+					<camera inRoom="openWorldX=-5 openWorldY=4 cellRoomIdx=3"
+						fov="52"
+						nearZ="0.1">
+						<.keepCamera/>
+						<placement>
+							<translation x="-2.718" y="-3.846" z="309.98"/>
+							<rotation pitch="2.2" yaw="-6.32" roll="-0.0"/>
+						</placement>
+					</camera>
+				</_section>
+				<_section filter="camera - pilgrim obstructs tower">
+					<camera inRoom="openWorldX=-5 openWorldY=4 cellRoomIdx=3"
+						fov="38"
+						nearZ="0.1">
+						<.keepCamera/>
+						<placement>
+							<translation x="-0.0" y="-9.82" z="309.58"/>
+							<rotation pitch="9.0" yaw="0.0" roll="-0.0"/>
+						</placement>
+					</camera>
+				</_section>
+				<_section filter="camera - pilgrim obstructs tower - oi">
+					<camera inRoom="openWorldX=-5 openWorldY=4 cellRoomIdx=3"
+						fov="40"
+						nearZ="0.1">
+						<.keepCamera/>
+						<placement>
+							<translation x="-0.0" y="-8.597" z="309.749"/>
+							<rotation pitch="8.48" yaw="0.0" roll="-0.0"/>
+						</placement>
+					</camera>
+				</_section>
+				<_section filter="camera - pilgrim obstructs tower - tiny bit lower">
+					<camera inRoom="openWorldX=-5 openWorldY=4 cellRoomIdx=3"
+						fov="43"
+						nearZ="0.1">
+						<.keepCamera/>
+						<placement>
+							<translation x="-0.0" y="-8.64" z="310.036"/>
+							<rotation pitch="6.49" yaw="0.0" roll="-0.0"/>
+						</placement>
+					</camera>
+				</_section>
+				<_section filter="camera - pilgrim obstructs tower - much lower">
+					<camera inRoom="openWorldX=-5 openWorldY=4 cellRoomIdx=3"
+						fov="48"
+						nearZ="0.1">
+						<.keepCamera/>
+						<placement>
+							<translation x="-0.0" y="-8.75" z="311.206"/>
+							<rotation pitch="6.49" yaw="0.0" roll="-0.0"/>
+						</placement>
+					</camera>
+				</_section>
+				<_section filter="camera - pilgrim obstructs tower - oc">
+					<camera inRoom="openWorldX=-5 openWorldY=4 cellRoomIdx=3"
+						fov="36"
+						nearZ="0.1">
+						<.keepCamera/>
+						<placement>
+							<translation x="-0.0" y="-12.43" z="308.67"/>
+							<rotation pitch="9.49" yaw="0.0" roll="-0.0"/>
+						</placement>
+					</camera>
+				</_section>
+				<_section filter="camera - pilgrim obstructs tower - oc - wider">
+					<camera inRoom="openWorldX=-5 openWorldY=4 cellRoomIdx=3"
+						fov="40"
+						nearZ="0.1">
+						<.keepCamera/>
+						<placement>
+							<translation x="-0.0" y="-11.21" z="308.8975"/>
+							<rotation pitch="9.49" yaw="0.0" roll="-0.0"/>
+						</placement>
+					</camera>
+				</_section>
+				<_section filter="camera - pilgrim obstructs tower - actual map level">
+					<camera inRoom="openWorldX=-5 openWorldY=4 cellRoomIdx=3"
+						fov="38"
+						nearZ="0.1">
+						<.keepCamera/>
+						<placement>
+							<translation x="11.71" y="-22.02" z="26.17"/>
+							<rotation pitch="10.5" yaw="0.0" roll="-0.0"/>
+						</placement>
+					</camera>
+				</_section>
+				<_section filter="camera - pilgrim obstructs tower - actual map level - vivepico">
+					<camera inRoom="openWorldX=-5 openWorldY=4 cellRoomIdx=3"
+						fov="37"
+						nearZ="0.1">
+						<.keepCamera/>
+						<placement>
+							<translation x="11.71" y="-22.605" z="26.33"/>
+							<rotation pitch="10" yaw="0.0" roll="-0.0"/>
+						</placement>
+					</camera>
+				</_section>
+				<_section filter="camera - pilgrim obstructs tower - actual map level - oc">
+					<camera inRoom="openWorldX=-5 openWorldY=4 cellRoomIdx=3"
+						fov="36"
+						nearZ="0.1">
+						<.keepCamera/>
+						<placement>
+							<translation x="11.71" y="-24.181" z="25.18"/>
+							<rotation pitch="10.99" yaw="0.0" roll="-0.0"/>
+						</placement>
+					</camera>
+				</_section>
+			</_section>
+			<_section> hands
+				<_section filter="pilgrim ready">
+					<vr>
+						<handLeftBoneOS>
+							<translation x="-0.25" y="0.55" z="1.535"/>
+							<rotation pitch="26.0" yaw="62.0" roll="-72.0"/>
+							<.rotation pitch="55.0" yaw="50.0" roll="-60.0"/>
+							<.rotation pitch="35.0" yaw="50.0" roll="-60.0"/>
+							<.rotation pitch="35.0" yaw="70.0" roll="-40.0"/>
+							<.rotation pitch="30.0" yaw="60.0" roll="-35.0"/>
+						</handLeftBoneOS>
+						<handRightBoneOS>
+							<translation x="0.25" y="0.40" z="0.97"/>
+							<rotation pitch="-45.0" yaw="30.0" roll="65.0"/>
+						</handRightBoneOS>
+					</vr>
+				</_section>
+			</_section>
+			<cells> cells
+				<cell at="-5 4" regionType="places, towers:towers"/>
+				<_section filter="different cell">
+					clear the closest surroundings
+					<cell at="-5 4" regionType="places, well:well"/>
+				</_section>
+				front
+				<cell at="-5 5" regionType="places, crouch maze:crouch maze"/>
+				<.cell at="-5 6" regionType="places, well:well"/>
+				sides
+				<cell at="-7 5" regionType="places, maze:maze"/>
+				<cell at="-6 5" regionType="places, crouch maze:crouch maze"/>
+				<cell at="-4 5" regionType="places, crouch maze:crouch maze"/>
+				<cell at="-3 5" regionType="places, maze:maze"/>
+				sides
+				<!--
+				<cell at="-8 8" regionType="places, tower:tower"/>
+				<cell at="-2 8" regionType="places, tower:tower"/>
+				-->
+				sides
+				<cell at="-9 6" regionType="places, outer rim, inner ridge:maze"/>
+				<cell at="-8 6" regionType="places, outer rim, inner ridge:maze"/>
+				<cell at="-7 6" regionType="places, outer rim, inner ridge:maze"/>
+				<cell at="-6 6" regionType="places, outer rim, inner ridge:maze"/>
+				<cell at="-5 6" regionType="places, outer rim, inner ridge:maze"/>
+				<cell at="-4 6" regionType="places, outer rim, inner ridge:maze"/>
+				<cell at="-3 6" regionType="places, outer rim, inner ridge:maze"/>
+				<cell at="-2 6" regionType="places, outer rim, inner ridge:maze"/>
+				<cell at="-1 6" regionType="places, outer rim, inner ridge:maze"/>
+				<cell at=" 0 6" regionType="places, outer rim, inner ridge:maze"/>
+				
+			</cells>
+			<objects> forced objects
+				<object name="tower"
+					inRoom="openWorldX=-5 openWorldY=4 cellRoomIdx=3"
+					sceneryType="game:generic scenery for bullshot"
+					meshGenerator="rooms:towers simple tower">
+					<randomGenerator base="83645" offset="4872803"/>
+					<.lockPlacement/>
+					<placement>
+						<translation y="0" z="280"/>
+					</placement>
+					<variables>
+						<bool name="towerWithActualFloor">false</bool>
+					</variables>
+				</object>
+				<object name="tower - actual map level"
+					inRoom="openWorldX=-5 openWorldY=4 cellRoomIdx=3"
+					sceneryType="game:generic scenery for bullshot"
+					meshGenerator="rooms:towers simple tower">
+					<randomGenerator base="83645" offset="4872803"/>
+					<.lockPlacement/>
+					<placement>
+						<_section filter="tower lower">
+							<translation x="11.71" y="-12.3" z="-4.26"/>
+						</_section>
+						<translation x="11.71" y="-12.3" z="-3.26"/>
+					</placement>
+					<variables>
+						<bool name="towerWithActualFloor">false</bool>
+					</variables>
+				</object>
+			</objects>
+			
+			<objects> objects
+				<object name="player"
+					existingTagged="pilgrim"
+					inRoom="openWorldX=-5 openWorldY=4 cellRoomIdx=3">
+					<lockPlacement/>
+					<_section filter="pilgrim ready">
+						<placement>
+							<_section filter="camera - pilgrim on right">
+								<translation x="0.0" y="0.0" z="310.12"/>
+								<rotation pitch="0.00" yaw="20.00" roll="-0.00"/>
+							</_section>
+							<_section filter="camera - pilgrim on right - ch">
+								<translation x="0.0" y="0.0" z="310.12"/>
+								<rotation pitch="0.00" yaw="20.00" roll="-0.00"/>
+							</_section>
+							<_section filter="camera - pilgrim on right - land">
+								<translation x="0.0" y="0.0" z="310.12"/>
+								<rotation pitch="0.00" yaw="35.00" roll="-0.00"/>
+							</_section>
+							<_section filter="camera - pilgrim on right - land wider">
+								<translation x="0.0" y="0.0" z="310.12"/>
+								<rotation pitch="0.00" yaw="35.00" roll="-0.00"/>
+							</_section>
+							<_section filter="camera - pilgrim obstructs tower">
+								<translation x="0.03" y="0.0" z="310.15"/>
+								<rotation pitch="0.00" yaw="0.00" roll="-0.00"/>
+							</_section>
+							<_section filter="camera - pilgrim obstructs tower - oi">
+								<translation x="0.03" y="0.0" z="310.12"/>
+								<rotation pitch="0.00" yaw="0.00" roll="-0.00"/>
+							</_section>
+							<_section filter="camera - pilgrim obstructs tower - tiny bit lower">
+								<translation x="0.03" y="0.0" z="310.12"/>
+								<rotation pitch="0.00" yaw="0.00" roll="-0.00"/>
+							</_section>
+							<_section filter="camera - pilgrim obstructs tower - much lower">
+								<translation x="0.03" y="0.0" z="310.12"/>
+								<rotation pitch="0.00" yaw="0.00" roll="-0.00"/>
+							</_section>
+							<_section filter="camera - pilgrim obstructs tower - oc">
+								<translation x="0.03" y="0.0" z="310.17"/>
+								<rotation pitch="0.00" yaw="0.00" roll="-0.00"/>
+							</_section>
+							<_section filter="camera - pilgrim obstructs tower - oc - wider">
+								<translation x="0.03" y="0.0" z="310.17"/>
+								<rotation pitch="0.00" yaw="0.00" roll="-0.00"/>
+							</_section>
+							<_section filter="camera - pilgrim obstructs tower - actual map level">
+								<translation x="11.73" y="-12.3" z="26.92"/>
+								<rotation pitch="0.00" yaw="0.00" roll="-0.00"/>
+							</_section>
+							<_section filter="camera - pilgrim obstructs tower - actual map level - vivepico">
+								<translation x="11.73" y="-12.3" z="26.92"/>
+								<rotation pitch="0.00" yaw="0.00" roll="-0.00"/>
+							</_section>
+							<_section filter="camera - pilgrim obstructs tower - actual map level - oc">
+								<translation x="11.73" y="-12.3" z="26.92"/>
+								<rotation pitch="0.00" yaw="0.00" roll="-0.00"/>
+							</_section>
+						</placement>
+						<variables>
+							<float name="pose_custom">1.0</float>
+							<transform name="pose_custom_pelvis_auto">
+								<location x="-0.07" y="-0.1" z="0.75"/>
+								<rotation pitch="20" yaw="30"/>
+							</transform>
+							<transform name="pose_custom_spine_2_auto">
+								<location x="-0.03" y="-0.05" z="1.28"/>
+								<rotation pitch="-50" roll="10" yaw="10"/>
+							</transform>
+							<transform name="pose_custom_head_c">
+								<location x="-0.02" y="-0.01" z="1.45"/>
+								<_section filter="camera - pilgrim on right">
+									<rotation yaw="-20" roll="5" pitch="-5"/>
+								</_section>
+								<_section filter="camera - pilgrim on right - land">
+									<rotation yaw="-35" roll="5" pitch="-5"/>
+								</_section>
+								<_section filter="camera - pilgrim on right - land wider">
+									<rotation yaw="-35" roll="5" pitch="-5"/>
+								</_section>
+								<rotation yaw="0" roll="5" pitch="-5"/>
+							</transform>
+							<transform name="pose_custom_l_hand_c">
+								<location x="-0.38" y="0.24" z="1.17"/>
+								<rotation roll="-65" yaw="05" pitch="5"/>
+							</transform>
+							<transform name="pose_custom_r_hand_c">
+								<location x="0.37" y="-0.37" z="0.8"/>
+								<rotation roll="60" yaw="100" pitch="-50"/>
+							</transform>
+							<transform name="pose_custom_r_foodAdjustedPoint_MS">
+								<location x="0.2" y="-0.15" z="0.0"/>
+								<rotation yaw="45"/>
+							</transform>
+							<vector3 name="pose_custom_r_legRightMS" x="1" y="-1.0"/>
+							<transform name="pose_custom_l_foodAdjustedPoint_MS">
+								<location x="-0.3" y="0.1" z="0.0"/>
+								<rotation yaw="-5"/>
+							</transform>
+							<vector3 name="pose_custom_l_legRightMS" x="1" y="-0.7" z="0.2"/>
+						</variables>
+					</_section>
+				</object>
+				<object name="player's right hand"
+					existingTagged="pilgrimHand handR">
+					<_section filter="pilgrim ready">
+						<variables>
+							<float name="handPose_custom">1.0</float>
+							<float name="handPose_straight_pointer">1.00</float>
+						</variables>
+					</_section>
+				</object>
+				<.object name="follower 001" actorType="npcs:follower"
+					inRoom="openWorldX=-5 openWorldY=4 cellRoomIdx=3"
+					>
+						<lockPlacement/>
+						<placement>
+							<_section noFilter="wide">
+								<translation x="1.300000" y="20.2400000" z="-8.360782"/>
+								<rotation pitch="150.000000" yaw="-40.000000" roll="-0.000000"/>
+							</_section>
+							<_section filter="wide">
+								<translation x="1.500000" y="20.2400000" z="-7.360782"/>
+								<rotation pitch="150.000000" yaw="-40.000000" roll="-0.000000"/>
+							</_section>
+						</placement>
+						<randomGenerator base="-1856129693" offset="-1355266470"/>
+						<pose>
+							<bone>
+							 <translation x="0.000000" y="0.000000" z="0.000000"/>
+							 <rotation pitch="0.000000" yaw="0.000000" roll="-0.000000"/>
+							</bone>
+							<bone>
+							 <translation x="0.000621" y="0.000000" z="0.800001"/>
+							 <rotation pitch="0.000000" yaw="-0.000000" roll="-0.192590"/>
+							</bone>
+							<bone>
+							 <translation x="0.000000" y="0.000000" z="0.573972"/>
+							 <rotation pitch="0.000000" yaw="-1.727356" roll="-0.000000"/>
+							</bone>
+							<bone>
+							 <translation x="0.000000" y="0.000000" z="0.000000"/>
+							 <rotation pitch="0.000000" yaw="0.000000" roll="-0.000000"/>
+							</bone>
+							<bone>
+							 <translation x="0.038547" y="0.038547" z="-0.150000"/>
+							 <rotation pitch="0.000000" yaw="69.352211" roll="0.000000"/>
+							</bone>
+							<bone>
+							 <translation x="-0.000000" y="0.054514" z="-0.050000"/>
+							 <rotation pitch="-70.877258" yaw="0.000002" roll="0.000002"/>
+							</bone>
+							<bone>
+							 <translation x="0.000000" y="0.300000" z="0.000000"/>
+							 <rotation pitch="-35.333294" yaw="0.000003" roll="-0.000005"/>
+							</bone>
+							<bone>
+							 <translation x="0.000000" y="0.330000" z="-0.000000"/>
+							 <rotation pitch="63.099266" yaw="-124.564453" roll="-127.614090"/>
+							</bone>
+							<bone>
+							 <translation x="0.038547" y="-0.038547" z="-0.150000"/>
+							 <rotation pitch="0.000000" yaw="81.683960" roll="-0.000000"/>
+							</bone>
+							<bone>
+							 <translation x="0.000000" y="0.054514" z="-0.050000"/>
+							 <rotation pitch="-64.766479" yaw="0.000000" roll="-0.000000"/>
+							</bone>
+							<bone>
+							 <translation x="0.000000" y="0.300000" z="-0.000000"/>
+							 <rotation pitch="-36.355053" yaw="0.000008" roll="-0.000003"/>
+							</bone>
+							<bone>
+							 <translation x="0.000000" y="0.330000" z="0.000000"/>
+							 <rotation pitch="35.085918" yaw="97.768631" roll="103.399254"/>
+							</bone>
+							<bone>
+							 <translation x="-0.038547" y="0.038547" z="-0.150000"/>
+							 <rotation pitch="0.000000" yaw="-18.270145" roll="-0.000000"/>
+							</bone>
+							<bone>
+							 <translation x="0.000000" y="0.054514" z="-0.050000"/>
+							 <rotation pitch="-61.925102" yaw="-0.000001" roll="-0.000001"/>
+							</bone>
+							<bone>
+							 <translation x="0.000000" y="0.300000" z="0.000000"/>
+							 <rotation pitch="-30.780104" yaw="-0.000001" roll="-0.000001"/>
+							</bone>
+							<bone>
+							 <translation x="-0.000000" y="0.330000" z="-0.000000"/>
+							 <rotation pitch="63.944809" yaw="-95.853142" roll="-96.306572"/>
+							</bone>
+							<bone>
+							 <translation x="-0.038547" y="-0.038547" z="-0.150000"/>
+							 <rotation pitch="0.000000" yaw="-141.320816" roll="-0.000000"/>
+							</bone>
+							<bone>
+							 <translation x="0.000000" y="0.054514" z="-0.050000"/>
+							 <rotation pitch="-63.957306" yaw="-0.000002" roll="0.000003"/>
+							</bone>
+							<bone>
+							 <translation x="0.000000" y="0.300000" z="-0.000000"/>
+							 <rotation pitch="-26.981451" yaw="0.000005" roll="-0.000005"/>
+							</bone>
+							<bone>
+							 <translation x="-0.000000" y="0.330000" z="0.000000"/>
+							 <rotation pitch="81.136490" yaw="96.958878" roll="96.890015"/>
+							</bone>
+						</pose>
+					</object>
+				<object name="enforcer 001" actorType="npcs:enforcer"
+					inRoom="openWorldX=-5 openWorldY=4 cellRoomIdx=3"
+					>
+					<noAI/>
+					<lockPlacement/>
+					<placement>
+						<translation x="18.200000" y="-0.6400000" z="23.94"/>
+						<rotation pitch="0.000000" yaw="-180.000000" roll="-0.000000"/>
+					</placement>
+					<randomGenerator base="-1825424148" offset="-1773903766"/>
+					<parameters>
+						<name name="bullshotEmissiveLayer">attack</name>
+					</parameters>
+					<pose>
+						<bone name="head">
+							<rotation pitch="10.474487" yaw="32.562489" roll="-0.000000"/>
+						</bone>
+						<bone name="l_leg_0">
+							<rotation pitch="-70" yaw="-20" roll="10"/>
+						</bone>
+						<bone name="l_leg_1">
+							<rotation pitch="-50"/>
+						</bone>
+					</pose>
+				</object>
+				<object name="trigger 001" actorType="npcs:trigger"
+					inRoom="openWorldX=-5 openWorldY=4 cellRoomIdx=3"
+					>
+					<noAI/>
+					<lockPlacement/>
+					<placement>
+						<translation x="0.900000" y="18.8400000" z="20.54"/>
+						<rotation pitch="0.000000" yaw="200.000000" roll="-0.000000"/>
+					</placement>
+					<randomGenerator base="-27567567" offset="-1773903766"/>
+					<parameters>
+						<name name="bullshotEmissiveLayer">attack</name>
+					</parameters>
+					<pose>
+						<bone name="head">
+							<rotation pitch="-0" yaw="-37.562489" roll="-0.000000"/>
+						</bone>
+						<bone name="rf_leg_0">
+							<rotation pitch="84" yaw="-10"/>
+						</bone>
+						<bone name="rf_leg_1">
+							<rotation pitch="-90"/>
+						</bone>
+					</pose>
+				</object>
+				<!--
+					<object name="scourer 001" actorType="npcs:scourer"
+						inRoom="openWorldX=-5 openWorldY=4 cellRoomIdx=3"
+						>
+						<noAI/>
+						<lockPlacement/>
+						<placement>
+							<translation x="-0.200000" y="18.3400000" z="-20.54"/>
+							<rotation pitch="0.000000" yaw="180.000000" roll="-0.000000"/>
+						</placement>
+						<randomGenerator base="-67567564" offset="-1773903766"/>
+						<parameters>
+							<name name="bullshotEmissiveLayer">attack</name>
+						</parameters>
+						<pose>
+							<bone name="head">
+								<rotation pitch="-0.474487" yaw="-7.562489" roll="-0.000000"/>
+							</bone>
+							<bone name="rf_leg_0">
+								<rotation pitch="-10" yaw="-10"/>
+							</bone>
+							<bone name="rf_leg_1">
+								<rotation pitch="20"/>
+							</bone>
+							<bone name="rf_leg_2">
+								<rotation pitch="-60"/>
+							</bone>
+							<bone name="lb_leg_0">
+								<rotation pitch="-40" yaw="-10"/>
+							</bone>
+							<bone name="lb_leg_1">
+								<rotation pitch="10"/>
+							</bone>
+							<bone name="lb_leg_2">
+								<rotation pitch="-30"/>
+							</bone>
+						</pose>
+					</object>
+				</_section>
+				<_section noFilter="towers fight">
+					<object name="enforcer 001" actorType="npcs:enforcer"
+						inRoom="openWorldX=-5 openWorldY=4 cellRoomIdx=3"
+						>
+						<noAI/>
+						<lockPlacement/>
+						<placement>
+							<translation x="1.000000" y="18.8400000" z="20.54"/>
+							<rotation pitch="0.000000" yaw="180.000000" roll="-0.000000"/>
+						</placement>
+						<randomGenerator base="-1825424148" offset="-1773903766"/>
+						<parameters>
+							<name name="bullshotEmissiveLayer">attack</name>
+						</parameters>
+						<pose>
+							<bone name="head">
+								<rotation pitch="18.474487" yaw="7.562489" roll="-0.000000"/>
+							</bone>
+							<bone name="l_leg_0">
+								<rotation pitch="-80" yaw="-20" roll="10"/>
+							</bone>
+							<bone name="l_leg_1">
+								<rotation pitch="-40"/>
+							</bone>
+						</pose>
+					</object>
+					<object name="trigger 001" actorType="npcs:trigger"
+						inRoom="openWorldX=-5 openWorldY=4 cellRoomIdx=3"
+						>
+						<noAI/>
+						<lockPlacement/>
+						<placement>
+							<translation x="-1.000000" y="19.3400000" z="20.54"/>
+							<rotation pitch="0.000000" yaw="180.000000" roll="-0.000000"/>
+						</placement>
+						<randomGenerator base="-27567567" offset="-1773903766"/>
+						<parameters>
+							<name name="bullshotEmissiveLayer">attack</name>
+						</parameters>
+						<pose>
+							<bone name="head">
+								<rotation pitch="-0" yaw="-7.562489" roll="-0.000000"/>
+							</bone>
+							<bone name="rf_leg_0">
+								<rotation pitch="84" yaw="-10"/>
+							</bone>
+							<bone name="rf_leg_1">
+								<rotation pitch="-90"/>
+							</bone>
+						</pose>
+					</object>
+					<object name="scourer 001" actorType="npcs:scourer"
+						inRoom="openWorldX=-5 openWorldY=4 cellRoomIdx=3"
+						>
+						<noAI/>
+						<lockPlacement/>
+						<placement>
+							<translation x="-0.200000" y="18.3400000" z="20.54"/>
+							<rotation pitch="0.000000" yaw="180.000000" roll="-0.000000"/>
+						</placement>
+						<randomGenerator base="-67567564" offset="-1773903766"/>
+						<parameters>
+							<name name="bullshotEmissiveLayer">attack</name>
+						</parameters>
+						<pose>
+							<bone name="head">
+								<rotation pitch="-0.474487" yaw="-7.562489" roll="-0.000000"/>
+							</bone>
+							<bone name="rf_leg_0">
+								<rotation pitch="-10" yaw="-10"/>
+							</bone>
+							<bone name="rf_leg_1">
+								<rotation pitch="20"/>
+							</bone>
+							<bone name="rf_leg_2">
+								<rotation pitch="-60"/>
+							</bone>
+							<bone name="lb_leg_0">
+								<rotation pitch="-40" yaw="-10"/>
+							</bone>
+							<bone name="lb_leg_1">
+								<rotation pitch="10"/>
+							</bone>
+							<bone name="lb_leg_2">
+								<rotation pitch="-30"/>
+							</bone>
+						</pose>
+					</object>
+				</_section>
+				-->
+				<_section> airships
+					<_section filter="airshipsClose">
+						<object name="airship close" sceneryType="airships:airship"
+							inRoom="openWorldX=-5 openWorldY=4 cellRoomIdx=3"
+							>
+							<noAI/>
+							<lockPlacement/>
+							<placement>
+								<translation x="67.000000" y="278.3400000" z="387.360783"/>
+								<rotation pitch="-10.000000" yaw="-177.000000" roll="-15.000000"/>
+							</placement>
+							<randomGenerator base="36346"/>
+							<randomGenerator base="3635016"/>
+							<materials>
+								<material index="0" material="materials:airship auto texture"> 
+									<float name="voxelSize">1</float>
+									<float name="emissivePower">3.0</float>
+									<colour name="emissiveColour">airship_lights</colour>
+									<colour name="emissiveBaseColour">airship_lights_base</colour>
+									<float name="emissiveBandUseTime">0.0</float>
+									<float name="emissiveBandFixedTime">0.8</float>
+								</material>
+							</materials>
+						</object>
+					</_section>
+					<_section filter="airshipsClose_hide">
+						<object name="airship close" sceneryType="airships:airship"
+							inRoom="openWorldX=-5 openWorldY=4 cellRoomIdx=3"
+							>
+							<noAI/>
+							<lockPlacement/>
+							<placement>
+								<translation x="87.000000" y="408.3400000" z="-422.360783"/>
+								<rotation pitch="-10.000000" yaw="-182.000000" roll="-15.000000"/>
+							</placement>
+						</object>
+					</_section>
+					<_section filter="airshipsTower">
+						<object name="airship far at tower 1" sceneryType="airships:airship"
+							inRoom="openWorldX=-5 openWorldY=4 cellRoomIdx=3"
+							>
+							<noAI/>
+							<lockPlacement/>
+							<placement>
+								<translation x="500.000000" y="6500.3400000" z="3005.360783"/>
+								<rotation pitch="0.000000" yaw="-120.000000" roll="0.000000"/>
+							</placement>
+							<randomGenerator base="4746774"/>
+							<materials>
+								<material index="0" material="materials:airship auto texture"> 
+									<float name="voxelSize">1</float>
+									<float name="emissivePower">0.0</float>
+									<colour name="emissiveColour">airship_lights</colour>
+									<colour name="emissiveBaseColour">airship_lights_base</colour>
+								</material>
+							</materials>
+						</object>
+						<object name="airship far at tower 2" sceneryType="airships:airship"
+							inRoom="openWorldX=-5 openWorldY=4 cellRoomIdx=3"
+							>
+							<noAI/>
+							<lockPlacement/>
+							<placement>
+								<translation x="-400.000000" y="6800.3400000" z="2505.360783"/>
+								<rotation pitch="0.000000" yaw="-70.000000" roll="0.000000"/>
+							</placement>
+							<randomGenerator base="86784678"/>
+							<materials>
+								<material index="0" material="materials:airship auto texture"> 
+									<float name="voxelSize">1</float>
+									<float name="emissivePower">0.0</float>
+									<colour name="emissiveColour">airship_lights</colour>
+									<colour name="emissiveBaseColour">airship_lights_base</colour>
+								</material>
+							</materials>
+						</object>
+						<object name="airship far at tower 3" sceneryType="airships:airship"
+							inRoom="openWorldX=-5 openWorldY=4 cellRoomIdx=3"
+							>
+							<noAI/>
+							<lockPlacement/>
+							<placement>
+								<translation x="290.000000" y="6400.3400000" z="2005.360783"/>
+								<rotation pitch="0.000000" yaw="-110.000000" roll="0.000000"/>
+							</placement>
+							<randomGenerator base="45774474"/>
+							<materials>
+								<material index="0" material="materials:airship auto texture"> 
+									<float name="voxelSize">1</float>
+									<float name="emissivePower">0.0</float>
+									<colour name="emissiveColour">airship_lights</colour>
+									<colour name="emissiveBaseColour">airship_lights_base</colour>
+								</material>
+							</materials>
+						</object>
+						<object name="airship far at tower 4" sceneryType="airships:airship"
+							inRoom="openWorldX=-5 openWorldY=4 cellRoomIdx=3"
+							>
+							<noAI/>
+							<lockPlacement/>
+							<placement>
+								<translation x="-250.000000" y="6300.3400000" z="2805.360783"/>
+								<rotation pitch="0.000000" yaw="-60.000000" roll="0.000000"/>
+							</placement>
+							<randomGenerator base="45774474"/>
+							<materials>
+								<material index="0" material="materials:airship auto texture"> 
+									<float name="voxelSize">1</float>
+									<float name="emissivePower">0.0</float>
+									<colour name="emissiveColour">airship_lights</colour>
+									<colour name="emissiveBaseColour">airship_lights_base</colour>
+								</material>
+							</materials>
+						</object>
+					</_section>
+					<_section filter="airfighersMid">
+						<object name="airfighter 0" actorType="airfighter:airfighter"
+							inRoom="openWorldX=-5 openWorldY=4 cellRoomIdx=3"
+							>
+							<noAI/>
+							<lockPlacement/>
+							<pose>
+								<bone name="r_arm_0">
+									<rotation pitch="-140" yaw="0" roll="-0.000000"/>
+								</bone>
+								<bone name="r_arm_1">
+									<rotation pitch="-40" yaw="0" roll="-0.000000"/>
+								</bone>
+								<bone name="r_arm_2">
+									<rotation pitch="20" yaw="0" roll="-0.000000"/>
+								</bone>
+								<bone name="l_arm_0">
+									<rotation pitch="-170" yaw="0" roll="-0.000000"/>
+								</bone>
+								<bone name="l_arm_1">
+									<rotation pitch="10" yaw="0" roll="-0.000000"/>
+								</bone>
+								<bone name="l_arm_2">
+									<rotation pitch="-10" yaw="0" roll="-0.000000"/>
+								</bone>
+								<bone name="l_arm_3">
+									<rotation pitch="-20" yaw="0" roll="-0.000000"/>
+								</bone>
+								<bone name="l_gun">
+									<rotation pitch="0" yaw="0" roll="-0.000000"/>
+								</bone>
+							</pose>
+							<placement>
+								<translation x="-9.100000" y="12.8400000" z="9.54"/>
+								<rotation pitch="-20.000000" yaw="130.000000" roll="-10.000000"/>
+							</placement>
+							<randomGenerator base="25424232526"/>
+							<materials>
+								<material index="0" material="materials:unified fog"> body and eyes
+									<float name="voxelSize">0.3</float>
+									<float name="emissivePower">1.5</float>
+									<colour name="emissiveColour">ai_attack</colour>
+									<colour name="emissiveBaseColour">ai_attack</colour>
+								</material>
+								<material index="1" material="materials:no voxel unified fog"> engines
+									<float name="voxelSize">0.3</float>
+									<float name="emissivePower">1.5</float>
+									<colour name="emissiveColour">engine</colour>
+									<colour name="emissiveBaseColour">engine_base</colour>
+								</material>
+							</materials>
+						</object>
+					</_section>
+					<_section filter="airshipsMid">
+						<object name="airship far mid right" sceneryType="airships:airship"
+							inRoom="openWorldX=-5 openWorldY=4 cellRoomIdx=3"
+							>
+							<noAI/>
+							<lockPlacement/>
+							<placement>
+								<_section filter="towers fight">
+									<translation x="-540.000000" y="600.3400000" z="-315.360783"/>
+									<rotation pitch="0.000000" yaw="30.000000" roll="0.000000"/>
+								</_section>
+								<_section noFilter="towers fight">
+									<_section noFilter="wide">
+										<_section filter="portrait">
+											<translation x="340.000000" y="1100.3400000" z="215.360783"/>
+											<rotation pitch="0.000000" yaw="-110.000000" roll="0.000000"/>
+										</_section>
+										<_section noFilter="portrait">
+											<translation x="430.000000" y="1100.3400000" z="215.360783"/>
+											<rotation pitch="0.000000" yaw="-110.000000" roll="0.000000"/>
+										</_section>
+									</_section>
+									<_section filter="wide">
+										<translation x="745.000000" y="1100.3400000" z="220.360783"/>
+										<rotation pitch="0.000000" yaw="-110.000000" roll="0.000000"/>
+									</_section>
+								</_section>
+							</placement>
+							<randomGenerator base="25424232526"/>
+							<materials>
+								<material index="0" material="materials:airship auto texture"> 
+									<float name="voxelSize">1</float>
+									<float name="emissivePower">0.0</float>
+									<colour name="emissiveColour">airship_lights</colour>
+									<colour name="emissiveBaseColour">airship_lights_base</colour>
+								</material>
+							</materials>
+						</object>
+						<object name="airship far mid left" sceneryType="airships:airship"
+							inRoom="openWorldX=-5 openWorldY=4 cellRoomIdx=3"
+							>
+							<noAI/>
+							<lockPlacement/>
+							<placement>
+								<_section noFilter="wide">
+									<_section filter="portrait">
+										<translation x="-430.000000" y="1400.3400000" z="255.360783"/>
+										<rotation pitch="0.000000" yaw="-110.000000" roll="0.000000"/>
+									</_section>
+									<_section noFilter="portrait">
+										<translation x="-530.000000" y="1400.3400000" z="255.360783"/>
+										<rotation pitch="0.000000" yaw="-110.000000" roll="0.000000"/>
+									</_section>
+								</_section>
+								<_section filter="wide">
+									<translation x="-950.000000" y="1400.3400000" z="275.360783"/>
+									<rotation pitch="0.000000" yaw="-110.000000" roll="0.000000"/>
+								</_section>
+							</placement>
+							<randomGenerator base="5674567"/>
+							<materials>
+								<material index="0" material="materials:airship auto texture"> 
+									<float name="voxelSize">1</float>
+									<float name="emissivePower">0.0</float>
+									<colour name="emissiveColour">airship_lights</colour>
+									<colour name="emissiveBaseColour">airship_lights_base</colour>
+								</material>
+							</materials>
+						</object>
+					</_section>	
+					<_section filter="airshipsMid_hide">
+						<object name="airship far mid right" sceneryType="airships:airship"
+							inRoom="openWorldX=-5 openWorldY=4 cellRoomIdx=3"
+							>
+							<noAI/>
+							<lockPlacement/>
+							<placement>
+								<translation x="-540.000000" y="600.3400000" z="-315.360783"/>
+								<rotation pitch="0.000000" yaw="30.000000" roll="0.000000"/>
+							</placement>
+							<randomGenerator base="25424232526"/>
+						</object>
+						<object name="airship far mid left" sceneryType="airships:airship"
+							inRoom="openWorldX=-5 openWorldY=4 cellRoomIdx=3"
+							>
+							<noAI/>
+							<lockPlacement/>
+							<placement>
+								<translation x="-430.000000" y="1400.3400000" z="-255.360783"/>
+								<rotation pitch="0.000000" yaw="-110.000000" roll="0.000000"/>
+							</placement>
+							<randomGenerator base="5674567"/>
+						</object>
+					</_section>
+					<_section filter="airshipsHigh">
+						<object name="airship far high left" sceneryType="airships:airship"
+							inRoom="openWorldX=-5 openWorldY=4 cellRoomIdx=3"
+							>
+							<noAI/>
+							<lockPlacement/>
+							<placement>
+								<_section noFilter="wide">
+									<translation x="-1830.000000" y="3400.3400000" z="865.360783"/>
+									<rotation pitch="0.000000" yaw="-110.000000" roll="0.000000"/>
+								</_section>
+								<_section filter="wide">
+									<translation x="-3070.000000" y="3400.3400000" z="1415.360783"/>
+									<rotation pitch="0.000000" yaw="-110.000000" roll="0.000000"/>
+								</_section>
+							</placement>
+							<randomGenerator base="4637"/>
+							<materials>
+								<material index="0" material="materials:airship auto texture"> 
+									<float name="voxelSize">1</float>
+									<float name="emissivePower">0.0</float>
+									<colour name="emissiveColour">airship_lights</colour>
+									<colour name="emissiveBaseColour">airship_lights_base</colour>
+								</material>
+							</materials>
+						</object>
+						<object name="airship far high right" sceneryType="airships:airship"
+							inRoom="openWorldX=-5 openWorldY=4 cellRoomIdx=3"
+							>
+							<noAI/>
+							<lockPlacement/>
+							<placement>
+								<_section noFilter="wide">
+									<translation x="1830.000000" y="3400.3400000" z="865.360783"/>
+									<rotation pitch="0.000000" yaw="-10.000000" roll="0.000000"/>
+								</_section>
+								<_section filter="wide">
+									<translation x="3370.000000" y="3900.3400000" z="1565.360783"/>
+									<rotation pitch="0.000000" yaw="-10.000000" roll="0.000000"/>
+								</_section>
+							</placement>
+							<randomGenerator base="86379"/>
+							<materials>
+								<material index="0" material="materials:airship auto texture"> 
+									<float name="voxelSize">1</float>
+									<float name="emissivePower">0.0</float>
+									<colour name="emissiveColour">airship_lights</colour>
+									<colour name="emissiveBaseColour">airship_lights_base</colour>
+								</material>
+							</materials>
+						</object>
+					</_section>
+					<_section filter="airshipsHigh_hide">
+						<object name="airship far high left" sceneryType="airships:airship"
+							inRoom="openWorldX=-5 openWorldY=4 cellRoomIdx=3"
+							>
+							<noAI/>
+							<lockPlacement/>
+							<placement>
+								<translation x="-1830.000000" y="3400.3400000" z="-865.360783"/>
+								<rotation pitch="0.000000" yaw="-110.000000" roll="0.000000"/>
+							</placement>
+							<randomGenerator base="4637"/>
+						</object>
+						<object name="airship far high right" sceneryType="airships:airship"
+							inRoom="openWorldX=-5 openWorldY=4 cellRoomIdx=3"
+							>
+							<noAI/>
+							<lockPlacement/>
+							<placement>
+								<translation x="1830.000000" y="3400.3400000" z="-865.360783"/>
+								<rotation pitch="0.000000" yaw="-10.000000" roll="0.000000"/>
+							</placement>
+							<randomGenerator base="86379"/>
+						</object>
+					</_section>
+				</_section>
+			</objects>
+		</bullshot>
+	</_section>
+	
+	<._section> game modifiers
+	
+		<bullshot id="game modifiers"> game modifiers
+			<setting>no loading screens</setting>
+			<setting>space required on load</setting>
+			<showFrame/>
+			<showGameModifiers
+				backgroundColour="none"
+				speedPt="0.7">
+				<atPt x="0.23" y="0.5"/>
+				<texturePart name="game modifiers:infinite health ammo"/>
+				<texturePart name="game modifiers:vulnerable"/>
+				<texturePart name="game modifiers:no automap"/>
+				<texturePart name="game modifiers:no crouch"/>
+				<texturePart name="game modifiers:no enemies"/>
+				<texturePart name="game modifiers:high-energy coils"/>
+				<texturePart name="game modifiers:no npcs"/>
+				<texturePart name="game modifiers:low-energy coils"/>
+				<texturePart name="game modifiers:tougher enemies"/>
+				<texturePart name="game modifiers:meaner enemies"/>
+			</showGameModifiers>
+			<testConfig>
+				<params>
+					<vectorInt2 name="testOpenWorldCell" x="0" y="0"/>
+					<libraryName name="testPilgrimage">pilgrimage, 03 outer rim:pilgrimage</libraryName>
+					<int name="testSeed">60860263</int>
+					<vector2 name="testPlayArea" x="3.30" y="3.30"/>
+					<float name="testScaling">1.0</float>
+					<name name="testPreferredTileSize">auto</name>
+					<float name="testTileSize">0.824999988</float>
+					<float name="testDoorHeight">2.000000000</float>
+					<bool name="testAllowCrouch">true</bool>
+					<bool name="testAllowAnyCrouch">true</bool>
+					<string name="testGenerationTags">gm_invincible=1 gm_vulnerable=0 gm_noCrouch=0 gm_navigator=1 gm_highEnergy=0 gm_lowEnergy=0 gm_noEnemies=0 gm_tougherEnemies=0 gm_noOne=0 gm_quickTriggerEnemies=0 allowCrouch allowAnyCrouch</string>
+					<string name="testDifficultySettings">playerImmortal=0 weaponInfinite=0 armourIneffective=0 nonDegradableWeaponParts=0 autoMapOnly=1 npcs=3.000 playerDamageGiven playerDamageTaken aiReactionTime lootHealth lootAmmo</string>
+				</params>
+			</testConfig>
+			<subStepDetails>1.0</subStepDetails>
+			<offsetPlacementRelatively toParam="environment anchor"/>
+		</bullshot>
+
+	</_section>
+	
+</library>
+

@@ -1,0 +1,71 @@
+<library>
+  <testConfig>
+  	<.params>
+  		<libraryName name="testRoom">test:test room</libraryName>
+  		<libraryName name="testRegion">test:test region</libraryName>
+  		<bool name="testGenerateRoomsWithCode">true</bool>
+  		<libraryName name="testGameDefinition">game definition:test room</libraryName>
+  		
+		<libraryName name="testPilgrim">pilgrims:actor human</libraryName>
+		<.libraryName name="testPilgrim">pilgrims:actor</libraryName>
+		<.libraryName name="testPilgrim">demo robot:demo robot</libraryName>
+  		<.libraryName name="testPilgrim">npcs:barker</libraryName>
+		
+  		<!--
+  		<libraryName name="testGameDefinition">game definition:arcade</libraryName>
+  		<libraryName name="testGameDefinition">game definition:main</libraryName>
+  		<int name="partIdx">0</int>
+  		<int name="testSeed">9796423</int>
+		-->
+		<!--		
+  		<.bool name="useEnvironmentCycles">true</bool>
+  		<.float name="environmentCycle">0</float> without this it is randomised
+  		<int name="generateDevMeshes">0</int> 0 main, 1000 all
+  		<.int name="generateDevMeshesProfiler">0</int> 0 main, 1000 all
+  		<.bool name="generateMoreDetails">false</bool>
+  		<.bool name="testUserConfigFile">false</bool>
+  		-->
+
+		<!--
+		<bool name="testWelcomeScene">true</bool>
+		<!--
+		-->
+
+		<.float name="testTileSize">0.686666667</float>
+		<vector2 name="testPlayArea" x="8.0" y="8.0"/>
+		-->
+	</params>
+
+  	<.params> demo robot
+  		<.libraryName name="testRoom">demo robot:starting room</libraryName>
+  		<libraryName name="testRoom">demo robot:starting room alt</libraryName>
+  		<libraryName name="testRegion">demo robot:region</libraryName>
+  		<libraryName name="testGameDefinition">game definition:test room</libraryName>
+  		
+		<libraryName name="testPilgrim">demo robot:demo robot</libraryName>
+		
+  		<!--
+  		<libraryName name="testGameDefinition">game definition:arcade</libraryName>
+  		<libraryName name="testGameDefinition">game definition:main</libraryName>
+  		<int name="partIdx">0</int>
+  		<int name="testSeed">9796423</int>
+		-->
+		<!--		
+  		<.bool name="useEnvironmentCycles">true</bool>
+  		<.float name="environmentCycle">0</float> without this it is randomised
+  		<int name="generateDevMeshes">0</int> 0 main, 1000 all
+  		<.int name="generateDevMeshesProfiler">0</int> 0 main, 1000 all
+  		<.bool name="generateMoreDetails">false</bool>
+  		<.bool name="testUserConfigFile">false</bool>
+  		-->
+
+		<!--
+		<bool name="testWelcomeScene">true</bool>
+		<!--
+		-->
+
+		<float name="testTileSize">1</float>
+		<vector2 name="testPlayArea" x="3" y="3"/>
+	</params>
+  </testConfig>
+</library>

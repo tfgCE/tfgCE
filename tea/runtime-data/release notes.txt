@@ -1,0 +1,595 @@
+TEA FOR GOD
+by void room
+
+2016-2024
+
+e-mail: contact@voidroom.com
+privacy policy: https://voidroom.com/privacy-policy/
+
+discord: https://discord.gg/FFwyf4n
+twitter: http://twitter.com/void_room
+youtube: https://www.youtube.com/c/voidroom_vr
+twitch: https://www.twitch.tv/void_room
+tiktok: https://www.tiktok.com/@void_room
+instagram: https://www.instagram.com/void__room/
+facebook: http://facebook.com/voidroom
+
+webpage: https://voidroom.com/
+steam: https://store.steampowered.com/app/1764400/Tea_For_God/
+oculus app lab: https://www.oculus.com/experiences/quest/6323807174332876/
+oculus app lab demo: https://www.oculus.com/experiences/quest/3762343440541585/
+oculus rift store: https://www.oculus.com/experiences/rift/2327355130672812/
+itch.io: https://void-room.itch.io/tea-for-god
+sidequest community: https://sidequestvr.com/community/63/tea-for-god
+
+soundtrack: https://ezeeri.bandcamp.com/album/tea-for-god-ost
+
+Important changes
+
+1.1.1 (2024.09.03)
+  - fixed "three dots" appearing when recentering/restarting
+  - various fixes
+  
+1.1.0 (2024.04.28)
+  - added endless mode (tasks)
+  - tasks available:
+    - exploration
+    - interface box search
+    - item hunt
+    - hacking interface boxes
+    - data core retrieval
+    - system stabilisation
+    - stop the intrusion
+  - new passive EXMs:
+    - weapon collector (weapon loot is way more often)
+    - energy retainer (on each shot you get free energy to the other hand)
+    - build in magazine (all weapons you have have magazines)
+    - firepower (greater cost/chamber, even more damage)
+    - emergency revival (if your health reaches zero, you get some health restored which costs you energy + 3 seconds of invincibility
+    - explosion resistance (you only get 25% damage from explosions)
+  - new active EXMs:
+    - remote control (activates mines, spiderbots, opens chargers, drops down shields, deflectors)
+    - push (pushes away objects in front of us, useful to push into chasm)
+    - pull (pulls a bit objects but more important, pulls items towards us)
+    - corrosion spray (continuous spray of corrosion from hand, useful to use in a burst - you don't need a corrosion weapon to get the corrosion effect on the enemies)
+    - charged plasma ball (throws a projectile of charged plasma that slows down - it pushes away from the walls and if it detects an enemy, it may pull towards it)
+  - new enemies:
+    - "fender" tough with automatic gun and a shield
+    - "tentacled" versions of fender and scourer
+  - new weapon nodes:
+    - main node with 3 node slots
+    - main node with 4 node slots
+    - kinetic energy (to push enemies)
+    - confuder (confuses enemies for a short time, lowers damage a lot)
+    - healing/medi (part of the energy is used to heal the player
+  - fixed visible one frame when starting "another chance"
+  
+1.0.10 (2024.03.29)
+  - fixed collision blocking exit at the beggining of chapter IV
+  - fixed collisions for the last chapter
+  - fixed falling for "another chance"
+  - fixed narrative blocking combat in the outer rim after loading a save
+  
+1.0.9 (2024.01.05, updated 2024.01.29)
+  - changed sound volumes to have more even soundscape
+  - added compressor for sound effects channel only (before was only a general compressor that was affecting all the channels)
+  - modified some sound effects that had discomforting crackling sound
+  - fixed bug when some samples were played too loud for a brief moment
+  - fixed sound crackling
+  - fixed restarting the game from a chapter where the game was interrupted
+  - fixed pause when starting the game
+  - fixed personnel transport's collision for sliding locomotion
+  - fixed placement of dischargers in discharger room on ship for non-default scale
+  
+1.0.8 (2023.10.16, updated 2023.12.19)
+  - fixed no distance updated when using smooth locomotion
+  - changed "A文" to make it more clear that it is a language selection
+  - added "or" between image-based and text-based input prompts (for open overlay info)
+  - tweaks for recentering view
+  - fixed game switching to demo for older builds
+  
+1.0.7 (2023.09.18)
+  - added explicit support for Quest Pro
+  - added fail-safe for lost arm past "up"
+  - fixed creating the same map cell twice when loading particular game saves
+  - fixed crashes on loading
+  - fixed no enemies when loading a save in "outer rim"
+  
+1.0.6 (2023.09.05)
+  - restored "corrosion showers" in "beneath"
+  - fixed loading save games at the initial section of "beneath"
+  - fixed cases when the player could get embedded into ground when using smooth locomotion
+  
+1.0.5 (2023.09.01)
+  - added a blinking effect on shield when it has low level of energy
+  - exit in beneath is visible from a greater distance
+  - enemies pause for a moment when the player should look at the elevator in "up"
+  - player is reminded about the elevator in "up" after a while
+  - fixed horizontal scaling preview - the grid in options always shows how it would look like with the currently selected horizontal scaling
+  - fixed missing collision at the train platform in prelude
+  - fixed incorrectly ending tasks that could lead to a crash
+  - fixed crash on checking if a path is valid when part of the world got removed
+
+1.0.4 (2023.08.12)
+  - fixed proximity mines and shields attached mid-air (where doors appeared)
+  - fixed turn counter rendered in the place of real time
+  - fixed a few never-ending level generation cases
+  - fixed typo for dock screen
+
+1.0.3 (2023.08.10, updated 2023.08.11)
+  - added preparing play-area when playing on Quest on PC - this workaround works currently only for SteamVR and OculusAPI
+  - foveated rendering adjusts to the scene
+  - fixed "mean machine" modifier
+  - fixed some game scripts running when exiting game and starting new (or loading game state)
+  - fixed bringing permanent EXMs through "another chance" chapter
+  - fixed metal pilgrims in burial scene to move based on location, not time
+  - fixed flashing door to repair hangar in "prelude"
+  - fixed horizontal scaling preview
+  - fixed generation of "discharge" zone when 3 exits and upgrade room is in a map cell
+  - ammo/health for hit is given only if not given for kill
+  - improvements for melee - easier to hit, particle effects on getting ammo/health on every hit added
+  - small robots can be used to gain energy/health via melee
+  - added weapon sights customisation options (color + outer ring radius)
+  - added "please wait" info when region is being generated
+  - melee kills provide loot
+  
+1.0.2 (2023.08.03)
+  - unlocks in run-based mode can't be unlocked mid-run
+  - all EXMs that were installed during game are available to be unlocked
+  - added "swap joysticks" that swaps movement and rotation joysticks for sliding locomotion
+  - fixes for unlocks menu
+  - fixed "no crouch allowed" being replaced with "auto crouch"
+  - fixed rotating elevators in "breach" when no rotating elevators were allowed
+  - fixed crash when loading a savegame next to the train station and in there was a platform bridge close to the start of outer rim
+  - fixed keeping player from walking through walls code that was actually forcing to be in the wall when exiting turret
+  - fixed reading refresh rate for Quest Pro
+  - fixed creating new player profile
+  - fixed incorrectly displayed "degree" symbol
+  - more visible exits on map for "beneath" and "breach"
+  - lowered memory used by the game:
+    - music is dynamically loaded (and unloaded) when needed
+    - narration voiceovers are streams instead of samples
+
+1.0.1 (2023.07.26, updated 2023.07.27)
+  - weapon nodes show what stats do they affect
+  - removed "experience" leaving just main campaing selection, "experience" modified works as demo now
+  - in standard rules, "pick up" tip appears on all objects that can be picked up, this appears only if haven't been done before or for a few minutes
+  - changes for "move to starting position" removed turn/move commands and exposed "move to starting position"
+  - tweaked sizes of play area used by room generators
+  - added missing collision for sliding locomotion on teks in preludium and "tea for god" chapter
+  - proximity mines do not require to be attached to anything to explode, can be used as grenades
+  
+1.0.0 (2023.07.18)
+  - added music to second half of the game
+  - finalised chapters (and the final scene)
+  - renamed chapters
+  - added unlocking levels that were just reached (only in "runs" mode)
+
+0.9.1 (2023.07.11, updated 2023.07.14)
+  - added missing smooth locomotion support for Vive controller
+  - fixed mapping for Index controller
+  - fixed presence links that were pointing at invalid objects, leading to crashes
+  - added "metal pilgrims" to "Beneath" and "Another chance"
+  
+0.9.0 (2023.06.29, updated 2022.07.03)
+  - added "Beneath" (IV), "Up" (V), "Another chance" (VII), "Breach" (VIII), "Heart" (IX), "Tea For God" (X) wth a new variety of zones
+  - added new flying craft "barge" with two turrets
+  - added new enemies (flying welder, fast three-legged plasma & corrosion shooter, big corrosion ball shooter, wall-crawler, centipede)
+  - added "tentacled" versions of existing enemies
+  - added custom offsets for controllers
+  - added low-pass filter for sounds further away and when health is low
+  - changed look for explosions
+  - improved spawning
+  - for advanced rules, some zones have forced to use all cardinal directions for their layout (eg. 4 towers even if 2 exits)
+  - added holding joystick to move the map
+  - added option to disable joysticks at all (drift related)
+
+0.8.0 (2022.12.14, updated 2022.12.20)
+  - new game/difficulty setup:
+    - there are now three game modes: experience (new), standard rules, advanced rules
+      - experience rules have linear levels, almost no gameplay systems, start at outer rim, there are no upgrades
+      - standard rules are former arcade mode
+      - advanced rules are former roguelite mode
+    - "what happens when you fail" added that makes it possible to play run-based standard rules (simpler roguelite mode)
+      - respawn at spot
+      - restart at the last checkpoint
+      - restart whole run all over
+  - added information about room-scale movement that shows after no movement registered or on joystick stick input detected
+  - when tips are displayed, all other HUD elements are transparent and dimmer
+  - faster game startup (including precompiled shader caches)
+  - reorganised chapter names again (train station is now the ending part of "Outer Rim" (I))
+  - added "Confined in the Air" chapter (III) (preview only)
+  - new active EXMs:
+    - insight EXM - that might be used to learn about devices and robots
+    - distractor - makes all nearby hostile characters forget about the player
+    - energy manual dispatcher - allows for transfering energy to health or main storages or rebalancing
+    - plasma blast - damages enemies around and confuses them
+  - new passive EXMs:
+    - fast charger - to speed up energy transfer for weapons
+    - super health storage - main and backup storage work as one storage
+    - elevator master - visible elevators operate only for the player
+    - damage rewire - increases inflicted and received damage
+  - for advanced rules, the very first upgrade machine now allows to get all already unlocked EXMs (prioritises not unlocked)
+  - all explosions now confuse enemies
+  - added options to disable voiceovers
+  - new fonts, new door directions, UI uses larger resolution
+  - minor shader improvements (no sharp lights on Quest, adjusted voxel based details)
+  - added lights to some of the objects (energy quantums, charger's reactor core)
+  - changes to light propagation (it extends further but ends when doors face away)
+  - new shield effect (using hex instead of squares + noisy transparency on Quest)
+  - added dust particles going up to "floors"
+  - changed scourer's AI - lurks and moves away from its enemy to use its ricocheting projectiles by shooting from behind a corner
+  - added decorations on walls
+  - changed how items are spawned - there are now less items in the level but more may fall out of certain enemies
+  - increased variety of inaccessible rooms
+  - modified how buttons are rendered
+  - fixes for generating corridors (gaps, reversed surfaces)
+  - fixes for AI and AI spawning
+  - fixes for elevators (that could move without the player onboard)
+  - fixed certain robots missing their parts (handles on back etc)
+  - optimisations
+
+0.7.0 (2022.07.21, updated 2022.08.03)
+  - added smooth locomotion
+  - added tips while loading
+  - extended tutorials in arcade mode
+  - when health is low, time slows down a bit
+  - one new item/friendly bot (walking battery)
+  - one new enemy (bug that attacks in packs and uses discharge)
+  - robots may signalise their spawn, informing about their presence from far away
+  - robots may intentionally miss on lower health and force hit when player's health is full
+  - allied robots won't disappear so easily when moved too far away
+  - discharge used on discharger weilding robots turns them into overcharged state (greater damage, piercable armour, up ot some extent, may explode)
+  - fixed changing sound levels
+  - windows builds are 64-bit
+  - reorganised chapter names (no more interludes)
+  - finished "Full Throttle" chapter (III)
+
+0.6.3 (2022.03.08, updated 2022.03.10)
+  - added "Interlude I" level
+  - adding "Full Throttle" chapter (II)
+  - added room to "Outer Rim" that should help with navigation (two doors to choose from, one leading to a dead end)
+  - added system to block paths that lead away from the objective (only for arcade game mode)
+  - added dithered transparency
+  - added "1-bit" aesthetics (optional)
+  - door directions are at eye-level (this changes depending on the level and will be an option coming to set the preferred placement)
+  - changed pacing for "Outer Rim" chapter with rearranged enemies
+  - added new iron sights
+  - added experience points granted for finishing a chapter for the first time
+  - added second door to starting/upgrade rooms wherever it made sense (so there's no confusion if moving back or forward)
+  - new death particle/sequence
+  - main menu renders closer and responds to "recenter"
+  - HUD (overlay info) can be locked to head (can also be changed to always locked and never locked via options)
+  - more HUD elements follow camera/eye pitch
+  - added hit intensity to tell how much damage has been dealt
+  - added exterior scene for "Outer Rim" with a ship with tentacles
+  - changed physics for weapons on elevators
+  - longer day-night cycle
+  - added an option to set time for day-night cycle
+  - "be at" shows rings at the ground that should help to navigate towards the right position
+  - weapon parts are visible when glancing at a gun
+  - new weapon parts:
+    - node: damage boosters, they increase damage but also make reloading much slower
+    - node: base damage booster
+  - spider bots may walk on walls and ceilings when armed
+
+0.6.2 (2021.10.20)
+  - added discharge weapon
+    - higher damage but short-ranged
+    - consumes energy only if connects to a valid target
+    - may be used to heal allied robots (not mines!)
+    - less effective against discharge robots
+    - ineffective against shields (which means that discharge robots won't damage you)
+    - loads quicker
+    - no autofire
+    - not affected by projectile count/spread/speed
+  - nerfed EXMs and some weapons
+  - modified the main menu to have less of everything at the same time
+  - added "fewer hostiles" modifier (replaced "no crouch" that is accessible by other means)
+  - added "follow guidance" functionality aids when health/ammo are low
+  - reorganised HUD
+  - map is available in arcade mode only on option (options/gameplay)
+  - added "continue from last save" and "go to modifiers" buttons to summary/when you die
+  - corrosion does not make mines and spiderbots explode
+  - "damaged" fx shows only for a while on a gun, instead there is an information shown via overlay
+  - damaged weapons are highlighted when a prompt to remove them appears (as well as hands to remove them)
+  - changed how far away parts of the map are generated
+  - added information about navigation
+    - arcade: triggered via script twice + a reminder when going in the wrong direction + helps to find the energy source
+    - roguelite: when the first map is acquired
+  - energy dispatcher requires more time to balance the energy levels and happens only when system is stable (no damage, no influx)
+  - hands to remove damaged weapons are highlighted
+  - fixed storing last used game slot
+  - fixed melee giving ammo/health when used on shields (and items in general)
+  - updated fmod to 2.02
+
+0.6.1 (2021.10.06, updated 2021.10.07)
+  - fixed starting with files from older versions
+  - added special handling of older profiles and game slots (will propose restarting the game etc)
+  - there is now arcade and roguelite mode (arcade being checkpoint based, roguelite with permadeath)
+  - added voiceover (and beggining of the story)
+  - your suit now speaks too
+  - extended intro sequence
+  - weapons may get damaged (they do reduced damage) and have to be replaced
+  - added checking if the player goes through walls
+  - introduced enemies progression throughout the level
+  - dropped weapons are more common
+  - new "go to" marker (before starting the game)
+  - buttons on elevators are always lit up (not on bridges)
+  - reintroduced bhaptics for Quest
+  - balancing, adding missing infos
+  - added prompt to hold gun when not holding
+  - forearm displays highlight values that get higher (and when chamber is full)
+  - spiderbots stop when someone tries to pick them up
+  - corrosion does instant damage instead of drain
+  - added a cap for damages from other sources (corrosion effect)
+  - faster bug reporting
+  - fixes, lots of fixes, optimisations and other improvements
+  - various zones make better use of large play areas
+  
+0.6.0 (2021.06.22)
+  - added music
+  - added levels before the outer rim
+  - new splash sequence
+  - added missing gestures for hand tracking
+  - added simple vignette for movement
+  - reintroduced game slots
+  - added play area calibration (to make it possible to play PCVR on Quests)
+  - disabled bhaptics temporarily for Quest
+  - fixes and optimisations
+  
+0.5.5 (2021.03.08)
+  - persistent unlocks
+  - new tower model + menu and loading scenes use substitute of an in-game world
+  - added airships flying around
+  - added a door lock mechanism that allows to lock yourself in a utility room to not be disturbed by robots
+  - fixed spiderbots grenade functionality
+  - lots of fixes for level meshes
+  
+0.5.4 (2021.02.13, updated 2021.02.16)
+  - support for haptic devices (OWO, bhaptics)
+  - added save games / checkpoints (may exit the game and continue)
+  - game director (to handle spawning intensity, game script, chapters and scenes)
+  - test scenes (upgrade machine, map)
+  - voiceover system (although no voiceover yet, used to show subtitles)
+  - environment player (used to play wind sound effects outside)
+  - map symbols are obfuscated and have to be learned/revealed (currently by using devices, in future through scenes describing devices)
+  - fixed bugs related to world generation + modified how world is generated - it is now possible to move quite far away from the start
+
+0.5.3 (2021.01.02)
+  - new EXMs:
+    - hitting enemy with a fist restores 1 energy (ammo)
+    - energy dispenser drain increase
+    - upgrade reroll at the upgrade machine
+    - full energy refill when upgrading using an upgrade machine
+  - new color sets for weapons (via cores)
+  - enemies rotate when falling down
+  - added simple local lights
+    
+0.5.2 (2020.12.19)
+  - added weapon mixer, a device in the workshop that allows swapping parts between two weapons
+  - new weapon parts:
+    - node: charging bypass (you don't have to fully load the gun to shoot but it comes at a price +50% of missing energy)
+    - node: low-health damage amplifier (the lower your health, the more damage you do, up to +200%)
+    - muzzle: penetrate multiple targets (projectiles go at a higher speed through multiple targets doing damage to each one)
+  - tweaked existing weapon parts
+  - damage to energy EXM changed to always convert projectile damage to energy
+  - added new comfort option that allows switching off flickering lights
+  - added built-in screenshots mechanism that renders screenshots in 4K 16:9 ratio (use left hand's system menu button, menu is accessible by holding both hands next to the head)
+  - added initial set of EXMs - for the first upgrade machine
+    
+0.5.1 (2020.12.04)
+  - added modifiers system to replace old difficulty system
+  - added "no automap" difficulty setting/modifier that requires navigating on your own
+  - added "workshop" which now contains:
+    - reinstall EXM machine
+    - permanent upgrade machine
+  - one new zone (shaft with floors and elevators, requires at least 5x5 tiles)
+  - one new enemy (cone-based robot with three legs and two powerful cannons)
+  - added more options for choosing preferred tile sizes, allowing to force the greatest number of tiles by having them as small as possible
+  - permanent upgrades stay till the end of the run (might be used also for persistent mode)
+  - permanent upgrades (additional slots for passive exms, additional pockets, larger ammo/health storages, more damage, energy for melee kills) 
+  - added guidance to upgrade machine and "workshop" 
+  - added visual recoil
+  - no ammo for melee kill (requires a permanent upgrade)
+  - melee is weaker
+  - added more stats displayed through the overlay
+  - more energy in energy dispensers (100->200 at normal loot difficulty setting)
+
+0.5.0 (2020.10.28, updated 2020.11.02)
+  - added support for Quest 2 (fixed bugs, larger view distance, slightly more detailed meshes, better voxels and reflections)
+  - added open world (with a map)
+  - changes to gameplay:
+    - no knowledge (experience) points
+    - no data blocks
+    - upgrades are for free, available at special stations
+    - only two EXMs per hand (one active, one passive) - to be changed/extended by upgrades
+    - no persistence
+    - no in-game UI with windows (except for in-game menu for options and ending run/game)
+    - weapons use hand energy storages (weapons themselves have no energy storages)
+    - no energy orbs
+    - no weapon parts
+    - no weapon/item disassembly
+    - equipped weapons are empty
+    - more health by default, longer regeneration cooldown
+    - player instigated explosions do less damage to the player
+    - destroying robot with fists gives small amount of energy
+  - changed difficulty levels (tourist - infinite ammo/health, explorer - no robots, wanderer - easy, pilgrim - normal, devout - hard, zealot - very hard, custom)
+  - enemies react quicker on higher difficulty levels
+  - added new utilities (energy dispensers, automap)
+  - new EXMs (corrosion catalyst, armour piercing, vampire fists, zero health regen cooldown, more damage, energy dispatcher, projectile energy absorber, instant weapon charge)
+  - changed controls (B/Y to activate EXM, A/X to open map/info overlay)
+  - new body model and new weapon models
+  - simplified main menu
+  
+0.4.13 (2020.07.21)
+  - added dynamic spawning
+  - improved performance
+  - crouch sections contain characters
+
+0.4.12 (2020.07.07)
+  - added LOD system
+  - improved performance
+  - decreased robots' health and amount of ammo energy in the loot
+  - corrosion weapons are easier to find
+
+0.4.11 (2020.06.19)
+  - added weapon cell degradation
+  - added acknowledgement system - knowledge points and data chunks are not gained until station is reached
+  - added new weapon type - corrosion
+    - it does normal damage + drains health over time
+    - larger guns produce a corrosion ball that can be shot with other types of weapons to explode
+    - is armour piercing and anti deflection by default
+    - slower than plasma
+  - booster EXMs are now cheaper
+  - changed base values for health and storages, EXMs change those in a more significant way
+  - armour piercing works against ricocheting materials
+  - increased robots' health and amount of ammo energy in the loot
+  - minor performance upgrade for larger elevator zones
+  - left touch's menu button opens in-game menu
+
+0.4.10 (2020.06.03)
+  - one new enemy (six-legged barrel with corrosive energy)
+  - shell's built-in energy transfer leaks energy
+  - changed health indicator (easier to tell you're low on health, easier to see enemies)
+  - improvements to hand-to-hand combat (can't hit objects in pockets, hitting walls does not do damage)
+  - added new nav mesh (rooftops use it)
+  
+0.4.9 (2020.05.17)
+  - added new sub-systems:
+    - loadout for weapons (weapon crafting)
+    - item dissasembly
+    - analytic disintegrator
+    - weapon cell transfer (+ pre deactivation/death weapon cell transfer)
+  - more tutorials (about new sub-systems)
+  - added loot selector (different loot for now, more rich loot distribution soon)
+  - added a system to make the run shorter even without the reactor
+  - lowered default health indicator intensity
+  
+0.4.8 (2020.04.11)
+  - added modular weapons (currently randomly generated)
+  - added pointing in UI with a whole hand (automatically switches between pointing with a finger and with a whole hand)
+
+0.4.7 (2020.03.11, updated 2020.03.12)
+  - tutorials (as a list and suggested tutorials at the end of a run)
+  - more difficult enemies do not spawn in the first section
+
+0.4.6 (2020.02.03)
+  - changed Apparatus Grid into a maze like structure by adding some air to it
+  - added decrease of efficiency for multiple instances of same EXM on one hand
+  - added control option for hand-tracking to allow shooting with a thumb
+  - added support for hand-tracking per hand (just in case)
+  - improved performance a bit on Quest by using again 3 cores
+  
+0.4.5 (2020.01.29)
+  - added hand-tracking (Oculus Quest only)
+  - added simplified unlock system (difficulty setting)
+  - added FADs (knowledge points, data chunks collected)
+  - added health indicator intensity option
+  
+0.4.4 (2020.01.14)
+  - added persistence
+    - unlocking EXMs
+    - gathering resources required for unlocking (data chunks + knowledge points)
+    - buying data chunks and data blocks with knowledge points
+    - assembling data chunks into data blocks
+  - rearranged main hub / pilgrimage setup
+    - changed into a panoramic set of windows that surround the player
+    - it starts to unveil itself only if you do certain things to slowly introduce into new features
+
+0.4.3 (2019.12.10)
+  - added physical violence, for time being it is possible to quickly kill with bare fists
+  - added top view for getting back to the right place when entering terminal or in game menu
+  - made it easier to push enemies around
+  
+0.4.2 (2019.12.03)
+  - added profiles with game slots
+  - new menu (with new font)
+
+0.4.1 (2019.11.13)
+  - one new enemy (scourer)
+  - added headshots (a whole system for partial damaging)
+  - added auto calibration of height with increase range of customisable door height (scales vr space)
+  - added horizontal space enlargement (space appears to be larger)
+
+0.4.0 (2019.10.28)
+  - added EXMs, among them there are new features:
+    - shields that can be created by a player
+    - attractor
+    - deflectors (long and short range)
+    - transfer systems (manual via buttons and automatic)
+    - boosters that improve stats
+    - energy pulling and navigation options
+  - set of presets for loadouts
+  - changed colors for various systems (red is health, blue is weapon/equipment, yellow is reactor)
+  - changed colors for menu
+  - pickupable weapons may be recharged
+  - "be at right place" window moves quicker and tries to stay in in front of the player
+  - changed roamer's color of energy core (from blue to red)
+  - added on screen gameplay info (optional)
+  
+0.3.13 (2019.09.05, updated 2019.09.19)
+  - added information about a new build
+  - elevators behave like empty if there's just a small AI onboard or an energy ball
+  - only index finger's tip may press buttons on fore arms
+  - performance improvements
+  - added "no NPCs" and "non-aggressive NPCs" custom difficulty settings
+  - added index controller support
+
+0.3.12 (2019.08.21, updated 2019.08.22)
+  - added non-linear levels
+  - added custom difficulty settings
+  - added five different difficulty settings
+
+0.3.11 (2019.08.10, updated 2019.08.14)
+  - shorter crouch zone (can't be a maze any longer)
+  - less cannons for guard cannons zone
+  - improved pick-up and pocket indicators for Quest
+  - improved shield look for Quest
+  - added (missing) health/hit tint for Quest
+  - added sending a report about crash for Quest
+  - dealigning rooms and corridors from axes for larger play areas
+
+0.3.10 (2019.07.26, updated 2019.07.29)
+  - performance improvements
+
+0.3.9 (2019.07.12, updated 2019.07.15)
+  - initial Quest port
+
+0.3.8 (2019.06.15, updated 2019.06.26)
+  - one new zone variation (ring rail station)
+  - added sending a report about crash
+  - added option to adjust pockets (options/gameplay)
+
+0.3.7 (2019.05.26, updated 2019.05.30)
+  - one new enemy (big cannons)
+  - one new zone variation (guard cannons)
+  - added reactor (more info in "learn basics")
+  - added terminal to allow energy transfer, loadout management and more, between levels
+  - added "only new" option to play only new zones
+
+0.3.6 (2019.05.10, updated 2019.05.13)
+  - one new zone variation (crouch maze)
+  - added "learn basics" section that explains gameplay mechanics
+  - door/room height is now adjustable (in play area options)
+  - can generate zones that require crouching (on option)
+  - changed (temporary) main menu
+  - currently english is the only supported language
+  - loading/saving FAD setup
+
+0.3.5 (2019.04.26)
+  - added FAD setup, initial functionality, current layout is a placeholder
+  
+0.3.4 (2019.04.13, updated 2019.04.16)
+  - one new enemy (sting)
+  - two new zone variations (using balconies: well, tower)
+  - added options (to access from the game, touch headset with a controller on the side)
+  - added turn counter (and a bunch of other fore arm displays)
+  - added way to change navigation (this is a proof of concept, for extension modules and to allow to check different navigation methods)
+  - added vignette for moving carts
+  - added endless mode
+  - added safety border for play area
+  - added few options for controllers
+    - vive wands: grip for picking up and releasing
+    - other: grip to deploy main equipment
+  - added hand gestures (for vive wands they are automatic when you put your hand over your other forearm)

@@ -1,0 +1,67 @@
+<library group="ui canvas fonts">
+	<generateFontTexture>
+		<texture file="assets/main very large.tex"
+			format="rgba8" wrap="clamp" filteringMag="linear" filteringMin="linear"
+			_fontFile="=v:/fonts/VT323-Regular.ttf"
+			_fontFile="=v:/fonts/Data-latin.ttf"
+			_fontFile="=v:/fonts/Bitwise.ttf"
+			_fontFile="=v:/fonts/MadcatRegular-g834.ttf"
+			_fontFile="=v:/fonts/zekton rg.ttf"
+			_fontFile="=v:/fonts/Audiowide-Regular.ttf"
+			fontFile="=v:/fonts/Video.ttf"
+			>
+			<gridSize x="32" y="6"/>
+			<gridCharacterSize x="166" y="206"/>
+			<characterSize x="160" y="200"/>
+			<baseLine>52</baseLine>
+			<compressCharacters/>
+			
+			<rowAnsi/>
+			<.rowLocalisedCharacters setId="latin"/>
+		</texture>
+	</generateFontTexture>
+	
+	<generateFontTexture>
+		<texture file="assets/main large.tex"
+			format="rgba8" wrap="clamp" filteringMag="linear" filteringMin="linear"
+			_fontFile="=v:/fonts/VT323-Regular.ttf"
+			_fontFile="=v:/fonts/Data-latin.ttf"
+			_fontFile="=v:/fonts/Bitwise.ttf"
+			_fontFile="=v:/fonts/MadcatRegular-g834.ttf"
+			_fontFile="=v:/fonts/zekton rg.ttf"
+			_fontFile="=v:/fonts/Audiowide-Regular.ttf"
+			fontFile="=v:/fonts/Video.ttf"
+			>
+			<gridSize x="32" y="6"/>
+			<gridCharacterSize x="86" y="106"/>
+			<characterSize x="80" y="100"/>
+			<baseLine>26</baseLine>
+			<compressCharacters/>
+			
+			<rowAnsi/>
+			<.rowLocalisedCharacters setId="latin"/>
+		</texture>
+	</generateFontTexture>
+	
+	<generateFontTexture>
+		<texture file="assets/main small.tex"
+			format="rgba8" wrap="clamp" filteringMag="linear" filteringMin="linear"
+			_fontFile="=v:/fonts/VT323-Regular.ttf"
+			_fontFile="=v:/fonts/Data-latin.ttf"
+			_fontFile="=v:/fonts/Bitwise.ttf"
+			_fontFile="=v:/fonts/MadcatRegular-g834.ttf"
+			_fontFile="=v:/fonts/zekton rg.ttf"
+			_fontFile="=v:/fonts/Audiowide-Regular.ttf"
+			fontFile="=v:/fonts/Video.ttf"
+			>
+			<gridSize x="32" y="6"/>
+			<gridCharacterSize x="46" y="56"/>
+			<characterSize x="40" y="50"/>
+			<baseLine>13</baseLine>
+			<compressCharacters/>
+			
+			<rowAnsi/>
+			<.rowLocalisedCharacters setId="latin"/>
+		</texture>
+	</generateFontTexture>
+</library>

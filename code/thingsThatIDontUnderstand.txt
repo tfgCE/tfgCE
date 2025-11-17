@@ -1,0 +1,50 @@
+[1] clip planes (AMD)
+
+Problem:
+When enabling or disabling clip planes, shader's uniforms may be forgotten or taken from... future.
+Imagine this:
+1. Rendering red mesh.
+2. Rendering green mesh.
+3. Rendering blue mesh.
+Colours are set with uniforms. Now we don't provide colour for second mesh.
+We get two red meshes and one blue.
+If we would put glEnable(GL_CLIP_PLANE0) between 1 and 2 we will end up with one red mesh and two blue!
+
+Solution:
+Always keep clip planes enabled and set those that are not needed to 0,0,0,0.
+
+Solution:
+Do not use fixed pipeline. Implement own vertex and fragment shaders with buffers.
+
+
+[2] shader attribute order (AMD)
+
+Problem:
+If we have attributes defined in shader, their order depend on their names and that's fine.
+We then get such order:
+inColour
+inNormal
+inPosition
+If first parameter is not bound with array but with vertex value, whole thing won't be rendered.
+
+Solution:
+Name attributes in such manner that those that are always required are earlier:
+inAPosition
+inOColour
+inONormal
+in ALWAYS position
+in OPTIONAL colour/normal
+
+
+[3] clip planes 2 (AMD)
+
+Problem:
+When setting two clip planes and then one (by clearing all params) clip planes are incorrect.
+
+Solution:
+Set all enabled clip planes (just set them with same values)
+
+Solution:
+Do not use fixed pipeline. Implement own vertex and fragment shaders with buffers.
+
+

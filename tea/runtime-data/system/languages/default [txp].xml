@@ -1,0 +1,12 @@
+<library group="languages">
+	<texture name="gb small" file="assets\gb small.tex" importFromFile="assets\_source\gb small.tga" filteringMag="nearest" filteringMin="nearest" wrap="clamp"/> 
+	<texturePart name="gb small" texture="gb small">
+		<uv0 x="0t24" ty="15t16"/>
+		<uv1 x="23t24" ty="0t16"/>
+		<uvAnchor x="11t23" ty="8t16"/>
+	</texturePart>
+
+	<localisedStrings>
+		<texturePart id="small" use="languages:gb small"/>
+	</localisedStrings>
+</library>

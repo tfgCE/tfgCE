@@ -1,0 +1,315 @@
+<library group="loading scenes">
+	
+	<fragmentShader name="marker">
+		<useRenderingPipeline/>
+		<source>
+			<data>
+				// uniforms
+				uniform vec4 markerColour; 
+			</data>
+			<defaultValues>
+				<colour name="markerColour" a="0.5">loader_hub_start_head_marker</colour>
+			</defaultValues>
+			<function name="final_colour_touch">
+				<body>
+					CALL_BASE
+					
+					colour.rgb = markerColour.a * markerColour.rgb + (1.0 - markerColour.a) * colour.rgb;
+				</body>
+			</function>
+		</source>
+	</fragmentShader>
+
+	<material name="marker"
+		fragmentShader="marker"
+		>
+		<useWithStaticMesh/>
+		<allowIndividualInstances/>
+		<params>
+			<texture name="inMaterialColour" use="main"/>
+			<texture name="inMaterialProp" use="main_p"/>
+			<texture name="inMaterialVoxel" use="main_v"/>
+			
+			has to have all parameters that anyone may change
+			<float name="voxelSize">0.05</float>
+			<float name="reflectiveness">1.0</float>
+			<float name="emissivePower">1.0</float>
+		</params>
+	</material>
+		
+	|
+
+	<vertexShader name="marker beacon">
+		<useWithRenderingPipeline/>
+		<useWithStatic/>
+		<source>
+			<data>
+				// input
+				in float inBeaconT;
+				in float inBeaconR;
+				in float inBeaconRI;
+				
+				// output
+				out float varBeaconT;
+				out float varBeaconR;
+				out float varBeaconRI;
+			</data>
+			<function name="process">
+				<body>
+					CALL_BASE
+					varBeaconT = inBeaconT;
+					varBeaconR = inBeaconR;
+					varBeaconRI = inBeaconRI;
+				</body>
+			</function>
+		</source>
+	</vertexShader>
+
+	<fragmentShader name="marker beacon">
+		<useRenderingPipeline/>
+		<dependsOn>
+			<shaderFunctionLib name="shader function libs:adjust alpha rand"/>
+		</dependsOn>
+		<source>
+			<data>
+				// uniforms
+				uniform vec4 markerColour;
+				uniform float beaconActive;			// location
+				uniform float beaconRActive;		// rotation
+				uniform float beaconZ;				// at which height should be
+
+				uniform float beaconSpeed;
+				uniform float beaconRSpeed;
+				uniform float beaconTScale;
+				uniform float beaconRScale;
+				uniform float beaconUseZ;			// 0 for ignore rotation?
+				uniform float beaconZOffsetScale;
+				uniform float beaconAlpha;
+				uniform float beaconTreshold;
+				uniform float beaconTresholdScale;
+				uniform float beaconBorderScale;
+				uniform float beaconOntoObserverScale;
+				uniform float beaconDistanceScale;
+				
+				// input
+				in float varBeaconT;
+				in float varBeaconR;
+				in float varBeaconRI;
+			</data>
+			<defaultValues>
+				<colour name="markerColour" a="0.5">loader_hub_start_head_marker</colour>
+				<float name="beaconActive">0.0</float>
+				<float name="beaconRActive">1.0</float>
+				<float name="beaconSpeed">1.0</float>
+				<float name="beaconRSpeed">1.0</float>
+				<float name="beaconTScale">1.0</float>
+				<float name="beaconRScale">1.0</float>
+				<float name="beaconZ">1.5</float>
+				<float name="beaconUseZ">1.0</float>
+				<float name="beaconZOffsetScale">1.0</float>
+				<float name="beaconAlpha">0.5</float>
+				<float name="beaconTreshold">0.4</float>
+				<float name="beaconTresholdScale">5.0</float>
+				<float name="beaconBorderScale">6.0</float>
+				<float name="beaconOntoObserverScale">2.0</float>
+				<float name="beaconDistanceScale">2.0</float>
+			</defaultValues>
+			<function name="apply_voxel">
+				<body>
+					// don't
+				</body>
+			</function>
+			<function name="final_colour_touch">
+				<body>
+					CALL_BASE
+					
+					colour.rgb = markerColour.a * markerColour.rgb + (1.0 - markerColour.a) * colour.rgb;
+					
+					HIGHP float ontoObserver = clamp(abs(dot(prcPositionNormalised, -prcNormal)), 0.0, 1.0);
+					
+					HIGHP float t = beaconTreshold;
+					HIGHP float s = beaconTresholdScale;
+					
+					HIGHP float la = 0.0;
+					HIGHP float ra = 0.0;
+					
+					{	// location
+						HIGHP float b = sin((varBeaconT + time * beaconSpeed) * beaconTScale);
+
+						la = clamp((b - t) * s, 0.0, 1.0);
+						
+						la *= beaconActive;
+					}
+					
+					{	// rotation
+						HIGHP float zOffset = abs(varModelPosition.z - beaconZ) * beaconZOffsetScale;
+						
+						HIGHP float x = -abs(varBeaconR);
+						HIGHP float y = zOffset;
+						HIGHP float b = beaconUseZ * sin((x + y + (abs(x) > abs(y)? -1.0 : 1.0) * time * beaconRSpeed) * beaconRScale + (abs(x) > abs(y)? 0.0 : (3.14))) + 
+								  (1.0 - beaconUseZ) * sin((x + y - time * beaconRSpeed) * beaconRScale);
+						
+						ra = clamp((b - t) * s, 0.0, 1.0);
+						
+						// this is to make the back dark as things overlap there
+						ra *= varModelPosition.y &gt; 0.0? 1.0
+								: clamp((abs(varBeaconRI) - 0.05) * 20.0, 0.0, 1.0);
+								
+						ra *= beaconRActive;
+					}
+					
+					colour.a = la + ra;
+
+					colour.a *= clamp(varBeaconT * beaconBorderScale, 0.0, 1.0);
+					colour.a *= clamp((1.0 - varBeaconT) * beaconBorderScale, 0.0, 1.0);
+
+					colour.a *= clamp(ontoObserver * beaconOntoObserverScale, 0.0, 1.0);
+					
+					colour.a *= clamp(prcPositionDistance * beaconDistanceScale, 0.0, 1.0);
+
+					colour.a = colour.a * colour.a;
+					
+					colour.a *= beaconAlpha;
+					
+				//#ifdef MAKE_IT_FASTER
+				//	colour.rgb *= 0.4 + 0.6 * colour.a;
+				//	colour.a = adjust_alpha_rand_down(colour.a);
+				//	if (colour.a &lt;= 0.05) discard;
+				//#else
+					if (colour.a &lt;= 0.0) discard;
+				//#endif
+				
+				</body>
+			</function>
+		</source>
+	</fragmentShader>
+
+	<material name="marker beacon"
+		vertexShader="marker beacon"
+		fragmentShader="marker beacon"
+		faceDisplay="both"
+		depthMask="false" srcBlendOp="srcAlpha" destBlendOp="oneMinusSrcAlpha" 
+		>
+		<.for systemTagRequired="lowGraphics" depthMask="true" srcBlendOp="one" destBlendOp="zero"/>
+		<useWithStaticMesh/>
+		<allowIndividualInstances/>
+		<params>
+			<texture name="inMaterialColour" use="main"/>
+			<texture name="inMaterialProp" use="main_p"/>
+			<texture name="inMaterialVoxel" use="main_v"/>
+			
+			has to have all parameters that anyone may change
+			<float name="voxelSize">0.05</float>
+			<float name="reflectiveness">1.0</float>
+			<float name="emissivePower">1.0</float>
+		</params>
+	</material>
+	
+	|
+	
+	<fragmentShader name="marker beacon far">
+		<useRenderingPipeline/>
+		<dependsOn>
+			<shaderFunctionLib name="shader function libs:adjust alpha rand"/>
+		</dependsOn>
+		<source>
+			<data>
+				// uniforms
+				uniform vec4 markerColour;
+				uniform float beaconActive;			// location
+
+				uniform vec3 beaconAtRel;			// relative location
+				uniform float beaconSpeed;
+				uniform float beaconTScale;
+				uniform float beaconAlpha;
+				uniform float beaconTreshold;
+				uniform float beaconTresholdScale;
+				uniform float beaconInnerBorderScale;
+				uniform float beaconOuterBorderScale;
+				uniform float beaconRadius;
+			</data>
+			<defaultValues>
+				<colour name="markerColour" a="0.5">loader_hub_start_head_marker</colour>
+				<vector3 name="beaconAtRel" x="0" y="0" z="0"/>
+				<float name="beaconActive">0.0</float>
+				<float name="beaconRadius">4.0</float>
+				<float name="beaconSpeed">1.0</float>
+				<float name="beaconTScale">1.0</float>
+				<float name="beaconAlpha">0.5</float>
+				<float name="beaconTreshold">0.4</float>
+				<float name="beaconTresholdScale">5.0</float>
+				<float name="beaconInnerBorderScale">6.0</float>
+				<float name="beaconOuterBorderScale">6.0</float>
+			</defaultValues>
+			<function name="apply_voxel">
+				<body>
+					// don't
+				</body>
+			</function>
+			<function name="final_colour_touch">
+				<body>
+					CALL_BASE
+					
+					colour.rgb = markerColour.a * markerColour.rgb + (1.0 - markerColour.a) * colour.rgb;
+					
+					HIGHP float t = beaconTreshold;
+					HIGHP float s = beaconTresholdScale;
+					
+					HIGHP float la = 0.0;
+					HIGHP float ra = 0.0;
+					
+					HIGHP float beaconDistanceFromCentre = length(varModelPosition);
+					HIGHP float beaconDistanceFromLoc = length(varModelPosition - beaconAtRel);
+					HIGHP float beaconT0 = beaconDistanceFromCentre / beaconRadius;
+					HIGHP float beaconT = beaconDistanceFromLoc / beaconRadius;
+					{	// location
+						HIGHP float b = sin((beaconT + time * beaconSpeed) * beaconTScale);
+
+						la = clamp((b - t) * s, 0.0, 1.0);
+						
+						la *= beaconActive;
+					}
+					
+					colour.a = la + ra;
+
+					colour.a *= clamp(beaconT * beaconInnerBorderScale, 0.0, 1.0);
+					colour.a *= clamp((1.0 - beaconT0) * beaconOuterBorderScale, 0.0, 1.0);
+
+					colour.a = colour.a * colour.a;
+					
+					colour.a *= beaconAlpha;
+
+				//#ifdef MAKE_IT_FASTER
+				//	colour.rgb *= 0.4 + 0.6 * colour.a;
+				//	colour.a = adjust_alpha_rand_down(colour.a);
+				//	if (colour.a &lt;= 0.05) discard;
+				//#else
+					if (colour.a &lt;= 0.0) discard;
+				//#endif
+				
+				</body>
+			</function>
+		</source>
+	</fragmentShader>
+
+	<material name="marker beacon far"
+		fragmentShader="marker beacon far"
+		faceDisplay="both"
+		depthMask="false" srcBlendOp="srcAlpha" destBlendOp="oneMinusSrcAlpha" 
+		>
+		<.for systemTagRequired="lowGraphics" depthMask="true" srcBlendOp="one" destBlendOp="zero"/>
+		<useWithStaticMesh/>
+		<allowIndividualInstances/>
+		<params>
+			<texture name="inMaterialColour" use="main"/>
+			<texture name="inMaterialProp" use="main_p"/>
+			<texture name="inMaterialVoxel" use="main_v"/>
+			
+			has to have all parameters that anyone may change
+			<float name="voxelSize">0.05</float>
+			<float name="reflectiveness">1.0</float>
+			<float name="emissivePower">1.0</float>
+		</params>
+	</material>
+	
+</library>

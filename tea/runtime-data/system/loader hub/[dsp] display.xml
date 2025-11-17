@@ -1,0 +1,38 @@
+<library group="loader hub">
+	<displayType name="display">
+		<display
+			font="displays:default 24x32"
+			postProcess=""
+			.postProcess="loader hub:display post process"
+			shadowMask="default:white"
+			.shadowMask="displays:scanline"
+			refreshFrequency="30"
+			retraceVisibleFrequency="0.5"
+			drawCyclesPerSecond="1000">
+			<shadowMaskPerPixel x="1" y="1"/>
+			<powerTurnOnBlendTime>0.2</powerTurnOnBlendTime>
+			<screen x="300" y="220"/>
+			<border x="44" y="22"/>
+			<postProcessParameters>
+				<float name="noiseStrength">0.0</float>
+				<float name="retracePower">0.0</float>
+				<float name="minColour">0.0</float>
+				<float name="minToMaxColour">1.0</float>
+				<float name="keepAlpha">1.0</float>
+				<float name="alphaBase">0.0</float>
+				<float name="alphaRetrace">0.00</float>
+				<float name="alphaFromColourUse">0.0</float>
+				<float name="alphaFromColourKeep">1.0</float>
+				<float name="randomLineOffset">0.000</float>
+				<float name="randomLineOffsetAmount">0.0</float>
+				<float name="persistenceDecay">0.0</float>
+				<float name="persistenceAttack">1.0</float>
+				<bool name="bleedColourRG">false</bool>
+			</postProcessParameters>
+			<defaultInk>white</defaultInk>
+			<defaultPaper>black</defaultPaper>
+		</display>
+	</displayType>
+</library>
+
+

@@ -1,0 +1,20 @@
+<library group="shader function libs">
+	<shaderFunctionLib name="noise">
+		<source>
+			<function name="calc_noise">
+				<header>float calc_noise(vec3 _pos, float _time)</header>
+				<body>
+					vec2 p = vec2(_pos.x * 54.234 + _pos.z * 23.252, _pos.y * 94.345 + _pos.z * 12.579);
+
+					p += vec2( 0.07 * fract( time ) );
+					p = fract(p * vec2(5.3987, 5.4421));
+					p += dot(p.yx, p.xy + vec2(21.5351, 14.3137));
+
+					float pxy = p.x * p.y;
+					float tri = (fract(pxy * 95.4307) + fract(pxy * 75.04961)) * 0.5; 
+					return tri;
+				</body>
+			</function>
+		</source>
+	</shaderFunctionLib>
+</library>

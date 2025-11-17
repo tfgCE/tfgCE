@@ -1,0 +1,221 @@
+<library>
+  <gameInputDefinition name="inGameMenuControls">
+    this can't be used by anything else and shouldn't be allowed to redefine
+    <button name="open/close" gamepadButton="start" key="esc"/>
+  </gameInputDefinition>
+  <gameInputDefinition name="loaderHub">
+    <button name="select" vrButton="trigger" vrButtonsCondition="! handTracking"/>
+    <button name="select" vrButton="pointerPinch" vrButtonsCondition="handTracking" vrButtonPrompt="pointer pinch"/>
+    <button name="shift" vrButton="grip"/>
+    <mouse name="scroll" mouse="false" vrMouse="viveWand, holographicWand" vrSensitivity="4"/>
+    <stick name="scroll" vrStick="viveWand trackpad, touchLike joystick, holographicWand joystick, valveIndex joystick"/>
+    <stick name="move" vrStick="viveWand trackpad, touchLike joystick, holographicWand joystick, valveIndex joystick"/>
+    to move between tabs
+    <button name="tabRight" vrButton="touchLike joystickRight, viveWand trackpadDirRight, valveIndex joystickRight, holographicWand joystickRight"/>
+    <button name="tabLeft" vrButton="touchLike joystickLeft, viveWand trackpadDirLeft, valveIndex joystickLeft, holographicWand joystickLeft"/>
+    indicators
+    <button name="canMove" vrButton="touchLike inUse, holographicWand inUse, valveIndex inUse"/>
+    <button name="canShift" vrButton="inUse" vrButtonsCondition="! handTracking"/>
+	playarea calibration
+    <mouse name="calibrate" mouse="false" vrMouse="viveWand, holographicWand" vrSensitivity="4"/>
+    <stick name="calibrate" gamepadDeadZone="0.1" vrStick="viveWand trackpad, touchLike joystick, holographicWand joystick, valveIndex joystick"/>
+    <button name="calibrateSwitch" vrButton="grip, touchLike a, viveWand a, valveIndex a, holographicWand a"/>
+  </gameInputDefinition>
+  <gameInputDefinition name="loaderHub">		<developmentOnly/>
+    <button name="select" mouseButtonIdx="0" mouseCondition="!vr"/>
+    <button name="shift" key="leftshift, rightshift"/>
+    <mouse name="movePointer" sensitivity="0.2" mouseCondition="!vr"/>
+    <button name="scrollUp" key="mouseWheelUp" mouseCondition="!vr"/>
+    <button name="scrollDown" key="mouseWheelDown" mouseCondition="!vr"/>
+    <stick name="move" xMinusKey="a" xPlusKey="d" yMinusKey="s" yPlusKey="w" keysCondition="!vr"/>
+    indicators
+    <button name="canMove" key="inUse" keyCondition="!vr"/>
+    <button name="canShift" key="inUse" keyCondition="!vr"/>
+  </gameInputDefinition>
+  <gameInputDefinition name="allTimeControls">
+    this can't be used by anything else and shouldn't be allowed to redefine
+    <button name="screenshot" key="v"/>
+    <!--<button name="resetImmobileOriginVR" vrButton="left touchLike b" key="f12"/>--> use system's reset
+    <button name="vrScreenshot" vrButton="systemMenu" vrButtonsCondition="!handTracking and allowVRScreenShots and !allowSavingFramePerformanceInfo"/>
+    <button name="saveFramePerformanceInfo" vrButton="systemMenu" vrButtonsCondition="allowSavingFramePerformanceInfo"/>
+	
+    <button name="skipScene" allRequired="true" vrButton="left touchLike b, right touchLike b" vrButtonsCondition="!handTracking"/>
+    <button name="skipScene" allRequired="true" vrButton="left viveWand a, right viveWand a" vrButtonsCondition="!handTracking"/>
+    <button name="skipScene" allRequired="true" vrButton="left valveIndex b, right valveIndex b" vrButtonsCondition="!handTracking"/>
+    <button name="skipScene" allRequired="true" vrButton="left holographicWand a, right holographicWand a" vrButtonsCondition="!handTracking"/>
+    <button name="skipSceneIndicate" vrButton="touchLike b" vrButtonsCondition="!handTracking"/>
+    <button name="skipSceneIndicate" vrButton="viveWand a" vrButtonsCondition="!handTracking"/>
+    <button name="skipSceneIndicate" vrButton="valveIndex b" vrButtonsCondition="!handTracking"/>
+    <button name="skipSceneIndicate" vrButton="holographicWand a" vrButtonsCondition="!handTracking"/>
+    <button name="skipScenePrompt" vrButton="a, b, trigger, grip" vrButtonsCondition="!handTracking"/>
+    <button name="skipScene" vrButton="ringPinch" vrButtonPrompt="ring pinch" vrButtonsCondition="handTracking"/>
+    <button name="skipScenePrompt" vrButton="ringPinch, pointerPinch, middlePinch, pinkyPinch" vrButtonsCondition="handTracking"/>
+
+    <button name="scrollFaster" vrButton="a, b, trigger, grip" vrButtonsCondition="!handTracking"/>
+    <button name="scrollFaster" vrButton="ringPinch, pointerPinch, middlePinch, pinkyPinch" vrButtonsCondition="handTracking"/>
+    <stick name="scrollStick" vrStick="joystick" vrButtonsCondition="!handTracking"/>
+  </gameInputDefinition>
+  <gameInputDefinition name="allTimeControls">	<developmentOnly/>
+	<keepForMainConfigIfNotRelease/>
+    <button name="quickSelectDebugSubject" vrButton="left touchLike grip, left viveWand grip, left valveIndex grip, left holographicWand grip"/>
+    <button name="logPostProcess" key="b"/>
+    <button name="logPostProcessDetailedSwitch" key="leftshift"/>
+
+    <button name="leftVRDebugMenu" vrButton="left touchLike a, left valveIndex a"/>
+    <button name="rightVRDebugMenu" vrButton="right touchLike a, right valveIndex a"/>
+
+    <button name="skipScene" key="space"/>
+    <button name="skipScenePrompt" key="space"/>
+
+    <button name="skipStoryScene" key="space"/>
+
+    <button name="scrollFaster" key="q, e"/>
+    <stick name="scrollStick" xMinusKey="a" xPlusKey="d" yMinusKey="s" yPlusKey="w" keysCondition="!vr"/>
+  </gameInputDefinition>
+  <gameInputDefinition name="game">				<developmentOnly/>	<!-- debug movement -->
+	<keepForMainConfigIfNotRelease/>
+    <stick name="pretendVRMovement" gamepadStick="left" gamepadDeadZone="0.2" vrStick="left viveWand trackpad, left touchLike joystick, left holographicWand joystick, left valveIndex joystick"/>
+    <stick name="pretendVRRotation" gamepadStick="right" gamepadDeadZone="0.2" invertY="true" sensitivity="1.0" vrStick="right viveWand trackpad, right touchLike joystick, right holographicWand joystick, right valveIndex joystick"/>
+  </gameInputDefinition>
+  <gameInputDefinition name="game">				<developmentOnly/>
+    <stick name="movement" xMinusKey="a" xPlusKey="d" yMinusKey="s" yPlusKey="w" keysCondition="!vr"/>
+    <stick name="rotation" xMinusKey="leftArrow" xPlusKey="rightArrow" yMinusKey="downArrow" yPlusKey="upArrow" keysCondition="!vr"/>
+    <mouse name="rotation" invertY="true" sensitivity="0.5" mouseCondition="!vr"/>
+    <button name="useEquipmentRight" gamepadButton="rightTrigger" mouseButtonIdx="2" mouseCondition="!vr"/>
+    <button name="useEquipmentLeft" gamepadButton="leftTrigger" mouseButtonIdx="0" mouseCondition="!vr"/>
+	<button name="useAsUsableEquipmentRight" gamepadButton="rightTrigger" mouseButtonIdx="2" mouseCondition="!vr"/>
+	<button name="useAsUsableEquipmentLeft" gamepadButton="leftTrigger" mouseButtonIdx="0" mouseCondition="!vr"/>
+    <!--<.button name="pullEnergyRight" key="kp_9" keysCondition="!vr"/>-->
+    <!--<.button name="pullEnergyLeft" key="kp_7" keysCondition="!vr"/>-->
+    <button name="grabEquipmentRight" key="kp_6" keysCondition="!vr"/>
+    <button name="grabEquipmentLeft" key="kp_4" keysCondition="!vr"/>
+    <button name="releaseEquipmentRight" key="kp_9" keysCondition="!vr"/>
+    <button name="releaseEquipmentLeft" key="kp_7" keysCondition="!vr"/>
+    <button name="makeFistRight" key="kp_3" keysCondition="!vr"/>
+    <button name="makeFistLeft" key="kp_1" keysCondition="!vr"/>
+    <button name="useEXMRight" key="kp_3" keysCondition="!vr"/>
+    <button name="useEXMLeft" key="kp_1" keysCondition="!vr"/>
+    <button name="requestInGameMenu" key="m" keysCondition="!vr"/>
+    <button name="showOverlayInfo" key="n" keysCondition="!vr"/>
+    <stick name="overlayInfoMove" xMinusKey="kp_4" xPlusKey="kp_6" yMinusKey="kp_2" yPlusKey="kp_8" keysCondition="!vr"/>
+    |
+    <button name="autoHoldEquipment" noVR="true"/>
+    <!--<button name="autoMainEquipment" noVR="true"/>--> <!-- but is filtered by option -->
+  </gameInputDefinition>
+  <gameInputDefinition name="allTimeControls">	<developmentOnly/>	<!-- camera movement -->
+	<keepForMainConfigIfNotRelease/>
+    <stick name="debugMovement" gamepadStick="left" gamepadDeadZone="0.1" xMinusKey="a" xPlusKey="d" yMinusKey="s" yPlusKey="w" vrStick="left viveWand trackpad, left touchLike joystick, left holographicWand joystick, left valveIndex joystick"/>
+    <stick name="debugRotation" gamepadStick="right" gamepadDeadZone="0.1" invertY="true" sensitivity="1.0" xMinusKey="leftArrow" xPlusKey="rightArrow" yMinusKey="downArrow" yPlusKey="upArrow" vrStick="right viveWand trackpad, right touchLike joystick, right holographicWand joystick, right valveIndex joystick"/>
+    <button name="debugMovementVerticalSwitch" vrButton="left touchLike grip"/>
+    <button name="debugCrouch" key="leftctrl" vrButton="right touchLike joystickDown"/>
+    <button name="debugStandUp" key="leftshift" vrButton="right touchLike joystickUp"/>
+    <mouse name="debugRotation" invertY="true" sensitivity="0.5"/>
+    <button name="debugCameraSlow" key="leftctrl"/>
+    <button name="debugMovementSlow" vrButton="right touchLike grip"/>
+    <button name="debugMovementSlowAlt" vrButton="right touchLike trigger"/>
+    <button name="debugMovementSlowAlt2" vrButton="left touchLike trigger"/>
+    <button name="debugRotationSlow" vrButton="right touchLike grip"/>
+    <button name="debugRotationSlowAlt" vrButton="right touchLike trigger"/>
+    <button name="debugRotationSlowAlt2" vrButton="left touchLike trigger"/>
+    <button name="debugCameraFast" key="leftshift"/>
+    <button name="debugCameraSpeedSwitch" key="leftalt"/>
+    <button name="debugRequestInGameMenu" vrButton="systemMenu" vrButtonsCondition="!allowVRScreenShots and !allowSavingFramePerformanceInfo"/>
+    <button name="debugStoreCameraPlacement" vrButton="left touchLike b"/>
+    <button name="debugNextStoredCameraPlacement" vrButton="right touchLike b"/>
+  </gameInputDefinition>
+  <gameInputDefinition name="game">				<notDevelopment/>
+    <!--<.button name="pullEnergyAlt" vrButton="touchLike a"/>-->
+    <button name="showOverlayInfo" vrButton="touchLike a, valveIndex a, holographicWand trackpadTouch"/>
+  </gameInputDefinition>
+  <gameInputDefinition name="game">									<!-- control schemes, options -->
+    <option name="cs_grabWithGrip" condition="viveWand and usingControllers"/>
+    <option name="cs_deployWithGrip" condition="(touchLike or valveIndex or holographicWand) and usingControllers"/>
+    <option name="cs_shootThumb" condition="handTracking"/>
+    <option name="cs_blockOverlayInfoOnHeadSideTouch" condition="(touchLike or valveIndex or holographicWand) and (usingControllers or handTracking)" inOptionsNegated="true"/>
+    <option name="cs_blockInGameMenuOnHeadHold" condition="(usingControllers)" inOptionsNegated="true"/>
+  </gameInputDefinition>
+  <gameInputDefinition name="game">									<!-- filtered options -->
+    <!-- these are filtered by options and game code, but if they are set, the game will know that it should also provide option for them -->
+    <button name="autoHoldEquipment" vrButton="viveWand inUse"/>
+    <button name="autoPointing" vrButton="viveWand inUse"/>
+    <button name="autoMainEquipment" vrButton="viveWand inUse" vrButtonsCondition="! cs_grabWithGrip"/> <!-- if option in player preferences is set to auto, this is going to be checked -->
+    <button name="autoDropEmptyWeapons" vrButton="viveWand inUse"/> <!-- if option in player preferences is set to auto, this is going to be checked -->
+    <button name="autoShootThumb" vrButton="usesHandTracking" vrButtonsCondition="cs_shootThumb"/>
+  </gameInputDefinition>
+  <gameInputDefinition name="game">									<!-- immobileVR locomotion -->
+    <stick name="immobileVRMovement" gamepadStick="left" gamepadDeadZone="0.2" vrStick="left viveWand trackpad, left touchLike joystick, left holographicWand joystick, left valveIndex joystick"/>
+    <stick name="immobileVRRotation" gamepadStick="right" gamepadDeadZone="0.2" invertY="true" sensitivity="1.0" vrStick="right viveWand trackpad, right touchLike joystick, right holographicWand joystick, right valveIndex joystick"/>
+    <button name="immobileVRRun" vrButton="left viveWand trackpadDirUp, left touchLike joystickPress, left holographicWand joystickPress, left valveIndex joystickPress"/>
+  </gameInputDefinition>
+  <gameInputDefinition name="game">									<!-- general vr input, non hand tracking -->
+    <button name="useEXM" vrButton="touchLike b, viveWand a, valveIndex b, holographicWand a" vrButtonsCondition="!handTracking"/>
+    <button name="useEquipment" vrButton="trigger" vrButtonsCondition="!handTracking"/>
+    <button name="useEquipmentAway" vrButton="valveIndex pointer released, touchLike pointer released" vrButtonsCondition="!handTracking"/> <!-- pointer/index finger not on a trigger -->
+    <button name="useAsUsableEquipment" vrButton="touchLike trigger, valveIndex trigger, holographicWand trigger" vrButtonsCondition="!handTracking"/> <!-- use usable equipment, inspecters, mines, etc -->
+    <button name="deployMainEquipment" vrButton="trigger" vrButtonsCondition="(! handTracking)"/>
+    <!--<.button name="pullEnergy" vrButton="touchLike grip, viveWand trackpadTouch, valveIndex middle, holographicWand grip" vrButtonsCondition="!handTracking"/>-->
+    <!--<..stick name="pullEnergyAlt" vrStick="touchLike joystick, holographicWand joystick" vrButtonsCondition="!handTracking"/>-->
+    <!--<..button name="pullEnergyAlt" vrButton="valveIndex trackpadTouch, viveWand trackpadTouch, holographicWand trackpadTouch" vrButtonsCondition="!handTracking"/>-->
+    <button name="grabEquipment" vrButton="touchLike grip, valveIndex middle, holographicWand grip" vrButtonsCondition="!handTracking"/>
+    <button name="releaseEquipment" vrButton="touchLike grip released, valveIndex middle released, holographicWand grip released" vrButtonsCondition="!handTracking"/>
+    <button name="makeFist" vrButton="touchLike grip, viveWand trigger, valveIndex middle, holographicWand grip" vrButtonsCondition="!handTracking"/>
+    <button name="requestInGameMenuHold" vrButton="headSideTouch" vrButtonsCondition="!handTracking and !cs_blockInGameMenuOnHeadHold"/>
+    <button name="requestInGameMenu" vrButton="systemMenu" vrButtonsCondition="!handTracking and !allowVRScreenShots and !allowSavingFramePerformanceInfo"/>
+    <button name="showOverlayInfo" vrButton="headSideTouch" vrButtonsCondition="!handTracking and !cs_blockOverlayInfoOnHeadSideTouch" vrButtonPromptTextId="game input prompts; show overlay info head side touch"/>
+    <stick name="overlayInfoMove" vrStick="viveWand trackpad, touchLike joystick, holographicWand joystick, valveIndex joystick" vrSticksCondition="! immobileVR"/>
+
+    <!-- control scheme: (all that have a separate grip) grab with grip YES -->
+    <button name="deployMainEquipment" vrButton="touchLike grip, valveIndex grip, holographicWand grip" vrButtonsCondition="(touchLike or valveIndex or holographicWand) and cs_deployWithGrip and (! handTracking)"/>
+
+    <!-- control scheme: (vive wand) grab with grip YES -->
+    <button name="sharedReleaseGrabDeploy" vrButton="viveWand inUse" vrButtonsCondition="viveWand and cs_grabWithGrip"/>
+    <button name="grabEquipment" vrButton="viveWand grip" vrButtonsCondition="viveWand and cs_grabWithGrip"/>
+    <button name="releaseEquipment" vrButton="viveWand grip" vrButtonsCondition="viveWand and cs_grabWithGrip"/>
+    <button name="useAsUsableEquipment" vrButton="viveWand trigger" vrButtonsCondition="viveWand and cs_grabWithGrip"/>
+    <button name="deployMainEquipment" vrButton="viveWand grip" vrButtonsCondition="viveWand and cs_grabWithGrip"/>
+        
+    <!-- control scheme: (vive wand) grab with grip NOT -->
+    <button name="grabEquipment" vrButton="viveWand trigger" vrButtonsCondition="viveWand and ! cs_grabWithGrip"/>
+    <button name="releaseEquipment" vrButton="viveWand trackpad" vrButtonsCondition="viveWand and ! cs_grabWithGrip"/>
+    <button name="easyReleaseEquipment" vrButton="viveWand trigger released" vrButtonsCondition="viveWand and ! cs_grabWithGrip"/> <!-- this is used only if auto main equipment is set -->
+	<!-- no useAsUsableEquipment -->
+	<!-- no additional handling for deployMainEquipment -->
+    
+    <button name="separateFingers" vrButton="valveIndex inUse, touchLike pose"/>
+    <button name="relaxedThumb" vrButton="valveIndex thumb released"/>
+    <button name="relaxedPointer" vrButton="valveIndex pointer released"/>
+    <button name="relaxedMiddle" vrButton="valveIndex middle released"/>
+    <button name="relaxedRing" vrButton="valveIndex ring released"/>
+    <button name="relaxedPinky" vrButton="valveIndex pinky released"/>
+    <button name="straightThumb" vrButton="touchLike thumb released"/>
+    <button name="straightPointer" vrButton="touchLike pointer released"/>
+    <button name="straightMiddle" vrButton="touchLike middle released"/>
+    <button name="straightRing" vrButton="touchLike ring released"/>
+    <button name="straightPinky" vrButton="touchLike pinky released"/>
+  </gameInputDefinition>
+  <gameInputDefinition name="game">									<!-- hand tracking only here -->
+    <button name="allowHandTrackingPose" vrButton="usesHandTracking"/>
+
+    <button name="useEXM" allRequired="true" vrButton="ringFolded, pinkyStraight" vrButtonsCondition="handTracking" vrButtonPrompt="ring folded, pinky straight"/>
+
+    <button name="useEquipment" allRequired="true" vrButton="pointer" vrButtonsCondition="handTracking and (! cs_shootThumb)" vrButtonPrompt="folded pointer"/>
+    <button name="useEquipment" allRequired="true" vrButton="thumbStraight released" vrButtonsCondition="handTracking and cs_shootThumb" vrButtonPrompt="folded thumb"/>
+    <!--<.button name="pullEnergy" allRequired="true" vrButton="middleFolded" vrButtonsCondition="handTracking" vrButtonPrompt="middle folded"/>-->
+    <button name="grabEquipment" allRequired="true" vrButton="middleFolded, ringFolded" vrButtonsCondition="handTracking" vrButtonPrompt="middle folded, ring folded"/>
+    <button name="releaseEquipment" allRequired="true" vrButton="pointerStraight, middleStraight, ringStraight" vrButtonsCondition="handTracking" vrButtonPrompt="pointer straight, middle straight, ring straight"/>
+    <button name="makeFist" allRequired="true" vrButton="pointerFolded, middleFolded, ringFolded, pinkyFolded" vrButtonsCondition="handTracking" vrButtonPrompt="pointer folded, middle folded, ring folded, pinky folded"/>
+
+    <button name="deployMainEquipment" allRequired="true" vrButton="pointerStraight, middleStraight, ringFolded" vrButtonsCondition="handTracking" vrButtonPrompt="pointer straight, middle straight, ring folded"/>
+
+    <button name="requestInGameMenu" vrButton="systemMenu" vrButtonsCondition="handTracking" vrButtonPrompt="index pinch towards head"/>
+    <button name="showOverlayInfo" allRequired="true" vrButton="ringPinch" vrButtonsCondition="handTracking and ! cs_blockOverlayInfoOnHeadSideTouch" vrButtonPrompt="ring pinch"/>
+  </gameInputDefinition>
+  <gameInputDefinition name="platformerMiniGame">
+    <stick name="movement" gamepadStick="left, d-pad" gamepadDeadZone="0.0" vrStick="trackpad" xMinusKey="q, e, t, u, o, leftArrow" xPlusKey="w, r, y, i, p, rightArrow"/>
+    <button name="jump" gamepadButton="a" key="space, z, x, c, v, b, n, m, upArrow" vrButton="trackpad"/>
+    <button name="pause" gamepadButton="start" key="enter"/>
+  </gameInputDefinition>
+  <gameInputDefinition name="loadingMiniGame">
+    <button name="end" gamepadButton="start" key="enter" vrButton="a"/>
+  </gameInputDefinition>
+</library>

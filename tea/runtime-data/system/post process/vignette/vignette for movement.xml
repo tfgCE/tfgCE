@@ -1,0 +1,71 @@
+<library group="postProcess">
+	<fragmentShader name="vignette for movement">
+		<useWithPostProcessPipeline/>
+		<source>
+			<data>
+				// uniform
+				uniform sampler2D inData;
+				uniform sampler2D noise;
+				uniform HIGHP float random;
+				uniform HIGHP float time;
+				
+				uniform vec2 noiseTextureInv; // inverte size of texture
+
+				// param
+				uniform float vignetteForMovementStrength;
+				uniform float vignetteForMovement;
+
+				// output
+				out vec4 outData;
+			</data>
+			<defaultValues>
+				<vector2 name="noiseTextureInv" x="0.00390625" y="0.00390625"/>
+
+				<float name="vignetteForMovementStrength">1.0</float>
+				<float name="vignetteForMovement">1.0</float>
+			</defaultValues>
+			<mainBody>
+				// vignette for movement
+				vec4 inputTexture = texture(inData, varUV);
+				float amount = length(varViewRay) * (1.0 + vignetteForMovement * 0.5);
+				amount = max(0.0, 1.0 - amount * amount * vignetteForMovementStrength);
+				
+				outData = inputTexture;
+				outData.rgb *= amount;
+
+				// anti banding
+			#ifdef WITH_ANTI_BANDING
+				outData.rgb += (-vec3(-0.5) + texture(noise, varUV * inOutputSize * noiseTextureInv + vec2(random, random * 5.37)).rgb * 2.0) * 0.00390625; // inverted colour resolution (256)
+			#endif
+				
+				outData.a = 1.0;
+			</mainBody>
+		</source>
+		<outputs>
+			<output name="outData"/>
+		</outputs>
+	</fragmentShader>
+	<shaderProgram name="vignette for movement" fragmentShader="vignette for movement">
+		<params>
+			<texture name="noise" use="anti banding noise"/>
+		</params>
+	</shaderProgram>
+
+	post process'
+	
+	<postProcess name="vignette for movement">
+		<graph>
+			<inputNode name="input">
+				<output name="colour"/>
+			</inputNode>
+			<processorNode name="vignette for movement" shaderProgram="vignette for movement">
+				<input name="inData" connectToNode="input" connectToConnector="colour"/>
+			</processorNode>
+			<outputNode name="output">
+				<input name="colour" connectToNode="vignette for movement" connectToConnector="outData"/>
+			</outputNode>
+		</graph>
+	</postProcess>
+</library>
+
+

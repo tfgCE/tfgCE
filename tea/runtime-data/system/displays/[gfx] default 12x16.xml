@@ -1,0 +1,27 @@
+<library group="displays">
+	gfx
+	
+	<texture name="default 12x16" file="assets\default 12x16.tex" importFromFile="assets\_source\default 12x16.tga" filteringMag="nearest"/>
+	<texture name="default 12x16 special" file="assets\default 12x16 special.tex" importFromFile="assets\_source\default 12x16 special.tga" filteringMag="nearest"/>
+	<font name="default 12x16">
+		<variableWidth x="12" y="16" spacingx="2" spacingy="2"/>
+		<texture use="default 12x16"><rowAnsi/></texture>
+		<texture use="default 12x16 special">
+			<row>✚🗲💥→°🔋♦🪙↟</row> health, ammo, damage, arrow, degree, storage, experience, merit points, fast-melee
+			<row>◯⇑⇓⇐⇒🔒</row> navigation guidance, nav up, nav down, nav left, nav right, locked to head
+		</texture>
+		<colourCharacters>✚🗲💥♦🪙</colourCharacters>
+	</font>
+
+	<font name="default 12x16 fixed">
+		<fixedSize x="12" y="16" spacingx="2" spacingy="2"/>
+		<texture use="default 12x16"><rowAnsi/></texture>
+		<texture use="default 12x16 special">
+			<row>✚🗲💥→°🔋♦🪙↟</row> health, ammo, damage, arrow, degree, storage, experience, merit points, fast-melee
+			<row>◯⇑⇓⇐⇒🔒</row> navigation guidance, nav up, nav down, nav left, nav right, locked to head
+		</texture>
+		<colourCharacters>✚🗲💥♦🪙</colourCharacters>
+	</font>
+
+
+</library>

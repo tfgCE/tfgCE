@@ -1,0 +1,1591 @@
+<library group="loading scenes">
+	<generateTexture>
+		<texture idx="0" file="assets/main.tex" format="rgb10a2" size="256 256" wrap="clamp" filteringMag="linear"/>
+		<texture idx="1" file="assets/main_p.tex" format="rgba8" wrap="clamp"/>
+		<texture idx="2" file="assets/main_v.tex" format="rgba8" wrap="clamp"/>
+
+		lvv = little/low voxel variations
+		
+		#00	metal varied			white, metallic, voxel variations
+		#01	metal smooth			white, metallic, lvv
+		#02	plastic rough			white, non metallic, lvv
+		#03	emissive metal			metallic
+		#04	concrete				grey with light and dark dots
+		#05	dark glowy metal		dark, metallic with little glow
+		#06	energy (not bolts)		white strong glow (use with emissives!)
+		#07	photovoltaics			blueish metallic, lvv
+		#08	grey metal smooth		grey, metallic, lvv
+		#09	black plastic rough		black, non metallic, lvv
+		#10	white plastic smooth	white, non metallic, lvv
+		#11	energy (impact)			different white strong glow (use with emissives!)
+		#12 display
+		#13	dark concrete			grey with light and dark dots
+		#14	dark metal				dark, metallic
+		#15	emis dark plastic		non metallic, lvv
+		#16 emis light plastic
+		#17	darkish metal			dark metallic
+		#18	dark plastic rough		dark plastic rought
+		#19	light source			light source, emissive
+		#20	grey plastic smooth		grey, non metallic, lvv
+		#21	black					black, non metallic, lvv
+		#22	energy (bolts)			white strong glow (use with emissives!) different moment when changes to full from base
+		#23	corrosion				white strong glow (use with emissives!)
+		#24	medium concrete			grey with light and dark dots
+		#25	darker plastic rough	darker plastic rought
+		#26	light smooth concrete	smooth concrete
+		
+		#224 sand
+		
+		colours
+		#00 main
+		#32 first (red)
+		#64 second (green)
+		#96 energy ammo
+		#128 energy health
+		#160 third (brown)
+		#192 fourth (blue)
+		#224 customs
+		.
+		.
+		
+		#00	metal varied			white, metallic, voxel variations
+		<verticalLines textureIdx="0"> colour
+			<line u="0" width="256">
+				<colour at="1.00" modulate="1.00">0.950 0.950 0.950 1.000</colour>
+				<colour at="0.75" modulate="1.00">0.925 0.925 0.925 1.000</colour>
+				<colour at="0.25" modulate="0.90">0.900 0.900 0.900 1.000</colour>
+				<colour at="0.00" modulate="1.00">0.950 0.950 0.950 1.000</colour>
+			</line>
+		</verticalLines>
+		<verticalLines textureIdx="1"> properties
+			<line u="0" width="256">
+				<mask>r</mask> roughness
+				<colour at="1.000">0.040</colour>
+				<colour at="0.000">0.040</colour>
+
+				<mask>g</mask> metallic
+				<colour at="1.000">0.500</colour>
+				<colour at="0.000">0.600</colour>
+
+				<mask>b</mask> tint
+				<colour at="1.000">0.450</colour>
+				<colour at="0.000">0.450</colour>
+
+				<mask>a</mask> emissive
+				<colour at="1.000">0.000</colour>
+				<colour at="0.000">0.000</colour>
+			</line>
+		</verticalLines>
+		<verticalLines textureIdx="2"> voxel
+			<line u="0" width="256">
+				<mask>r</mask> colour
+				<normal at="1.000"> 0.0100</normal>
+				<normal at="0.900"> 0.050</normal>
+				<normal at="0.200">-0.050</normal>
+				<normal at="0.000">-0.0100</normal>
+
+				<mask>g</mask> roughness
+				<normal at="1.000"> 0.150</normal>
+				<normal at="0.800">-0.130</normal>
+				<normal at="0.400"> 0.140</normal>
+				<normal at="0.000">-0.130</normal>
+
+				<mask>b</mask> metallic
+				<normal at="1.000"> 0.1450</normal>
+				<normal at="0.800">-0.1450</normal>
+				<normal at="0.400"> 0.1400</normal>
+				<normal at="0.000"> 0.1450</normal>
+
+				<mask>a</mask> uneveness
+				<colour at="1.000"> 0.300</colour>
+				<colour at="0.000"> 0.100</colour>
+			</line>
+		</verticalLines>
+
+		#01	metal smooth		white, metallic, lvv
+		<verticalLines textureIdx="0"> colour
+			<line u="1" width="1">
+				<colour at="1.00" modulate="1.00">0.950 0.950 0.950 1.000</colour>
+				<colour at="0.75" modulate="1.00">0.925 0.925 0.925 1.000</colour>
+				<colour at="0.25" modulate="0.90">0.900 0.900 0.900 1.000</colour>
+				<colour at="0.00" modulate="1.00">0.950 0.950 0.950 1.000</colour>
+			</line>
+		</verticalLines>
+		<verticalLines textureIdx="1"> properties
+			<line u="1" width="1">
+				<mask>r</mask> roughness
+				<colour at="1.000">0.040</colour>
+				<colour at="0.000">0.040</colour>
+
+				<mask>g</mask> metallic
+				<colour at="1.000">0.500</colour>
+				<colour at="0.000">0.600</colour>
+
+				<mask>b</mask> tint
+				<colour at="1.000">0.450</colour>
+				<colour at="0.000">0.450</colour>
+
+				<mask>a</mask> emissive
+				<colour at="1.000">0.000</colour>
+				<colour at="0.000">0.000</colour>
+			</line>
+		</verticalLines>
+		<verticalLines textureIdx="2"> voxel
+			<line u="1" width="1">
+				<mask>r</mask> colour
+				<normal at="1.000"> 0.020</normal>
+				<normal at="0.900"> 0.010</normal>
+				<normal at="0.200">-0.010</normal>
+				<normal at="0.000">-0.020</normal>
+
+				<mask>g</mask> roughness
+				<normal at="1.000"> 0.020</normal>
+				<normal at="0.800">-0.010</normal>
+				<normal at="0.400"> 0.020</normal>
+				<normal at="0.000">-0.010</normal>
+
+				<mask>b</mask> metallic
+				<normal at="1.000"> 0.020</normal>
+				<normal at="0.800">-0.020</normal>
+				<normal at="0.400"> 0.020</normal>
+				<normal at="0.000"> 0.020</normal>
+				
+				<mask>a</mask> uneveness
+				<colour at="1.000"> 0.050</colour>
+				<colour at="0.000"> 0.050</colour>
+
+			</line>
+		</verticalLines>
+
+		#02	plastic rough		white, non metallic, lvv
+		<verticalLines textureIdx="0"> colour
+			<line u="2" width="1">
+				<colour at="1.00" modulate="1.00">0.900 0.900 0.900 1.000</colour>
+				<colour at="0.75" modulate="1.00">1.000 1.000 1.000 1.000</colour>
+				<colour at="0.25" modulate="0.90">1.000 1.000 1.000 1.000</colour>
+				<colour at="0.00" modulate="1.00">0.900 0.900 0.900 1.000</colour>
+			</line>
+		</verticalLines>
+		<verticalLines textureIdx="1"> properties
+			<line u="2" width="1">
+				<mask>r</mask> roughness
+				<colour at="1.000">0.680</colour>
+				<colour at="0.000">0.680</colour>
+
+				<mask>g</mask> metallic
+				<colour at="1.000">0.030</colour>
+				<colour at="0.000">0.050</colour>
+
+				<mask>b</mask> tint
+				<colour at="1.000">0.000</colour>
+				<colour at="0.000">0.000</colour>
+
+				<mask>a</mask> emissive
+				<colour at="1.000">0.000</colour>
+				<colour at="0.000">0.000</colour>
+			</line>
+		</verticalLines>
+		<verticalLines textureIdx="2"> voxel
+			<line u="2" width="1">
+				<mask>r</mask> colour
+				<normal at="1.000"> 0.020</normal>
+				<normal at="0.900"> 0.010</normal>
+				<normal at="0.200">-0.010</normal>
+				<normal at="0.000">-0.020</normal>
+
+				<mask>g</mask> roughness
+				<normal at="1.000"> 0.020</normal>
+				<normal at="0.800">-0.010</normal>
+				<normal at="0.400"> 0.020</normal>
+				<normal at="0.000">-0.010</normal>
+
+				<mask>b</mask> metallic
+				<normal at="1.000"> 0.020</normal>
+				<normal at="0.800">-0.020</normal>
+				<normal at="0.400"> 0.020</normal>
+				<normal at="0.000"> 0.020</normal>
+				
+				<mask>a</mask> uneveness
+				<colour at="1.000"> 0.050</colour>
+				<colour at="0.000"> 0.050</colour>
+			</line>
+		</verticalLines>
+
+		#03	emissive eyes		metallic
+		<verticalLines textureIdx="0"> colour
+			<line u="3" width="1">
+				<colour at="1.00" modulate="1.00">0.090 0.090 0.090 1.000</colour>
+				<colour at="0.75" modulate="1.00">0.100 0.100 0.100 1.000</colour>
+				<colour at="0.25" modulate="0.90">0.100 0.100 0.100 1.000</colour>
+				<colour at="0.00" modulate="1.00">0.090 0.090 0.090 1.000</colour>
+			</line>
+		</verticalLines>
+		<verticalLines textureIdx="1"> properties
+			<line u="3" width="1">
+				<mask>r</mask> roughness
+				<colour at="1.000">0.180</colour>
+				<colour at="0.000">0.180</colour>
+
+				<mask>g</mask> metallic
+				<colour at="1.000">0.400</colour>
+				<colour at="0.000">0.600</colour>
+
+				<mask>b</mask> tint
+				<colour at="1.000">0.000</colour>
+				<colour at="0.000">0.000</colour>
+
+				<mask>a</mask> emissive
+				<colour at="1.000">0.800</colour>
+				<colour at="0.000">0.200</colour>
+			</line>
+		</verticalLines>
+		<verticalLines textureIdx="2"> voxel
+			<line u="3" width="1">
+				<mask>r</mask> colour
+				<normal at="1.000">0.000</normal>
+				<normal at="0.000">0.000</normal>
+
+				<mask>g</mask> roughness
+				<normal at="1.000">0.000</normal>
+				<normal at="0.000">0.000</normal>
+
+				<mask>b</mask> metallic
+				<normal at="1.000">0.000</normal>
+				<normal at="0.000">0.000</normal>
+				
+				<mask>a</mask> uneveness
+				<colour at="1.000"> 0.000</colour>
+				<colour at="0.000"> 0.000</colour>
+			</line>
+		</verticalLines>
+		
+		#04	concrete			grey with light and dark dots
+		<verticalLines textureIdx="0"> colour
+			<line u="4" width="1">
+				<colour at="1.0" modulate="0.70">0.990 0.980 0.990 1.000</colour>
+				<colour at="0.0" modulate="0.60">0.990 0.980 0.990 1.000</colour>
+			</line>
+		</verticalLines>
+		<verticalLines textureIdx="1"> properties
+			<line u="4" width="1">
+				<mask>r</mask> roughness
+				<colour at="1.000">0.500</colour>
+				<colour at="0.000">0.500</colour>
+
+				<mask>g</mask> metallic
+				<colour at="1.000">0.050</colour>
+				<colour at="0.000">0.050</colour>
+
+				<mask>b</mask> tint
+				<colour at="1.000">0.000</colour>
+				<colour at="0.000">0.000</colour>
+
+				<mask>a</mask> emissive
+				<colour at="1.000">0.000</colour>
+				<colour at="0.000">0.000</colour>
+			</line>
+		</verticalLines>
+		<verticalLines textureIdx="2"> voxel
+			<line u="4" width="1">
+				<mask>r</mask> colour
+				<normal at="1.000"> 0.305</normal>
+				<normal at="0.995"> 0.005</normal>
+				<normal at="0.990"> 0.005</normal>
+				<normal at="0.020">-0.005</normal>
+				<normal at="0.000">-0.305</normal>
+
+				<mask>g</mask> roughness
+				<normal at="1.000"> 0.005</normal>
+				<normal at="0.900">-0.005</normal>
+				<normal at="0.100"> 0.005</normal>
+				<normal at="0.000">-0.100</normal>
+
+				<mask>b</mask> metallic
+				<normal at="1.000"> 0.245</normal>
+				<normal at="0.970"> 0.015</normal>
+				<normal at="0.900"> 0.005</normal>
+				<normal at="0.100"> 0.005</normal>
+				<normal at="0.030"> 0.015</normal>
+				<normal at="0.000"> 0.245</normal>
+				
+				<mask>a</mask> uneveness
+				<colour at="1.000"> 0.200</colour>
+				<colour at="0.000"> 0.200</colour>
+			</line>
+		</verticalLines>
+
+		#05	dark glowy metal	dark, metallic with little glow
+		<verticalLines textureIdx="0"> colour
+			<line u="5" width="1">
+				<colour at="1.0" modulate="0.15">0.990 0.980 0.990 1.000</colour>
+				<colour at="0.0" modulate="0.10">0.990 0.980 0.990 1.000</colour>
+			</line>
+		</verticalLines>
+		<verticalLines textureIdx="1"> properties
+			<line u="5" width="1">
+				<mask>r</mask> roughness
+				<colour at="1.000">0.030</colour>
+				<colour at="0.000">0.050</colour>
+
+				<mask>g</mask> metallic
+				<colour at="1.000">0.500</colour>
+				<colour at="0.000">0.600</colour>
+
+				<mask>b</mask> tint
+				<colour at="1.000">0.450</colour>
+				<colour at="0.000">0.450</colour>
+
+				<mask>a</mask> emissive
+				<colour at="1.000">0.100</colour>
+				<colour at="0.000">0.200</colour>
+			</line>
+		</verticalLines>
+		<verticalLines textureIdx="2"> voxel
+			<line u="5" width="1">
+				<mask>r</mask> colour
+				<normal at="1.000"> 0.020</normal>
+				<normal at="0.900"> 0.010</normal>
+				<normal at="0.200">-0.010</normal>
+				<normal at="0.000">-0.020</normal>
+
+				<mask>g</mask> roughness
+				<normal at="1.000"> 0.020</normal>
+				<normal at="0.800">-0.010</normal>
+				<normal at="0.400"> 0.020</normal>
+				<normal at="0.000">-0.010</normal>
+
+				<mask>b</mask> metallic
+				<normal at="1.000"> 0.020</normal>
+				<normal at="0.800">-0.020</normal>
+				<normal at="0.400"> 0.020</normal>
+				<normal at="0.000"> 0.020</normal>
+				
+				<mask>a</mask> uneveness
+				<colour at="1.000"> 0.500</colour>
+				<colour at="0.000"> 0.500</colour>
+			</line>
+		</verticalLines>
+
+		#06	energy (bolts)		white strong glow (use with emissives!)
+		<verticalLines textureIdx="0"> colour
+			<line u="6" width="1">
+				<colour at="1.000" modulate="1.00">1.000 1.000 1.000 1.000</colour>
+				<colour at="0.700" modulate="1.00">1.000 1.000 1.000 1.000</colour>
+				<colour at="0.650" modulate="0.90">0.000 0.000 0.000 1.000</colour>
+				<colour at="0.000" modulate="0.90">0.000 0.000 0.000 1.000</colour>
+			</line>
+		</verticalLines>
+		<verticalLines textureIdx="1"> properties
+			<line u="6" width="1">
+				<mask>r</mask> roughness
+				<colour at="1.000">0.000</colour>
+				<colour at="0.000">0.000</colour>
+
+				<mask>g</mask> metallic
+				<colour at="1.000">0.000</colour>
+				<colour at="0.000">0.000</colour>
+
+				<mask>b</mask> tint
+				<colour at="1.000">0.000</colour>
+				<colour at="0.000">0.000</colour>
+
+				<mask>a</mask> emissive
+				<colour at="1.000">1.000</colour>
+				<colour at="0.000">1.000</colour>
+			</line>
+		</verticalLines>
+		<verticalLines textureIdx="2"> voxel
+			<line u="6" width="1">
+				<mask>r</mask> colour
+				<normal at="1.000"> 0.000</normal>
+				<normal at="0.000"> 0.000</normal>
+
+				<mask>g</mask> roughness
+				<normal at="1.000"> 0.000</normal>
+				<normal at="0.000"> 0.000</normal>
+
+				<mask>b</mask> metallic
+				<normal at="1.000"> 0.000</normal>
+				<normal at="0.000"> 0.000</normal>
+				
+				<mask>a</mask> uneveness
+				<colour at="1.000"> 0.000</colour>
+				<colour at="0.000"> 0.000</colour>
+			</line>
+		</verticalLines>
+
+		#07	photovoltaics		blueish metallic, lvv
+		<verticalLines textureIdx="0"> colour
+			<line u="7" width="1">
+				<colour at="1.00" modulate="1.00">0.200 0.200 0.950 1.000</colour>
+				<colour at="0.75" modulate="1.00">0.150 0.150 0.925 1.000</colour>
+				<colour at="0.25" modulate="0.90">0.120 0.120 0.900 1.000</colour>
+				<colour at="0.00" modulate="1.00">0.200 0.200 0.950 1.000</colour>
+			</line>
+		</verticalLines>
+		<verticalLines textureIdx="1"> properties
+			<line u="7" width="1">
+				<mask>r</mask> roughness
+				<colour at="1.000">0.800</colour>
+				<colour at="0.000">0.900</colour>
+
+				<mask>g</mask> metallic
+				<colour at="1.000">0.400</colour>
+				<colour at="0.000">0.600</colour>
+
+				<mask>b</mask> tint
+				<colour at="1.000">0.800</colour>
+				<colour at="0.000">0.800</colour>
+
+				<mask>a</mask> emissive
+				<colour at="1.000">0.000</colour>
+				<colour at="0.000">0.000</colour>
+			</line>
+		</verticalLines>
+		<verticalLines textureIdx="2"> voxel
+			<line u="7" width="1">
+				<mask>r</mask> colour
+				<normal at="1.000"> 0.020</normal>
+				<normal at="0.900"> 0.010</normal>
+				<normal at="0.200">-0.010</normal>
+				<normal at="0.000">-0.020</normal>
+
+				<mask>g</mask> roughness
+				<normal at="1.000"> 0.020</normal>
+				<normal at="0.800">-0.010</normal>
+				<normal at="0.400"> 0.020</normal>
+				<normal at="0.000">-0.010</normal>
+
+				<mask>b</mask> metallic
+				<normal at="1.000"> 0.010</normal>
+				<normal at="0.800"> 0.020</normal>
+				<normal at="0.400">-0.020</normal>
+				<normal at="0.000"> 0.020</normal>
+				
+				<mask>a</mask> uneveness
+				<colour at="1.000"> 0.100</colour>
+				<colour at="0.000"> 0.100</colour>
+			</line>
+		</verticalLines>
+
+		#08	grey metal smooth	grey, mettalic, lvv
+		<verticalLines textureIdx="0"> colour
+			<line u="8" width="1">
+				<colour at="1.00" modulate="0.60">0.950 0.950 0.950 1.000</colour>
+				<colour at="0.75" modulate="0.60">0.925 0.925 0.925 1.000</colour>
+				<colour at="0.25" modulate="0.50">0.900 0.900 0.900 1.000</colour>
+				<colour at="0.00" modulate="0.60">0.950 0.950 0.950 1.000</colour>
+			</line>
+		</verticalLines>
+		<verticalLines textureIdx="1"> properties
+			<line u="8" width="1">
+				<mask>r</mask> roughness
+				<colour at="1.000">0.040</colour>
+				<colour at="0.000">0.040</colour>
+
+				<mask>g</mask> metallic
+				<colour at="1.000">0.500</colour>
+				<colour at="0.000">0.550</colour>
+
+				<mask>b</mask> tint
+				<colour at="1.000">0.450</colour>
+				<colour at="0.000">0.450</colour>
+
+				<mask>a</mask> emissive
+				<colour at="1.000">0.000</colour>
+				<colour at="0.000">0.000</colour>
+			</line>
+		</verticalLines>
+		<verticalLines textureIdx="2"> voxel
+			<line u="8" width="1">
+				<mask>r</mask> colour
+				<normal at="1.000"> 0.020</normal>
+				<normal at="0.900"> 0.010</normal>
+				<normal at="0.200">-0.010</normal>
+				<normal at="0.000">-0.020</normal>
+
+				<mask>g</mask> roughness
+				<normal at="1.000"> 0.020</normal>
+				<normal at="0.800">-0.010</normal>
+				<normal at="0.400"> 0.020</normal>
+				<normal at="0.000">-0.010</normal>
+
+				<mask>b</mask> metallic
+				<normal at="1.000"> 0.020</normal>
+				<normal at="0.800">-0.020</normal>
+				<normal at="0.400"> 0.020</normal>
+				<normal at="0.000"> 0.020</normal>
+				
+				<mask>a</mask> uneveness
+				<colour at="1.000"> 0.050</colour>
+				<colour at="0.000"> 0.050</colour>
+			</line>
+		</verticalLines>
+
+		#09	black plastic rough	black, non metallic, lvv
+		<verticalLines textureIdx="0"> colour
+			<line u="9" width="1">
+				<colour at="1.00" modulate="0.15">0.900 0.900 0.900 1.000</colour>
+				<colour at="0.75" modulate="0.15">1.000 1.000 1.000 1.000</colour>
+				<colour at="0.25" modulate="0.05">1.000 1.000 1.000 1.000</colour>
+				<colour at="0.00" modulate="0.15">0.900 0.900 0.900 1.000</colour>
+			</line>
+		</verticalLines>
+		<verticalLines textureIdx="1"> properties
+			<line u="9" width="1">
+				<mask>r</mask> roughness
+				<colour at="1.000">0.680</colour>
+				<colour at="0.000">0.680</colour>
+
+				<mask>g</mask> metallic
+				<colour at="1.000">0.030</colour>
+				<colour at="0.000">0.050</colour>
+
+				<mask>b</mask> tint
+				<colour at="1.000">0.000</colour>
+				<colour at="0.000">0.000</colour>
+
+				<mask>a</mask> emissive
+				<colour at="1.000">0.000</colour>
+				<colour at="0.000">0.000</colour>
+			</line>
+		</verticalLines>
+		<verticalLines textureIdx="2"> voxel
+			<line u="9" width="1">
+				<mask>r</mask> colour
+				<normal at="1.000"> 0.020</normal>
+				<normal at="0.900"> 0.010</normal>
+				<normal at="0.200">-0.010</normal>
+				<normal at="0.000">-0.020</normal>
+
+				<mask>g</mask> roughness
+				<normal at="1.000"> 0.020</normal>
+				<normal at="0.800">-0.010</normal>
+				<normal at="0.400"> 0.020</normal>
+				<normal at="0.000">-0.010</normal>
+
+				<mask>b</mask> metallic
+				<normal at="1.000"> 0.020</normal>
+				<normal at="0.800">-0.020</normal>
+				<normal at="0.400"> 0.020</normal>
+				<normal at="0.000"> 0.020</normal>
+				
+				<mask>a</mask> uneveness
+				<colour at="1.000"> 0.200</colour>
+				<colour at="0.000"> 0.200</colour>
+			</line>
+		</verticalLines>
+
+		#10	white plastic smooth		white, non metallic, lvv
+		<verticalLines textureIdx="0"> colour
+			<line u="10" width="1">
+				<colour at="1.00" modulate="1.00">0.900 0.900 0.900 1.000</colour>
+				<colour at="0.75" modulate="1.00">1.000 1.000 1.000 1.000</colour>
+				<colour at="0.25" modulate="0.90">1.000 1.000 1.000 1.000</colour>
+				<colour at="0.00" modulate="1.00">0.900 0.900 0.900 1.000</colour>
+			</line>
+		</verticalLines>
+		<verticalLines textureIdx="1"> properties
+			<line u="10" width="1">
+				<mask>r</mask> roughness
+				<colour at="1.000">0.080</colour>
+				<colour at="0.000">0.080</colour>
+
+				<mask>g</mask> metallic
+				<colour at="1.000">0.300</colour>
+				<colour at="0.000">0.400</colour>
+
+				<mask>b</mask> tint
+				<colour at="1.000">0.000</colour>
+				<colour at="0.000">0.000</colour>
+
+				<mask>a</mask> emissive
+				<colour at="1.000">0.000</colour>
+				<colour at="0.000">0.000</colour>
+			</line>
+		</verticalLines>
+		<verticalLines textureIdx="2"> voxel
+			<line u="10" width="1">
+				<mask>r</mask> colour
+				<normal at="1.000"> 0.020</normal>
+				<normal at="0.900"> 0.010</normal>
+				<normal at="0.200">-0.010</normal>
+				<normal at="0.000">-0.020</normal>
+
+				<mask>g</mask> roughness
+				<normal at="1.000"> 0.020</normal>
+				<normal at="0.800">-0.010</normal>
+				<normal at="0.400"> 0.020</normal>
+				<normal at="0.000">-0.010</normal>
+
+				<mask>b</mask> metallic
+				<normal at="1.000"> 0.020</normal>
+				<normal at="0.800">-0.020</normal>
+				<normal at="0.400"> 0.020</normal>
+				<normal at="0.000"> 0.020</normal>
+				
+				<mask>a</mask> uneveness
+				<colour at="1.000"> 0.200</colour>
+				<colour at="0.000"> 0.200</colour>
+			</line>
+		</verticalLines>
+
+		#11	energy (impact)		different white strong glow (use with emissives!)
+		<verticalLines textureIdx="0"> colour
+			<line u="11" width="1">
+				<colour at="1.000" modulate="1.00">1.000 1.000 1.000 1.000</colour>
+				<colour at="0.700" modulate="0.90">0.800 0.800 0.800 1.000</colour>
+				<colour at="0.650" modulate="0.80">0.000 0.000 0.000 1.000</colour>
+				<colour at="0.000" modulate="0.90">0.000 0.000 0.000 1.000</colour>
+			</line>
+		</verticalLines>
+		<verticalLines textureIdx="1"> properties
+			<line u="11" width="1">
+				<mask>r</mask> roughness
+				<colour at="1.000">0.000</colour>
+				<colour at="0.000">0.000</colour>
+
+				<mask>g</mask> metallic
+				<colour at="1.000">0.000</colour>
+				<colour at="0.000">0.000</colour>
+
+				<mask>b</mask> tint
+				<colour at="1.000">0.000</colour>
+				<colour at="0.000">0.000</colour>
+
+				<mask>a</mask> emissive
+				<colour at="1.000">1.000</colour>
+				<colour at="0.000">1.000</colour>
+			</line>
+		</verticalLines>
+		<verticalLines textureIdx="2"> voxel
+			<line u="11" width="1">
+				<mask>r</mask> colour
+				<normal at="1.000"> 0.000</normal>
+				<normal at="0.000"> 0.000</normal>
+
+				<mask>g</mask> roughness
+				<normal at="1.000"> 0.000</normal>
+				<normal at="0.000"> 0.000</normal>
+
+				<mask>b</mask> metallic
+				<normal at="1.000"> 0.000</normal>
+				<normal at="0.000"> 0.000</normal>
+				
+				<mask>a</mask> uneveness
+				<colour at="1.000"> 0.000</colour>
+				<colour at="0.000"> 0.000</colour>
+			</line>
+		</verticalLines>
+
+		#12	display
+		<verticalLines textureIdx="0"> colour
+			<line u="12" width="1">
+				<colour at="1.0" modulate="0.10">0.990 0.980 0.990 1.000</colour>
+				<colour at="0.0" modulate="0.05">0.990 0.980 0.990 1.000</colour>
+			</line>
+		</verticalLines>
+		<verticalLines textureIdx="1"> properties
+			<line u="12" width="1">
+				<mask>r</mask> roughness
+				<colour at="1.000">0.030</colour>
+				<colour at="0.000">0.050</colour>
+
+				<mask>g</mask> metallic
+				<colour at="1.000">0.700</colour>
+				<colour at="0.000">0.800</colour>
+
+				<mask>b</mask> tint
+				<colour at="1.000">0.750</colour>
+				<colour at="0.000">0.750</colour>
+
+				<mask>a</mask> emissive
+				<colour at="1.000">0.000</colour>
+				<colour at="0.000">0.000</colour>
+			</line>
+		</verticalLines>
+		<verticalLines textureIdx="2"> voxel
+			<line u="12" width="1">
+				<mask>r</mask> colour
+				<normal at="1.000"> 0.002</normal>
+				<normal at="0.900"> 0.001</normal>
+				<normal at="0.200">-0.001</normal>
+				<normal at="0.000">-0.002</normal>
+
+				<mask>g</mask> roughness
+				<normal at="1.000"> 0.002</normal>
+				<normal at="0.800">-0.001</normal>
+				<normal at="0.400"> 0.002</normal>
+				<normal at="0.000">-0.001</normal>
+
+				<mask>b</mask> metallic
+				<normal at="1.000"> 0.002</normal>
+				<normal at="0.800">-0.002</normal>
+				<normal at="0.400"> 0.002</normal>
+				<normal at="0.000"> 0.002</normal>
+				
+				<mask>a</mask> uneveness
+				<colour at="1.000"> 0.000</colour>
+				<colour at="0.000"> 0.000</colour>
+			</line>
+		</verticalLines>
+
+		#13	dark concrete		grey with light and dark dots
+		<verticalLines textureIdx="0"> colour
+			<line u="13" width="1">
+				<colour at="1.0" modulate="0.30">0.990 0.980 0.990 1.000</colour>
+				<colour at="0.0" modulate="0.20">0.990 0.980 0.990 1.000</colour>
+			</line>
+		</verticalLines>
+		<verticalLines textureIdx="1"> properties
+			<line u="13" width="1">
+				<mask>r</mask> roughness
+				<colour at="1.000">0.500</colour>
+				<colour at="0.000">0.500</colour>
+
+				<mask>g</mask> metallic
+				<colour at="1.000">0.050</colour>
+				<colour at="0.000">0.050</colour>
+
+				<mask>b</mask> tint
+				<colour at="1.000">0.000</colour>
+				<colour at="0.000">0.000</colour>
+
+				<mask>a</mask> emissive
+				<colour at="1.000">0.000</colour>
+				<colour at="0.000">0.000</colour>
+			</line>
+		</verticalLines>
+		<verticalLines textureIdx="2"> voxel
+			<line u="13" width="1">
+				<mask>r</mask> colour
+				<normal at="1.000"> 0.005</normal>
+				<normal at="0.990"> 0.205</normal>
+				<normal at="0.980"> 0.005</normal>
+				<normal at="0.030">-0.005</normal>
+				<normal at="0.015">-0.205</normal>
+				<normal at="0.000">-0.005</normal>
+
+				<mask>g</mask> roughness
+				<normal at="1.000"> 0.005</normal>
+				<normal at="0.900">-0.005</normal>
+				<normal at="0.100"> 0.005</normal>
+				<normal at="0.020">-0.085</normal>
+				<normal at="0.000">-0.005</normal>
+
+				<mask>b</mask> metallic
+				<normal at="1.000"> 0.015</normal>
+				<normal at="0.980"> 0.245</normal>
+				<normal at="0.940"> 0.005</normal>
+				<normal at="0.120"> 0.005</normal>
+				<normal at="0.080"> 0.245</normal>
+				<normal at="0.000"> 0.025</normal>
+				
+				<mask>a</mask> uneveness
+				<colour at="1.000"> 0.200</colour>
+				<colour at="0.000"> 0.200</colour>
+			</line>
+		</verticalLines>
+
+		#14	dark metal			dark, metallic
+		<verticalLines textureIdx="0"> colour
+			<line u="14" width="1">
+				<colour at="1.0" modulate="0.15">0.990 0.980 0.990 1.000</colour>
+				<colour at="0.0" modulate="0.10">0.990 0.980 0.990 1.000</colour>
+			</line>
+		</verticalLines>
+		<verticalLines textureIdx="1"> properties
+			<line u="14" width="1">
+				<mask>r</mask> roughness
+				<colour at="1.000">0.030</colour>
+				<colour at="0.000">0.050</colour>
+
+				<mask>g</mask> metallic
+				<colour at="1.000">0.500</colour>
+				<colour at="0.000">0.600</colour>
+
+				<mask>b</mask> tint
+				<colour at="1.000">0.450</colour>
+				<colour at="0.000">0.450</colour>
+
+				<mask>a</mask> emissive
+				<colour at="1.000">0.000</colour>
+				<colour at="0.000">0.000</colour>
+			</line>
+		</verticalLines>
+		<verticalLines textureIdx="2"> voxel
+			<line u="14" width="1">
+				<mask>r</mask> colour
+				<normal at="1.000"> 0.020</normal>
+				<normal at="0.900"> 0.010</normal>
+				<normal at="0.200">-0.010</normal>
+				<normal at="0.000">-0.020</normal>
+
+				<mask>g</mask> roughness
+				<normal at="1.000"> 0.020</normal>
+				<normal at="0.800">-0.010</normal>
+				<normal at="0.400"> 0.020</normal>
+				<normal at="0.000">-0.010</normal>
+
+				<mask>b</mask> metallic
+				<normal at="1.000"> 0.020</normal>
+				<normal at="0.800">-0.020</normal>
+				<normal at="0.400"> 0.020</normal>
+				<normal at="0.000"> 0.020</normal>
+				
+				<mask>a</mask> uneveness
+				<colour at="1.000"> 0.400</colour>
+				<colour at="0.000"> 0.400</colour>
+			</line>
+		</verticalLines>
+
+		#15	emis dark plastic	non metallic
+		<verticalLines textureIdx="0"> colour
+			<line u="15" width="1">
+				<colour at="1.00" modulate="1.00">0.290 0.290 0.290 1.000</colour>
+				<colour at="0.75" modulate="1.00">0.300 0.300 0.300 1.000</colour>
+				<colour at="0.25" modulate="0.90">0.300 0.300 0.310 1.000</colour>
+				<colour at="0.00" modulate="1.00">0.290 0.290 0.290 1.000</colour>
+			</line>
+		</verticalLines>
+		<verticalLines textureIdx="1"> properties
+			<line u="15" width="1">
+				<mask>r</mask> roughness
+				<colour at="1.000">0.680</colour>
+				<colour at="0.000">0.680</colour>
+
+				<mask>g</mask> metallic
+				<colour at="1.000">0.030</colour>
+				<colour at="0.000">0.050</colour>
+
+				<mask>b</mask> tint
+				<colour at="1.000">0.000</colour>
+				<colour at="0.000">0.000</colour>
+
+				<mask>a</mask> emissive
+				<colour at="1.000">0.800</colour>
+				<colour at="0.000">0.500</colour>
+			</line>
+		</verticalLines>
+		<verticalLines textureIdx="2"> voxel
+			<line u="15" width="1">
+				<mask>r</mask> colour
+				<normal at="1.000"> 0.020</normal>
+				<normal at="0.900"> 0.010</normal>
+				<normal at="0.200">-0.010</normal>
+				<normal at="0.000">-0.020</normal>
+
+				<mask>g</mask> roughness
+				<normal at="1.000"> 0.020</normal>
+				<normal at="0.800">-0.010</normal>
+				<normal at="0.400"> 0.020</normal>
+				<normal at="0.000">-0.010</normal>
+
+				<mask>b</mask> metallic
+				<normal at="1.000"> 0.020</normal>
+				<normal at="0.800">-0.020</normal>
+				<normal at="0.400"> 0.020</normal>
+				<normal at="0.000"> 0.020</normal>
+				
+				<mask>a</mask> uneveness
+				<colour at="1.000"> 0.100</colour>
+				<colour at="0.000"> 0.100</colour>
+			</line>
+		</verticalLines>
+		
+		#16	emis light plastic	non metallic
+		<verticalLines textureIdx="0"> colour
+			<line u="16" width="1">
+				<colour at="1.00" modulate="1.00">0.790 0.790 0.790 1.000</colour>
+				<colour at="0.75" modulate="1.00">0.800 0.800 0.800 1.000</colour>
+				<colour at="0.25" modulate="0.90">0.800 0.800 0.810 1.000</colour>
+				<colour at="0.00" modulate="1.00">0.790 0.790 0.790 1.000</colour>
+			</line>
+		</verticalLines>
+		<verticalLines textureIdx="1"> properties
+			<line u="16" width="1">
+				<mask>r</mask> roughness
+				<colour at="1.000">0.680</colour>
+				<colour at="0.000">0.680</colour>
+
+				<mask>g</mask> metallic
+				<colour at="1.000">0.030</colour>
+				<colour at="0.000">0.050</colour>
+
+				<mask>b</mask> tint
+				<colour at="1.000">0.000</colour>
+				<colour at="0.000">0.000</colour>
+
+				<mask>a</mask> emissive
+				<colour at="1.000">0.800</colour>
+				<colour at="0.000">0.500</colour>
+			</line>
+		</verticalLines>
+		<verticalLines textureIdx="2"> voxel
+			<line u="16" width="1">
+				<mask>r</mask> colour
+				<normal at="1.000"> 0.020</normal>
+				<normal at="0.900"> 0.010</normal>
+				<normal at="0.200">-0.010</normal>
+				<normal at="0.000">-0.020</normal>
+
+				<mask>g</mask> roughness
+				<normal at="1.000"> 0.020</normal>
+				<normal at="0.800">-0.010</normal>
+				<normal at="0.400"> 0.020</normal>
+				<normal at="0.000">-0.010</normal>
+
+				<mask>b</mask> metallic
+				<normal at="1.000"> 0.020</normal>
+				<normal at="0.800">-0.020</normal>
+				<normal at="0.400"> 0.020</normal>
+				<normal at="0.000"> 0.020</normal>
+				
+				<mask>a</mask> uneveness
+				<colour at="1.000"> 0.000</colour>
+				<colour at="0.000"> 0.000</colour>
+			</line>
+		</verticalLines>
+		
+		#17	darkish metal		metallic
+		<verticalLines textureIdx="0"> colour
+			<line u="17" width="1">
+				<colour at="1.00" modulate="1.00">0.090 0.090 0.090 1.000</colour>
+				<colour at="0.75" modulate="1.00">0.100 0.100 0.100 1.000</colour>
+				<colour at="0.25" modulate="0.90">0.100 0.100 0.100 1.000</colour>
+				<colour at="0.00" modulate="1.00">0.090 0.090 0.090 1.000</colour>
+			</line>
+		</verticalLines>
+		<verticalLines textureIdx="1"> properties
+			<line u="17" width="1">
+				<mask>r</mask> roughness
+				<colour at="1.000">0.180</colour>
+				<colour at="0.000">0.180</colour>
+
+				<mask>g</mask> metallic
+				<colour at="1.000">0.400</colour>
+				<colour at="0.000">0.600</colour>
+
+				<mask>b</mask> tint
+				<colour at="1.000">0.000</colour>
+				<colour at="0.000">0.000</colour>
+
+				<mask>a</mask> emissive
+				<colour at="1.000">0.000</colour>
+				<colour at="0.000">0.000</colour>
+			</line>
+		</verticalLines>
+		<verticalLines textureIdx="2"> voxel
+			<line u="17" width="1">
+				<mask>r</mask> colour
+				<normal at="1.000">0.000</normal>
+				<normal at="0.000">0.000</normal>
+
+				<mask>g</mask> roughness
+				<normal at="1.000">0.000</normal>
+				<normal at="0.000">0.000</normal>
+
+				<mask>b</mask> metallic
+				<normal at="1.000">0.000</normal>
+				<normal at="0.000">0.000</normal>
+				
+				<mask>a</mask> uneveness
+				<colour at="1.000"> 0.400</colour>
+				<colour at="0.000"> 0.400</colour>
+			</line>
+		</verticalLines>
+		
+		#18	dark plastic rough	dark plastic rought
+		<verticalLines textureIdx="0"> colour
+			<line u="18" width="1">
+				<colour at="1.00" modulate="0.95">0.600 0.600 0.600 1.000</colour>
+				<colour at="0.75" modulate="1.00">0.600 0.600 0.600 1.000</colour>
+				<colour at="0.25" modulate="0.90">0.600 0.600 0.600 1.000</colour>
+				<colour at="0.00" modulate="0.95">0.600 0.600 0.600 1.000</colour>
+			</line>
+		</verticalLines>
+		<verticalLines textureIdx="1"> properties
+			<line u="18" width="1">
+				<mask>r</mask> roughness
+				<colour at="1.000">0.680</colour>
+				<colour at="0.000">0.680</colour>
+
+				<mask>g</mask> metallic
+				<colour at="1.000">0.030</colour>
+				<colour at="0.000">0.050</colour>
+
+				<mask>b</mask> tint
+				<colour at="1.000">0.000</colour>
+				<colour at="0.000">0.000</colour>
+
+				<mask>a</mask> emissive
+				<colour at="1.000">0.000</colour>
+				<colour at="0.000">0.000</colour>
+			</line>
+		</verticalLines>
+		<verticalLines textureIdx="2"> voxel
+			<line u="18" width="1">
+				<mask>r</mask> colour
+				<normal at="1.000"> 0.0020</normal>
+				<normal at="0.900"> 0.0010</normal>
+				<normal at="0.200">-0.0010</normal>
+				<normal at="0.000">-0.0020</normal>
+
+				<mask>g</mask> roughness
+				<normal at="1.000"> 0.0080</normal>
+				<normal at="0.800">-0.0040</normal>
+				<normal at="0.400"> 0.0080</normal>
+				<normal at="0.000">-0.0040</normal>
+
+				<mask>b</mask> metallic
+				<normal at="1.000"> 0.000</normal>
+				<normal at="0.800">-0.000</normal>
+				<normal at="0.400"> 0.000</normal>
+				<normal at="0.000"> 0.000</normal>
+				
+				<mask>a</mask> uneveness
+				<colour at="1.000"> 0.200</colour>
+				<colour at="0.000"> 0.200</colour>
+			</line>
+		</verticalLines>
+
+		#19	light source		light source, emissive
+		<verticalLines textureIdx="0"> colour
+			<line u="19" width="1">
+				<colour at="1.00" modulate="1.00">0.500 0.500 0.500 1.000</colour>
+				<colour at="0.75" modulate="1.00">0.500 0.500 0.500 1.000</colour>
+				<colour at="0.25" modulate="0.90">0.500 0.500 0.500 1.000</colour>
+				<colour at="0.00" modulate="0.90">0.500 0.500 0.500 1.000</colour>
+			</line>
+		</verticalLines>
+		<verticalLines textureIdx="1"> properties
+			<line u="19" width="1">
+				<mask>r</mask> roughness
+				<colour at="1.000">0.180</colour>
+				<colour at="0.000">0.150</colour>
+
+				<mask>g</mask> metallic
+				<colour at="1.000">0.200</colour>
+				<colour at="0.000">0.300</colour>
+
+				<mask>b</mask> tint
+				<colour at="1.000">0.000</colour>
+				<colour at="0.000">0.000</colour>
+
+				<mask>a</mask> emissive
+				<colour at="1.000">0.800</colour>
+				<colour at="0.000">0.200</colour>
+			</line>
+		</verticalLines>
+		<verticalLines textureIdx="2"> voxel
+			<line u="19" width="1">
+				<mask>r</mask> colour
+				<normal at="1.000">0.000</normal>
+				<normal at="0.000">0.000</normal>
+
+				<mask>g</mask> roughness
+				<normal at="1.000">0.000</normal>
+				<normal at="0.000">0.000</normal>
+
+				<mask>b</mask> metallic
+				<normal at="1.000">0.000</normal>
+				<normal at="0.000">0.000</normal>
+				
+				<mask>a</mask> uneveness
+				<colour at="1.000"> 0.000</colour>
+				<colour at="0.000"> 0.000</colour>
+			</line>
+		</verticalLines>
+
+		#20	grey plastic smooth		grey, non metallic, lvv
+		<verticalLines textureIdx="0"> colour
+			<line u="20" width="1">
+				<colour at="1.00" modulate="0.70">0.900 0.900 0.900 1.000</colour>
+				<colour at="0.75" modulate="0.70">1.000 1.000 1.000 1.000</colour>
+				<colour at="0.25" modulate="0.60">1.000 1.000 1.000 1.000</colour>
+				<colour at="0.00" modulate="0.70">0.900 0.900 0.900 1.000</colour>
+			</line>
+		</verticalLines>
+		<verticalLines textureIdx="1"> properties
+			<line u="20" width="1">
+				<mask>r</mask> roughness
+				<colour at="1.000">0.080</colour>
+				<colour at="0.000">0.080</colour>
+
+				<mask>g</mask> metallic
+				<colour at="1.000">0.300</colour>
+				<colour at="0.000">0.400</colour>
+
+				<mask>b</mask> tint
+				<colour at="1.000">0.000</colour>
+				<colour at="0.000">0.000</colour>
+
+				<mask>a</mask> emissive
+				<colour at="1.000">0.000</colour>
+				<colour at="0.000">0.000</colour>
+			</line>
+		</verticalLines>
+		<verticalLines textureIdx="2"> voxel
+			<line u="20" width="1">
+				<mask>r</mask> colour
+				<normal at="1.000"> 0.020</normal>
+				<normal at="0.900"> 0.010</normal>
+				<normal at="0.200">-0.010</normal>
+				<normal at="0.000">-0.020</normal>
+
+				<mask>g</mask> roughness
+				<normal at="1.000"> 0.020</normal>
+				<normal at="0.800">-0.010</normal>
+				<normal at="0.400"> 0.020</normal>
+				<normal at="0.000">-0.010</normal>
+
+				<mask>b</mask> metallic
+				<normal at="1.000"> 0.020</normal>
+				<normal at="0.800">-0.020</normal>
+				<normal at="0.400"> 0.020</normal>
+				<normal at="0.000"> 0.020</normal>
+				
+				<mask>a</mask> uneveness
+				<colour at="1.000"> 0.200</colour>
+				<colour at="0.000"> 0.200</colour>
+			</line>
+		</verticalLines>
+
+		#21	black					black, non metallic, lvv
+		<verticalLines textureIdx="0"> colour
+			<line u="21" width="1">
+				<colour at="1.00" modulate="0.20">0.900 0.900 0.900 1.000</colour>
+				<colour at="0.75" modulate="0.20">1.000 1.000 1.000 1.000</colour>
+				<colour at="0.25" modulate="0.10">1.000 1.000 1.000 1.000</colour>
+				<colour at="0.00" modulate="0.20">0.900 0.900 0.900 1.000</colour>
+			</line>
+		</verticalLines>
+		<verticalLines textureIdx="1"> properties
+			<line u="21" width="1">
+				<mask>r</mask> roughness
+				<colour at="1.000">0.020</colour>
+				<colour at="0.000">0.020</colour>
+
+				<mask>g</mask> metallic
+				<colour at="1.000">0.003</colour>
+				<colour at="0.000">0.004</colour>
+
+				<mask>b</mask> tint
+				<colour at="1.000">0.000</colour>
+				<colour at="0.000">0.000</colour>
+
+				<mask>a</mask> emissive
+				<colour at="1.000">0.000</colour>
+				<colour at="0.000">0.000</colour>
+			</line>
+		</verticalLines>
+		<verticalLines textureIdx="2"> voxel
+			<line u="21" width="1">
+				<mask>r</mask> colour
+				<normal at="1.000"> 0.0020</normal>
+				<normal at="0.900"> 0.0010</normal>
+				<normal at="0.200">-0.0010</normal>
+				<normal at="0.000">-0.0020</normal>
+
+				<mask>g</mask> roughness
+				<normal at="1.000"> 0.0020</normal>
+				<normal at="0.800">-0.0010</normal>
+				<normal at="0.400"> 0.0020</normal>
+				<normal at="0.000">-0.0010</normal>
+
+				<mask>b</mask> metallic
+				<normal at="1.000"> 0.0020</normal>
+				<normal at="0.800">-0.0020</normal>
+				<normal at="0.400"> 0.0020</normal>
+				<normal at="0.000"> 0.0020</normal>
+				
+				<mask>a</mask> uneveness
+				<colour at="1.000"> 0.00200</colour>
+				<colour at="0.000"> 0.00200</colour>
+			</line>
+		</verticalLines>
+
+		#22	energy (bolts)			white strong glow (use with emissives!) different moment when changes to full from base
+		<verticalLines textureIdx="0"> colour
+			<line u="22" width="1">
+				<colour at="1.000" modulate="1.00">1.000 1.000 1.000 1.000</colour>
+				<colour at="0.450" modulate="1.00">1.000 1.000 1.000 1.000</colour>
+				<colour at="0.350" modulate="0.90">0.000 0.000 0.000 1.000</colour>
+				<colour at="0.000" modulate="0.90">0.000 0.000 0.000 1.000</colour>
+			</line>
+		</verticalLines>
+		<verticalLines textureIdx="1"> properties
+			<line u="22" width="1">
+				<mask>r</mask> roughness
+				<colour at="1.000">0.000</colour>
+				<colour at="0.000">0.000</colour>
+
+				<mask>g</mask> metallic
+				<colour at="1.000">0.000</colour>
+				<colour at="0.000">0.000</colour>
+
+				<mask>b</mask> tint
+				<colour at="1.000">0.000</colour>
+				<colour at="0.000">0.000</colour>
+
+				<mask>a</mask> emissive
+				<colour at="1.000">1.000</colour>
+				<colour at="0.000">1.000</colour>
+			</line>
+		</verticalLines>
+		<verticalLines textureIdx="2"> voxel
+			<line u="22" width="1">
+				<mask>r</mask> colour
+				<normal at="1.000"> 0.000</normal>
+				<normal at="0.000"> 0.000</normal>
+
+				<mask>g</mask> roughness
+				<normal at="1.000"> 0.000</normal>
+				<normal at="0.000"> 0.000</normal>
+
+				<mask>b</mask> metallic
+				<normal at="1.000"> 0.000</normal>
+				<normal at="0.000"> 0.000</normal>
+				
+				<mask>a</mask> uneveness
+				<colour at="1.000"> 0.000</colour>
+				<colour at="0.000"> 0.000</colour>
+			</line>
+		</verticalLines>
+
+		#23	energy (bolts)		white strong glow (use with emissives!)
+		<verticalLines textureIdx="0"> colour
+			<line u="23" width="1">
+				<colour at="1.000" modulate="1.00">1.000 1.000 1.000 1.000</colour>
+				<colour at="0.900" modulate="1.00">1.000 1.000 1.000 1.000</colour>
+				<colour at="0.200" modulate="0.90">0.000 0.000 0.000 1.000</colour>
+				<colour at="0.000" modulate="0.90">0.000 0.000 0.000 1.000</colour>
+			</line>
+		</verticalLines>
+		<verticalLines textureIdx="1"> properties
+			<line u="23" width="1">
+				<mask>r</mask> roughness
+				<colour at="1.000">0.000</colour>
+				<colour at="0.000">0.000</colour>
+
+				<mask>g</mask> metallic
+				<colour at="1.000">0.000</colour>
+				<colour at="0.000">0.000</colour>
+
+				<mask>b</mask> tint
+				<colour at="1.000">0.000</colour>
+				<colour at="0.000">0.000</colour>
+
+				<mask>a</mask> emissive
+				<colour at="1.000">1.000</colour>
+				<colour at="0.000">1.000</colour>
+			</line>
+		</verticalLines>
+		<verticalLines textureIdx="2"> voxel
+			<line u="23" width="1">
+				<mask>r</mask> colour
+				<normal at="1.000"> 0.000</normal>
+				<normal at="0.000"> 0.000</normal>
+
+				<mask>g</mask> roughness
+				<normal at="1.000"> 0.000</normal>
+				<normal at="0.000"> 0.000</normal>
+
+				<mask>b</mask> metallic
+				<normal at="1.000"> 0.000</normal>
+				<normal at="0.000"> 0.000</normal>
+				
+				<mask>a</mask> uneveness
+				<colour at="1.000"> 0.000</colour>
+				<colour at="0.000"> 0.000</colour>
+			</line>
+		</verticalLines>
+
+		#24	medium concrete			grey with light and dark dots
+		<verticalLines textureIdx="0"> colour
+			<line u="24" width="1">
+				<colour at="1.0" modulate="0.50">0.990 0.980 0.990 1.000</colour>
+				<colour at="0.0" modulate="0.40">0.990 0.980 0.990 1.000</colour>
+			</line>
+		</verticalLines>
+		<verticalLines textureIdx="1"> properties
+			<line u="24" width="1">
+				<mask>r</mask> roughness
+				<colour at="1.000">0.500</colour>
+				<colour at="0.000">0.500</colour>
+
+				<mask>g</mask> metallic
+				<colour at="1.000">0.050</colour>
+				<colour at="0.000">0.050</colour>
+
+				<mask>b</mask> tint
+				<colour at="1.000">0.000</colour>
+				<colour at="0.000">0.000</colour>
+
+				<mask>a</mask> emissive
+				<colour at="1.000">0.000</colour>
+				<colour at="0.000">0.000</colour>
+			</line>
+		</verticalLines>
+		<verticalLines textureIdx="2"> voxel
+			<line u="24" width="1">
+				<mask>r</mask> colour
+				<normal at="1.000"> 0.005</normal>
+				<normal at="0.995"> 0.135</normal>
+				<normal at="0.990"> 0.005</normal>
+				<normal at="0.020">-0.005</normal>
+				<normal at="0.010">-0.135</normal>
+				<normal at="0.000">-0.005</normal>
+
+				<mask>g</mask> roughness
+				<normal at="1.000"> 0.005</normal>
+				<normal at="0.900">-0.005</normal>
+				<normal at="0.100"> 0.005</normal>
+				<normal at="0.030">-0.045</normal>
+				<normal at="0.000">-0.005</normal>
+
+				<mask>b</mask> metallic
+				<normal at="1.000"> 0.015</normal>
+				<normal at="0.992"> 0.175</normal>
+				<normal at="0.980"> 0.005</normal>
+				<normal at="0.080"> 0.005</normal>
+				<normal at="0.040"> 0.175</normal>
+				<normal at="0.000"> 0.025</normal>
+				
+				<mask>a</mask> uneveness
+				<colour at="1.000"> 0.200</colour>
+				<colour at="0.000"> 0.200</colour>
+			</line>
+		</verticalLines>
+
+		#25	darker plastic rough	darker plastic rought
+		<verticalLines textureIdx="0"> colour
+			<line u="25" width="1">
+				<colour at="1.00" modulate="0.95">0.300 0.300 0.300 1.000</colour>
+				<colour at="0.75" modulate="1.00">0.300 0.300 0.300 1.000</colour>
+				<colour at="0.25" modulate="0.90">0.300 0.300 0.300 1.000</colour>
+				<colour at="0.00" modulate="0.95">0.300 0.300 0.300 1.000</colour>
+			</line>
+		</verticalLines>
+		<verticalLines textureIdx="1"> properties
+			<line u="25" width="1">
+				<mask>r</mask> roughness
+				<colour at="1.000">0.680</colour>
+				<colour at="0.000">0.680</colour>
+
+				<mask>g</mask> metallic
+				<colour at="1.000">0.030</colour>
+				<colour at="0.000">0.050</colour>
+
+				<mask>b</mask> tint
+				<colour at="1.000">0.000</colour>
+				<colour at="0.000">0.000</colour>
+
+				<mask>a</mask> emissive
+				<colour at="1.000">0.000</colour>
+				<colour at="0.000">0.000</colour>
+			</line>
+		</verticalLines>
+		<verticalLines textureIdx="2"> voxel
+			<line u="25" width="1">
+				<mask>r</mask> colour
+				<normal at="1.000"> 0.0020</normal>
+				<normal at="0.900"> 0.0010</normal>
+				<normal at="0.200">-0.0010</normal>
+				<normal at="0.000">-0.0020</normal>
+
+				<mask>g</mask> roughness
+				<normal at="1.000"> 0.0080</normal>
+				<normal at="0.800">-0.0040</normal>
+				<normal at="0.400"> 0.0080</normal>
+				<normal at="0.000">-0.0040</normal>
+
+				<mask>b</mask> metallic
+				<normal at="1.000"> 0.000</normal>
+				<normal at="0.800">-0.000</normal>
+				<normal at="0.400"> 0.000</normal>
+				<normal at="0.000"> 0.000</normal>
+				
+				<mask>a</mask> uneveness
+				<colour at="1.000"> 0.200</colour>
+				<colour at="0.000"> 0.200</colour>
+			</line>
+		</verticalLines>
+
+		#26	light concrete	light grey, metallic, lvv
+		<verticalLines textureIdx="0"> colour
+			<line u="26" width="1">
+				<colour at="1.00" modulate="0.90">0.950 0.950 0.950 1.000</colour>
+				<colour at="0.75" modulate="0.90">0.925 0.925 0.925 1.000</colour>
+				<colour at="0.25" modulate="0.80">0.900 0.900 0.900 1.000</colour>
+				<colour at="0.00" modulate="0.85">0.950 0.950 0.950 1.000</colour>
+			</line>
+		</verticalLines>
+		<verticalLines textureIdx="1"> properties
+			<line u="26" width="1">
+				<mask>r</mask> roughness
+				<colour at="1.000">0.040</colour>
+				<colour at="0.000">0.040</colour>
+
+				<mask>g</mask> metallic
+				<colour at="1.000">0.050</colour>
+				<colour at="0.000">0.050</colour>
+
+				<mask>b</mask> tint
+				<colour at="1.000">0.050</colour>
+				<colour at="0.000">0.050</colour>
+
+				<mask>a</mask> emissive
+				<colour at="1.000">0.000</colour>
+				<colour at="0.000">0.000</colour>
+			</line>
+		</verticalLines>
+		<verticalLines textureIdx="2"> voxel
+			<line u="26" width="1">
+				<mask>r</mask> colour
+				<normal at="1.000"> 0.020</normal>
+				<normal at="0.900"> 0.010</normal>
+				<normal at="0.200">-0.010</normal>
+				<normal at="0.000">-0.020</normal>
+
+				<mask>g</mask> roughness
+				<normal at="1.000"> 0.020</normal>
+				<normal at="0.800">-0.010</normal>
+				<normal at="0.400"> 0.020</normal>
+				<normal at="0.000">-0.010</normal>
+
+				<mask>b</mask> metallic
+				<normal at="1.000"> 0.020</normal>
+				<normal at="0.800">-0.020</normal>
+				<normal at="0.400"> 0.020</normal>
+				<normal at="0.000"> 0.020</normal>
+				
+				<mask>a</mask> uneveness
+				<colour at="1.000"> 0.050</colour>
+				<colour at="0.000"> 0.050</colour>
+			</line>
+		</verticalLines>
+
+		#
+		#	custom
+		#
+		
+		#224	sand
+		<verticalLines textureIdx="0"> colour
+			<line u="224" width="1">
+				<colour at="1.00" modulate="1.00">0.929 0.788 0.686 1.000</colour>
+				<colour at="0.75" modulate="1.00">0.929 0.788 0.686 1.000</colour>
+				<colour at="0.25" modulate="0.85">0.929 0.788 0.686 1.000</colour>
+				<colour at="0.00" modulate="0.90">0.929 0.788 0.686 1.000</colour>
+			</line>
+		</verticalLines>
+		<verticalLines textureIdx="1"> properties
+			<line u="224" width="1">
+				<mask>r</mask> roughness
+				<colour at="1.000">0.040</colour>
+				<colour at="0.000">0.040</colour>
+
+				<mask>g</mask> metallic
+				<colour at="1.000">0.000</colour>
+				<colour at="0.000">0.000</colour>
+
+				<mask>b</mask> tint
+				<colour at="1.000">0.050</colour>
+				<colour at="0.000">0.050</colour>
+
+				<mask>a</mask> emissive
+				<colour at="1.000">0.000</colour>
+				<colour at="0.000">0.000</colour>
+			</line>
+		</verticalLines>
+		<verticalLines textureIdx="2"> voxel
+			<line u="224" width="1">
+				<mask>r</mask> colour
+				<normal at="1.000"> 0.305</normal>
+				<normal at="0.995"> 0.005</normal>
+				<normal at="0.990"> 0.005</normal>
+				<normal at="0.020"> 0.005</normal>
+				<normal at="0.000"> 0.305</normal>
+
+				<mask>g</mask> roughness
+				<normal at="1.000"> 0.005</normal>
+				<normal at="0.900">-0.005</normal>
+				<normal at="0.100"> 0.005</normal>
+				<normal at="0.000">-0.100</normal>
+
+				<mask>b</mask> metallic
+				<normal at="1.000"> 0.00245</normal>
+				<normal at="0.970"> 0.00015</normal>
+				<normal at="0.900"> 0.00005</normal>
+				<normal at="0.100"> 0.00005</normal>
+				<normal at="0.030"> 0.00015</normal>
+				<normal at="0.000"> 0.00245</normal>
+				
+				<mask>a</mask> uneveness
+				<colour at="1.000"> 0.200</colour>
+				<colour at="0.000"> 0.200</colour>
+			</line>
+		</verticalLines>
+
+		#
+		#	colours
+		#
+		
+		<copyVerticalLines textureIdx="0" fromU="0" width="32"
+			toU="32"
+			colour="mainColour_first"/>
+		<copyVerticalLines textureIdx="1" fromU="0" width="32"
+			toU="32"/>
+		<copyVerticalLines textureIdx="2" fromU="0" width="32"
+			toU="32"/>
+
+		<copyVerticalLines textureIdx="0" fromU="0" width="32"
+			toU="64"
+			colour="mainColour_second"/>
+		<copyVerticalLines textureIdx="1" fromU="0" width="32"
+			toU="64"/>
+		<copyVerticalLines textureIdx="2" fromU="0" width="32"
+			toU="64"/>
+
+		<copyVerticalLines textureIdx="0" fromU="0" width="32"
+			toU="96"
+			colour="energy_quantum_ammo_base"/>
+		<copyVerticalLines textureIdx="1" fromU="0" width="32"
+			toU="96"/>
+		<copyVerticalLines textureIdx="2" fromU="0" width="32"
+			toU="96"/>
+
+		<copyVerticalLines textureIdx="0" fromU="0" width="32"
+			toU="128"
+			colour="energy_quantum_health_base"/>
+		<copyVerticalLines textureIdx="1" fromU="0" width="32"
+			toU="128"/>
+		<copyVerticalLines textureIdx="2" fromU="0" width="32"
+			toU="128"/>
+
+		<copyVerticalLines textureIdx="0" fromU="0" width="32"
+			toU="160"
+			colour="mainColour_third"/>
+		<copyVerticalLines textureIdx="1" fromU="0" width="32"
+			toU="160"/>
+		<copyVerticalLines textureIdx="2" fromU="0" width="32"
+			toU="160"/>
+
+		<copyVerticalLines textureIdx="0" fromU="0" width="32"
+			toU="192"
+			colour="mainColour_fourth"/>
+		<copyVerticalLines textureIdx="1" fromU="0" width="32"
+			toU="192"/>
+		<copyVerticalLines textureIdx="2" fromU="0" width="32"
+			toU="192"/>
+
+		last to modify these
+		<copyVerticalLines textureIdx="0" fromU="0" width="32"
+			toU="0"
+			colour="mainColour_main"/>
+		<copyVerticalLines textureIdx="1" fromU="0" width="32"
+			toU="0"/>
+		<copyVerticalLines textureIdx="2" fromU="0" width="32"
+			toU="0"/>
+	</generateTexture>
+</library>

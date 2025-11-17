@@ -1,0 +1,23 @@
+<library group="loader hub">
+	<.postProcess name="display post process">
+		<graph>
+			<inputNode name="input">
+				<output name="current"/>
+				<output name="previous"/>
+				<output name="lastPostProcessOutput"/>
+			</inputNode>
+			make it bigger (to final resolution)
+			1. we use bigger resolution to allow us for some mip map filtering
+			2. we use bleed into no-alpha to avoid outlines around alphas
+			<processorNode name="make full resolution" shaderProgram="displays:bleed into no-alpha" useProvidedResolution="final">
+				<input name="inData" connectToNode="input" connectToConnector="current" filteringMag="nearest"/>
+			</processorNode>
+
+			<outputNode name="output" main="mainOutput">
+				<input name="mainOutput" connectToNode="make full resolution" connectToConnector="outData" filteringMag="nearest"/>
+			</outputNode>
+		</graph>
+	</postProcess>
+</library>
+
+

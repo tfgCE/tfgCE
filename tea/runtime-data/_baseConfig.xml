@@ -1,0 +1,455 @@
+<library>
+  loading settings (will choose low or lower)
+  <_load filter="meshGen_low"/>
+  <_load filter="meshGen_lower"/>
+  
+  <mainConfig>
+    <threadLimit>8</threadLimit>
+    <threadsUseAffinityMask>false</threadsUseAffinityMask>
+    <mainThreadPriority>higher</mainThreadPriority>
+    <otherThreadsPriority>higher</otherThreadsPriority>
+    <allowExtraThreads>false</allowExtraThreads>
+    <systemReservedThreads>0</systemReservedThreads>
+    <!--<timeReservedForSubmittingRenderFrame_us>700</timeReservedForSubmittingRenderFrame_us>-->
+    <allowVR>true</allowVR>
+    <forceVR>false</forceVR> openvr
+    <immobileVR>auto</immobileVR>
+    <immobileVRSize x="10" y="10"/>
+	<vrMode>normal</vrMode>
+    <vrMap>
+        <margin>0.0</margin>
+        <offset x="0" y="0"/>
+    </vrMap>
+    <video>
+        <fullScreen>false</fullScreen>
+        <resolution x="0" y="0"/>
+        <vsync>false</vsync>
+        <msaa>true</msaa>
+        <msaaUI>true</msaaUI>
+        <msaaVR>true</msaaVR>
+        <msaaSamples>2</msaaSamples>
+        <fxaa>false</fxaa>
+        <setOptions>bloom</setOptions>
+        <directlyToVR>false</directlyToVR>
+        <vrFoveatedRenderingLevelPct>1</vrFoveatedRenderingLevelPct>
+		<vrFoveatedRenderingMaxDepth>3</vrFoveatedRenderingMaxDepth>
+    </video>
+  </mainConfig>
+  <mainConfig systemTagRequired="androidHeadset"> won't be copied to main for non-android this way it will be copied for main config, but won't be copied to main for non-android
+    <threadLimit>3</threadLimit>
+    <!--<threadsUseAffinityMask>true</threadsUseAffinityMask>-->
+    <mainThreadPriority>highest</mainThreadPriority>
+    <otherThreadsPriority>normal</otherThreadsPriority>
+    <allowExtraThreads>false</allowExtraThreads>
+    <timeReservedForSubmittingRenderFrame_us>900</timeReservedForSubmittingRenderFrame_us>
+	<vrMode>extraLatency</vrMode>
+    <video>
+      <fullScreen>false</fullScreen>
+      <resolution x="0" y="0"/>
+      <vrResolution coef="0.9"/>
+	  <aspectRatio coef="0.8"/>
+      <vsync>false</vsync>
+      <msaa>true</msaa>
+      <msaaUI>true</msaaUI>
+      <msaaVR>true</msaaVR>
+      <msaaSamples>2</msaaSamples>
+      <fxaa>false</fxaa>
+      <options>-bloom</options>
+      <directlyToVR>true</directlyToVR>
+      <vrFoveatedRenderingLevelPct>1.0</vrFoveatedRenderingLevelPct>
+      <vrFoveatedRenderingMaxDepth>4</vrFoveatedRenderingMaxDepth>
+      <useVec4ArraysInsteadOfMat4Arrays>
+          <for renderer="Adreno (TM) 650"/>
+      </useVec4ArraysInsteadOfMat4Arrays>
+      <limitedSupportForIndexingInShaders>
+          <for renderer="Adreno (TM) 650"/>
+      </limitedSupportForIndexingInShaders>
+    </video>
+    <sound
+        developmentVolumeVR="0.3"
+        developmentVolumeNonVR="0.1"
+		maxConcurrentSounds="128"
+        >
+    </sound>
+  </mainConfig>
+  <mainConfig systemTagRequired="quest2 or quest3 or questPro or pico" copyToMainConfigForSystemTag="androidHeadset"> copy whole node, so it remains selectable for quest2
+    <video>
+      <vrResolution coef="1.0"/>
+	  <aspectRatio coef="1.0"/>
+    </video>
+  </mainConfig>
+  <mainConfig systemTagRequired="vive" copyToMainConfigForSystemTag="androidHeadset"> copy whole node, so it remains selectable for quest2
+    <timeReservedForSubmittingRenderFrame_us>1200</timeReservedForSubmittingRenderFrame_us>
+    <video>
+      <vrResolution coef="1.0"/>
+	  <aspectRatio coef="1.0"/>
+	  this should bring us to Quest2 resolution
+      <overall_vrResolution coef="0.9209302325581395"/>
+	  <overall_aspectRatio coef="0.9090909090909091"/>
+      <directlyToVR>false</directlyToVR> we want to have render target scaling
+      <vrFoveatedRenderingLevelPct>1.00</vrFoveatedRenderingLevelPct>
+      <vrFoveatedRenderingMaxDepth>6</vrFoveatedRenderingMaxDepth>
+    </video>
+  </mainConfig>
+  <mainConfig systemTagRequired="retro" alwaysCopyToMainConfig="true"> always copied to remain selectable for retro
+	<video>
+      <msaa>false</msaa>
+      <vrResolution coef="0.9"/>
+	  <aspectRatio coef="1.2"/>
+      <vrFoveatedRenderingLevelPct>0.5</vrFoveatedRenderingLevelPct>
+	  <forcedBlackColour r="0.212" g="0.200" b="0.106"/>
+    </video>
+  </mainConfig>
+  <vrOffsets>
+    <vrSystem name="openxr">
+        <forControllers>
+            <handLeft>
+                <rotation roll="-90.0"/>
+            </handLeft>
+            <handRight>
+                <rotation roll="90.0"/>
+            </handRight>
+        </forControllers>
+    </vrSystem>
+    <vrSystem name="openxr" inputDevice="viveWand">
+        <forControllers>
+            <handLeft>
+                <rotation roll="-90.0" pitch="-30"/>
+            </handLeft>
+            <handRight>
+                <rotation roll="90.0" pitch="-30"/>
+            </handRight>
+        </forControllers>
+    </vrSystem>
+    <vrSystem name="openxr" inputDevice="viveFocus3">
+        <forControllers>
+            <handLeft>
+                <translation y="-0.02" z="0.01" x="0.00"/>
+                <rotation roll="-90.0" pitch="-25"/>
+            </handLeft>
+            <handRight>
+                <translation y="-0.02" z="0.01" x="0.00"/>
+                <rotation roll="90.0" pitch="-25"/>
+            </handRight>
+        </forControllers>
+    </vrSystem>
+    <vrSystem name="openxr" inputDevice="pico4">
+        <forControllers>
+            <handLeft>
+				<translation x="-0.030" y="0.010" z="-0.040"/>
+				<rotation roll="-90" yaw="-5" pitch="-15"/>
+            </handLeft>
+            <handRight>
+				<translation x="0.030" y="0.010" z="-0.040"/>
+				<rotation roll="90" yaw="5" pitch="-15"/>
+            </handRight>
+        </forControllers>
+    </vrSystem>
+    <vrSystem name="oculus">
+        <forControllers>
+            <handLeft>
+                <translation y="-0.05" z="-0.04" x="-0.04"/>
+                <rotation roll="-90.0" pitch="-5"/>
+            </handLeft>
+            <handRight>
+                <translation y="-0.05" z="-0.04" x="0.04"/>
+                <rotation roll="90.0" pitch="-5"/>
+            </handRight>
+        </forControllers>
+    </vrSystem>
+    <vrSystem name="oculusMobile">
+        <forControllers>
+            <handLeft>
+                <translation y="-0.05" z="-0.04" x="-0.04"/>
+                <rotation roll="-90.0" pitch="-5"/>
+            </handLeft>
+            <handRight>
+                <translation y="-0.05" z="-0.04" x="0.04"/>
+                <rotation roll="90.0" pitch="-5"/>
+            </handRight>
+        </forControllers>
+        <forHandTracking>
+            <handLeft>
+                <translation y="0.0" z="0.01" x="0.05"/>
+                <rotation roll="180.0" pitch="10" yaw="95"/>
+            </handLeft>
+            <handRight>
+                <translation y="0.0" z="-0.01" x="-0.05"/>
+                <rotation roll="0.0" pitch="-10" yaw="-85"/>
+            </handRight>
+            <fingerLeft>
+                <translation/>
+                <rotation roll="180.0" pitch="0" yaw="90"/>
+            </fingerLeft>
+            <fingerRight>
+                <translation/>
+                <rotation roll="0.0" pitch="0" yaw="-90"/>
+            </fingerRight>
+        </forHandTracking>
+    </vrSystem>
+    <vrSystem name="openvr">
+        <forControllers>
+            <handLeft>
+                <translation y="-0.11" z="-0.02" x="-0.04"/>
+                <rotation roll="-90.0" pitch="-30"/>
+            </handLeft>
+            <handRight>
+                <translation y="-0.11" z="-0.02" x="0.04"/>
+                <rotation roll="90.0" pitch="-30"/>
+            </handRight>
+        </forControllers>
+    </vrSystem>
+    <vrSystem name="wavevr">
+        <forControllers>
+            <handLeft>
+                <translation y="-0.08" z="-0.0" x="-0.01"/>
+                <rotation roll="-90.0" pitch="-30"/>
+            </handLeft>
+            <handRight>
+                <translation y="-0.08" z="-0.0" x="0.01"/>
+                <rotation roll="90.0" pitch="-30"/>
+            </handRight>
+        </forControllers>
+    </vrSystem>
+  </vrOffsets>
+  <vrInputDevices>
+    <device name="viveWand"
+		forPromptName="viveWand"
+        triggerAxis="1"
+        inputTags="viveWand">
+        <!--
+        <force/>
+        -->
+        <forcedForVRSystem>test_viveWand</forcedForVRSystem>
+        <trackingSystemName>aapvr</trackingSystemName>
+        <trackingSystemName>lighthouse</trackingSystemName>
+        <controllerName>htcViveController</controllerName>
+    </device>
+    <device name="oculusTouch"
+		forPromptName="oculusTouch"
+        triggerAxis="1"
+        gripAxis="2"
+        inputTags="oculusTouch">
+        <forcedForVRSystem>test_oculusTouch</forcedForVRSystem>
+        <forcedForVRSystem>oculus</forcedForVRSystem>
+        <forcedForVRSystem>oculusMobile</forcedForVRSystem>
+        <modelNumber>Oculus Touch</modelNumber>
+        <modelNumber>Oculus Rift CV1 (Left Controller)</modelNumber>
+        <modelNumber>Oculus Rift CV1 (Right Controller)</modelNumber>
+        <trackingSystemName>oculus</trackingSystemName>
+        <trackingSystemName>oculusMobile</trackingSystemName>
+        <controllerName>oculusTouchController</controllerName>
+    </device>
+    <device name="holographicWand"
+		forPromptName="holographicWand"
+        triggerAxis="1"
+        gripButton="2"
+        inputTags="holographicWand">
+        <forcedForVRSystem>test_holographicWand</forcedForVRSystem>
+        <modelNumber>WindowsMR</modelNumber>
+        <trackingSystemName>holographic</trackingSystemName>
+        <controllerName>microsoftMotionController</controllerName>
+    </device>
+    <device name="valveIndex"
+		forPromptName="valveIndex"
+        fingersFromSkeleton="true"
+        inputTags="valveIndex">
+        <forcedForVRSystem>test_knuckles</forcedForVRSystem>
+        <modelNumber>Knuckles</modelNumber>
+        <modelNumber>Knuckles Left</modelNumber>
+        <modelNumber>Knuckles Right</modelNumber>
+        <trackingSystemName>aapvr</trackingSystemName>
+        <trackingSystemName>lighthouse</trackingSystemName>
+        <controllerName>valveIndexController</controllerName>
+    </device>
+    <device name="viveCosmos"
+		forPromptName="viveController"
+		triggerAxis="1"
+        gripButton="2"
+        inputTags="viveCosmos">
+        <forcedForVRSystem>test_viveCosmos</forcedForVRSystem>
+        <modelNumber>vivecosmos3</modelNumber>
+		<trackingSystemName>WAVE:SUE</trackingSystemName>		
+        <trackingSystemName>wavevr</trackingSystemName>		
+        <controllerName>htcViveCosmosController</controllerName>
+    </device>
+    <device name="viveFocus3"
+		forPromptName="viveController"
+		triggerAxis="1"
+        gripButton="2"
+        inputTags="viveFocus3">
+        <forcedForVRSystem>test_viveFocus3</forcedForVRSystem>
+        <modelNumber>vivefocus3</modelNumber>
+        <trackingSystemName>WAVE:SUE</trackingSystemName>		
+        <trackingSystemName>wavevr</trackingSystemName>		
+        <controllerName>htcViveFocus3Controller</controllerName>
+    </device>
+    <device name="pico4"
+		forPromptName="pico4"
+		triggerAxis="1"
+        gripButton="2"
+        inputTags="pico4">
+        <forcedForVRSystem>test_pico4</forcedForVRSystem>
+        <modelNumber>PICO 4</modelNumber>
+        <trackingSystemName>PICO 4</trackingSystemName>		
+        <trackingSystemName>Pico Neo3 Link</trackingSystemName>		
+        <controllerName>picoNeo3Controller</controllerName> shared between pico 4 and pico neo 3
+    </device>
+	<deviceGroup name="touchLike"
+		forPromptName="touchLike">
+		<device name="oculusTouch"/>
+		<device name="viveCosmos"/>
+		<device name="viveFocus3"/>
+		<device name="pico4"/>
+	</deviceGroup>
+  </vrInputDevices>
+  <gameConfig systemTagRequired="midEndPC">
+    <advancementSuspensionRoomDistance>10</advancementSuspensionRoomDistance>
+    <autoGenerateLODs>3</autoGenerateLODs> no need for more LODs
+    <minLODSize>0.7</minLODSize>
+    <lodSelectorStart>0.1</lodSelectorStart>
+    <lodSelectorStep>0.3</lodSelectorStep>
+    <meshGen>
+      <smoothEverythingAtLOD>4</smoothEverythingAtLOD>
+      <lodIndexMultiplier>1</lodIndexMultiplier>
+      <minSizes>
+        <minSize value="0.00"/>
+        <minSize value="0.01"/>
+        <minSize value="0.02"/>
+        <minSize value="0.05"/>
+        <minSize value="0.08"/>
+      </minSizes>
+      <subStepDef>
+        <modifyDivider value="1.00"/>
+        <modifyDivider value="2.00"/>
+        <modifyDivider value="3.00"/>
+        <modifyDivider value="6.00"/>
+        <modifyDivider value="10.00"/>
+        <modifyDivider value="16.00"/>
+      </subStepDef>
+    </meshGen>
+  </gameConfig>
+  <gameConfig>
+    <advancementSuspensionRoomDistance>7</advancementSuspensionRoomDistance>
+    <autoGenerateLODs>3</autoGenerateLODs> no need for more LODs
+    <minLODSize>0.7</minLODSize>
+    <lodSelectorStart>0.15</lodSelectorStart>
+    <lodSelectorStep>0.310</lodSelectorStep>
+    <meshGen>
+      <smoothEverythingAtLOD>3</smoothEverythingAtLOD>
+      <lodIndexMultiplier>1</lodIndexMultiplier>
+      <minSizes>
+        <minSize value="0.00"/>
+        <minSize value="0.015"/>
+        <minSize value="0.03"/>
+        <minSize value="0.07"/>
+        <minSize value="0.12"/>
+      </minSizes>
+      <subStepDef>
+        <modifyDivider value="1.00"/>
+        <modifyDivider value="2.50"/>
+        <modifyDivider value="4.00"/>
+        <modifyDivider value="6.50"/>
+        <modifyDivider value="12.00"/>
+        <modifyDivider value="20.00"/>
+      </subStepDef>
+    </meshGen>
+  </gameConfig>
+  <gameConfig systemTagRequired="androidHeadset"> this way it will be copied for main config, but won't be copied to main for non-android
+    <advancementSuspensionRoomDistance>6</advancementSuspensionRoomDistance>
+    <autoGenerateLODs>3</autoGenerateLODs>
+    <minLODSize>0.7</minLODSize>
+    <lodSelectorStart>0.25</lodSelectorStart>
+    <lodSelectorStep>0.35</lodSelectorStep>
+    <!--
+    <lodSelectorStart>0.3</lodSelectorStart>
+    <lodSelectorStep>0.5</lodSelectorStep>
+    -->
+    <meshGen>
+      <smoothEverythingAtLOD>3</smoothEverythingAtLOD>
+      <lodIndexMultiplier>1</lodIndexMultiplier>
+      <_section noFilter="meshGen_lower">
+		  <_section noFilter="meshGen_low">
+			<minSizes>
+			  <minSize value="0.00"/>
+			  <minSize value="0.03"/>
+			  <minSize value="0.08"/>
+			</minSizes>
+			<subStepDef>
+			  <modifyDivider value="2.20"/>
+			  <modifyDivider value="4.00"/>
+			  <modifyDivider value="7.00"/>
+			</subStepDef>
+		  </_section>
+		  <_section filter="meshGen_low">
+			<minSizes>
+			  <minSize value="0.00"/>
+			  <minSize value="0.04"/>
+			  <minSize value="0.08"/>
+			</minSizes>
+			<subStepDef>
+			  <modifyDivider value="2.40"/>
+			  <modifyDivider value="4.50"/>
+			  <modifyDivider value="9.00"/>
+			</subStepDef>
+		  </_section>
+	  </_section>
+	  <_section filter="meshGen_lower">
+		<minSizes>
+		  <minSize value="0.00"/>
+		  <minSize value="0.05"/>
+		  <minSize value="0.10"/>
+		</minSizes>
+		<subStepDef>
+		  <modifyDivider value="2.60"/>
+		  <modifyDivider value="5.00"/>
+		  <modifyDivider value="11.00"/>
+		</subStepDef>
+	  </_section>
+    </meshGen>
+  </gameConfig>
+  <gameConfig systemTagRequired="quest2 or quest3 or questPro or pico" copyToMainConfigForSystemTag="androidHeadset">
+    <advancementSuspensionRoomDistance>7</advancementSuspensionRoomDistance>
+    <autoGenerateLODs>3</autoGenerateLODs>
+    <minLODSize>0.7</minLODSize>
+    <lodSelectorStart>0.2</lodSelectorStart>
+    <lodSelectorStep>0.325</lodSelectorStep>
+    <meshGen>
+      <smoothEverythingAtLOD>3</smoothEverythingAtLOD>
+      <lodIndexMultiplier>1</lodIndexMultiplier>
+      <_section noFilter="meshGen_low">
+        <minSizes>
+          <minSize value="0.00"/>
+          <minSize value="0.02"/>
+          <minSize value="0.05"/>
+          <minSize value="0.08"/>
+        </minSizes>
+        <subStepDef>
+          <modifyDivider value="1.60"/>
+          <modifyDivider value="3.00"/>
+          <modifyDivider value="5.50"/>
+          <modifyDivider value="8.00"/>
+        </subStepDef>
+      </_section>
+      <_section filter="meshGen_low">
+        <minSizes>
+          <minSize value="0.00"/>
+          <minSize value="0.03"/>
+          <minSize value="0.06"/>
+          <minSize value="0.08"/>
+        </minSizes>
+        <subStepDef>
+          <modifyDivider value="1.80"/>
+          <modifyDivider value="3.40"/>
+          <modifyDivider value="6.50"/>
+          <modifyDivider value="10.00"/>
+        </subStepDef>
+      </_section>
+    </meshGen>
+  </gameConfig>
+  <gameConfig>
+    <npcCharacterHealthCoef>100%</npcCharacterHealthCoef>
+    <lootEnergyQuantumAmmoCoef>100%</lootEnergyQuantumAmmoCoef>
+    <subtitlesLineLimit>5</subtitlesLineLimit>
+  </gameConfig>
+</library>

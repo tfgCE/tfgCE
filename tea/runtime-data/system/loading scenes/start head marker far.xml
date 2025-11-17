@@ -1,0 +1,77 @@
+<library group="loading scenes">
+	<meshStatic
+		name="start head marker far"
+		meshGenerator="start head marker far">
+		<materials>
+			<material index="0" material="marker beacon far">
+				<colour name="markerColour" a="0.5">loader_hub_start_head_marker</colour>
+				<colour name="emissiveColour" a="0.0">loader_hub_start_head_marker</colour>
+				<colour name="emissiveBaseColour">loader_hub_start_head_marker</colour>
+				<vector3 name="beaconAtRel" x="1" y="0" z="0"/>
+				<float name="emissivePower">1.0</float>
+				<float name="beaconRadius">4.0</float> radius
+				<float name="beaconActive">1.0</float>
+				<float name="beaconSpeed">0.1</float>
+				<float name="beaconTScale">30.0</float>
+				<float name="beaconAlpha">0.7</float>
+				<float name="beaconTreshold">0.1</float>
+				<float name="beaconTresholdScale">0.9</float>
+				<float name="beaconInnerBorderScale">16.0</float>
+				<float name="beaconOuterBorderScale">10.0</float>
+			</material>
+		</materials>
+	</meshStatic>
+	<meshGenerator
+		name="start head marker far"
+		use1AsSubStepBase="1"
+		generateLODs="1">
+		<indexFormat>
+			<element/>
+		</indexFormat>
+		<vertexFormat>
+			<normal/>
+			<textureUV/>
+		</vertexFormat>
+		<mainElement>
+			<set>
+				<parameters>
+					<float name="uCross">0t32</float>
+					<float name="forceSmoothingAngleLimit">40</float>
+				</parameters>
+				<optionalParameters>
+					<float name="cross size">0.4</float>
+					<float name="above ground">0.02</float>
+					<float name="cross thickness">0.02</float>
+				</optionalParameters>
+				<elements>
+					<set> beacon
+						<parameters>
+							<vector3 name="beacon0"/>
+							<vector3 name="beacon1" z="0.01"/>
+							<float name="forceSmoothingAngleLimit">90</float>
+						</parameters>
+						<elements>
+							<shape type="cross section cylindrical">
+								<halfCrossSectionSpline>
+									<refPoint name="height" y="2.0"/>
+									<refPoint name="radius" x="1.0"/>
+									<u uParam="uCross"/>
+									<point x="0" y="0"/>
+									<point x="1" y="0"/>
+								</halfCrossSectionSpline>
+								<halfCrossSectionSubStep stepLength="0.1"/>
+								<cylinderSubStep stepLength="0.025"/>
+								<wheresMyPoint>
+									<copyStore from="beacon0" as="csStartsAt"/>
+									<copyStore from="beacon1" as="csEndsAt"/>
+									<float>4</float>
+									<store as="csRadius"/>
+								</wheresMyPoint>
+							</shape>
+						</elements>
+					</set>				
+				</elements>
+			</set>
+		</mainElement>
+	</meshGenerator>
+</library>

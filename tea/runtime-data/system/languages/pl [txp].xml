@@ -1,0 +1,12 @@
+<library group="languages">
+	<texture name="pl small" file="assets\pl small.tex" importFromFile="assets\_source\pl small.tga" filteringMag="nearest" filteringMin="nearest" wrap="clamp"/> 
+	<texturePart name="pl small" texture="pl small">
+		<uv0 x="0t24" ty="15t16"/>
+		<uv1 x="23t24" ty="0t16"/>
+		<uvAnchor x="11t23" ty="8t16"/>
+	</texturePart>
+
+	<.localisedStrings language="pl">
+		<texturePart id="small" use="languages:pl small"/>
+	</localisedStrings>
+</library>

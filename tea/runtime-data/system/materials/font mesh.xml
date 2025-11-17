@@ -1,0 +1,46 @@
+<library group="materials">
+
+	this material should be used for meshes constructed by fonts
+	
+	<fragmentShader name="font mesh">
+		<useWithRenderingPipeline/>
+		<source>
+			<data>
+				// uniforms
+				uniform sampler2D inTexture;
+				
+				uniform HIGHP float time; // anti banding here?
+			</data>
+			<mainBody>
+				LOWP vec4 prcColour = texture(inTexture, varUV).rgba;
+				prcColour.rgb *= varColour.rgb;
+				colour = prcColour;
+
+			#ifdef MAKE_IT_FASTER
+				if (prcColour.a &lt; 0.5)
+				{
+					discard;
+				}
+			#endif
+
+				// anti banding here?
+				prepare_random_value_random(varPosition, time);
+				colour.rgb = apply_anti_banding_to(colour.rgb);
+			</mainBody>
+		</source>
+	</fragmentShader>
+
+	<material name="font mesh"
+		fragmentShader="font mesh"
+		depthMask="false" srcBlendOp="srcAlpha" destBlendOp="oneMinusSrcAlpha" 
+		>
+		<for systemTagRequired="lowGraphics" depthMask="true" srcBlendOp="one" destBlendOp="zero"/>
+		<useWithStaticMesh/>
+		<useWithSkinnedMesh/>
+		<useWithSkinnedToSingleBoneMesh/>
+		<allowIndividualInstances/>
+		<params>
+		</params>
+	</material>
+
+</library>

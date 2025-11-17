@@ -1,0 +1,24 @@
+Debug				is for low level debugging
+Dev					main development configuration
+Profiler			faster development configuration, can be used for profiling
+
+Release				generic final configuration (mostly for testing)
+						teaForGodQuest
+						teaForGodWin
+ReleaseOculus		configuration used for releasing the game on Oculus platforms (both pc and standalone)
+						teaForGodQuest
+						teaForGodWin
+ReleaseSteam		configuration used for releasing the game on Steam
+						teaForGodWin
+ReleaseVive			configuration used for releasing the game on HTC/Vive platforms (both pc and standalone)
+						teaForGodVive
+						teaForGodWin
+ReleasePico			configuration used for releasing the game on Pico platform (standalone)
+						teaForGodPico
+
+note that Debug+Dev+Profiler have all libraries included
+Release does not have Steam support
+ReleaseOculus has no Steam support nor openvr
+ReleaseSteam has additional steamworks related calls
+ReleaseVive has additional htc/vive related calls
+ReleasePico has additional pico related calls

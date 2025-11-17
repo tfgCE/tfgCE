@@ -1,0 +1,13 @@
+<library group="vr">
+	<meshStatic name="vr controller" file="assets\vr controller.meshStatic" importFromFile="assets\_source\vr_controller_vive_1_5.obj">
+		<materials>
+			<material index="0" material="tracking device"/>
+		</materials>
+		<importFromPlacement>
+			<location x="0.0" y="0.0" z="0.0" /> 
+			<rotation yaw="180"/> 
+		</importFromPlacement>
+		<importScale>1.0</importScale> 
+		<importCombine /> 
+	</meshStatic>
+</library>

@@ -1,0 +1,90 @@
+<library group="loading scenes">
+	<meshStatic
+		name="start head marker close"
+		meshGenerator="start head marker close">
+		<materials>
+			<material index="0" material="marker beacon">
+				<colour name="markerColour" a="0.5">loader_hub_start_head_marker</colour>
+				<colour name="emissiveColour" a="0.0">loader_hub_start_head_marker</colour>
+				<colour name="emissiveBaseColour">loader_hub_start_head_marker</colour>
+				<float name="emissivePower">1.0</float>
+				<float name="beaconActive">1.0</float>
+				<float name="beaconRActive">0.0</float>
+				<float name="beaconSpeed">0.1</float>
+				<float name="beaconRSpeed">0.1</float>
+				<float name="beaconTScale">30.0</float>
+				<float name="beaconRScale">30.0</float>
+				<float name="beaconUseZ">1.0</float>
+				<float name="beaconZOffsetScale">0.5</float>
+				<float name="beaconAlpha">0.7</float>
+				<float name="beaconTreshold">0.1</float>
+				<float name="beaconTresholdScale">0.9</float>
+				<float name="beaconBorderScale">3.0</float>
+				<float name="beaconDistanceScale">2.0</float>
+			</material>
+		</materials>
+	</meshStatic>
+	<meshGenerator
+		name="start head marker close"
+		use1AsSubStepBase="1"
+		generateLODs="1">
+		<indexFormat>
+			<element/>
+		</indexFormat>
+		<vertexFormat>
+			<normal/>
+			<textureUV/>
+			<custom name="inBeaconT" dataType="float" attribType="float"/> <!-- beacon t (up/down) param -->
+			<custom name="inBeaconR" dataType="float" attribType="float"/> <!-- beacon r (rotation) param -->
+			<custom name="inBeaconRI" dataType="float" attribType="float"/> <!-- beacon r (inverted/back) param -->
+		</vertexFormat>
+		<mainElement>
+			<set>
+				<parameters>
+					<float name="uCross">0t32</float>
+					<float name="forceSmoothingAngleLimit">40</float>
+				</parameters>
+				<optionalParameters>
+					<float name="cross size">0.4</float>
+					<float name="above ground">0.02</float>
+					<float name="cross thickness">0.02</float>
+				</optionalParameters>
+				<elements>
+					<set> beacon
+						<parameters>
+							<int name="materialIndex">0</int>
+							<vector3 name="beacon0"/>
+							<vector3 name="beacon1" z="2.5"/>
+							<float name="forceSmoothingAngleLimit">90</float>
+						</parameters>
+						<elements>
+							<shape type="cross section cylindrical">
+								<halfCrossSectionSpline>
+									<refPoint name="height" y="2.0"/>
+									<refPoint name="radius" x="1.0"/>
+									<u uParam="uCross"/>
+									<point x="3.2" y="2"/>
+									<curve x="1.2" y="0">
+										<p12 x="2.5" y="1"/>
+									</curve>
+								</halfCrossSectionSpline>
+								<halfCrossSectionSubStep stepLength="0.1"/>
+								<cylinderSubStep stepLength="0.025"/>
+								<wheresMyPoint>
+									<copyStore from="beacon0" as="csStartsAt"/>
+									<copyStore from="beacon1" as="csEndsAt"/>
+									<restore from="cross size"/>
+									<half/>
+									<store as="csRadius"/>
+								</wheresMyPoint>
+							</shape>
+							<modifier type="setCustomData" name="inBeaconT" float="1" interpolate0Param="beacon0" interpolate1Param="beacon1"/>
+							<modifier type="setCustomData" name="inBeaconR" setYaw="true" normaliseYaw="true"/>
+							<modifier type="setCustomData" name="inBeaconRI" setYaw="true" normaliseYaw="true" baseYaw="180"/>
+						</elements>
+					</set>				
+				</elements>
+			</set>
+		</mainElement>
+	</meshGenerator>
+</library>

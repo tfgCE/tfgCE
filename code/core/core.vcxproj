@@ -1,0 +1,1722 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Profiler|x64">
+      <Configuration>Profiler</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Dev|x64">
+      <Configuration>Dev</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="ReleaseOculus|x64">
+      <Configuration>ReleaseOculus</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="ReleaseAndroid|x64">
+      <Configuration>ReleaseAndroid</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="ReleaseVive|x64">
+      <Configuration>ReleaseVive</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="ReleaseSteam|x64">
+      <Configuration>ReleaseSteam</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|ARM64">
+      <Configuration>Debug</Configuration>
+      <Platform>ARM64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Profiler|ARM64">
+      <Configuration>Profiler</Configuration>
+      <Platform>ARM64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Dev|ARM64">
+      <Configuration>Dev</Configuration>
+      <Platform>ARM64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|ARM64">
+      <Configuration>Release</Configuration>
+      <Platform>ARM64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="ReleaseOculus|ARM64">
+      <Configuration>ReleaseOculus</Configuration>
+      <Platform>ARM64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="ReleaseAndroid|ARM64">
+      <Configuration>ReleaseAndroid</Configuration>
+      <Platform>ARM64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="ReleaseVive|ARM64">
+      <Configuration>ReleaseVive</Configuration>
+      <Platform>ARM64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="ReleasePico|ARM64">
+      <Configuration>ReleasePico</Configuration>
+      <Platform>ARM64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="ReleaseSteam|ARM64">
+      <Configuration>ReleaseSteam</Configuration>
+      <Platform>ARM64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals" Condition="'$(Platform)'=='x64'">
+    <ProjectGuid>{EAE24C03-3C9C-471C-BECF-7FA3C575845B}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>core</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <PropertyGroup Label="Globals" Condition="'$(Platform)'=='ARM64'">
+    <ProjectGuid>{EAE24C03-3C9C-471C-BECF-7FA3C575845B}</ProjectGuid>
+    <Keyword>Android</Keyword>
+    <RootNamespace>core</RootNamespace>
+    <DefaultLanguage>en-US</DefaultLanguage>
+    <MinimumVisualStudioVersion>14.0</MinimumVisualStudioVersion>
+    <ApplicationType>Android</ApplicationType>
+    <ApplicationTypeRevision>3.0</ApplicationTypeRevision>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+    <PreferredToolArchitecture>x64</PreferredToolArchitecture>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Dev|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+    <PreferredToolArchitecture>x64</PreferredToolArchitecture>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+    <PreferredToolArchitecture>x64</PreferredToolArchitecture>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseOculus|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+    <PreferredToolArchitecture>x64</PreferredToolArchitecture>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseAndroid|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+    <PreferredToolArchitecture>x64</PreferredToolArchitecture>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseVive|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+    <PreferredToolArchitecture>x64</PreferredToolArchitecture>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseSteam|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+    <PreferredToolArchitecture>x64</PreferredToolArchitecture>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Profiler|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+    <PreferredToolArchitecture>x64</PreferredToolArchitecture>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>Clang_5_0</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+    <UseOfStl>c++_shared</UseOfStl>
+    <AndroidAPILevel>android-23</AndroidAPILevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Dev|ARM64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>Clang_5_0</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+    <UseOfStl>c++_shared</UseOfStl>
+    <AndroidAPILevel>android-23</AndroidAPILevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>Clang_5_0</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+    <UseOfStl>c++_shared</UseOfStl>
+    <AndroidAPILevel>android-23</AndroidAPILevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseOculus|ARM64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>Clang_5_0</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+    <UseOfStl>c++_shared</UseOfStl>
+    <AndroidAPILevel>android-23</AndroidAPILevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseAndroid|ARM64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>Clang_5_0</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+    <UseOfStl>c++_shared</UseOfStl>
+    <AndroidAPILevel>android-23</AndroidAPILevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseVive|ARM64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>Clang_5_0</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+    <UseOfStl>c++_shared</UseOfStl>
+    <AndroidAPILevel>android-23</AndroidAPILevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ReleasePico|ARM64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>Clang_5_0</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+    <UseOfStl>c++_shared</UseOfStl>
+    <AndroidAPILevel>android-23</AndroidAPILevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Profiler|ARM64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>Clang_5_0</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+    <UseOfStl>c++_shared</UseOfStl>
+    <AndroidAPILevel>android-23</AndroidAPILevel>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Dev|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='ReleaseOculus|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='ReleaseAndroid|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='ReleaseVive|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='ReleaseSteam|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Profiler|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|ARM64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Dev|ARM64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|ARM64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='ReleaseOculus|ARM64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='ReleaseAndroid|ARM64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='ReleaseVive|ARM64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='ReleasePico|ARM64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Profiler|ARM64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+    <IntDir>$(SolutionDir)temp\intermediate\$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    <OutDir>$(SolutionDir)runtime\$(Platform)\$(Configuration)\</OutDir>
+    <IncludePath>$(SolutionDir)externals\code\bzip2\include;$(SolutionDir)externals\code\glew\include;$(SolutionDir)externals\code\sdl2\include;$(SolutionDir)externals\code\sdl2_image\include;$(SolutionDir)externals\code\sdl2_net\include;$(SolutionDir)externals\code\ovr\Include;$(SolutionDir)externals\code\openvr\headers;$(SolutionDir)externals\code\openxr\include;$(SolutionDir)externals\code\fmod\api\lowLevel\inc;$(SolutionDir)externals\code\fmod\api\studio\inc;$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Dev|x64'">
+    <LinkIncremental>false</LinkIncremental>
+    <IntDir>$(SolutionDir)temp\intermediate\$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    <OutDir>$(SolutionDir)runtime\$(Platform)\$(Configuration)\</OutDir>
+    <IncludePath>$(SolutionDir)externals\code\bzip2\include;$(SolutionDir)externals\code\glew\include;$(SolutionDir)externals\code\sdl2\include;$(SolutionDir)externals\code\sdl2_image\include;$(SolutionDir)externals\code\sdl2_net\include;$(SolutionDir)externals\code\ovr\Include;$(SolutionDir)externals\code\openvr\headers;$(SolutionDir)externals\code\openxr\include;$(SolutionDir)externals\code\fmod\api\lowLevel\inc;$(SolutionDir)externals\code\fmod\api\studio\inc;$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+    <IntDir>$(SolutionDir)temp\intermediate\$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    <OutDir>$(SolutionDir)runtime\$(Platform)\$(Configuration)\</OutDir>
+    <IncludePath>$(SolutionDir)externals\code\bzip2\include;$(SolutionDir)externals\code\glew\include;$(SolutionDir)externals\code\sdl2\include;$(SolutionDir)externals\code\sdl2_image\include;$(SolutionDir)externals\code\sdl2_net\include;$(SolutionDir)externals\code\ovr\Include;$(SolutionDir)externals\code\openvr\headers;$(SolutionDir)externals\code\openxr\include;$(SolutionDir)externals\code\fmod\api\lowLevel\inc;$(SolutionDir)externals\code\fmod\api\studio\inc;$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseOculus|x64'">
+    <LinkIncremental>false</LinkIncremental>
+    <IntDir>$(SolutionDir)temp\intermediate\$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    <OutDir>$(SolutionDir)runtime\$(Platform)\$(Configuration)\</OutDir>
+    <IncludePath>$(SolutionDir)externals\code\bzip2\include;$(SolutionDir)externals\code\glew\include;$(SolutionDir)externals\code\sdl2\include;$(SolutionDir)externals\code\sdl2_image\include;$(SolutionDir)externals\code\sdl2_net\include;$(SolutionDir)externals\code\ovr\Include;$(SolutionDir)externals\code\openvr\headers;$(SolutionDir)externals\code\openxr\include;$(SolutionDir)externals\code\fmod\api\lowLevel\inc;$(SolutionDir)externals\code\fmod\api\studio\inc;$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseAndroid|x64'">
+    <LinkIncremental>false</LinkIncremental>
+    <IntDir>$(SolutionDir)temp\intermediate\$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    <OutDir>$(SolutionDir)runtime\$(Platform)\$(Configuration)\</OutDir>
+    <IncludePath>$(SolutionDir)externals\code\bzip2\include;$(SolutionDir)externals\code\glew\include;$(SolutionDir)externals\code\sdl2\include;$(SolutionDir)externals\code\sdl2_image\include;$(SolutionDir)externals\code\sdl2_net\include;$(SolutionDir)externals\code\ovr\Include;$(SolutionDir)externals\code\openvr\headers;$(SolutionDir)externals\code\openxr\include;$(SolutionDir)externals\code\fmod\api\lowLevel\inc;$(SolutionDir)externals\code\fmod\api\studio\inc;$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseVive|x64'">
+    <LinkIncremental>false</LinkIncremental>
+    <IntDir>$(SolutionDir)temp\intermediate\$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    <OutDir>$(SolutionDir)runtime\$(Platform)\$(Configuration)\</OutDir>
+    <IncludePath>$(SolutionDir)externals\code\viveport\include;$(SolutionDir)externals\code\viveport\include;$(SolutionDir)externals\code\bzip2\include;$(SolutionDir)externals\code\glew\include;$(SolutionDir)externals\code\sdl2\include;$(SolutionDir)externals\code\sdl2_image\include;$(SolutionDir)externals\code\sdl2_net\include;$(SolutionDir)externals\code\ovr\Include;$(SolutionDir)externals\code\openvr\headers;$(SolutionDir)externals\code\openxr\include;$(SolutionDir)externals\code\fmod\api\lowLevel\inc;$(SolutionDir)externals\code\fmod\api\studio\inc;$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseSteam|x64'">
+    <LinkIncremental>false</LinkIncremental>
+    <IntDir>$(SolutionDir)temp\intermediate\$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    <OutDir>$(SolutionDir)runtime\$(Platform)\$(Configuration)\</OutDir>
+    <IncludePath>$(SolutionDir)externals\code\steamworks\public\steam;$(SolutionDir)externals\code\bzip2\include;$(SolutionDir)externals\code\glew\include;$(SolutionDir)externals\code\sdl2\include;$(SolutionDir)externals\code\sdl2_image\include;$(SolutionDir)externals\code\sdl2_net\include;$(SolutionDir)externals\code\ovr\Include;$(SolutionDir)externals\code\openvr\headers;$(SolutionDir)externals\code\openxr\include;$(SolutionDir)externals\code\fmod\api\lowLevel\inc;$(SolutionDir)externals\code\fmod\api\studio\inc;$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Profiler|x64'">
+    <LinkIncremental>false</LinkIncremental>
+    <IntDir>$(SolutionDir)temp\intermediate\$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    <OutDir>$(SolutionDir)runtime\$(Platform)\$(Configuration)\</OutDir>
+    <IncludePath>$(SolutionDir)externals\code\bzip2\include;$(SolutionDir)externals\code\glew\include;$(SolutionDir)externals\code\sdl2\include;$(SolutionDir)externals\code\sdl2_image\include;$(SolutionDir)externals\code\sdl2_net\include;$(SolutionDir)externals\code\ovr\Include;$(SolutionDir)externals\code\openvr\headers;$(SolutionDir)externals\code\openxr\include;$(SolutionDir)externals\code\fmod\api\lowLevel\inc;$(SolutionDir)externals\code\fmod\api\studio\inc;$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM64'">
+    <LinkIncremental>true</LinkIncremental>
+    <IntDir>$(SolutionDir)temp\intermediate\$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    <OutDir>$(SolutionDir)runtime\$(Platform)\$(Configuration)\</OutDir>
+    <IncludePath>$(SolutionDir)externals\code\bzip2\include;$(SolutionDir)externals\code\ovrMobile\VrApi\Include;$(SolutionDir)externals\code\openxr\include;$(SolutionDir)externals\code\fmod_android\api\lowLevel\inc;$(SolutionDir)externals\code\fmod_android\api\studio\inc;$(IncludePath)</IncludePath>
+    <UseMultiToolTask>true</UseMultiToolTask>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Dev|ARM64'">
+    <LinkIncremental>false</LinkIncremental>
+    <IntDir>$(SolutionDir)temp\intermediate\$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    <OutDir>$(SolutionDir)runtime\$(Platform)\$(Configuration)\</OutDir>
+    <IncludePath>$(SolutionDir)externals\code\bzip2\include;$(SolutionDir)externals\code\ovrMobile\VrApi\Include;$(SolutionDir)externals\code\openxr\include;$(SolutionDir)externals\code\fmod_android\api\lowLevel\inc;$(SolutionDir)externals\code\fmod_android\api\studio\inc;$(IncludePath)</IncludePath>
+    <UseMultiToolTask>true</UseMultiToolTask>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM64'">
+    <LinkIncremental>false</LinkIncremental>
+    <IntDir>$(SolutionDir)temp\intermediate\$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    <OutDir>$(SolutionDir)runtime\$(Platform)\$(Configuration)\</OutDir>
+    <IncludePath>$(SolutionDir)externals\code\bzip2\include;$(SolutionDir)externals\code\ovrMobile\VrApi\Include;$(SolutionDir)externals\code\openxr\include;$(SolutionDir)externals\code\fmod_android\api\lowLevel\inc;$(SolutionDir)externals\code\fmod_android\api\studio\inc;$(IncludePath)</IncludePath>
+    <UseMultiToolTask>true</UseMultiToolTask>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseOculus|ARM64'">
+    <LinkIncremental>false</LinkIncremental>
+    <IntDir>$(SolutionDir)temp\intermediate\$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    <OutDir>$(SolutionDir)runtime\$(Platform)\$(Configuration)\</OutDir>
+    <IncludePath>$(SolutionDir)externals\code\bzip2\include;$(SolutionDir)externals\code\ovrMobile\VrApi\Include;$(SolutionDir)externals\code\openxr\include;$(SolutionDir)externals\code\fmod_android\api\lowLevel\inc;$(SolutionDir)externals\code\fmod_android\api\studio\inc;$(IncludePath)</IncludePath>
+    <UseMultiToolTask>true</UseMultiToolTask>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseAndroid|ARM64'">
+    <LinkIncremental>false</LinkIncremental>
+    <IntDir>$(SolutionDir)temp\intermediate\$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    <OutDir>$(SolutionDir)runtime\$(Platform)\$(Configuration)\</OutDir>
+    <IncludePath>$(SolutionDir)externals\code\bzip2\include;$(SolutionDir)externals\code\openxr\include;$(SolutionDir)externals\code\fmod_android\api\lowLevel\inc;$(SolutionDir)externals\code\fmod_android\api\studio\inc;$(IncludePath)</IncludePath>
+    <UseMultiToolTask>true</UseMultiToolTask>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseVive|ARM64'">
+    <LinkIncremental>false</LinkIncremental>
+    <IntDir>$(SolutionDir)temp\intermediate\$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    <OutDir>$(SolutionDir)runtime\$(Platform)\$(Configuration)\</OutDir>
+    <IncludePath>$(SolutionDir)externals\code\wavevr\include;$(SolutionDir)externals\code\viveport\include;$(SolutionDir)externals\code\bzip2\include;$(SolutionDir)externals\code\openxr\include;$(SolutionDir)externals\code\fmod_android\api\lowLevel\inc;$(SolutionDir)externals\code\fmod_android\api\studio\inc;$(IncludePath)</IncludePath>
+    <UseMultiToolTask>true</UseMultiToolTask>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ReleasePico|ARM64'">
+    <LinkIncremental>false</LinkIncremental>
+    <IntDir>$(SolutionDir)temp\intermediate\$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    <OutDir>$(SolutionDir)runtime\$(Platform)\$(Configuration)\</OutDir>
+    <IncludePath>$(SolutionDir)externals\code\bzip2\include;$(SolutionDir)externals\code\openxr\include;$(SolutionDir)externals\code\fmod_android\api\lowLevel\inc;$(SolutionDir)externals\code\fmod_android\api\studio\inc;$(IncludePath)</IncludePath>
+    <UseMultiToolTask>true</UseMultiToolTask>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Profiler|ARM64'">
+    <LinkIncremental>false</LinkIncremental>
+    <IntDir>$(SolutionDir)temp\intermediate\$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    <OutDir>$(SolutionDir)runtime\$(Platform)\$(Configuration)\</OutDir>
+    <IncludePath>$(SolutionDir)externals\code\bzip2\include;$(SolutionDir)externals\code\ovrMobile\VrApi\Include;$(SolutionDir)externals\code\openxr\include;$(SolutionDir)externals\code\fmod_android\api\lowLevel\inc;$(SolutionDir)externals\code\fmod_android\api\studio\inc;$(IncludePath)</IncludePath>
+    <UseMultiToolTask>true</UseMultiToolTask>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN64;AN_64;_DEBUG;_CONSOLE;AN_LITTLE_ENDIAN;AN_WINDOWS;AN_SDL;AN_STANDARD_INPUT;AN_FMOD;AN_GL;new;AN_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalOptions>%(AdditionalOptions)</AdditionalOptions>
+      <TreatWarningAsError>true</TreatWarningAsError>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <MinimalRebuild>false</MinimalRebuild>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>ws2_32.lib;legacy_stdio_definitions.lib;LibOVR.lib;openvr_api.lib;openxr_loaderd.lib;winmm.lib;SDL2.lib;SDL2main.lib;SDL2_image.lib;SDL2_net.lib;OpenGL32.Lib;glew32.lib;glew32s.lib;haptic_library.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Dev|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN64;AN_64;NDEBUG;_CONSOLE;AN_LITTLE_ENDIAN;AN_WINDOWS;AN_SDL;AN_STANDARD_INPUT;AN_FMOD;AN_GL;new;AN_DEV;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalOptions>%(AdditionalOptions)</AdditionalOptions>
+      <TreatWarningAsError>true</TreatWarningAsError>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <MinimalRebuild>false</MinimalRebuild>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>ws2_32.lib;legacy_stdio_definitions.lib;libovr.lib;openvr_api.lib;openxr_loader.lib;winmm.lib;SDL2.lib;SDL2main.lib;SDL2_image.lib;SDL2_net.lib;OpenGL32.Lib;glew32.lib;glew32s.lib;haptic_library.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN64;AN_64;NDEBUG;_CONSOLE;AN_LITTLE_ENDIAN;AN_WINDOWS;AN_SDL;AN_STANDARD_INPUT;AN_FMOD;AN_GL;new;AN_RELEASE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalOptions>%(AdditionalOptions)</AdditionalOptions>
+      <TreatWarningAsError>true</TreatWarningAsError>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <MinimalRebuild>false</MinimalRebuild>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>ws2_32.lib;legacy_stdio_definitions.lib;libovr.lib;openvr_api.lib;openxr_loader.lib;winmm.lib;SDL2.lib;SDL2main.lib;SDL2_image.lib;SDL2_net.lib;OpenGL32.Lib;glew32.lib;glew32s.lib;haptic_library.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseOculus|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>AN_OCULUS_ONLY;AN_OCULUS;WIN64;AN_64;NDEBUG;_CONSOLE;AN_LITTLE_ENDIAN;AN_WINDOWS;AN_SDL;AN_STANDARD_INPUT;AN_FMOD;AN_GL;new;AN_RELEASE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalOptions>%(AdditionalOptions)</AdditionalOptions>
+      <TreatWarningAsError>true</TreatWarningAsError>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <MinimalRebuild>false</MinimalRebuild>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>ws2_32.lib;legacy_stdio_definitions.lib;libovr.lib;openxr_loader.lib;winmm.lib;SDL2.lib;SDL2main.lib;SDL2_image.lib;SDL2_net.lib;OpenGL32.Lib;glew32.lib;glew32s.lib;haptic_library.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseAndroid|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN64;AN_64;NDEBUG;_CONSOLE;AN_LITTLE_ENDIAN;AN_WINDOWS;AN_SDL;AN_STANDARD_INPUT;AN_FMOD;AN_GL;new;AN_RELEASE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalOptions>%(AdditionalOptions)</AdditionalOptions>
+      <TreatWarningAsError>true</TreatWarningAsError>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <MinimalRebuild>false</MinimalRebuild>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>ws2_32.lib;legacy_stdio_definitions.lib;openxr_loader.lib;winmm.lib;SDL2.lib;SDL2main.lib;SDL2_image.lib;SDL2_net.lib;OpenGL32.Lib;glew32.lib;glew32s.lib;haptic_library.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseVive|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>AN_VIVE_ONLY;AN_VIVEPORT;WIN64;AN_64;NDEBUG;_CONSOLE;AN_LITTLE_ENDIAN;AN_WINDOWS;AN_SDL;AN_STANDARD_INPUT;AN_FMOD;AN_GL;new;AN_RELEASE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalOptions>%(AdditionalOptions)</AdditionalOptions>
+      <TreatWarningAsError>true</TreatWarningAsError>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <MinimalRebuild>false</MinimalRebuild>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>ws2_32.lib;legacy_stdio_definitions.lib;viveport_api64.lib;openvr_api.lib;openxr_loader.lib;winmm.lib;SDL2.lib;SDL2main.lib;SDL2_image.lib;SDL2_net.lib;OpenGL32.Lib;glew32.lib;glew32s.lib;haptic_library.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseSteam|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>AN_STEAM;WIN64;AN_64;NDEBUG;_CONSOLE;AN_LITTLE_ENDIAN;AN_WINDOWS;AN_SDL;AN_STANDARD_INPUT;AN_FMOD;AN_GL;new;AN_RELEASE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalOptions>%(AdditionalOptions)</AdditionalOptions>
+      <TreatWarningAsError>true</TreatWarningAsError>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <MinimalRebuild>false</MinimalRebuild>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>ws2_32.lib;legacy_stdio_definitions.lib;openvr_api.lib;openxr_loader.lib;winmm.lib;sdkencryptedappticket64.lib;SDL2.lib;SDL2main.lib;SDL2_image.lib;SDL2_net.lib;OpenGL32.Lib;glew32.lib;glew32s.lib;haptic_library.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Profiler|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN64;AN_64;NDEBUG;_CONSOLE;AN_LITTLE_ENDIAN;AN_WINDOWS;AN_SDL;AN_STANDARD_INPUT;AN_FMOD;AN_GL;new;AN_PROFILER;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalOptions>%(AdditionalOptions)</AdditionalOptions>
+      <TreatWarningAsError>true</TreatWarningAsError>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <MinimalRebuild>false</MinimalRebuild>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>ws2_32.lib;legacy_stdio_definitions.lib;libovr.lib;openvr_api.lib;openxr_loader.lib;winmm.lib;SDL2.lib;SDL2main.lib;SDL2_image.lib;SDL2_net.lib;OpenGL32.Lib;glew32.lib;glew32s.lib;haptic_library.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM64'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>_DEBUG;AN_64;AN_LITTLE_ENDIAN;AN_CLANG;AN_ANDROID;AN_FMOD;AN_GLES;AN_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+      <TreatWarningAsError>true</TreatWarningAsError>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <MinimalRebuild>false</MinimalRebuild>
+      <DebugInformationFormat>FullDebug</DebugInformationFormat>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <PrecompiledHeaderFile>
+      </PrecompiledHeaderFile>
+      <ExceptionHandling>UnwindTables</ExceptionHandling>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <LibraryDependencies>%(LibraryDependencies);GLESv3;EGL;m;</LibraryDependencies>
+      <AdditionalDependencies>
+      </AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Dev|ARM64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>NDEBUG;AN_64;AN_LITTLE_ENDIAN;AN_CLANG;AN_ANDROID;AN_FMOD;AN_GLES;AN_DEV;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+      <TreatWarningAsError>true</TreatWarningAsError>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <MinimalRebuild>false</MinimalRebuild>
+      <DebugInformationFormat>FullDebug</DebugInformationFormat>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <PrecompiledHeaderFile>
+      </PrecompiledHeaderFile>
+      <ExceptionHandling>UnwindTables</ExceptionHandling>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <LibraryDependencies>%(LibraryDependencies);GLESv3;EGL;m;</LibraryDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>NDEBUG;AN_64;AN_LITTLE_ENDIAN;AN_CLANG;AN_ANDROID;AN_FMOD;AN_GLES;AN_RELEASE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+      <TreatWarningAsError>true</TreatWarningAsError>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <MinimalRebuild>false</MinimalRebuild>
+      <DebugInformationFormat>FullDebug</DebugInformationFormat>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <PrecompiledHeaderFile>
+      </PrecompiledHeaderFile>
+      <ExceptionHandling>UnwindTables</ExceptionHandling>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <LibraryDependencies>%(LibraryDependencies);GLESv3;EGL;m;</LibraryDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseOculus|ARM64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>AN_OCULUS_ONLY;AN_OCULUS;NDEBUG;AN_64;AN_LITTLE_ENDIAN;AN_CLANG;AN_ANDROID;AN_QUEST;AN_VRAPI;AN_FMOD;AN_GLES;AN_RELEASE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+      <TreatWarningAsError>true</TreatWarningAsError>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <MinimalRebuild>false</MinimalRebuild>
+      <DebugInformationFormat>FullDebug</DebugInformationFormat>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <PrecompiledHeaderFile>
+      </PrecompiledHeaderFile>
+      <ExceptionHandling>UnwindTables</ExceptionHandling>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <LibraryDependencies>%(LibraryDependencies);GLESv3;EGL;m;</LibraryDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseAndroid|ARM64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>NDEBUG;AN_64;AN_LITTLE_ENDIAN;AN_CLANG;AN_ANDROID;AN_FMOD;AN_GLES;AN_RELEASE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+      <TreatWarningAsError>true</TreatWarningAsError>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <MinimalRebuild>false</MinimalRebuild>
+      <DebugInformationFormat>FullDebug</DebugInformationFormat>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <PrecompiledHeaderFile>
+      </PrecompiledHeaderFile>
+      <ExceptionHandling>UnwindTables</ExceptionHandling>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <LibraryDependencies>%(LibraryDependencies);GLESv3;EGL;m;</LibraryDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseVive|ARM64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>AN_VIVE_ONLY;AN_VIVEPORT;NDEBUG;AN_64;AN_LITTLE_ENDIAN;AN_CLANG;AN_ANDROID;AN_VIVE;AN_FMOD;AN_GLES;AN_RELEASE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+      <TreatWarningAsError>true</TreatWarningAsError>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <MinimalRebuild>false</MinimalRebuild>
+      <DebugInformationFormat>FullDebug</DebugInformationFormat>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <PrecompiledHeaderFile>
+      </PrecompiledHeaderFile>
+      <ExceptionHandling>UnwindTables</ExceptionHandling>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <LibraryDependencies>%(LibraryDependencies);GLESv3;EGL;m;</LibraryDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='ReleasePico|ARM64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>AN_PICO_ONLY;AN_PICO;NDEBUG;AN_64;AN_LITTLE_ENDIAN;AN_CLANG;AN_ANDROID;AN_PICO;AN_FMOD;AN_GLES;AN_RELEASE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+      <TreatWarningAsError>true</TreatWarningAsError>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <MinimalRebuild>false</MinimalRebuild>
+      <DebugInformationFormat>FullDebug</DebugInformationFormat>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <PrecompiledHeaderFile>
+      </PrecompiledHeaderFile>
+      <ExceptionHandling>UnwindTables</ExceptionHandling>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <LibraryDependencies>%(LibraryDependencies);GLESv3;EGL;m;</LibraryDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Profiler|ARM64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>NDEBUG;AN_64;AN_LITTLE_ENDIAN;AN_CLANG;AN_ANDROID;AN_FMOD;AN_GLES;AN_PROFILER;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+      <TreatWarningAsError>true</TreatWarningAsError>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <MinimalRebuild>false</MinimalRebuild>
+      <DebugInformationFormat>FullDebug</DebugInformationFormat>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <PrecompiledHeaderFile>
+      </PrecompiledHeaderFile>
+      <ExceptionHandling>UnwindTables</ExceptionHandling>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <LibraryDependencies>%(LibraryDependencies);GLESv3;EGL;m;</LibraryDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="buildInformation.h" />
+    <ClInclude Include="buildVer.h" />
+    <ClInclude Include="buildVer_tea.h" />
+    <ClInclude Include="buildVer_tea_definitions.h" />
+    <ClInclude Include="cachedPointer.h" />
+    <ClInclude Include="casts.h" />
+    <ClInclude Include="collision\checkCollisionContext.h" />
+    <ClInclude Include="collision\checkSegmentResult.h" />
+    <ClInclude Include="collision\collisionFlags.h" />
+    <ClInclude Include="collision\collisionInfoProvider.h" />
+    <ClInclude Include="collision\loadingContext.h" />
+    <ClInclude Include="collision\iCollidableObject.h" />
+    <ClInclude Include="collision\iCollidableShape.h" />
+    <ClInclude Include="collision\physicalMaterial.h" />
+    <ClInclude Include="collision\shapeCapsule.h" />
+    <ClInclude Include="collision\checkGradientDistances.h" />
+    <ClInclude Include="collision\checkGradientPoints.h" />
+    <ClInclude Include="collision\shapeConvexHull.h" />
+    <ClInclude Include="collision\gradientQueryResult.h" />
+    <ClInclude Include="collision\queryPrimitive.h" />
+    <ClInclude Include="collision\queryPrimitivePoint.h" />
+    <ClInclude Include="collision\queryPrimitiveSegment.h" />
+    <ClInclude Include="collision\shapeMesh.h" />
+    <ClInclude Include="collision\shapeMeshSkinned.h" />
+    <ClInclude Include="collision\shapeSphere.h" />
+    <ClInclude Include="concurrency\asynchronousJob.h" />
+    <ClInclude Include="concurrency\asynchronousJobFunc.h" />
+    <ClInclude Include="concurrency\asynchronousJobList.h" />
+    <ClInclude Include="concurrency\concurrencyStats.h" />
+    <ClInclude Include="concurrency\gate.h" />
+    <ClInclude Include="concurrency\immediateJob.h" />
+    <ClInclude Include="concurrency\immediateJobFunc.h" />
+    <ClInclude Include="concurrency\immediateJobList.h" />
+    <ClInclude Include="concurrency\jobExecutionContext.h" />
+    <ClInclude Include="concurrency\memoryFence.h" />
+    <ClInclude Include="concurrency\mrswGuard.h" />
+    <ClInclude Include="concurrency\mrswLock.h" />
+    <ClInclude Include="concurrency\scopedCounter.h" />
+    <ClInclude Include="concurrency\scopedMRSWGuard.h" />
+    <ClInclude Include="concurrency\scopedMRSWLock.h" />
+    <ClInclude Include="concurrency\spinLock.h" />
+    <ClInclude Include="concurrency\scopedSpinLock.h" />
+    <ClInclude Include="concurrency\counter.h" />
+    <ClInclude Include="concurrency\synchronisationLounge.h" />
+    <ClInclude Include="concurrency\semaphore.h" />
+    <ClInclude Include="concurrency\thread.h" />
+    <ClInclude Include="concurrency\threadManager.h" />
+    <ClInclude Include="concurrency\threadSystemUtils.h" />
+    <ClInclude Include="collision\shapeBox.h" />
+    <ClInclude Include="collision\checkGradientContext.h" />
+    <ClInclude Include="collision\model.h" />
+    <ClInclude Include="collision\modelInstance.h" />
+    <ClInclude Include="collision\modelInstanceSet.h" />
+    <ClInclude Include="collision\shape.h" />
+    <ClInclude Include="containers\arrayStack.h" />
+    <ClInclude Include="containers\arrayStatic.h" />
+    <ClInclude Include="containers\list.h" />
+    <ClInclude Include="containers\map.h" />
+    <ClInclude Include="containers\sortUtils.h" />
+    <ClInclude Include="copyToMainConfig.h" />
+    <ClInclude Include="coreRegisteredTypes.h" />
+    <ClInclude Include="debugConfig.h" />
+    <ClInclude Include="debugKeys.h" />
+    <ClInclude Include="debugSettings.h" />
+    <ClInclude Include="debug\debugVisualiser.h" />
+    <ClInclude Include="debug\extendedDebug.h" />
+    <ClInclude Include="debug\logInfoContext.h" />
+    <ClInclude Include="debug\debugRenderer.h" />
+    <ClInclude Include="defaults.h" />
+    <ClInclude Include="endianUtils.h" />
+    <ClInclude Include="enums.h" />
+    <ClInclude Include="compression\compression.h" />
+    <ClInclude Include="fastCast.h" />
+    <ClInclude Include="functionParamsStruct.h" />
+    <ClInclude Include="gameEnvironment\iGameEnvironment.h" />
+    <ClInclude Include="gameEnvironment\oculus\oculus_ge.h" />
+    <ClInclude Include="gameEnvironment\pico\pico.h" />
+    <ClInclude Include="gameEnvironment\steamworks\steamworks.h" />
+    <ClInclude Include="gameEnvironment\steamworks\steamworksImpl.h" />
+    <ClInclude Include="gameEnvironment\viveport\viveport.h" />
+    <ClInclude Include="globalDebug.h" />
+    <ClInclude Include="graph\graph.h" />
+    <ClInclude Include="graph\graphConnector.h" />
+    <ClInclude Include="graph\graphImplementation.h" />
+    <ClInclude Include="graph\graphInputConnector.h" />
+    <ClInclude Include="graph\graphInstance.h" />
+    <ClInclude Include="graph\graphInstanceData.h" />
+    <ClInclude Include="graph\graphOutputConnector.h" />
+    <ClInclude Include="graph\graphNode.h" />
+    <ClInclude Include="graph\graphNodeContainer.h" />
+    <ClInclude Include="instance\iInstanceDataSource.h" />
+    <ClInclude Include="instance\instanceData.h" />
+    <ClInclude Include="instance\instanceDataHandler.h" />
+    <ClInclude Include="instance\instanceDatum.h" />
+    <ClInclude Include="io\assetDir.h" />
+    <ClInclude Include="io\assetFile.h" />
+    <ClInclude Include="io\base64.h" />
+    <ClInclude Include="io\digested.h" />
+    <ClInclude Include="io\ioDialogs.h" />
+    <ClInclude Include="io\json.h" />
+    <ClInclude Include="io\outputWriter.h" />
+    <ClInclude Include="io\xmlSerialisationVersion.h" />
+    <ClInclude Include="io\xmlUtils.h" />
+    <ClInclude Include="keepValue.h" />
+    <ClInclude Include="latent\functions\latentFunctions.h" />
+    <ClInclude Include="latent\latent.h" />
+    <ClInclude Include="latent\latentBlock.h" />
+    <ClInclude Include="latent\latentFrame.h" />
+    <ClInclude Include="latent\latentFrameInspection.h" />
+    <ClInclude Include="latent\latentScope.h" />
+    <ClInclude Include="latent\latentStackVariables.h" />
+    <ClInclude Include="lifetimeIndicator.h" />
+    <ClInclude Include="math\blendAdvancer.h" />
+    <ClInclude Include="math\convexPolygon.h" />
+    <ClInclude Include="math\convhull\convhullImpl.h" />
+    <ClInclude Include="math\convhull\convhull_3d.h" />
+    <ClInclude Include="math\earcut\earcut.h" />
+    <ClInclude Include="math\mathToString.h" />
+    <ClInclude Include="math\polygonUtils.h" />
+    <ClInclude Include="math\quickHull\quickHullConvexHull.h" />
+    <ClInclude Include="math\quickHull\quickHullImpl.h" />
+    <ClInclude Include="math\quickHull\quickHullHalfEdgeMesh.h" />
+    <ClInclude Include="math\quickHull\quickHullMathUtils.h" />
+    <ClInclude Include="math\quickHull\quickHullQuickHull.h" />
+    <ClInclude Include="math\quickHull\Structs\quickHullMesh.h" />
+    <ClInclude Include="math\quickHull\Structs\quickHullPlane.h" />
+    <ClInclude Include="math\quickHull\Structs\quickHullPool.h" />
+    <ClInclude Include="math\quickHull\Structs\quickHullRay.h" />
+    <ClInclude Include="math\quickHull\Structs\quickHullVector3.h" />
+    <ClInclude Include="math\quickHull\Structs\quickHullVertexDataSource.h" />
+    <ClInclude Include="math\rangeInt3.h" />
+    <ClInclude Include="math\rangeRotator3.h" />
+    <ClInclude Include="math\skinnedMesh.h" />
+    <ClInclude Include="math\transformUtils.h" />
+    <ClInclude Include="math\vectorInt3.h" />
+    <ClInclude Include="memory\safeObject.h" />
+    <ClInclude Include="memory\softPooledObjectMT.h" />
+    <ClInclude Include="mesh\animationSet.h" />
+    <ClInclude Include="mesh\boneRenamer.h" />
+    <ClInclude Include="mesh\boneRenameFunc.h" />
+    <ClInclude Include="mesh\mesh3dRenderingBufferSet.h" />
+    <ClInclude Include="mesh\mesh3dTypes.h" />
+    <ClInclude Include="mesh\remapBoneArray.h" />
+    <ClInclude Include="network\http.h" />
+    <ClInclude Include="network\netAddress.h" />
+    <ClInclude Include="network\netClientTCP.h" />
+    <ClInclude Include="network\netPackage.h" />
+    <ClInclude Include="network\netPacket.h" />
+    <ClInclude Include="network\netServerTCP.h" />
+    <ClInclude Include="network\network.h" />
+    <ClInclude Include="other\packedBytes.h" />
+    <ClInclude Include="other\remapValue.h" />
+    <ClInclude Include="other\typeConversions.h" />
+    <ClInclude Include="physicalSensations\allPhysicalSensations.h" />
+    <ClInclude Include="physicalSensations\bhapticsJava\bhj_bhapticsDevice.h" />
+    <ClInclude Include="physicalSensations\bhapticsJava\bhj_bhapticsModule.h" />
+    <ClInclude Include="physicalSensations\bhapticsJava\bhj_enums.h" />
+    <ClInclude Include="physicalSensations\bhapticsJava\bhj_settings.h" />
+    <ClInclude Include="physicalSensations\bhapticsWindows\bhw_bhapticsDevice.h" />
+    <ClInclude Include="physicalSensations\bhapticsWindows\bhw_bhapticsModule.h" />
+    <ClInclude Include="physicalSensations\bhapticsWindows\bhw_commonutils.h" />
+    <ClInclude Include="physicalSensations\bhapticsWindows\bhw_easywsclient.h" />
+    <ClInclude Include="physicalSensations\bhapticsWindows\bhw_hapticLibrary.h" />
+    <ClInclude Include="physicalSensations\bhapticsWindows\bhw_hapticsManager.h" />
+    <ClInclude Include="physicalSensations\bhapticsWindows\bhw_json.hpp" />
+    <ClInclude Include="physicalSensations\bhapticsWindows\bhw_model.h" />
+    <ClInclude Include="physicalSensations\bhapticsWindows\bhw_projectModel.h" />
+    <ClInclude Include="physicalSensations\bhapticsWindows\bhw_settings.h" />
+    <ClInclude Include="physicalSensations\bhapticsWindows\bhw_timer.h" />
+    <ClInclude Include="physicalSensations\bhapticsWindows\bhw_util.h" />
+    <ClInclude Include="physicalSensations\bhaptics\bh_availableDevices.h" />
+    <ClInclude Include="physicalSensations\bhaptics\bh_enums.h" />
+    <ClInclude Include="physicalSensations\bhaptics\bh_library.h" />
+    <ClInclude Include="physicalSensations\iPhysicalSensations.h" />
+    <ClInclude Include="physicalSensations\physicalSensations.h" />
+    <ClInclude Include="physicalSensations\physicalSensationsSettings.h" />
+    <ClInclude Include="physicalSensations\psBhapticsJava.h" />
+    <ClInclude Include="physicalSensations\psBhapticsWindows.h" />
+    <ClInclude Include="physicalSensations\psOWO.h" />
+    <ClInclude Include="physicalSensations\sensations.h" />
+    <ClInclude Include="pieceCombiner\pieceCombinerDebugVisualiser.h" />
+    <ClInclude Include="profilePerformanceSettings.h" />
+    <ClInclude Include="random\randomSelection.h" />
+    <ClInclude Include="recordVideoSettings.h" />
+    <ClInclude Include="renderDoc.h" />
+    <ClInclude Include="sound\reverb.h" />
+    <ClInclude Include="sound\reverbInstance.h" />
+    <ClInclude Include="sound\soundGlobalOptions.h" />
+    <ClInclude Include="splash\splashLogos.h" />
+    <ClInclude Include="splash\splashScreen.h" />
+    <ClInclude Include="system\android\androidApp.h" />
+    <ClInclude Include="system\faultHandler.h" />
+    <ClInclude Include="system\javaEnv.h" />
+    <ClInclude Include="system\recentCapture.h" />
+    <ClInclude Include="system\sound\soundCompressorConfig.h" />
+    <ClInclude Include="system\systemInfo.h" />
+    <ClInclude Include="system\timePoint.h" />
+    <ClInclude Include="system\video\eglContext.h" />
+    <ClInclude Include="system\video\foveatedRenderingSetup.h" />
+    <ClInclude Include="system\video\imageLoaders\il_tga.h" />
+    <ClInclude Include="system\video\imageSavers\is_tga.h" />
+    <ClInclude Include="system\video\indexFormatUtils.h" />
+    <ClInclude Include="system\video\pixelUtils.h" />
+    <ClInclude Include="system\video\renderTargetSave.h" />
+    <ClInclude Include="system\video\renderTargetUtils.h" />
+    <ClInclude Include="system\video\textureUtils.h" />
+    <ClInclude Include="system\video\vertexFormatUtils.h" />
+    <ClInclude Include="system\video\videoGLExtensions.h" />
+    <ClInclude Include="system\video\viewPlanes.h" />
+    <ClInclude Include="timeUtils.h" />
+    <ClInclude Include="types\dirFourClockwise.h" />
+    <ClInclude Include="types\hand.h" />
+    <ClInclude Include="types\option.h" />
+    <ClInclude Include="types\optionalNP.h" />
+    <ClInclude Include="types\scopedDelete.h" />
+    <ClInclude Include="types\stringSpecialisations.h" />
+    <ClInclude Include="types\unicode.h" />
+    <ClInclude Include="types\vectorPacked.h" />
+    <ClInclude Include="utils\utils_loadingForSystemShader.h" />
+    <ClInclude Include="values.h" />
+    <ClInclude Include="mainConfig.h" />
+    <ClInclude Include="mainSettings.h" />
+    <ClInclude Include="math\axis.h" />
+    <ClInclude Include="math\bezierCurve.h" />
+    <ClInclude Include="math\bezierSurface.h" />
+    <ClInclude Include="math\blendCurves.h" />
+    <ClInclude Include="math\blendUtils.h" />
+    <ClInclude Include="math\box.h" />
+    <ClInclude Include="math\capsule.h" />
+    <ClInclude Include="math\convexHull.h" />
+    <ClInclude Include="math\curve.h" />
+    <ClInclude Include="math\dateMath.h" />
+    <ClInclude Include="math\mathDefaults.h" />
+    <ClInclude Include="math\mathSpecialisations.h" />
+    <ClInclude Include="math\matrix33.h" />
+    <ClInclude Include="math\simpleMesh.h" />
+    <ClInclude Include="math\range2.h" />
+    <ClInclude Include="math\range3.h" />
+    <ClInclude Include="math\rangeInt2.h" />
+    <ClInclude Include="math\segment.h" />
+    <ClInclude Include="math\segment2.h" />
+    <ClInclude Include="math\segmentSimple.h" />
+    <ClInclude Include="math\sphere.h" />
+    <ClInclude Include="math\typeUtils.h" />
+    <ClInclude Include="math\vectorInt4.h" />
+    <ClInclude Include="memory\registeredPool.h" />
+    <ClInclude Include="mesh\boneID.h" />
+    <ClInclude Include="mesh\boneDefinition.h" />
+    <ClInclude Include="mesh\builders\mesh3dBuilder_IPU.h" />
+    <ClInclude Include="mesh\combinedMesh3dInstanceSet.h" />
+    <ClInclude Include="mesh\helpers\mesh3dHelper_bezierSurface.h" />
+    <ClInclude Include="mesh\iMesh3dRenderBonesProvider.h" />
+    <ClInclude Include="mesh\mesh3dPart.h" />
+    <ClInclude Include="mesh\mesh3dRenderingBuffer.h" />
+    <ClInclude Include="mesh\mesh3dRenderingContext.h" />
+    <ClInclude Include="mesh\mesh3dRenderingUtils.h" />
+    <ClInclude Include="mesh\pose.h" />
+    <ClInclude Include="mesh\poseManager.h" />
+    <ClInclude Include="mesh\skeleton.h" />
+    <ClInclude Include="mesh\socketDefinition.h" />
+    <ClInclude Include="mesh\socketDefinitionSet.h" />
+    <ClInclude Include="mesh\vertexSkinningInfo.h" />
+    <ClInclude Include="other\factoryOfNamed.h" />
+    <ClInclude Include="other\registeredTypeRegistering.h" />
+    <ClInclude Include="performance\scopedMeasureLongJob.h" />
+    <ClInclude Include="random\random.h" />
+    <ClInclude Include="random\randomNumber.h" />
+    <ClInclude Include="random\randomUtils.h" />
+    <ClInclude Include="serialisation\serialiserBasics.h" />
+    <ClInclude Include="sound\soundFadingUtils.h" />
+    <ClInclude Include="system\video\primitivesPipeline.h" />
+    <ClInclude Include="system\video\renderTargetPtr.h" />
+    <ClInclude Include="system\video\shaderProgramCache.h" />
+    <ClInclude Include="system\video\videoFunctions.h" />
+    <ClInclude Include="system\video\videoSDL.h" />
+    <ClInclude Include="tags\tag.h" />
+    <ClInclude Include="tags\tagCondition.h" />
+    <ClInclude Include="types\nameSpecialisations.h" />
+    <ClInclude Include="vr\oculusMobile\oculusMobile.h" />
+    <ClInclude Include="vr\oculusMobile\oculusMobileImpl.h" />
+    <ClInclude Include="vr\oculus\oculus.h" />
+    <ClInclude Include="vr\oculus\oculusImpl.h" />
+    <ClInclude Include="vr\openvr\openvr.h" />
+    <ClInclude Include="vr\openvr\openvrImpl.h" />
+    <ClInclude Include="vr\openxr\openxr.h" />
+    <ClInclude Include="vr\openxr\openxrImpl.h" />
+    <ClInclude Include="vr\vrEnums.h" />
+    <ClInclude Include="vr\vrFovPort.h" />
+    <ClInclude Include="vr\vrInput.h" />
+    <ClInclude Include="vr\vrMode.h" />
+    <ClInclude Include="vr\vrOffsets.h" />
+    <ClInclude Include="vr\vrSystem.h" />
+    <ClInclude Include="vr\vrSystemImpl.h" />
+    <ClInclude Include="vr\vrZone.h" />
+    <ClInclude Include="vr\wavevr\wavevr.h" />
+    <ClInclude Include="vr\wavevr\wavevrImpl.h" />
+    <ClInclude Include="wheresMyPoint\iWMPOwner.h" />
+    <ClInclude Include="wheresMyPoint\iWMPTool.h" />
+    <ClInclude Include="mesh\usage.h" />
+    <ClInclude Include="mesh\primitiveType.h" />
+    <ClInclude Include="other\customParameters.h" />
+    <ClInclude Include="other\simpleVariableStorage.h" />
+    <ClInclude Include="other\registeredType.h" />
+    <ClInclude Include="performance\scopedMeasureAndShow.h" />
+    <ClInclude Include="pieceCombiner\pieceCombiner.h" />
+    <ClInclude Include="io\dir.h" />
+    <ClInclude Include="io\xml.h" />
+    <ClInclude Include="io\xmlAttribute.h" />
+    <ClInclude Include="io\xmlDocument.h" />
+    <ClInclude Include="io\xmlIterators.h" />
+    <ClInclude Include="io\xmlNode.h" />
+    <ClInclude Include="math\math.h" />
+    <ClInclude Include="math\matrix44.h" />
+    <ClInclude Include="math\matrixUtils.h" />
+    <ClInclude Include="math\plane.h" />
+    <ClInclude Include="math\planeSet.h" />
+    <ClInclude Include="math\quat.h" />
+    <ClInclude Include="math\range.h" />
+    <ClInclude Include="math\rangeInt.h" />
+    <ClInclude Include="math\rotator3.h" />
+    <ClInclude Include="math\transform.h" />
+    <ClInclude Include="math\mathUtils.h" />
+    <ClInclude Include="math\vector2.h" />
+    <ClInclude Include="math\vector3.h" />
+    <ClInclude Include="math\vector4.h" />
+    <ClInclude Include="math\vectorInt2.h" />
+    <ClInclude Include="memory\objectHelpers.h" />
+    <ClInclude Include="containers\array.h" />
+    <ClInclude Include="debug\debug.h" />
+    <ClInclude Include="debug\detectMemoryLeaks.h" />
+    <ClInclude Include="io\file.h" />
+    <ClInclude Include="io\io.h" />
+    <ClInclude Include="io\memoryStorage.h" />
+    <ClInclude Include="io\utils.h" />
+    <ClInclude Include="memory\memory.h" />
+    <ClInclude Include="memory\pooledObject.h" />
+    <ClInclude Include="memory\refCountObject.h" />
+    <ClInclude Include="memory\refCountObjectPtr.h" />
+    <ClInclude Include="memory\softPooledObject.h" />
+    <ClInclude Include="other\parserUtils.h" />
+    <ClInclude Include="performance\performanceBlock.h" />
+    <ClInclude Include="performance\performanceSystem.h" />
+    <ClInclude Include="performance\performanceTimer.h" />
+    <ClInclude Include="performance\performanceUtils.h" />
+    <ClInclude Include="performance\scopedMeasureBlock.h" />
+    <ClInclude Include="pieceCombiner\pieceCombinerImplementation.h" />
+    <ClInclude Include="pieceCombiner\pieceCombinerSteps.h" />
+    <ClInclude Include="serialisation\importer.h" />
+    <ClInclude Include="serialisation\importerHelper.h" />
+    <ClInclude Include="serialisation\iSerialisable.h" />
+    <ClInclude Include="serialisation\serialisableResource.h" />
+    <ClInclude Include="serialisation\serialiser.h" />
+    <ClInclude Include="sound\channel.h" />
+    <ClInclude Include="sound\playback.h" />
+    <ClInclude Include="sound\sample.h" />
+    <ClInclude Include="sound\sampleBank.h" />
+    <ClInclude Include="sound\sampleParams.h" />
+    <ClInclude Include="splash\splashInfo.h" />
+    <ClInclude Include="system\sound\soundConfig.h" />
+    <ClInclude Include="system\sound\soundSystem.h" />
+    <ClInclude Include="system\sound\utils.h" />
+    <ClInclude Include="system\video\camera.h" />
+    <ClInclude Include="system\video\font.h" />
+    <ClInclude Include="system\video\fragmentShaderOutputSetup.h" />
+    <ClInclude Include="system\gamepad.h" />
+    <ClInclude Include="system\video\iMaterialInstanceProvider.h" />
+    <ClInclude Include="system\video\indexFormat.h" />
+    <ClInclude Include="system\video\material.h" />
+    <ClInclude Include="system\video\materialInstance.h" />
+    <ClInclude Include="mesh\mesh3dInstanceSetInlined.h" />
+    <ClInclude Include="system\video\outputSetup.h" />
+    <ClInclude Include="system\video\shader.h" />
+    <ClInclude Include="system\video\shaderProgramBindingContext.h" />
+    <ClInclude Include="system\video\shaderProgramInstance.h" />
+    <ClInclude Include="system\video\shaderProgram.h" />
+    <ClInclude Include="system\video\shaderSource.h" />
+    <ClInclude Include="system\video\texture.h" />
+    <ClInclude Include="system\timeStamp.h" />
+    <ClInclude Include="system\video\video3dPrimitives.h" />
+    <ClInclude Include="system\video\videoEnums.h" />
+    <ClInclude Include="system\video\videoGL.h" />
+    <ClInclude Include="types\colour.h" />
+    <ClInclude Include="types\name.h" />
+    <ClInclude Include="types\names.h" />
+    <ClInclude Include="types\optional.h" />
+    <ClInclude Include="types\storeInScope.h" />
+    <ClInclude Include="types\string.h" />
+    <ClInclude Include="coreInit.h" />
+    <ClInclude Include="globalDefinitions.h" />
+    <ClInclude Include="globalInclude.h" />
+    <ClInclude Include="globalSettings.h" />
+    <ClInclude Include="mesh\iMesh3d.h" />
+    <ClInclude Include="system\input.h" />
+    <ClInclude Include="system\core.h" />
+    <ClInclude Include="mesh\mesh3dInstance.h" />
+    <ClInclude Include="mesh\mesh3dInstanceSet.h" />
+    <ClInclude Include="mesh\mesh3d.h" />
+    <ClInclude Include="mesh\mesh3dBuilder.h" />
+    <ClInclude Include="system\video\renderTarget.h" />
+    <ClInclude Include="system\video\vertexFormat.h" />
+    <ClInclude Include="system\video\video.h" />
+    <ClInclude Include="system\video\video2d.h" />
+    <ClInclude Include="system\video\video3d.h" />
+    <ClInclude Include="system\video\videoConfig.h" />
+    <ClInclude Include="system\video\videoFormat.h" />
+    <ClInclude Include="system\video\videoMatrixStack.h" />
+    <ClInclude Include="system\video\videoClipPlaneStack.h" />
+    <ClInclude Include="system\video\viewFrustum.h" />
+    <ClInclude Include="system\video\pipelines.h" />
+    <ClInclude Include="types\token.h" />
+    <ClInclude Include="utils.h" />
+    <ClInclude Include="vr\iVR.h" />
+    <ClInclude Include="wheresMyPoint\simpleWMPOwner.h" />
+    <ClInclude Include="wheresMyPoint\wmp.h" />
+    <ClInclude Include="wheresMyPoint\wmpParam.h" />
+    <ClInclude Include="wheresMyPoint\wmp_betweenPoints.h" />
+    <ClInclude Include="wheresMyPoint\wmp_block.h" />
+    <ClInclude Include="wheresMyPoint\wmp_bool.h" />
+    <ClInclude Include="wheresMyPoint\wmp_break.h" />
+    <ClInclude Include="wheresMyPoint\wmp_centre.h" />
+    <ClInclude Include="wheresMyPoint\wmp_chooseByIntValue.h" />
+    <ClInclude Include="wheresMyPoint\wmp_chooseOne.h" />
+    <ClInclude Include="wheresMyPoint\wmp_context.h" />
+    <ClInclude Include="wheresMyPoint\wmp_convertStore.h" />
+    <ClInclude Include="wheresMyPoint\wmp_copyStore.h" />
+    <ClInclude Include="wheresMyPoint\wmp_customTool.h" />
+    <ClInclude Include="wheresMyPoint\wmp_defaultValue.h" />
+    <ClInclude Include="wheresMyPoint\wmp_dropOnto.h" />
+    <ClInclude Include="wheresMyPoint\wmp_expandBy.h" />
+    <ClInclude Include="wheresMyPoint\wmp_flattenToCentre.h" />
+    <ClInclude Include="wheresMyPoint\wmp_get.h" />
+    <ClInclude Include="wheresMyPoint\wmp_getPt.h" />
+    <ClInclude Include="wheresMyPoint\wmp_if.h" />
+    <ClInclude Include="wheresMyPoint\wmp_include.h" />
+    <ClInclude Include="wheresMyPoint\wmp_int.h" />
+    <ClInclude Include="wheresMyPoint\wmp_isEmpty.h" />
+    <ClInclude Include="wheresMyPoint\wmp_isNameValid.h" />
+    <ClInclude Include="wheresMyPoint\wmp_lerp.h" />
+    <ClInclude Include="wheresMyPoint\wmp_logicOps.h" />
+    <ClInclude Include="wheresMyPoint\wmp_loopIterator.h" />
+    <ClInclude Include="wheresMyPoint\wmp_mainSettings.h" />
+    <ClInclude Include="wheresMyPoint\wmp_mathComparisons.h" />
+    <ClInclude Include="wheresMyPoint\wmp_mathOpsSimple.h" />
+    <ClInclude Include="wheresMyPoint\wmp_intersect.h" />
+    <ClInclude Include="wheresMyPoint\wmp_length.h" />
+    <ClInclude Include="wheresMyPoint\wmp_local.h" />
+    <ClInclude Include="wheresMyPoint\wmp_mathOps.h" />
+    <ClInclude Include="wheresMyPoint\wmp_matrix.h" />
+    <ClInclude Include="wheresMyPoint\wmp_mayRestore.h" />
+    <ClInclude Include="wheresMyPoint\wmp_mirror.h" />
+    <ClInclude Include="wheresMyPoint\wmp_float.h" />
+    <ClInclude Include="wheresMyPoint\wmp_name.h" />
+    <ClInclude Include="wheresMyPoint\wmp_normalise.h" />
+    <ClInclude Include="wheresMyPoint\wmp_plane.h" />
+    <ClInclude Include="wheresMyPoint\wmp_point.h" />
+    <ClInclude Include="wheresMyPoint\wmp_pointDirection.h" />
+    <ClInclude Include="wheresMyPoint\wmp_output.h" />
+    <ClInclude Include="wheresMyPoint\wmp_quat.h" />
+    <ClInclude Include="wheresMyPoint\wmp_randSeed.h" />
+    <ClInclude Include="wheresMyPoint\wmp_range.h" />
+    <ClInclude Include="wheresMyPoint\wmp_range2.h" />
+    <ClInclude Include="wheresMyPoint\wmp_range3.h" />
+    <ClInclude Include="wheresMyPoint\wmp_remap.h" />
+    <ClInclude Include="wheresMyPoint\wmp_renameStore.h" />
+    <ClInclude Include="wheresMyPoint\wmp_restore.h" />
+    <ClInclude Include="wheresMyPoint\wmp_rotator3.h" />
+    <ClInclude Include="wheresMyPoint\wmp_sphere.h" />
+    <ClInclude Include="wheresMyPoint\wmp_store.h" />
+    <ClInclude Include="wheresMyPoint\wmp_access.h" />
+    <ClInclude Include="wheresMyPoint\wmp_system.h" />
+    <ClInclude Include="wheresMyPoint\wmp_todo.h" />
+    <ClInclude Include="wheresMyPoint\wmp_transform.h" />
+    <ClInclude Include="wheresMyPoint\wmp_transformOps.h" />
+    <ClInclude Include="wheresMyPoint\wmp_uniqueInt.h" />
+    <ClInclude Include="wheresMyPoint\wmp_vector2.h" />
+    <ClInclude Include="wheresMyPoint\wmp_vector3.h" />
+    <ClInclude Include="wheresMyPoint\wmp_vector4.h" />
+    <ClInclude Include="wheresMyPoint\wmp_vectorInt2.h" />
+    <ClInclude Include="wheresMyPoint\wmp_vectorOps.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="collision\collisionFlags.cpp" />
+    <ClCompile Include="collision\shapeMesh.cpp" />
+    <ClCompile Include="collision\shapeMeshSkinned.cpp" />
+    <ClCompile Include="concurrency\concurrencyStats.cpp" />
+    <ClCompile Include="concurrency\gate.cpp" />
+    <ClCompile Include="concurrency\mrswGuard.cpp" />
+    <ClCompile Include="concurrency\mrswLock.cpp" />
+    <ClCompile Include="copyToMainConfig.cpp" />
+    <ClCompile Include="coreRegisteredTypes.cpp" />
+    <ClCompile Include="debugConfig.cpp" />
+    <ClCompile Include="debug\debugVisualiser.cpp" />
+    <ClCompile Include="debug\extendedDebug.cpp" />
+    <ClCompile Include="enums.cpp" />
+    <ClCompile Include="compression\compression.cpp" />
+    <ClCompile Include="buildVer.cpp" />
+    <ClCompile Include="gameEnvironment\iGameEnvironment.cpp" />
+    <ClCompile Include="gameEnvironment\oculus\oculus_ge.cpp" />
+    <ClCompile Include="gameEnvironment\pico\pico.cpp" />
+    <ClCompile Include="gameEnvironment\steamworks\steamworks.cpp" />
+    <ClCompile Include="gameEnvironment\steamworks\steamworksImpl.cpp" />
+    <ClCompile Include="gameEnvironment\viveport\viveport.cpp" />
+    <ClCompile Include="io\assetDir.cpp" />
+    <ClCompile Include="io\assetFile.cpp" />
+    <ClCompile Include="io\base64.cpp" />
+    <ClCompile Include="io\ioDialogs.cpp" />
+    <ClCompile Include="io\json.cpp" />
+    <ClCompile Include="io\outputWriter.cpp" />
+    <ClCompile Include="io\xmlUtils.cpp" />
+    <ClCompile Include="latent\functions\latentWait.cpp" />
+    <ClCompile Include="latent\functions\latentWaitPrecise.cpp" />
+    <ClCompile Include="latent\latentBlock.cpp" />
+    <ClCompile Include="latent\latentFrame.cpp" />
+    <ClCompile Include="latent\latentFrameInspection.cpp" />
+    <ClCompile Include="latent\latentScope.cpp" />
+    <ClCompile Include="latent\latentStackVariables.cpp" />
+    <ClCompile Include="legacy.cpp" />
+    <ClCompile Include="math\bezierSurface.cpp" />
+    <ClCompile Include="math\blendCurves.cpp" />
+    <ClCompile Include="math\convexPolygon.cpp" />
+    <ClCompile Include="math\convhull\convhullImpl.cpp" />
+    <ClCompile Include="math\dateMath.cpp" />
+    <ClCompile Include="math\math.cpp" />
+    <ClCompile Include="math\mathStatic.cpp" />
+    <ClCompile Include="math\mathUtils.cpp" />
+    <ClCompile Include="math\polygonUtils.cpp" />
+    <ClCompile Include="math\quickHull\quickHullImpl.cpp" />
+    <ClCompile Include="math\quickHull\quickHullQuickHull.cpp" />
+    <ClCompile Include="math\range2.cpp" />
+    <ClCompile Include="math\range3.cpp" />
+    <ClCompile Include="math\rangeInt2.cpp" />
+    <ClCompile Include="math\rangeInt3.cpp" />
+    <ClCompile Include="math\rangeRotator3.cpp" />
+    <ClCompile Include="math\simpleMesh.cpp" />
+    <ClCompile Include="math\segment2.cpp" />
+    <ClCompile Include="math\segmentSimple.cpp" />
+    <ClCompile Include="math\skinnedMesh.cpp" />
+    <ClCompile Include="math\transformUtils.cpp" />
+    <ClCompile Include="math\typeUtils.cpp" />
+    <ClCompile Include="math\vectorInt3.cpp" />
+    <ClCompile Include="mesh\animationSet.cpp" />
+    <ClCompile Include="mesh\boneID.cpp" />
+    <ClCompile Include="mesh\boneRenamer.cpp" />
+    <ClCompile Include="mesh\builders\mesh3dBuilder_IPU.cpp" />
+    <ClCompile Include="mesh\helpers\mesh3dHelper_bezierSurface.cpp" />
+    <ClCompile Include="mesh\mesh3dRenderingBuffer.cpp" />
+    <ClCompile Include="mesh\mesh3dRenderingBufferSet.cpp" />
+    <ClCompile Include="mesh\primitiveType.cpp" />
+    <ClCompile Include="mesh\usage.cpp" />
+    <ClCompile Include="mesh\vertexSkinningInfo.cpp" />
+    <ClCompile Include="network\http.cpp" />
+    <ClCompile Include="network\netAddress.cpp" />
+    <ClCompile Include="network\netClientTCP.cpp" />
+    <ClCompile Include="network\netPackage.cpp" />
+    <ClCompile Include="network\netPacket.cpp" />
+    <ClCompile Include="network\netServerTCP.cpp" />
+    <ClCompile Include="network\network.cpp" />
+    <ClCompile Include="other\customParameters.cpp" />
+    <ClCompile Include="other\packedBytes.cpp" />
+    <ClCompile Include="other\parserUtils.cpp" />
+    <ClCompile Include="buildInformation.cpp" />
+    <ClCompile Include="collision\checkSegmentResult.cpp" />
+    <ClCompile Include="collision\collisionInfoProvider.cpp" />
+    <ClCompile Include="collision\iCollidableObject.cpp" />
+    <ClCompile Include="collision\iCollidableShape.cpp" />
+    <ClCompile Include="collision\loadingContext.cpp" />
+    <ClCompile Include="collision\physicalMaterial.cpp" />
+    <ClCompile Include="collision\shapeCapsule.cpp" />
+    <ClCompile Include="collision\checkGradientDistances.cpp" />
+    <ClCompile Include="collision\shapeConvexHull.cpp" />
+    <ClCompile Include="collision\gradientQueryResult.cpp" />
+    <ClCompile Include="collision\queryPrimitivePoint.cpp" />
+    <ClCompile Include="collision\queryPrimitiveSegment.cpp" />
+    <ClCompile Include="collision\shapeSphere.cpp" />
+    <ClCompile Include="concurrency\asynchronousJob.cpp" />
+    <ClCompile Include="concurrency\asynchronousJobList.cpp" />
+    <ClCompile Include="concurrency\immediateJob.cpp" />
+    <ClCompile Include="concurrency\immediateJobList.cpp" />
+    <ClCompile Include="concurrency\spinLock.cpp" />
+    <ClCompile Include="concurrency\counter.cpp" />
+    <ClCompile Include="concurrency\synchronisationLounge.cpp" />
+    <ClCompile Include="concurrency\semaphore.cpp" />
+    <ClCompile Include="concurrency\thread.cpp" />
+    <ClCompile Include="concurrency\threadManager.cpp" />
+    <ClCompile Include="concurrency\threadSystemUtils.cpp" />
+    <ClCompile Include="collision\shapeBox.cpp" />
+    <ClCompile Include="collision\model.cpp" />
+    <ClCompile Include="collision\modelInstance.cpp" />
+    <ClCompile Include="collision\modelInstanceSet.cpp" />
+    <ClCompile Include="coreInit.cpp" />
+    <ClCompile Include="debug\logInfoContext.cpp" />
+    <ClCompile Include="debug\debugRenderer.cpp" />
+    <ClCompile Include="debug\debug.cpp" />
+    <ClCompile Include="debug\detectMemoryLeaks.cpp" />
+    <ClCompile Include="fastCast.cpp" />
+    <ClCompile Include="instance\instanceData.cpp" />
+    <ClCompile Include="instance\instanceDataHandler.cpp" />
+    <ClCompile Include="io\digested.cpp" />
+    <ClCompile Include="io\dir.cpp" />
+    <ClCompile Include="io\file.cpp" />
+    <ClCompile Include="io\io.cpp" />
+    <ClCompile Include="io\memoryStorage.cpp" />
+    <ClCompile Include="io\utils.cpp" />
+    <ClCompile Include="io\xmlAttribute.cpp" />
+    <ClCompile Include="io\xmlDocument.cpp" />
+    <ClCompile Include="io\xmlIterators.cpp" />
+    <ClCompile Include="io\xmlNode.cpp" />
+    <ClCompile Include="mainConfig.cpp" />
+    <ClCompile Include="mainSettings.cpp" />
+    <ClCompile Include="math\box.cpp" />
+    <ClCompile Include="math\capsule.cpp" />
+    <ClCompile Include="math\convexHull.cpp" />
+    <ClCompile Include="math\matrix33.cpp" />
+    <ClCompile Include="math\matrix44.cpp" />
+    <ClCompile Include="math\matrixUtils.cpp" />
+    <ClCompile Include="math\plane.cpp" />
+    <ClCompile Include="math\planeSet.cpp" />
+    <ClCompile Include="math\quat.cpp" />
+    <ClCompile Include="math\range.cpp" />
+    <ClCompile Include="math\rangeInt.cpp" />
+    <ClCompile Include="math\segment.cpp" />
+    <ClCompile Include="math\rotator3.cpp" />
+    <ClCompile Include="math\sphere.cpp" />
+    <ClCompile Include="math\transform.cpp" />
+    <ClCompile Include="math\vector2.cpp" />
+    <ClCompile Include="math\vector3.cpp" />
+    <ClCompile Include="math\vector4.cpp" />
+    <ClCompile Include="math\vectorInt2.cpp" />
+    <ClCompile Include="math\vectorInt4.cpp" />
+    <ClCompile Include="memory\registeredPool.cpp" />
+    <ClCompile Include="mesh\boneDefinition.cpp" />
+    <ClCompile Include="mesh\combinedMesh3dInstanceSet.cpp" />
+    <ClCompile Include="mesh\mesh3dPart.cpp" />
+    <ClCompile Include="mesh\mesh3dRenderingContext.cpp" />
+    <ClCompile Include="mesh\pose.cpp" />
+    <ClCompile Include="mesh\poseManager.cpp" />
+    <ClCompile Include="mesh\skeleton.cpp" />
+    <ClCompile Include="mesh\socketDefinition.cpp" />
+    <ClCompile Include="mesh\socketDefinitionSet.cpp" />
+    <ClCompile Include="other\simpleVariableStorage.cpp" />
+    <ClCompile Include="other\registeredType.cpp" />
+    <ClCompile Include="other\typeConversions.cpp" />
+    <ClCompile Include="performance\performanceBlock.cpp" />
+    <ClCompile Include="performance\performanceSystem.cpp" />
+    <ClCompile Include="performance\performanceTimer.cpp" />
+    <ClCompile Include="performance\performanceUtils.cpp" />
+    <ClCompile Include="performance\scopedMeasureAndShow.cpp" />
+    <ClCompile Include="performance\scopedMeasureBlock.cpp" />
+    <ClCompile Include="performance\scopedMeasureLongJob.cpp" />
+    <ClCompile Include="physicalSensations\bhapticsJava\bhj_bhapticsDevice.cpp" />
+    <ClCompile Include="physicalSensations\bhapticsJava\bhj_bhapticsModule.cpp" />
+    <ClCompile Include="physicalSensations\bhapticsJava\bhj_enums.cpp" />
+    <ClCompile Include="physicalSensations\bhapticsWindows\bhw_bhapticsDevice.cpp" />
+    <ClCompile Include="physicalSensations\bhapticsWindows\bhw_bhapticsModule.cpp" />
+    <ClCompile Include="physicalSensations\bhapticsWindows\bhw_commonutils.cpp" />
+    <ClCompile Include="physicalSensations\bhapticsWindows\bhw_easywsclient.cpp" />
+    <ClCompile Include="physicalSensations\bhapticsWindows\bhw_hapticLibrary.cpp" />
+    <ClCompile Include="physicalSensations\bhapticsWindows\bhw_hapticsManager.cpp" />
+    <ClCompile Include="physicalSensations\bhapticsWindows\bhw_projectModel.cpp" />
+    <ClCompile Include="physicalSensations\bhapticsWindows\bhw_timer.cpp" />
+    <ClCompile Include="physicalSensations\bhapticsWindows\bhw_util.cpp" />
+    <ClCompile Include="physicalSensations\bhaptics\bh_availableDevices.cpp" />
+    <ClCompile Include="physicalSensations\bhaptics\bh_enums.cpp" />
+    <ClCompile Include="physicalSensations\bhaptics\bh_library.cpp" />
+    <ClCompile Include="physicalSensations\iPhysicalSensations.cpp" />
+    <ClCompile Include="physicalSensations\physicalSensations.cpp" />
+    <ClCompile Include="physicalSensations\psBhapticsJava.cpp" />
+    <ClCompile Include="physicalSensations\psBhapticsWindows.cpp" />
+    <ClCompile Include="physicalSensations\psOWO.cpp" />
+    <ClCompile Include="physicalSensations\sensations.cpp" />
+    <ClCompile Include="profilePerformanceSettings.cpp" />
+    <ClCompile Include="random\random.cpp" />
+    <ClCompile Include="serialisation\iSerialisable.cpp" />
+    <ClCompile Include="serialisation\serialisableResource.cpp" />
+    <ClCompile Include="serialisation\serialiser.cpp" />
+    <ClCompile Include="mesh\iMesh3d.cpp" />
+    <ClCompile Include="sound\channel.cpp" />
+    <ClCompile Include="sound\playback.cpp" />
+    <ClCompile Include="sound\reverb.cpp" />
+    <ClCompile Include="sound\reverbInstance.cpp" />
+    <ClCompile Include="sound\sample.cpp" />
+    <ClCompile Include="sound\sampleBank.cpp" />
+    <ClCompile Include="sound\sampleParams.cpp" />
+    <ClCompile Include="sound\soundFadingUtils.cpp" />
+    <ClCompile Include="splash\splashInfo.cpp" />
+    <ClCompile Include="splash\splashLogos.cpp" />
+    <ClCompile Include="splash\splashScreen.cpp" />
+    <ClCompile Include="system\android\androidApp.cpp" />
+    <ClCompile Include="system\faultHandler.cpp" />
+    <ClCompile Include="system\javaEnv.cpp" />
+    <ClCompile Include="system\recentCapture.cpp" />
+    <ClCompile Include="system\sound\soundCompressorConfig.cpp" />
+    <ClCompile Include="system\sound\soundConfig.cpp" />
+    <ClCompile Include="system\sound\soundSystem.cpp" />
+    <ClCompile Include="system\systemInfo.cpp" />
+    <ClCompile Include="system\timePoint.cpp" />
+    <ClCompile Include="system\video\camera.cpp" />
+    <ClCompile Include="system\video\eglContext.cpp" />
+    <ClCompile Include="system\video\font.cpp" />
+    <ClCompile Include="system\video\foveatedRenderingSetup.cpp" />
+    <ClCompile Include="system\video\fragmentShaderOutputSetup.cpp" />
+    <ClCompile Include="system\gamepad.cpp" />
+    <ClCompile Include="system\video\imageLoaders\il_tga.cpp" />
+    <ClCompile Include="system\video\imageSavers\is_tga.cpp" />
+    <ClCompile Include="system\video\indexFormat.cpp" />
+    <ClCompile Include="system\input.cpp" />
+    <ClCompile Include="system\core.cpp" />
+    <ClCompile Include="system\video\indexFormatUtils.cpp" />
+    <ClCompile Include="system\video\material.cpp" />
+    <ClCompile Include="system\video\materialInstance.cpp" />
+    <ClCompile Include="mesh\mesh3dInstance.cpp" />
+    <ClCompile Include="mesh\mesh3dInstanceSetInlined.cpp" />
+    <ClCompile Include="mesh\mesh3dInstanceSet.cpp" />
+    <ClCompile Include="mesh\mesh3d.cpp" />
+    <ClCompile Include="mesh\mesh3dBuilder.cpp" />
+    <ClCompile Include="system\video\outputSetup.cpp" />
+    <ClCompile Include="system\video\pixelUtils.cpp" />
+    <ClCompile Include="system\video\primitivesPipeline.cpp" />
+    <ClCompile Include="system\video\renderTarget.cpp" />
+    <ClCompile Include="system\video\renderTargetSave.cpp" />
+    <ClCompile Include="system\video\renderTargetUtils.cpp" />
+    <ClCompile Include="system\video\shader.cpp" />
+    <ClCompile Include="system\video\shaderProgramBindingContext.cpp" />
+    <ClCompile Include="system\video\shaderProgramCache.cpp" />
+    <ClCompile Include="system\video\shaderProgramInstance.cpp" />
+    <ClCompile Include="system\video\shaderProgram.cpp" />
+    <ClCompile Include="system\video\shaderSource.cpp" />
+    <ClCompile Include="system\video\texture.cpp" />
+    <ClCompile Include="system\timeStamp.cpp" />
+    <ClCompile Include="system\video\textureUtils.cpp" />
+    <ClCompile Include="system\video\vertexFormat.cpp" />
+    <ClCompile Include="system\video\vertexFormatUtils.cpp" />
+    <ClCompile Include="system\video\video.cpp" />
+    <ClCompile Include="system\video\video2d.cpp" />
+    <ClCompile Include="system\video\video3d.cpp" />
+    <ClCompile Include="system\video\video3dPrimitives.cpp" />
+    <ClCompile Include="system\video\videoConfig.cpp" />
+    <ClCompile Include="system\video\videoEnums.cpp" />
+    <ClCompile Include="system\video\videoFormat.cpp" />
+    <ClCompile Include="system\video\videoGLExtensions.cpp" />
+    <ClCompile Include="system\video\videoMatrixStack.cpp" />
+    <ClCompile Include="system\video\videoClipPlaneStack.cpp" />
+    <ClCompile Include="system\video\videoSDL.cpp" />
+    <ClCompile Include="system\video\viewFrustum.cpp" />
+    <ClCompile Include="system\video\pipelines.cpp" />
+    <ClCompile Include="system\video\viewPlanes.cpp" />
+    <ClCompile Include="tags\tag.cpp" />
+    <ClCompile Include="tags\tagCondition.cpp" />
+    <ClCompile Include="testSamples\testSampleOculus.cpp" />
+    <ClCompile Include="types\colour.cpp" />
+    <ClCompile Include="types\dirFourClockwise.cpp" />
+    <ClCompile Include="types\hand.cpp" />
+    <ClCompile Include="types\name.cpp" />
+    <ClCompile Include="types\names.cpp" />
+    <ClCompile Include="types\option.cpp" />
+    <ClCompile Include="types\optional.cpp" />
+    <ClCompile Include="types\string.cpp" />
+    <ClCompile Include="types\token.cpp" />
+    <ClCompile Include="types\unicode.cpp" />
+    <ClCompile Include="types\vectorPacked.cpp" />
+    <ClCompile Include="utils\utils_loadingForSystemShader.cpp" />
+    <ClCompile Include="vr\iVR.cpp" />
+    <ClCompile Include="vr\oculusMobile\oculusMobile.cpp" />
+    <ClCompile Include="vr\oculusMobile\oculusMobileImpl.cpp" />
+    <ClCompile Include="vr\oculus\oculus.cpp" />
+    <ClCompile Include="vr\oculus\oculusImpl.cpp" />
+    <ClCompile Include="vr\openvr\openvr.cpp" />
+    <ClCompile Include="vr\openvr\openvrImpl.cpp" />
+    <ClCompile Include="vr\openxr\openxr.cpp" />
+    <ClCompile Include="vr\openxr\openxrImpl.cpp" />
+    <ClCompile Include="vr\vrEnums.cpp" />
+    <ClCompile Include="vr\vrFovPort.cpp" />
+    <ClCompile Include="vr\vrInput.cpp" />
+    <ClCompile Include="vr\vrMode.cpp" />
+    <ClCompile Include="vr\vrOffsets.cpp" />
+    <ClCompile Include="vr\vrSystem.cpp" />
+    <ClCompile Include="vr\vrSystemImpl.cpp" />
+    <ClCompile Include="vr\vrZone.cpp" />
+    <ClCompile Include="vr\wavevr\wavevr.cpp" />
+    <ClCompile Include="vr\wavevr\wavevrImpl.cpp" />
+    <ClCompile Include="wheresMyPoint\iWMPOwner.cpp" />
+    <ClCompile Include="wheresMyPoint\iWMPTool.cpp" />
+    <ClCompile Include="wheresMyPoint\simpleWMPOwner.cpp" />
+    <ClCompile Include="wheresMyPoint\wmp_betweenPoints.cpp" />
+    <ClCompile Include="wheresMyPoint\wmp_block.cpp" />
+    <ClCompile Include="wheresMyPoint\wmp_bool.cpp" />
+    <ClCompile Include="wheresMyPoint\wmp_break.cpp" />
+    <ClCompile Include="wheresMyPoint\wmp_centre.cpp" />
+    <ClCompile Include="wheresMyPoint\wmp_chooseByIntValue.cpp" />
+    <ClCompile Include="wheresMyPoint\wmp_chooseOne.cpp" />
+    <ClCompile Include="wheresMyPoint\wmp_context.cpp" />
+    <ClCompile Include="wheresMyPoint\wmp_convertStore.cpp" />
+    <ClCompile Include="wheresMyPoint\wmp_copyStore.cpp" />
+    <ClCompile Include="wheresMyPoint\wmp_customTool.cpp" />
+    <ClCompile Include="wheresMyPoint\wmp_defaultValue.cpp" />
+    <ClCompile Include="wheresMyPoint\wmp_dropOnto.cpp" />
+    <ClCompile Include="wheresMyPoint\wmp_expandBy.cpp" />
+    <ClCompile Include="wheresMyPoint\wmp_flattenToCentre.cpp" />
+    <ClCompile Include="wheresMyPoint\wmp_get.cpp" />
+    <ClCompile Include="wheresMyPoint\wmp_getPt.cpp" />
+    <ClCompile Include="wheresMyPoint\wmp_if.cpp" />
+    <ClCompile Include="wheresMyPoint\wmp_include.cpp" />
+    <ClCompile Include="wheresMyPoint\wmp_int.cpp" />
+    <ClCompile Include="wheresMyPoint\wmp_isEmpty.cpp" />
+    <ClCompile Include="wheresMyPoint\wmp_isNameValid.cpp" />
+    <ClCompile Include="wheresMyPoint\wmp_lerp.cpp" />
+    <ClCompile Include="wheresMyPoint\wmp_logicOps.cpp" />
+    <ClCompile Include="wheresMyPoint\wmp_loopIterator.cpp" />
+    <ClCompile Include="wheresMyPoint\wmp_mainSettings.cpp" />
+    <ClCompile Include="wheresMyPoint\wmp_mathComparisons.cpp" />
+    <ClCompile Include="wheresMyPoint\wmp_mathOpsSimple.cpp" />
+    <ClCompile Include="wheresMyPoint\wmp_intersect.cpp" />
+    <ClCompile Include="wheresMyPoint\wmp_length.cpp" />
+    <ClCompile Include="wheresMyPoint\wmp_local.cpp" />
+    <ClCompile Include="wheresMyPoint\wmp_mathOps.cpp" />
+    <ClCompile Include="wheresMyPoint\wmp_matrix.cpp" />
+    <ClCompile Include="wheresMyPoint\wmp_mayRestore.cpp" />
+    <ClCompile Include="wheresMyPoint\wmp_mirror.cpp" />
+    <ClCompile Include="wheresMyPoint\wmp_float.cpp" />
+    <ClCompile Include="wheresMyPoint\wmp_name.cpp" />
+    <ClCompile Include="wheresMyPoint\wmp_normalise.cpp" />
+    <ClCompile Include="wheresMyPoint\wmp_plane.cpp" />
+    <ClCompile Include="wheresMyPoint\wmp_point.cpp" />
+    <ClCompile Include="wheresMyPoint\wmp_pointDirection.cpp" />
+    <ClCompile Include="wheresMyPoint\wmp_output.cpp" />
+    <ClCompile Include="wheresMyPoint\wmp_quat.cpp" />
+    <ClCompile Include="wheresMyPoint\wmp_randSeed.cpp" />
+    <ClCompile Include="wheresMyPoint\wmp_range.cpp" />
+    <ClCompile Include="wheresMyPoint\wmp_range2.cpp" />
+    <ClCompile Include="wheresMyPoint\wmp_range3.cpp" />
+    <ClCompile Include="wheresMyPoint\wmp_remap.cpp" />
+    <ClCompile Include="wheresMyPoint\wmp_renameStore.cpp" />
+    <ClCompile Include="wheresMyPoint\wmp_restore.cpp" />
+    <ClCompile Include="wheresMyPoint\wmp_rotator3.cpp" />
+    <ClCompile Include="wheresMyPoint\wmp_sphere.cpp" />
+    <ClCompile Include="wheresMyPoint\wmp_store.cpp" />
+    <ClCompile Include="wheresMyPoint\wmp_access.cpp" />
+    <ClCompile Include="wheresMyPoint\wmp_system.cpp" />
+    <ClCompile Include="wheresMyPoint\wmp_todo.cpp" />
+    <ClCompile Include="wheresMyPoint\wmp_transform.cpp" />
+    <ClCompile Include="wheresMyPoint\wmp_transformOps.cpp" />
+    <ClCompile Include="wheresMyPoint\wmp_uniqueInt.cpp" />
+    <ClCompile Include="wheresMyPoint\wmp_vector2.cpp" />
+    <ClCompile Include="wheresMyPoint\wmp_vector3.cpp" />
+    <ClCompile Include="wheresMyPoint\wmp_vector4.cpp" />
+    <ClCompile Include="wheresMyPoint\wmp_vectorInt2.cpp" />
+    <ClCompile Include="wheresMyPoint\wmp_vectorOps.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="collision\checkCollisionContext.inl" />
+    <None Include="collision\checkGradientContext.inl" />
+    <None Include="collision\checkGradientPoints.inl" />
+    <None Include="collision\queryPrimitivePoint.inl" />
+    <None Include="collision\queryPrimitiveSegment.inl" />
+    <None Include="collision\shape.inl" />
+    <None Include="concurrency\scopedCounter.inl" />
+    <None Include="concurrency\scopedMRSWLock.inl" />
+    <None Include="concurrency\spinLock.inl" />
+    <None Include="concurrency\scopedSpinLock.inl" />
+    <None Include="concurrency\counter.inl" />
+    <None Include="containers\array.inl" />
+    <None Include="containers\arrayStack.inl" />
+    <None Include="containers\arrayStatic.inl" />
+    <None Include="containers\list.inl" />
+    <None Include="containers\map.inl" />
+    <None Include="graph\graph.inl" />
+    <None Include="graph\graphConnector.inl" />
+    <None Include="graph\graphInputConnector.inl" />
+    <None Include="graph\graphInstance.inl" />
+    <None Include="graph\graphOutputConnector.inl" />
+    <None Include="graph\graphNode.inl" />
+    <None Include="graph\graphNodeContainer.inl" />
+    <None Include="instance\instanceData.inl" />
+    <None Include="instance\instanceDataHandler.inl" />
+    <None Include="instance\instanceDatum.inl" />
+    <None Include="io\xmlNode.inl" />
+    <None Include="latent\latentFrame.inl" />
+    <None Include="latent\latentScope.inl" />
+    <None Include="latent\latentStackVariables.inl" />
+    <None Include="math\bezierCurve.inl" />
+    <None Include="math\blendAdvancer.inl" />
+    <None Include="math\blendCurves.inl" />
+    <None Include="math\blendUtils.inl" />
+    <None Include="math\curve.inl" />
+    <None Include="math\matrix33.inl" />
+    <None Include="math\matrix44.inl" />
+    <None Include="math\matrixUtils.inl" />
+    <None Include="math\plane.inl" />
+    <None Include="math\planeSet.inl" />
+    <None Include="math\quat.inl" />
+    <None Include="math\range.inl" />
+    <None Include="math\range2.inl" />
+    <None Include="math\range3.inl" />
+    <None Include="math\rangeInt.inl" />
+    <None Include="math\rangeInt2.inl" />
+    <None Include="math\rangeInt3.inl" />
+    <None Include="math\rangeRotator3.inl" />
+    <None Include="math\segment.inl" />
+    <None Include="math\rotator3.inl" />
+    <None Include="math\segment2.inl" />
+    <None Include="math\transform.inl" />
+    <None Include="math\vector2.inl" />
+    <None Include="math\vector3.inl" />
+    <None Include="math\vector4.inl" />
+    <None Include="math\vectorInt2.inl" />
+    <None Include="math\vectorInt3.inl" />
+    <None Include="math\vectorInt4.inl" />
+    <None Include="memory\objectHelpers.inl" />
+    <None Include="memory\pooledObject.inl" />
+    <None Include="memory\refCountObject.inl" />
+    <None Include="memory\refCountObjectPtr.inl" />
+    <None Include="memory\safeObject.inl" />
+    <None Include="memory\softPooledObject.inl" />
+    <None Include="memory\softPooledObjectMT.inl" />
+    <None Include="mesh\mesh3dInstanceImpl.inl" />
+    <None Include="mesh\mesh3dInstanceSetInlinedImpl.inl" />
+    <None Include="mesh\mesh3dRenderingUtils.inl" />
+    <None Include="other\customParameters.inl" />
+    <None Include="other\factoryOfNamed.inl" />
+    <None Include="other\parserUtilsImpl.inl" />
+    <None Include="other\remapValue.inl" />
+    <None Include="other\simpleVariableStorage.inl" />
+    <None Include="pieceCombiner\pieceCombiner.inl" />
+    <None Include="pieceCombiner\pieceCombinerDebugVisualiser.inl" />
+    <None Include="pieceCombiner\pieceCombinerSteps.inl" />
+    <None Include="random\random.inl" />
+    <None Include="random\randomNumber.inl" />
+    <None Include="random\randomSelection.inl" />
+    <None Include="random\randomUtils.inl" />
+    <None Include="serialisation\importer.inl" />
+    <None Include="serialisation\importerHelper.inl" />
+    <None Include="system\input.inl" />
+    <None Include="system\sound\utils.inl" />
+    <None Include="system\video\outputSetup.inl" />
+    <None Include="system\video\shaderProgramInstance.inl" />
+    <None Include="system\video\video.inl" />
+    <None Include="system\video\video2d.inl" />
+    <None Include="system\video\video3d.inl" />
+    <None Include="system\video\videoClipPlaneStackImpl.inl" />
+    <None Include="system\video\viewFrustum.inl" />
+    <None Include="system\video\viewPlanes.inl" />
+    <None Include="tags\tag.inl" />
+    <None Include="tags\tagCondition.inl" />
+    <None Include="types\colour.inl" />
+    <None Include="types\name.inl" />
+    <None Include="types\optional.inl" />
+    <None Include="types\scopedDelete.inl" />
+    <None Include="types\storeInScope.inl" />
+    <None Include="types\string.inl" />
+    <None Include="types\token.inl" />
+    <None Include="wheresMyPoint\iWMPTool.inl" />
+    <None Include="wheresMyPoint\wmpParam.inl" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

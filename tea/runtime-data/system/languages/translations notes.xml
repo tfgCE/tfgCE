@@ -1,0 +1,74 @@
+<library group="languages">
+	<!--
+		most of the stuff can be used after translation as they are
+		there are however a few exceptions
+		
+		npcs:h_tek logic; layout
+		places, arrival:dock logic; header
+		places, arrival:dock logic; 1
+		places, arrival:dock logic; 2
+	
+		check all full energy left; text (half, low, critical as left and right confuse auto translator)
+			left, right
+			full energy
+			all energy
+			half of
+			half of energy
+			half energy
+			little of energy
+			energy running out
+			critical energy
+			critical energy level
+			critical level
+		check all health critical; text (half, low, critical as left and right confuse auto translator)
+			full shield
+			full shield level
+			half of shield
+			half of shield level
+			half shield level
+			shield almost gone
+			critical shield
+			critical shield level
+			little of shield
+			low shield level
+		check left and right hand (hub; opt; ctrls; dominant hand; right)
+		
+		watch out for ~ being translated into ～ (check localisedCharacters if such a character is used)
+	
+		check for "loading" and "options/play-area/calibrate" that sometimes get not translated
+	
+		langauge specific
+		
+		PL
+		
+				lightning - wyładowania
+				corrosion - korozja
+				plasma - plazma
+				energy storage - zasobnik energii
+				haptics - urządzenia haptyczne
+				play-area - obszar gry
+				play-area buffer - margines obszaru gry
+				joystick movement - ruch joystickiem
+				camera shake - wstrząsy kamery
+				game slot - wpis gry
+				room-scale - tryb pokoju
+				node (weapon part) - moduł
+				chassis (weapon part) - szkielet
+				armor piercing - penetracja pancerza
+				damage - uszkodzenia
+				dispenser - dozownik
+				energy transfer station - stacja wymiany energii
+				permanent upgrade - niewymienne ulepszenie
+				weak point - wrażliwy punkt
+				repell - odpychać
+				door directions - wyświetlacze drzwi
+				automatic fire - ogień ciągły
+
+
+
+
+
+
+
+	-->
+</library>

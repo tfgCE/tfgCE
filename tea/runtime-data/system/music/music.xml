@@ -1,0 +1,14 @@
+<library group="music">
+	<sample name="loading"
+			file="assets\loading.snd"
+			importFromFile="=v:\tea\music in system\loading.ogg"
+			looped="true"
+			channel="music"
+			type="2d"
+			volume="0.9"
+			fadeIn="2.0"
+			fadeOut="2.0"
+			.startAtPt="0 to 1"
+			>
+	</sample>
+</library>

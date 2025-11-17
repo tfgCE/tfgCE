@@ -1,0 +1,3740 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="ai">
+      <UniqueIdentifier>{5c4e2182-84dc-42b4-ad20-35ce05860d63}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ai\logics">
+      <UniqueIdentifier>{8f30b02e-f973-40f9-abde-b9a2a71f53b4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ai\perceptionRequests">
+      <UniqueIdentifier>{011f4b38-1ea5-45d8-b8b8-9e1afb33aa7b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="appearance">
+      <UniqueIdentifier>{e337b5e4-9c2e-4b4e-8265-b5503ffb0fe5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="appearance\controllers">
+      <UniqueIdentifier>{f8d5318c-3bee-48bc-bfa7-6dee6b653ff4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="game">
+      <UniqueIdentifier>{e06494fa-6145-4cfd-8c5e-472ed7495763}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="game\modes">
+      <UniqueIdentifier>{470d572e-a6e2-4e62-8896-f8a7e9276abb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="game\sceneLayers">
+      <UniqueIdentifier>{6b47f0ec-94f5-4d32-803c-ee4b9eec08e6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="game\scenes">
+      <UniqueIdentifier>{4239b647-fde6-4c01-af7b-d1484a76e9b0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="loaders">
+      <UniqueIdentifier>{a157a5a1-a2a5-488f-a898-2582bfbf3388}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="modules">
+      <UniqueIdentifier>{cc3c43e1-f7d8-46c1-b9a5-3b10525a4071}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="modules\custom">
+      <UniqueIdentifier>{a5528b5b-2776-4c02-8e62-e51eef574bca}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="serialisation">
+      <UniqueIdentifier>{70c4b53f-51af-4dad-8831-a0a7448eb1d6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="roomGenerators">
+      <UniqueIdentifier>{ab4ff4fa-1c68-4277-8779-dc31499d31e9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="modules\nav">
+      <UniqueIdentifier>{5a2c3397-3c11-48bb-a856-522f1ad888e7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ai\logics\tasks">
+      <UniqueIdentifier>{a7dc1a89-4269-48a0-b57e-cc282cf38433}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="modules\custom\health">
+      <UniqueIdentifier>{f6e95e4d-a6f8-4f31-bb6e-ac12498e475d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="wheresMyPoint">
+      <UniqueIdentifier>{431807e2-4b4f-43a1-a52d-2567aa642007}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="utils">
+      <UniqueIdentifier>{1cbef4d3-d922-4950-a763-3626649a7df2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="pilgrimage">
+      <UniqueIdentifier>{7923033e-6720-4bdb-85c3-d7803db33133}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ai\logics\managers">
+      <UniqueIdentifier>{53b75c00-c4d4-46f1-8765-fd7c69025434}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="roomGenerators\roomGenerators">
+      <UniqueIdentifier>{e16caf8a-38ae-48a1-8c24-98b7c539e236}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="roomGenerators\elementGenerators">
+      <UniqueIdentifier>{4ca70773-36c5-459f-9dcf-1b50c9ca1e17}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="sound">
+      <UniqueIdentifier>{05556577-e7ed-44ba-92d5-e3d4f68703eb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="regionGenerators">
+      <UniqueIdentifier>{8edcde3f-2fb5-47c8-a748-5300cc666e80}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ai\managerDatas">
+      <UniqueIdentifier>{47be4ba8-791f-4969-a06d-31c0465b84cf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="library">
+      <UniqueIdentifier>{941d4229-c583-47e1-8e26-5c063a7215c4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="loaders\hub">
+      <UniqueIdentifier>{5b80cd92-d049-4dbd-a794-d7657a9291c8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="loaders\hub\widgets">
+      <UniqueIdentifier>{81d74e33-c224-4eaf-a264-9b8a843bdfde}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="loaders\hub\scenes">
+      <UniqueIdentifier>{b2505eb2-1c3b-4ecd-bafc-f34d2bc536c4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="appearance\controllers\particles">
+      <UniqueIdentifier>{d4c3173e-339d-4138-b904-d1161e3f8123}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="pilgrim">
+      <UniqueIdentifier>{ea903002-b17e-4809-b2d5-10847cc56b40}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="loaders\hub\screens">
+      <UniqueIdentifier>{4d0dc0df-fb96-467d-b7cc-71489c04122d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ai\logics\actions">
+      <UniqueIdentifier>{819f9c8b-3bce-41f1-904f-a1493bb88fa4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="loaders\hub\interfaces">
+      <UniqueIdentifier>{f930476e-8107-4a98-a89f-9ececcb2045d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ai\logics\exms">
+      <UniqueIdentifier>{0210a563-9859-4d57-99aa-47c22c4f791a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="loaders\hub\screens\prayStations">
+      <UniqueIdentifier>{955f42a2-fa47-4cd1-8085-0bff7f166237}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="loaders\hub\screens\settings">
+      <UniqueIdentifier>{dee94c78-03ca-46ae-bc6f-62297097f5a7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="loaders\hub\utils">
+      <UniqueIdentifier>{90e27fa9-e4e7-49a0-b328-88bd4c33e08c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="tutorials">
+      <UniqueIdentifier>{829820c1-8ba6-4263-9708-2d83489a560a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="gameScript">
+      <UniqueIdentifier>{b130161d-e546-4728-b253-e035a1dd2a34}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="overlayInfo">
+      <UniqueIdentifier>{42996478-e713-498b-a1df-a056feea0763}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="overlayInfo\elements">
+      <UniqueIdentifier>{07acc3cb-1134-42db-88ef-ac67f70bb3c2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="gameScript\elements">
+      <UniqueIdentifier>{668985af-68a2-46e8-87b6-345729233783}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="gameScript\conditions">
+      <UniqueIdentifier>{3a934ad7-b891-4597-bc1a-66fc251cf54b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="schematics">
+      <UniqueIdentifier>{320c1c2e-024b-479f-ab94-415a742491c8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="loaders\hub\draggables">
+      <UniqueIdentifier>{392e78f3-ea7b-4675-9d30-95dc1c058f02}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="meshGen">
+      <UniqueIdentifier>{d25b7f41-aefc-4e09-8ac9-4144704e9382}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="meshGen\shapes">
+      <UniqueIdentifier>{4751d394-52c7-42e6-8452-39cc270c15a0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ai\logics\components">
+      <UniqueIdentifier>{b4792d15-c5c1-4f62-8164-a32eaa70eaae}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="music">
+      <UniqueIdentifier>{14b7e7eb-406e-4082-b4cb-c6a75995a1f3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="story">
+      <UniqueIdentifier>{1b749b6a-fb89-42c2-bbcc-eaa82bc56200}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ai\logics\utils">
+      <UniqueIdentifier>{79ff6314-401b-41d8-a690-a7769ee91254}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="modules\gameplay">
+      <UniqueIdentifier>{c9adebd1-d47a-4ba0-a714-083008b0b935}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="modules\gameplay\equipment">
+      <UniqueIdentifier>{cab84c89-3c55-43cd-946f-57c3707cec11}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="ai\logics\aiLogics.cpp">
+      <Filter>ai\logics</Filter>
+    </ClCompile>
+    <ClCompile Include="appearance\appearanceControllers.cpp">
+      <Filter>appearance</Filter>
+    </ClCompile>
+    <ClCompile Include="game\customMeshRenderer.cpp">
+      <Filter>game</Filter>
+    </ClCompile>
+    <ClCompile Include="game\damage.cpp">
+      <Filter>game</Filter>
+    </ClCompile>
+    <ClCompile Include="game\game.cpp">
+      <Filter>game</Filter>
+    </ClCompile>
+    <ClCompile Include="game\gameConfig.cpp">
+      <Filter>game</Filter>
+    </ClCompile>
+    <ClCompile Include="game\gameObjectPtrs.cpp">
+      <Filter>game</Filter>
+    </ClCompile>
+    <ClCompile Include="game\player.cpp">
+      <Filter>game</Filter>
+    </ClCompile>
+    <ClCompile Include="game\sceneLayers\gameSceneLayer_DontUpdatePrev.cpp">
+      <Filter>game\sceneLayers</Filter>
+    </ClCompile>
+    <ClCompile Include="game\sceneLayers\gameSceneLayer_Utils.cpp">
+      <Filter>game\sceneLayers</Filter>
+    </ClCompile>
+    <ClCompile Include="game\sceneLayers\gameSceneLayer_World.cpp">
+      <Filter>game\sceneLayers</Filter>
+    </ClCompile>
+    <ClCompile Include="teaForGodMain.cpp" />
+    <ClCompile Include="teaRegisteredTypes.cpp" />
+    <ClCompile Include="library\library.cpp">
+      <Filter>library</Filter>
+    </ClCompile>
+    <ClCompile Include="loaders\loaderDisplay.cpp">
+      <Filter>loaders</Filter>
+    </ClCompile>
+    <ClCompile Include="loaders\loaderPlatformerGame.cpp">
+      <Filter>loaders</Filter>
+    </ClCompile>
+    <ClCompile Include="modules\modulePresencePilgrim.cpp">
+      <Filter>modules</Filter>
+    </ClCompile>
+    <ClCompile Include="modules\modules.cpp">
+      <Filter>modules</Filter>
+    </ClCompile>
+    <ClCompile Include="serialisation\stringFormatterSerialisationHandler.cpp">
+      <Filter>serialisation</Filter>
+    </ClCompile>
+    <ClCompile Include="game\scenes\gameSceneLayer_Wait.cpp">
+      <Filter>game\scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="roomGenerators\roomGenerationInfo.cpp">
+      <Filter>roomGenerators</Filter>
+    </ClCompile>
+    <ClCompile Include="artDir.cpp" />
+    <ClCompile Include="roomGenerators\roomGeneratorUtils.cpp">
+      <Filter>roomGenerators</Filter>
+    </ClCompile>
+    <ClCompile Include="roomGenerators\roomGeneratorBase.cpp">
+      <Filter>roomGenerators</Filter>
+    </ClCompile>
+    <ClCompile Include="modules\nav\mne_cart.cpp">
+      <Filter>modules\nav</Filter>
+    </ClCompile>
+    <ClCompile Include="ai\logics\aiLogic_follower.cpp">
+      <Filter>ai\logics</Filter>
+    </ClCompile>
+    <ClCompile Include="ai\logics\tasks\aiLogicTask_lookAt.cpp">
+      <Filter>ai\logics\tasks</Filter>
+    </ClCompile>
+    <ClCompile Include="ai\logics\tasks\aiLogicTask_idle.cpp">
+      <Filter>ai\logics\tasks</Filter>
+    </ClCompile>
+    <ClCompile Include="ai\logics\tasks\aiLogicTask_projectileHit.cpp">
+      <Filter>ai\logics\tasks</Filter>
+    </ClCompile>
+    <ClCompile Include="ai\logics\tasks\aiLogicTask_evadeAiming.cpp">
+      <Filter>ai\logics\tasks</Filter>
+    </ClCompile>
+    <ClCompile Include="ai\logics\aiLogic_overseer.cpp">
+      <Filter>ai\logics</Filter>
+    </ClCompile>
+    <ClCompile Include="ai\perceptionRequests\aipr_FindAnywhere.cpp">
+      <Filter>ai\perceptionRequests</Filter>
+    </ClCompile>
+    <ClCompile Include="ai\perceptionRequests\aipr_FindInRoom.cpp">
+      <Filter>ai\perceptionRequests</Filter>
+    </ClCompile>
+    <ClCompile Include="modules\custom\mc_emissiveControl.cpp">
+      <Filter>modules\custom</Filter>
+    </ClCompile>
+    <ClCompile Include="appearance\controllers\ac_rotateRandomly.cpp">
+      <Filter>appearance\controllers</Filter>
+    </ClCompile>
+    <ClCompile Include="library\physicalMaterial.cpp">
+      <Filter>library</Filter>
+    </ClCompile>
+    <ClCompile Include="modules\custom\health\mc_health.cpp">
+      <Filter>modules\custom\health</Filter>
+    </ClCompile>
+    <ClCompile Include="modules\custom\mc_powerSource.cpp">
+      <Filter>modules\custom</Filter>
+    </ClCompile>
+    <ClCompile Include="utils.cpp" />
+    <ClCompile Include="ai\logics\aiLogic_pilgrimHand.cpp">
+      <Filter>ai\logics</Filter>
+    </ClCompile>
+    <ClCompile Include="ai\perceptionRequests\aipr_FindClosest.cpp">
+      <Filter>ai\perceptionRequests</Filter>
+    </ClCompile>
+    <ClCompile Include="ai\logics\aiLogic_miniGameMachine.cpp">
+      <Filter>ai\logics</Filter>
+    </ClCompile>
+    <ClCompile Include="ai\logics\aiLogic_muezzin.cpp">
+      <Filter>ai\logics</Filter>
+    </ClCompile>
+    <ClCompile Include="ai\logics\aiLogic_pilgrim.cpp">
+      <Filter>ai\logics</Filter>
+    </ClCompile>
+    <ClCompile Include="appearance\controllers\ac_blinds.cpp">
+      <Filter>appearance\controllers</Filter>
+    </ClCompile>
+    <ClCompile Include="ai\logics\aiLogic_doorDevice.cpp">
+      <Filter>ai\logics</Filter>
+    </ClCompile>
+    <ClCompile Include="game\modes\gameMode_Pilgrimage.cpp">
+      <Filter>game\modes</Filter>
+    </ClCompile>
+    <ClCompile Include="wheresMyPoint\wmp_roomGeneratorInfo.cpp">
+      <Filter>wheresMyPoint</Filter>
+    </ClCompile>
+    <ClCompile Include="wheresMyPoint\wmp_tools.cpp">
+      <Filter>wheresMyPoint</Filter>
+    </ClCompile>
+    <ClCompile Include="ai\logics\aiLogic_controlPanel.cpp">
+      <Filter>ai\logics</Filter>
+    </ClCompile>
+    <ClCompile Include="modules\custom\health\mc_healthRegen.cpp">
+      <Filter>modules\custom\health</Filter>
+    </ClCompile>
+    <ClCompile Include="game\gameSettings.cpp">
+      <Filter>game</Filter>
+    </ClCompile>
+    <ClCompile Include="modules\custom\mc_hitIndicator.cpp">
+      <Filter>modules\custom</Filter>
+    </ClCompile>
+    <ClCompile Include="modules\custom\health\mc_healthPhysicalReaction.cpp">
+      <Filter>modules\custom\health</Filter>
+    </ClCompile>
+    <ClCompile Include="utils\displayMap.cpp">
+      <Filter>utils</Filter>
+    </ClCompile>
+    <ClCompile Include="modules\custom\mc_gameSettingsDependant.cpp">
+      <Filter>modules\custom</Filter>
+    </ClCompile>
+    <ClCompile Include="game\gameSettingsObserver.cpp">
+      <Filter>game</Filter>
+    </ClCompile>
+    <ClCompile Include="ai\logics\aiLogic_enforcer.cpp">
+      <Filter>ai\logics</Filter>
+    </ClCompile>
+    <ClCompile Include="ai\aiCommonVariables.cpp">
+      <Filter>ai</Filter>
+    </ClCompile>
+    <ClCompile Include="ai\logics\aiLogic_npcBase.cpp">
+      <Filter>ai\logics</Filter>
+    </ClCompile>
+    <ClCompile Include="pilgrimage\pilgrimage.cpp">
+      <Filter>pilgrimage</Filter>
+    </ClCompile>
+    <ClCompile Include="pilgrimage\pilgrimageInstance.cpp">
+      <Filter>pilgrimage</Filter>
+    </ClCompile>
+    <ClCompile Include="pilgrimage\pilgrimagePart.cpp">
+      <Filter>pilgrimage</Filter>
+    </ClCompile>
+    <ClCompile Include="pilgrimage\pilgrimageEnvironment.cpp">
+      <Filter>pilgrimage</Filter>
+    </ClCompile>
+    <ClCompile Include="modules\custom\mc_healthReporter.cpp">
+      <Filter>modules\custom</Filter>
+    </ClCompile>
+    <ClCompile Include="ai\logics\tasks\aiLogicTask_perception.cpp">
+      <Filter>ai\logics\tasks</Filter>
+    </ClCompile>
+    <ClCompile Include="ai\aiRayCasts.cpp">
+      <Filter>ai</Filter>
+    </ClCompile>
+    <ClCompile Include="ai\logics\aiLogic_rammer.cpp">
+      <Filter>ai\logics</Filter>
+    </ClCompile>
+    <ClCompile Include="modules\custom\mc_operativeDevice.cpp">
+      <Filter>modules\custom</Filter>
+    </ClCompile>
+    <ClCompile Include="ai\logics\tasks\aiLogicTask_scan.cpp">
+      <Filter>ai\logics\tasks</Filter>
+    </ClCompile>
+    <ClCompile Include="ai\logics\tasks\aiLogicTask_scanAndWander.cpp">
+      <Filter>ai\logics\tasks</Filter>
+    </ClCompile>
+    <ClCompile Include="ai\logics\tasks\aiLogicTask_wander.cpp">
+      <Filter>ai\logics\tasks</Filter>
+    </ClCompile>
+    <ClCompile Include="ai\logics\aiLogic_switchPanel.cpp">
+      <Filter>ai\logics</Filter>
+    </ClCompile>
+    <ClCompile Include="ai\logics\managers\aiManagerLogic_spawnManager.cpp">
+      <Filter>ai\logics\managers</Filter>
+    </ClCompile>
+    <ClCompile Include="ai\aiManagerInfo.cpp">
+      <Filter>ai</Filter>
+    </ClCompile>
+    <ClCompile Include="roomGenerators\elementGenerators\doorBasedShaft.cpp">
+      <Filter>roomGenerators\elementGenerators</Filter>
+    </ClCompile>
+    <ClCompile Include="roomGenerators\elementGenerators\doorBasedWalls.cpp">
+      <Filter>roomGenerators\elementGenerators</Filter>
+    </ClCompile>
+    <ClCompile Include="roomGenerators\elementGenerators\simpleElevatorWall.cpp">
+      <Filter>roomGenerators\elementGenerators</Filter>
+    </ClCompile>
+    <ClCompile Include="roomGenerators\roomGenerators\platformsLinear.cpp">
+      <Filter>roomGenerators\roomGenerators</Filter>
+    </ClCompile>
+    <ClCompile Include="roomGenerators\roomGenerators\simpleCorridor.cpp">
+      <Filter>roomGenerators\roomGenerators</Filter>
+    </ClCompile>
+    <ClCompile Include="roomGenerators\roomGenerators\simpleElevator.cpp">
+      <Filter>roomGenerators\roomGenerators</Filter>
+    </ClCompile>
+    <ClCompile Include="roomGenerators\roomGenerators\simpleRoom.cpp">
+      <Filter>roomGenerators\roomGenerators</Filter>
+    </ClCompile>
+    <ClCompile Include="roomGenerators\roomGenerators\towers.cpp">
+      <Filter>roomGenerators\roomGenerators</Filter>
+    </ClCompile>
+    <ClCompile Include="modules\custom\mc_carrier.cpp">
+      <Filter>modules\custom</Filter>
+    </ClCompile>
+    <ClCompile Include="ai\logics\aiLogic_dropCapsule.cpp">
+      <Filter>ai\logics</Filter>
+    </ClCompile>
+    <ClCompile Include="roomGenerators\roomGenerators\useMeshGenerator.cpp">
+      <Filter>roomGenerators\roomGenerators</Filter>
+    </ClCompile>
+    <ClCompile Include="modules\custom\mc_pickup.cpp">
+      <Filter>modules\custom</Filter>
+    </ClCompile>
+    <ClCompile Include="loaders\loaderArmActivator.cpp">
+      <Filter>loaders</Filter>
+    </ClCompile>
+    <ClCompile Include="appearance\controllers\ac_restPointPlacement.cpp">
+      <Filter>appearance\controllers</Filter>
+    </ClCompile>
+    <ClCompile Include="appearance\controllers\ac_readyRestPointArm.cpp">
+      <Filter>appearance\controllers</Filter>
+    </ClCompile>
+    <ClCompile Include="appearance\controllers\ac_mushroomHeadSide.cpp">
+      <Filter>appearance\controllers</Filter>
+    </ClCompile>
+    <ClCompile Include="ai\logics\aiLogic_plant.cpp">
+      <Filter>ai\logics</Filter>
+    </ClCompile>
+    <ClCompile Include="ai\logics\tasks\aiLogicTask_grabEnergy.cpp">
+      <Filter>ai\logics\tasks</Filter>
+    </ClCompile>
+    <ClCompile Include="ai\logics\tasks\aiLogicTask_shield.cpp">
+      <Filter>ai\logics\tasks</Filter>
+    </ClCompile>
+    <ClCompile Include="modules\moduleGameplay.cpp">
+      <Filter>modules</Filter>
+    </ClCompile>
+    <ClCompile Include="modules\custom\mc_highlightObjects.cpp">
+      <Filter>modules\custom</Filter>
+    </ClCompile>
+    <ClCompile Include="modules\custom\mc_grabable.cpp">
+      <Filter>modules\custom</Filter>
+    </ClCompile>
+    <ClCompile Include="appearance\controllers\ac_pilgrimsGrabbingHand.cpp">
+      <Filter>appearance\controllers</Filter>
+    </ClCompile>
+    <ClCompile Include="game\energy.cpp">
+      <Filter>game</Filter>
+    </ClCompile>
+    <ClCompile Include="ai\logics\aiLogic_waiter.cpp">
+      <Filter>ai\logics</Filter>
+    </ClCompile>
+    <ClCompile Include="ai\perceptionRequests\aipr_FindInVisibleRooms.cpp">
+      <Filter>ai\perceptionRequests</Filter>
+    </ClCompile>
+    <ClCompile Include="ai\aiPerceptionLock.cpp">
+      <Filter>ai</Filter>
+    </ClCompile>
+    <ClCompile Include="sound\ssm_glitchStutter.cpp">
+      <Filter>sound</Filter>
+    </ClCompile>
+    <ClCompile Include="ai\logics\aiLogic_barker.cpp">
+      <Filter>ai\logics</Filter>
+    </ClCompile>
+    <ClCompile Include="regionGenerators\regionGeneratorBase.cpp">
+      <Filter>regionGenerators</Filter>
+    </ClCompile>
+    <ClCompile Include="ai\aiManagerData.cpp">
+      <Filter>ai</Filter>
+    </ClCompile>
+    <ClCompile Include="ai\managerDatas\aiManagerData_spawnSet.cpp">
+      <Filter>ai\managerDatas</Filter>
+    </ClCompile>
+    <ClCompile Include="ai\logics\tasks\aiLogicTask_beingHeld.cpp">
+      <Filter>ai\logics\tasks</Filter>
+    </ClCompile>
+    <ClCompile Include="ai\logics\tasks\aiLogicTask_beingThrown.cpp">
+      <Filter>ai\logics\tasks</Filter>
+    </ClCompile>
+    <ClCompile Include="ai\logics\tasks\aiLogicTask_shoot.cpp">
+      <Filter>ai\logics\tasks</Filter>
+    </ClCompile>
+    <ClCompile Include="ai\logics\tasks\aiLogicTask_wanderAndDoStuff.cpp">
+      <Filter>ai\logics\tasks</Filter>
+    </ClCompile>
+    <ClCompile Include="ai\logics\tasks\aiLogicTask_attackOrIdle.cpp">
+      <Filter>ai\logics\tasks</Filter>
+    </ClCompile>
+    <ClCompile Include="ai\logics\tasks\aiLogicTask_stayCloseOrWander.cpp">
+      <Filter>ai\logics\tasks</Filter>
+    </ClCompile>
+    <ClCompile Include="ai\logics\tasks\aiLogicTask_stayClose.cpp">
+      <Filter>ai\logics\tasks</Filter>
+    </ClCompile>
+    <ClCompile Include="modules\custom\mc_switchSidesHandler.cpp">
+      <Filter>modules\custom</Filter>
+    </ClCompile>
+    <ClCompile Include="utils\interactiveButtonHandler.cpp">
+      <Filter>utils</Filter>
+    </ClCompile>
+    <ClCompile Include="ai\logics\tasks\aiLogicTask_stayCloseInFront.cpp">
+      <Filter>ai\logics\tasks</Filter>
+    </ClCompile>
+    <ClCompile Include="utils\interactiveSwitchHandler.cpp">
+      <Filter>utils</Filter>
+    </ClCompile>
+    <ClCompile Include="ai\aiCommon.cpp">
+      <Filter>ai</Filter>
+    </ClCompile>
+    <ClCompile Include="modules\moduleSound.cpp">
+      <Filter>modules</Filter>
+    </ClCompile>
+    <ClCompile Include="roomGenerators\roomGenerators\balconies.cpp">
+      <Filter>roomGenerators\roomGenerators</Filter>
+    </ClCompile>
+    <ClCompile Include="game\pointOfInterestInstance.cpp">
+      <Filter>game</Filter>
+    </ClCompile>
+    <ClCompile Include="ai\logics\aiLogic_elevatorCart.cpp">
+      <Filter>ai\logics</Filter>
+    </ClCompile>
+    <ClCompile Include="ai\logics\aiLogic_elevatorCartPoint.cpp">
+      <Filter>ai\logics</Filter>
+    </ClCompile>
+    <ClCompile Include="appearance\controllers\ac_elevatorCartRotatingCore.cpp">
+      <Filter>appearance\controllers</Filter>
+    </ClCompile>
+    <ClCompile Include="appearance\controllers\ac_elevatorCartAttacherArm.cpp">
+      <Filter>appearance\controllers</Filter>
+    </ClCompile>
+    <ClCompile Include="ai\logics\aiLogic_energyKiosk.cpp">
+      <Filter>ai\logics</Filter>
+    </ClCompile>
+    <ClCompile Include="modules\energyTransfer.cpp">
+      <Filter>modules</Filter>
+    </ClCompile>
+    <ClCompile Include="loaders\hub\loaderHub.cpp">
+      <Filter>loaders\hub</Filter>
+    </ClCompile>
+    <ClCompile Include="loaders\hub\loaderHubWidget.cpp">
+      <Filter>loaders\hub</Filter>
+    </ClCompile>
+    <ClCompile Include="loaders\hub\widgets\lhw_button.cpp">
+      <Filter>loaders\hub\widgets</Filter>
+    </ClCompile>
+    <ClCompile Include="loaders\hub\widgets\lhw_text.cpp">
+      <Filter>loaders\hub\widgets</Filter>
+    </ClCompile>
+    <ClCompile Include="loaders\hub\loaderHubScene.cpp">
+      <Filter>loaders\hub</Filter>
+    </ClCompile>
+    <ClCompile Include="loaders\hub\loaderHubScreen.cpp">
+      <Filter>loaders\hub</Filter>
+    </ClCompile>
+    <ClCompile Include="loaders\hub\scenes\lhs_text.cpp">
+      <Filter>loaders\hub\scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="loaders\hub\scenes\lhs_summary.cpp">
+      <Filter>loaders\hub\scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="game\gameStats.cpp">
+      <Filter>game</Filter>
+    </ClCompile>
+    <ClCompile Include="loaders\hub\widgets\lhw_image.cpp">
+      <Filter>loaders\hub\widgets</Filter>
+    </ClCompile>
+    <ClCompile Include="appearance\controllers\particles\acp_palmersCircles.cpp">
+      <Filter>appearance\controllers\particles</Filter>
+    </ClCompile>
+    <ClCompile Include="ai\logics\aiLogic_turret.cpp">
+      <Filter>ai\logics</Filter>
+    </ClCompile>
+    <ClCompile Include="roomGenerators\roomGenerators\roomWithDoorBlocks.cpp">
+      <Filter>roomGenerators\roomGenerators</Filter>
+    </ClCompile>
+    <ClCompile Include="pilgrim\pilgrimSetup.cpp">
+      <Filter>pilgrim</Filter>
+    </ClCompile>
+    <ClCompile Include="game\playerSetup.cpp">
+      <Filter>game</Filter>
+    </ClCompile>
+    <ClCompile Include="loaders\hub\scenes\lhs_empty.cpp">
+      <Filter>loaders\hub\scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="loaders\hub\scenes\lhs_inGameMenu.cpp">
+      <Filter>loaders\hub\scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="loaders\hub\scenes\lhs_options.cpp">
+      <Filter>loaders\hub\scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="loaders\hub\screens\lhc_question.cpp">
+      <Filter>loaders\hub\screens</Filter>
+    </ClCompile>
+    <ClCompile Include="loaders\hub\scenes\lhs_beAtRightPlace.cpp">
+      <Filter>loaders\hub\scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="loaders\hub\widgets\lhw_slider.cpp">
+      <Filter>loaders\hub\widgets</Filter>
+    </ClCompile>
+    <ClCompile Include="library\exmType.cpp">
+      <Filter>library</Filter>
+    </ClCompile>
+    <ClCompile Include="game\screenShotContext.cpp">
+      <Filter>game</Filter>
+    </ClCompile>
+    <ClCompile Include="ai\aiVarState.cpp">
+      <Filter>ai</Filter>
+    </ClCompile>
+    <ClCompile Include="ai\logics\actions\aiAction_lightningStrike.cpp">
+      <Filter>ai\logics\actions</Filter>
+    </ClCompile>
+    <ClCompile Include="ai\aiPerceptionPause.cpp">
+      <Filter>ai</Filter>
+    </ClCompile>
+    <ClCompile Include="ai\logics\tasks\aiLogicTask_flyTo.cpp">
+      <Filter>ai\logics\tasks</Filter>
+    </ClCompile>
+    <ClCompile Include="loaders\hub\scenes\lhs_test.cpp">
+      <Filter>loaders\hub\scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="loaders\hub\loaderHubDraggableData.cpp">
+      <Filter>loaders\hub</Filter>
+    </ClCompile>
+    <ClCompile Include="loaders\hub\widgets\lhw_list.cpp">
+      <Filter>loaders\hub\widgets</Filter>
+    </ClCompile>
+    <ClCompile Include="library\messageSet.cpp">
+      <Filter>library</Filter>
+    </ClCompile>
+    <ClCompile Include="loaders\hub\widgets\lhws_innerScroll.cpp">
+      <Filter>loaders\hub\widgets</Filter>
+    </ClCompile>
+    <ClCompile Include="loaders\hub\screens\lhc_messageSetBrowser.cpp">
+      <Filter>loaders\hub\screens</Filter>
+    </ClCompile>
+    <ClCompile Include="loaders\hub\screens\lhc_message.cpp">
+      <Filter>loaders\hub\screens</Filter>
+    </ClCompile>
+    <ClCompile Include="loaders\hub\scenes\lhs_message.cpp">
+      <Filter>loaders\hub\scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="modules\moduleMovementRam.cpp">
+      <Filter>modules</Filter>
+    </ClCompile>
+    <ClCompile Include="ai\logics\aiLogic_creeper.cpp">
+      <Filter>ai\logics</Filter>
+    </ClCompile>
+    <ClCompile Include="loaders\hub\screens\lhc_exitIExitable.cpp">
+      <Filter>loaders\hub\screens</Filter>
+    </ClCompile>
+    <ClCompile Include="loaders\hub\widgets\lhw_line.cpp">
+      <Filter>loaders\hub\widgets</Filter>
+    </ClCompile>
+    <ClCompile Include="loaders\hub\widgets\lhw_rect.cpp">
+      <Filter>loaders\hub\widgets</Filter>
+    </ClCompile>
+    <ClCompile Include="modules\custom\mc_hubIcons.cpp">
+      <Filter>modules\custom</Filter>
+    </ClCompile>
+    <ClCompile Include="reportBug.cpp" />
+    <ClCompile Include="ai\logics\managers\aiManagerLogic_monorailManager.cpp">
+      <Filter>ai\logics\managers</Filter>
+    </ClCompile>
+    <ClCompile Include="ai\logics\aiLogic_monorailCart.cpp">
+      <Filter>ai\logics</Filter>
+    </ClCompile>
+    <ClCompile Include="modules\moduleMovementMonorailCart.cpp">
+      <Filter>modules</Filter>
+    </ClCompile>
+    <ClCompile Include="loaders\hub\widgets\lhw_customDraw.cpp">
+      <Filter>loaders\hub\widgets</Filter>
+    </ClCompile>
+    <ClCompile Include="loaders\hub\scenes\lhs_question.cpp">
+      <Filter>loaders\hub\scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="pilgrim\pilgrimBlackboard.cpp">
+      <Filter>pilgrim</Filter>
+    </ClCompile>
+    <ClCompile Include="loaders\hub\widgets\lhw_grid.cpp">
+      <Filter>loaders\hub\widgets</Filter>
+    </ClCompile>
+    <ClCompile Include="pilgrim\pilgrimStatsInfo.cpp">
+      <Filter>pilgrim</Filter>
+    </ClCompile>
+    <ClCompile Include="loaders\hub\screens\lhc_enterText.cpp">
+      <Filter>loaders\hub\screens</Filter>
+    </ClCompile>
+    <ClCompile Include="ai\logics\aiLogic_stinger.cpp">
+      <Filter>ai\logics</Filter>
+    </ClCompile>
+    <ClCompile Include="ai\logics\aiLogic_inspecter.cpp">
+      <Filter>ai\logics</Filter>
+    </ClCompile>
+    <ClCompile Include="loaders\hub\screens\prayStations\lhc_spirographMandala.cpp">
+      <Filter>loaders\hub\screens\prayStations</Filter>
+    </ClCompile>
+    <ClCompile Include="loaders\hub\scenes\lhs_quickGameMenu.cpp">
+      <Filter>loaders\hub\scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="game\runSetup.cpp">
+      <Filter>game</Filter>
+    </ClCompile>
+    <ClCompile Include="loaders\hub\scenes\lhs_setupNewPlayerProfile.cpp">
+      <Filter>loaders\hub\scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="loaders\hub\scenes\lhs_gameSlotSelection.cpp">
+      <Filter>loaders\hub\scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="loaders\hub\scenes\lhs_setupNewGameSlot.cpp">
+      <Filter>loaders\hub\scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="game\physicalViolence.cpp">
+      <Filter>game</Filter>
+    </ClCompile>
+    <ClCompile Include="loaders\hub\utils\lhu_playerStats.cpp">
+      <Filter>loaders\hub\utils</Filter>
+    </ClCompile>
+    <ClCompile Include="game\persistence.cpp">
+      <Filter>game</Filter>
+    </ClCompile>
+    <ClCompile Include="loaders\hub\screens\prayStations\lhc_satelliteMap.cpp">
+      <Filter>loaders\hub\screens\prayStations</Filter>
+    </ClCompile>
+    <ClCompile Include="loaders\hub\screens\lhc_handGestures.cpp">
+      <Filter>loaders\hub\screens</Filter>
+    </ClCompile>
+    <ClCompile Include="loaders\hub\scenes\lhs_waitForScreen.cpp">
+      <Filter>loaders\hub\scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="tutorials\tutorialSystem.cpp">
+      <Filter>tutorials</Filter>
+    </ClCompile>
+    <ClCompile Include="tutorials\tutorial.cpp">
+      <Filter>tutorials</Filter>
+    </ClCompile>
+    <ClCompile Include="game\modes\gameMode_Tutorial.cpp">
+      <Filter>game\modes</Filter>
+    </ClCompile>
+    <ClCompile Include="game\scenes\gameSceneLayer_BeInWorld.cpp">
+      <Filter>game\scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="gameScript\registeredGameScriptElements.cpp">
+      <Filter>gameScript</Filter>
+    </ClCompile>
+    <ClCompile Include="overlayInfo\overlayInfoElement.cpp">
+      <Filter>overlayInfo</Filter>
+    </ClCompile>
+    <ClCompile Include="overlayInfo\overlayInfoEnums.cpp">
+      <Filter>overlayInfo</Filter>
+    </ClCompile>
+    <ClCompile Include="overlayInfo\overlayInfoSystem.cpp">
+      <Filter>overlayInfo</Filter>
+    </ClCompile>
+    <ClCompile Include="overlayInfo\elements\oie_text.cpp">
+      <Filter>overlayInfo\elements</Filter>
+    </ClCompile>
+    <ClCompile Include="gameScript\elements\gse_showText.cpp">
+      <Filter>gameScript\elements</Filter>
+    </ClCompile>
+    <ClCompile Include="gameScript\elements\gse_tutContinue.cpp">
+      <Filter>gameScript\elements</Filter>
+    </ClCompile>
+    <ClCompile Include="gameScript\elements\gse_clearOverlayInfo.cpp">
+      <Filter>gameScript\elements</Filter>
+    </ClCompile>
+    <ClCompile Include="overlayInfo\elements\oie_inputPrompt.cpp">
+      <Filter>overlayInfo\elements</Filter>
+    </ClCompile>
+    <ClCompile Include="loaders\hub\scenes\lhs_tutInGameMenu.cpp">
+      <Filter>loaders\hub\scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="loaders\hub\screens\lhc_tutInGameMenu.cpp">
+      <Filter>loaders\hub\screens</Filter>
+    </ClCompile>
+    <ClCompile Include="gameScript\elements\gse_tutInput.cpp">
+      <Filter>gameScript\elements</Filter>
+    </ClCompile>
+    <ClCompile Include="gameScript\elements\gse_tutWaitForInGameMenu.cpp">
+      <Filter>gameScript\elements</Filter>
+    </ClCompile>
+    <ClCompile Include="gameScript\elements\gse_tutEnd.cpp">
+      <Filter>gameScript\elements</Filter>
+    </ClCompile>
+    <ClCompile Include="gameScript\elements\gse_tutInGameMenuShouldNotSupressOverlay.cpp">
+      <Filter>gameScript\elements</Filter>
+    </ClCompile>
+    <ClCompile Include="gameScript\elements\gse_deactivateHub.cpp">
+      <Filter>gameScript\elements</Filter>
+    </ClCompile>
+    <ClCompile Include="gameScript\elements\gse_createMainEquipment.cpp">
+      <Filter>gameScript\elements</Filter>
+    </ClCompile>
+    <ClCompile Include="gameScript\elements\gse_health.cpp">
+      <Filter>gameScript\elements</Filter>
+    </ClCompile>
+    <ClCompile Include="gameScript\elements\gse_hitIndicator.cpp">
+      <Filter>gameScript\elements</Filter>
+    </ClCompile>
+    <ClCompile Include="gameScript\elements\gse_removeOverlayInfo.cpp">
+      <Filter>gameScript\elements</Filter>
+    </ClCompile>
+    <ClCompile Include="gameScript\elements\gse_setGameSettings.cpp">
+      <Filter>gameScript\elements</Filter>
+    </ClCompile>
+    <ClCompile Include="gameScript\elements\gse_setPlayerPreferences.cpp">
+      <Filter>gameScript\elements</Filter>
+    </ClCompile>
+    <ClCompile Include="gameScript\elements\gse_showInputPrompt.cpp">
+      <Filter>gameScript\elements</Filter>
+    </ClCompile>
+    <ClCompile Include="gameScript\elements\gse_spawnEnergyQuantum.cpp">
+      <Filter>gameScript\elements</Filter>
+    </ClCompile>
+    <ClCompile Include="gameScript\elements\gse_tutClearHighlight.cpp">
+      <Filter>gameScript\elements</Filter>
+    </ClCompile>
+    <ClCompile Include="gameScript\elements\gse_tutHighlight.cpp">
+      <Filter>gameScript\elements</Filter>
+    </ClCompile>
+    <ClCompile Include="gameScript\elements\gse_tutSet.cpp">
+      <Filter>gameScript\elements</Filter>
+    </ClCompile>
+    <ClCompile Include="gameScript\elements\gse_waitForLook.cpp">
+      <Filter>gameScript\elements</Filter>
+    </ClCompile>
+    <ClCompile Include="appearance\controllers\ac_pilgrimsFakePointing.cpp">
+      <Filter>appearance\controllers</Filter>
+    </ClCompile>
+    <ClCompile Include="ai\logics\actions\aiAction_findPath.cpp">
+      <Filter>ai\logics\actions</Filter>
+    </ClCompile>
+    <ClCompile Include="ai\logics\aiLogic_portableShield.cpp">
+      <Filter>ai\logics</Filter>
+    </ClCompile>
+    <ClCompile Include="ai\logics\aiLogic_scourer.cpp">
+      <Filter>ai\logics</Filter>
+    </ClCompile>
+    <ClCompile Include="game\gameLog.cpp">
+      <Filter>game</Filter>
+    </ClCompile>
+    <ClCompile Include="loaders\hub\scenes\lhs_calibrate.cpp">
+      <Filter>loaders\hub\scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="loaders\hub\scenes\lhs_handyMessages.cpp">
+      <Filter>loaders\hub\scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="loaders\hub\scenes\lhs_playerProfileSelection.cpp">
+      <Filter>loaders\hub\scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="loaders\hub\scenes\lhs_tutorialDone.cpp">
+      <Filter>loaders\hub\scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="loaders\hub\scenes\lhs_tutorialSelection.cpp">
+      <Filter>loaders\hub\scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="loaders\hub\utils\lhu_moveStick.cpp">
+      <Filter>loaders\hub\utils</Filter>
+    </ClCompile>
+    <ClCompile Include="tutorials\tutorialStructure.cpp">
+      <Filter>tutorials</Filter>
+    </ClCompile>
+    <ClCompile Include="tutorials\tutorialTree.cpp">
+      <Filter>tutorials</Filter>
+    </ClCompile>
+    <ClCompile Include="gameScript\registeredGameScriptConditions.cpp">
+      <Filter>library</Filter>
+    </ClCompile>
+    <ClCompile Include="game\gameUtils.cpp">
+      <Filter>game</Filter>
+    </ClCompile>
+    <ClCompile Include="pilgrim\pilgrimInfoToRender.cpp">
+      <Filter>pilgrim</Filter>
+    </ClCompile>
+    <ClCompile Include="overlayInfo\elements\oie_customDraw.cpp">
+      <Filter>overlayInfo\elements</Filter>
+    </ClCompile>
+    <ClCompile Include="modules\shield.cpp">
+      <Filter>modules</Filter>
+    </ClCompile>
+    <ClCompile Include="ai\logics\tasks\aiLogicTask_lightningRandomDischarge.cpp">
+      <Filter>ai\logics\tasks</Filter>
+    </ClCompile>
+    <ClCompile Include="gameScript\elements\gse_waitForMainEquipment.cpp">
+      <Filter>gameScript\elements</Filter>
+    </ClCompile>
+    <ClCompile Include="gameScript\elements\gse_mainEquipment.cpp">
+      <Filter>gameScript\elements</Filter>
+    </ClCompile>
+    <ClCompile Include="gameScript\elements\gse_showRect.cpp">
+      <Filter>gameScript\elements</Filter>
+    </ClCompile>
+    <ClCompile Include="overlayInfo\elements\oie_mesh.cpp">
+      <Filter>overlayInfo\elements</Filter>
+    </ClCompile>
+    <ClCompile Include="gameScript\elements\gse_tutClearHubHighlight.cpp">
+      <Filter>gameScript\elements</Filter>
+    </ClCompile>
+    <ClCompile Include="gameScript\elements\gse_tutHubHighlight.cpp">
+      <Filter>gameScript\elements</Filter>
+    </ClCompile>
+    <ClCompile Include="gameScript\elements\gse_waitForHub.cpp">
+      <Filter>gameScript\elements</Filter>
+    </ClCompile>
+    <ClCompile Include="gameScript\elements\gse_waitForEnergyTransfer.cpp">
+      <Filter>gameScript\elements</Filter>
+    </ClCompile>
+    <ClCompile Include="gameScript\elements\gse_tutStep.cpp">
+      <Filter>gameScript\elements</Filter>
+    </ClCompile>
+    <ClCompile Include="ai\logics\aiLogic_scriptablePanel.cpp">
+      <Filter>ai\logics</Filter>
+    </ClCompile>
+    <ClCompile Include="tutorials\tutorialHubId.cpp">
+      <Filter>tutorials</Filter>
+    </ClCompile>
+    <ClCompile Include="gameScript\elements\gse_tutHubSelect.cpp">
+      <Filter>gameScript\elements</Filter>
+    </ClCompile>
+    <ClCompile Include="ai\logics\aiLogic_tutorialTarget.cpp">
+      <Filter>ai\logics</Filter>
+    </ClCompile>
+    <ClCompile Include="schematics\schematic.cpp">
+      <Filter>schematics</Filter>
+    </ClCompile>
+    <ClCompile Include="schematics\schematicElement.cpp">
+      <Filter>schematics</Filter>
+    </ClCompile>
+    <ClCompile Include="schematics\schematicLine.cpp">
+      <Filter>schematics</Filter>
+    </ClCompile>
+    <ClCompile Include="library\lootSelector.cpp">
+      <Filter>library</Filter>
+    </ClCompile>
+    <ClCompile Include="library\projectileSelector.cpp">
+      <Filter>library</Filter>
+    </ClCompile>
+    <ClCompile Include="game\weaponPart.cpp">
+      <Filter>game</Filter>
+    </ClCompile>
+    <ClCompile Include="library\weaponPartType.cpp">
+      <Filter>library</Filter>
+    </ClCompile>
+    <ClCompile Include="modules\custom\mc_gunTemporaryObject.cpp">
+      <Filter>modules\custom</Filter>
+    </ClCompile>
+    <ClCompile Include="modules\custom\mc_lootProvider.cpp">
+      <Filter>modules\custom</Filter>
+    </ClCompile>
+    <ClCompile Include="loaders\hub\interfaces\lhi_exmTypeProvider.cpp">
+      <Filter>loaders\hub\interfaces</Filter>
+    </ClCompile>
+    <ClCompile Include="loaders\hub\utils\lhu_colours.cpp">
+      <Filter>loaders\hub\utils</Filter>
+    </ClCompile>
+    <ClCompile Include="loaders\hub\draggables\lhd.cpp">
+      <Filter>loaders\hub\draggables</Filter>
+    </ClCompile>
+    <ClCompile Include="loaders\hub\draggables\lhd_exmTypeOnList.cpp">
+      <Filter>loaders\hub\draggables</Filter>
+    </ClCompile>
+    <ClCompile Include="loaders\hub\interfaces\lhi_weaponPartProvider.cpp">
+      <Filter>loaders\hub\interfaces</Filter>
+    </ClCompile>
+    <ClCompile Include="loaders\hub\draggables\lhd_weaponPartPersistent.cpp">
+      <Filter>loaders\hub\draggables</Filter>
+    </ClCompile>
+    <ClCompile Include="loaders\hub\draggables\lhd_weaponPartPilgrimInventory.cpp">
+      <Filter>loaders\hub\draggables</Filter>
+    </ClCompile>
+    <ClCompile Include="utils\buildStatsInfo.cpp">
+      <Filter>utils</Filter>
+    </ClCompile>
+    <ClCompile Include="loaders\hub\utils\lhu_weaponPartDraw.cpp">
+      <Filter>loaders\hub\utils</Filter>
+    </ClCompile>
+    <ClCompile Include="loaders\hub\draggables\lhd_weaponPartWeaponSetup.cpp">
+      <Filter>loaders\hub\draggables</Filter>
+    </ClCompile>
+    <ClCompile Include="loaders\hub\draggables\lhd_objectItem.cpp">
+      <Filter>loaders\hub\draggables</Filter>
+    </ClCompile>
+    <ClCompile Include="loaders\hub\utils\lhu_grid.cpp">
+      <Filter>loaders\hub\utils</Filter>
+    </ClCompile>
+    <ClCompile Include="game\weaponSetup.cpp">
+      <Filter>game</Filter>
+    </ClCompile>
+    <ClCompile Include="modules\custom\mc_weaponSetupContainer.cpp">
+      <Filter>modules\custom</Filter>
+    </ClCompile>
+    <ClCompile Include="modules\custom\mc_schematic.cpp">
+      <Filter>modules\custom</Filter>
+    </ClCompile>
+    <ClCompile Include="gameplayBalance.cpp" />
+    <ClCompile Include="loaders\hub\draggables\lhd_analysableItem.cpp">
+      <Filter>loaders\hub\draggables</Filter>
+    </ClCompile>
+    <ClCompile Include="library\defaultPilgrimSetupPreset.cpp">
+      <Filter>library</Filter>
+    </ClCompile>
+    <ClCompile Include="ai\logics\aiLogic_cleanser.cpp">
+      <Filter>ai\logics</Filter>
+    </ClCompile>
+    <ClCompile Include="ai\logics\aiLogic_barrel.cpp">
+      <Filter>ai\logics</Filter>
+    </ClCompile>
+    <ClCompile Include="ai\logics\aiLogic_charger.cpp">
+      <Filter>ai\logics</Filter>
+    </ClCompile>
+    <ClCompile Include="library\gameDefinition.cpp">
+      <Filter>library</Filter>
+    </ClCompile>
+    <ClCompile Include="library\weaponCoreModifiers.cpp">
+      <Filter>library</Filter>
+    </ClCompile>
+    <ClCompile Include="teaEnums.cpp" />
+    <ClCompile Include="ai\logics\managers\aiManagerLogic.cpp">
+      <Filter>ai\logics\managers</Filter>
+    </ClCompile>
+    <ClCompile Include="ai\logics\managers\aiManagerLogic_regionManager.cpp">
+      <Filter>ai\logics\managers</Filter>
+    </ClCompile>
+    <ClCompile Include="pilgrimage\pilgrimageOpenWorldDefinition.cpp">
+      <Filter>pilgrimage</Filter>
+    </ClCompile>
+    <ClCompile Include="pilgrimage\pilgrimageInstanceLinear.cpp">
+      <Filter>pilgrimage</Filter>
+    </ClCompile>
+    <ClCompile Include="pilgrimage\pilgrimageInstanceOpenWorld.cpp">
+      <Filter>pilgrimage</Filter>
+    </ClCompile>
+    <ClCompile Include="wheresMyPoint\wmp_openWorld.cpp">
+      <Filter>wheresMyPoint</Filter>
+    </ClCompile>
+    <ClCompile Include="roomGenerators\roomGenerators\useMeshes.cpp">
+      <Filter>roomGenerators\roomGenerators</Filter>
+    </ClCompile>
+    <ClCompile Include="roomGenerators\elementGenerators\doorBasedSceneries.cpp">
+      <Filter>roomGenerators\elementGenerators</Filter>
+    </ClCompile>
+    <ClCompile Include="wheresMyPoint\wmp_roomGeneratorBalconies.cpp">
+      <Filter>wheresMyPoint</Filter>
+    </ClCompile>
+    <ClCompile Include="wheresMyPoint\wmp_roomGeneratorTowers.cpp">
+      <Filter>wheresMyPoint</Filter>
+    </ClCompile>
+    <ClCompile Include="meshGen\shapes\meshGenShape_platformsLinear.cpp">
+      <Filter>meshGen\shapes</Filter>
+    </ClCompile>
+    <ClCompile Include="meshGen\shapes\meshGenShapes.cpp">
+      <Filter>meshGen\shapes</Filter>
+    </ClCompile>
+    <ClCompile Include="pilgrim\pilgrimOverlayInfo.cpp">
+      <Filter>pilgrim</Filter>
+    </ClCompile>
+    <ClCompile Include="library\lineModel.cpp">
+      <Filter>library</Filter>
+    </ClCompile>
+    <ClCompile Include="ai\logics\exms\aiLogic_exmAttractor.cpp">
+      <Filter>ai\logics\exms</Filter>
+    </ClCompile>
+    <ClCompile Include="ai\logics\exms\aiLogic_exmBase.cpp">
+      <Filter>ai\logics\exms</Filter>
+    </ClCompile>
+    <ClCompile Include="ai\logics\exms\aiLogic_exmDeflector.cpp">
+      <Filter>ai\logics\exms</Filter>
+    </ClCompile>
+    <ClCompile Include="ai\logics\exms\aiLogic_exmShield.cpp">
+      <Filter>ai\logics\exms</Filter>
+    </ClCompile>
+    <ClCompile Include="pilgrimage\pilgrimageDevice.cpp">
+      <Filter>pilgrimage</Filter>
+    </ClCompile>
+    <ClCompile Include="ai\logics\aiLogic_automap.cpp">
+      <Filter>ai\logics</Filter>
+    </ClCompile>
+    <ClCompile Include="overlayInfo\elements\oie_texturePart.cpp">
+      <Filter>overlayInfo\elements</Filter>
+    </ClCompile>
+    <ClCompile Include="ai\logics\aiLogic_energyCoil.cpp">
+      <Filter>ai\logics</Filter>
+    </ClCompile>
+    <ClCompile Include="pilgrim\pilgrimInventory.cpp">
+      <Filter>pilgrim</Filter>
+    </ClCompile>
+    <ClCompile Include="ai\logics\aiLogic_upgradeMachine.cpp">
+      <Filter>ai\logics</Filter>
+    </ClCompile>
+    <ClCompile Include="library\extraUpgradeOption.cpp">
+      <Filter>library</Filter>
+    </ClCompile>
+    <ClCompile Include="ai\logics\exms\aiLogic_exmCorrosionCatalyst.cpp">
+      <Filter>ai\logics\exms</Filter>
+    </ClCompile>
+    <ClCompile Include="ai\logics\exms\aiLogic_exmEnergyDispatcher.cpp">
+      <Filter>ai\logics\exms</Filter>
+    </ClCompile>
+    <ClCompile Include="ai\logics\aiLogic_pilgrimHumanForearmDisplay.cpp">
+      <Filter>ai\logics</Filter>
+    </ClCompile>
+    <ClCompile Include="appearance\controllers\ac_recoil.cpp">
+      <Filter>appearance\controllers</Filter>
+    </ClCompile>
+    <ClCompile Include="ai\logics\aiLogic_exmInstallerKiosk.cpp">
+      <Filter>ai\logics</Filter>
+    </ClCompile>
+    <ClCompile Include="utils\interactiveDialHandler.cpp">
+      <Filter>utils</Filter>
+    </ClCompile>
+    <ClCompile Include="ai\logics\components\aiLogicComponent_upgradeCanister.cpp">
+      <Filter>ai\logics\components</Filter>
+    </ClCompile>
+    <ClCompile Include="ai\logics\aiLogic_permanentUpgradeMachine.cpp">
+      <Filter>ai\logics</Filter>
+    </ClCompile>
+    <ClCompile Include="pilgrim\pilgrimGuidance.cpp">
+      <Filter>pilgrim</Filter>
+    </ClCompile>
+    <ClCompile Include="library\gameModifier.cpp">
+      <Filter>library</Filter>
+    </ClCompile>
+    <ClCompile Include="loaders\hub\screens\settings\lhc_gameModifiers.cpp">
+      <Filter>loaders\hub\screens\settings</Filter>
+    </ClCompile>
+    <ClCompile Include="roomGenerators\roomGenerators\floorsWithElevators.cpp">
+      <Filter>roomGenerators\roomGenerators</Filter>
+    </ClCompile>
+    <ClCompile Include="ai\logics\aiLogic_trigger.cpp">
+      <Filter>ai\logics</Filter>
+    </ClCompile>
+    <ClCompile Include="ai\logics\tasks\aiLogicTask_shootContinuously.cpp">
+      <Filter>ai\logics\tasks</Filter>
+    </ClCompile>
+    <ClCompile Include="ai\logics\aiLogic_none.cpp">
+      <Filter>ai\logics</Filter>
+    </ClCompile>
+    <ClCompile Include="ai\logics\aiLogic_weaponMixer.cpp">
+      <Filter>ai\logics</Filter>
+    </ClCompile>
+    <ClCompile Include="modules\custom\mc_itemHolder.cpp">
+      <Filter>modules\custom</Filter>
+    </ClCompile>
+    <ClCompile Include="appearance\controllers\ac_weaponMixerWeapon.cpp">
+      <Filter>appearance\controllers</Filter>
+    </ClCompile>
+    <ClCompile Include="ai\logics\exms\aiLogic_exmReroll.cpp">
+      <Filter>ai\logics\exms</Filter>
+    </ClCompile>
+    <ClCompile Include="music\musicPlayer.cpp">
+      <Filter>music</Filter>
+    </ClCompile>
+    <ClCompile Include="music\musicDefinition.cpp">
+      <Filter>music</Filter>
+    </ClCompile>
+    <ClCompile Include="music\musicTrack.cpp">
+      <Filter>music</Filter>
+    </ClCompile>
+    <ClCompile Include="game\gameDirector.cpp">
+      <Filter>game</Filter>
+    </ClCompile>
+    <ClCompile Include="ai\logics\tasks\aiLogicTask_hideDisappear.cpp">
+      <Filter>ai\logics\tasks</Filter>
+    </ClCompile>
+    <ClCompile Include="modules\moduleAI.cpp">
+      <Filter>modules</Filter>
+    </ClCompile>
+    <ClCompile Include="game\gameDirectorDefinition.cpp">
+      <Filter>game</Filter>
+    </ClCompile>
+    <ClCompile Include="story\storyChapter.cpp">
+      <Filter>story</Filter>
+    </ClCompile>
+    <ClCompile Include="story\storyScene.cpp">
+      <Filter>story</Filter>
+    </ClCompile>
+    <ClCompile Include="story\storyExecution.cpp">
+      <Filter>story</Filter>
+    </ClCompile>
+    <ClCompile Include="sound\subtitleSystem.cpp">
+      <Filter>sound</Filter>
+    </ClCompile>
+    <ClCompile Include="gameScript\elements\gse_voiceoverSpeak.cpp">
+      <Filter>gameScript\elements</Filter>
+    </ClCompile>
+    <ClCompile Include="gameScript\elements\gse_voiceoverSilence.cpp">
+      <Filter>gameScript\elements</Filter>
+    </ClCompile>
+    <ClCompile Include="gameScript\elements\gse_storyEndScene.cpp">
+      <Filter>gameScript\elements</Filter>
+    </ClCompile>
+    <ClCompile Include="gameScript\elements\gse_storyChangeScene.cpp">
+      <Filter>gameScript\elements</Filter>
+    </ClCompile>
+    <ClCompile Include="gameScript\elements\gse_storySet.cpp">
+      <Filter>gameScript\elements</Filter>
+    </ClCompile>
+    <ClCompile Include="gameScript\elements\gse_storyClear.cpp">
+      <Filter>gameScript\elements</Filter>
+    </ClCompile>
+    <ClCompile Include="gameScript\conditions\gsc_story.cpp">
+      <Filter>gameScript\conditions</Filter>
+    </ClCompile>
+    <ClCompile Include="gameScript\elements\gse_gameDirector.cpp">
+      <Filter>gameScript\elements</Filter>
+    </ClCompile>
+    <ClCompile Include="gameScript\elements\gse_pilgrimOverlayInfo.cpp">
+      <Filter>gameScript\elements</Filter>
+    </ClCompile>
+    <ClCompile Include="gameScript\conditions\gsc_pilgrimOverlayInfo.cpp">
+      <Filter>gameScript\conditions</Filter>
+    </ClCompile>
+    <ClCompile Include="gameScript\conditions\gsc_gameSettings.cpp">
+      <Filter>gameScript\conditions</Filter>
+    </ClCompile>
+    <ClCompile Include="gameScript\elements\gse_waitForNoVoiceover.cpp">
+      <Filter>gameScript\elements</Filter>
+    </ClCompile>
+    <ClCompile Include="gameScript\conditions\gsc_voiceoverSpeaking.cpp">
+      <Filter>gameScript\conditions</Filter>
+    </ClCompile>
+    <ClCompile Include="ai\logics\components\aiLogicComponent_energyTransferPhysSens.cpp">
+      <Filter>ai\logics\components</Filter>
+    </ClCompile>
+    <ClCompile Include="game\environmentPlayer.cpp">
+      <Filter>game</Filter>
+    </ClCompile>
+    <ClCompile Include="sound\voiceoverSystem.cpp">
+      <Filter>sound</Filter>
+    </ClCompile>
+    <ClCompile Include="ai\logics\managers\aiManagerLogic_airshipsManager.cpp">
+      <Filter>ai\logics\managers</Filter>
+    </ClCompile>
+    <ClCompile Include="modules\moduleMovementAirship.cpp">
+      <Filter>modules</Filter>
+    </ClCompile>
+    <ClCompile Include="ai\logics\managers\aiManagerLogic_airshipProxiesManager.cpp">
+      <Filter>ai\logics\managers</Filter>
+    </ClCompile>
+    <ClCompile Include="modules\moduleMovementAirshipProxy.cpp">
+      <Filter>modules</Filter>
+    </ClCompile>
+    <ClCompile Include="loaders\hub\screens\lhc_unlocks.cpp">
+      <Filter>loaders\hub\screens</Filter>
+    </ClCompile>
+    <ClCompile Include="pilgrimage\pilgrimageDeviceStateSensitive.cpp">
+      <Filter>pilgrimage</Filter>
+    </ClCompile>
+    <ClCompile Include="modules\custom\mc_weaponLocker.cpp">
+      <Filter>modules\custom</Filter>
+    </ClCompile>
+    <ClCompile Include="modules\custom\mc_musicAccidental.cpp">
+      <Filter>modules\custom</Filter>
+    </ClCompile>
+    <ClCompile Include="loaders\hub\scenes\lhs_pilgrimageSetup.cpp">
+      <Filter>loaders\hub\scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="ai\logics\aiLogic_doorLock.cpp">
+      <Filter>ai\logics</Filter>
+    </ClCompile>
+    <ClCompile Include="gameScript\conditions\gsc_pilgrim.cpp">
+      <Filter>gameScript\conditions</Filter>
+    </ClCompile>
+    <ClCompile Include="pilgrim\pilgrimGear.cpp">
+      <Filter>pilgrim</Filter>
+    </ClCompile>
+    <ClCompile Include="roomGenerators\roomGenerators\empty.cpp">
+      <Filter>roomGenerators\roomGenerators</Filter>
+    </ClCompile>
+    <ClCompile Include="wheresMyPoint\wmp_vistaSceneryWindowPlacement.cpp">
+      <Filter>wheresMyPoint</Filter>
+    </ClCompile>
+    <ClCompile Include="game\gameState.cpp">
+      <Filter>game</Filter>
+    </ClCompile>
+    <ClCompile Include="game\gameStateSensitive.cpp">
+      <Filter>game</Filter>
+    </ClCompile>
+    <ClCompile Include="loaders\hub\screens\settings\lhc_gameDefinitionSelection.cpp">
+      <Filter>loaders\hub\screens\settings</Filter>
+    </ClCompile>
+    <ClCompile Include="modules\moduleMovementH_Craft.cpp">
+      <Filter>modules</Filter>
+    </ClCompile>
+    <ClCompile Include="ai\logics\aiLogic_h_craft.cpp">
+      <Filter>ai\logics</Filter>
+    </ClCompile>
+    <ClCompile Include="ai\logics\aiLogic_displayMessage.cpp">
+      <Filter>ai\logics</Filter>
+    </ClCompile>
+    <ClCompile Include="gameScript\elements\gse_forceCamera.cpp">
+      <Filter>gameScript\elements</Filter>
+    </ClCompile>
+    <ClCompile Include="gameScript\elements\gse_subtitle.cpp">
+      <Filter>gameScript\elements</Filter>
+    </ClCompile>
+    <ClCompile Include="gameScript\elements\gse_hideInputPrompt.cpp">
+      <Filter>gameScript\elements</Filter>
+    </ClCompile>
+    <ClCompile Include="gameScript\elements\gse_mixEnvironmentCycle.cpp">
+      <Filter>gameScript\elements</Filter>
+    </ClCompile>
+    <ClCompile Include="appearance\controllers\ac_a_tentacle.cpp">
+      <Filter>appearance\controllers</Filter>
+    </ClCompile>
+    <ClCompile Include="gameScript\conditions\gsc_gameDefinition.cpp">
+      <Filter>gameScript\conditions</Filter>
+    </ClCompile>
+    <ClCompile Include="gameScript\elements\gse_forceSoundCamera.cpp">
+      <Filter>gameScript\elements</Filter>
+    </ClCompile>
+    <ClCompile Include="gameScript\elements\gse_music.cpp">
+      <Filter>gameScript\elements</Filter>
+    </ClCompile>
+    <ClCompile Include="gameScript\elements\gse_vignetteForMovement.cpp">
+      <Filter>gameScript\elements</Filter>
+    </ClCompile>
+    <ClCompile Include="ai\logics\managers\aiManagerLogic_roomWithEnergySource.cpp">
+      <Filter>ai\logics\managers</Filter>
+    </ClCompile>
+    <ClCompile Include="loaders\hub\screens\lhc_debugNote.cpp">
+      <Filter>loaders\hub\screens</Filter>
+    </ClCompile>
+    <ClCompile Include="loaders\hub\scenes\lhs_fadeOut.cpp">
+      <Filter>loaders\hub\scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="loaders\hub\loaderHubInSequence.cpp">
+      <Filter>loaders\hub</Filter>
+    </ClCompile>
+    <ClCompile Include="loaders\loaderStarField.cpp">
+      <Filter>loaders</Filter>
+    </ClCompile>
+    <ClCompile Include="modules\moduleMovementPilgrimKeeper.cpp">
+      <Filter>modules</Filter>
+    </ClCompile>
+    <ClCompile Include="utils\skipScene.cpp">
+      <Filter>utils</Filter>
+    </ClCompile>
+    <ClCompile Include="ai\logics\aiLogic_steamer.cpp">
+      <Filter>ai\logics</Filter>
+    </ClCompile>
+    <ClCompile Include="loaders\hub\scenes\lhs_comfortMessageAndBasicOptions.cpp">
+      <Filter>loaders\hub\scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="ai\managerDatas\aiManagerData_backgroundMover.cpp">
+      <Filter>ai\managerDatas</Filter>
+    </ClCompile>
+    <ClCompile Include="ai\logics\managers\aiManagerLogic_backgroundMover.cpp">
+      <Filter>ai\logics\managers</Filter>
+    </ClCompile>
+    <ClCompile Include="modules\modulePresenceBackgroundMoverBase.cpp">
+      <Filter>modules</Filter>
+    </ClCompile>
+    <ClCompile Include="gameScript\conditions\gsc_pilgrimage.cpp">
+      <Filter>gameScript\conditions</Filter>
+    </ClCompile>
+    <ClCompile Include="gameScript\elements\gse_pilgrimage.cpp">
+      <Filter>gameScript\elements</Filter>
+    </ClCompile>
+    <ClCompile Include="loaders\hub\screens\lhc_drawingBoard.cpp">
+      <Filter>loaders\hub\screens</Filter>
+    </ClCompile>
+    <ClCompile Include="gameScript\conditions\gsc_playerPreferences.cpp">
+      <Filter>gameScript\conditions</Filter>
+    </ClCompile>
+    <ClCompile Include="ai\logics\aiLogic_subtitleDevice.cpp">
+      <Filter>ai\logics</Filter>
+    </ClCompile>
+    <ClCompile Include="ai\logics\utils\aiLogicUtil_deviceDisplayStart.cpp">
+      <Filter>ai\logics\utils</Filter>
+    </ClCompile>
+    <ClCompile Include="ai\logics\aiLogic_bigTrainEngineCylinder.cpp">
+      <Filter>ai\logics</Filter>
+    </ClCompile>
+    <ClCompile Include="ai\logics\aiLogic_energyBalancer.cpp">
+      <Filter>ai\logics</Filter>
+    </ClCompile>
+    <ClCompile Include="ai\logics\aiLogic_puzzlePanel.cpp">
+      <Filter>ai\logics</Filter>
+    </ClCompile>
+    <ClCompile Include="ai\logics\aiLogic_discharger.cpp">
+      <Filter>ai\logics</Filter>
+    </ClCompile>
+    <ClCompile Include="utils\collectInTargetCone.cpp">
+      <Filter>utils</Filter>
+    </ClCompile>
+    <ClCompile Include="utils\lightningDischarge.cpp">
+      <Filter>utils</Filter>
+    </ClCompile>
+    <ClCompile Include="ai\logics\aiLogic_engineGenerator.cpp">
+      <Filter>ai\logics</Filter>
+    </ClCompile>
+    <ClCompile Include="appearance\controllers\ac_pilgrimageEnvironmentRotation.cpp">
+      <Filter>appearance\controllers</Filter>
+    </ClCompile>
+    <ClCompile Include="gameScript\elements\gse_takeControl.cpp">
+      <Filter>gameScript\elements</Filter>
+    </ClCompile>
+    <ClCompile Include="modules\gameplay\moduleCorrosionLeak.cpp">
+      <Filter>modules\gameplay</Filter>
+    </ClCompile>
+    <ClCompile Include="modules\gameplay\moduleDuctEnergy.cpp">
+      <Filter>modules\gameplay</Filter>
+    </ClCompile>
+    <ClCompile Include="modules\gameplay\moduleEnergyQuantum.cpp">
+      <Filter>modules\gameplay</Filter>
+    </ClCompile>
+    <ClCompile Include="modules\gameplay\moduleEquipment.cpp">
+      <Filter>modules\gameplay</Filter>
+    </ClCompile>
+    <ClCompile Include="modules\gameplay\moduleEXM.cpp">
+      <Filter>modules\gameplay</Filter>
+    </ClCompile>
+    <ClCompile Include="modules\gameplay\moduleExplosion.cpp">
+      <Filter>modules\gameplay</Filter>
+    </ClCompile>
+    <ClCompile Include="modules\gameplay\moduleMultiplePilgrimageDevice.cpp">
+      <Filter>modules\gameplay</Filter>
+    </ClCompile>
+    <ClCompile Include="modules\gameplay\moduleOrbItem.cpp">
+      <Filter>modules\gameplay</Filter>
+    </ClCompile>
+    <ClCompile Include="modules\gameplay\modulePilgrim.cpp">
+      <Filter>modules\gameplay</Filter>
+    </ClCompile>
+    <ClCompile Include="modules\gameplay\modulePilgrimHand.cpp">
+      <Filter>modules\gameplay</Filter>
+    </ClCompile>
+    <ClCompile Include="modules\gameplay\modulePortableShield.cpp">
+      <Filter>modules\gameplay</Filter>
+    </ClCompile>
+    <ClCompile Include="modules\gameplay\equipment\me_armable.cpp">
+      <Filter>modules\gameplay\equipment</Filter>
+    </ClCompile>
+    <ClCompile Include="modules\gameplay\equipment\me_grenade.cpp">
+      <Filter>modules\gameplay\equipment</Filter>
+    </ClCompile>
+    <ClCompile Include="modules\gameplay\equipment\me_gun.cpp">
+      <Filter>modules\gameplay\equipment</Filter>
+    </ClCompile>
+    <ClCompile Include="modules\gameplay\equipment\me_mine.cpp">
+      <Filter>modules\gameplay\equipment</Filter>
+    </ClCompile>
+    <ClCompile Include="modules\gameplay\equipment\me_shield.cpp">
+      <Filter>modules\gameplay\equipment</Filter>
+    </ClCompile>
+    <ClCompile Include="modules\gameplay\moduleProjectile.cpp">
+      <Filter>modules\gameplay</Filter>
+    </ClCompile>
+    <ClCompile Include="modules\gameplay\modulePilgrimData.cpp">
+      <Filter>modules\gameplay</Filter>
+    </ClCompile>
+    <ClCompile Include="modules\gameplay\moduleControllableTurret.cpp">
+      <Filter>modules\gameplay</Filter>
+    </ClCompile>
+    <ClCompile Include="modules\controllable.cpp">
+      <Filter>modules</Filter>
+    </ClCompile>
+    <ClCompile Include="ai\logics\aiLogic_airfighter.cpp">
+      <Filter>ai\logics</Filter>
+    </ClCompile>
+    <ClCompile Include="ai\logics\components\aiLogicComponent_airfighterArms.cpp">
+      <Filter>ai\logics\components</Filter>
+    </ClCompile>
+    <ClCompile Include="ai\logics\managers\aiManagerLogic_shooterWavesManager.cpp">
+      <Filter>ai\logics\managers</Filter>
+    </ClCompile>
+    <ClCompile Include="gameScript\elements\gse_airProhibitedPlace.cpp">
+      <Filter>gameScript\elements</Filter>
+    </ClCompile>
+    <ClCompile Include="gameScript\elements\gse_pilgrim.cpp">
+      <Filter>gameScript\elements</Filter>
+    </ClCompile>
+    <ClCompile Include="gameScript\elements\gse_soundOverridePlayParams.cpp">
+      <Filter>gameScript\elements</Filter>
+    </ClCompile>
+    <ClCompile Include="overlayInfo\elements\oie_altTexturePart.cpp">
+      <Filter>overlayInfo\elements</Filter>
+    </ClCompile>
+    <ClCompile Include="wheresMyPoint\wmp_overrideDoorDirectionsType.cpp">
+      <Filter>wheresMyPoint</Filter>
+    </ClCompile>
+    <ClCompile Include="gameScript\elements\gse_provideExperience.cpp">
+      <Filter>gameScript\elements</Filter>
+    </ClCompile>
+    <ClCompile Include="modules\custom\mc_energyStorage.cpp">
+      <Filter>modules\custom</Filter>
+    </ClCompile>
+    <ClCompile Include="modules\custom\mc_interactiveButtonHandler.cpp">
+      <Filter>modules\custom</Filter>
+    </ClCompile>
+    <ClCompile Include="ai\logics\aiLogic_battery.cpp">
+      <Filter>ai\logics</Filter>
+    </ClCompile>
+    <ClCompile Include="ai\logics\aiLogic_pester.cpp">
+      <Filter>ai\logics</Filter>
+    </ClCompile>
+    <ClCompile Include="teaForGod.cpp" />
+    <ClCompile Include="gameScript\conditions\gsc_isDemo.cpp">
+      <Filter>gameScript\conditions</Filter>
+    </ClCompile>
+    <ClCompile Include="ai\logics\utils\aiLogicUtil_shootingAccuracy.cpp">
+      <Filter>ai\logics\utils</Filter>
+    </ClCompile>
+    <ClCompile Include="library\damageRules.cpp">
+      <Filter>library</Filter>
+    </ClCompile>
+    <ClCompile Include="ai\logics\tasks\aiLogicTask_announcePresence.cpp">
+      <Filter>ai\logics\tasks</Filter>
+    </ClCompile>
+    <ClCompile Include="gameScript\elements\gse_getCellCoord.cpp">
+      <Filter>gameScript\elements</Filter>
+    </ClCompile>
+    <ClCompile Include="gameScript\conditions\gsc_compareCellCoord.cpp">
+      <Filter>gameScript\conditions</Filter>
+    </ClCompile>
+    <ClCompile Include="loaders\hub\scenes\lhs_loadingMessageSetBrowser.cpp">
+      <Filter>loaders\hub\scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="wheresMyPoint\wmp_gameSettings.cpp">
+      <Filter>wheresMyPoint</Filter>
+    </ClCompile>
+    <ClCompile Include="gameScript\elements\gse_shoot.cpp">
+      <Filter>gameScript\elements</Filter>
+    </ClCompile>
+    <ClCompile Include="appearance\controllers\ac_a_containerJump.cpp">
+      <Filter>appearance\controllers</Filter>
+    </ClCompile>
+    <ClCompile Include="ai\logics\aiLogic_turretScripted.cpp">
+      <Filter>ai\logics</Filter>
+    </ClCompile>
+    <ClCompile Include="gameScript\elements\gse_checkpoint.cpp">
+      <Filter>gameScript\elements</Filter>
+    </ClCompile>
+    <ClCompile Include="ai\logics\aiLogic_a_tentacle.cpp">
+      <Filter>ai\logics</Filter>
+    </ClCompile>
+    <ClCompile Include="modules\moduleMovementInRoomFollower.cpp">
+      <Filter>modules</Filter>
+    </ClCompile>
+    <ClCompile Include="gameScript\conditions\gsc_gameModifiers.cpp">
+      <Filter>gameScript\conditions</Filter>
+    </ClCompile>
+    <ClCompile Include="ai\logics\aiLogic_dropCapsuleControl.cpp">
+      <Filter>ai\logics</Filter>
+    </ClCompile>
+    <ClCompile Include="ai\logics\managers\aiManagerLogic_bouncingCharge.cpp">
+      <Filter>ai\logics\managers</Filter>
+    </ClCompile>
+    <ClCompile Include="ai\logics\managers\aiManagerLogic_dischargeZone.cpp">
+      <Filter>ai\logics\managers</Filter>
+    </ClCompile>
+    <ClCompile Include="ai\logics\aiLogic_turret360.cpp">
+      <Filter>ai\logics</Filter>
+    </ClCompile>
+    <ClCompile Include="ai\logics\aiLogic_welder.cpp">
+      <Filter>ai\logics</Filter>
+    </ClCompile>
+    <ClCompile Include="ai\logics\managers\aiManagerLogic_doorFalling.cpp">
+      <Filter>ai\logics\managers</Filter>
+    </ClCompile>
+    <ClCompile Include="library\gameSubDefinition.cpp">
+      <Filter>library</Filter>
+    </ClCompile>
+    <ClCompile Include="loaders\loaderCountdown.cpp">
+      <Filter>loaders</Filter>
+    </ClCompile>
+    <ClCompile Include="wheresMyPoint\wmp_gameDefinition.cpp">
+      <Filter>wheresMyPoint</Filter>
+    </ClCompile>
+    <ClCompile Include="ai\logics\exms\aiLogic_exmInvestigator.cpp">
+      <Filter>ai\logics\exms</Filter>
+    </ClCompile>
+    <ClCompile Include="modules\custom\mc_investigatorInfoProvider.cpp">
+      <Filter>modules\custom</Filter>
+    </ClCompile>
+    <ClCompile Include="ai\logics\exms\aiLogic_exmDistractor.cpp">
+      <Filter>ai\logics\exms</Filter>
+    </ClCompile>
+    <ClCompile Include="ai\logics\exms\aiLogic_exmElevatorMaster.cpp">
+      <Filter>ai\logics\exms</Filter>
+    </ClCompile>
+    <ClCompile Include="ai\logics\exms\aiLogic_exmEnergyManipulator.cpp">
+      <Filter>ai\logics\exms</Filter>
+    </ClCompile>
+    <ClCompile Include="ai\logics\exms\aiLogic_exmBlast.cpp">
+      <Filter>ai\logics\exms</Filter>
+    </ClCompile>
+    <ClCompile Include="ai\logics\aiLogic_tunnelLight.cpp">
+      <Filter>ai\logics</Filter>
+    </ClCompile>
+    <ClCompile Include="ai\logics\aiLogic_factoryArm.cpp">
+      <Filter>ai\logics</Filter>
+    </ClCompile>
+    <ClCompile Include="gameScript\conditions\gsc_movementScripted.cpp">
+      <Filter>gameScript\conditions</Filter>
+    </ClCompile>
+    <ClCompile Include="ai\logics\aiLogic_pilgrimTank.cpp">
+      <Filter>ai\logics</Filter>
+    </ClCompile>
+    <ClCompile Include="modules\gameplay\moduleDamageWhileTouching.cpp">
+      <Filter>modules\gameplay</Filter>
+    </ClCompile>
+    <ClCompile Include="ai\logics\tasks\aiLogicTask_runAway.cpp">
+      <Filter>ai\logics\tasks</Filter>
+    </ClCompile>
+    <ClCompile Include="ai\logics\aiLogic_bottle.cpp">
+      <Filter>ai\logics</Filter>
+    </ClCompile>
+    <ClCompile Include="ai\logics\tasks\aiLogicTask_leaveRoom.cpp">
+      <Filter>ai\logics\tasks</Filter>
+    </ClCompile>
+    <ClCompile Include="appearance\controllers\ac_centipedeBackPlate.cpp">
+      <Filter>appearance\controllers</Filter>
+    </ClCompile>
+    <ClCompile Include="ai\logics\aiLogic_centipede.cpp">
+      <Filter>ai\logics</Filter>
+    </ClCompile>
+    <ClCompile Include="ai\logics\aiLogic_coreShaftDischarges.cpp">
+      <Filter>ai\logics</Filter>
+    </ClCompile>
+    <ClCompile Include="ai\logics\aiLogic_energyCoilBroken.cpp">
+      <Filter>ai\logics</Filter>
+    </ClCompile>
+    <ClCompile Include="ai\logics\aiLogic_energyQuantumsOnPath.cpp">
+      <Filter>ai\logics</Filter>
+    </ClCompile>
+    <ClCompile Include="ai\logics\aiLogic_reactorEnergyOverloaded.cpp">
+      <Filter>ai\logics</Filter>
+    </ClCompile>
+    <ClCompile Include="ai\logics\aiLogic_reactorEnergyQuantum.cpp">
+      <Filter>ai\logics</Filter>
+    </ClCompile>
+    <ClCompile Include="ai\logics\aiLogic_reactorEnergyWorking.cpp">
+      <Filter>ai\logics</Filter>
+    </ClCompile>
+    <ClCompile Include="ai\logics\components\aiLogicComponent_spawnableShield.cpp">
+      <Filter>ai\logics\components</Filter>
+    </ClCompile>
+    <ClCompile Include="gameScript\conditions\gsc_gameDirector.cpp">
+      <Filter>gameScript\conditions</Filter>
+    </ClCompile>
+    <ClCompile Include="gameScript\conditions\gsc_gameplaySpecial.cpp">
+      <Filter>gameScript\conditions</Filter>
+    </ClCompile>
+    <ClCompile Include="gameScript\elements\gse_cameraRumble.cpp">
+      <Filter>gameScript\elements</Filter>
+    </ClCompile>
+    <ClCompile Include="gameScript\elements\gse_generalProgress.cpp">
+      <Filter>gameScript\elements</Filter>
+    </ClCompile>
+    <ClCompile Include="modules\moduleMovementCentipede.cpp">
+      <Filter>modules</Filter>
+    </ClCompile>
+    <ClCompile Include="utils\dullPlayback.cpp">
+      <Filter>utils</Filter>
+    </ClCompile>
+    <ClCompile Include="game\skipContentInfo.cpp">
+      <Filter>game</Filter>
+    </ClCompile>
+    <ClCompile Include="ai\logics\aiLogic_spitter.cpp">
+      <Filter>ai\logics</Filter>
+    </ClCompile>
+    <ClCompile Include="ai\logics\tasks\aiLogicTask_deathSequenceSimple.cpp">
+      <Filter>ai\logics\tasks</Filter>
+    </ClCompile>
+    <ClCompile Include="ai\logics\components\aiLogicComponent_movementGaitTimeBased.cpp">
+      <Filter>ai\logics\components</Filter>
+    </ClCompile>
+    <ClCompile Include="gameScript\conditions\gsc_musicPlayer.cpp">
+      <Filter>gameScript\conditions</Filter>
+    </ClCompile>
+    <ClCompile Include="loaders\hub\scenes\lhs_vrModeSelection.cpp">
+      <Filter>loaders\hub\scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="gameScript\elements\gse_vignetteForDead.cpp">
+      <Filter>gameScript\elements</Filter>
+    </ClCompile>
+    <ClCompile Include="gameScript\elements\gse_globalTint.cpp">
+      <Filter>gameScript\elements</Filter>
+    </ClCompile>
+    <ClCompile Include="gameScript\elements\gse_player.cpp">
+      <Filter>gameScript\elements</Filter>
+    </ClCompile>
+    <ClCompile Include="appearance\controllers\ac_demoRobot.cpp">
+      <Filter>appearance\controllers</Filter>
+    </ClCompile>
+    <ClCompile Include="utils\overridePilgrimType.cpp">
+      <Filter>utils</Filter>
+    </ClCompile>
+    <ClCompile Include="ai\logics\tasks\aiLogicTask_scriptedMoveToPOI.cpp">
+      <Filter>ai\logics\tasks</Filter>
+    </ClCompile>
+    <ClCompile Include="ai\logics\aiLogic_armoury.cpp">
+      <Filter>ai\logics</Filter>
+    </ClCompile>
+    <ClCompile Include="pilgrimage\pilgrimageInstanceObserver.cpp">
+      <Filter>pilgrimage</Filter>
+    </ClCompile>
+    <ClCompile Include="gameScript\elements\gse_armoury.cpp">
+      <Filter>gameScript\elements</Filter>
+    </ClCompile>
+    <ClCompile Include="appearance\controllers\ac_doorbot.cpp">
+      <Filter>appearance\controllers</Filter>
+    </ClCompile>
+    <ClCompile Include="ai\logics\aiLogic_doorbot.cpp">
+      <Filter>ai\logics</Filter>
+    </ClCompile>
+    <ClCompile Include="ai\logics\aiLogic_throneTree.cpp">
+      <Filter>ai\logics</Filter>
+    </ClCompile>
+    <ClCompile Include="ai\logics\aiLogic_gameScriptTrapTrigger.cpp">
+      <Filter>ai\logics</Filter>
+    </ClCompile>
+    <ClCompile Include="wheresMyPoint\wmp_teaBoxSeed.cpp">
+      <Filter>wheresMyPoint</Filter>
+    </ClCompile>
+    <ClCompile Include="gameScript\elements\gse_showOverlayInfo.cpp">
+      <Filter>gameScript\elements</Filter>
+    </ClCompile>
+    <ClCompile Include="ai\logics\aiLogic_a_tentacledShooter.cpp">
+      <Filter>ai\logics</Filter>
+    </ClCompile>
+    <ClCompile Include="ai\logics\aiLogic_airfighter_v2.cpp">
+      <Filter>ai\logics</Filter>
+    </ClCompile>
+    <ClCompile Include="ai\logics\aiLogic_blobCapsule.cpp">
+      <Filter>ai\logics</Filter>
+    </ClCompile>
+    <ClCompile Include="ai\logics\aiLogic_h_craft_v2.cpp">
+      <Filter>ai\logics</Filter>
+    </ClCompile>
+    <ClCompile Include="ai\logics\aiLogic_heartRoom.cpp">
+      <Filter>ai\logics</Filter>
+    </ClCompile>
+    <ClCompile Include="ai\logics\aiLogic_launchChamber.cpp">
+      <Filter>ai\logics</Filter>
+    </ClCompile>
+    <ClCompile Include="gameScript\elements\gse_game.cpp">
+      <Filter>gameScript\elements</Filter>
+    </ClCompile>
+    <ClCompile Include="gameScript\elements\gse_gameSlot.cpp">
+      <Filter>gameScript\elements</Filter>
+    </ClCompile>
+    <ClCompile Include="gameScript\conditions\gsc_overlayInfoSystem.cpp">
+      <Filter>gameScript\conditions</Filter>
+    </ClCompile>
+    <ClCompile Include="appearance\controllers\particles\acp_airTraffic.cpp">
+      <Filter>appearance\controllers\particles</Filter>
+    </ClCompile>
+    <ClCompile Include="library\missionsDefinition.cpp">
+      <Filter>library</Filter>
+    </ClCompile>
+    <ClCompile Include="loaders\hub\scenes\lhs_startingPilgrimageSelection.cpp">
+      <Filter>loaders\hub\scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="ai\logics\components\aiLogicComponent_predictTargetPlacement.cpp">
+      <Filter>ai\logics\components</Filter>
+    </ClCompile>
+    <ClCompile Include="ai\logics\managers\aiManagerLogic_airPursuitManager.cpp">
+      <Filter>ai\logics\managers</Filter>
+    </ClCompile>
+    <ClCompile Include="ai\logics\tasks\aiLogicTask_announcePresenceContinuously.cpp">
+      <Filter>ai\logics\tasks</Filter>
+    </ClCompile>
+    <ClCompile Include="game\missionState.cpp">
+      <Filter>game</Filter>
+    </ClCompile>
+    <ClCompile Include="gameScript\elements\gse_missionState.cpp">
+      <Filter>gameScript\elements</Filter>
+    </ClCompile>
+    <ClCompile Include="library\missionDefinition.cpp">
+      <Filter>library</Filter>
+    </ClCompile>
+    <ClCompile Include="gameScript\conditions\gsc_missionState.cpp">
+      <Filter>gameScript\conditions</Filter>
+    </ClCompile>
+    <ClCompile Include="ai\logics\aiLogic_heartRoomBeams.cpp">
+      <Filter>ai\logics</Filter>
+    </ClCompile>
+    <ClCompile Include="appearance\controllers\ac_heartRoomBeams.cpp">
+      <Filter>appearance\controllers</Filter>
+    </ClCompile>
+    <ClCompile Include="ai\logics\aiLogic_heartRoomProjectiles.cpp">
+      <Filter>ai\logics</Filter>
+    </ClCompile>
+    <ClCompile Include="utils\overlayStatus.cpp">
+      <Filter>utils</Filter>
+    </ClCompile>
+    <ClCompile Include="ai\logics\aiLogic_pilgrimFake.cpp">
+      <Filter>ai\logics</Filter>
+    </ClCompile>
+    <ClCompile Include="ai\logics\aiLogic_pilgrimTeaBox.cpp">
+      <Filter>ai\logics</Filter>
+    </ClCompile>
+    <ClCompile Include="game\weaponStatInfo.cpp">
+      <Filter>game</Filter>
+    </ClCompile>
+    <ClCompile Include="gameScript\elements\gse_blendEmissivesForRoom.cpp">
+      <Filter>gameScript\elements</Filter>
+    </ClCompile>
+    <ClCompile Include="gameScript\conditions\gsc_health.cpp">
+      <Filter>gameScript\conditions</Filter>
+    </ClCompile>
+    <ClCompile Include="gameScript\elements\gse_environmentPlayer.cpp">
+      <Filter>gameScript\elements</Filter>
+    </ClCompile>
+    <ClCompile Include="gameScript\elements\gse_customUniforms.cpp">
+      <Filter>gameScript\elements</Filter>
+    </ClCompile>
+    <ClCompile Include="gameScript\elements\gse_emissive.cpp">
+      <Filter>gameScript\elements</Filter>
+    </ClCompile>
+    <ClCompile Include="gameScript\elements\gse_door.cpp">
+      <Filter>gameScript\elements</Filter>
+    </ClCompile>
+    <ClCompile Include="gameScript\elements\gse_spawn.cpp">
+      <Filter>gameScript\elements</Filter>
+    </ClCompile>
+    <ClCompile Include="gameScript\elements\gse_find.cpp">
+      <Filter>gameScript\elements</Filter>
+    </ClCompile>
+    <ClCompile Include="gameScript\elements\gse_sound.cpp">
+      <Filter>gameScript\elements</Filter>
+    </ClCompile>
+    <ClCompile Include="gameScript\elements\gse_teleport.cpp">
+      <Filter>gameScript\elements</Filter>
+    </ClCompile>
+    <ClCompile Include="ai\logics\aiLogic_missionBriefer.cpp">
+      <Filter>ai\logics</Filter>
+    </ClCompile>
+    <ClCompile Include="ai\logics\aiLogic_unloader.cpp">
+      <Filter>ai\logics</Filter>
+    </ClCompile>
+    <ClCompile Include="gameScript\conditions\gsc_unloader.cpp">
+      <Filter>gameScript\conditions</Filter>
+    </ClCompile>
+    <ClCompile Include="gameScript\elements\gse_endMission.cpp">
+      <Filter>gameScript\elements</Filter>
+    </ClCompile>
+    <ClCompile Include="game\missionResult.cpp">
+      <Filter>game</Filter>
+    </ClCompile>
+    <ClCompile Include="gameScript\conditions\gsc_lastMissionResult.cpp">
+      <Filter>gameScript\conditions</Filter>
+    </ClCompile>
+    <ClCompile Include="utils\variablesStringFormatterParamsProvider.cpp">
+      <Filter>utils</Filter>
+    </ClCompile>
+    <ClCompile Include="ai\logics\aiLogic_bridgeShop.cpp">
+      <Filter>ai\logics</Filter>
+    </ClCompile>
+    <ClCompile Include="utils\unlockableEXMs.cpp">
+      <Filter>utils</Filter>
+    </ClCompile>
+    <ClCompile Include="ai\logics\aiLogic_catcher.cpp">
+      <Filter>ai\logics</Filter>
+    </ClCompile>
+    <ClCompile Include="gameScript\conditions\gsc_persistence.cpp">
+      <Filter>gameScript\conditions</Filter>
+    </ClCompile>
+    <ClCompile Include="ai\logics\aiLogic_trashBin.cpp">
+      <Filter>ai\logics</Filter>
+    </ClCompile>
+    <ClCompile Include="game\missionStateObjectives.cpp">
+      <Filter>game</Filter>
+    </ClCompile>
+    <ClCompile Include="wheresMyPoint\wmp_pilgrimageInstance.cpp">
+      <Filter>wheresMyPoint</Filter>
+    </ClCompile>
+    <ClCompile Include="library\customUpgradeType.cpp">
+      <Filter>library</Filter>
+    </ClCompile>
+    <ClCompile Include="utils\unlockableCustomUpgrades.cpp">
+      <Filter>utils</Filter>
+    </ClCompile>
+    <ClCompile Include="library\missionGeneralProgress.cpp">
+      <Filter>library</Filter>
+    </ClCompile>
+    <ClCompile Include="library\missionBiome.cpp">
+      <Filter>library</Filter>
+    </ClCompile>
+    <ClCompile Include="library\missionSelectionTier.cpp">
+      <Filter>library</Filter>
+    </ClCompile>
+    <ClCompile Include="library\missionObjectivesAndIntel.cpp">
+      <Filter>library</Filter>
+    </ClCompile>
+    <ClCompile Include="utils\reward.cpp">
+      <Filter>utils</Filter>
+    </ClCompile>
+    <ClCompile Include="ai\logics\aiLogic_hackBox.cpp">
+      <Filter>ai\logics</Filter>
+    </ClCompile>
+    <ClCompile Include="ai\logics\aiLogic_lockerBox.cpp">
+      <Filter>ai\logics</Filter>
+    </ClCompile>
+    <ClCompile Include="ai\logics\aiLogic_item.cpp">
+      <Filter>ai\logics</Filter>
+    </ClCompile>
+    <ClCompile Include="utils\tagsStringFormatterParamsProvider.cpp">
+      <Filter>utils</Filter>
+    </ClCompile>
+    <ClCompile Include="ai\logics\aiLogic_findableBox.cpp">
+      <Filter>ai\logics</Filter>
+    </ClCompile>
+    <ClCompile Include="library\missionDifficultyModifier.cpp">
+      <Filter>library</Filter>
+    </ClCompile>
+    <ClCompile Include="ai\logics\managers\aiManagerLogic_infestationManager.cpp" />
+    <ClCompile Include="ai\aiManagerUtils.cpp" />
+    <ClCompile Include="ai\logics\aiLogic_a_blob.cpp" />
+    <ClCompile Include="modules\custom\mc_pilgrimageDevice.cpp" />
+    <ClCompile Include="ai\logics\aiLogic_refillBox.cpp">
+      <Filter>ai\logics</Filter>
+    </ClCompile>
+    <ClCompile Include="ai\logics\exms\aiLogic_exmRemoteControl.cpp" />
+    <ClCompile Include="ai\logics\exms\aiLogic_exmPush.cpp" />
+    <ClCompile Include="ai\logics\exms\aiLogic_exmSpray.cpp" />
+    <ClCompile Include="ai\logics\exms\aiLogic_exmProjectile.cpp" />
+    <ClCompile Include="ai\logics\components\aiLogicComponent_confussion.cpp" />
+    <ClCompile Include="ai\logics\aiLogic_fender.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="ai\logics\aiLogics.h">
+      <Filter>ai\logics</Filter>
+    </ClInclude>
+    <ClInclude Include="ai\perceptionRequests\aiPerceptionRequests.h">
+      <Filter>ai\perceptionRequests</Filter>
+    </ClInclude>
+    <ClInclude Include="appearance\appearanceControllers.h">
+      <Filter>appearance</Filter>
+    </ClInclude>
+    <ClInclude Include="game\customMeshRenderer.h">
+      <Filter>game</Filter>
+    </ClInclude>
+    <ClInclude Include="game\damage.h">
+      <Filter>game</Filter>
+    </ClInclude>
+    <ClInclude Include="game\game.h">
+      <Filter>game</Filter>
+    </ClInclude>
+    <ClInclude Include="game\gameConfig.h">
+      <Filter>game</Filter>
+    </ClInclude>
+    <ClInclude Include="game\gameObjectPtrs.h">
+      <Filter>game</Filter>
+    </ClInclude>
+    <ClInclude Include="game\gameSaveVersions.h">
+      <Filter>game</Filter>
+    </ClInclude>
+    <ClInclude Include="game\player.h">
+      <Filter>game</Filter>
+    </ClInclude>
+    <ClInclude Include="game\sceneLayers\gameSceneLayer_DontUpdatePrev.h">
+      <Filter>game\sceneLayers</Filter>
+    </ClInclude>
+    <ClInclude Include="game\sceneLayers\gameSceneLayer_Utils.h">
+      <Filter>game\sceneLayers</Filter>
+    </ClInclude>
+    <ClInclude Include="game\sceneLayers\gameSceneLayer_World.h">
+      <Filter>game\sceneLayers</Filter>
+    </ClInclude>
+    <ClInclude Include="teaForGod.h" />
+    <ClInclude Include="teaForGodMain.h" />
+    <ClInclude Include="teaRegisteredTypes.h" />
+    <ClInclude Include="library\library.h">
+      <Filter>library</Filter>
+    </ClInclude>
+    <ClInclude Include="loaders\loaderDisplay.h">
+      <Filter>loaders</Filter>
+    </ClInclude>
+    <ClInclude Include="loaders\loaderPlatformerGame.h">
+      <Filter>loaders</Filter>
+    </ClInclude>
+    <ClInclude Include="modules\modulePresencePilgrim.h">
+      <Filter>modules</Filter>
+    </ClInclude>
+    <ClInclude Include="modules\modules.h">
+      <Filter>modules</Filter>
+    </ClInclude>
+    <ClInclude Include="serialisation\stringFormatterSerialisationHandler.h">
+      <Filter>serialisation</Filter>
+    </ClInclude>
+    <ClInclude Include="game\scenes\gameSceneLayer_Wait.h">
+      <Filter>game\scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="roomGenerators\roomGenerationInfo.h">
+      <Filter>roomGenerators</Filter>
+    </ClInclude>
+    <ClInclude Include="artDir.h" />
+    <ClInclude Include="roomGenerators\roomGeneratorUtils.h">
+      <Filter>roomGenerators</Filter>
+    </ClInclude>
+    <ClInclude Include="roomGenerators\roomGeneratorBase.h">
+      <Filter>roomGenerators</Filter>
+    </ClInclude>
+    <ClInclude Include="modules\nav\mne_cart.h">
+      <Filter>modules\nav</Filter>
+    </ClInclude>
+    <ClInclude Include="ai\logics\aiLogic_follower.h">
+      <Filter>ai\logics</Filter>
+    </ClInclude>
+    <ClInclude Include="ai\logics\tasks\aiLogicTask_lookAt.h">
+      <Filter>ai\logics\tasks</Filter>
+    </ClInclude>
+    <ClInclude Include="ai\logics\tasks\aiLogicTask_idle.h">
+      <Filter>ai\logics\tasks</Filter>
+    </ClInclude>
+    <ClInclude Include="ai\logics\tasks\aiLogicTask_projectileHit.h">
+      <Filter>ai\logics\tasks</Filter>
+    </ClInclude>
+    <ClInclude Include="ai\logics\tasks\aiLogicTask_evadeAiming.h">
+      <Filter>ai\logics\tasks</Filter>
+    </ClInclude>
+    <ClInclude Include="ai\logics\aiLogic_overseer.h">
+      <Filter>ai\logics</Filter>
+    </ClInclude>
+    <ClInclude Include="ai\perceptionRequests\aipr_FindAnywhere.h">
+      <Filter>ai\perceptionRequests</Filter>
+    </ClInclude>
+    <ClInclude Include="ai\perceptionRequests\aipr_FindInRoom.h">
+      <Filter>ai\perceptionRequests</Filter>
+    </ClInclude>
+    <ClInclude Include="modules\custom\mc_emissiveControl.h">
+      <Filter>modules\custom</Filter>
+    </ClInclude>
+    <ClInclude Include="appearance\controllers\ac_rotateRandomly.h">
+      <Filter>appearance\controllers</Filter>
+    </ClInclude>
+    <ClInclude Include="library\physicalMaterial.h">
+      <Filter>library</Filter>
+    </ClInclude>
+    <ClInclude Include="modules\custom\health\mc_health.h">
+      <Filter>modules\custom\health</Filter>
+    </ClInclude>
+    <ClInclude Include="modules\custom\mc_powerSource.h">
+      <Filter>modules\custom</Filter>
+    </ClInclude>
+    <ClInclude Include="utils.h" />
+    <ClInclude Include="ai\logics\aiLogic_pilgrimHand.h">
+      <Filter>ai\logics</Filter>
+    </ClInclude>
+    <ClInclude Include="ai\perceptionRequests\aipr_FindClosest.h">
+      <Filter>ai\perceptionRequests</Filter>
+    </ClInclude>
+    <ClInclude Include="ai\logics\aiLogic_miniGameMachine.h">
+      <Filter>ai\logics</Filter>
+    </ClInclude>
+    <ClInclude Include="ai\logics\aiLogic_muezzin.h">
+      <Filter>ai\logics</Filter>
+    </ClInclude>
+    <ClInclude Include="ai\logics\aiLogic_pilgrim.h">
+      <Filter>ai\logics</Filter>
+    </ClInclude>
+    <ClInclude Include="appearance\controllers\ac_blinds.h">
+      <Filter>appearance\controllers</Filter>
+    </ClInclude>
+    <ClInclude Include="ai\logics\aiLogic_doorDevice.h">
+      <Filter>ai\logics</Filter>
+    </ClInclude>
+    <ClInclude Include="game\modes\gameMode_Pilgrimage.h">
+      <Filter>game\modes</Filter>
+    </ClInclude>
+    <ClInclude Include="wheresMyPoint\wmp_roomGeneratorInfo.h">
+      <Filter>wheresMyPoint</Filter>
+    </ClInclude>
+    <ClInclude Include="wheresMyPoint\wmp_tools.h">
+      <Filter>wheresMyPoint</Filter>
+    </ClInclude>
+    <ClInclude Include="ai\logics\aiLogic_controlPanel.h">
+      <Filter>ai\logics</Filter>
+    </ClInclude>
+    <ClInclude Include="modules\custom\health\mc_healthRegen.h">
+      <Filter>modules\custom\health</Filter>
+    </ClInclude>
+    <ClInclude Include="game\gameSettings.h">
+      <Filter>game</Filter>
+    </ClInclude>
+    <ClInclude Include="modules\custom\mc_hitIndicator.h">
+      <Filter>modules\custom</Filter>
+    </ClInclude>
+    <ClInclude Include="teaEnums.h" />
+    <ClInclude Include="modules\custom\health\mc_healthPhysicalReaction.h">
+      <Filter>modules\custom\health</Filter>
+    </ClInclude>
+    <ClInclude Include="utils\displayMap.h">
+      <Filter>utils</Filter>
+    </ClInclude>
+    <ClInclude Include="modules\custom\mc_gameSettingsDependant.h">
+      <Filter>modules\custom</Filter>
+    </ClInclude>
+    <ClInclude Include="game\gameSettingsObserver.h">
+      <Filter>game</Filter>
+    </ClInclude>
+    <ClInclude Include="ai\logics\aiLogic_enforcer.h">
+      <Filter>ai\logics</Filter>
+    </ClInclude>
+    <ClInclude Include="ai\aiCommonVariables.h">
+      <Filter>ai</Filter>
+    </ClInclude>
+    <ClInclude Include="ai\aiCommonVariablesList.h">
+      <Filter>ai</Filter>
+    </ClInclude>
+    <ClInclude Include="ai\logics\aiLogic_npcBase.h">
+      <Filter>ai\logics</Filter>
+    </ClInclude>
+    <ClInclude Include="pilgrimage\pilgrimage.h">
+      <Filter>pilgrimage</Filter>
+    </ClInclude>
+    <ClInclude Include="pilgrimage\pilgrimageInstance.h">
+      <Filter>pilgrimage</Filter>
+    </ClInclude>
+    <ClInclude Include="pilgrimage\pilgrimagePart.h">
+      <Filter>pilgrimage</Filter>
+    </ClInclude>
+    <ClInclude Include="pilgrimage\pilgrimageEnvironment.h">
+      <Filter>pilgrimage</Filter>
+    </ClInclude>
+    <ClInclude Include="modules\custom\mc_healthReporter.h">
+      <Filter>modules\custom</Filter>
+    </ClInclude>
+    <ClInclude Include="ai\logics\tasks\aiLogicTask_perception.h">
+      <Filter>ai\logics\tasks</Filter>
+    </ClInclude>
+    <ClInclude Include="ai\aiRayCasts.h">
+      <Filter>ai</Filter>
+    </ClInclude>
+    <ClInclude Include="ai\logics\aiLogic_rammer.h">
+      <Filter>ai\logics</Filter>
+    </ClInclude>
+    <ClInclude Include="modules\custom\mc_operativeDevice.h">
+      <Filter>modules\custom</Filter>
+    </ClInclude>
+    <ClInclude Include="ai\logics\tasks\aiLogicTask_scan.h">
+      <Filter>ai\logics\tasks</Filter>
+    </ClInclude>
+    <ClInclude Include="ai\logics\tasks\aiLogicTask_scanAndWander.h">
+      <Filter>ai\logics\tasks</Filter>
+    </ClInclude>
+    <ClInclude Include="ai\logics\tasks\aiLogicTask_wander.h">
+      <Filter>ai\logics\tasks</Filter>
+    </ClInclude>
+    <ClInclude Include="ai\logics\aiLogic_switchPanel.h">
+      <Filter>ai\logics</Filter>
+    </ClInclude>
+    <ClInclude Include="ai\logics\managers\aiManagerLogic_spawnManager.h">
+      <Filter>ai\logics\managers</Filter>
+    </ClInclude>
+    <ClInclude Include="ai\aiManagerInfo.h">
+      <Filter>ai</Filter>
+    </ClInclude>
+    <ClInclude Include="roomGenerators\elementGenerators\doorBasedShaft.h">
+      <Filter>roomGenerators\elementGenerators</Filter>
+    </ClInclude>
+    <ClInclude Include="roomGenerators\elementGenerators\doorBasedWalls.h">
+      <Filter>roomGenerators\elementGenerators</Filter>
+    </ClInclude>
+    <ClInclude Include="roomGenerators\elementGenerators\simpleElevatorWall.h">
+      <Filter>roomGenerators\elementGenerators</Filter>
+    </ClInclude>
+    <ClInclude Include="roomGenerators\roomGenerators\platformsLinear.h">
+      <Filter>roomGenerators\roomGenerators</Filter>
+    </ClInclude>
+    <ClInclude Include="roomGenerators\roomGenerators\simpleCorridor.h">
+      <Filter>roomGenerators\roomGenerators</Filter>
+    </ClInclude>
+    <ClInclude Include="roomGenerators\roomGenerators\simpleElevator.h">
+      <Filter>roomGenerators\roomGenerators</Filter>
+    </ClInclude>
+    <ClInclude Include="roomGenerators\roomGenerators\simpleRoom.h">
+      <Filter>roomGenerators\roomGenerators</Filter>
+    </ClInclude>
+    <ClInclude Include="roomGenerators\roomGenerators\towers.h">
+      <Filter>roomGenerators\roomGenerators</Filter>
+    </ClInclude>
+    <ClInclude Include="modules\custom\mc_carrier.h">
+      <Filter>modules\custom</Filter>
+    </ClInclude>
+    <ClInclude Include="ai\logics\aiLogic_dropCapsule.h">
+      <Filter>ai\logics</Filter>
+    </ClInclude>
+    <ClInclude Include="roomGenerators\roomGenerators\useMeshGenerator.h">
+      <Filter>roomGenerators\roomGenerators</Filter>
+    </ClInclude>
+    <ClInclude Include="modules\custom\mc_pickup.h">
+      <Filter>modules\custom</Filter>
+    </ClInclude>
+    <ClInclude Include="loaders\loaderArmActivator.h">
+      <Filter>loaders</Filter>
+    </ClInclude>
+    <ClInclude Include="appearance\controllers\ac_restPointPlacement.h">
+      <Filter>appearance\controllers</Filter>
+    </ClInclude>
+    <ClInclude Include="appearance\controllers\ac_readyRestPointArm.h">
+      <Filter>appearance\controllers</Filter>
+    </ClInclude>
+    <ClInclude Include="appearance\controllers\ac_mushroomHeadSide.h">
+      <Filter>appearance\controllers</Filter>
+    </ClInclude>
+    <ClInclude Include="ai\logics\aiLogic_plant.h">
+      <Filter>ai\logics</Filter>
+    </ClInclude>
+    <ClInclude Include="ai\logics\tasks\aiLogicTask_grabEnergy.h">
+      <Filter>ai\logics\tasks</Filter>
+    </ClInclude>
+    <ClInclude Include="ai\logics\tasks\aiLogicTask_shield.h">
+      <Filter>ai\logics\tasks</Filter>
+    </ClInclude>
+    <ClInclude Include="modules\moduleGameplay.h">
+      <Filter>modules</Filter>
+    </ClInclude>
+    <ClInclude Include="modules\custom\mc_highlightObjects.h">
+      <Filter>modules\custom</Filter>
+    </ClInclude>
+    <ClInclude Include="modules\custom\mc_grabable.h">
+      <Filter>modules\custom</Filter>
+    </ClInclude>
+    <ClInclude Include="appearance\controllers\ac_pilgrimsGrabbingHand.h">
+      <Filter>appearance\controllers</Filter>
+    </ClInclude>
+    <ClInclude Include="game\energy.h">
+      <Filter>game</Filter>
+    </ClInclude>
+    <ClInclude Include="ai\logics\aiLogic_waiter.h">
+      <Filter>ai\logics</Filter>
+    </ClInclude>
+    <ClInclude Include="ai\perceptionRequests\aipr_FindInVisibleRooms.h">
+      <Filter>ai\perceptionRequests</Filter>
+    </ClInclude>
+    <ClInclude Include="ai\aiPerceptionLock.h">
+      <Filter>ai</Filter>
+    </ClInclude>
+    <ClInclude Include="sound\ssm_glitchStutter.h">
+      <Filter>sound</Filter>
+    </ClInclude>
+    <ClInclude Include="ai\logics\aiLogic_barker.h">
+      <Filter>ai\logics</Filter>
+    </ClInclude>
+    <ClInclude Include="regionGenerators\regionGeneratorBase.h">
+      <Filter>regionGenerators</Filter>
+    </ClInclude>
+    <ClInclude Include="ai\aiManagerData.h">
+      <Filter>ai</Filter>
+    </ClInclude>
+    <ClInclude Include="ai\managerDatas\aiManagerData_spawnSet.h">
+      <Filter>ai\managerDatas</Filter>
+    </ClInclude>
+    <ClInclude Include="ai\logics\tasks\aiLogicTask_beingHeld.h">
+      <Filter>ai\logics\tasks</Filter>
+    </ClInclude>
+    <ClInclude Include="ai\logics\tasks\aiLogicTask_beingThrown.h">
+      <Filter>ai\logics\tasks</Filter>
+    </ClInclude>
+    <ClInclude Include="ai\logics\tasks\aiLogicTask_shoot.h">
+      <Filter>ai\logics\tasks</Filter>
+    </ClInclude>
+    <ClInclude Include="ai\logics\tasks\aiLogicTask_wanderAndDoStuff.h">
+      <Filter>ai\logics\tasks</Filter>
+    </ClInclude>
+    <ClInclude Include="ai\logics\tasks\aiLogicTask_attackOrIdle.h">
+      <Filter>ai\logics\tasks</Filter>
+    </ClInclude>
+    <ClInclude Include="ai\logics\tasks\aiLogicTask_stayCloseOrWander.h">
+      <Filter>ai\logics\tasks</Filter>
+    </ClInclude>
+    <ClInclude Include="ai\logics\tasks\aiLogicTask_stayClose.h">
+      <Filter>ai\logics\tasks</Filter>
+    </ClInclude>
+    <ClInclude Include="modules\custom\mc_switchSidesHandler.h">
+      <Filter>modules\custom</Filter>
+    </ClInclude>
+    <ClInclude Include="utils\interactiveButtonHandler.h">
+      <Filter>utils</Filter>
+    </ClInclude>
+    <ClInclude Include="ai\logics\tasks\aiLogicTask_stayCloseInFront.h">
+      <Filter>ai\logics\tasks</Filter>
+    </ClInclude>
+    <ClInclude Include="utils\interactiveSwitchHandler.h">
+      <Filter>utils</Filter>
+    </ClInclude>
+    <ClInclude Include="ai\aiCommon.h">
+      <Filter>ai</Filter>
+    </ClInclude>
+    <ClInclude Include="modules\moduleSound.h">
+      <Filter>modules</Filter>
+    </ClInclude>
+    <ClInclude Include="roomGenerators\roomGenerators\balconies.h">
+      <Filter>roomGenerators\roomGenerators</Filter>
+    </ClInclude>
+    <ClInclude Include="game\pointOfInterestInstance.h">
+      <Filter>game</Filter>
+    </ClInclude>
+    <ClInclude Include="ai\logics\aiLogic_elevatorCart.h">
+      <Filter>ai\logics</Filter>
+    </ClInclude>
+    <ClInclude Include="ai\logics\aiLogic_elevatorCartPoint.h">
+      <Filter>ai\logics</Filter>
+    </ClInclude>
+    <ClInclude Include="appearance\controllers\ac_elevatorCartRotatingCore.h">
+      <Filter>appearance\controllers</Filter>
+    </ClInclude>
+    <ClInclude Include="appearance\controllers\ac_elevatorCartAttacherArm.h">
+      <Filter>appearance\controllers</Filter>
+    </ClInclude>
+    <ClInclude Include="ai\logics\aiLogic_energyKiosk.h">
+      <Filter>ai\logics</Filter>
+    </ClInclude>
+    <ClInclude Include="modules\energyTransfer.h">
+      <Filter>modules</Filter>
+    </ClInclude>
+    <ClInclude Include="loaders\hub\loaderHub.h">
+      <Filter>loaders\hub</Filter>
+    </ClInclude>
+    <ClInclude Include="loaders\hub\loaderHubWidget.h">
+      <Filter>loaders\hub</Filter>
+    </ClInclude>
+    <ClInclude Include="loaders\hub\widgets\lhw_button.h">
+      <Filter>loaders\hub\widgets</Filter>
+    </ClInclude>
+    <ClInclude Include="loaders\hub\widgets\lhw_text.h">
+      <Filter>loaders\hub\widgets</Filter>
+    </ClInclude>
+    <ClInclude Include="loaders\hub\loaderHubScene.h">
+      <Filter>loaders\hub</Filter>
+    </ClInclude>
+    <ClInclude Include="loaders\hub\loaderHubScreen.h">
+      <Filter>loaders\hub</Filter>
+    </ClInclude>
+    <ClInclude Include="loaders\hub\scenes\lhs_text.h">
+      <Filter>loaders\hub\scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="loaders\hub\scenes\lhs_summary.h">
+      <Filter>loaders\hub\scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="game\gameStats.h">
+      <Filter>game</Filter>
+    </ClInclude>
+    <ClInclude Include="loaders\hub\widgets\lhw_image.h">
+      <Filter>loaders\hub\widgets</Filter>
+    </ClInclude>
+    <ClInclude Include="appearance\controllers\particles\acp_palmersCircles.h">
+      <Filter>appearance\controllers\particles</Filter>
+    </ClInclude>
+    <ClInclude Include="ai\logics\aiLogic_turret.h">
+      <Filter>ai\logics</Filter>
+    </ClInclude>
+    <ClInclude Include="roomGenerators\roomGenerators\roomWithDoorBlocks.h">
+      <Filter>roomGenerators\roomGenerators</Filter>
+    </ClInclude>
+    <ClInclude Include="pilgrim\pilgrimSetup.h">
+      <Filter>pilgrim</Filter>
+    </ClInclude>
+    <ClInclude Include="game\playerSetup.h">
+      <Filter>game</Filter>
+    </ClInclude>
+    <ClInclude Include="loaders\hub\scenes\lhs_empty.h">
+      <Filter>loaders\hub\scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="loaders\hub\scenes\lhs_inGameMenu.h">
+      <Filter>loaders\hub\scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="loaders\hub\scenes\lhs_options.h">
+      <Filter>loaders\hub\scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="loaders\hub\screens\lhc_question.h">
+      <Filter>loaders\hub\screens</Filter>
+    </ClInclude>
+    <ClInclude Include="loaders\hub\scenes\lhs_beAtRightPlace.h">
+      <Filter>loaders\hub\scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="loaders\hub\widgets\lhw_slider.h">
+      <Filter>loaders\hub\widgets</Filter>
+    </ClInclude>
+    <ClInclude Include="library\exmType.h">
+      <Filter>library</Filter>
+    </ClInclude>
+    <ClInclude Include="game\screenShotContext.h">
+      <Filter>game</Filter>
+    </ClInclude>
+    <ClInclude Include="ai\aiVarState.h">
+      <Filter>ai</Filter>
+    </ClInclude>
+    <ClInclude Include="ai\logics\actions\aiAction_lightningStrike.h">
+      <Filter>ai\logics\actions</Filter>
+    </ClInclude>
+    <ClInclude Include="ai\aiPerceptionPause.h">
+      <Filter>ai</Filter>
+    </ClInclude>
+    <ClInclude Include="ai\logics\tasks\aiLogicTask_flyTo.h">
+      <Filter>ai\logics\tasks</Filter>
+    </ClInclude>
+    <ClInclude Include="loaders\hub\scenes\lhs_test.h">
+      <Filter>loaders\hub\scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="loaders\hub\loaderHubDraggableData.h">
+      <Filter>loaders\hub</Filter>
+    </ClInclude>
+    <ClInclude Include="loaders\hub\widgets\lhw_list.h">
+      <Filter>loaders\hub\widgets</Filter>
+    </ClInclude>
+    <ClInclude Include="library\messageSet.h">
+      <Filter>library</Filter>
+    </ClInclude>
+    <ClInclude Include="loaders\hub\widgets\lhws_innerScroll.h">
+      <Filter>loaders\hub\widgets</Filter>
+    </ClInclude>
+    <ClInclude Include="loaders\hub\screens\lhc_messageSetBrowser.h">
+      <Filter>loaders\hub\screens</Filter>
+    </ClInclude>
+    <ClInclude Include="loaders\hub\screens\lhc_message.h">
+      <Filter>loaders\hub\screens</Filter>
+    </ClInclude>
+    <ClInclude Include="loaders\hub\scenes\lhs_message.h">
+      <Filter>loaders\hub\scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="modules\moduleMovementRam.h">
+      <Filter>modules</Filter>
+    </ClInclude>
+    <ClInclude Include="ai\logics\aiLogic_creeper.h">
+      <Filter>ai\logics</Filter>
+    </ClInclude>
+    <ClInclude Include="loaders\hub\screens\lhc_exitIExitable.h">
+      <Filter>loaders\hub\screens</Filter>
+    </ClInclude>
+    <ClInclude Include="loaders\hub\interfaces\lhi_exitable.h">
+      <Filter>loaders\hub\interfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="loaders\hub\widgets\lhw_line.h">
+      <Filter>loaders\hub\widgets</Filter>
+    </ClInclude>
+    <ClInclude Include="loaders\hub\widgets\lhw_rect.h">
+      <Filter>loaders\hub\widgets</Filter>
+    </ClInclude>
+    <ClInclude Include="modules\custom\mc_hubIcons.h">
+      <Filter>modules\custom</Filter>
+    </ClInclude>
+    <ClInclude Include="reportBug.h" />
+    <ClInclude Include="ai\logics\managers\aiManagerLogic_monorailManager.h">
+      <Filter>ai\logics\managers</Filter>
+    </ClInclude>
+    <ClInclude Include="ai\logics\aiLogic_monorailCart.h">
+      <Filter>ai\logics</Filter>
+    </ClInclude>
+    <ClInclude Include="modules\moduleMovementMonorailCart.h">
+      <Filter>modules</Filter>
+    </ClInclude>
+    <ClInclude Include="loaders\hub\widgets\lhw_customDraw.h">
+      <Filter>loaders\hub\widgets</Filter>
+    </ClInclude>
+    <ClInclude Include="loaders\hub\scenes\lhs_question.h">
+      <Filter>loaders\hub\scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="pilgrim\pilgrimBlackboard.h">
+      <Filter>pilgrim</Filter>
+    </ClInclude>
+    <ClInclude Include="loaders\hub\widgets\lhw_grid.h">
+      <Filter>loaders\hub\widgets</Filter>
+    </ClInclude>
+    <ClInclude Include="pilgrim\pilgrimStatsInfo.h">
+      <Filter>pilgrim</Filter>
+    </ClInclude>
+    <ClInclude Include="loaders\hub\loaderHubEnums.h">
+      <Filter>loaders\hub</Filter>
+    </ClInclude>
+    <ClInclude Include="loaders\hub\screens\lhc_enterText.h">
+      <Filter>loaders\hub\screens</Filter>
+    </ClInclude>
+    <ClInclude Include="ai\logics\aiLogic_stinger.h">
+      <Filter>ai\logics</Filter>
+    </ClInclude>
+    <ClInclude Include="ai\logics\aiLogic_inspecter.h">
+      <Filter>ai\logics</Filter>
+    </ClInclude>
+    <ClInclude Include="loaders\hub\screens\prayStations\lhc_spirographMandala.h">
+      <Filter>loaders\hub\screens\prayStations</Filter>
+    </ClInclude>
+    <ClInclude Include="loaders\hub\scenes\lhs_quickGameMenu.h">
+      <Filter>loaders\hub\scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="game\runSetup.h">
+      <Filter>game</Filter>
+    </ClInclude>
+    <ClInclude Include="loaders\hub\scenes\lhs_setupNewPlayerProfile.h">
+      <Filter>loaders\hub\scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="loaders\hub\scenes\lhs_gameSlotSelection.h">
+      <Filter>loaders\hub\scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="loaders\hub\scenes\lhs_setupNewGameSlot.h">
+      <Filter>loaders\hub\scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="game\physicalViolence.h">
+      <Filter>game</Filter>
+    </ClInclude>
+    <ClInclude Include="loaders\hub\utils\lhu_playerStats.h">
+      <Filter>loaders\hub\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="game\persistence.h">
+      <Filter>game</Filter>
+    </ClInclude>
+    <ClInclude Include="loaders\hub\screens\prayStations\lhc_satelliteMap.h">
+      <Filter>loaders\hub\screens\prayStations</Filter>
+    </ClInclude>
+    <ClInclude Include="loaders\hub\screens\lhc_handGestures.h">
+      <Filter>loaders\hub\screens</Filter>
+    </ClInclude>
+    <ClInclude Include="loaders\hub\scenes\lhs_waitForScreen.h">
+      <Filter>loaders\hub\scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="tutorials\tutorialSystem.h">
+      <Filter>tutorials</Filter>
+    </ClInclude>
+    <ClInclude Include="tutorials\tutorial.h">
+      <Filter>tutorials</Filter>
+    </ClInclude>
+    <ClInclude Include="game\modes\gameMode_Tutorial.h">
+      <Filter>game\modes</Filter>
+    </ClInclude>
+    <ClInclude Include="game\scenes\gameSceneLayer_BeInWorld.h">
+      <Filter>game\scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="gameScript\registeredGameScriptElements.h">
+      <Filter>gameScript</Filter>
+    </ClInclude>
+    <ClInclude Include="overlayInfo\overlayInfoElement.h">
+      <Filter>overlayInfo</Filter>
+    </ClInclude>
+    <ClInclude Include="overlayInfo\overlayInfoEnums.h">
+      <Filter>overlayInfo</Filter>
+    </ClInclude>
+    <ClInclude Include="overlayInfo\overlayInfoSystem.h">
+      <Filter>overlayInfo</Filter>
+    </ClInclude>
+    <ClInclude Include="overlayInfo\elements\oie_text.h">
+      <Filter>overlayInfo\elements</Filter>
+    </ClInclude>
+    <ClInclude Include="gameScript\elements\gse_showText.h">
+      <Filter>gameScript\elements</Filter>
+    </ClInclude>
+    <ClInclude Include="gameScript\elements\gse_tutContinue.h">
+      <Filter>gameScript\elements</Filter>
+    </ClInclude>
+    <ClInclude Include="gameScript\elements\gse_clearOverlayInfo.h">
+      <Filter>gameScript\elements</Filter>
+    </ClInclude>
+    <ClInclude Include="overlayInfo\elements\oie_inputPrompt.h">
+      <Filter>overlayInfo\elements</Filter>
+    </ClInclude>
+    <ClInclude Include="loaders\hub\scenes\lhs_tutInGameMenu.h">
+      <Filter>loaders\hub\scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="loaders\hub\screens\lhc_tutInGameMenu.h">
+      <Filter>loaders\hub\screens</Filter>
+    </ClInclude>
+    <ClInclude Include="gameScript\elements\gse_tutInput.h">
+      <Filter>gameScript\elements</Filter>
+    </ClInclude>
+    <ClInclude Include="gameScript\elements\gse_tutWaitForInGameMenu.h">
+      <Filter>gameScript\elements</Filter>
+    </ClInclude>
+    <ClInclude Include="gameScript\elements\gse_tutEnd.h">
+      <Filter>gameScript\elements</Filter>
+    </ClInclude>
+    <ClInclude Include="gameScript\elements\gse_tutInGameMenuShouldNotSupressOverlay.h">
+      <Filter>gameScript\elements</Filter>
+    </ClInclude>
+    <ClInclude Include="gameScript\elements\gse_deactivateHub.h">
+      <Filter>gameScript\elements</Filter>
+    </ClInclude>
+    <ClInclude Include="gameScript\elements\gse_createMainEquipment.h">
+      <Filter>gameScript\elements</Filter>
+    </ClInclude>
+    <ClInclude Include="gameScript\elements\gse_health.h">
+      <Filter>gameScript\elements</Filter>
+    </ClInclude>
+    <ClInclude Include="gameScript\elements\gse_hitIndicator.h">
+      <Filter>gameScript\elements</Filter>
+    </ClInclude>
+    <ClInclude Include="gameScript\elements\gse_removeOverlayInfo.h">
+      <Filter>gameScript\elements</Filter>
+    </ClInclude>
+    <ClInclude Include="gameScript\elements\gse_setGameSettings.h">
+      <Filter>gameScript\elements</Filter>
+    </ClInclude>
+    <ClInclude Include="gameScript\elements\gse_setPlayerPreferences.h">
+      <Filter>gameScript\elements</Filter>
+    </ClInclude>
+    <ClInclude Include="gameScript\elements\gse_showInputPrompt.h">
+      <Filter>gameScript\elements</Filter>
+    </ClInclude>
+    <ClInclude Include="gameScript\elements\gse_spawnEnergyQuantum.h">
+      <Filter>gameScript\elements</Filter>
+    </ClInclude>
+    <ClInclude Include="gameScript\elements\gse_tutClearHighlight.h">
+      <Filter>gameScript\elements</Filter>
+    </ClInclude>
+    <ClInclude Include="gameScript\elements\gse_tutHighlight.h">
+      <Filter>gameScript\elements</Filter>
+    </ClInclude>
+    <ClInclude Include="gameScript\elements\gse_tutSet.h">
+      <Filter>gameScript\elements</Filter>
+    </ClInclude>
+    <ClInclude Include="gameScript\elements\gse_waitForLook.h">
+      <Filter>gameScript\elements</Filter>
+    </ClInclude>
+    <ClInclude Include="appearance\controllers\ac_pilgrimsFakePointing.h">
+      <Filter>appearance\controllers</Filter>
+    </ClInclude>
+    <ClInclude Include="ai\logics\actions\aiAction_findPath.h">
+      <Filter>ai\logics\actions</Filter>
+    </ClInclude>
+    <ClInclude Include="ai\logics\aiLogic_portableShield.h">
+      <Filter>ai\logics</Filter>
+    </ClInclude>
+    <ClInclude Include="ai\logics\aiLogic_scourer.h">
+      <Filter>ai\logics</Filter>
+    </ClInclude>
+    <ClInclude Include="game\gameLog.h">
+      <Filter>game</Filter>
+    </ClInclude>
+    <ClInclude Include="game\gameLogEventParams.h">
+      <Filter>game</Filter>
+    </ClInclude>
+    <ClInclude Include="loaders\hub\scenes\lhs_calibrate.h">
+      <Filter>loaders\hub\scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="loaders\hub\scenes\lhs_handyMessages.h">
+      <Filter>loaders\hub\scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="loaders\hub\scenes\lhs_playerProfileSelection.h">
+      <Filter>loaders\hub\scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="loaders\hub\scenes\lhs_tutorialDone.h">
+      <Filter>loaders\hub\scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="loaders\hub\scenes\lhs_tutorialSelection.h">
+      <Filter>loaders\hub\scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="loaders\hub\utils\lhu_moveStick.h">
+      <Filter>loaders\hub\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="tutorials\tutorialStructure.h">
+      <Filter>tutorials</Filter>
+    </ClInclude>
+    <ClInclude Include="tutorials\tutorialTree.h">
+      <Filter>tutorials</Filter>
+    </ClInclude>
+    <ClInclude Include="gameScript\registeredGameScriptConditions.h">
+      <Filter>library</Filter>
+    </ClInclude>
+    <ClInclude Include="game\gameUtils.h">
+      <Filter>game</Filter>
+    </ClInclude>
+    <ClInclude Include="pilgrim\pilgrimInfoToRender.h">
+      <Filter>pilgrim</Filter>
+    </ClInclude>
+    <ClInclude Include="overlayInfo\elements\oie_customDraw.h">
+      <Filter>overlayInfo\elements</Filter>
+    </ClInclude>
+    <ClInclude Include="modules\shield.h">
+      <Filter>modules</Filter>
+    </ClInclude>
+    <ClInclude Include="ai\logics\tasks\aiLogicTask_lightningRandomDischarge.h">
+      <Filter>ai\logics\tasks</Filter>
+    </ClInclude>
+    <ClInclude Include="gameScript\elements\gse_waitForMainEquipment.h">
+      <Filter>gameScript\elements</Filter>
+    </ClInclude>
+    <ClInclude Include="gameScript\elements\gse_mainEquipment.h">
+      <Filter>gameScript\elements</Filter>
+    </ClInclude>
+    <ClInclude Include="gameScript\elements\gse_showRect.h">
+      <Filter>gameScript\elements</Filter>
+    </ClInclude>
+    <ClInclude Include="overlayInfo\elements\oie_mesh.h">
+      <Filter>overlayInfo\elements</Filter>
+    </ClInclude>
+    <ClInclude Include="gameScript\elements\gse_tutClearHubHighlight.h">
+      <Filter>gameScript\elements</Filter>
+    </ClInclude>
+    <ClInclude Include="gameScript\elements\gse_tutHubHighlight.h">
+      <Filter>gameScript\elements</Filter>
+    </ClInclude>
+    <ClInclude Include="gameScript\elements\gse_waitForHub.h">
+      <Filter>gameScript\elements</Filter>
+    </ClInclude>
+    <ClInclude Include="gameScript\elements\gse_waitForEnergyTransfer.h">
+      <Filter>gameScript\elements</Filter>
+    </ClInclude>
+    <ClInclude Include="gameScript\elements\gse_tutStep.h">
+      <Filter>gameScript\elements</Filter>
+    </ClInclude>
+    <ClInclude Include="ai\logics\aiLogic_scriptablePanel.h">
+      <Filter>ai\logics</Filter>
+    </ClInclude>
+    <ClInclude Include="tutorials\tutorialHubId.h">
+      <Filter>tutorials</Filter>
+    </ClInclude>
+    <ClInclude Include="gameScript\elements\gse_tutHubSelect.h">
+      <Filter>gameScript\elements</Filter>
+    </ClInclude>
+    <ClInclude Include="ai\logics\aiLogic_tutorialTarget.h">
+      <Filter>ai\logics</Filter>
+    </ClInclude>
+    <ClInclude Include="schematics\schematic.h">
+      <Filter>schematics</Filter>
+    </ClInclude>
+    <ClInclude Include="schematics\schematicElement.h">
+      <Filter>schematics</Filter>
+    </ClInclude>
+    <ClInclude Include="schematics\schematicLine.h">
+      <Filter>schematics</Filter>
+    </ClInclude>
+    <ClInclude Include="loaders\hub\loaderHubSizes.h">
+      <Filter>loaders\hub</Filter>
+    </ClInclude>
+    <ClInclude Include="library\projectileSelector.h">
+      <Filter>library</Filter>
+    </ClInclude>
+    <ClInclude Include="library\lootSelector.h">
+      <Filter>library</Filter>
+    </ClInclude>
+    <ClInclude Include="game\weaponPart.h">
+      <Filter>game</Filter>
+    </ClInclude>
+    <ClInclude Include="library\weaponPartType.h">
+      <Filter>library</Filter>
+    </ClInclude>
+    <ClInclude Include="modules\custom\mc_lootProvider.h">
+      <Filter>modules\custom</Filter>
+    </ClInclude>
+    <ClInclude Include="modules\custom\mc_gunTemporaryObject.h">
+      <Filter>modules\custom</Filter>
+    </ClInclude>
+    <ClInclude Include="loaders\hub\interfaces\lhi_exmTypeProvider.h">
+      <Filter>loaders\hub\interfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="loaders\hub\utils\lhu_colours.h">
+      <Filter>loaders\hub\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="loaders\hub\draggables\lhd_exmType.h">
+      <Filter>loaders\hub\draggables</Filter>
+    </ClInclude>
+    <ClInclude Include="loaders\hub\draggables\lhd_exmTypeOnList.h">
+      <Filter>loaders\hub\draggables</Filter>
+    </ClInclude>
+    <ClInclude Include="loaders\hub\interfaces\lhi_weaponPartProvider.h">
+      <Filter>loaders\hub\interfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="loaders\hub\draggables\lhd_weaponPartPersistent.h">
+      <Filter>loaders\hub\draggables</Filter>
+    </ClInclude>
+    <ClInclude Include="loaders\hub\draggables\lhd_weaponPartPilgrimInventory.h">
+      <Filter>loaders\hub\draggables</Filter>
+    </ClInclude>
+    <ClInclude Include="utils\buildStatsInfo.h">
+      <Filter>utils</Filter>
+    </ClInclude>
+    <ClInclude Include="loaders\hub\utils\lhu_weaponPartDraw.h">
+      <Filter>loaders\hub\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="loaders\hub\draggables\lhd_weaponPartWeaponSetup.h">
+      <Filter>loaders\hub\draggables</Filter>
+    </ClInclude>
+    <ClInclude Include="loaders\hub\draggables\lhd_objectItem.h">
+      <Filter>loaders\hub\draggables</Filter>
+    </ClInclude>
+    <ClInclude Include="loaders\hub\utils\lhu_grid.h">
+      <Filter>loaders\hub\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="game\weaponSetup.h">
+      <Filter>game</Filter>
+    </ClInclude>
+    <ClInclude Include="modules\custom\mc_weaponSetupContainer.h">
+      <Filter>modules\custom</Filter>
+    </ClInclude>
+    <ClInclude Include="modules\custom\mc_schematic.h">
+      <Filter>modules\custom</Filter>
+    </ClInclude>
+    <ClInclude Include="gameplayBalance.h" />
+    <ClInclude Include="loaders\hub\draggables\lhd_analysableItem.h">
+      <Filter>loaders\hub\draggables</Filter>
+    </ClInclude>
+    <ClInclude Include="library\defaultPilgrimSetupPreset.h">
+      <Filter>library</Filter>
+    </ClInclude>
+    <ClInclude Include="ai\logics\aiLogic_cleanser.h">
+      <Filter>ai\logics</Filter>
+    </ClInclude>
+    <ClInclude Include="ai\logics\aiLogic_barrel.h">
+      <Filter>ai\logics</Filter>
+    </ClInclude>
+    <ClInclude Include="ai\logics\aiLogic_charger.h">
+      <Filter>ai\logics</Filter>
+    </ClInclude>
+    <ClInclude Include="library\gameDefinition.h">
+      <Filter>library</Filter>
+    </ClInclude>
+    <ClInclude Include="library\weaponCoreModifiers.h">
+      <Filter>library</Filter>
+    </ClInclude>
+    <ClInclude Include="ai\logics\managers\aiManagerLogic.h">
+      <Filter>ai\logics\managers</Filter>
+    </ClInclude>
+    <ClInclude Include="ai\logics\managers\aiManagerLogic_regionManager.h">
+      <Filter>ai\logics\managers</Filter>
+    </ClInclude>
+    <ClInclude Include="pilgrimage\pilgrimageOpenWorldDefinition.h">
+      <Filter>pilgrimage</Filter>
+    </ClInclude>
+    <ClInclude Include="pilgrimage\pilgrimageInstanceLinear.h">
+      <Filter>pilgrimage</Filter>
+    </ClInclude>
+    <ClInclude Include="pilgrimage\pilgrimageInstanceOpenWorld.h">
+      <Filter>pilgrimage</Filter>
+    </ClInclude>
+    <ClInclude Include="wheresMyPoint\wmp_openWorld.h">
+      <Filter>wheresMyPoint</Filter>
+    </ClInclude>
+    <ClInclude Include="roomGenerators\roomGenerators\useMeshes.h">
+      <Filter>roomGenerators\roomGenerators</Filter>
+    </ClInclude>
+    <ClInclude Include="roomGenerators\elementGenerators\doorBasedSceneries.h">
+      <Filter>roomGenerators\elementGenerators</Filter>
+    </ClInclude>
+    <ClInclude Include="wheresMyPoint\wmp_roomGeneratorBalconies.h">
+      <Filter>wheresMyPoint</Filter>
+    </ClInclude>
+    <ClInclude Include="wheresMyPoint\wmp_roomGeneratorTowers.h">
+      <Filter>wheresMyPoint</Filter>
+    </ClInclude>
+    <ClInclude Include="meshGen\shapes\meshGenShapes.h">
+      <Filter>meshGen\shapes</Filter>
+    </ClInclude>
+    <ClInclude Include="pilgrim\pilgrimOverlayInfo.h">
+      <Filter>pilgrim</Filter>
+    </ClInclude>
+    <ClInclude Include="library\lineModel.h">
+      <Filter>library</Filter>
+    </ClInclude>
+    <ClInclude Include="ai\logics\exms\aiLogic_exmAttractor.h">
+      <Filter>ai\logics\exms</Filter>
+    </ClInclude>
+    <ClInclude Include="ai\logics\exms\aiLogic_exmBase.h">
+      <Filter>ai\logics\exms</Filter>
+    </ClInclude>
+    <ClInclude Include="ai\logics\exms\aiLogic_exmDeflector.h">
+      <Filter>ai\logics\exms</Filter>
+    </ClInclude>
+    <ClInclude Include="ai\logics\exms\aiLogic_exmShield.h">
+      <Filter>ai\logics\exms</Filter>
+    </ClInclude>
+    <ClInclude Include="pilgrimage\pilgrimageDevice.h">
+      <Filter>pilgrimage</Filter>
+    </ClInclude>
+    <ClInclude Include="ai\logics\aiLogic_automap.h">
+      <Filter>ai\logics</Filter>
+    </ClInclude>
+    <ClInclude Include="overlayInfo\elements\oie_texturePart.h">
+      <Filter>overlayInfo\elements</Filter>
+    </ClInclude>
+    <ClInclude Include="ai\logics\aiLogic_energyCoil.h">
+      <Filter>ai\logics</Filter>
+    </ClInclude>
+    <ClInclude Include="pilgrim\pilgrimInventory.h">
+      <Filter>pilgrim</Filter>
+    </ClInclude>
+    <ClInclude Include="ai\logics\aiLogic_upgradeMachine.h">
+      <Filter>ai\logics</Filter>
+    </ClInclude>
+    <ClInclude Include="library\extraUpgradeOption.h">
+      <Filter>library</Filter>
+    </ClInclude>
+    <ClInclude Include="ai\logics\exms\aiLogic_exmCorrosionCatalyst.h">
+      <Filter>ai\logics\exms</Filter>
+    </ClInclude>
+    <ClInclude Include="ai\logics\exms\aiLogic_exmEnergyDispatcher.h">
+      <Filter>ai\logics\exms</Filter>
+    </ClInclude>
+    <ClInclude Include="ai\logics\aiLogic_pilgrimHumanForearmDisplay.h">
+      <Filter>ai\logics</Filter>
+    </ClInclude>
+    <ClInclude Include="appearance\controllers\ac_recoil.h">
+      <Filter>appearance\controllers</Filter>
+    </ClInclude>
+    <ClInclude Include="ai\logics\aiLogic_exmInstallerKiosk.h">
+      <Filter>ai\logics</Filter>
+    </ClInclude>
+    <ClInclude Include="utils\interactiveDialHandler.h">
+      <Filter>utils</Filter>
+    </ClInclude>
+    <ClInclude Include="ai\logics\components\aiLogicComponent_upgradeCanister.h">
+      <Filter>ai\logics\components</Filter>
+    </ClInclude>
+    <ClInclude Include="ai\logics\aiLogic_permanentUpgradeMachine.h">
+      <Filter>ai\logics</Filter>
+    </ClInclude>
+    <ClInclude Include="pilgrim\pilgrimGuidance.h">
+      <Filter>pilgrim</Filter>
+    </ClInclude>
+    <ClInclude Include="library\gameModifier.h">
+      <Filter>library</Filter>
+    </ClInclude>
+    <ClInclude Include="loaders\hub\screens\settings\lhc_gameModifiers.h">
+      <Filter>loaders\hub\screens\settings</Filter>
+    </ClInclude>
+    <ClInclude Include="roomGenerators\roomGenerators\floorsWithElevators.h">
+      <Filter>roomGenerators\roomGenerators</Filter>
+    </ClInclude>
+    <ClInclude Include="ai\logics\aiLogic_trigger.h">
+      <Filter>ai\logics</Filter>
+    </ClInclude>
+    <ClInclude Include="ai\logics\tasks\aiLogicTask_shootContinuously.h">
+      <Filter>ai\logics\tasks</Filter>
+    </ClInclude>
+    <ClInclude Include="ai\logics\aiLogic_none.h">
+      <Filter>ai\logics</Filter>
+    </ClInclude>
+    <ClInclude Include="ai\logics\aiLogic_weaponMixer.h">
+      <Filter>ai\logics</Filter>
+    </ClInclude>
+    <ClInclude Include="modules\custom\mc_itemHolder.h">
+      <Filter>modules\custom</Filter>
+    </ClInclude>
+    <ClInclude Include="appearance\controllers\ac_weaponMixerWeapon.h">
+      <Filter>appearance\controllers</Filter>
+    </ClInclude>
+    <ClInclude Include="ai\logics\exms\aiLogic_exmReroll.h">
+      <Filter>ai\logics\exms</Filter>
+    </ClInclude>
+    <ClInclude Include="music\musicPlayer.h">
+      <Filter>music</Filter>
+    </ClInclude>
+    <ClInclude Include="music\musicDefinition.h">
+      <Filter>music</Filter>
+    </ClInclude>
+    <ClInclude Include="music\musicTrack.h">
+      <Filter>music</Filter>
+    </ClInclude>
+    <ClInclude Include="game\gameDirector.h">
+      <Filter>game</Filter>
+    </ClInclude>
+    <ClInclude Include="ai\logics\tasks\aiLogicTask_hideDisappear.h">
+      <Filter>ai\logics\tasks</Filter>
+    </ClInclude>
+    <ClInclude Include="modules\moduleAI.h">
+      <Filter>modules</Filter>
+    </ClInclude>
+    <ClInclude Include="game\gameDirectorDefinition.h">
+      <Filter>game</Filter>
+    </ClInclude>
+    <ClInclude Include="story\storyChapter.h">
+      <Filter>story</Filter>
+    </ClInclude>
+    <ClInclude Include="story\storyScene.h">
+      <Filter>story</Filter>
+    </ClInclude>
+    <ClInclude Include="story\storyExecution.h">
+      <Filter>story</Filter>
+    </ClInclude>
+    <ClInclude Include="sound\subtitleSystem.h">
+      <Filter>sound</Filter>
+    </ClInclude>
+    <ClInclude Include="gameScript\elements\gse_voiceoverSpeak.h">
+      <Filter>gameScript\elements</Filter>
+    </ClInclude>
+    <ClInclude Include="gameScript\elements\gse_voiceoverSilence.h">
+      <Filter>gameScript\elements</Filter>
+    </ClInclude>
+    <ClInclude Include="gameScript\elements\gse_storyEndScene.h">
+      <Filter>gameScript\elements</Filter>
+    </ClInclude>
+    <ClInclude Include="gameScript\elements\gse_storyChangeScene.h">
+      <Filter>gameScript\elements</Filter>
+    </ClInclude>
+    <ClInclude Include="gameScript\elements\gse_storySet.h">
+      <Filter>gameScript\elements</Filter>
+    </ClInclude>
+    <ClInclude Include="gameScript\elements\gse_storyClear.h">
+      <Filter>gameScript\elements</Filter>
+    </ClInclude>
+    <ClInclude Include="gameScript\conditions\gsc_story.h">
+      <Filter>gameScript\conditions</Filter>
+    </ClInclude>
+    <ClInclude Include="gameScript\elements\gse_gameDirector.h">
+      <Filter>gameScript\elements</Filter>
+    </ClInclude>
+    <ClInclude Include="gameScript\elements\gse_pilgrimOverlayInfo.h">
+      <Filter>gameScript\elements</Filter>
+    </ClInclude>
+    <ClInclude Include="gameScript\conditions\gsc_pilgrimOverlayInfo.h">
+      <Filter>gameScript\conditions</Filter>
+    </ClInclude>
+    <ClInclude Include="gameScript\conditions\gsc_gameSettings.h">
+      <Filter>gameScript\conditions</Filter>
+    </ClInclude>
+    <ClInclude Include="gameScript\elements\gse_waitForNoVoiceover.h">
+      <Filter>gameScript\elements</Filter>
+    </ClInclude>
+    <ClInclude Include="gameScript\conditions\gsc_voiceoverSpeaking.h">
+      <Filter>gameScript\conditions</Filter>
+    </ClInclude>
+    <ClInclude Include="ai\logics\components\aiLogicComponent_energyTransferPhysSens.h">
+      <Filter>ai\logics\components</Filter>
+    </ClInclude>
+    <ClInclude Include="game\environmentPlayer.h">
+      <Filter>game</Filter>
+    </ClInclude>
+    <ClInclude Include="sound\voiceoverSystem.h">
+      <Filter>sound</Filter>
+    </ClInclude>
+    <ClInclude Include="ai\logics\managers\aiManagerLogic_airshipsManager.h">
+      <Filter>ai\logics\managers</Filter>
+    </ClInclude>
+    <ClInclude Include="modules\moduleMovementAirship.h">
+      <Filter>modules</Filter>
+    </ClInclude>
+    <ClInclude Include="ai\logics\managers\aiManagerLogic_airshipProxiesManager.h">
+      <Filter>ai\logics\managers</Filter>
+    </ClInclude>
+    <ClInclude Include="modules\moduleMovementAirshipProxy.h">
+      <Filter>modules</Filter>
+    </ClInclude>
+    <ClInclude Include="loaders\hub\screens\lhc_unlocks.h">
+      <Filter>loaders\hub\screens</Filter>
+    </ClInclude>
+    <ClInclude Include="pilgrimage\pilgrimageDeviceStateSensitive.h">
+      <Filter>pilgrimage</Filter>
+    </ClInclude>
+    <ClInclude Include="modules\custom\mc_weaponLocker.h">
+      <Filter>modules\custom</Filter>
+    </ClInclude>
+    <ClInclude Include="modules\custom\mc_musicAccidental.h">
+      <Filter>modules\custom</Filter>
+    </ClInclude>
+    <ClInclude Include="loaders\hub\scenes\lhs_pilgrimageSetup.h">
+      <Filter>loaders\hub\scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="ai\logics\aiLogic_doorLock.h">
+      <Filter>ai\logics</Filter>
+    </ClInclude>
+    <ClInclude Include="gameScript\conditions\gsc_pilgrim.h">
+      <Filter>gameScript\conditions</Filter>
+    </ClInclude>
+    <ClInclude Include="pilgrim\pilgrimGear.h">
+      <Filter>pilgrim</Filter>
+    </ClInclude>
+    <ClInclude Include="roomGenerators\roomGenerators\empty.h">
+      <Filter>roomGenerators\roomGenerators</Filter>
+    </ClInclude>
+    <ClInclude Include="wheresMyPoint\wmp_vistaSceneryWindowPlacement.h">
+      <Filter>wheresMyPoint</Filter>
+    </ClInclude>
+    <ClInclude Include="game\gameState.h">
+      <Filter>game</Filter>
+    </ClInclude>
+    <ClInclude Include="game\gameStateSensitive.h">
+      <Filter>game</Filter>
+    </ClInclude>
+    <ClInclude Include="game\airshipObstacle.h">
+      <Filter>game</Filter>
+    </ClInclude>
+    <ClInclude Include="loaders\hub\screens\settings\lhc_gameDefinitionSelection.h">
+      <Filter>loaders\hub\screens\settings</Filter>
+    </ClInclude>
+    <ClInclude Include="modules\moduleMovementH_Craft.h">
+      <Filter>modules</Filter>
+    </ClInclude>
+    <ClInclude Include="ai\logics\aiLogic_h_craft.h">
+      <Filter>ai\logics</Filter>
+    </ClInclude>
+    <ClInclude Include="ai\logics\aiLogic_displayMessage.h">
+      <Filter>ai\logics</Filter>
+    </ClInclude>
+    <ClInclude Include="gameScript\elements\gse_forceCamera.h">
+      <Filter>gameScript\elements</Filter>
+    </ClInclude>
+    <ClInclude Include="gameScript\elements\gse_subtitle.h">
+      <Filter>gameScript\elements</Filter>
+    </ClInclude>
+    <ClInclude Include="gameScript\elements\gse_mixEnvironmentCycle.h">
+      <Filter>gameScript\elements</Filter>
+    </ClInclude>
+    <ClInclude Include="appearance\controllers\ac_a_tentacle.h">
+      <Filter>appearance\controllers</Filter>
+    </ClInclude>
+    <ClInclude Include="gameScript\conditions\gsc_gameDefinition.h">
+      <Filter>gameScript\conditions</Filter>
+    </ClInclude>
+    <ClInclude Include="gameScript\elements\gse_forceSoundCamera.h">
+      <Filter>gameScript\elements</Filter>
+    </ClInclude>
+    <ClInclude Include="gameScript\elements\gse_hideInputPrompt.h">
+      <Filter>gameScript\elements</Filter>
+    </ClInclude>
+    <ClInclude Include="gameScript\elements\gse_music.h">
+      <Filter>gameScript\elements</Filter>
+    </ClInclude>
+    <ClInclude Include="gameScript\elements\gse_vignetteForMovement.h">
+      <Filter>gameScript\elements</Filter>
+    </ClInclude>
+    <ClInclude Include="ai\logics\managers\aiManagerLogic_roomWithEnergySource.h">
+      <Filter>ai\logics\managers</Filter>
+    </ClInclude>
+    <ClInclude Include="loaders\hub\screens\lhc_debugNote.h">
+      <Filter>loaders\hub\screens</Filter>
+    </ClInclude>
+    <ClInclude Include="loaders\hub\scenes\lhs_fadeOut.h">
+      <Filter>loaders\hub\scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="loaders\hub\loaderHubInSequence.h">
+      <Filter>loaders\hub</Filter>
+    </ClInclude>
+    <ClInclude Include="loaders\loaderStarField.h">
+      <Filter>loaders</Filter>
+    </ClInclude>
+    <ClInclude Include="modules\moduleMovementPilgrimKeeper.h">
+      <Filter>modules</Filter>
+    </ClInclude>
+    <ClInclude Include="utils\skipScene.h">
+      <Filter>utils</Filter>
+    </ClInclude>
+    <ClInclude Include="ai\logics\aiLogic_steamer.h">
+      <Filter>ai\logics</Filter>
+    </ClInclude>
+    <ClInclude Include="developmentNotes.h" />
+    <ClInclude Include="loaders\hub\scenes\lhs_comfortMessageAndBasicOptions.h">
+      <Filter>loaders\hub\scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="ai\managerDatas\aiManagerData_backgroundMover.h">
+      <Filter>ai\managerDatas</Filter>
+    </ClInclude>
+    <ClInclude Include="ai\logics\managers\aiManagerLogic_backgroundMover.h">
+      <Filter>ai\logics\managers</Filter>
+    </ClInclude>
+    <ClInclude Include="modules\modulePresenceBackgroundMoverBase.h">
+      <Filter>modules</Filter>
+    </ClInclude>
+    <ClInclude Include="gameScript\conditions\gsc_pilgrimage.h">
+      <Filter>gameScript\conditions</Filter>
+    </ClInclude>
+    <ClInclude Include="gameScript\elements\gse_pilgrimage.h">
+      <Filter>gameScript\elements</Filter>
+    </ClInclude>
+    <ClInclude Include="loaders\hub\screens\lhc_drawingBoard.h">
+      <Filter>loaders\hub\screens</Filter>
+    </ClInclude>
+    <ClInclude Include="gameScript\conditions\gsc_playerPreferences.h">
+      <Filter>gameScript\conditions</Filter>
+    </ClInclude>
+    <ClInclude Include="ai\logics\aiLogic_subtitleDevice.h">
+      <Filter>ai\logics</Filter>
+    </ClInclude>
+    <ClInclude Include="buildNOs.h" />
+    <ClInclude Include="teaForGodTest.h" />
+    <ClInclude Include="ai\logics\utils\aiLogicUtil_deviceDisplayStart.h">
+      <Filter>ai\logics\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="ai\logics\aiLogic_bigTrainEngineCylinder.h">
+      <Filter>ai\logics</Filter>
+    </ClInclude>
+    <ClInclude Include="ai\logics\aiLogic_energyBalancer.h">
+      <Filter>ai\logics</Filter>
+    </ClInclude>
+    <ClInclude Include="ai\logics\aiLogic_puzzlePanel.h">
+      <Filter>ai\logics</Filter>
+    </ClInclude>
+    <ClInclude Include="ai\logics\aiLogic_discharger.h">
+      <Filter>ai\logics</Filter>
+    </ClInclude>
+    <ClInclude Include="utils\collectInTargetCone.h">
+      <Filter>utils</Filter>
+    </ClInclude>
+    <ClInclude Include="utils\lightningDischarge.h">
+      <Filter>utils</Filter>
+    </ClInclude>
+    <ClInclude Include="ai\logics\aiLogic_engineGenerator.h">
+      <Filter>ai\logics</Filter>
+    </ClInclude>
+    <ClInclude Include="appearance\controllers\ac_pilgrimageEnvironmentRotation.h">
+      <Filter>appearance\controllers</Filter>
+    </ClInclude>
+    <ClInclude Include="gameScript\elements\gse_takeControl.h">
+      <Filter>gameScript\elements</Filter>
+    </ClInclude>
+    <ClInclude Include="modules\gameplay\moduleCorrosionLeak.h">
+      <Filter>modules\gameplay</Filter>
+    </ClInclude>
+    <ClInclude Include="modules\gameplay\moduleDuctEnergy.h">
+      <Filter>modules\gameplay</Filter>
+    </ClInclude>
+    <ClInclude Include="modules\gameplay\moduleEnergyQuantum.h">
+      <Filter>modules\gameplay</Filter>
+    </ClInclude>
+    <ClInclude Include="modules\gameplay\moduleEquipment.h">
+      <Filter>modules\gameplay</Filter>
+    </ClInclude>
+    <ClInclude Include="modules\gameplay\moduleEXM.h">
+      <Filter>modules\gameplay</Filter>
+    </ClInclude>
+    <ClInclude Include="modules\gameplay\moduleExplosion.h">
+      <Filter>modules\gameplay</Filter>
+    </ClInclude>
+    <ClInclude Include="modules\gameplay\moduleMultiplePilgrimageDevice.h">
+      <Filter>modules\gameplay</Filter>
+    </ClInclude>
+    <ClInclude Include="modules\gameplay\moduleOrbItem.h">
+      <Filter>modules\gameplay</Filter>
+    </ClInclude>
+    <ClInclude Include="modules\gameplay\modulePilgrim.h">
+      <Filter>modules\gameplay</Filter>
+    </ClInclude>
+    <ClInclude Include="modules\gameplay\modulePilgrimHand.h">
+      <Filter>modules\gameplay</Filter>
+    </ClInclude>
+    <ClInclude Include="modules\gameplay\modulePortableShield.h">
+      <Filter>modules\gameplay</Filter>
+    </ClInclude>
+    <ClInclude Include="modules\gameplay\equipment\me_armable.h">
+      <Filter>modules\gameplay\equipment</Filter>
+    </ClInclude>
+    <ClInclude Include="modules\gameplay\equipment\me_grenade.h">
+      <Filter>modules\gameplay\equipment</Filter>
+    </ClInclude>
+    <ClInclude Include="modules\gameplay\equipment\me_gun.h">
+      <Filter>modules\gameplay\equipment</Filter>
+    </ClInclude>
+    <ClInclude Include="modules\gameplay\equipment\me_mine.h">
+      <Filter>modules\gameplay\equipment</Filter>
+    </ClInclude>
+    <ClInclude Include="modules\gameplay\equipment\me_shield.h">
+      <Filter>modules\gameplay\equipment</Filter>
+    </ClInclude>
+    <ClInclude Include="modules\gameplay\moduleProjectile.h">
+      <Filter>modules\gameplay</Filter>
+    </ClInclude>
+    <ClInclude Include="modules\gameplay\modulePilgrimData.h">
+      <Filter>modules\gameplay</Filter>
+    </ClInclude>
+    <ClInclude Include="modules\gameplay\moduleControllableTurret.h">
+      <Filter>modules\gameplay</Filter>
+    </ClInclude>
+    <ClInclude Include="modules\controllable.h">
+      <Filter>modules</Filter>
+    </ClInclude>
+    <ClInclude Include="ai\logics\aiLogic_airfighter.h">
+      <Filter>ai\logics</Filter>
+    </ClInclude>
+    <ClInclude Include="ai\logics\components\aiLogicComponent_airfighterArms.h">
+      <Filter>ai\logics\components</Filter>
+    </ClInclude>
+    <ClInclude Include="ai\logics\managers\aiManagerLogic_shooterWavesManager.h">
+      <Filter>ai\logics\managers</Filter>
+    </ClInclude>
+    <ClInclude Include="gameScript\elements\gse_airProhibitedPlace.h">
+      <Filter>gameScript\elements</Filter>
+    </ClInclude>
+    <ClInclude Include="gameScript\elements\gse_pilgrim.h">
+      <Filter>gameScript\elements</Filter>
+    </ClInclude>
+    <ClInclude Include="gameScript\elements\gse_soundOverridePlayParams.h">
+      <Filter>gameScript\elements</Filter>
+    </ClInclude>
+    <ClInclude Include="overlayInfo\elements\oie_altTexturePart.h">
+      <Filter>overlayInfo\elements</Filter>
+    </ClInclude>
+    <ClInclude Include="wheresMyPoint\wmp_overrideDoorDirectionsType.h">
+      <Filter>wheresMyPoint</Filter>
+    </ClInclude>
+    <ClInclude Include="gameScript\elements\gse_provideExperience.h">
+      <Filter>gameScript\elements</Filter>
+    </ClInclude>
+    <ClInclude Include="modules\custom\mc_energyStorage.h">
+      <Filter>modules\custom</Filter>
+    </ClInclude>
+    <ClInclude Include="modules\custom\mc_interactiveButtonHandler.h">
+      <Filter>modules\custom</Filter>
+    </ClInclude>
+    <ClInclude Include="ai\logics\aiLogic_battery.h">
+      <Filter>ai\logics</Filter>
+    </ClInclude>
+    <ClInclude Include="ai\logics\aiLogic_pester.h">
+      <Filter>ai\logics</Filter>
+    </ClInclude>
+    <ClInclude Include="gameScript\conditions\gsc_isDemo.h">
+      <Filter>gameScript\conditions</Filter>
+    </ClInclude>
+    <ClInclude Include="ai\logics\utils\aiLogicUtil_shootingAccuracy.h">
+      <Filter>ai\logics\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="library\damageRules.h">
+      <Filter>library</Filter>
+    </ClInclude>
+    <ClInclude Include="ai\logics\tasks\aiLogicTask_announcePresence.h">
+      <Filter>ai\logics\tasks</Filter>
+    </ClInclude>
+    <ClInclude Include="gameScript\elements\gse_getCellCoord.h">
+      <Filter>gameScript\elements</Filter>
+    </ClInclude>
+    <ClInclude Include="gameScript\conditions\gsc_compareCellCoord.h">
+      <Filter>gameScript\conditions</Filter>
+    </ClInclude>
+    <ClInclude Include="loaders\hub\scenes\lhs_loadingMessageSetBrowser.h">
+      <Filter>loaders\hub\scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="wheresMyPoint\wmp_gameSettings.h">
+      <Filter>wheresMyPoint</Filter>
+    </ClInclude>
+    <ClInclude Include="gameScript\elements\gse_shoot.h">
+      <Filter>gameScript\elements</Filter>
+    </ClInclude>
+    <ClInclude Include="appearance\controllers\ac_a_containerJump.h">
+      <Filter>appearance\controllers</Filter>
+    </ClInclude>
+    <ClInclude Include="ai\logics\aiLogic_turretScripted.h">
+      <Filter>ai\logics</Filter>
+    </ClInclude>
+    <ClInclude Include="gameScript\elements\gse_checkpoint.h">
+      <Filter>gameScript\elements</Filter>
+    </ClInclude>
+    <ClInclude Include="ai\logics\aiLogic_a_tentacle.h">
+      <Filter>ai\logics</Filter>
+    </ClInclude>
+    <ClInclude Include="modules\moduleMovementInRoomFollower.h">
+      <Filter>modules</Filter>
+    </ClInclude>
+    <ClInclude Include="gameScript\conditions\gsc_gameModifiers.h">
+      <Filter>gameScript\conditions</Filter>
+    </ClInclude>
+    <ClInclude Include="ai\logics\aiLogic_dropCapsuleControl.h">
+      <Filter>ai\logics</Filter>
+    </ClInclude>
+    <ClInclude Include="ai\logics\managers\aiManagerLogic_bouncingCharge.h">
+      <Filter>ai\logics\managers</Filter>
+    </ClInclude>
+    <ClInclude Include="ai\logics\managers\aiManagerLogic_dischargeZone.h">
+      <Filter>ai\logics\managers</Filter>
+    </ClInclude>
+    <ClInclude Include="ai\logics\aiLogic_turret360.h">
+      <Filter>ai\logics</Filter>
+    </ClInclude>
+    <ClInclude Include="ai\logics\aiLogic_welder.h">
+      <Filter>ai\logics</Filter>
+    </ClInclude>
+    <ClInclude Include="ai\logics\managers\aiManagerLogic_doorFalling.h">
+      <Filter>ai\logics\managers</Filter>
+    </ClInclude>
+    <ClInclude Include="library\gameSubDefinition.h">
+      <Filter>library</Filter>
+    </ClInclude>
+    <ClInclude Include="loaders\loaderCountdown.h">
+      <Filter>loaders</Filter>
+    </ClInclude>
+    <ClInclude Include="wheresMyPoint\wmp_gameDefinition.h">
+      <Filter>wheresMyPoint</Filter>
+    </ClInclude>
+    <ClInclude Include="ai\logics\exms\aiLogic_exmInvestigator.h">
+      <Filter>ai\logics\exms</Filter>
+    </ClInclude>
+    <ClInclude Include="modules\custom\mc_investigatorInfoProvider.h">
+      <Filter>modules\custom</Filter>
+    </ClInclude>
+    <ClInclude Include="ai\logics\exms\aiLogic_exmDistractor.h">
+      <Filter>ai\logics\exms</Filter>
+    </ClInclude>
+    <ClInclude Include="ai\logics\exms\aiLogic_exmElevatorMaster.h">
+      <Filter>ai\logics\exms</Filter>
+    </ClInclude>
+    <ClInclude Include="ai\logics\exms\aiLogic_exmEnergyManipulator.h">
+      <Filter>ai\logics\exms</Filter>
+    </ClInclude>
+    <ClInclude Include="ai\logics\exms\aiLogic_exmBlast.h">
+      <Filter>ai\logics\exms</Filter>
+    </ClInclude>
+    <ClInclude Include="ai\logics\aiLogic_tunnelLight.h">
+      <Filter>ai\logics</Filter>
+    </ClInclude>
+    <ClInclude Include="ai\logics\aiLogic_factoryArm.h">
+      <Filter>ai\logics</Filter>
+    </ClInclude>
+    <ClInclude Include="gameScript\conditions\gsc_movementScripted.h">
+      <Filter>gameScript\conditions</Filter>
+    </ClInclude>
+    <ClInclude Include="ai\logics\aiLogic_pilgrimTank.h">
+      <Filter>ai\logics</Filter>
+    </ClInclude>
+    <ClInclude Include="modules\gameplay\moduleDamageWhileTouching.h">
+      <Filter>modules\gameplay</Filter>
+    </ClInclude>
+    <ClInclude Include="ai\logics\tasks\aiLogicTask_runAway.h">
+      <Filter>ai\logics\tasks</Filter>
+    </ClInclude>
+    <ClInclude Include="ai\logics\aiLogic_bottle.h">
+      <Filter>ai\logics</Filter>
+    </ClInclude>
+    <ClInclude Include="ai\logics\tasks\aiLogicTask_leaveRoom.h">
+      <Filter>ai\logics\tasks</Filter>
+    </ClInclude>
+    <ClInclude Include="appearance\controllers\ac_centipedeBackPlate.h">
+      <Filter>appearance\controllers</Filter>
+    </ClInclude>
+    <ClInclude Include="ai\logics\aiLogic_centipede.h">
+      <Filter>ai\logics</Filter>
+    </ClInclude>
+    <ClInclude Include="ai\logics\aiLogic_coreShaftDischarges.h">
+      <Filter>ai\logics</Filter>
+    </ClInclude>
+    <ClInclude Include="ai\logics\aiLogic_energyCoilBroken.h">
+      <Filter>ai\logics</Filter>
+    </ClInclude>
+    <ClInclude Include="ai\logics\aiLogic_energyQuantumsOnPath.h">
+      <Filter>ai\logics</Filter>
+    </ClInclude>
+    <ClInclude Include="ai\logics\aiLogic_reactorEnergyOverloaded.h">
+      <Filter>ai\logics</Filter>
+    </ClInclude>
+    <ClInclude Include="ai\logics\aiLogic_reactorEnergyQuantum.h">
+      <Filter>ai\logics</Filter>
+    </ClInclude>
+    <ClInclude Include="ai\logics\aiLogic_reactorEnergyWorking.h">
+      <Filter>ai\logics</Filter>
+    </ClInclude>
+    <ClInclude Include="ai\logics\components\aiLogicComponent_spawnableShield.h">
+      <Filter>ai\logics\components</Filter>
+    </ClInclude>
+    <ClInclude Include="gameScript\conditions\gsc_gameplaySpecial.h">
+      <Filter>gameScript\conditions</Filter>
+    </ClInclude>
+    <ClInclude Include="gameScript\conditions\gsc_gameDirector.h">
+      <Filter>gameScript\conditions</Filter>
+    </ClInclude>
+    <ClInclude Include="gameScript\elements\gse_cameraRumble.h">
+      <Filter>gameScript\elements</Filter>
+    </ClInclude>
+    <ClInclude Include="gameScript\elements\gse_generalProgress.h">
+      <Filter>gameScript\elements</Filter>
+    </ClInclude>
+    <ClInclude Include="modules\moduleMovementCentipede.h">
+      <Filter>modules</Filter>
+    </ClInclude>
+    <ClInclude Include="utils\dullPlayback.h">
+      <Filter>utils</Filter>
+    </ClInclude>
+    <ClInclude Include="game\skipContentInfo.h">
+      <Filter>game</Filter>
+    </ClInclude>
+    <ClInclude Include="ai\logics\aiLogic_spitter.h">
+      <Filter>ai\logics</Filter>
+    </ClInclude>
+    <ClInclude Include="ai\logics\tasks\aiLogicTask_deathSequenceSimple.h">
+      <Filter>ai\logics\tasks</Filter>
+    </ClInclude>
+    <ClInclude Include="ai\logics\components\aiLogicComponent_movementGaitTimeBased.h">
+      <Filter>ai\logics\components</Filter>
+    </ClInclude>
+    <ClInclude Include="gameScript\conditions\gsc_musicPlayer.h">
+      <Filter>gameScript\conditions</Filter>
+    </ClInclude>
+    <ClInclude Include="loaders\hub\scenes\lhs_vrModeSelection.h">
+      <Filter>loaders\hub\scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="gameScript\elements\gse_vignetteForDead.h">
+      <Filter>gameScript\elements</Filter>
+    </ClInclude>
+    <ClInclude Include="gameScript\elements\gse_globalTint.h">
+      <Filter>gameScript\elements</Filter>
+    </ClInclude>
+    <ClInclude Include="gameScript\elements\gse_player.h">
+      <Filter>gameScript\elements</Filter>
+    </ClInclude>
+    <ClInclude Include="appearance\controllers\ac_demoRobot.h">
+      <Filter>appearance\controllers</Filter>
+    </ClInclude>
+    <ClInclude Include="utils\overridePilgrimType.h">
+      <Filter>utils</Filter>
+    </ClInclude>
+    <ClInclude Include="ai\logics\tasks\aiLogicTask_scriptedMoveToPOI.h">
+      <Filter>ai\logics\tasks</Filter>
+    </ClInclude>
+    <ClInclude Include="ai\logics\aiLogic_armoury.h">
+      <Filter>ai\logics</Filter>
+    </ClInclude>
+    <ClInclude Include="pilgrimage\pilgrimageInstanceObserver.h">
+      <Filter>pilgrimage</Filter>
+    </ClInclude>
+    <ClInclude Include="gameScript\elements\gse_armoury.h">
+      <Filter>gameScript\elements</Filter>
+    </ClInclude>
+    <ClInclude Include="appearance\controllers\ac_doorbot.h">
+      <Filter>appearance\controllers</Filter>
+    </ClInclude>
+    <ClInclude Include="ai\logics\aiLogic_doorbot.h">
+      <Filter>ai\logics</Filter>
+    </ClInclude>
+    <ClInclude Include="ai\logics\aiLogic_throneTree.h">
+      <Filter>ai\logics</Filter>
+    </ClInclude>
+    <ClInclude Include="ai\logics\aiLogic_gameScriptTrapTrigger.h">
+      <Filter>ai\logics</Filter>
+    </ClInclude>
+    <ClInclude Include="wheresMyPoint\wmp_teaBoxSeed.h">
+      <Filter>wheresMyPoint</Filter>
+    </ClInclude>
+    <ClInclude Include="gameScript\elements\gse_showOverlayInfo.h">
+      <Filter>gameScript\elements</Filter>
+    </ClInclude>
+    <ClInclude Include="ai\logics\aiLogic_a_tentacledShooter.h">
+      <Filter>ai\logics</Filter>
+    </ClInclude>
+    <ClInclude Include="ai\logics\aiLogic_airfighter_v2.h">
+      <Filter>ai\logics</Filter>
+    </ClInclude>
+    <ClInclude Include="ai\logics\aiLogic_blobCapsule.h">
+      <Filter>ai\logics</Filter>
+    </ClInclude>
+    <ClInclude Include="ai\logics\aiLogic_h_craft_v2.h">
+      <Filter>ai\logics</Filter>
+    </ClInclude>
+    <ClInclude Include="ai\logics\aiLogic_heartRoom.h">
+      <Filter>ai\logics</Filter>
+    </ClInclude>
+    <ClInclude Include="ai\logics\aiLogic_launchChamber.h">
+      <Filter>ai\logics</Filter>
+    </ClInclude>
+    <ClInclude Include="gameScript\elements\gse_game.h">
+      <Filter>gameScript\elements</Filter>
+    </ClInclude>
+    <ClInclude Include="gameScript\elements\gse_gameSlot.h">
+      <Filter>gameScript\elements</Filter>
+    </ClInclude>
+    <ClInclude Include="gameScript\conditions\gsc_overlayInfoSystem.h">
+      <Filter>gameScript\conditions</Filter>
+    </ClInclude>
+    <ClInclude Include="appearance\controllers\particles\acp_airTraffic.h">
+      <Filter>appearance\controllers\particles</Filter>
+    </ClInclude>
+    <ClInclude Include="library\missionsDefinition.h">
+      <Filter>library</Filter>
+    </ClInclude>
+    <ClInclude Include="loaders\hub\scenes\lhs_startingPilgrimageSelection.h">
+      <Filter>loaders\hub\scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="ai\logics\components\aiLogicComponent_predictTargetPlacement.h">
+      <Filter>ai\logics\components</Filter>
+    </ClInclude>
+    <ClInclude Include="ai\logics\managers\aiManagerLogic_airPursuitManager.h">
+      <Filter>ai\logics\managers</Filter>
+    </ClInclude>
+    <ClInclude Include="ai\logics\tasks\aiLogicTask_announcePresenceContinuously.h">
+      <Filter>ai\logics\tasks</Filter>
+    </ClInclude>
+    <ClInclude Include="pilgrimage\conditionalPilgrimage.h">
+      <Filter>pilgrimage</Filter>
+    </ClInclude>
+    <ClInclude Include="game\missionState.h">
+      <Filter>game</Filter>
+    </ClInclude>
+    <ClInclude Include="gameScript\elements\gse_missionState.h">
+      <Filter>gameScript\elements</Filter>
+    </ClInclude>
+    <ClInclude Include="library\missionDefinition.h">
+      <Filter>library</Filter>
+    </ClInclude>
+    <ClInclude Include="gameScript\conditions\gsc_missionState.h">
+      <Filter>gameScript\conditions</Filter>
+    </ClInclude>
+    <ClInclude Include="ai\logics\aiLogic_heartRoomBeams.h">
+      <Filter>ai\logics</Filter>
+    </ClInclude>
+    <ClInclude Include="appearance\controllers\ac_heartRoomBeams.h">
+      <Filter>appearance\controllers</Filter>
+    </ClInclude>
+    <ClInclude Include="ai\logics\aiLogic_heartRoomProjectiles.h">
+      <Filter>ai\logics</Filter>
+    </ClInclude>
+    <ClInclude Include="utils\overlayStatus.h">
+      <Filter>utils</Filter>
+    </ClInclude>
+    <ClInclude Include="ai\logics\aiLogic_pilgrimFake.h">
+      <Filter>ai\logics</Filter>
+    </ClInclude>
+    <ClInclude Include="ai\logics\aiLogic_pilgrimTeaBox.h">
+      <Filter>ai\logics</Filter>
+    </ClInclude>
+    <ClInclude Include="game\weaponStatInfo.h">
+      <Filter>game</Filter>
+    </ClInclude>
+    <ClInclude Include="gameScript\elements\gse_blendEmissivesForRoom.h">
+      <Filter>gameScript\elements</Filter>
+    </ClInclude>
+    <ClInclude Include="gameScript\conditions\gsc_health.h">
+      <Filter>gameScript\conditions</Filter>
+    </ClInclude>
+    <ClInclude Include="gameScript\elements\gse_environmentPlayer.h">
+      <Filter>gameScript\elements</Filter>
+    </ClInclude>
+    <ClInclude Include="gameScript\elements\gse_customUniforms.h">
+      <Filter>gameScript\elements</Filter>
+    </ClInclude>
+    <ClInclude Include="gameScript\elements\gse_emissive.h">
+      <Filter>gameScript\elements</Filter>
+    </ClInclude>
+    <ClInclude Include="gameScript\elements\gse_door.h">
+      <Filter>gameScript\elements</Filter>
+    </ClInclude>
+    <ClInclude Include="gameScript\elements\gse_spawn.h">
+      <Filter>gameScript\elements</Filter>
+    </ClInclude>
+    <ClInclude Include="gameScript\elements\gse_find.h">
+      <Filter>gameScript\elements</Filter>
+    </ClInclude>
+    <ClInclude Include="gameScript\elements\gse_sound.h">
+      <Filter>gameScript\elements</Filter>
+    </ClInclude>
+    <ClInclude Include="gameScript\elements\gse_teleport.h">
+      <Filter>gameScript\elements</Filter>
+    </ClInclude>
+    <ClInclude Include="ai\logics\aiLogic_missionBriefer.h">
+      <Filter>ai\logics</Filter>
+    </ClInclude>
+    <ClInclude Include="ai\logics\aiLogic_unloader.h">
+      <Filter>ai\logics</Filter>
+    </ClInclude>
+    <ClInclude Include="gameScript\conditions\gsc_unloader.h">
+      <Filter>gameScript\conditions</Filter>
+    </ClInclude>
+    <ClInclude Include="gameScript\elements\gse_endMission.h">
+      <Filter>gameScript\elements</Filter>
+    </ClInclude>
+    <ClInclude Include="game\missionResult.h">
+      <Filter>game</Filter>
+    </ClInclude>
+    <ClInclude Include="gameScript\conditions\gsc_lastMissionResult.h">
+      <Filter>gameScript\conditions</Filter>
+    </ClInclude>
+    <ClInclude Include="utils\variablesStringFormatterParamsProvider.h">
+      <Filter>utils</Filter>
+    </ClInclude>
+    <ClInclude Include="ai\logics\aiLogic_bridgeShop.h">
+      <Filter>ai\logics</Filter>
+    </ClInclude>
+    <ClInclude Include="utils\unlockableEXMs.h">
+      <Filter>utils</Filter>
+    </ClInclude>
+    <ClInclude Include="ai\logics\aiLogic_catcher.h">
+      <Filter>ai\logics</Filter>
+    </ClInclude>
+    <ClInclude Include="gameScript\conditions\gsc_persistence.h">
+      <Filter>gameScript\conditions</Filter>
+    </ClInclude>
+    <ClInclude Include="ai\logics\aiLogic_trashBin.h">
+      <Filter>ai\logics</Filter>
+    </ClInclude>
+    <ClInclude Include="game\missionStateObjectives.h">
+      <Filter>game</Filter>
+    </ClInclude>
+    <ClInclude Include="wheresMyPoint\wmp_pilgrimageInstance.h">
+      <Filter>wheresMyPoint</Filter>
+    </ClInclude>
+    <ClInclude Include="library\customUpgradeType.h">
+      <Filter>library</Filter>
+    </ClInclude>
+    <ClInclude Include="utils\unlockableCustomUpgrades.h">
+      <Filter>utils</Filter>
+    </ClInclude>
+    <ClInclude Include="library\missionGeneralProgress.h">
+      <Filter>library</Filter>
+    </ClInclude>
+    <ClInclude Include="library\missionBiome.h">
+      <Filter>library</Filter>
+    </ClInclude>
+    <ClInclude Include="library\missionSelectionTier.h">
+      <Filter>library</Filter>
+    </ClInclude>
+    <ClInclude Include="library\missionObjectivesAndIntel.h">
+      <Filter>library</Filter>
+    </ClInclude>
+    <ClInclude Include="utils\reward.h">
+      <Filter>utils</Filter>
+    </ClInclude>
+    <ClInclude Include="ai\logics\aiLogic_hackBox.h">
+      <Filter>ai\logics</Filter>
+    </ClInclude>
+    <ClInclude Include="ai\logics\aiLogic_lockerBox.h">
+      <Filter>ai\logics</Filter>
+    </ClInclude>
+    <ClInclude Include="ai\logics\aiLogic_item.h">
+      <Filter>ai\logics</Filter>
+    </ClInclude>
+    <ClInclude Include="utils\tagsStringFormatterParamsProvider.h">
+      <Filter>utils</Filter>
+    </ClInclude>
+    <ClInclude Include="ai\logics\aiLogic_findableBox.h">
+      <Filter>ai\logics</Filter>
+    </ClInclude>
+    <ClInclude Include="library\missionDifficultyModifier.h">
+      <Filter>library</Filter>
+    </ClInclude>
+    <ClInclude Include="ai\logics\managers\aiManagerLogic_infestationManager.h" />
+    <ClInclude Include="ai\aiManagerUtils.h" />
+    <ClInclude Include="ai\logics\aiLogic_a_blob.h" />
+    <ClInclude Include="modules\custom\mc_pilgrimageDevice.h" />
+    <ClInclude Include="ai\logics\aiLogic_refillBox.h">
+      <Filter>ai\logics</Filter>
+    </ClInclude>
+    <ClInclude Include="ai\logics\exms\aiLogic_exmRemoteControl.h" />
+    <ClInclude Include="ai\logics\exms\aiLogic_exmPush.h" />
+    <ClInclude Include="ai\logics\exms\aiLogic_exmSpray.h" />
+    <ClInclude Include="ai\logics\exms\aiLogic_exmProjectile.h" />
+    <ClInclude Include="ai\logics\components\aiLogicComponent_confussion.h" />
+    <ClInclude Include="ai\logics\aiLogic_fender.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="game\gameObjectPtrs.inl">
+      <Filter>game</Filter>
+    </None>
+    <None Include="ai\aiManagerInfo.inl">
+      <Filter>ai</Filter>
+    </None>
+    <None Include="game\weaponPart.inl">
+      <Filter>game</Filter>
+    </None>
+    <None Include="game\game_debug.inl">
+      <Filter>game</Filter>
+    </None>
+    <None Include="game\weaponStatInfoImpl.inl">
+      <Filter>game</Filter>
+    </None>
+  </ItemGroup>
+</Project>

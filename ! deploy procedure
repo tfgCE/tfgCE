@@ -1,0 +1,46 @@
+MAIN UPDATE
+	1. check all REMOVE_OR_CHANGE_BEFORE_COMMIT_
+	2. update relase notes
+	3. optional shader preparation
+		a. build x64
+		b. copy tools
+		c. create deploy
+		d. build arm64
+		e. run on device(s)
+		f. run tea\runtime-data\shaderProgramCaches\getAll_shaderProgramCache.bat
+	4. _log_create_build_tea_all/_log_create_build_tea_all_preview/_log_create_build_tea_all_preview_pr_candidate
+		_log_create_build_tea_all						for actual official build
+		_log_create_build_tea_all_preview				for development/tests
+		_log_create_build_tea_all_preview_pr_candidate	when getting ready to release an official build
+	5. write devlog
+	6. test
+	7. copy so+pdb to pdbs folder
+	8. copy contents of tea_steam.zip to "! release tools\steamworks\sdk\tools\ContentBuilder\content.demo" and run run_build_demo.bat there
+	9. create apk release at github (upload tea.apk, save draft)
+	10. upload to itch.io (apk and zip - upload with version numbers)
+	11. upload to voidroom (apk - tea.apk, zip - tea.zip)
+	12. update files at itch.io
+	13. use "! release tools\oculus\upload tea.apk.bat" to upload apk to oculus
+	14. go to https://partner.steamgames.com/apps/builds/2075700 (demo) and change build to default
+	15. publish release at github
+	16. go to sidequest/integrations, make sure the latest version is the latest version, save app
+	17. publish devlog
+	18. upload buildInfos
+	19. post info on social media
+		- twitter
+		- discord
+		- facebook
+		- reddit
+		- steam
+	
+	
+PREVIEW UPDATE
+	1. check all REMOVE_OR_CHANGE_BEFORE_COMMIT_
+	2. update relase notes
+	3. optional shader preparation
+	4. _log_create_build_tea_all_preview				for development/tests
+	5. test
+	6. copy so+pdb to pdbs folder
+	7. use "! release tools\oculus\upload tea.apk.bat" to upload apk to oculus
+	8. upload to voidroom pre (apk - tea.apk, zip - tea.zip) 
+	9. post info on discord

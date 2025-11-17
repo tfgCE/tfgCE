@@ -1,0 +1,11 @@
+<library group="loader hub">
+	<sample name="click"
+			file="assets\click.snd"
+			importFromFile="assets\_source\click.wav"
+			looped="false"
+			channel="ui"
+			type="2d"
+			volume="0.4"
+			fadeTime="0"
+			/>
+</library>

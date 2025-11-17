@@ -1,0 +1,2928 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="io">
+      <UniqueIdentifier>{3df69323-5ff0-41da-a26d-3a45b19f905c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="debug">
+      <UniqueIdentifier>{6f7bb35b-0202-4314-94ef-3ecb76f494e5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="types">
+      <UniqueIdentifier>{c1225ed3-d909-4a5f-af22-2616556b8b6d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="containers">
+      <UniqueIdentifier>{28958c6a-fb5c-4ef9-a18e-37542e0e5f71}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="memory">
+      <UniqueIdentifier>{ab88a45d-380e-4d23-aaa6-f7259682bdb4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="concurrency">
+      <UniqueIdentifier>{88a8551d-acfb-4a64-9fb5-5239091499ea}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="math">
+      <UniqueIdentifier>{46455235-ab30-4e67-8d3a-a9e306035475}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="system">
+      <UniqueIdentifier>{f840fb5f-0d87-4a71-9a65-27f8ff9241f2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="mesh">
+      <UniqueIdentifier>{d6c21c16-64bd-4b45-86ab-963deb4d46e9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="other">
+      <UniqueIdentifier>{43b68a63-6d63-44d4-be18-ab43cf24318e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="vr">
+      <UniqueIdentifier>{37468881-e08a-4017-9e51-9d9b4bf6d1d1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="collision">
+      <UniqueIdentifier>{3f1554e4-e38c-4337-b590-3baf783c2616}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="pieceCombiner">
+      <UniqueIdentifier>{41957fc1-f8d3-407a-9f7b-7cc2e980bc12}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="splash">
+      <UniqueIdentifier>{0534aa9c-28fb-4ec4-a467-5e0d6dab29fb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="graph">
+      <UniqueIdentifier>{534c1c64-edbb-4a33-a0d3-d82f1edf248e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="instance">
+      <UniqueIdentifier>{a1567d57-c720-45d3-8107-4b7a0412df14}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="latent">
+      <UniqueIdentifier>{73dc58f8-2e35-4a11-862a-2c2587db03ad}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="latent\functions">
+      <UniqueIdentifier>{63e32461-300f-4bd5-b628-2d29c1af67b1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="system\video">
+      <UniqueIdentifier>{fc5b689e-2e3f-4302-89df-7b3e7d9b68f0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="system\sound">
+      <UniqueIdentifier>{3bcf812a-f59d-4d4c-9d9d-15c1bdd57803}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="sound">
+      <UniqueIdentifier>{9678efb3-8786-419d-95f6-fc1c18708aca}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="mesh\builders">
+      <UniqueIdentifier>{0c28f4a1-c0af-4178-804a-cc0f07e4c0f1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="mesh\helpers">
+      <UniqueIdentifier>{ac45a5c0-34f5-426b-b605-8a4a1a3b7bd9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="wheresMyPoint">
+      <UniqueIdentifier>{62fc7edd-f721-42fb-95d3-56d5c360ac21}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="random">
+      <UniqueIdentifier>{297a932e-dd51-4bc2-9eaa-a6fe76a70f93}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="performance">
+      <UniqueIdentifier>{8cf0eb0e-1629-41c1-bb98-e4b67e882733}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="serialisation">
+      <UniqueIdentifier>{a1f2db78-0d99-4aa7-bb40-27a743ce84e5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="vr\oculus">
+      <UniqueIdentifier>{fc94e3c2-945c-482c-b9b5-b757bf72cd0a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="vr\openvr">
+      <UniqueIdentifier>{8dd1fc40-594b-430a-a64a-db86106d9021}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="tags">
+      <UniqueIdentifier>{525cd664-51b9-4c13-be82-3a27c4924c90}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="system\video\imageLoaders">
+      <UniqueIdentifier>{e7462d9c-99ef-46a3-bced-b6c36d544e12}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="vr\oculusMobile">
+      <UniqueIdentifier>{01bc24f7-cb34-4d91-bcdc-c74d70c1a8cc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="network">
+      <UniqueIdentifier>{17d6c96f-bcc1-4588-a866-d1dec844ffc4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="math\quickHull">
+      <UniqueIdentifier>{01260221-4adc-4f0f-8c36-e8206ff8c3ad}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="math\quickHull\structs">
+      <UniqueIdentifier>{73f44064-ccfa-4ec2-a2a4-f8dc61a7ccb2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="math\earcut">
+      <UniqueIdentifier>{a3fa2cde-babd-406b-904a-11bdc7ca680b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="physicalSensations">
+      <UniqueIdentifier>{7619797b-ec7f-4943-9041-ba53e9df0000}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="system\video\imageSavers">
+      <UniqueIdentifier>{c2e00d4e-9566-4d2f-8bd0-a9cbe0d284da}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="physicalSensations\bhaptics">
+      <UniqueIdentifier>{4b1bd3f1-6d11-4ea2-aaa9-78388e9a3640}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="physicalSensations\bhapticsJava">
+      <UniqueIdentifier>{6e3c4eeb-a1dc-4e3f-9a90-476875ba8a5a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="physicalSensations\bhapticsWindows">
+      <UniqueIdentifier>{761285af-63f4-493a-9224-463fe9903004}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="compression">
+      <UniqueIdentifier>{dc173765-b706-4fdb-9ab7-78ccf2441fd8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="utils">
+      <UniqueIdentifier>{40201544-425f-4033-93c5-3e9691a2b1b2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="vr\openxr">
+      <UniqueIdentifier>{1ae39e77-7450-4d65-9eae-3e0adb3cc291}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="gameEnvironment">
+      <UniqueIdentifier>{86896d37-05e6-4302-a056-5cafde204fea}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="gameEnvironment\steamworks">
+      <UniqueIdentifier>{c4f0cbab-43ab-486f-a14f-27a2653ab2b3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="system\android">
+      <UniqueIdentifier>{2ccc7561-da30-4bcc-ac76-7fbe724386ea}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="testSamples">
+      <UniqueIdentifier>{2693cfec-410f-4a3e-800e-2e3b9eb2e7be}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="gameEnvironment\viveport">
+      <UniqueIdentifier>{eeccc54b-0b62-4c84-8c85-808e9168dd0c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="vr\wavevr">
+      <UniqueIdentifier>{03b54b0c-1535-4b18-983e-e565e9120aeb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="gameEnvironment\oculus">
+      <UniqueIdentifier>{2679419d-977f-4d94-be8c-a2fd7c577292}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="gameEnvironment\pico">
+      <UniqueIdentifier>{2e442ec3-d4df-4699-a845-ce3286307ff2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="math\convhull">
+      <UniqueIdentifier>{f07c2f47-dc2f-40a3-93b6-a2089c60280c}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="io\file.h">
+      <Filter>io</Filter>
+    </ClInclude>
+    <ClInclude Include="io\io.h">
+      <Filter>io</Filter>
+    </ClInclude>
+    <ClInclude Include="io\memoryStorage.h">
+      <Filter>io</Filter>
+    </ClInclude>
+    <ClInclude Include="io\utils.h">
+      <Filter>io</Filter>
+    </ClInclude>
+    <ClInclude Include="debug\debug.h">
+      <Filter>debug</Filter>
+    </ClInclude>
+    <ClInclude Include="debug\detectMemoryLeaks.h">
+      <Filter>debug</Filter>
+    </ClInclude>
+    <ClInclude Include="types\string.h">
+      <Filter>types</Filter>
+    </ClInclude>
+    <ClInclude Include="containers\array.h">
+      <Filter>containers</Filter>
+    </ClInclude>
+    <ClInclude Include="memory\memory.h">
+      <Filter>memory</Filter>
+    </ClInclude>
+    <ClInclude Include="memory\objectHelpers.h">
+      <Filter>memory</Filter>
+    </ClInclude>
+    <ClInclude Include="memory\pooledObject.h">
+      <Filter>memory</Filter>
+    </ClInclude>
+    <ClInclude Include="concurrency\spinLock.h">
+      <Filter>concurrency</Filter>
+    </ClInclude>
+    <ClInclude Include="concurrency\scopedSpinLock.h">
+      <Filter>concurrency</Filter>
+    </ClInclude>
+    <ClInclude Include="concurrency\counter.h">
+      <Filter>concurrency</Filter>
+    </ClInclude>
+    <ClInclude Include="concurrency\thread.h">
+      <Filter>concurrency</Filter>
+    </ClInclude>
+    <ClInclude Include="containers\list.h">
+      <Filter>containers</Filter>
+    </ClInclude>
+    <ClInclude Include="concurrency\immediateJob.h">
+      <Filter>concurrency</Filter>
+    </ClInclude>
+    <ClInclude Include="concurrency\threadManager.h">
+      <Filter>concurrency</Filter>
+    </ClInclude>
+    <ClInclude Include="concurrency\immediateJobList.h">
+      <Filter>concurrency</Filter>
+    </ClInclude>
+    <ClInclude Include="globalDefinitions.h" />
+    <ClInclude Include="globalInclude.h" />
+    <ClInclude Include="globalSettings.h" />
+    <ClInclude Include="math\mathUtils.h">
+      <Filter>math</Filter>
+    </ClInclude>
+    <ClInclude Include="math\vector2.h">
+      <Filter>math</Filter>
+    </ClInclude>
+    <ClInclude Include="math\vectorInt2.h">
+      <Filter>math</Filter>
+    </ClInclude>
+    <ClInclude Include="types\colour.h">
+      <Filter>types</Filter>
+    </ClInclude>
+    <ClInclude Include="math\vector3.h">
+      <Filter>math</Filter>
+    </ClInclude>
+    <ClInclude Include="math\quat.h">
+      <Filter>math</Filter>
+    </ClInclude>
+    <ClInclude Include="concurrency\memoryFence.h">
+      <Filter>concurrency</Filter>
+    </ClInclude>
+    <ClInclude Include="math\matrixUtils.h">
+      <Filter>math</Filter>
+    </ClInclude>
+    <ClInclude Include="math\transform.h">
+      <Filter>math</Filter>
+    </ClInclude>
+    <ClInclude Include="math\plane.h">
+      <Filter>math</Filter>
+    </ClInclude>
+    <ClInclude Include="math\math.h">
+      <Filter>math</Filter>
+    </ClInclude>
+    <ClInclude Include="concurrency\threadSystemUtils.h">
+      <Filter>concurrency</Filter>
+    </ClInclude>
+    <ClInclude Include="math\range.h">
+      <Filter>math</Filter>
+    </ClInclude>
+    <ClInclude Include="types\name.h">
+      <Filter>types</Filter>
+    </ClInclude>
+    <ClInclude Include="types\names.h">
+      <Filter>types</Filter>
+    </ClInclude>
+    <ClInclude Include="system\core.h">
+      <Filter>system</Filter>
+    </ClInclude>
+    <ClInclude Include="mesh\iMesh3d.h">
+      <Filter>mesh</Filter>
+    </ClInclude>
+    <ClInclude Include="system\input.h">
+      <Filter>system</Filter>
+    </ClInclude>
+    <ClInclude Include="mesh\mesh3dInstance.h">
+      <Filter>mesh</Filter>
+    </ClInclude>
+    <ClInclude Include="mesh\mesh3dInstanceSet.h">
+      <Filter>mesh</Filter>
+    </ClInclude>
+    <ClInclude Include="mesh\mesh3d.h">
+      <Filter>mesh</Filter>
+    </ClInclude>
+    <ClInclude Include="mesh\mesh3dBuilder.h">
+      <Filter>mesh</Filter>
+    </ClInclude>
+    <ClInclude Include="system\video\renderTarget.h">
+      <Filter>system\video</Filter>
+    </ClInclude>
+    <ClInclude Include="system\video\vertexFormat.h">
+      <Filter>system\video</Filter>
+    </ClInclude>
+    <ClInclude Include="system\video\video.h">
+      <Filter>system\video</Filter>
+    </ClInclude>
+    <ClInclude Include="system\video\video2d.h">
+      <Filter>system\video</Filter>
+    </ClInclude>
+    <ClInclude Include="system\video\video3d.h">
+      <Filter>system\video</Filter>
+    </ClInclude>
+    <ClInclude Include="system\video\videoClipPlaneStack.h">
+      <Filter>system\video</Filter>
+    </ClInclude>
+    <ClInclude Include="system\video\videoConfig.h">
+      <Filter>system\video</Filter>
+    </ClInclude>
+    <ClInclude Include="system\video\videoFormat.h">
+      <Filter>system\video</Filter>
+    </ClInclude>
+    <ClInclude Include="system\video\videoMatrixStack.h">
+      <Filter>system\video</Filter>
+    </ClInclude>
+    <ClInclude Include="system\video\viewFrustum.h">
+      <Filter>system\video</Filter>
+    </ClInclude>
+    <ClInclude Include="io\xmlAttribute.h">
+      <Filter>io</Filter>
+    </ClInclude>
+    <ClInclude Include="io\xmlDocument.h">
+      <Filter>io</Filter>
+    </ClInclude>
+    <ClInclude Include="io\xmlIterators.h">
+      <Filter>io</Filter>
+    </ClInclude>
+    <ClInclude Include="io\xmlNode.h">
+      <Filter>io</Filter>
+    </ClInclude>
+    <ClInclude Include="io\dir.h">
+      <Filter>io</Filter>
+    </ClInclude>
+    <ClInclude Include="containers\map.h">
+      <Filter>containers</Filter>
+    </ClInclude>
+    <ClInclude Include="other\parserUtils.h">
+      <Filter>other</Filter>
+    </ClInclude>
+    <ClInclude Include="memory\refCountObject.h">
+      <Filter>memory</Filter>
+    </ClInclude>
+    <ClInclude Include="memory\refCountObjectPtr.h">
+      <Filter>memory</Filter>
+    </ClInclude>
+    <ClInclude Include="types\token.h">
+      <Filter>types</Filter>
+    </ClInclude>
+    <ClInclude Include="utils.h" />
+    <ClInclude Include="containers\arrayStatic.h">
+      <Filter>containers</Filter>
+    </ClInclude>
+    <ClInclude Include="math\rotator3.h">
+      <Filter>math</Filter>
+    </ClInclude>
+    <ClInclude Include="concurrency\synchronisationLounge.h">
+      <Filter>concurrency</Filter>
+    </ClInclude>
+    <ClInclude Include="io\xml.h">
+      <Filter>io</Filter>
+    </ClInclude>
+    <ClInclude Include="concurrency\asynchronousJobList.h">
+      <Filter>concurrency</Filter>
+    </ClInclude>
+    <ClInclude Include="concurrency\asynchronousJob.h">
+      <Filter>concurrency</Filter>
+    </ClInclude>
+    <ClInclude Include="concurrency\jobExecutionContext.h">
+      <Filter>concurrency</Filter>
+    </ClInclude>
+    <ClInclude Include="memory\softPooledObject.h">
+      <Filter>memory</Filter>
+    </ClInclude>
+    <ClInclude Include="concurrency\semaphore.h">
+      <Filter>concurrency</Filter>
+    </ClInclude>
+    <ClInclude Include="math\planeSet.h">
+      <Filter>math</Filter>
+    </ClInclude>
+    <ClInclude Include="system\video\shaderProgram.h">
+      <Filter>system\video</Filter>
+    </ClInclude>
+    <ClInclude Include="system\video\shader.h">
+      <Filter>system\video</Filter>
+    </ClInclude>
+    <ClInclude Include="math\vector4.h">
+      <Filter>math</Filter>
+    </ClInclude>
+    <ClInclude Include="collision\shapeBox.h">
+      <Filter>collision</Filter>
+    </ClInclude>
+    <ClInclude Include="collision\shape.h">
+      <Filter>collision</Filter>
+    </ClInclude>
+    <ClInclude Include="collision\checkGradientContext.h">
+      <Filter>collision</Filter>
+    </ClInclude>
+    <ClInclude Include="collision\model.h">
+      <Filter>collision</Filter>
+    </ClInclude>
+    <ClInclude Include="collision\modelInstanceSet.h">
+      <Filter>collision</Filter>
+    </ClInclude>
+    <ClInclude Include="collision\modelInstance.h">
+      <Filter>collision</Filter>
+    </ClInclude>
+    <ClInclude Include="collision\queryPrimitive.h">
+      <Filter>collision</Filter>
+    </ClInclude>
+    <ClInclude Include="collision\queryPrimitivePoint.h">
+      <Filter>collision</Filter>
+    </ClInclude>
+    <ClInclude Include="collision\queryPrimitiveSegment.h">
+      <Filter>collision</Filter>
+    </ClInclude>
+    <ClInclude Include="collision\checkGradientDistances.h">
+      <Filter>collision</Filter>
+    </ClInclude>
+    <ClInclude Include="collision\checkGradientPoints.h">
+      <Filter>collision</Filter>
+    </ClInclude>
+    <ClInclude Include="performance\performanceTimer.h">
+      <Filter>performance</Filter>
+    </ClInclude>
+    <ClInclude Include="performance\performanceBlock.h">
+      <Filter>performance</Filter>
+    </ClInclude>
+    <ClInclude Include="performance\performanceSystem.h">
+      <Filter>performance</Filter>
+    </ClInclude>
+    <ClInclude Include="performance\performanceUtils.h">
+      <Filter>performance</Filter>
+    </ClInclude>
+    <ClInclude Include="performance\scopedMeasureBlock.h">
+      <Filter>performance</Filter>
+    </ClInclude>
+    <ClInclude Include="system\video\video3dPrimitives.h">
+      <Filter>system\video</Filter>
+    </ClInclude>
+    <ClInclude Include="types\optional.h">
+      <Filter>types</Filter>
+    </ClInclude>
+    <ClInclude Include="collision\shapeConvexHull.h">
+      <Filter>collision</Filter>
+    </ClInclude>
+    <ClInclude Include="collision\gradientQueryResult.h">
+      <Filter>collision</Filter>
+    </ClInclude>
+    <ClInclude Include="collision\shapeCapsule.h">
+      <Filter>collision</Filter>
+    </ClInclude>
+    <ClInclude Include="collision\shapeSphere.h">
+      <Filter>collision</Filter>
+    </ClInclude>
+    <ClInclude Include="system\video\material.h">
+      <Filter>system\video</Filter>
+    </ClInclude>
+    <ClInclude Include="system\video\materialInstance.h">
+      <Filter>system\video</Filter>
+    </ClInclude>
+    <ClInclude Include="system\video\shaderProgramInstance.h">
+      <Filter>system\video</Filter>
+    </ClInclude>
+    <ClInclude Include="system\video\iMaterialInstanceProvider.h">
+      <Filter>system\video</Filter>
+    </ClInclude>
+    <ClInclude Include="math\rangeInt.h">
+      <Filter>math</Filter>
+    </ClInclude>
+    <ClInclude Include="pieceCombiner\pieceCombiner.h">
+      <Filter>pieceCombiner</Filter>
+    </ClInclude>
+    <ClInclude Include="system\video\texture.h">
+      <Filter>system\video</Filter>
+    </ClInclude>
+    <ClInclude Include="math\range2.h">
+      <Filter>math</Filter>
+    </ClInclude>
+    <ClInclude Include="containers\arrayStack.h">
+      <Filter>containers</Filter>
+    </ClInclude>
+    <ClInclude Include="pieceCombiner\pieceCombinerSteps.h">
+      <Filter>pieceCombiner</Filter>
+    </ClInclude>
+    <ClInclude Include="memory\registeredPool.h">
+      <Filter>memory</Filter>
+    </ClInclude>
+    <ClInclude Include="math\box.h">
+      <Filter>math</Filter>
+    </ClInclude>
+    <ClInclude Include="math\convexHull.h">
+      <Filter>math</Filter>
+    </ClInclude>
+    <ClInclude Include="math\sphere.h">
+      <Filter>math</Filter>
+    </ClInclude>
+    <ClInclude Include="math\capsule.h">
+      <Filter>math</Filter>
+    </ClInclude>
+    <ClInclude Include="mesh\mesh3dInstanceSetInlined.h">
+      <Filter>mesh</Filter>
+    </ClInclude>
+    <ClInclude Include="debug\debugRenderer.h">
+      <Filter>debug</Filter>
+    </ClInclude>
+    <ClInclude Include="math\segment.h">
+      <Filter>math</Filter>
+    </ClInclude>
+    <ClInclude Include="collision\collisionInfoProvider.h">
+      <Filter>collision</Filter>
+    </ClInclude>
+    <ClInclude Include="casts.h" />
+    <ClInclude Include="collision\iCollidableObject.h">
+      <Filter>collision</Filter>
+    </ClInclude>
+    <ClInclude Include="collision\iCollidableShape.h">
+      <Filter>collision</Filter>
+    </ClInclude>
+    <ClInclude Include="collision\checkCollisionContext.h">
+      <Filter>collision</Filter>
+    </ClInclude>
+    <ClInclude Include="fastCast.h" />
+    <ClInclude Include="cachedPointer.h" />
+    <ClInclude Include="performance\scopedMeasureAndShow.h">
+      <Filter>performance</Filter>
+    </ClInclude>
+    <ClInclude Include="collision\physicalMaterial.h">
+      <Filter>collision</Filter>
+    </ClInclude>
+    <ClInclude Include="collision\loadingContext.h">
+      <Filter>collision</Filter>
+    </ClInclude>
+    <ClInclude Include="collision\checkSegmentResult.h">
+      <Filter>collision</Filter>
+    </ClInclude>
+    <ClInclude Include="system\video\indexFormat.h">
+      <Filter>system\video</Filter>
+    </ClInclude>
+    <ClInclude Include="io\digested.h">
+      <Filter>io</Filter>
+    </ClInclude>
+    <ClInclude Include="serialisation\iSerialisable.h">
+      <Filter>serialisation</Filter>
+    </ClInclude>
+    <ClInclude Include="serialisation\serialisableResource.h">
+      <Filter>serialisation</Filter>
+    </ClInclude>
+    <ClInclude Include="serialisation\serialiser.h">
+      <Filter>serialisation</Filter>
+    </ClInclude>
+    <ClInclude Include="serialisation\importer.h">
+      <Filter>serialisation</Filter>
+    </ClInclude>
+    <ClInclude Include="mesh\primitiveType.h">
+      <Filter>mesh</Filter>
+    </ClInclude>
+    <ClInclude Include="mesh\usage.h">
+      <Filter>mesh</Filter>
+    </ClInclude>
+    <ClInclude Include="mesh\socketDefinition.h">
+      <Filter>mesh</Filter>
+    </ClInclude>
+    <ClInclude Include="mesh\socketDefinitionSet.h">
+      <Filter>mesh</Filter>
+    </ClInclude>
+    <ClInclude Include="serialisation\importerHelper.h">
+      <Filter>serialisation</Filter>
+    </ClInclude>
+    <ClInclude Include="mesh\skeleton.h">
+      <Filter>mesh</Filter>
+    </ClInclude>
+    <ClInclude Include="mesh\boneDefinition.h">
+      <Filter>mesh</Filter>
+    </ClInclude>
+    <ClInclude Include="math\vectorInt4.h">
+      <Filter>math</Filter>
+    </ClInclude>
+    <ClInclude Include="mesh\iMesh3dRenderBonesProvider.h">
+      <Filter>mesh</Filter>
+    </ClInclude>
+    <ClInclude Include="mesh\pose.h">
+      <Filter>mesh</Filter>
+    </ClInclude>
+    <ClInclude Include="mesh\poseManager.h">
+      <Filter>mesh</Filter>
+    </ClInclude>
+    <ClInclude Include="splash\splashInfo.h">
+      <Filter>splash</Filter>
+    </ClInclude>
+    <ClInclude Include="system\video\outputSetup.h">
+      <Filter>system\video</Filter>
+    </ClInclude>
+    <ClInclude Include="graph\graphNode.h">
+      <Filter>graph</Filter>
+    </ClInclude>
+    <ClInclude Include="graph\graph.h">
+      <Filter>graph</Filter>
+    </ClInclude>
+    <ClInclude Include="graph\graphNodeContainer.h">
+      <Filter>graph</Filter>
+    </ClInclude>
+    <ClInclude Include="system\video\fragmentShaderOutputSetup.h">
+      <Filter>system\video</Filter>
+    </ClInclude>
+    <ClInclude Include="graph\graphInputConnector.h">
+      <Filter>graph</Filter>
+    </ClInclude>
+    <ClInclude Include="graph\graphOutputConnector.h">
+      <Filter>graph</Filter>
+    </ClInclude>
+    <ClInclude Include="graph\graphConnector.h">
+      <Filter>graph</Filter>
+    </ClInclude>
+    <ClInclude Include="buildInformation.h" />
+    <ClInclude Include="buildVer.h" />
+    <ClInclude Include="instance\instanceData.h">
+      <Filter>instance</Filter>
+    </ClInclude>
+    <ClInclude Include="instance\instanceDatum.h">
+      <Filter>instance</Filter>
+    </ClInclude>
+    <ClInclude Include="instance\instanceDataHandler.h">
+      <Filter>instance</Filter>
+    </ClInclude>
+    <ClInclude Include="instance\iInstanceDataSource.h">
+      <Filter>instance</Filter>
+    </ClInclude>
+    <ClInclude Include="graph\graphInstance.h">
+      <Filter>graph</Filter>
+    </ClInclude>
+    <ClInclude Include="graph\graphInstanceData.h">
+      <Filter>graph</Filter>
+    </ClInclude>
+    <ClInclude Include="system\video\shaderProgramBindingContext.h">
+      <Filter>system\video</Filter>
+    </ClInclude>
+    <ClInclude Include="mesh\mesh3dRenderingContext.h">
+      <Filter>mesh</Filter>
+    </ClInclude>
+    <ClInclude Include="mainSettings.h" />
+    <ClInclude Include="system\video\shaderSource.h">
+      <Filter>system\video</Filter>
+    </ClInclude>
+    <ClInclude Include="mainConfig.h" />
+    <ClInclude Include="debug\logInfoContext.h">
+      <Filter>debug</Filter>
+    </ClInclude>
+    <ClInclude Include="system\video\font.h">
+      <Filter>system\video</Filter>
+    </ClInclude>
+    <ClInclude Include="system\video\camera.h">
+      <Filter>system\video</Filter>
+    </ClInclude>
+    <ClInclude Include="mesh\combinedMesh3dInstanceSet.h">
+      <Filter>mesh</Filter>
+    </ClInclude>
+    <ClInclude Include="mesh\mesh3dPart.h">
+      <Filter>mesh</Filter>
+    </ClInclude>
+    <ClInclude Include="mesh\mesh3dRenderingUtils.h">
+      <Filter>mesh</Filter>
+    </ClInclude>
+    <ClInclude Include="system\timeStamp.h">
+      <Filter>system</Filter>
+    </ClInclude>
+    <ClInclude Include="vr\iVR.h">
+      <Filter>vr</Filter>
+    </ClInclude>
+    <ClInclude Include="pieceCombiner\pieceCombinerImplementation.h">
+      <Filter>pieceCombiner</Filter>
+    </ClInclude>
+    <ClInclude Include="system\gamepad.h">
+      <Filter>system</Filter>
+    </ClInclude>
+    <ClInclude Include="system\video\videoEnums.h">
+      <Filter>system\video</Filter>
+    </ClInclude>
+    <ClInclude Include="system\video\pipelines.h">
+      <Filter>system\video</Filter>
+    </ClInclude>
+    <ClInclude Include="system\video\videoGL.h">
+      <Filter>system\video</Filter>
+    </ClInclude>
+    <ClInclude Include="graph\graphImplementation.h">
+      <Filter>graph</Filter>
+    </ClInclude>
+    <ClInclude Include="concurrency\immediateJobFunc.h">
+      <Filter>concurrency</Filter>
+    </ClInclude>
+    <ClInclude Include="concurrency\asynchronousJobFunc.h">
+      <Filter>concurrency</Filter>
+    </ClInclude>
+    <ClInclude Include="coreInit.h" />
+    <ClInclude Include="latent\latentBlock.h">
+      <Filter>latent</Filter>
+    </ClInclude>
+    <ClInclude Include="latent\latentFrame.h">
+      <Filter>latent</Filter>
+    </ClInclude>
+    <ClInclude Include="latent\latentStackVariables.h">
+      <Filter>latent</Filter>
+    </ClInclude>
+    <ClInclude Include="latent\latentScope.h">
+      <Filter>latent</Filter>
+    </ClInclude>
+    <ClInclude Include="latent\latent.h">
+      <Filter>latent</Filter>
+    </ClInclude>
+    <ClInclude Include="latent\functions\latentFunctions.h">
+      <Filter>latent\functions</Filter>
+    </ClInclude>
+    <ClInclude Include="collision\collisionFlags.h">
+      <Filter>collision</Filter>
+    </ClInclude>
+    <ClInclude Include="math\blendUtils.h">
+      <Filter>math</Filter>
+    </ClInclude>
+    <ClInclude Include="math\range3.h">
+      <Filter>math</Filter>
+    </ClInclude>
+    <ClInclude Include="types\storeInScope.h">
+      <Filter>types</Filter>
+    </ClInclude>
+    <ClInclude Include="math\matrix33.h">
+      <Filter>math</Filter>
+    </ClInclude>
+    <ClInclude Include="math\matrix44.h">
+      <Filter>math</Filter>
+    </ClInclude>
+    <ClInclude Include="other\customParameters.h">
+      <Filter>other</Filter>
+    </ClInclude>
+    <ClInclude Include="other\registeredType.h">
+      <Filter>other</Filter>
+    </ClInclude>
+    <ClInclude Include="math\blendCurves.h">
+      <Filter>math</Filter>
+    </ClInclude>
+    <ClInclude Include="math\dateMath.h">
+      <Filter>math</Filter>
+    </ClInclude>
+    <ClInclude Include="math\mathSpecialisations.h">
+      <Filter>math</Filter>
+    </ClInclude>
+    <ClInclude Include="other\simpleVariableStorage.h">
+      <Filter>other</Filter>
+    </ClInclude>
+    <ClInclude Include="mesh\boneID.h">
+      <Filter>mesh</Filter>
+    </ClInclude>
+    <ClInclude Include="debug\extendedDebug.h">
+      <Filter>debug</Filter>
+    </ClInclude>
+    <ClInclude Include="math\bezierCurve.h">
+      <Filter>math</Filter>
+    </ClInclude>
+    <ClInclude Include="system\sound\soundSystem.h">
+      <Filter>system\sound</Filter>
+    </ClInclude>
+    <ClInclude Include="system\sound\utils.h">
+      <Filter>system\sound</Filter>
+    </ClInclude>
+    <ClInclude Include="sound\sampleBank.h">
+      <Filter>sound</Filter>
+    </ClInclude>
+    <ClInclude Include="sound\sample.h">
+      <Filter>sound</Filter>
+    </ClInclude>
+    <ClInclude Include="system\sound\soundConfig.h">
+      <Filter>system\sound</Filter>
+    </ClInclude>
+    <ClInclude Include="sound\playback.h">
+      <Filter>sound</Filter>
+    </ClInclude>
+    <ClInclude Include="sound\channel.h">
+      <Filter>sound</Filter>
+    </ClInclude>
+    <ClInclude Include="sound\sampleParams.h">
+      <Filter>sound</Filter>
+    </ClInclude>
+    <ClInclude Include="math\curve.h">
+      <Filter>math</Filter>
+    </ClInclude>
+    <ClInclude Include="mesh\builders\mesh3dBuilder_IPU.h">
+      <Filter>mesh\builders</Filter>
+    </ClInclude>
+    <ClInclude Include="math\bezierSurface.h">
+      <Filter>math</Filter>
+    </ClInclude>
+    <ClInclude Include="mesh\helpers\mesh3dHelper_bezierSurface.h">
+      <Filter>mesh\helpers</Filter>
+    </ClInclude>
+    <ClInclude Include="math\segment2.h">
+      <Filter>math</Filter>
+    </ClInclude>
+    <ClInclude Include="defaults.h" />
+    <ClInclude Include="math\mathDefaults.h">
+      <Filter>math</Filter>
+    </ClInclude>
+    <ClInclude Include="wheresMyPoint\iWMPTool.h">
+      <Filter>wheresMyPoint</Filter>
+    </ClInclude>
+    <ClInclude Include="wheresMyPoint\iWMPOwner.h">
+      <Filter>wheresMyPoint</Filter>
+    </ClInclude>
+    <ClInclude Include="wheresMyPoint\wmp_mirror.h">
+      <Filter>wheresMyPoint</Filter>
+    </ClInclude>
+    <ClInclude Include="wheresMyPoint\wmp_point.h">
+      <Filter>wheresMyPoint</Filter>
+    </ClInclude>
+    <ClInclude Include="wheresMyPoint\wmp_float.h">
+      <Filter>wheresMyPoint</Filter>
+    </ClInclude>
+    <ClInclude Include="wheresMyPoint\wmp_context.h">
+      <Filter>wheresMyPoint</Filter>
+    </ClInclude>
+    <ClInclude Include="wheresMyPoint\wmp.h">
+      <Filter>wheresMyPoint</Filter>
+    </ClInclude>
+    <ClInclude Include="wheresMyPoint\wmp_store.h">
+      <Filter>wheresMyPoint</Filter>
+    </ClInclude>
+    <ClInclude Include="wheresMyPoint\wmp_restore.h">
+      <Filter>wheresMyPoint</Filter>
+    </ClInclude>
+    <ClInclude Include="wheresMyPoint\wmp_block.h">
+      <Filter>wheresMyPoint</Filter>
+    </ClInclude>
+    <ClInclude Include="wheresMyPoint\wmp_normalise.h">
+      <Filter>wheresMyPoint</Filter>
+    </ClInclude>
+    <ClInclude Include="wheresMyPoint\wmp_vector3.h">
+      <Filter>wheresMyPoint</Filter>
+    </ClInclude>
+    <ClInclude Include="wheresMyPoint\wmp_transform.h">
+      <Filter>wheresMyPoint</Filter>
+    </ClInclude>
+    <ClInclude Include="wheresMyPoint\wmp_betweenPoints.h">
+      <Filter>wheresMyPoint</Filter>
+    </ClInclude>
+    <ClInclude Include="wheresMyPoint\wmp_pointDirection.h">
+      <Filter>wheresMyPoint</Filter>
+    </ClInclude>
+    <ClInclude Include="math\axis.h">
+      <Filter>math</Filter>
+    </ClInclude>
+    <ClInclude Include="wheresMyPoint\wmp_transformOps.h">
+      <Filter>wheresMyPoint</Filter>
+    </ClInclude>
+    <ClInclude Include="wheresMyPoint\wmp_mathOps.h">
+      <Filter>wheresMyPoint</Filter>
+    </ClInclude>
+    <ClInclude Include="wheresMyPoint\wmp_plane.h">
+      <Filter>wheresMyPoint</Filter>
+    </ClInclude>
+    <ClInclude Include="wheresMyPoint\wmp_dropOnto.h">
+      <Filter>wheresMyPoint</Filter>
+    </ClInclude>
+    <ClInclude Include="wheresMyPoint\wmp_intersect.h">
+      <Filter>wheresMyPoint</Filter>
+    </ClInclude>
+    <ClInclude Include="wheresMyPoint\wmp_access.h">
+      <Filter>wheresMyPoint</Filter>
+    </ClInclude>
+    <ClInclude Include="wheresMyPoint\wmp_local.h">
+      <Filter>wheresMyPoint</Filter>
+    </ClInclude>
+    <ClInclude Include="wheresMyPoint\wmp_get.h">
+      <Filter>wheresMyPoint</Filter>
+    </ClInclude>
+    <ClInclude Include="enums.h" />
+    <ClInclude Include="wheresMyPoint\wmp_length.h">
+      <Filter>wheresMyPoint</Filter>
+    </ClInclude>
+    <ClInclude Include="wheresMyPoint\wmp_vector2.h">
+      <Filter>wheresMyPoint</Filter>
+    </ClInclude>
+    <ClInclude Include="wheresMyPoint\wmp_copyStore.h">
+      <Filter>wheresMyPoint</Filter>
+    </ClInclude>
+    <ClInclude Include="other\registeredTypeRegistering.h">
+      <Filter>other</Filter>
+    </ClInclude>
+    <ClInclude Include="coreRegisteredTypes.h" />
+    <ClInclude Include="sound\soundFadingUtils.h">
+      <Filter>sound</Filter>
+    </ClInclude>
+    <ClInclude Include="math\rangeInt2.h">
+      <Filter>math</Filter>
+    </ClInclude>
+    <ClInclude Include="mesh\vertexSkinningInfo.h">
+      <Filter>mesh</Filter>
+    </ClInclude>
+    <ClInclude Include="system\video\primitivesPipeline.h">
+      <Filter>system\video</Filter>
+    </ClInclude>
+    <ClInclude Include="system\video\shaderProgramCache.h">
+      <Filter>system\video</Filter>
+    </ClInclude>
+    <ClInclude Include="math\typeUtils.h">
+      <Filter>math</Filter>
+    </ClInclude>
+    <ClInclude Include="other\factoryOfNamed.h">
+      <Filter>other</Filter>
+    </ClInclude>
+    <ClInclude Include="random\random.h">
+      <Filter>random</Filter>
+    </ClInclude>
+    <ClInclude Include="random\randomNumber.h">
+      <Filter>random</Filter>
+    </ClInclude>
+    <ClInclude Include="random\randomUtils.h">
+      <Filter>random</Filter>
+    </ClInclude>
+    <ClInclude Include="keepValue.h" />
+    <ClInclude Include="system\video\renderTargetPtr.h">
+      <Filter>system\video</Filter>
+    </ClInclude>
+    <ClInclude Include="serialisation\serialiserBasics.h">
+      <Filter>serialisation</Filter>
+    </ClInclude>
+    <ClInclude Include="system\video\videoSDL.h">
+      <Filter>system\video</Filter>
+    </ClInclude>
+    <ClInclude Include="mesh\mesh3dRenderingBuffer.h">
+      <Filter>mesh</Filter>
+    </ClInclude>
+    <ClInclude Include="vr\oculus\oculus.h">
+      <Filter>vr\oculus</Filter>
+    </ClInclude>
+    <ClInclude Include="vr\oculus\oculusImpl.h">
+      <Filter>vr\oculus</Filter>
+    </ClInclude>
+    <ClInclude Include="vr\openvr\openvr.h">
+      <Filter>vr\openvr</Filter>
+    </ClInclude>
+    <ClInclude Include="vr\openvr\openvrImpl.h">
+      <Filter>vr\openvr</Filter>
+    </ClInclude>
+    <ClInclude Include="vr\vrFovPort.h">
+      <Filter>vr</Filter>
+    </ClInclude>
+    <ClInclude Include="vr\vrInput.h">
+      <Filter>vr</Filter>
+    </ClInclude>
+    <ClInclude Include="math\segmentSimple.h">
+      <Filter>math</Filter>
+    </ClInclude>
+    <ClInclude Include="debugConfig.h" />
+    <ClInclude Include="concurrency\mrswLock.h">
+      <Filter>concurrency</Filter>
+    </ClInclude>
+    <ClInclude Include="concurrency\concurrencyStats.h">
+      <Filter>concurrency</Filter>
+    </ClInclude>
+    <ClInclude Include="performance\scopedMeasureLongJob.h">
+      <Filter>performance</Filter>
+    </ClInclude>
+    <ClInclude Include="collision\shapeMesh.h">
+      <Filter>collision</Filter>
+    </ClInclude>
+    <ClInclude Include="math\simpleMesh.h">
+      <Filter>math</Filter>
+    </ClInclude>
+    <ClInclude Include="vr\vrZone.h">
+      <Filter>vr</Filter>
+    </ClInclude>
+    <ClInclude Include="tags\tag.h">
+      <Filter>tags</Filter>
+    </ClInclude>
+    <ClInclude Include="tags\tagCondition.h">
+      <Filter>tags</Filter>
+    </ClInclude>
+    <ClInclude Include="system\video\videoFunctions.h">
+      <Filter>system\video</Filter>
+    </ClInclude>
+    <ClInclude Include="wheresMyPoint\wmp_mathOpsSimple.h">
+      <Filter>wheresMyPoint</Filter>
+    </ClInclude>
+    <ClInclude Include="types\nameSpecialisations.h">
+      <Filter>types</Filter>
+    </ClInclude>
+    <ClInclude Include="values.h" />
+    <ClInclude Include="wheresMyPoint\wmp_customTool.h">
+      <Filter>wheresMyPoint</Filter>
+    </ClInclude>
+    <ClInclude Include="debug\debugVisualiser.h">
+      <Filter>debug</Filter>
+    </ClInclude>
+    <ClInclude Include="pieceCombiner\pieceCombinerDebugVisualiser.h">
+      <Filter>pieceCombiner</Filter>
+    </ClInclude>
+    <ClInclude Include="wheresMyPoint\wmp_name.h">
+      <Filter>wheresMyPoint</Filter>
+    </ClInclude>
+    <ClInclude Include="wheresMyPoint\wmp_bool.h">
+      <Filter>wheresMyPoint</Filter>
+    </ClInclude>
+    <ClInclude Include="wheresMyPoint\wmp_int.h">
+      <Filter>wheresMyPoint</Filter>
+    </ClInclude>
+    <ClInclude Include="wheresMyPoint\wmp_logicOps.h">
+      <Filter>wheresMyPoint</Filter>
+    </ClInclude>
+    <ClInclude Include="wheresMyPoint\wmp_if.h">
+      <Filter>wheresMyPoint</Filter>
+    </ClInclude>
+    <ClInclude Include="wheresMyPoint\wmp_mathComparisons.h">
+      <Filter>wheresMyPoint</Filter>
+    </ClInclude>
+    <ClInclude Include="wheresMyPoint\wmp_vectorOps.h">
+      <Filter>wheresMyPoint</Filter>
+    </ClInclude>
+    <ClInclude Include="wheresMyPoint\wmp_break.h">
+      <Filter>wheresMyPoint</Filter>
+    </ClInclude>
+    <ClInclude Include="wheresMyPoint\wmp_output.h">
+      <Filter>wheresMyPoint</Filter>
+    </ClInclude>
+    <ClInclude Include="memory\safeObject.h">
+      <Filter>memory</Filter>
+    </ClInclude>
+    <ClInclude Include="mesh\boneRenamer.h">
+      <Filter>mesh</Filter>
+    </ClInclude>
+    <ClInclude Include="mesh\boneRenameFunc.h">
+      <Filter>mesh</Filter>
+    </ClInclude>
+    <ClInclude Include="concurrency\scopedMRSWLock.h">
+      <Filter>concurrency</Filter>
+    </ClInclude>
+    <ClInclude Include="system\faultHandler.h">
+      <Filter>system</Filter>
+    </ClInclude>
+    <ClInclude Include="wheresMyPoint\wmp_isNameValid.h">
+      <Filter>wheresMyPoint</Filter>
+    </ClInclude>
+    <ClInclude Include="wheresMyPoint\wmp_mayRestore.h">
+      <Filter>wheresMyPoint</Filter>
+    </ClInclude>
+    <ClInclude Include="wheresMyPoint\wmp_todo.h">
+      <Filter>wheresMyPoint</Filter>
+    </ClInclude>
+    <ClInclude Include="debugKeys.h" />
+    <ClInclude Include="debugSettings.h" />
+    <ClInclude Include="system\systemInfo.h">
+      <Filter>system</Filter>
+    </ClInclude>
+    <ClInclude Include="wheresMyPoint\wmp_range.h">
+      <Filter>wheresMyPoint</Filter>
+    </ClInclude>
+    <ClInclude Include="wheresMyPoint\wmp_range2.h">
+      <Filter>wheresMyPoint</Filter>
+    </ClInclude>
+    <ClInclude Include="sound\reverb.h">
+      <Filter>sound</Filter>
+    </ClInclude>
+    <ClInclude Include="sound\reverbInstance.h">
+      <Filter>sound</Filter>
+    </ClInclude>
+    <ClInclude Include="mesh\mesh3dRenderingBufferSet.h">
+      <Filter>mesh</Filter>
+    </ClInclude>
+    <ClInclude Include="io\xmlSerialisationVersion.h">
+      <Filter>io</Filter>
+    </ClInclude>
+    <ClInclude Include="splash\splashScreen.h">
+      <Filter>splash</Filter>
+    </ClInclude>
+    <ClInclude Include="concurrency\mrswGuard.h">
+      <Filter>concurrency</Filter>
+    </ClInclude>
+    <ClInclude Include="concurrency\scopedMRSWGuard.h">
+      <Filter>concurrency</Filter>
+    </ClInclude>
+    <ClInclude Include="math\vectorInt3.h">
+      <Filter>math</Filter>
+    </ClInclude>
+    <ClInclude Include="latent\latentFrameInspection.h">
+      <Filter>latent</Filter>
+    </ClInclude>
+    <ClInclude Include="mesh\remapBoneArray.h">
+      <Filter>mesh</Filter>
+    </ClInclude>
+    <ClInclude Include="wheresMyPoint\wmp_rotator3.h">
+      <Filter>wheresMyPoint</Filter>
+    </ClInclude>
+    <ClInclude Include="collision\shapeMeshSkinned.h">
+      <Filter>collision</Filter>
+    </ClInclude>
+    <ClInclude Include="math\skinnedMesh.h">
+      <Filter>math</Filter>
+    </ClInclude>
+    <ClInclude Include="types\hand.h">
+      <Filter>types</Filter>
+    </ClInclude>
+    <ClInclude Include="vr\vrOffsets.h">
+      <Filter>vr</Filter>
+    </ClInclude>
+    <ClInclude Include="vr\vrSystem.h">
+      <Filter>vr</Filter>
+    </ClInclude>
+    <ClInclude Include="vr\vrSystemImpl.h">
+      <Filter>vr</Filter>
+    </ClInclude>
+    <ClInclude Include="wheresMyPoint\wmp_isEmpty.h">
+      <Filter>wheresMyPoint</Filter>
+    </ClInclude>
+    <ClInclude Include="wheresMyPoint\wmpParam.h">
+      <Filter>wheresMyPoint</Filter>
+    </ClInclude>
+    <ClInclude Include="math\transformUtils.h">
+      <Filter>math</Filter>
+    </ClInclude>
+    <ClInclude Include="math\convexPolygon.h">
+      <Filter>math</Filter>
+    </ClInclude>
+    <ClInclude Include="types\option.h">
+      <Filter>types</Filter>
+    </ClInclude>
+    <ClInclude Include="wheresMyPoint\wmp_vectorInt2.h">
+      <Filter>wheresMyPoint</Filter>
+    </ClInclude>
+    <ClInclude Include="endianUtils.h" />
+    <ClInclude Include="timeUtils.h" />
+    <ClInclude Include="system\video\imageLoaders\il_tga.h">
+      <Filter>system\video\imageLoaders</Filter>
+    </ClInclude>
+    <ClInclude Include="io\assetFile.h">
+      <Filter>io</Filter>
+    </ClInclude>
+    <ClInclude Include="io\assetDir.h">
+      <Filter>io</Filter>
+    </ClInclude>
+    <ClInclude Include="vr\oculusMobile\oculusMobile.h">
+      <Filter>vr\oculusMobile</Filter>
+    </ClInclude>
+    <ClInclude Include="vr\oculusMobile\oculusMobileImpl.h">
+      <Filter>vr\oculusMobile</Filter>
+    </ClInclude>
+    <ClInclude Include="splash\splashLogos.h">
+      <Filter>splash</Filter>
+    </ClInclude>
+    <ClInclude Include="network\netAddress.h">
+      <Filter>network</Filter>
+    </ClInclude>
+    <ClInclude Include="network\netPackage.h">
+      <Filter>network</Filter>
+    </ClInclude>
+    <ClInclude Include="network\netPacket.h">
+      <Filter>network</Filter>
+    </ClInclude>
+    <ClInclude Include="network\network.h">
+      <Filter>network</Filter>
+    </ClInclude>
+    <ClInclude Include="network\netServerTCP.h">
+      <Filter>network</Filter>
+    </ClInclude>
+    <ClInclude Include="network\netClientTCP.h">
+      <Filter>network</Filter>
+    </ClInclude>
+    <ClInclude Include="io\json.h">
+      <Filter>io</Filter>
+    </ClInclude>
+    <ClInclude Include="network\http.h">
+      <Filter>network</Filter>
+    </ClInclude>
+    <ClInclude Include="types\vectorPacked.h">
+      <Filter>types</Filter>
+    </ClInclude>
+    <ClInclude Include="other\typeConversions.h">
+      <Filter>other</Filter>
+    </ClInclude>
+    <ClInclude Include="system\video\vertexFormatUtils.h">
+      <Filter>system\video</Filter>
+    </ClInclude>
+    <ClInclude Include="recordVideoSettings.h" />
+    <ClInclude Include="containers\sortUtils.h">
+      <Filter>containers</Filter>
+    </ClInclude>
+    <ClInclude Include="wheresMyPoint\wmp_remap.h">
+      <Filter>wheresMyPoint</Filter>
+    </ClInclude>
+    <ClInclude Include="wheresMyPoint\wmp_range3.h">
+      <Filter>wheresMyPoint</Filter>
+    </ClInclude>
+    <ClInclude Include="wheresMyPoint\wmp_include.h">
+      <Filter>wheresMyPoint</Filter>
+    </ClInclude>
+    <ClInclude Include="wheresMyPoint\wmp_expandBy.h">
+      <Filter>wheresMyPoint</Filter>
+    </ClInclude>
+    <ClInclude Include="wheresMyPoint\wmp_flattenToCentre.h">
+      <Filter>wheresMyPoint</Filter>
+    </ClInclude>
+    <ClInclude Include="math\quickHull\quickHullImpl.h">
+      <Filter>math\quickHull</Filter>
+    </ClInclude>
+    <ClInclude Include="math\quickHull\quickHullConvexHull.h">
+      <Filter>math\quickHull</Filter>
+    </ClInclude>
+    <ClInclude Include="math\quickHull\quickHullQuickHull.h">
+      <Filter>math\quickHull</Filter>
+    </ClInclude>
+    <ClInclude Include="math\quickHull\quickHullMathUtils.h">
+      <Filter>math\quickHull</Filter>
+    </ClInclude>
+    <ClInclude Include="math\quickHull\quickHullHalfEdgeMesh.h">
+      <Filter>math\quickHull</Filter>
+    </ClInclude>
+    <ClInclude Include="math\quickHull\Structs\quickHullVertexDataSource.h">
+      <Filter>math\quickHull\structs</Filter>
+    </ClInclude>
+    <ClInclude Include="math\quickHull\Structs\quickHullMesh.h">
+      <Filter>math\quickHull\structs</Filter>
+    </ClInclude>
+    <ClInclude Include="math\quickHull\Structs\quickHullPlane.h">
+      <Filter>math\quickHull\structs</Filter>
+    </ClInclude>
+    <ClInclude Include="math\quickHull\Structs\quickHullPool.h">
+      <Filter>math\quickHull\structs</Filter>
+    </ClInclude>
+    <ClInclude Include="math\quickHull\Structs\quickHullRay.h">
+      <Filter>math\quickHull\structs</Filter>
+    </ClInclude>
+    <ClInclude Include="math\quickHull\Structs\quickHullVector3.h">
+      <Filter>math\quickHull\structs</Filter>
+    </ClInclude>
+    <ClInclude Include="wheresMyPoint\wmp_lerp.h">
+      <Filter>wheresMyPoint</Filter>
+    </ClInclude>
+    <ClInclude Include="other\remapValue.h">
+      <Filter>other</Filter>
+    </ClInclude>
+    <ClInclude Include="math\polygonUtils.h">
+      <Filter>math</Filter>
+    </ClInclude>
+    <ClInclude Include="math\earcut\earcut.h">
+      <Filter>math\earcut</Filter>
+    </ClInclude>
+    <ClInclude Include="system\timePoint.h">
+      <Filter>system</Filter>
+    </ClInclude>
+    <ClInclude Include="io\base64.h">
+      <Filter>io</Filter>
+    </ClInclude>
+    <ClInclude Include="io\outputWriter.h">
+      <Filter>io</Filter>
+    </ClInclude>
+    <ClInclude Include="concurrency\scopedCounter.h">
+      <Filter>concurrency</Filter>
+    </ClInclude>
+    <ClInclude Include="wheresMyPoint\wmp_chooseOne.h">
+      <Filter>wheresMyPoint</Filter>
+    </ClInclude>
+    <ClInclude Include="memory\softPooledObjectMT.h">
+      <Filter>memory</Filter>
+    </ClInclude>
+    <ClInclude Include="math\mathToString.h">
+      <Filter>math</Filter>
+    </ClInclude>
+    <ClInclude Include="types\dirFourClockwise.h">
+      <Filter>types</Filter>
+    </ClInclude>
+    <ClInclude Include="wheresMyPoint\wmp_centre.h">
+      <Filter>wheresMyPoint</Filter>
+    </ClInclude>
+    <ClInclude Include="wheresMyPoint\wmp_matrix.h">
+      <Filter>wheresMyPoint</Filter>
+    </ClInclude>
+    <ClInclude Include="wheresMyPoint\wmp_quat.h">
+      <Filter>wheresMyPoint</Filter>
+    </ClInclude>
+    <ClInclude Include="physicalSensations\iPhysicalSensations.h">
+      <Filter>physicalSensations</Filter>
+    </ClInclude>
+    <ClInclude Include="physicalSensations\psOWO.h">
+      <Filter>physicalSensations</Filter>
+    </ClInclude>
+    <ClInclude Include="physicalSensations\allPhysicalSensations.h">
+      <Filter>physicalSensations</Filter>
+    </ClInclude>
+    <ClInclude Include="physicalSensations\sensations.h">
+      <Filter>physicalSensations</Filter>
+    </ClInclude>
+    <ClInclude Include="physicalSensations\physicalSensations.h">
+      <Filter>physicalSensations</Filter>
+    </ClInclude>
+    <ClInclude Include="system\video\imageSavers\is_tga.h">
+      <Filter>system\video\imageSavers</Filter>
+    </ClInclude>
+    <ClInclude Include="physicalSensations\bhapticsJava\bhj_bhapticsModule.h">
+      <Filter>physicalSensations\bhapticsJava</Filter>
+    </ClInclude>
+    <ClInclude Include="system\javaEnv.h">
+      <Filter>system</Filter>
+    </ClInclude>
+    <ClInclude Include="physicalSensations\bhapticsJava\bhj_enums.h">
+      <Filter>physicalSensations\bhapticsJava</Filter>
+    </ClInclude>
+    <ClInclude Include="physicalSensations\bhapticsJava\bhj_bhapticsDevice.h">
+      <Filter>physicalSensations\bhapticsJava</Filter>
+    </ClInclude>
+    <ClInclude Include="physicalSensations\bhapticsJava\bhj_settings.h">
+      <Filter>physicalSensations\bhapticsJava</Filter>
+    </ClInclude>
+    <ClInclude Include="physicalSensations\physicalSensationsSettings.h">
+      <Filter>physicalSensations</Filter>
+    </ClInclude>
+    <ClInclude Include="physicalSensations\psBhapticsJava.h">
+      <Filter>physicalSensations</Filter>
+    </ClInclude>
+    <ClInclude Include="physicalSensations\bhaptics\bh_library.h">
+      <Filter>physicalSensations\bhaptics</Filter>
+    </ClInclude>
+    <ClInclude Include="physicalSensations\bhaptics\bh_enums.h">
+      <Filter>physicalSensations\bhaptics</Filter>
+    </ClInclude>
+    <ClInclude Include="physicalSensations\bhaptics\bh_availableDevices.h">
+      <Filter>physicalSensations\bhaptics</Filter>
+    </ClInclude>
+    <ClInclude Include="wheresMyPoint\wmp_getPt.h">
+      <Filter>wheresMyPoint</Filter>
+    </ClInclude>
+    <ClInclude Include="physicalSensations\bhapticsWindows\bhw_hapticLibrary.h">
+      <Filter>physicalSensations\bhapticsWindows</Filter>
+    </ClInclude>
+    <ClInclude Include="physicalSensations\bhapticsWindows\bhw_commonutils.h">
+      <Filter>physicalSensations\bhapticsWindows</Filter>
+    </ClInclude>
+    <ClInclude Include="physicalSensations\bhapticsWindows\bhw_easywsclient.h">
+      <Filter>physicalSensations\bhapticsWindows</Filter>
+    </ClInclude>
+    <ClInclude Include="physicalSensations\bhapticsWindows\bhw_hapticsManager.h">
+      <Filter>physicalSensations\bhapticsWindows</Filter>
+    </ClInclude>
+    <ClInclude Include="physicalSensations\bhapticsWindows\bhw_json.hpp">
+      <Filter>physicalSensations\bhapticsWindows</Filter>
+    </ClInclude>
+    <ClInclude Include="physicalSensations\bhapticsWindows\bhw_model.h">
+      <Filter>physicalSensations\bhapticsWindows</Filter>
+    </ClInclude>
+    <ClInclude Include="physicalSensations\bhapticsWindows\bhw_projectModel.h">
+      <Filter>physicalSensations\bhapticsWindows</Filter>
+    </ClInclude>
+    <ClInclude Include="physicalSensations\bhapticsWindows\bhw_timer.h">
+      <Filter>physicalSensations\bhapticsWindows</Filter>
+    </ClInclude>
+    <ClInclude Include="physicalSensations\bhapticsWindows\bhw_util.h">
+      <Filter>physicalSensations\bhapticsWindows</Filter>
+    </ClInclude>
+    <ClInclude Include="physicalSensations\bhapticsWindows\bhw_bhapticsModule.h">
+      <Filter>physicalSensations\bhapticsWindows</Filter>
+    </ClInclude>
+    <ClInclude Include="physicalSensations\bhapticsWindows\bhw_bhapticsDevice.h">
+      <Filter>physicalSensations\bhapticsWindows</Filter>
+    </ClInclude>
+    <ClInclude Include="physicalSensations\bhapticsWindows\bhw_settings.h">
+      <Filter>physicalSensations\bhapticsWindows</Filter>
+    </ClInclude>
+    <ClInclude Include="physicalSensations\psBhapticsWindows.h">
+      <Filter>physicalSensations</Filter>
+    </ClInclude>
+    <ClInclude Include="wheresMyPoint\wmp_defaultValue.h">
+      <Filter>wheresMyPoint</Filter>
+    </ClInclude>
+    <ClInclude Include="wheresMyPoint\wmp_randSeed.h">
+      <Filter>wheresMyPoint</Filter>
+    </ClInclude>
+    <ClInclude Include="globalDebug.h" />
+    <ClInclude Include="renderDoc.h" />
+    <ClInclude Include="compression\compression.h">
+      <Filter>compression</Filter>
+    </ClInclude>
+    <ClInclude Include="system\recentCapture.h">
+      <Filter>system</Filter>
+    </ClInclude>
+    <ClInclude Include="system\video\pixelUtils.h">
+      <Filter>system\video</Filter>
+    </ClInclude>
+    <ClInclude Include="functionParamsStruct.h" />
+    <ClInclude Include="types\stringSpecialisations.h">
+      <Filter>types</Filter>
+    </ClInclude>
+    <ClInclude Include="wheresMyPoint\wmp_convertStore.h">
+      <Filter>wheresMyPoint</Filter>
+    </ClInclude>
+    <ClInclude Include="wheresMyPoint\simpleWMPOwner.h">
+      <Filter>wheresMyPoint</Filter>
+    </ClInclude>
+    <ClInclude Include="system\video\indexFormatUtils.h">
+      <Filter>system\video</Filter>
+    </ClInclude>
+    <ClInclude Include="wheresMyPoint\wmp_mainSettings.h">
+      <Filter>wheresMyPoint</Filter>
+    </ClInclude>
+    <ClInclude Include="utils\utils_loadingForSystemShader.h">
+      <Filter>utils</Filter>
+    </ClInclude>
+    <ClInclude Include="vr\vrMode.h">
+      <Filter>vr</Filter>
+    </ClInclude>
+    <ClInclude Include="lifetimeIndicator.h" />
+    <ClInclude Include="profilePerformanceSettings.h" />
+    <ClInclude Include="vr\openxr\openxr.h">
+      <Filter>vr\openxr</Filter>
+    </ClInclude>
+    <ClInclude Include="vr\openxr\openxrImpl.h">
+      <Filter>vr\openxr</Filter>
+    </ClInclude>
+    <ClInclude Include="system\video\renderTargetUtils.h">
+      <Filter>system\video</Filter>
+    </ClInclude>
+    <ClInclude Include="system\video\videoGLExtensions.h">
+      <Filter>system\video</Filter>
+    </ClInclude>
+    <ClInclude Include="system\video\eglContext.h">
+      <Filter>system\video</Filter>
+    </ClInclude>
+    <ClInclude Include="system\video\foveatedRenderingSetup.h">
+      <Filter>system\video</Filter>
+    </ClInclude>
+    <ClInclude Include="vr\vrEnums.h">
+      <Filter>vr</Filter>
+    </ClInclude>
+    <ClInclude Include="wheresMyPoint\wmp_chooseByIntValue.h">
+      <Filter>wheresMyPoint</Filter>
+    </ClInclude>
+    <ClInclude Include="wheresMyPoint\wmp_renameStore.h">
+      <Filter>wheresMyPoint</Filter>
+    </ClInclude>
+    <ClInclude Include="wheresMyPoint\wmp_uniqueInt.h">
+      <Filter>wheresMyPoint</Filter>
+    </ClInclude>
+    <ClInclude Include="wheresMyPoint\wmp_loopIterator.h">
+      <Filter>wheresMyPoint</Filter>
+    </ClInclude>
+    <ClInclude Include="math\blendAdvancer.h">
+      <Filter>math</Filter>
+    </ClInclude>
+    <ClInclude Include="gameEnvironment\iGameEnvironment.h">
+      <Filter>gameEnvironment</Filter>
+    </ClInclude>
+    <ClInclude Include="gameEnvironment\steamworks\steamworks.h">
+      <Filter>gameEnvironment\steamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="gameEnvironment\steamworks\steamworksImpl.h">
+      <Filter>gameEnvironment\steamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="system\video\textureUtils.h">
+      <Filter>system\video</Filter>
+    </ClInclude>
+    <ClInclude Include="system\android\androidApp.h">
+      <Filter>system\android</Filter>
+    </ClInclude>
+    <ClInclude Include="gameEnvironment\viveport\viveport.h">
+      <Filter>gameEnvironment\viveport</Filter>
+    </ClInclude>
+    <ClInclude Include="concurrency\gate.h">
+      <Filter>concurrency</Filter>
+    </ClInclude>
+    <ClInclude Include="copyToMainConfig.h" />
+    <ClInclude Include="wheresMyPoint\wmp_system.h">
+      <Filter>wheresMyPoint</Filter>
+    </ClInclude>
+    <ClInclude Include="vr\wavevr\wavevr.h">
+      <Filter>vr\wavevr</Filter>
+    </ClInclude>
+    <ClInclude Include="vr\wavevr\wavevrImpl.h">
+      <Filter>vr\wavevr</Filter>
+    </ClInclude>
+    <ClInclude Include="wheresMyPoint\wmp_sphere.h">
+      <Filter>wheresMyPoint</Filter>
+    </ClInclude>
+    <ClInclude Include="types\unicode.h">
+      <Filter>types</Filter>
+    </ClInclude>
+    <ClInclude Include="wheresMyPoint\wmp_vector4.h">
+      <Filter>wheresMyPoint</Filter>
+    </ClInclude>
+    <ClInclude Include="gameEnvironment\oculus\oculus_ge.h">
+      <Filter>gameEnvironment\oculus</Filter>
+    </ClInclude>
+    <ClInclude Include="gameEnvironment\pico\pico.h">
+      <Filter>gameEnvironment\pico</Filter>
+    </ClInclude>
+    <ClInclude Include="math\convhull\convhull_3d.h">
+      <Filter>math\convhull</Filter>
+    </ClInclude>
+    <ClInclude Include="math\convhull\convhullImpl.h">
+      <Filter>math\convhull</Filter>
+    </ClInclude>
+    <ClInclude Include="system\video\renderTargetSave.h">
+      <Filter>system\video</Filter>
+    </ClInclude>
+    <ClInclude Include="math\rangeRotator3.h">
+      <Filter>math</Filter>
+    </ClInclude>
+    <ClInclude Include="system\video\viewPlanes.h">
+      <Filter>system\video</Filter>
+    </ClInclude>
+    <ClInclude Include="mesh\animationSet.h">
+      <Filter>mesh</Filter>
+    </ClInclude>
+    <ClInclude Include="buildVer_tea.h" />
+    <ClInclude Include="buildVer_tea_definitions.h" />
+    <ClInclude Include="math\rangeInt3.h">
+      <Filter>math</Filter>
+    </ClInclude>
+    <ClInclude Include="io\ioDialogs.h">
+      <Filter>io</Filter>
+    </ClInclude>
+    <ClInclude Include="system\sound\soundCompressorConfig.h">
+      <Filter>system\sound</Filter>
+    </ClInclude>
+    <ClInclude Include="sound\soundGlobalOptions.h">
+      <Filter>sound</Filter>
+    </ClInclude>
+    <ClInclude Include="io\xmlUtils.h">
+      <Filter>io</Filter>
+    </ClInclude>
+    <ClInclude Include="mesh\mesh3dTypes.h">
+      <Filter>mesh</Filter>
+    </ClInclude>
+    <ClInclude Include="random\randomSelection.h">
+      <Filter>random</Filter>
+    </ClInclude>
+    <ClInclude Include="types\optionalNP.h">
+      <Filter>types</Filter>
+    </ClInclude>
+    <ClInclude Include="types\scopedDelete.h">
+      <Filter>types</Filter>
+    </ClInclude>
+    <ClInclude Include="other\packedBytes.h">
+      <Filter>other</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="other\parserUtils.cpp">
+      <Filter>other</Filter>
+    </ClCompile>
+    <ClCompile Include="io\file.cpp">
+      <Filter>io</Filter>
+    </ClCompile>
+    <ClCompile Include="io\io.cpp">
+      <Filter>io</Filter>
+    </ClCompile>
+    <ClCompile Include="io\memoryStorage.cpp">
+      <Filter>io</Filter>
+    </ClCompile>
+    <ClCompile Include="io\utils.cpp">
+      <Filter>io</Filter>
+    </ClCompile>
+    <ClCompile Include="debug\debug.cpp">
+      <Filter>debug</Filter>
+    </ClCompile>
+    <ClCompile Include="debug\detectMemoryLeaks.cpp">
+      <Filter>debug</Filter>
+    </ClCompile>
+    <ClCompile Include="types\string.cpp">
+      <Filter>types</Filter>
+    </ClCompile>
+    <ClCompile Include="concurrency\spinLock.cpp">
+      <Filter>concurrency</Filter>
+    </ClCompile>
+    <ClCompile Include="concurrency\counter.cpp">
+      <Filter>concurrency</Filter>
+    </ClCompile>
+    <ClCompile Include="concurrency\thread.cpp">
+      <Filter>concurrency</Filter>
+    </ClCompile>
+    <ClCompile Include="concurrency\immediateJob.cpp">
+      <Filter>concurrency</Filter>
+    </ClCompile>
+    <ClCompile Include="concurrency\threadManager.cpp">
+      <Filter>concurrency</Filter>
+    </ClCompile>
+    <ClCompile Include="concurrency\immediateJobList.cpp">
+      <Filter>concurrency</Filter>
+    </ClCompile>
+    <ClCompile Include="math\vector2.cpp">
+      <Filter>math</Filter>
+    </ClCompile>
+    <ClCompile Include="math\vectorInt2.cpp">
+      <Filter>math</Filter>
+    </ClCompile>
+    <ClCompile Include="types\colour.cpp">
+      <Filter>types</Filter>
+    </ClCompile>
+    <ClCompile Include="math\vector3.cpp">
+      <Filter>math</Filter>
+    </ClCompile>
+    <ClCompile Include="math\quat.cpp">
+      <Filter>math</Filter>
+    </ClCompile>
+    <ClCompile Include="math\transform.cpp">
+      <Filter>math</Filter>
+    </ClCompile>
+    <ClCompile Include="math\plane.cpp">
+      <Filter>math</Filter>
+    </ClCompile>
+    <ClCompile Include="concurrency\threadSystemUtils.cpp">
+      <Filter>concurrency</Filter>
+    </ClCompile>
+    <ClCompile Include="math\range.cpp">
+      <Filter>math</Filter>
+    </ClCompile>
+    <ClCompile Include="system\core.cpp">
+      <Filter>system</Filter>
+    </ClCompile>
+    <ClCompile Include="system\input.cpp">
+      <Filter>system</Filter>
+    </ClCompile>
+    <ClCompile Include="mesh\mesh3dInstance.cpp">
+      <Filter>mesh</Filter>
+    </ClCompile>
+    <ClCompile Include="mesh\mesh3dInstanceSet.cpp">
+      <Filter>mesh</Filter>
+    </ClCompile>
+    <ClCompile Include="mesh\mesh3d.cpp">
+      <Filter>mesh</Filter>
+    </ClCompile>
+    <ClCompile Include="mesh\mesh3dBuilder.cpp">
+      <Filter>mesh</Filter>
+    </ClCompile>
+    <ClCompile Include="system\video\renderTarget.cpp">
+      <Filter>system\video</Filter>
+    </ClCompile>
+    <ClCompile Include="system\video\vertexFormat.cpp">
+      <Filter>system\video</Filter>
+    </ClCompile>
+    <ClCompile Include="system\video\video.cpp">
+      <Filter>system\video</Filter>
+    </ClCompile>
+    <ClCompile Include="system\video\video2d.cpp">
+      <Filter>system\video</Filter>
+    </ClCompile>
+    <ClCompile Include="system\video\video3d.cpp">
+      <Filter>system\video</Filter>
+    </ClCompile>
+    <ClCompile Include="system\video\videoClipPlaneStack.cpp">
+      <Filter>system\video</Filter>
+    </ClCompile>
+    <ClCompile Include="system\video\videoConfig.cpp">
+      <Filter>system\video</Filter>
+    </ClCompile>
+    <ClCompile Include="system\video\videoFormat.cpp">
+      <Filter>system\video</Filter>
+    </ClCompile>
+    <ClCompile Include="system\video\videoMatrixStack.cpp">
+      <Filter>system\video</Filter>
+    </ClCompile>
+    <ClCompile Include="system\video\viewFrustum.cpp">
+      <Filter>system\video</Filter>
+    </ClCompile>
+    <ClCompile Include="types\name.cpp">
+      <Filter>types</Filter>
+    </ClCompile>
+    <ClCompile Include="coreInit.cpp" />
+    <ClCompile Include="types\names.cpp">
+      <Filter>types</Filter>
+    </ClCompile>
+    <ClCompile Include="io\xmlAttribute.cpp">
+      <Filter>io</Filter>
+    </ClCompile>
+    <ClCompile Include="io\xmlDocument.cpp">
+      <Filter>io</Filter>
+    </ClCompile>
+    <ClCompile Include="io\xmlIterators.cpp">
+      <Filter>io</Filter>
+    </ClCompile>
+    <ClCompile Include="io\xmlNode.cpp">
+      <Filter>io</Filter>
+    </ClCompile>
+    <ClCompile Include="io\dir.cpp">
+      <Filter>io</Filter>
+    </ClCompile>
+    <ClCompile Include="types\token.cpp">
+      <Filter>types</Filter>
+    </ClCompile>
+    <ClCompile Include="math\rotator3.cpp">
+      <Filter>math</Filter>
+    </ClCompile>
+    <ClCompile Include="concurrency\synchronisationLounge.cpp">
+      <Filter>concurrency</Filter>
+    </ClCompile>
+    <ClCompile Include="concurrency\asynchronousJobList.cpp">
+      <Filter>concurrency</Filter>
+    </ClCompile>
+    <ClCompile Include="concurrency\asynchronousJob.cpp">
+      <Filter>concurrency</Filter>
+    </ClCompile>
+    <ClCompile Include="concurrency\semaphore.cpp">
+      <Filter>concurrency</Filter>
+    </ClCompile>
+    <ClCompile Include="system\video\shaderProgram.cpp">
+      <Filter>system\video</Filter>
+    </ClCompile>
+    <ClCompile Include="system\video\shader.cpp">
+      <Filter>system\video</Filter>
+    </ClCompile>
+    <ClCompile Include="math\vector4.cpp">
+      <Filter>math</Filter>
+    </ClCompile>
+    <ClCompile Include="collision\shapeBox.cpp">
+      <Filter>collision</Filter>
+    </ClCompile>
+    <ClCompile Include="collision\model.cpp">
+      <Filter>collision</Filter>
+    </ClCompile>
+    <ClCompile Include="collision\modelInstanceSet.cpp">
+      <Filter>collision</Filter>
+    </ClCompile>
+    <ClCompile Include="collision\modelInstance.cpp">
+      <Filter>collision</Filter>
+    </ClCompile>
+    <ClCompile Include="collision\queryPrimitivePoint.cpp">
+      <Filter>collision</Filter>
+    </ClCompile>
+    <ClCompile Include="collision\queryPrimitiveSegment.cpp">
+      <Filter>collision</Filter>
+    </ClCompile>
+    <ClCompile Include="math\planeSet.cpp">
+      <Filter>math</Filter>
+    </ClCompile>
+    <ClCompile Include="collision\checkGradientDistances.cpp">
+      <Filter>collision</Filter>
+    </ClCompile>
+    <ClCompile Include="performance\performanceTimer.cpp">
+      <Filter>performance</Filter>
+    </ClCompile>
+    <ClCompile Include="performance\performanceBlock.cpp">
+      <Filter>performance</Filter>
+    </ClCompile>
+    <ClCompile Include="performance\performanceSystem.cpp">
+      <Filter>performance</Filter>
+    </ClCompile>
+    <ClCompile Include="performance\scopedMeasureBlock.cpp">
+      <Filter>performance</Filter>
+    </ClCompile>
+    <ClCompile Include="performance\performanceUtils.cpp">
+      <Filter>performance</Filter>
+    </ClCompile>
+    <ClCompile Include="system\video\video3dPrimitives.cpp">
+      <Filter>system\video</Filter>
+    </ClCompile>
+    <ClCompile Include="collision\shapeConvexHull.cpp">
+      <Filter>collision</Filter>
+    </ClCompile>
+    <ClCompile Include="collision\gradientQueryResult.cpp">
+      <Filter>collision</Filter>
+    </ClCompile>
+    <ClCompile Include="collision\shapeCapsule.cpp">
+      <Filter>collision</Filter>
+    </ClCompile>
+    <ClCompile Include="collision\shapeSphere.cpp">
+      <Filter>collision</Filter>
+    </ClCompile>
+    <ClCompile Include="system\video\material.cpp">
+      <Filter>system\video</Filter>
+    </ClCompile>
+    <ClCompile Include="system\video\materialInstance.cpp">
+      <Filter>system\video</Filter>
+    </ClCompile>
+    <ClCompile Include="system\video\shaderProgramInstance.cpp">
+      <Filter>system\video</Filter>
+    </ClCompile>
+    <ClCompile Include="math\rangeInt.cpp">
+      <Filter>math</Filter>
+    </ClCompile>
+    <ClCompile Include="system\video\texture.cpp">
+      <Filter>system\video</Filter>
+    </ClCompile>
+    <ClCompile Include="memory\registeredPool.cpp">
+      <Filter>memory</Filter>
+    </ClCompile>
+    <ClCompile Include="math\box.cpp">
+      <Filter>math</Filter>
+    </ClCompile>
+    <ClCompile Include="math\convexHull.cpp">
+      <Filter>math</Filter>
+    </ClCompile>
+    <ClCompile Include="math\sphere.cpp">
+      <Filter>math</Filter>
+    </ClCompile>
+    <ClCompile Include="math\capsule.cpp">
+      <Filter>math</Filter>
+    </ClCompile>
+    <ClCompile Include="mesh\mesh3dInstanceSetInlined.cpp">
+      <Filter>mesh</Filter>
+    </ClCompile>
+    <ClCompile Include="debug\debugRenderer.cpp">
+      <Filter>debug</Filter>
+    </ClCompile>
+    <ClCompile Include="math\segment.cpp">
+      <Filter>math</Filter>
+    </ClCompile>
+    <ClCompile Include="collision\collisionInfoProvider.cpp">
+      <Filter>collision</Filter>
+    </ClCompile>
+    <ClCompile Include="types\optional.cpp">
+      <Filter>types</Filter>
+    </ClCompile>
+    <ClCompile Include="fastCast.cpp" />
+    <ClCompile Include="collision\iCollidableObject.cpp">
+      <Filter>collision</Filter>
+    </ClCompile>
+    <ClCompile Include="collision\iCollidableShape.cpp">
+      <Filter>collision</Filter>
+    </ClCompile>
+    <ClCompile Include="mesh\iMesh3d.cpp">
+      <Filter>mesh</Filter>
+    </ClCompile>
+    <ClCompile Include="performance\scopedMeasureAndShow.cpp">
+      <Filter>performance</Filter>
+    </ClCompile>
+    <ClCompile Include="collision\physicalMaterial.cpp">
+      <Filter>collision</Filter>
+    </ClCompile>
+    <ClCompile Include="collision\loadingContext.cpp">
+      <Filter>collision</Filter>
+    </ClCompile>
+    <ClCompile Include="collision\checkSegmentResult.cpp">
+      <Filter>collision</Filter>
+    </ClCompile>
+    <ClCompile Include="system\video\indexFormat.cpp">
+      <Filter>system\video</Filter>
+    </ClCompile>
+    <ClCompile Include="io\digested.cpp">
+      <Filter>io</Filter>
+    </ClCompile>
+    <ClCompile Include="serialisation\serialisableResource.cpp">
+      <Filter>serialisation</Filter>
+    </ClCompile>
+    <ClCompile Include="serialisation\serialiser.cpp">
+      <Filter>serialisation</Filter>
+    </ClCompile>
+    <ClCompile Include="serialisation\iSerialisable.cpp">
+      <Filter>serialisation</Filter>
+    </ClCompile>
+    <ClCompile Include="mesh\socketDefinition.cpp">
+      <Filter>mesh</Filter>
+    </ClCompile>
+    <ClCompile Include="mesh\socketDefinitionSet.cpp">
+      <Filter>mesh</Filter>
+    </ClCompile>
+    <ClCompile Include="mesh\skeleton.cpp">
+      <Filter>mesh</Filter>
+    </ClCompile>
+    <ClCompile Include="mesh\boneDefinition.cpp">
+      <Filter>mesh</Filter>
+    </ClCompile>
+    <ClCompile Include="math\vectorInt4.cpp">
+      <Filter>math</Filter>
+    </ClCompile>
+    <ClCompile Include="mesh\pose.cpp">
+      <Filter>mesh</Filter>
+    </ClCompile>
+    <ClCompile Include="mesh\poseManager.cpp">
+      <Filter>mesh</Filter>
+    </ClCompile>
+    <ClCompile Include="splash\splashInfo.cpp">
+      <Filter>splash</Filter>
+    </ClCompile>
+    <ClCompile Include="system\video\outputSetup.cpp">
+      <Filter>system\video</Filter>
+    </ClCompile>
+    <ClCompile Include="system\video\fragmentShaderOutputSetup.cpp">
+      <Filter>system\video</Filter>
+    </ClCompile>
+    <ClCompile Include="buildInformation.cpp" />
+    <ClCompile Include="instance\instanceDataHandler.cpp">
+      <Filter>instance</Filter>
+    </ClCompile>
+    <ClCompile Include="instance\instanceData.cpp">
+      <Filter>instance</Filter>
+    </ClCompile>
+    <ClCompile Include="system\video\shaderProgramBindingContext.cpp">
+      <Filter>system\video</Filter>
+    </ClCompile>
+    <ClCompile Include="mesh\mesh3dRenderingContext.cpp">
+      <Filter>mesh</Filter>
+    </ClCompile>
+    <ClCompile Include="mainSettings.cpp" />
+    <ClCompile Include="system\video\shaderSource.cpp">
+      <Filter>system\video</Filter>
+    </ClCompile>
+    <ClCompile Include="mainConfig.cpp" />
+    <ClCompile Include="debug\logInfoContext.cpp">
+      <Filter>debug</Filter>
+    </ClCompile>
+    <ClCompile Include="system\video\font.cpp">
+      <Filter>system\video</Filter>
+    </ClCompile>
+    <ClCompile Include="system\video\camera.cpp">
+      <Filter>system\video</Filter>
+    </ClCompile>
+    <ClCompile Include="mesh\combinedMesh3dInstanceSet.cpp">
+      <Filter>mesh</Filter>
+    </ClCompile>
+    <ClCompile Include="mesh\mesh3dPart.cpp">
+      <Filter>mesh</Filter>
+    </ClCompile>
+    <ClCompile Include="system\timeStamp.cpp">
+      <Filter>system</Filter>
+    </ClCompile>
+    <ClCompile Include="vr\iVR.cpp">
+      <Filter>vr</Filter>
+    </ClCompile>
+    <ClCompile Include="system\gamepad.cpp">
+      <Filter>system</Filter>
+    </ClCompile>
+    <ClCompile Include="system\video\videoEnums.cpp">
+      <Filter>system\video</Filter>
+    </ClCompile>
+    <ClCompile Include="system\video\pipelines.cpp">
+      <Filter>system\video</Filter>
+    </ClCompile>
+    <ClCompile Include="latent\latentStackVariables.cpp">
+      <Filter>latent</Filter>
+    </ClCompile>
+    <ClCompile Include="latent\latentFrame.cpp">
+      <Filter>latent</Filter>
+    </ClCompile>
+    <ClCompile Include="latent\latentBlock.cpp">
+      <Filter>latent</Filter>
+    </ClCompile>
+    <ClCompile Include="latent\latentScope.cpp">
+      <Filter>latent</Filter>
+    </ClCompile>
+    <ClCompile Include="latent\functions\latentWait.cpp">
+      <Filter>latent\functions</Filter>
+    </ClCompile>
+    <ClCompile Include="collision\collisionFlags.cpp">
+      <Filter>collision</Filter>
+    </ClCompile>
+    <ClCompile Include="math\matrixUtils.cpp">
+      <Filter>math</Filter>
+    </ClCompile>
+    <ClCompile Include="math\matrix33.cpp">
+      <Filter>math</Filter>
+    </ClCompile>
+    <ClCompile Include="math\matrix44.cpp">
+      <Filter>math</Filter>
+    </ClCompile>
+    <ClCompile Include="other\customParameters.cpp">
+      <Filter>other</Filter>
+    </ClCompile>
+    <ClCompile Include="other\registeredType.cpp">
+      <Filter>other</Filter>
+    </ClCompile>
+    <ClCompile Include="math\dateMath.cpp">
+      <Filter>math</Filter>
+    </ClCompile>
+    <ClCompile Include="other\simpleVariableStorage.cpp">
+      <Filter>other</Filter>
+    </ClCompile>
+    <ClCompile Include="mesh\boneID.cpp">
+      <Filter>mesh</Filter>
+    </ClCompile>
+    <ClCompile Include="debug\extendedDebug.cpp">
+      <Filter>debug</Filter>
+    </ClCompile>
+    <ClCompile Include="system\sound\soundSystem.cpp">
+      <Filter>system\sound</Filter>
+    </ClCompile>
+    <ClCompile Include="sound\sampleBank.cpp">
+      <Filter>sound</Filter>
+    </ClCompile>
+    <ClCompile Include="sound\sample.cpp">
+      <Filter>sound</Filter>
+    </ClCompile>
+    <ClCompile Include="system\sound\soundConfig.cpp">
+      <Filter>system\sound</Filter>
+    </ClCompile>
+    <ClCompile Include="sound\playback.cpp">
+      <Filter>sound</Filter>
+    </ClCompile>
+    <ClCompile Include="mesh\builders\mesh3dBuilder_IPU.cpp">
+      <Filter>mesh\builders</Filter>
+    </ClCompile>
+    <ClCompile Include="math\bezierSurface.cpp">
+      <Filter>math</Filter>
+    </ClCompile>
+    <ClCompile Include="mesh\helpers\mesh3dHelper_bezierSurface.cpp">
+      <Filter>mesh\helpers</Filter>
+    </ClCompile>
+    <ClCompile Include="math\segment2.cpp">
+      <Filter>math</Filter>
+    </ClCompile>
+    <ClCompile Include="wheresMyPoint\iWMPTool.cpp">
+      <Filter>wheresMyPoint</Filter>
+    </ClCompile>
+    <ClCompile Include="wheresMyPoint\wmp_mirror.cpp">
+      <Filter>wheresMyPoint</Filter>
+    </ClCompile>
+    <ClCompile Include="wheresMyPoint\wmp_mathOps.cpp">
+      <Filter>wheresMyPoint</Filter>
+    </ClCompile>
+    <ClCompile Include="wheresMyPoint\wmp_point.cpp">
+      <Filter>wheresMyPoint</Filter>
+    </ClCompile>
+    <ClCompile Include="wheresMyPoint\wmp_float.cpp">
+      <Filter>wheresMyPoint</Filter>
+    </ClCompile>
+    <ClCompile Include="wheresMyPoint\wmp_context.cpp">
+      <Filter>wheresMyPoint</Filter>
+    </ClCompile>
+    <ClCompile Include="wheresMyPoint\wmp_store.cpp">
+      <Filter>wheresMyPoint</Filter>
+    </ClCompile>
+    <ClCompile Include="wheresMyPoint\wmp_restore.cpp">
+      <Filter>wheresMyPoint</Filter>
+    </ClCompile>
+    <ClCompile Include="wheresMyPoint\wmp_block.cpp">
+      <Filter>wheresMyPoint</Filter>
+    </ClCompile>
+    <ClCompile Include="wheresMyPoint\wmp_normalise.cpp">
+      <Filter>wheresMyPoint</Filter>
+    </ClCompile>
+    <ClCompile Include="wheresMyPoint\wmp_vector3.cpp">
+      <Filter>wheresMyPoint</Filter>
+    </ClCompile>
+    <ClCompile Include="wheresMyPoint\wmp_transform.cpp">
+      <Filter>wheresMyPoint</Filter>
+    </ClCompile>
+    <ClCompile Include="wheresMyPoint\wmp_betweenPoints.cpp">
+      <Filter>wheresMyPoint</Filter>
+    </ClCompile>
+    <ClCompile Include="wheresMyPoint\wmp_pointDirection.cpp">
+      <Filter>wheresMyPoint</Filter>
+    </ClCompile>
+    <ClCompile Include="wheresMyPoint\wmp_transformOps.cpp">
+      <Filter>wheresMyPoint</Filter>
+    </ClCompile>
+    <ClCompile Include="wheresMyPoint\wmp_plane.cpp">
+      <Filter>wheresMyPoint</Filter>
+    </ClCompile>
+    <ClCompile Include="wheresMyPoint\wmp_dropOnto.cpp">
+      <Filter>wheresMyPoint</Filter>
+    </ClCompile>
+    <ClCompile Include="wheresMyPoint\wmp_intersect.cpp">
+      <Filter>wheresMyPoint</Filter>
+    </ClCompile>
+    <ClCompile Include="wheresMyPoint\wmp_access.cpp">
+      <Filter>wheresMyPoint</Filter>
+    </ClCompile>
+    <ClCompile Include="wheresMyPoint\wmp_local.cpp">
+      <Filter>wheresMyPoint</Filter>
+    </ClCompile>
+    <ClCompile Include="wheresMyPoint\wmp_get.cpp">
+      <Filter>wheresMyPoint</Filter>
+    </ClCompile>
+    <ClCompile Include="wheresMyPoint\wmp_length.cpp">
+      <Filter>wheresMyPoint</Filter>
+    </ClCompile>
+    <ClCompile Include="wheresMyPoint\wmp_vector2.cpp">
+      <Filter>wheresMyPoint</Filter>
+    </ClCompile>
+    <ClCompile Include="wheresMyPoint\wmp_copyStore.cpp">
+      <Filter>wheresMyPoint</Filter>
+    </ClCompile>
+    <ClCompile Include="coreRegisteredTypes.cpp" />
+    <ClCompile Include="sound\soundFadingUtils.cpp">
+      <Filter>sound</Filter>
+    </ClCompile>
+    <ClCompile Include="mesh\vertexSkinningInfo.cpp">
+      <Filter>mesh</Filter>
+    </ClCompile>
+    <ClCompile Include="system\video\primitivesPipeline.cpp">
+      <Filter>system\video</Filter>
+    </ClCompile>
+    <ClCompile Include="system\video\shaderProgramCache.cpp">
+      <Filter>system\video</Filter>
+    </ClCompile>
+    <ClCompile Include="math\typeUtils.cpp">
+      <Filter>math</Filter>
+    </ClCompile>
+    <ClCompile Include="random\random.cpp">
+      <Filter>random</Filter>
+    </ClCompile>
+    <ClCompile Include="math\mathStatic.cpp">
+      <Filter>math</Filter>
+    </ClCompile>
+    <ClCompile Include="mesh\usage.cpp">
+      <Filter>mesh</Filter>
+    </ClCompile>
+    <ClCompile Include="mesh\primitiveType.cpp">
+      <Filter>mesh</Filter>
+    </ClCompile>
+    <ClCompile Include="sound\sampleParams.cpp">
+      <Filter>sound</Filter>
+    </ClCompile>
+    <ClCompile Include="math\math.cpp">
+      <Filter>math</Filter>
+    </ClCompile>
+    <ClCompile Include="math\mathUtils.cpp">
+      <Filter>math</Filter>
+    </ClCompile>
+    <ClCompile Include="system\video\videoSDL.cpp">
+      <Filter>system\video</Filter>
+    </ClCompile>
+    <ClCompile Include="mesh\mesh3dRenderingBuffer.cpp">
+      <Filter>mesh</Filter>
+    </ClCompile>
+    <ClCompile Include="vr\oculus\oculus.cpp">
+      <Filter>vr\oculus</Filter>
+    </ClCompile>
+    <ClCompile Include="vr\oculus\oculusImpl.cpp">
+      <Filter>vr\oculus</Filter>
+    </ClCompile>
+    <ClCompile Include="vr\openvr\openvr.cpp">
+      <Filter>vr\openvr</Filter>
+    </ClCompile>
+    <ClCompile Include="vr\openvr\openvrImpl.cpp">
+      <Filter>vr\openvr</Filter>
+    </ClCompile>
+    <ClCompile Include="vr\vrFovPort.cpp">
+      <Filter>vr</Filter>
+    </ClCompile>
+    <ClCompile Include="vr\vrInput.cpp">
+      <Filter>vr</Filter>
+    </ClCompile>
+    <ClCompile Include="math\segmentSimple.cpp">
+      <Filter>math</Filter>
+    </ClCompile>
+    <ClCompile Include="debugConfig.cpp" />
+    <ClCompile Include="concurrency\mrswLock.cpp">
+      <Filter>concurrency</Filter>
+    </ClCompile>
+    <ClCompile Include="concurrency\concurrencyStats.cpp">
+      <Filter>concurrency</Filter>
+    </ClCompile>
+    <ClCompile Include="performance\scopedMeasureLongJob.cpp">
+      <Filter>performance</Filter>
+    </ClCompile>
+    <ClCompile Include="collision\shapeMesh.cpp">
+      <Filter>collision</Filter>
+    </ClCompile>
+    <ClCompile Include="math\simpleMesh.cpp">
+      <Filter>math</Filter>
+    </ClCompile>
+    <ClCompile Include="vr\vrZone.cpp">
+      <Filter>vr</Filter>
+    </ClCompile>
+    <ClCompile Include="tags\tag.cpp">
+      <Filter>tags</Filter>
+    </ClCompile>
+    <ClCompile Include="tags\tagCondition.cpp">
+      <Filter>tags</Filter>
+    </ClCompile>
+    <ClCompile Include="wheresMyPoint\wmp_mathOpsSimple.cpp">
+      <Filter>wheresMyPoint</Filter>
+    </ClCompile>
+    <ClCompile Include="wheresMyPoint\wmp_customTool.cpp">
+      <Filter>wheresMyPoint</Filter>
+    </ClCompile>
+    <ClCompile Include="debug\debugVisualiser.cpp">
+      <Filter>debug</Filter>
+    </ClCompile>
+    <ClCompile Include="wheresMyPoint\iWMPOwner.cpp">
+      <Filter>wheresMyPoint</Filter>
+    </ClCompile>
+    <ClCompile Include="wheresMyPoint\wmp_name.cpp">
+      <Filter>wheresMyPoint</Filter>
+    </ClCompile>
+    <ClCompile Include="wheresMyPoint\wmp_bool.cpp">
+      <Filter>wheresMyPoint</Filter>
+    </ClCompile>
+    <ClCompile Include="wheresMyPoint\wmp_int.cpp">
+      <Filter>wheresMyPoint</Filter>
+    </ClCompile>
+    <ClCompile Include="wheresMyPoint\wmp_logicOps.cpp">
+      <Filter>wheresMyPoint</Filter>
+    </ClCompile>
+    <ClCompile Include="wheresMyPoint\wmp_if.cpp">
+      <Filter>wheresMyPoint</Filter>
+    </ClCompile>
+    <ClCompile Include="wheresMyPoint\wmp_mathComparisons.cpp">
+      <Filter>wheresMyPoint</Filter>
+    </ClCompile>
+    <ClCompile Include="wheresMyPoint\wmp_vectorOps.cpp">
+      <Filter>wheresMyPoint</Filter>
+    </ClCompile>
+    <ClCompile Include="wheresMyPoint\wmp_break.cpp">
+      <Filter>wheresMyPoint</Filter>
+    </ClCompile>
+    <ClCompile Include="wheresMyPoint\wmp_output.cpp">
+      <Filter>wheresMyPoint</Filter>
+    </ClCompile>
+    <ClCompile Include="math\range3.cpp">
+      <Filter>math</Filter>
+    </ClCompile>
+    <ClCompile Include="mesh\boneRenamer.cpp">
+      <Filter>mesh</Filter>
+    </ClCompile>
+    <ClCompile Include="math\blendCurves.cpp">
+      <Filter>math</Filter>
+    </ClCompile>
+    <ClCompile Include="system\faultHandler.cpp">
+      <Filter>system</Filter>
+    </ClCompile>
+    <ClCompile Include="wheresMyPoint\wmp_isNameValid.cpp">
+      <Filter>wheresMyPoint</Filter>
+    </ClCompile>
+    <ClCompile Include="wheresMyPoint\wmp_mayRestore.cpp">
+      <Filter>wheresMyPoint</Filter>
+    </ClCompile>
+    <ClCompile Include="wheresMyPoint\wmp_todo.cpp">
+      <Filter>wheresMyPoint</Filter>
+    </ClCompile>
+    <ClCompile Include="system\systemInfo.cpp">
+      <Filter>system</Filter>
+    </ClCompile>
+    <ClCompile Include="math\rangeInt2.cpp">
+      <Filter>math</Filter>
+    </ClCompile>
+    <ClCompile Include="math\range2.cpp">
+      <Filter>math</Filter>
+    </ClCompile>
+    <ClCompile Include="wheresMyPoint\wmp_range.cpp">
+      <Filter>wheresMyPoint</Filter>
+    </ClCompile>
+    <ClCompile Include="wheresMyPoint\wmp_range2.cpp">
+      <Filter>wheresMyPoint</Filter>
+    </ClCompile>
+    <ClCompile Include="legacy.cpp" />
+    <ClCompile Include="sound\reverb.cpp">
+      <Filter>sound</Filter>
+    </ClCompile>
+    <ClCompile Include="sound\reverbInstance.cpp">
+      <Filter>sound</Filter>
+    </ClCompile>
+    <ClCompile Include="mesh\mesh3dRenderingBufferSet.cpp">
+      <Filter>mesh</Filter>
+    </ClCompile>
+    <ClCompile Include="splash\splashScreen.cpp">
+      <Filter>splash</Filter>
+    </ClCompile>
+    <ClCompile Include="concurrency\mrswGuard.cpp">
+      <Filter>concurrency</Filter>
+    </ClCompile>
+    <ClCompile Include="math\vectorInt3.cpp">
+      <Filter>math</Filter>
+    </ClCompile>
+    <ClCompile Include="latent\latentFrameInspection.cpp">
+      <Filter>latent</Filter>
+    </ClCompile>
+    <ClCompile Include="wheresMyPoint\wmp_rotator3.cpp">
+      <Filter>wheresMyPoint</Filter>
+    </ClCompile>
+    <ClCompile Include="collision\shapeMeshSkinned.cpp">
+      <Filter>collision</Filter>
+    </ClCompile>
+    <ClCompile Include="math\skinnedMesh.cpp">
+      <Filter>math</Filter>
+    </ClCompile>
+    <ClCompile Include="types\hand.cpp">
+      <Filter>types</Filter>
+    </ClCompile>
+    <ClCompile Include="vr\vrOffsets.cpp">
+      <Filter>vr</Filter>
+    </ClCompile>
+    <ClCompile Include="vr\vrSystem.cpp">
+      <Filter>vr</Filter>
+    </ClCompile>
+    <ClCompile Include="vr\vrSystemImpl.cpp">
+      <Filter>vr</Filter>
+    </ClCompile>
+    <ClCompile Include="wheresMyPoint\wmp_isEmpty.cpp">
+      <Filter>wheresMyPoint</Filter>
+    </ClCompile>
+    <ClCompile Include="math\transformUtils.cpp">
+      <Filter>math</Filter>
+    </ClCompile>
+    <ClCompile Include="math\convexPolygon.cpp">
+      <Filter>math</Filter>
+    </ClCompile>
+    <ClCompile Include="types\option.cpp">
+      <Filter>types</Filter>
+    </ClCompile>
+    <ClCompile Include="enums.cpp" />
+    <ClCompile Include="wheresMyPoint\wmp_vectorInt2.cpp">
+      <Filter>wheresMyPoint</Filter>
+    </ClCompile>
+    <ClCompile Include="system\video\imageLoaders\il_tga.cpp">
+      <Filter>system\video\imageLoaders</Filter>
+    </ClCompile>
+    <ClCompile Include="io\assetFile.cpp">
+      <Filter>io</Filter>
+    </ClCompile>
+    <ClCompile Include="io\assetDir.cpp">
+      <Filter>io</Filter>
+    </ClCompile>
+    <ClCompile Include="vr\oculusMobile\oculusMobile.cpp">
+      <Filter>vr\oculusMobile</Filter>
+    </ClCompile>
+    <ClCompile Include="vr\oculusMobile\oculusMobileImpl.cpp">
+      <Filter>vr\oculusMobile</Filter>
+    </ClCompile>
+    <ClCompile Include="splash\splashLogos.cpp">
+      <Filter>splash</Filter>
+    </ClCompile>
+    <ClCompile Include="network\netAddress.cpp">
+      <Filter>network</Filter>
+    </ClCompile>
+    <ClCompile Include="network\netPackage.cpp">
+      <Filter>network</Filter>
+    </ClCompile>
+    <ClCompile Include="network\netPacket.cpp">
+      <Filter>network</Filter>
+    </ClCompile>
+    <ClCompile Include="network\network.cpp">
+      <Filter>network</Filter>
+    </ClCompile>
+    <ClCompile Include="network\netServerTCP.cpp">
+      <Filter>network</Filter>
+    </ClCompile>
+    <ClCompile Include="network\netClientTCP.cpp">
+      <Filter>network</Filter>
+    </ClCompile>
+    <ClCompile Include="io\json.cpp">
+      <Filter>io</Filter>
+    </ClCompile>
+    <ClCompile Include="network\http.cpp">
+      <Filter>network</Filter>
+    </ClCompile>
+    <ClCompile Include="types\vectorPacked.cpp">
+      <Filter>types</Filter>
+    </ClCompile>
+    <ClCompile Include="other\typeConversions.cpp">
+      <Filter>other</Filter>
+    </ClCompile>
+    <ClCompile Include="system\video\vertexFormatUtils.cpp">
+      <Filter>system\video</Filter>
+    </ClCompile>
+    <ClCompile Include="wheresMyPoint\wmp_remap.cpp">
+      <Filter>wheresMyPoint</Filter>
+    </ClCompile>
+    <ClCompile Include="wheresMyPoint\wmp_range3.cpp">
+      <Filter>wheresMyPoint</Filter>
+    </ClCompile>
+    <ClCompile Include="wheresMyPoint\wmp_include.cpp">
+      <Filter>wheresMyPoint</Filter>
+    </ClCompile>
+    <ClCompile Include="wheresMyPoint\wmp_expandBy.cpp">
+      <Filter>wheresMyPoint</Filter>
+    </ClCompile>
+    <ClCompile Include="wheresMyPoint\wmp_flattenToCentre.cpp">
+      <Filter>wheresMyPoint</Filter>
+    </ClCompile>
+    <ClCompile Include="math\quickHull\quickHullImpl.cpp">
+      <Filter>math\quickHull</Filter>
+    </ClCompile>
+    <ClCompile Include="math\quickHull\quickHullQuickHull.cpp">
+      <Filter>math\quickHull</Filter>
+    </ClCompile>
+    <ClCompile Include="wheresMyPoint\wmp_lerp.cpp">
+      <Filter>wheresMyPoint</Filter>
+    </ClCompile>
+    <ClCompile Include="math\polygonUtils.cpp">
+      <Filter>math</Filter>
+    </ClCompile>
+    <ClCompile Include="system\timePoint.cpp">
+      <Filter>system</Filter>
+    </ClCompile>
+    <ClCompile Include="io\base64.cpp">
+      <Filter>io</Filter>
+    </ClCompile>
+    <ClCompile Include="io\outputWriter.cpp">
+      <Filter>io</Filter>
+    </ClCompile>
+    <ClCompile Include="wheresMyPoint\wmp_chooseOne.cpp">
+      <Filter>wheresMyPoint</Filter>
+    </ClCompile>
+    <ClCompile Include="latent\functions\latentWaitPrecise.cpp">
+      <Filter>latent\functions</Filter>
+    </ClCompile>
+    <ClCompile Include="types\dirFourClockwise.cpp">
+      <Filter>types</Filter>
+    </ClCompile>
+    <ClCompile Include="wheresMyPoint\wmp_centre.cpp">
+      <Filter>wheresMyPoint</Filter>
+    </ClCompile>
+    <ClCompile Include="wheresMyPoint\wmp_matrix.cpp">
+      <Filter>wheresMyPoint</Filter>
+    </ClCompile>
+    <ClCompile Include="wheresMyPoint\wmp_quat.cpp">
+      <Filter>wheresMyPoint</Filter>
+    </ClCompile>
+    <ClCompile Include="physicalSensations\iPhysicalSensations.cpp">
+      <Filter>physicalSensations</Filter>
+    </ClCompile>
+    <ClCompile Include="physicalSensations\psOWO.cpp">
+      <Filter>physicalSensations</Filter>
+    </ClCompile>
+    <ClCompile Include="physicalSensations\physicalSensations.cpp">
+      <Filter>physicalSensations</Filter>
+    </ClCompile>
+    <ClCompile Include="system\video\imageSavers\is_tga.cpp">
+      <Filter>system\video\imageSavers</Filter>
+    </ClCompile>
+    <ClCompile Include="physicalSensations\bhapticsJava\bhj_bhapticsModule.cpp">
+      <Filter>physicalSensations\bhapticsJava</Filter>
+    </ClCompile>
+    <ClCompile Include="system\javaEnv.cpp">
+      <Filter>system</Filter>
+    </ClCompile>
+    <ClCompile Include="physicalSensations\bhapticsJava\bhj_enums.cpp">
+      <Filter>physicalSensations\bhapticsJava</Filter>
+    </ClCompile>
+    <ClCompile Include="physicalSensations\bhapticsJava\bhj_bhapticsDevice.cpp">
+      <Filter>physicalSensations\bhapticsJava</Filter>
+    </ClCompile>
+    <ClCompile Include="physicalSensations\psBhapticsJava.cpp">
+      <Filter>physicalSensations</Filter>
+    </ClCompile>
+    <ClCompile Include="physicalSensations\bhaptics\bh_library.cpp">
+      <Filter>physicalSensations\bhaptics</Filter>
+    </ClCompile>
+    <ClCompile Include="physicalSensations\bhaptics\bh_enums.cpp">
+      <Filter>physicalSensations\bhaptics</Filter>
+    </ClCompile>
+    <ClCompile Include="physicalSensations\bhaptics\bh_availableDevices.cpp">
+      <Filter>physicalSensations\bhaptics</Filter>
+    </ClCompile>
+    <ClCompile Include="physicalSensations\sensations.cpp">
+      <Filter>physicalSensations</Filter>
+    </ClCompile>
+    <ClCompile Include="physicalSensations\bhapticsWindows\bhw_hapticLibrary.cpp">
+      <Filter>physicalSensations\bhapticsWindows</Filter>
+    </ClCompile>
+    <ClCompile Include="physicalSensations\bhapticsWindows\bhw_commonutils.cpp">
+      <Filter>physicalSensations\bhapticsWindows</Filter>
+    </ClCompile>
+    <ClCompile Include="physicalSensations\bhapticsWindows\bhw_easywsclient.cpp">
+      <Filter>physicalSensations\bhapticsWindows</Filter>
+    </ClCompile>
+    <ClCompile Include="physicalSensations\bhapticsWindows\bhw_hapticsManager.cpp">
+      <Filter>physicalSensations\bhapticsWindows</Filter>
+    </ClCompile>
+    <ClCompile Include="physicalSensations\bhapticsWindows\bhw_projectModel.cpp">
+      <Filter>physicalSensations\bhapticsWindows</Filter>
+    </ClCompile>
+    <ClCompile Include="physicalSensations\bhapticsWindows\bhw_timer.cpp">
+      <Filter>physicalSensations\bhapticsWindows</Filter>
+    </ClCompile>
+    <ClCompile Include="physicalSensations\bhapticsWindows\bhw_util.cpp">
+      <Filter>physicalSensations\bhapticsWindows</Filter>
+    </ClCompile>
+    <ClCompile Include="physicalSensations\bhapticsWindows\bhw_bhapticsModule.cpp">
+      <Filter>physicalSensations\bhapticsWindows</Filter>
+    </ClCompile>
+    <ClCompile Include="physicalSensations\bhapticsWindows\bhw_bhapticsDevice.cpp">
+      <Filter>physicalSensations\bhapticsWindows</Filter>
+    </ClCompile>
+    <ClCompile Include="physicalSensations\psBhapticsWindows.cpp">
+      <Filter>physicalSensations</Filter>
+    </ClCompile>
+    <ClCompile Include="wheresMyPoint\wmp_getPt.cpp">
+      <Filter>wheresMyPoint</Filter>
+    </ClCompile>
+    <ClCompile Include="wheresMyPoint\wmp_defaultValue.cpp">
+      <Filter>wheresMyPoint</Filter>
+    </ClCompile>
+    <ClCompile Include="wheresMyPoint\wmp_randSeed.cpp">
+      <Filter>wheresMyPoint</Filter>
+    </ClCompile>
+    <ClCompile Include="compression\compression.cpp">
+      <Filter>compression</Filter>
+    </ClCompile>
+    <ClCompile Include="system\recentCapture.cpp">
+      <Filter>system</Filter>
+    </ClCompile>
+    <ClCompile Include="system\video\pixelUtils.cpp">
+      <Filter>system\video</Filter>
+    </ClCompile>
+    <ClCompile Include="buildVer.cpp" />
+    <ClCompile Include="wheresMyPoint\wmp_convertStore.cpp">
+      <Filter>wheresMyPoint</Filter>
+    </ClCompile>
+    <ClCompile Include="wheresMyPoint\simpleWMPOwner.cpp">
+      <Filter>wheresMyPoint</Filter>
+    </ClCompile>
+    <ClCompile Include="system\video\indexFormatUtils.cpp">
+      <Filter>system\video</Filter>
+    </ClCompile>
+    <ClCompile Include="wheresMyPoint\wmp_mainSettings.cpp">
+      <Filter>wheresMyPoint</Filter>
+    </ClCompile>
+    <ClCompile Include="utils\utils_loadingForSystemShader.cpp">
+      <Filter>utils</Filter>
+    </ClCompile>
+    <ClCompile Include="vr\vrMode.cpp">
+      <Filter>vr</Filter>
+    </ClCompile>
+    <ClCompile Include="profilePerformanceSettings.cpp" />
+    <ClCompile Include="vr\openxr\openxr.cpp">
+      <Filter>vr\openxr</Filter>
+    </ClCompile>
+    <ClCompile Include="vr\openxr\openxrImpl.cpp">
+      <Filter>vr\openxr</Filter>
+    </ClCompile>
+    <ClCompile Include="system\video\renderTargetUtils.cpp">
+      <Filter>system\video</Filter>
+    </ClCompile>
+    <ClCompile Include="system\video\videoGLExtensions.cpp">
+      <Filter>system\video</Filter>
+    </ClCompile>
+    <ClCompile Include="system\video\eglContext.cpp">
+      <Filter>system\video</Filter>
+    </ClCompile>
+    <ClCompile Include="system\video\foveatedRenderingSetup.cpp">
+      <Filter>system\video</Filter>
+    </ClCompile>
+    <ClCompile Include="vr\vrEnums.cpp">
+      <Filter>vr</Filter>
+    </ClCompile>
+    <ClCompile Include="wheresMyPoint\wmp_chooseByIntValue.cpp">
+      <Filter>wheresMyPoint</Filter>
+    </ClCompile>
+    <ClCompile Include="wheresMyPoint\wmp_renameStore.cpp">
+      <Filter>wheresMyPoint</Filter>
+    </ClCompile>
+    <ClCompile Include="wheresMyPoint\wmp_uniqueInt.cpp">
+      <Filter>wheresMyPoint</Filter>
+    </ClCompile>
+    <ClCompile Include="wheresMyPoint\wmp_loopIterator.cpp">
+      <Filter>wheresMyPoint</Filter>
+    </ClCompile>
+    <ClCompile Include="gameEnvironment\steamworks\steamworks.cpp">
+      <Filter>gameEnvironment\steamworks</Filter>
+    </ClCompile>
+    <ClCompile Include="gameEnvironment\iGameEnvironment.cpp">
+      <Filter>gameEnvironment</Filter>
+    </ClCompile>
+    <ClCompile Include="gameEnvironment\steamworks\steamworksImpl.cpp">
+      <Filter>gameEnvironment\steamworks</Filter>
+    </ClCompile>
+    <ClCompile Include="system\video\textureUtils.cpp">
+      <Filter>system\video</Filter>
+    </ClCompile>
+    <ClCompile Include="system\android\androidApp.cpp">
+      <Filter>system\android</Filter>
+    </ClCompile>
+    <ClCompile Include="testSamples\testSampleOculus.cpp">
+      <Filter>testSamples</Filter>
+    </ClCompile>
+    <ClCompile Include="gameEnvironment\viveport\viveport.cpp">
+      <Filter>gameEnvironment\viveport</Filter>
+    </ClCompile>
+    <ClCompile Include="concurrency\gate.cpp">
+      <Filter>concurrency</Filter>
+    </ClCompile>
+    <ClCompile Include="copyToMainConfig.cpp" />
+    <ClCompile Include="wheresMyPoint\wmp_system.cpp">
+      <Filter>wheresMyPoint</Filter>
+    </ClCompile>
+    <ClCompile Include="vr\wavevr\wavevr.cpp">
+      <Filter>vr\wavevr</Filter>
+    </ClCompile>
+    <ClCompile Include="vr\wavevr\wavevrImpl.cpp">
+      <Filter>vr\wavevr</Filter>
+    </ClCompile>
+    <ClCompile Include="wheresMyPoint\wmp_sphere.cpp">
+      <Filter>wheresMyPoint</Filter>
+    </ClCompile>
+    <ClCompile Include="types\unicode.cpp">
+      <Filter>types</Filter>
+    </ClCompile>
+    <ClCompile Include="sound\channel.cpp">
+      <Filter>sound</Filter>
+    </ClCompile>
+    <ClCompile Include="wheresMyPoint\wmp_vector4.cpp">
+      <Filter>wheresMyPoint</Filter>
+    </ClCompile>
+    <ClCompile Include="gameEnvironment\oculus\oculus_ge.cpp">
+      <Filter>gameEnvironment\oculus</Filter>
+    </ClCompile>
+    <ClCompile Include="gameEnvironment\pico\pico.cpp">
+      <Filter>gameEnvironment\pico</Filter>
+    </ClCompile>
+    <ClCompile Include="math\convhull\convhullImpl.cpp">
+      <Filter>math\convhull</Filter>
+    </ClCompile>
+    <ClCompile Include="system\video\renderTargetSave.cpp">
+      <Filter>system\video</Filter>
+    </ClCompile>
+    <ClCompile Include="math\rangeRotator3.cpp">
+      <Filter>math</Filter>
+    </ClCompile>
+    <ClCompile Include="system\video\viewPlanes.cpp">
+      <Filter>system\video</Filter>
+    </ClCompile>
+    <ClCompile Include="mesh\animationSet.cpp">
+      <Filter>mesh</Filter>
+    </ClCompile>
+    <ClCompile Include="system\sound\soundCompressorConfig.cpp">
+      <Filter>system\sound</Filter>
+    </ClCompile>
+    <ClCompile Include="math\rangeInt3.cpp">
+      <Filter>math</Filter>
+    </ClCompile>
+    <ClCompile Include="io\ioDialogs.cpp">
+      <Filter>io</Filter>
+    </ClCompile>
+    <ClCompile Include="io\xmlUtils.cpp">
+      <Filter>io</Filter>
+    </ClCompile>
+    <ClCompile Include="other\packedBytes.cpp">
+      <Filter>other</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="containers\array.inl">
+      <Filter>containers</Filter>
+    </None>
+    <None Include="memory\objectHelpers.inl">
+      <Filter>memory</Filter>
+    </None>
+    <None Include="memory\pooledObject.inl">
+      <Filter>memory</Filter>
+    </None>
+    <None Include="concurrency\spinLock.inl">
+      <Filter>concurrency</Filter>
+    </None>
+    <None Include="concurrency\scopedSpinLock.inl">
+      <Filter>concurrency</Filter>
+    </None>
+    <None Include="concurrency\counter.inl">
+      <Filter>concurrency</Filter>
+    </None>
+    <None Include="containers\list.inl">
+      <Filter>containers</Filter>
+    </None>
+    <None Include="math\vector2.inl">
+      <Filter>math</Filter>
+    </None>
+    <None Include="math\vectorInt2.inl">
+      <Filter>math</Filter>
+    </None>
+    <None Include="types\colour.inl">
+      <Filter>types</Filter>
+    </None>
+    <None Include="math\vector3.inl">
+      <Filter>math</Filter>
+    </None>
+    <None Include="math\quat.inl">
+      <Filter>math</Filter>
+    </None>
+    <None Include="math\matrixUtils.inl">
+      <Filter>math</Filter>
+    </None>
+    <None Include="math\transform.inl">
+      <Filter>math</Filter>
+    </None>
+    <None Include="math\plane.inl">
+      <Filter>math</Filter>
+    </None>
+    <None Include="math\range.inl">
+      <Filter>math</Filter>
+    </None>
+    <None Include="system\video\video.inl">
+      <Filter>system\video</Filter>
+    </None>
+    <None Include="system\video\video2d.inl">
+      <Filter>system\video</Filter>
+    </None>
+    <None Include="system\video\video3d.inl">
+      <Filter>system\video</Filter>
+    </None>
+    <None Include="system\video\viewFrustum.inl">
+      <Filter>system\video</Filter>
+    </None>
+    <None Include="types\name.inl">
+      <Filter>types</Filter>
+    </None>
+    <None Include="containers\map.inl">
+      <Filter>containers</Filter>
+    </None>
+    <None Include="memory\refCountObject.inl">
+      <Filter>memory</Filter>
+    </None>
+    <None Include="memory\refCountObjectPtr.inl">
+      <Filter>memory</Filter>
+    </None>
+    <None Include="types\token.inl">
+      <Filter>types</Filter>
+    </None>
+    <None Include="containers\arrayStatic.inl">
+      <Filter>containers</Filter>
+    </None>
+    <None Include="math\rotator3.inl">
+      <Filter>math</Filter>
+    </None>
+    <None Include="memory\softPooledObject.inl">
+      <Filter>memory</Filter>
+    </None>
+    <None Include="math\planeSet.inl">
+      <Filter>math</Filter>
+    </None>
+    <None Include="math\vector4.inl">
+      <Filter>math</Filter>
+    </None>
+    <None Include="collision\checkGradientContext.inl">
+      <Filter>collision</Filter>
+    </None>
+    <None Include="collision\checkGradientPoints.inl">
+      <Filter>collision</Filter>
+    </None>
+    <None Include="types\optional.inl">
+      <Filter>types</Filter>
+    </None>
+    <None Include="collision\queryPrimitivePoint.inl">
+      <Filter>collision</Filter>
+    </None>
+    <None Include="collision\queryPrimitiveSegment.inl">
+      <Filter>collision</Filter>
+    </None>
+    <None Include="system\video\shaderProgramInstance.inl">
+      <Filter>system\video</Filter>
+    </None>
+    <None Include="math\rangeInt.inl">
+      <Filter>math</Filter>
+    </None>
+    <None Include="pieceCombiner\pieceCombiner.inl">
+      <Filter>pieceCombiner</Filter>
+    </None>
+    <None Include="math\range2.inl">
+      <Filter>math</Filter>
+    </None>
+    <None Include="containers\arrayStack.inl">
+      <Filter>containers</Filter>
+    </None>
+    <None Include="pieceCombiner\pieceCombinerSteps.inl">
+      <Filter>pieceCombiner</Filter>
+    </None>
+    <None Include="math\segment.inl">
+      <Filter>math</Filter>
+    </None>
+    <None Include="collision\shape.inl">
+      <Filter>collision</Filter>
+    </None>
+    <None Include="collision\checkCollisionContext.inl">
+      <Filter>collision</Filter>
+    </None>
+    <None Include="serialisation\importer.inl">
+      <Filter>serialisation</Filter>
+    </None>
+    <None Include="serialisation\importerHelper.inl">
+      <Filter>serialisation</Filter>
+    </None>
+    <None Include="math\vectorInt4.inl">
+      <Filter>math</Filter>
+    </None>
+    <None Include="system\video\outputSetup.inl">
+      <Filter>system\video</Filter>
+    </None>
+    <None Include="graph\graphNode.inl">
+      <Filter>graph</Filter>
+    </None>
+    <None Include="graph\graphNodeContainer.inl">
+      <Filter>graph</Filter>
+    </None>
+    <None Include="graph\graphInputConnector.inl">
+      <Filter>graph</Filter>
+    </None>
+    <None Include="graph\graphOutputConnector.inl">
+      <Filter>graph</Filter>
+    </None>
+    <None Include="graph\graph.inl">
+      <Filter>graph</Filter>
+    </None>
+    <None Include="graph\graphConnector.inl">
+      <Filter>graph</Filter>
+    </None>
+    <None Include="instance\instanceDatum.inl">
+      <Filter>instance</Filter>
+    </None>
+    <None Include="instance\instanceDataHandler.inl">
+      <Filter>instance</Filter>
+    </None>
+    <None Include="instance\instanceData.inl">
+      <Filter>instance</Filter>
+    </None>
+    <None Include="graph\graphInstance.inl">
+      <Filter>graph</Filter>
+    </None>
+    <None Include="mesh\mesh3dRenderingUtils.inl">
+      <Filter>mesh</Filter>
+    </None>
+    <None Include="latent\latentStackVariables.inl">
+      <Filter>latent</Filter>
+    </None>
+    <None Include="latent\latentScope.inl">
+      <Filter>latent</Filter>
+    </None>
+    <None Include="latent\latentFrame.inl">
+      <Filter>latent</Filter>
+    </None>
+    <None Include="math\blendUtils.inl">
+      <Filter>math</Filter>
+    </None>
+    <None Include="math\range3.inl">
+      <Filter>math</Filter>
+    </None>
+    <None Include="types\storeInScope.inl">
+      <Filter>types</Filter>
+    </None>
+    <None Include="math\matrix33.inl">
+      <Filter>math</Filter>
+    </None>
+    <None Include="math\matrix44.inl">
+      <Filter>math</Filter>
+    </None>
+    <None Include="other\customParameters.inl">
+      <Filter>other</Filter>
+    </None>
+    <None Include="math\blendCurves.inl">
+      <Filter>math</Filter>
+    </None>
+    <None Include="other\simpleVariableStorage.inl">
+      <Filter>other</Filter>
+    </None>
+    <None Include="math\bezierCurve.inl">
+      <Filter>math</Filter>
+    </None>
+    <None Include="system\sound\utils.inl">
+      <Filter>system\sound</Filter>
+    </None>
+    <None Include="math\curve.inl">
+      <Filter>math</Filter>
+    </None>
+    <None Include="io\xmlNode.inl">
+      <Filter>io</Filter>
+    </None>
+    <None Include="math\segment2.inl">
+      <Filter>math</Filter>
+    </None>
+    <None Include="wheresMyPoint\iWMPTool.inl">
+      <Filter>wheresMyPoint</Filter>
+    </None>
+    <None Include="math\rangeInt2.inl">
+      <Filter>math</Filter>
+    </None>
+    <None Include="other\factoryOfNamed.inl">
+      <Filter>other</Filter>
+    </None>
+    <None Include="random\random.inl">
+      <Filter>random</Filter>
+    </None>
+    <None Include="random\randomNumber.inl">
+      <Filter>random</Filter>
+    </None>
+    <None Include="random\randomUtils.inl">
+      <Filter>random</Filter>
+    </None>
+    <None Include="tags\tag.inl">
+      <Filter>tags</Filter>
+    </None>
+    <None Include="tags\tagCondition.inl">
+      <Filter>tags</Filter>
+    </None>
+    <None Include="pieceCombiner\pieceCombinerDebugVisualiser.inl">
+      <Filter>pieceCombiner</Filter>
+    </None>
+    <None Include="memory\safeObject.inl">
+      <Filter>memory</Filter>
+    </None>
+    <None Include="math\vectorInt3.inl">
+      <Filter>math</Filter>
+    </None>
+    <None Include="wheresMyPoint\wmpParam.inl">
+      <Filter>wheresMyPoint</Filter>
+    </None>
+    <None Include="types\string.inl">
+      <Filter>types</Filter>
+    </None>
+    <None Include="other\remapValue.inl">
+      <Filter>other</Filter>
+    </None>
+    <None Include="other\parserUtilsImpl.inl">
+      <Filter>other</Filter>
+    </None>
+    <None Include="concurrency\scopedCounter.inl">
+      <Filter>concurrency</Filter>
+    </None>
+    <None Include="memory\softPooledObjectMT.inl">
+      <Filter>memory</Filter>
+    </None>
+    <None Include="mesh\mesh3dInstanceSetInlinedImpl.inl">
+      <Filter>mesh</Filter>
+    </None>
+    <None Include="system\input.inl">
+      <Filter>system</Filter>
+    </None>
+    <None Include="concurrency\scopedMRSWLock.inl">
+      <Filter>concurrency</Filter>
+    </None>
+    <None Include="math\blendAdvancer.inl">
+      <Filter>math</Filter>
+    </None>
+    <None Include="mesh\mesh3dInstanceImpl.inl">
+      <Filter>mesh</Filter>
+    </None>
+    <None Include="system\video\videoClipPlaneStackImpl.inl">
+      <Filter>system\video</Filter>
+    </None>
+    <None Include="math\rangeRotator3.inl">
+      <Filter>math</Filter>
+    </None>
+    <None Include="system\video\viewPlanes.inl">
+      <Filter>system\video</Filter>
+    </None>
+    <None Include="math\rangeInt3.inl">
+      <Filter>math</Filter>
+    </None>
+    <None Include="random\randomSelection.inl">
+      <Filter>random</Filter>
+    </None>
+    <None Include="types\scopedDelete.inl">
+      <Filter>types</Filter>
+    </None>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,11 @@
+<library group="displays">
+	gfx
+
+	<texture name="language selection" file="assets\language selection.tex" importFromFile="assets\_source\language selection.tga" filteringMag="linear" filteringMin="linear" wrap="clamp"/> 
+	<texturePart name="language selection" texture="language selection">
+		<uv0 x="0" y="0"/>
+		<uv1 x="1" y="1"/>
+		<uvAnchor x="0.5" y="0.5"/>
+	</texturePart>
+
+</library>

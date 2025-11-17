@@ -1,0 +1,59 @@
+<library group="displays">
+	gfx
+	
+	<textureArray name="h_display 16x16" file="assets\h_display 16x16.tex"/>
+	<textureArray name="h_display 16x16 [ch_s]" file="assets\h_display 16x16 [ch_s].tex"/>
+	<textureArray name="h_display 16x16 [ch_t]" file="assets\h_display 16x16 [ch_t].tex"/>
+	<textureArray name="h_display 16x16 [ja]" file="assets\h_display 16x16 [ja].tex"/>
+	<textureArray name="h_display 16x16 [ko]" file="assets\h_display 16x16 [ko].tex"/>
+	<textureArray name="h_display 16x16 [crl]" file="assets\h_display 16x16 [crl].tex"/>
+
+	<font name="h_display 16x16">
+		<variableWidth x="16" y="16" spacingx="2" spacingy="4" verticalMargin="4" baseLinePt="0.06"/>
+		<texture use="h_display 16x16">
+			<compressCharacters/>
+			<rowAnsi/>
+			<rowLocalisedCharacters setId="latin"/>
+		</texture>
+		<texture use="h_display 16x16 [ch_s]">
+			<rowLocalisedCharacters setId="chinese_simplified"/>
+		</texture>
+		<texture use="h_display 16x16 [ch_t]">
+			<rowLocalisedCharacters setId="chinese_traditional"/>
+		</texture>
+		<texture use="h_display 16x16 [ja]">
+			<rowLocalisedCharacters setId="japanese"/>
+		</texture>
+		<texture use="h_display 16x16 [ko]">
+			<rowLocalisedCharacters setId="korean"/>
+		</texture>
+		<texture use="h_display 16x16 [crl]">
+			<rowLocalisedCharacters setId="cyrillic"/>
+		</texture>
+	</font>
+
+	<font name="h_display 16x16 fixed">
+		<fixedSize x="16" y="16" spacingx="2" spacingy="4" verticalMargin="4" baseLinePt="0.06"/>
+		<texture use="h_display 16x16">
+			<compressCharacters/>
+			<rowAnsi/>
+			<rowLocalisedCharacters setId="latin"/>
+		</texture>
+		<texture use="h_display 16x16 [ch_s]">
+			<rowLocalisedCharacters setId="chinese_simplified"/>
+		</texture>
+		<texture use="h_display 16x16 [ch_t]">
+			<rowLocalisedCharacters setId="chinese_traditional"/>
+		</texture>
+		<texture use="h_display 16x16 [ja]">
+			<rowLocalisedCharacters setId="japanese"/>
+		</texture>
+		<texture use="h_display 16x16 [ko]">
+			<rowLocalisedCharacters setId="korean"/>
+		</texture>
+		<texture use="h_display 16x16 [crl]">
+			<rowLocalisedCharacters setId="cyrillic"/>
+		</texture>
+	</font>
+	
+</library>

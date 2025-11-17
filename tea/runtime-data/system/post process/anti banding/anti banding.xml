@@ -1,0 +1,110 @@
+<library group="postProcess">
+	<texture name="anti banding noise" file="anti banding noise.tex" wrap="repeat"/>
+	<fragmentShader name="anti banding">
+		<useWithPostProcessPipeline/>
+		<source>
+			<data>
+				// uniform
+				uniform sampler2D inData;
+				uniform sampler2D noise;
+				uniform HIGHP float random;
+				uniform HIGHP float time;
+				
+				uniform vec2 noiseTextureInv; // inverte size of texture
+				// output
+				out vec4 outData;
+			</data>
+			<defaultValues>
+				<vector2 name="noiseTextureInv" x="0.00390625" y="0.00390625"/>
+			</defaultValues>
+			<mainBody>
+				outData = texture(inData, varUV);
+
+				// anti banding
+				outData.rgb += (-vec3(-0.5) + texture(noise, varUV * inOutputSize * noiseTextureInv + vec2(random, random * 5.37)).rgb * 2.0) * 0.00390625; // inverted colour resolution (256)
+				outData.a = 1.0;
+			</mainBody>
+		</source>
+		<outputs>
+			<output name="outData"/>
+		</outputs>
+	</fragmentShader>
+	<shaderProgram name="anti banding" fragmentShader="anti banding">
+		<params>
+			<texture name="noise" use="anti banding noise"/>
+		</params>
+	</shaderProgram>
+
+	<fragmentShader name="anti banding + vignette">
+		<useWithPostProcessPipeline/>
+		<source>
+			<data>
+				// uniform
+				uniform sampler2D inData;
+				uniform sampler2D noise;
+				uniform HIGHP float random;
+				uniform HIGHP float time;
+				
+				uniform vec2 noiseTextureInv; // inverte size of texture
+				// output
+				out vec4 outData;
+			</data>
+			<defaultValues>
+				<vector2 name="noiseTextureInv" x="0.00390625" y="0.00390625"/>
+			</defaultValues>
+			<mainBody>
+				// vignette
+				vec4 inputTexture = texture(inData, varUV);
+				float amount = length((varUV - vec2(0.5, 0.5)) * 2.0);
+				amount = 1.0 - amount * amount * 0.3;
+				
+				outData = inputTexture;
+				outData.rgb *= amount;
+
+				// anti banding
+				outData.rgb += (-vec3(-0.5) + texture(noise, varUV * inOutputSize * noiseTextureInv + vec2(random, random * 5.37)).rgb * 2.0) * 0.00390625; // inverted colour resolution (256)
+				outData.a = 1.0;
+			</mainBody>
+		</source>
+		<outputs>
+			<output name="outData"/>
+		</outputs>
+	</fragmentShader>
+	<shaderProgram name="anti banding + vignette" fragmentShader="anti banding + vignette">
+		<params>
+			<texture name="noise" use="anti banding noise"/>
+		</params>
+	</shaderProgram>
+
+	post process'
+	
+	<postProcess name="anti banding">
+		<graph>
+			<inputNode name="input">
+				<output name="colour"/>
+			</inputNode>
+			<processorNode name="anti banding" shaderProgram="anti banding">
+				<input name="inData" connectToNode="input" connectToConnector="colour"/>
+			</processorNode>
+			<outputNode name="output">
+				<input name="colour" connectToNode="anti banding" connectToConnector="outData"/>
+			</outputNode>
+		</graph>
+	</postProcess>
+	
+	<postProcess name="anti banding + vignette">
+		<graph>
+			<inputNode name="input">
+				<output name="colour"/>
+			</inputNode>
+			<processorNode name="anti banding" shaderProgram="anti banding + vignette">
+				<input name="inData" connectToNode="input" connectToConnector="colour"/>
+			</processorNode>
+			<outputNode name="output">
+				<input name="colour" connectToNode="anti banding" connectToConnector="outData"/>
+			</outputNode>
+		</graph>
+	</postProcess>
+</library>
+
+

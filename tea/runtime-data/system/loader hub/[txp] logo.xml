@@ -1,0 +1,11 @@
+<library group="loader hub">
+
+	<texture name="hub logo one line" file="assets\hub logo one line.tex" importFromFile="assets\_source\hub logo one line.tga" filteringMag="nearest" filteringMin="nearest" wrap="clamp"/> 
+
+	<texturePart name="logo big one line" texture="hub logo one line">
+		<uv0 x="0t1024" ty="189t256"/>
+		<uv1 x="925t1024" ty="102t256"/>
+		<uvAnchor x="462t1024" ty="145t256"/>
+	</texturePart>
+
+</library>

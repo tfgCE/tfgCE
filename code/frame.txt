@@ -1,0 +1,25 @@
+player/actor
+
+preadvance
+==========
+player input - done in pre advance
+
+
+world advance logic
+===================
+collisions (gradients)
+presence (gravity)
+/logic
+/locomotion
+prepare next velocity (and displacement)
+appearance
+	+-	logic
+	+-	preliminary pose - process animations, get velocity
+	+-	process controllers that may influence velocity
+prepare move (combines collision)
+
+
+world advance physically
+========================
+move
+appearance - calculate pose

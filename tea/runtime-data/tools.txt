@@ -1,0 +1,18 @@
+Command line parameters:
+
+--listLibrary
+	lists all library objects
+--dumpLanguages
+	saves language files in _auto directory
+--createCodeInfo
+	creates codeInfo file used to display callstack properly
+--drawVRControls
+	displays vr controls
+--loadLibraryAndExit
+	load library (compile cx files) and exit, just to make sure everything is ok
+--showcase
+	disallow certain controls ("continue" for summary hub screen)
+--forceOculus
+	run using Oculus
+--forceSteamVR
+	run using OpenVR/SteamVR

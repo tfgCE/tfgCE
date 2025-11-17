@@ -1,0 +1,2609 @@
+<.mainConfig>
+	<allowVR>false</allowVR>
+	<forceVR>false</forceVR>
+	<video>
+		<fullScreen>false</fullScreen>
+		<vsync>false</vsync>
+	</video>
+</mainConfig>
+<gameConfig>
+	<roomGenerationInfo>
+		use setup below for general testing of preview
+		<.testPlayAreaRectSize x="3.0" y="3.0"/>
+		<.forceTestPlayAreaRectSize/>
+		
+		<.testPlayAreaRectSize x="10.0" y="10.0"/>
+		<.forceTestPlayAreaRectSize/>
+	</roomGenerationInfo>
+</gameConfig>
+<testConfig>
+	<params>
+		use this to test precise sizes
+	
+		<.float name="testTileSize">1.00</float>
+		<.vector2 name="testPlayArea" x="15.0" y="15.0"/>
+
+		<.float name="testTileSize">1.00</float>
+		<.vector2 name="testPlayArea" x="10.0" y="10.0"/>
+
+		<.float name="testTileSize">1.00</float>
+		<.vector2 name="testPlayArea" x="6.0" y="6.0"/>
+
+		<.float name="testTileSize">1.00</float>
+		<.vector2 name="testPlayArea" x="8.0" y="4.0"/>
+
+		<.float name="testTileSize">1.00</float>
+		<.vector2 name="testPlayArea" x="4.0" y="4.0"/>
+
+		<float name="testTileSize">0.60</float>
+		<vector2 name="testPlayArea" x="5.05" y="3.01"/>
+
+		<.float name="testTileSize">0.65</float>
+		<.vector2 name="testPlayArea" x="2.05" y="2.05"/>
+
+		<.float name="testTileSize">0.8</float>
+		<.vector2 name="testPlayArea" x="7.5" y="3"/>
+
+		<.float name="testTileSize">0.8</float>
+		<.vector2 name="testPlayArea" x="2.45" y="2.45"/>
+		
+		<.float name="testTileSize">0.7</float>
+		<.vector2 name="testPlayArea" x="2.1" y="2.1"/>
+		
+		min size
+		<.float name="testTileSize">0.59</float>
+		<.vector2 name="testPlayArea" x="1.8" y="1.2"/>
+	</params>
+</testConfig>
+
+has to be on top (note, this is not valid xml)
+
+<previewSetup useLibrary="library\sky box"/>
+<previewSetup useLibrary="library\sky box.fullGame"/>
+<previewSetup useLibrary="library\environment overlays"/>
+<previewSetup useLibrary="library\environment overlays.fullGame"/>
+
+<_section> environments
+	<._section> special or not used
+		<previewSetup useEnvironmentType="sky box:default fallback"/>
+	</_section>
+	<._section> special or not used
+		<previewSetup useEnvironmentType="demo robot:sky box"/>
+	</_section>
+	<._section> interiors
+		<.previewSetup useEnvironmentType="sky box:outside shaft"/>
+		<.previewSetup useEnvironmentType="sky box:interior entrance"/>
+		<.previewSetup useEnvironmentType="stations:station 00 cathedral"/>
+		<.previewSetup useEnvironmentType="stations:station 02 chamber"/>
+		<.previewSetup useEnvironmentType="stations:station 02 temple"/>
+		<previewSetup useEnvironmentType="starting rooms:starting room 00 chamber" default="false"/>
+		<previewSetup useEnvironmentType="starting rooms:void room chamber" default="false"/>
+		<previewSetup useEnvironmentType="pilgrimage, 02 injection:cube vestibule chamber" default="false"/>
+		<previewSetup useEnvironmentType="sky box:inside" default="false"/>
+		<previewSetup useEnvironmentType="sky box:drop capsule launcher" default="false"/>
+		<previewSetup useEnvironmentType="sky box:interior barge internal bay" default="false"/>
+		<previewSetup useEnvironmentType="sky box:interior launch facility" default="false"/>
+		<previewSetup useEnvironmentType="sky box:interior launch tunnel" default="false"/>
+		<previewSetup useEnvironmentType="sky box:interior palace top heart chamber" default="false"/>
+		<previewSetup useEnvironmentType="sky box:interior palace top corridor" default="false"/>
+		<previewSetup useEnvironmentType="sky box:interior palace top light large chamber" default="false"/>
+		<previewSetup useEnvironmentType="sky box:interior palace top light chamber" default="false"/>
+		<previewSetup useEnvironmentType="sky box:interior palace top light shaft" default="false"/>
+		<previewSetup useEnvironmentType="sky box:interior palace top dark shaft" default="false"/>
+		<previewSetup useEnvironmentType="sky box:interior throne corridors" default="false"/>
+		<previewSetup useEnvironmentType="sky box:interior airship core shaft" default="false"/>
+		<previewSetup useEnvironmentType="sky box:interior airship reactor" default="false"/>
+		<previewSetup useEnvironmentType="sky box:interior airship bridge" default="false"/>
+		<previewSetup useEnvironmentType="sky box:interior airship bridge; no power" default="false"/>
+		<previewSetup useEnvironmentType="sky box:interior airship bridge; crashed" default="false"/>
+		<previewSetup useEnvironmentType="sky box:interior airship" default="true"/>
+		<previewSetup useEnvironmentType="sky box:interior injection" default="false"/>
+		<previewSetup useEnvironmentType="sky box:interior haven"/>
+		<previewSetup useEnvironmentType="sky box:interior workshop" default="false"/>
+		<previewSetup useEnvironmentType="sky box:interior beneath" default="false"/>
+		<previewSetup useEnvironmentType="sky box:interior beneath assembly" default="false"/>
+		<previewSetup useEnvironmentType="sky box:interior beneath corrosion chamber" default="false"/>
+		<previewSetup useEnvironmentType="sky box:interior beneath chamber" default="false"/>
+		<previewSetup useEnvironmentType="sky box:interior beneath chamber large" default="false"/>
+		<previewSetup useEnvironmentType="sky box:interior beneath collapsing" default="false"/>
+		<previewSetup useEnvironmentType="sky box:interior surface elevator" default="false"/>
+		<previewSetup useEnvironmentType="sky box:interior dark"/>
+		<previewSetup useEnvironmentType="sky box:interior dark dim lit from below"/>
+		<previewSetup useEnvironmentType="sky box:interior dark lit from below"/>
+		<previewSetup useEnvironmentType="sky box:interior dark lit from below reddish" default="false"/>
+		<previewSetup useEnvironmentType="sky box:interior drop capsule" default="false"/>
+		<previewSetup useEnvironmentType="sky box:interior drop capsule; crashed" default="false"/>
+		<previewSetup useEnvironmentType="sky box:interior drop capsule; crashed alarm" default="false"/>
+		<previewSetup useEnvironmentType="sky box:interior drop capsule hit room" default="false"/>
+		<previewSetup useEnvironmentType="sky box:interior train cargo bay" default="false"/>
+		<previewSetup useEnvironmentType="sky box:interior train drop capsule bay" default="false"/>
+		<previewSetup useEnvironmentType="sky box:interior medium lit from below reddish" default="false"/>
+		<previewSetup useEnvironmentType="sky box:interior medium lit from below reddish" default="false"><add environmentOverlay="environment overlays:inside shaft fog very far"/></previewSetup>
+		<previewSetup useEnvironmentType="sky box:interior light lit from below" default="false"/>
+		<previewSetup useEnvironmentType="sky box:interior medium lit from above" default="false"/>
+		<previewSetup useEnvironmentType="sky box:interior medium-dark lit from below" default="false"/>
+		<previewSetup useEnvironmentType="sky box:interior inside dock" default="false"/>
+		<previewSetup useEnvironmentType="sky box:interior barge repair room" default="false"/>
+		<previewSetup useEnvironmentType="sky box:interior train station at outer rim" default="false"/>
+	</_section>
+	<_section> exteriors normal
+		<previewSetup useEnvironmentType="sky box:00 midnight"/>
+		<previewSetup useEnvironmentType="sky box:01 late night"/>
+		<previewSetup useEnvironmentType="sky box:02 before dawn"/>
+		<previewSetup useEnvironmentType="sky box:03 dusty dawn"/>
+		<previewSetup useEnvironmentType="sky box:04 dusty sunrise"/>
+		<previewSetup useEnvironmentType="sky box:05 dusty morning" default="true"/>
+		<previewSetup useEnvironmentType="sky box:06 dusty noon"/>
+		<previewSetup useEnvironmentType="sky box:07 dusty afternoon"/>
+		<previewSetup useEnvironmentType="sky box:08 dusty dusk"/>
+		<previewSetup useEnvironmentType="sky box:09 dusty twilight"/>
+		<previewSetup useEnvironmentType="sky box:10 night begins"/>
+		<previewSetup useEnvironmentType="sky box:11 early night"/>
+	</_section>
+	<._section> exteriors special
+		<previewSetup useEnvironmentType="sky box:desert sun"		default="false"/>
+	</_section>
+	<._section> exteriors train ride fog
+		<previewSetup useEnvironmentType="sky box:mockup train dusty sunrise" default="false"/>
+
+		<previewSetup useEnvironmentType="sky box:00 midnight"						><add environmentOverlay="environment overlays:train ride fog"/></previewSetup>
+		<previewSetup useEnvironmentType="sky box:01 late night"					><add environmentOverlay="environment overlays:train ride fog"/></previewSetup>
+		<previewSetup useEnvironmentType="sky box:02 before dawn"					><add environmentOverlay="environment overlays:train ride fog"/></previewSetup>
+		<previewSetup useEnvironmentType="sky box:03 dusty dawn"					><add environmentOverlay="environment overlays:train ride fog"/></previewSetup>
+		<previewSetup useEnvironmentType="sky box:04 dusty sunrise"					><add environmentOverlay="environment overlays:train ride fog"/></previewSetup>
+		<previewSetup useEnvironmentType="sky box:05 dusty morning"					><add environmentOverlay="environment overlays:train ride fog"/></previewSetup>
+		<previewSetup useEnvironmentType="sky box:06 dusty noon"	default="false"	><add environmentOverlay="environment overlays:train ride fog"/></previewSetup>
+		<previewSetup useEnvironmentType="sky box:07 dusty afternoon"				><add environmentOverlay="environment overlays:train ride fog"/></previewSetup>
+		<previewSetup useEnvironmentType="sky box:08 dusty dusk"					><add environmentOverlay="environment overlays:train ride fog"/></previewSetup>
+		<previewSetup useEnvironmentType="sky box:09 dusty twilight"				><add environmentOverlay="environment overlays:train ride fog"/></previewSetup>
+		<previewSetup useEnvironmentType="sky box:10 night begins"					><add environmentOverlay="environment overlays:train ride fog"/></previewSetup>
+		<previewSetup useEnvironmentType="sky box:11 early night"					><add environmentOverlay="environment overlays:train ride fog"/></previewSetup>
+	</_section>
+	<._section> exteriors dusty fog
+		<previewSetup useEnvironmentType="sky box:00 midnight"						><add environmentOverlay="environment overlays:outside dusty fog"/></previewSetup>
+		<previewSetup useEnvironmentType="sky box:01 late night"					><add environmentOverlay="environment overlays:outside dusty fog"/></previewSetup>
+		<previewSetup useEnvironmentType="sky box:02 before dawn"					><add environmentOverlay="environment overlays:outside dusty fog"/></previewSetup>
+		<previewSetup useEnvironmentType="sky box:03 dusty dawn"	default="false"	><add environmentOverlay="environment overlays:outside dusty fog"/></previewSetup>
+		<previewSetup useEnvironmentType="sky box:04 dusty sunrise"					><add environmentOverlay="environment overlays:outside dusty fog"/></previewSetup>
+		<previewSetup useEnvironmentType="sky box:05 dusty morning"					><add environmentOverlay="environment overlays:outside dusty fog"/></previewSetup>
+		<previewSetup useEnvironmentType="sky box:06 dusty noon"					><add environmentOverlay="environment overlays:outside dusty fog"/></previewSetup>
+		<previewSetup useEnvironmentType="sky box:07 dusty afternoon"				><add environmentOverlay="environment overlays:outside dusty fog"/></previewSetup>
+		<previewSetup useEnvironmentType="sky box:08 dusty dusk"					><add environmentOverlay="environment overlays:outside dusty fog"/></previewSetup>
+		<previewSetup useEnvironmentType="sky box:09 dusty twilight"				><add environmentOverlay="environment overlays:outside dusty fog"/></previewSetup>
+		<previewSetup useEnvironmentType="sky box:10 night begins"					><add environmentOverlay="environment overlays:outside dusty fog"/></previewSetup>
+		<previewSetup useEnvironmentType="sky box:11 early night"					><add environmentOverlay="environment overlays:outside dusty fog"/></previewSetup>
+	</_section>
+	<._section> broken airship fog
+		<previewSetup useEnvironmentType="sky box:00 midnight"						><add environmentOverlay="environment overlays:broken airship fog"/></previewSetup>
+		<previewSetup useEnvironmentType="sky box:01 late night"					><add environmentOverlay="environment overlays:broken airship fog"/></previewSetup>
+		<previewSetup useEnvironmentType="sky box:02 before dawn"					><add environmentOverlay="environment overlays:broken airship fog"/></previewSetup>
+		<previewSetup useEnvironmentType="sky box:03 dusty dawn"	default="true"	><add environmentOverlay="environment overlays:broken airship fog"/></previewSetup>
+		<previewSetup useEnvironmentType="sky box:04 dusty sunrise"					><add environmentOverlay="environment overlays:broken airship fog"/></previewSetup>
+		<previewSetup useEnvironmentType="sky box:05 dusty morning"					><add environmentOverlay="environment overlays:broken airship fog"/></previewSetup>
+		<previewSetup useEnvironmentType="sky box:06 dusty noon"					><add environmentOverlay="environment overlays:broken airship fog"/></previewSetup>
+		<previewSetup useEnvironmentType="sky box:07 dusty afternoon"				><add environmentOverlay="environment overlays:broken airship fog"/></previewSetup>
+		<previewSetup useEnvironmentType="sky box:08 dusty dusk"					><add environmentOverlay="environment overlays:broken airship fog"/></previewSetup>
+		<previewSetup useEnvironmentType="sky box:09 dusty twilight"				><add environmentOverlay="environment overlays:broken airship fog"/></previewSetup>
+		<previewSetup useEnvironmentType="sky box:10 night begins"					><add environmentOverlay="environment overlays:broken airship fog"/></previewSetup>
+		<previewSetup useEnvironmentType="sky box:11 early night"					><add environmentOverlay="environment overlays:broken airship fog"/></previewSetup>
+	</_section>
+	<._section> inside the offline elevator
+		<previewSetup useEnvironmentType="sky box:00 midnight"						><add environmentOverlay="environment overlays:broken airship fog"/><add environmentOverlay="environment overlays:broken airship elevator"/></previewSetup>
+		<previewSetup useEnvironmentType="sky box:01 late night"					><add environmentOverlay="environment overlays:broken airship fog"/><add environmentOverlay="environment overlays:broken airship elevator"/></previewSetup>
+		<previewSetup useEnvironmentType="sky box:02 before dawn"					><add environmentOverlay="environment overlays:broken airship fog"/><add environmentOverlay="environment overlays:broken airship elevator"/></previewSetup>
+		<previewSetup useEnvironmentType="sky box:03 dusty dawn"	default="false"	><add environmentOverlay="environment overlays:broken airship fog"/><add environmentOverlay="environment overlays:broken airship elevator"/></previewSetup>
+		<previewSetup useEnvironmentType="sky box:04 dusty sunrise"					><add environmentOverlay="environment overlays:broken airship fog"/><add environmentOverlay="environment overlays:broken airship elevator"/></previewSetup>
+		<previewSetup useEnvironmentType="sky box:05 dusty morning"					><add environmentOverlay="environment overlays:broken airship fog"/><add environmentOverlay="environment overlays:broken airship elevator"/></previewSetup>
+		<previewSetup useEnvironmentType="sky box:06 dusty noon"					><add environmentOverlay="environment overlays:broken airship fog"/><add environmentOverlay="environment overlays:broken airship elevator"/></previewSetup>
+		<previewSetup useEnvironmentType="sky box:07 dusty afternoon"				><add environmentOverlay="environment overlays:broken airship fog"/><add environmentOverlay="environment overlays:broken airship elevator"/></previewSetup>
+		<previewSetup useEnvironmentType="sky box:08 dusty dusk"					><add environmentOverlay="environment overlays:broken airship fog"/><add environmentOverlay="environment overlays:broken airship elevator"/></previewSetup>
+		<previewSetup useEnvironmentType="sky box:09 dusty twilight"				><add environmentOverlay="environment overlays:broken airship fog"/><add environmentOverlay="environment overlays:broken airship elevator"/></previewSetup>
+		<previewSetup useEnvironmentType="sky box:10 night begins"					><add environmentOverlay="environment overlays:broken airship fog"/><add environmentOverlay="environment overlays:broken airship elevator"/></previewSetup>
+		<previewSetup useEnvironmentType="sky box:11 early night"					><add environmentOverlay="environment overlays:broken airship fog"/><add environmentOverlay="environment overlays:broken airship elevator"/></previewSetup>
+	</_section>
+	<._section> exteriors high above fog
+		<previewSetup useEnvironmentType="sky box:00 midnight"						><add environmentOverlay="environment overlays:outside high above fog"/></previewSetup>
+		<previewSetup useEnvironmentType="sky box:01 late night"					><add environmentOverlay="environment overlays:outside high above fog"/></previewSetup>
+		<previewSetup useEnvironmentType="sky box:02 before dawn"					><add environmentOverlay="environment overlays:outside high above fog"/></previewSetup>
+		<previewSetup useEnvironmentType="sky box:03 dusty dawn"	default="true"	><add environmentOverlay="environment overlays:outside high above fog"/></previewSetup>
+		<previewSetup useEnvironmentType="sky box:04 dusty sunrise"					><add environmentOverlay="environment overlays:outside high above fog"/></previewSetup>
+		<previewSetup useEnvironmentType="sky box:05 dusty morning"					><add environmentOverlay="environment overlays:outside high above fog"/></previewSetup>
+		<previewSetup useEnvironmentType="sky box:06 dusty noon"					><add environmentOverlay="environment overlays:outside high above fog"/></previewSetup>
+		<previewSetup useEnvironmentType="sky box:07 dusty afternoon"				><add environmentOverlay="environment overlays:outside high above fog"/></previewSetup>
+		<previewSetup useEnvironmentType="sky box:08 dusty dusk"					><add environmentOverlay="environment overlays:outside high above fog"/></previewSetup>
+		<previewSetup useEnvironmentType="sky box:09 dusty twilight"				><add environmentOverlay="environment overlays:outside high above fog"/></previewSetup>
+		<previewSetup useEnvironmentType="sky box:10 night begins"					><add environmentOverlay="environment overlays:outside high above fog"/></previewSetup>
+		<previewSetup useEnvironmentType="sky box:11 early night"					><add environmentOverlay="environment overlays:outside high above fog"/></previewSetup>
+	</_section>
+	<._section> extra not used?
+		<.previewSetup useEnvironmentType="sky box:green fog"/>
+		<.previewSetup useEnvironmentType="hub:pre deactivation scene environment" default="false"/>
+		<.previewSetup useEnvironmentType="hub:profile scene environment" default="false"/>
+		<.previewSetup useEnvironmentType="hub:terminal scene environment"/>
+		<.previewSetup useEnvironmentType="loader hub:environment"/>
+		<previewSetup useEnvironmentType="loading scenes:environment" default="false"/>
+		<previewSetup useEnvironmentType="loading scenes:temple environment" default="false"/>
+		<previewSetup useEnvironmentType="loading scenes:cubes environment" default="false"/>
+	</_section>
+</_section>
+
+<!--
+<previewSetup useLibrary="library\palace"/>
+<previewSetup useLibrary="library\pilgrimage\story"/>
+<previewSetup useEnvironmentType="pilgrimage, open world A:outside scenery"/>
+-->
+
+<previewSetup loadFile="library\globalReferencer.xml"/>
+<previewSetup useLibrary="library\materials"/>
+<previewSetup useLibrary="library\materials.fullGame"/>
+<previewSetup useLibrary="library\physical materials"/>
+
+-->
+
+<!--
+<previewSetup useLibrary="library\demo robot.fullGame"/>
+<previewSetup useLibrary="library\parts"/>
+<preview type="mesh" name="demo robot:door frame"/>
+<preview type="mesh" name="demo robot:starting room"/>
+<preview type="mesh" name="demo robot:tile"/>
+<preview type="mesh" name="demo robot:demo robot"/>
+<preview type="actorType" name="demo robot:demo robot"/>
+-->
+
+<!--
+<previewSetup useLibrary="library\game"/>
+<preview type="mesh" name="game:presence indicator - character"/>
+-->
+
+<!--
+<previewSetup useLibrary="library\devices.fullGame"/>
+<previewSetup useLibrary="library\parts"/>
+<previewSetup useLibrary="library\sounds"/>
+<previewSetup useLibrary="library\particles"/>
+<preview type="mesh" name="devices:corrosion shower"/>
+<preview type="sceneryType" name="devices:corrosion shower"/>
+-->
+
+<!--
+<previewSetup useLibrary="library\pilgrimage\story\07 corrosion.fullGame\places"/>
+<previewSetup useLibrary="library\crafts\monorail"/>
+<preview type="lineModel" name="pilgrimage, 07 corrosion:corrosion bridge"/>
+<preview type="lineModel" name="pilgrimage, 07 corrosion:corrosion tank"/>
+<preview type="lineModel" name="pilgrimage, 07 corrosion:monorail"/>
+<preview type="lineModel" name="pilgrimage, 07 corrosion:workingRoom"/>
+<preview type="lineModel" name="pilgrimage, 07 corrosion:workingRoomAdjust"/>
+<preview type="lineModel" name="pilgrimage, 07 corrosion:workingRoomTakeCare"/>
+<preview type="lineModel" name="pilgrimage, 07 corrosion:workingRoomBurial"/>
+<preview type="lineModel" name="pilgrimage, 07 corrosion:workingRoomFill"/>
+-->
+
+<!--
+<previewSetup useLibrary="library\pilgrimage\story\07 corrosion.fullGame\objects"/>
+<previewSetup useLibrary="library\pilgrimage\story\07 corrosion.fullGame\places"/>
+<previewSetup useLibrary="library\pilgrimage\story\07 corrosion.fullGame\corridor rooms"/>
+<previewSetup useLibrary="library\places\elements\spawn balcony"/>
+<previewSetup useLibrary="library\places\shared"/>
+<preview type="mesh" name="pilgrimage, 07 corrosion:workingRoomFill room preview"/>
+<preview type="mesh" name="pilgrimage, 07 corrosion:shaft corrosion tank preview"/>
+<preview type="mesh" name="pilgrimage, 07 corrosion:bridge chamber room preview"/>
+<preview type="mesh" name="pilgrimage, 07 corrosion:corrosion [for square] chamber preview"/>
+<.preview type="mesh" name="pilgrimage, 07 corrosion:corrosion chamber room preview"/>
+<preview type="mesh" name="pilgrimage, 07 corrosion:corrosion tank room preview"/>
+<preview type="mesh" name="pilgrimage, 07 corrosion:monorail room preview"/>
+<preview type="mesh" name="pilgrimage, 07 corrosion:workingRoomAdjust room preview"/>
+<preview type="mesh" name="pilgrimage, 07 corrosion:workingRoomTakeCare room preview"/>
+<preview type="mesh" name="pilgrimage, 07 corrosion:workingRoomBurial room preview"/>
+<preview type="mesh" name="pilgrimage, 07 corrosion:conveyour cart"/>
+-->
+
+<!--
+<previewSetup useLibrary="library\pilgrimage\story\07 corrosion.fullGame\intro\01 airship"/>
+<previewSetup useLibrary="library\corridors"/>
+<previewSetup useLibrary="library\pilgrimage\story\06 ship.fullGame\final\bridge"/>
+<previewSetup useLibrary="library\helper functions"/>
+<previewSetup useLibrary="library\particles"/>
+<previewSetup useLibrary="library\explosions"/>
+<.previewSetup useLibrary="library\places\elements"/>
+
+<preview type="temporaryObjectType" name="pilgrimage, 07 corrosion:broken bridge elevator impact"/>
+<preview type="mesh" name="pilgrimage, 07 corrosion:broken bridge elevator top"/>
+<preview type="sceneryType" name="pilgrimage, 07 corrosion:broken bridge elevator top"/>
+<preview type="mesh" name="pilgrimage, 07 corrosion:broken bridge elevator bottom"/>
+<preview type="sceneryType" name="pilgrimage, 07 corrosion:broken bridge elevator bottom"/>
+<preview type="mesh" name="pilgrimage, 06 ship:bridge elevator"/>
+<preview type="mesh" name="pilgrimage, 06 ship:bridge elevator shaft"/>
+<preview type="sceneryType" name="pilgrimage, 07 corrosion:broken airship boulders on side"/>
+<preview type="mesh" name="pilgrimage, 07 corrosion:broken airship boulders on side a few"/>
+<preview type="mesh" name="pilgrimage, 07 corrosion:broken airship boulder"/>
+<preview type="mesh" name="pilgrimage, 07 corrosion:broken airship r"/>
+<preview type="sceneryType" name="pilgrimage, 07 corrosion:broken airship r"/>
+<preview type="mesh" name="pilgrimage, 07 corrosion:broken airship f"/>
+<preview type="sceneryType" name="pilgrimage, 07 corrosion:broken airship f"/>
+<preview type="mesh" name="pilgrimage, 07 corrosion:broken airship hull"/>
+<preview type="sceneryType" name="pilgrimage, 07 corrosion:broken airship room test"/> whole room with objects spawned
+<preview type="mesh" name="pilgrimage, 07 corrosion:broken airship room"/> room layout + POIs, elevator etc
+-->
+
+<!--
+<previewSetup useLibrary="library\devices\wall decorations"/>
+<previewSetup useLibrary="library\parts\generic"/>
+<preview type="mesh" name="devices:radiator panel on wall"/>
+<preview type="mesh" name="devices:frame panel on wall"/>
+<preview type="mesh" name="devices:cords on wall"/>
+<preview type="mesh" name="devices:pipe end on wall"/>
+<preview type="mesh" name="devices:bland panel on wall"/>
+<preview type="mesh" name="devices:generic panel"/>
+<preview type="mesh" name="devices:generic panel on wall"/>
+<preview type="sceneryType" name="devices:generic panel on wall"/>
+<!--
+-->
+
+<!--
+<previewSetup useLibrary="library\devices.fullGame\ceiling decorations"/>
+<preview type="mesh" name="devices:palace lamp on ceiling"/>
+<preview type="sceneryType" name="devices:palace lamp on ceiling"/>
+-->
+
+<!--
+<preview type="mesh" name="parts; generic:grid"/>
+
+<preview type="mesh" name="parts; generic:key 1x1"/>
+<preview type="mesh" name="parts; generic:block 1x1"/>
+<preview type="mesh" name="parts; generic:block 1x1 2"/>
+<preview type="mesh" name="parts; generic:block 1x1 3"/>
+<preview type="mesh" name="parts; generic:block 2x1"/>
+-->
+
+<!--
+<previewSetup useLibrary="library\places\particular.fullGame\ship"/>
+<previewSetup useLibrary="library\parts\equipment ports"/>
+<previewSetup useLibrary="library\pilgrim"/>
+<preview type="mesh" name="places, ship:armoury slot port"/>
+
+<preview type="mesh" name="pilgrims:rest point r"/>
+<preview type="mesh" name="pilgrims:rest point l"/>
+-->
+
+<!--
+<previewSetup useLibrary="library\missions.fullGame"/>
+<preview type="lineModel" name="mission, common:extraction drop capsule"/>
+-->
+
+<!--
+<previewSetup useLibrary="library\pilgrimage\endless.fullGame\up at ship"/>
+<previewSetup useLibrary="library\helper functions"/>
+<previewSetup useLibrary="library\places\elements"/>
+<previewSetup useLibrary="library\places\particular.fullGame\ship"/>
+<previewSetup useLibrary="library\npcs\drop capsule"/>
+<previewSetup useLibrary="library\parts\generic"/>
+<previewSetup useLibrary="library\devices\puzzles\puzzle panels"/>
+<preview type="mesh" name="pilgrimage, up at ship:bridge room"/>
+-->
+
+<!--
+<previewSetup useLibrary="library\pilgrimage\story\06 ship.fullGame"/>
+<previewSetup useLibrary="library\helper functions"/>
+<previewSetup useLibrary="library\places\elements"/>
+<previewSetup useLibrary="library\npcs\drop capsule"/>
+<previewSetup useLibrary="library\places\particular.fullGame\drop capsule"/>
+<preview type="mesh" name="pilgrimage, 06 ship:drop capsule"/>
+-->
+
+<!--
+<previewSetup useLibrary="library\pilgrimage\endless.fullGame\up back to ship"/>
+<previewSetup useLibrary="library\helper functions"/>
+<previewSetup useLibrary="library\places\elements"/>
+<previewSetup useLibrary="library\places\particular.fullGame\ship"/>
+<previewSetup useLibrary="library\npcs\drop capsule"/>
+<previewSetup useLibrary="library\parts\generic"/>
+<preview type="mesh" name="pilgrimage, up back to ship:catcher room"/>
+-->
+
+<!--
+<previewSetup useLibrary="library\pilgrimage\endless.fullGame\up capsule launcher"/>
+<previewSetup useLibrary="library\helper functions"/>
+<previewSetup useLibrary="library\places\elements"/>
+<previewSetup useLibrary="library\places\particular.fullGame\ship"/>
+<previewSetup useLibrary="library\npcs\drop capsule"/>
+<previewSetup useLibrary="library\parts\generic"/>
+<preview type="mesh" name="pilgrimage, up capsule launcher:launcher room"/>
+-->
+
+<!--
+<previewSetup useLibrary="library\pilgrimage\story\12 another chance.fullGame"/>
+<previewSetup useLibrary="library\helper functions"/>
+<previewSetup useLibrary="library\places\elements"/>
+<previewSetup useLibrary="library\places\particular.fullGame\ship"/>
+<previewSetup useLibrary="library\npcs\drop capsule"/>
+<previewSetup useLibrary="library\parts\generic"/>
+<preview type="mesh" name="places, ship:drop capsule chamber"/>
+<preview type="mesh" name="places, ship:armoury room"/>
+<preview type="mesh" name="places, ship:preparation room"/>
+<preview type="mesh" name="pilgrimage, 12 another chance:bridge room"/>
+-->
+
+<!--
+<previewSetup useLibrary="library\npcs.fullGame\alya"/>
+<previewSetup useLibrary="library\particles"/>
+<preview type="temporaryObjectType" name="npcs:alya; head dropping"/>
+<preview type="temporaryObjectType" name="npcs:alya; head dropping light"/>
+<preview type="temporaryObjectType" name="npcs:alya; shoulder dropping"/>
+<preview type="temporaryObjectType" name="npcs:alya; hand"/>
+<preview type="temporaryObjectType" name="npcs:alya; spiral small"/>
+<preview type="temporaryObjectType" name="npcs:alya; spiral far slow"/>
+<preview type="mesh" name="npcs:alya"/>
+<preview type="actorType" name="npcs:alya"/>
+<preview type="mesh" name="npcs:alya mask"/>
+<preview type="actorType" name="npcs:alya mask"/>
+-->
+
+<!--
+<previewSetup useLibrary="library\pilgrimage\story\16 back at ship.fullGame"/>
+<previewSetup useLibrary="library\helper functions"/>
+<previewSetup useLibrary="library\places\elements"/>
+<previewSetup useLibrary="library\helper functions"/>
+<preview type="mesh" name="pilgrimage, 16 back at ship:bridge room vista"/>
+-->
+
+<!--
+<previewSetup useLibrary="library\pilgrimage\story\15 tea for god.fullGame"/>
+<previewSetup useLibrary="library\helper functions"/>
+<previewSetup useLibrary="library\places\elements"/>
+<previewSetup useLibrary="library\helper functions"/>
+<preview type="mesh" name="pilgrimage, 15 tea for god:flying crossroad room"/>
+<preview type="temporaryObjectType" name="pilgrimage, 15 tea for god:crossroad central particles"/>
+<preview type="mesh" name="pilgrimage, 15 tea for god:mask stand"/>
+<preview type="mesh" name="pilgrimage, 15 tea for god:throne tree"/>
+<preview type="sceneryType" name="pilgrimage, 15 tea for god:throne tree"/>
+<preview type="mesh" name="pilgrimage, 15 tea for god:throne room"/>
+<preview type="mesh" name="pilgrimage, 15 tea for god:throne room platform"/>
+<preview type="mesh" name="pilgrimage, 15 tea for god:tek platform room"/>
+<preview type="mesh" name="pilgrimage, 15 tea for god:gate platform"/>
+<preview type="mesh" name="pilgrimage, 15 tea for god:gate platform room"/>
+<preview type="mesh" name="pilgrimage, 15 tea for god:flying corridor gate; frame"/>
+<preview type="mesh" name="pilgrimage, 15 tea for god:flying corridor gate; door wing"/>
+<preview type="mesh" name="pilgrimage, 15 tea for god:flying corridor gate; small door wing"/>
+<preview type="mesh" name="pilgrimage, 15 tea for god:tek platform"/>
+-->
+
+<!--
+<previewSetup useLibrary="library\pilgrimage\story\06 ship.fullGame"/>
+<previewSetup useLibrary="library\helper functions"/>
+<previewSetup useLibrary="library\explosions"/>
+<previewSetup useLibrary="library\places\elements"/>
+<previewSetup useLibrary="library\places\particular.fullGame\ship"/>
+<preview type="mesh" name="pilgrimage, 06 ship:bridge room for crash"/>
+<preview type="mesh" name="pilgrimage, 06 ship:bridge - window; frame"/>
+<preview type="mesh" name="pilgrimage, 06 ship:bridge - window; door wing"/>
+<preview type="mesh" name="pilgrimage, 06 ship:reactor - door wing"/>
+<preview type="mesh" name="pilgrimage, 06 ship:entrance door frame / reactor - crouching"/>
+<preview type="mesh" name="pilgrimage, 06 ship:entrance door frame / reactor - standing"/>
+<preview type="mesh" name="pilgrimage, 06 ship:bridge elevator"/>
+<preview type="mesh" name="pilgrimage, 06 ship:bridge elevator shaft"/>
+<preview type="mesh" name="pilgrimage, 06 ship:core shaft"/>
+<preview type="lineModel" name="pilgrimage, 06 ship:airship map"/>
+<preview type="lineModel" name="pilgrimage, 06 ship:airship reactor"/>
+<preview type="lineModel" name="pilgrimage, 06 ship:airship reactor target"/>
+<preview type="lineModel" name="pilgrimage, 06 ship:airship core shaft"/>
+<preview type="mesh" name="pilgrimage, 06 ship:reactor chamber"/>
+<preview type="mesh" name="pilgrimage, 06 ship:reactor elevator"/>
+<preview type="temporaryObjectType" name="pilgrimage, 06 ship:reactor energy quantum explosion"/>
+-->
+
+<!--
+<previewSetup useLibrary="library\pilgrimage\story\06 ship.fullGame"/>
+<previewSetup useLibrary="library\places\elements"/>
+<previewSetup useLibrary="library\places\shared"/>
+<previewSetup useLibrary="library\helper functions"/>
+<previewSetup useLibrary="library\rooms"/>
+<previewSetup useLibrary="library\energy quantums"/>
+<previewSetup useLibrary="library\explosions"/>
+<previewSetup useLibrary="library\particles"/>
+<previewSetup useLibrary="library\devices"/>
+<preview type="mesh" name="pilgrimage, 06 ship:voice emitter active single particle"/>
+<preview type="temporaryObjectType" name="pilgrimage, 06 ship:voice emitter active"/>
+<preview type="mesh" name="pilgrimage, 06 ship:voice emitter room"/>
+<preview type="mesh" name="pilgrimage, 06 ship:discharge zone room"/>
+<preview type="mesh" name="pilgrimage, 06 ship:bouncing charge room"/>
+<preview type="actorType" name="pilgrimage, 06 ship:bouncing charge"/>
+-->
+
+<!--
+<previewSetup useLibrary="library\pilgrimage\story\06 ship.fullGame"/>
+<previewSetup useLibrary="library\places\elements"/>
+<previewSetup useLibrary="library\places\shared"/>
+<previewSetup useLibrary="library\helper functions"/>
+<previewSetup useLibrary="library\npcs\drop capsule"/>
+<previewSetup useLibrary="library\devices"/>
+<previewSetup useLibrary="library\parts"/>
+<previewSetup useLibrary="library\places\particular.fullGame\ship"/>
+<previewSetup useLibrary="library\npcs"/> drop capsule
+<preview type="mesh" name="pilgrimage, 06 ship:drop capsule hit room"/>
+<preview type="mesh" name="pilgrimage, 06 ship:bouncing charge room"/>
+<preview type="mesh" name="places, ship:entrance door frame / ship duct - standing"/>
+<preview type="sceneryType" name="pilgrimage, 06 ship:drop capsule control"/>
+<preview type="mesh" name="pilgrimage, 06 ship:drop capsule control"/>
+<preview type="mesh" name="pilgrimage, 06 ship:drop capsule interior room"/>
+<preview type="lineModel" name="pilgrimage, 06 ship:drop capsule line model"/>
+<preview type="lineModel" name="pilgrimage, 06 ship:obstacle line model"/>
+<preview type="mesh" name="pilgrimage, 06 ship:drop capsule door"/>
+<preview type="mesh" name="pilgrimage, 06 ship:drop capsule door wing left"/>
+<preview type="mesh" name="pilgrimage, 06 ship:drop capsule door wing right"/>
+-->
+
+<!--
+<previewSetup useLibrary="library\pilgrimage\story\05 train ride\drop capsule bay"/>
+<previewSetup useLibrary="library\places\elements"/>
+<previewSetup useLibrary="library\places\shared"/>
+<previewSetup useLibrary="library\helper functions"/>
+<previewSetup useLibrary="library\npcs\drop capsule"/>
+<preview type="mesh" name="pilgrimage, 05 train ride:drop capsule bay ride"/>
+<preview type="mesh" name="places, platform ride:platform"/>
+<preview type="mesh" name="pilgrimage, 05 train ride:drop capsule bay opening wing left"/>
+<preview type="mesh" name="pilgrimage, 05 train ride:drop capsule bay opening wing right"/>
+-->
+
+<!--
+<previewSetup useLibrary="library\pilgrimage\story\05 train ride"/>
+<preview type="mesh" name="pilgrimage, 05 train ride:a_container"/>
+<preview type="mesh" name="pilgrimage, 05 train ride:cargo bay ride over a_container"/>
+-->
+
+<!--
+<previewSetup useLibrary="library\pilgrimage\story\05 train ride"/>
+<previewSetup useLibrary="library\helper functions"/>
+<previewSetup useLibrary="library\parts"/>
+<previewSetup useLibrary="library\doors"/>
+<previewSetup useLibrary="library\crafts\monorail"/>
+<preview type="mesh" name="pilgrimage, 05 train ride:cargo bay bridge"/>
+<preview type="mesh" name="pilgrimage, 05 train ride:cargo bay floor empty"/>
+<preview type="mesh" name="pilgrimage, 05 train ride:cargo bay floor with guards"/>
+<preview type="mesh" name="pilgrimage, 05 train ride:cargo bay"/>
+<preview type="mesh" name="pilgrimage, 05 train ride:cargo bay door"/>
+-->
+
+<!--
+<previewSetup useLibrary="library\pilgrimage\story\05 train ride\car connector room"/>
+<previewSetup useLibrary="library\pilgrimage\story\05 train ride"/> to get car connector utils
+<previewSetup useLibrary="library\helper functions"/>
+<preview type="mesh" name="pilgrimage, 05 train ride:car connector decoration block"/>
+<preview type="mesh" name="pilgrimage, 05 train ride:car connector side block"/>
+<preview type="mesh" name="pilgrimage, 05 train ride:car connector room"/>
+<preview type="mesh" name="pilgrimage, 05 train ride:car connector wire"/>
+-->
+
+<!--
+<previewSetup useLibrary="library\pilgrimage\story\05 train ride\turret room"/>
+<previewSetup useLibrary="library\starting rooms"/> to get startingRoom_prepareAutoRoomZone
+<preview type="mesh" name="pilgrimage, 05 train ride:top turret room"/>
+<preview type="mesh" name="pilgrimage, 05 train ride:side turret room"/>
+-->
+
+<!--
+<previewSetup useLibrary="library\places\elements"/>
+<previewSetup useLibrary="library\places\shared"/>
+<preview type="mesh" name="places, footbridge:straight"/>
+-->
+
+<!--
+<previewSetup useLibrary="library\places\elements\behind door"/>
+<preview type="mesh" name="places, behind door:simple forward"/>
+<preview type="mesh" name="places, behind door:simple up"/>
+-->
+
+<!--
+<previewSetup useLibrary="library\devices\wall decorations"/>
+<previewSetup useLibrary="library\devices\interactive elements"/>
+<previewSetup useLibrary="library\parts"/>
+<previewSetup useLibrary="library\places\elements"/>
+<previewSetup useLibrary="library\places\shared"/>
+<preview type="mesh" name="places, platform ride:ride"/>
+<preview type="mesh" name="places, platform ride:platform"/>
+<preview type="sceneryType" name="places, platform ride:platform"/>
+-->
+
+<!--
+<previewSetup useLibrary="library\pilgrimage\story\05 train ride"/>
+<previewSetup useLibrary="library\crafts"/>
+<previewSetup useLibrary="library\parts"/>
+<previewSetup useLibrary="library\particles"/>
+<previewSetup useLibrary="library\places\elements"/>
+<previewSetup useLibrary="library\places\shared"/>
+<preview type="mesh" name="pilgrimage, 05 train ride:cargo bay ride"/>
+-->
+
+<!--
+<previewSetup useLibrary="library\pilgrimage\story\05 train ride\engine room"/>
+<previewSetup useLibrary="library\parts"/>
+<previewSetup useLibrary="library\particles"/>
+<preview type="mesh" name="pilgrimage, 05 train ride:engine room"/>
+<preview type="mesh" name="pilgrimage, 05 train ride:engine room platform"/>
+<preview type="mesh" name="pilgrimage, 05 train ride:engine room generator"/>
+<preview type="sceneryType" name="pilgrimage, 05 train ride:engine room generator"/>
+-->
+
+<!--
+<previewSetup useLibrary="library\pilgrimage\story\05 train ride\whole train"/>
+<preview type="lineModel" name="pilgrimage, 05 train ride:front engine F"/>
+<preview type="lineModel" name="pilgrimage, 05 train ride:front engine B"/>
+<preview type="lineModel" name="pilgrimage, 05 train ride:car F"/>
+<preview type="lineModel" name="pilgrimage, 05 train ride:car B"/>
+<preview type="lineModel" name="pilgrimage, 05 train ride:back engine F"/>
+<preview type="lineModel" name="pilgrimage, 05 train ride:back engine B"/>
+-->
+
+<!--
+<previewSetup useLibrary="library\pilgrimage\story\03 outer rim\entrance tower"/>
+<preview type="mesh" name="places, outer rim, entrance tower:long room"/>
+<preview type="mesh" name="places, outer rim, entrance tower:long room platform"/>
+-->
+
+<!--
+<previewSetup useLibrary="library\devices"/>
+<previewSetup useLibrary="library\parts"/>
+<preview type="mesh" name="devices:energy balancer"/>
+<preview type="sceneryType" name="devices:energy balancer"/>
+-->
+
+<!--
+<previewSetup useLibrary="library\devices"/>
+<preview type="mesh" name="devices:puzzle panel, stand"/>
+<preview type="sceneryType" name="devices:puzzle panel, stand"/>
+-->
+
+<!--
+<previewSetup useLibrary="library\pilgrimage\story\05 train ride\background close"/>
+<preview type="sceneryType" name="pilgrimage, 05 train ride, background close:column"/>
+<preview type="mesh" name="pilgrimage, 05 train ride, background close:column"/>
+<preview type="mesh" name="pilgrimage, 05 train ride, background close:tunnel rib"/>
+<preview type="temporaryObjectType" name="pilgrimage, 05 train ride, background close:column hit"/>
+<preview type="mesh" name="pilgrimage, 05 train ride, background close:semaphore"/>
+<preview type="mesh" name="pilgrimage, 05 train ride, background close:building A"/>
+<preview type="mesh" name="pilgrimage, 05 train ride, background close:building B"/>
+<preview type="mesh" name="pilgrimage, 05 train ride, background close:building C"/>
+<preview type="mesh" name="pilgrimage, 05 train ride, background close:building D"/>
+<preview type="mesh" name="pilgrimage, 05 train ride, background close:building E"/>
+<preview type="mesh" name="pilgrimage, 05 train ride, background close:building F"/>
+-->
+
+<!--
+<previewSetup useLibrary="library\pilgrimage\story\05 train ride"/>
+<preview type="mesh" name="pilgrimage, 05 train ride:starting room in train"/>
+-->
+
+<!--
+<previewSetup useLibrary="library\pilgrimage\story\04 train station\storages"/>
+<previewSetup useLibrary="library\helper functions"/>
+<previewSetup useLibrary="library\pilgrimage\story\04 train station\train station"/> footbridge
+<previewSetup useLibrary="library\crafts\monorail"/> cargo
+<previewSetup useLibrary="library\doors"/> fake doors
+<preview type="mesh" name="places, train station, storages:big storage room"/>
+<preview type="sceneryType" name="places, train station, storages:big storage room preview"/>
+-->
+
+<!--
+<previewSetup useLibrary="library\pilgrimage\story\04 train station\train station"/>
+<previewSetup useLibrary="library\helper functions"/>
+parts for train
+<previewSetup useLibrary="library\parts"/>
+<previewSetup useLibrary="library\devices\turrets"/>
+<previewSetup useLibrary="library\sounds"/>
+<previewSetup useLibrary="library\doors"/>
+steam
+<previewSetup useLibrary="library\particles"/>
+cargo containers
+<previewSetup useLibrary="library\crafts\monorail"/>
+<previewSetup useLibrary="library\game"/> none scenery
+<previewSetup useLibrary="library\starting rooms"/> to get startingRoom_prepareAutoRoomZone
+<previewSetup useLibrary="library\platforms"/> platforms/carts
+<previewSetup useLibrary="library\devices\control panels"/> for plaftorms
+<previewSetup useLibrary="library\devices\interactive elements"/> for control panels' buttons
+
+<preview type="mesh" name="places, train station, train station:train station room"/>
+<preview type="sceneryType" name="places, train station, train station:train station room preview"/>
+
+<preview type="mesh" name="places, train station, train station:crane"/>
+<preview type="sceneryType" name="places, train station, train station:crane"/>
+
+<preview type="mesh" name="places, train station, train station:crane top"/>
+<preview type="sceneryType" name="places, train station, train station:crane top"/>
+
+<preview type="mesh" name="places, train station, train station:crane rails"/>
+<preview type="sceneryType" name="places, train station, train station:crane rails"/>
+
+<preview type="mesh" name="big train:rail"/>
+<preview type="mesh" name="doors:big transport fake"/>
+<preview type="sceneryType" name="doors:big transport fake"/>
+<preview type="mesh" name="doors:big transport train fake"/>
+<preview type="sceneryType" name="doors:big transport train fake"/>
+-->
+
+<!--
+<previewSetup useLibrary="library\helper functions"/>
+<previewSetup useLibrary="library\crafts\big train"/>
+parts for train
+<previewSetup useLibrary="library\parts"/>
+<previewSetup useLibrary="library\devices\turrets"/>
+<previewSetup useLibrary="library\sounds"/>
+<previewSetup useLibrary="library\doors"/>
+<previewSetup useLibrary="library\particles"/>
+|
+<preview type="temporaryObjectType" name="big train:side deck shot off"/>
+
+<preview type="mesh" name="big train:turret inspection window"/>
+<preview type="mesh" name="big train:car end"/>
+<preview type="sceneryType" name="big train:car end"/>
+<preview type="mesh" name="big train:engine"/>
+<preview type="sceneryType" name="big train:engine"/>
+<preview type="mesh" name="big train:car"/>
+<preview type="sceneryType" name="big train:car"/>
+<preview type="mesh" name="big train:car bay door"/>
+<preview type="sceneryType" name="big train:car bay door"/>
+<preview type="mesh" name="big train:side deck"/>
+<preview type="sceneryType" name="big train:side deck"/>
+<preview type="mesh" name="big train:external footbridge"/>
+<preview type="sceneryType" name="big train:external footbridge"/>
+<preview type="mesh" name="big train:engine cylinder"/>
+<preview type="sceneryType" name="big train:engine cylinder"/>
+<preview type="sceneryType" name="big train:fake engine cylinder"/>
+<preview type="mesh" name="big train:car"/>
+<preview type="sceneryType" name="big train:car"/>
+<.preview type="sceneryType" name="big train:mockup train at station"/>
+<preview type="mesh" name="big train:rail"/>
+-->
+
+<!--
+<previewSetup useLibrary="library\pilgrimage\story\01 arrival\jumpship"/>
+<preview type="mesh" name="pilgrimage, 01 arrival:jumpship"/>
+-->
+
+<!--
+<previewSetup useLibrary="library\pilgrimage\story\01 arrival"/>
+<preview type="mesh" name="pilgrimage, 01 arrival:dead earth"/>
+<preview type="mesh" name="pilgrimage, 01 arrival:moon"/>
+-->
+
+<!--
+<previewSetup useLibrary="library\npcs\h_dockPersonnel"/>
+<preview type="mesh" name="npcs:h_dockPersonnel"/>
+<preview type="temporaryObjectType" name="npcs, h_dockPersonnel:welding"/>
+<preview type="actorType" name="npcs:h_dockPersonnel_standing_0"/>
+<preview type="actorType" name="npcs:h_dockPersonnel_standing_1"/>
+<preview type="actorType" name="npcs:h_dockPersonnel_standing_2"/>
+<preview type="actorType" name="npcs:h_dockPersonnel_standing_3"/>
+<preview type="actorType" name="npcs:h_dockPersonnel_standing_4"/>
+<preview type="actorType" name="npcs:h_dockPersonnel_standing_5"/>
+<preview type="actorType" name="npcs:h_dockPersonnel_standing_6"/>
+<preview type="actorType" name="npcs:h_dockPersonnel_standing_7"/>
+<preview type="actorType" name="npcs:h_dockPersonnel_standing_8"/>
+<preview type="actorType" name="npcs:h_dockPersonnel_standing_9"/>
+-->
+
+<!--
+<previewSetup useLibrary="library\pilgrimage\story\01 arrival"/>
+<previewSetup useLibrary="library\starting rooms"/>
+<previewSetup useLibrary="library\parts"/>
+<previewSetup useLibrary="library\devices"/>
+<previewSetup useLibrary="library\displays"/>
+<previewSetup useLibrary="library\npcs"/>
+<preview type="sceneryType" name="places, arrival:barge repair room preview"/>
+<preview type="mesh" name="places, arrival:barge repair room"/>
+<preview type="mesh" name="places, arrival:train platform to barge repair"/>
+<preview type="mesh" name="places, arrival:subtitle device"/>
+<preview type="sceneryType" name="places, arrival:subtitle device"/>
+<preview type="mesh" name="places, arrival:train elevator shaft bit"/>
+<preview type="sceneryType" name="places, arrival:train elevator"/>
+<preview type="mesh" name="places, arrival:train elevator"/>
+<preview type="mesh" name="places, arrival:train platform"/>
+<preview type="mesh" name="places, arrival:train"/>
+<preview type="sceneryType" name="places, arrival:train"/>
+<preview type="mesh" name="places, arrival:tunnel bit"/>
+<.preview type="mesh" name="places, arrival:train v1"/>
+-->
+
+<!--
+<previewSetup useLibrary="library\pilgrimage\endless.fullGame\places\plains\inner edge"/>
+<previewSetup useLibrary="library\pilgrimage\story\03 outer rim\outer ridge"/>
+<preview type="meshStatic" name="places, plains, inner edge:background"/>
+-->
+
+<!--
+<previewSetup useLibrary="library\pilgrimage\endless.fullGame\places\plains\outer edge"/>
+<previewSetup useLibrary="library\pilgrimage\story\03 outer rim\train tower"/>
+<preview type="meshStatic" name="places, plains, outer edge:background"/>
+<preview type="meshStatic" name="places, plains, outer edge:train tower"/>
+-->
+
+<!--
+<previewSetup useLibrary="library\pilgrimage\endless.fullGame\devices"/>
+<previewSetup useLibrary="library\pilgrimage\endless.fullGame\devices.fullGame"/>
+<previewSetup useLibrary="library\pilgrimage\story\devices"/>
+<preview type="lineModel" name="pilgrimage devices:upgrade machine line model"/>
+<preview type="lineModel" name="pilgrimage devices:automap line model"/>
+<preview type="lineModel" name="pilgrimage devices:wall box line model"/>
+<preview type="lineModel" name="pilgrimage devices:hack box line model"/>
+<preview type="lineModel" name="pilgrimage devices:locker box line model"/>
+<preview type="lineModel" name="pilgrimage devices:refill box line model"/>
+-->
+
+<!--
+<previewSetup useLibrary="library\extra upgrade options"/>
+<preview type="lineModel" name="extra upgrade options:ammo bit"/>
+<preview type="lineModel" name="extra upgrade options:ammo max"/>
+<preview type="lineModel" name="extra upgrade options:health bit"/>
+<preview type="lineModel" name="extra upgrade options:health max"/>
+<preview type="lineModel" name="extra upgrade options:all bit"/>
+-->
+
+<!--
+<previewSetup useLibrary="library\exms"/>
+<preview type="temporaryObjectType" name="exms:plasma blast radial"/>
+<preview type="meshStatic" name="exms:plasma blast radial single slash particle [preview]"/>
+<preview type="meshStatic" name="exms:plasma blast radial single bubble particle [preview]"/>
+-->
+
+<!--
+<previewSetup useLibrary="library\devices"/>
+<preview type="lineModel" name="devices:integral exm"/>
+<preview type="lineModel" name="devices:permanent exm"/>
+<preview type="lineModel" name="devices:passive exm"/>
+<preview type="lineModel" name="devices:active exm"/>
+<preview type="lineModel" name="devices:install exm down"/>
+<preview type="lineModel" name="devices:install exm right"/>
+<preview type="lineModel" name="devices:move exm through stack"/>
+-->
+
+<!--
+<previewSetup useLibrary="library\exms"/>
+<.previewSetup useLibrary="library\npcs\proximity mine"/> required for remote control
+<.previewSetup useLibrary="library\npcs\inspecter"/> required for remote control
+test/dev
+permanent utils
+<.preview type="lineModel" name="devices:permanent - energy required"/>
+integral
+<preview type="lineModel" name="exms:integral anti motion sickness"/>
+permanent
+<preview type="lineModel" name="exms:permanent extra pockets"/>
+<preview type="lineModel" name="exms:permanent exm stacker"/>
+<preview type="lineModel" name="exms:permanent more damage"/>
+<preview type="lineModel" name="exms:permanent storage more ammo"/>
+<preview type="lineModel" name="exms:permanent storage more health backup"/>
+<preview type="lineModel" name="exms:permanent melee kill gives ammo"/>
+<preview type="lineModel" name="exms:permanent melee kill gives health"/>
+passive
+<preview type="lineModel" name="exms:explosion resistance"/>
+<preview type="lineModel" name="exms:another chance"/>
+<preview type="lineModel" name="exms:firepower increase"/>
+<preview type="lineModel" name="exms:built in magazine"/>
+<preview type="lineModel" name="exms:energy retainer"/>
+<preview type="lineModel" name="exms:weapon collector"/>
+<preview type="lineModel" name="exms:damage rewire"/>
+<preview type="lineModel" name="exms:elevator master"/>
+<preview type="lineModel" name="exms:super charger"/>
+<preview type="lineModel" name="exms:super health storage"/>
+<preview type="lineModel" name="exms:investigator"/>
+<preview type="lineModel" name="exms:upgrade machine refill"/>
+<preview type="lineModel" name="exms:energy dispenser drain"/>
+<preview type="lineModel" name="exms:armour piercing"/>
+<preview type="lineModel" name="exms:energy dispatcher"/>
+<preview type="lineModel" name="exms:instant weapon charge"/>
+<preview type="lineModel" name="exms:long-range automap"/>
+<preview type="lineModel" name="exms:more damage"/>
+<preview type="lineModel" name="exms:projectile energy absorber"/>
+<preview type="lineModel" name="exms:vampire fists"/>
+<preview type="lineModel" name="exms:zero health regen cooldown"/>
+active
+<preview type="lineModel" name="exms:discharged plasma projectile"/>
+<preview type="lineModel" name="exms:corrosion spray"/>
+<preview type="lineModel" name="exms:pull"/>
+<preview type="lineModel" name="exms:push"/>
+<preview type="lineModel" name="exms:remote control"/>
+<preview type="lineModel" name="exms:plasma blast radial"/>
+<preview type="lineModel" name="exms:reroll"/>
+<preview type="lineModel" name="exms:attractor"/>
+<preview type="lineModel" name="exms:distractor"/>
+<preview type="lineModel" name="exms:corrosion catalyst"/>
+<preview type="lineModel" name="exms:repeller"/>
+<preview type="lineModel" name="exms:shield hand"/>
+<preview type="lineModel" name="exms:shield stand"/>
+<!--
+<!--
+-->
+
+<!--
+<previewSetup useLibrary="library\pilgrimage\story\01 arrival"/>
+<previewSetup useLibrary="library\npcs\h_barge"/>
+<previewSetup useLibrary="library\npcs\h_tek"/>
+<previewSetup useLibrary="library\game"/>
+<previewSetup useLibrary="library\parts"/>
+<previewSetup useLibrary="library\particles"/>
+<preview type="mesh" name="places, arrival:artefact"/>
+<preview type="mesh" name="places, arrival:door device"/>
+<preview type="sceneryType" name="places, arrival:door device"/>
+<preview type="temporaryObjectType" name="places, arrival:door device steam"/>
+<preview type="sceneryType" name="places, arrival:artefact"/>
+<preview type="mesh" name="places, arrival:door wing"/>
+<preview type="mesh" name="places, arrival:door frame"/>
+
+<preview type="mesh" name="places, arrival:dock"/>
+<.preview type="sceneryType" name="places, arrival:room"/>
+<.preview type="mesh" name="places, arrival:dock with desert"/>
+<preview type="mesh" name="places, arrival:desert"/>
+<preview type="mesh" name="places, arrival:desert with artefact"/>
+<!--
+-->
+
+<!--
+<previewSetup useLibrary="library\pilgrimage"/>
+<previewSetup useLibrary="library\rooms"/>
+<previewSetup useLibrary="library\doors"/>
+<previewSetup useLibrary="library\room utils"/>
+<previewSetup useLibrary="library\starting rooms"/>
+<previewSetup useLibrary="library\places"/>
+<previewSetup useLibrary="library\places.extras"/>
+<previewSetup useLibrary="library\parts"/>
+<previewSetup useLibrary="library\particles"/>
+<previewSetup useLibrary="library\crafts\monorail"/> cargo
+|
+testbed
+|
+<preview type="mesh" name="places, train station, starting room:starting room"/>
+<preview type="mesh" name="places, train station, starting room:elevator platform"/>
+<preview type="mesh" name="places, train station, starting room:elevator shaft top"/>
+<preview type="mesh" name="places, train station, starting room:elevator shaft"/>
+<preview type="mesh" name="places, train station, starting room:elevator shaft bottom"/>
+<preview type="mesh" name="places, train station, starting room:vista"/>
+|
+backgrounds
+<preview type="mesh" name="rooms:square tower with hole background [close test]"/>
+<preview type="mesh" name="rooms:square tower with hole background"/>
+<preview type="mesh" name="places, bridge:background"/>
+<preview type="mesh" name="places, turret bridge:background"/>
+<preview type="mesh" name="places, balconies:background"/>
+<preview type="mesh" name="rooms:rift"/>
+<preview type="mesh" name="places, maze:background"/>
+<preview type="mesh" name="places, outer rim, outer ridge:background"/>
+<preview type="mesh" name="places, outer rim, inner ridge:background"/>
+<preview type="mesh" name="places, outer rim, entrance tower:background"/>
+<preview type="mesh" name="places, outer rim, train tower:background"/>
+<preview type="mesh" name="rooms:well background"/>
+<preview type="mesh" name="rooms:balconies tower background"/>
+<preview type="mesh" name="rooms:towers circular background"/>
+<preview type="mesh" name="rooms:background scenery flat"/>
+<preview type="mesh" name="rooms:rectangular pit with crate"/>
+|
+for map
+<preview type="lineModel" name="rooms:square tower with hole"/>
+<preview type="lineModel" name="places, outer rim, inner ridge:for map"/>
+<preview type="lineModel" name="places, outer rim, outer ridge:for map"/>
+<preview type="lineModel" name="places, outer rim, train tower:for map"/>
+|
+layouts
+<preview type="mesh" name="rooms:towers circular layout"/>
+<preview type="mesh" name="rooms:balconies corners layout"/>
+<preview type="mesh" name="rooms:balconies well layout"/>
+<preview type="mesh" name="rooms:balconies tower layout"/>
+<preview type="mesh" name="rooms:balconies simple layout"/>
+<preview type="mesh" name="rooms:balconies wall layout"/>
+|
+elements
+<preview type="mesh" name="rooms:balconies well itself"/>
+<preview type="mesh" name="rooms:square tower with hole itself"/>
+<preview type="mesh" name="rooms:background small building"/>
+<preview type="mesh" name="rooms:background small bump"/>
+<preview type="mesh" name="rooms:background scenery buildings"/>
+<preview type="mesh" name="rooms:background scenery buildings circular"/>
+<preview type="mesh" name="rooms:background scenery bumps"/>
+<preview type="mesh" name="rooms:fake background door"/>
+<preview type="mesh" name="rooms:balconies corner balcony"/>
+<preview type="mesh" name="rooms:balconies simple balcony"/>
+<preview type="mesh" name="rooms:towers simple tower"/>
+<preview type="mesh" name="rooms:towers simple tower [background test]"/>
+<preview type="mesh" name="rooms:towers simple tower [half tower test]"/>
+<preview type="mesh" name="rooms:balconies tower itself"/>
+<preview type="mesh" name="places, outer rim, outer ridge:background building"/>
+<preview type="mesh" name="rooms:bridge simple tower"/>
+<preview type="mesh" name="rooms:bridge simple turret tower"/>
+<preview type="mesh" name="rooms:background platforms linear"/>
+<preview type="mesh" name="rooms:door floor container"/>
+<preview type="mesh" name="places, injection, bridge:outer rim from below"/>
+<preview type="mesh" name="places, injection, bridge:labirynth hall outside"/>
+<preview type="mesh" name="places, injection, labirynth:inner hall"/>
+<preview type="mesh" name="places, injection, labirynth:inner hall door pillar"/>
+<preview type="mesh" name="places, injection, labirynth:inner hall with door pillar"/>
+<preview type="mesh" name="places, injection, grand elevator:grand elevator platform"/>
+<preview type="mesh" name="places, injection, grand elevator:grand elevator shaft element"/>
+<preview type="mesh" name="places, injection, grand elevator:grand elevator ceiling"/>
+<preview type="mesh" name="places, train station, starting room:starting room"/>
+<preview type="mesh" name="places, train station, starting room:elevator platform"/>
+<preview type="mesh" name="places, train station, starting room:elevator shaft top"/>
+<preview type="mesh" name="places, train station, starting room:elevator shaft"/>
+<preview type="mesh" name="places, train station, starting room:elevator shaft bottom"/>
+<preview type="mesh" name="places, train station, starting room:vista"/>
+|
+rooms
+<preview type="mesh" name="places, ring rail station:ring rail station"/>
+<preview type="mesh" name="places, tower floors:main room"/>
+<preview type="mesh" name="places, tower floors:floor"/>
+<preview type="mesh" name="places, injection, grand elevator:grand elevator room"/>
+-->
+
+<!--
+<previewSetup useLibrary="library\corridors"/>
+<previewSetup useLibrary="library\pilgrimage"/>
+<preview type="mesh" name="corridors:door directions; half"/>
+<preview type="mesh" name="pilgrimage, shared:door frame"/>
+<preview type="mesh" name="corridors:entrance door frame / udu"/>
+<preview type="mesh" name="corridors:entrance door frame / trapesoid"/>
+<preview type="mesh" name="corridors:entrance door frame / rect"/>
+<preview type="mesh" name="corridors:entrance door frame / rect round"/>
+<preview type="mesh" name="corridors:entrance door frame / oct"/>
+<preview type="mesh" name="corridors:entrance door frame / hexagonal"/>
+<preview type="mesh" name="corridors:entrance door frame / crouch rect"/>
+
+-->
+
+<!--
+<previewSetup useLibrary="library\weapons\vfx - other"/>
+<previewSetup useLibrary="library\weapons\sounds"/>
+<preview type="temporaryObjectType" name="weapons vfx - other:sparkles burst forward"/>
+<preview type="temporaryObjectType" name="weapons vfx - other:sparkles burst forward wide"/>
+<preview type="temporaryObjectType" name="weapons vfx - other:sparkles burst sides"/>
+<.preview type="mesh" name="weapons vfx - other:sparkles particle"/>
+-->
+
+<!--
+<previewSetup useLibrary="library\weapons"/>
+<previewSetup useLibrary="library\orbs"/>
+<previewSetup useLibrary="library\particles"/>
+<preview type="mesh" name="orbs:crystalite"/>
+<preview type="itemType" name="orbs:crystalite"/>
+<preview type="mesh" name="orbs:octahedron orb"/>
+<preview type="itemType" name="weapon parts:orb"/>
+-->
+
+<!--
+<previewSetup useLibrary="library\devices\turrets"/>
+<preview type="temporaryObjectType" name="devices:airship plasma ready"/>
+<preview type="temporaryObjectType" name="devices:airship plasma hit"/>
+<preview type="temporaryObjectType" name="devices:airship plasma hit comp"/>
+<preview type="temporaryObjectType" name="devices:airship plasma"/>
+<preview type="temporaryObjectType" name="devices:airship plasma bubbles"/>
+<preview type="mesh" name="devices:airship plasma"/>
+-->
+
+<!--
+<previewSetup useLibrary="library\weapons\vfx - muzzle"/>
+<previewSetup useLibrary="library\weapons\sounds"/>
+<preview type="temporaryObjectType" name="weapons vfx - muzzle:plasma tentacled burst"/>
+<preview type="temporaryObjectType" name="weapons vfx - muzzle:corrosion very large bubbles"/>
+<preview type="temporaryObjectType" name="weapons vfx - muzzle:corrosion bubbles"/>
+<preview type="temporaryObjectType" name="weapons vfx - muzzle:corrosion short bubbles"/>
+<preview type="temporaryObjectType" name="weapons vfx - muzzle:corrosion long bubbles"/>
+<preview type="temporaryObjectType" name="weapons vfx - muzzle:corrosion very long bubbles"/>
+<preview type="temporaryObjectType" name="weapons vfx - muzzle:plasma bubbles"/>
+<preview type="temporaryObjectType" name="weapons vfx - muzzle:plasma bubbles single"/>
+<preview type="temporaryObjectType" name="weapons vfx - muzzle:plasma bubbles line"/>
+<preview type="temporaryObjectType" name="weapons vfx - muzzle:plasma bubbles large"/>
+<preview type="temporaryObjectType" name="weapons vfx - muzzle:plasma long bubbles line"/>
+<preview type="temporaryObjectType" name="weapons vfx - muzzle:plasma very long bubbles line"/>
+<.preview type="mesh" name="weapons vfx - muzzle:plasma bubbles particle"/>
+<preview type="temporaryObjectType" name="weapons vfx - muzzle:plasma flat"/>
+<preview type="mesh" name="weapons vfx - muzzle:plasma flat"/>
+<preview type="temporaryObjectType" name="weapons vfx - muzzle:plasma cross"/>
+<preview type="mesh" name="weapons vfx - muzzle:plasma cross"/>
+<preview type="temporaryObjectType" name="weapons vfx - muzzle:plasma round"/>
+<preview type="mesh" name="weapons vfx - muzzle:plasma round"/>
+<preview type="temporaryObjectType" name="weapons vfx - muzzle:plasma round very long"/>
+<preview type="mesh" name="weapons vfx - muzzle:plasma round very long"/>
+-->
+
+<!--
+<previewSetup useLibrary="library\weapons\projectiles"/>
+|
+<preview type="temporaryObjectType" name="projectiles:plasma tentacled bolt"/>
+<preview type="mesh" name="projectiles:plasma tentacled bolt"/>
+|
+<preview type="temporaryObjectType" name="projectiles:corrosion ball"/>
+<preview type="temporaryObjectType" name="projectiles:corrosion penetrating"/>
+<preview type="mesh" name="projectiles:corrosion penetrating"/>
+<preview type="temporaryObjectType" name="projectiles:corrosion small"/>
+<preview type="mesh" name="projectiles:corrosion small"/>
+<preview type="temporaryObjectType" name="projectiles:corrosion small splash"/>
+<preview type="mesh" name="projectiles:corrosion small splash particle"/>
+<preview type="temporaryObjectType" name="projectiles:corrosion small bubbles"/>
+<preview type="mesh" name="projectiles:corrosion small bubbles particle"/>
+|
+<preview type="temporaryObjectType" name="projectiles:plasma bolt"/>
+<preview type="mesh" name="projectiles:plasma bolt"/>
+<preview type="temporaryObjectType" name="projectiles:plasma bolt splash"/>
+<preview type="mesh" name="projectiles:plasma bolt splash particle"/>
+<preview type="temporaryObjectType" name="projectiles:plasma bolt bubbles"/>
+<preview type="mesh" name="projectiles:plasma bolt bubbles particle"/>
+|
+<preview type="temporaryObjectType" name="projectiles:plasma pellet"/>
+<preview type="mesh" name="projectiles:plasma pellet"/>
+<preview type="temporaryObjectType" name="projectiles:plasma pellet splash"/>
+<preview type="mesh" name="projectiles:plasma pellet splash particle"/>
+<preview type="temporaryObjectType" name="projectiles:plasma pellet bubbles"/>
+<preview type="mesh" name="projectiles:plasma pellet bubbles particle"/>
+|
+<preview type="temporaryObjectType" name="projectiles:plasma bolt penetrating"/>
+<preview type="mesh" name="projectiles:plasma bolt penetrating"/>
+<preview type="temporaryObjectType" name="projectiles:plasma bolt heavy"/>
+<preview type="mesh" name="projectiles:plasma bolt heavy"/>
+<preview type="temporaryObjectType" name="projectiles:plasma bolt weak"/>
+<preview type="mesh" name="projectiles:plasma bolt weak"/>
+-->
+
+<!--
+<previewSetup useLibrary="library\weapons"/>
+<previewSetup useLibrary="library\parts"/>
+<preview type="mesh" name="weapon parts:chassis A"/>
+<preview type="mesh" name="weapon parts:chassis B"/>
+<preview type="mesh" name="weapon parts:chassis C"/>
+<preview type="mesh" name="weapon parts:chassis D"/>
+<preview type="mesh" name="weapon parts:chassis E"/>
+<preview type="mesh" name="weapon parts:chassis F"/>
+<preview type="mesh" name="weapon parts:chassis S01"/>
+<preview type="mesh" name="weapon parts:chassis S02"/>
+<preview type="mesh" name="weapon parts:gun"/>
+<.preview type="itemType" name="weapons:pistol"/>
+<.preview type="itemType" name="weapons:shotgun"/>
+<.preview type="itemType" name="weapons:random"/>
+-->
+
+<!--
+<previewSetup useLibrary="library\input prompts"/>
+<preview type="mesh" name="pico 4:controller"/>
+<preview type="mesh" name="pico 4:controller left"/>
+<preview type="meshLibInstance" name="pico 4:trigger"/>
+<preview type="meshLibInstance" name="pico 4:grip"/>
+<preview type="meshLibInstance" name="pico 4:a/x"/>
+<preview type="meshLibInstance" name="pico 4:b/y"/>
+<preview type="meshLibInstance" name="pico 4:joystick"/>
+<preview type="meshLibInstance" name="pico 4:menu"/>
+<preview type="mesh" name="holographic wand:controller"/>
+<preview type="meshLibInstance" name="holographic wand:trigger"/>
+<preview type="meshLibInstance" name="holographic wand:grip"/>
+<preview type="meshLibInstance" name="holographic wand:a"/>
+<preview type="meshLibInstance" name="holographic wand:joystick"/>
+<preview type="meshLibInstance" name="holographic wand:track pad"/>
+<preview type="mesh" name="valve index:controller"/>
+<preview type="meshLibInstance" name="valve index:trigger"/>
+<preview type="meshLibInstance" name="valve index:grip"/>
+<preview type="meshLibInstance" name="valve index:a"/>
+<preview type="meshLibInstance" name="valve index:b"/>
+<preview type="meshLibInstance" name="valve index:joystick"/>
+<preview type="mesh" name="vive wand:controller"/>
+<preview type="meshLibInstance" name="vive wand:trigger"/>
+<preview type="meshLibInstance" name="vive wand:grip"/>
+<preview type="meshLibInstance" name="vive wand:a"/>
+<preview type="meshLibInstance" name="vive wand:track pad"/>
+<preview type="mesh" name="oculus touch 1:controller"/>
+<preview type="mesh" name="oculus touch 1:controller left"/>
+<preview type="meshLibInstance" name="oculus touch 1:trigger"/>
+<preview type="meshLibInstance" name="oculus touch 1:grip"/>
+<preview type="meshLibInstance" name="oculus touch 1:a/x"/>
+<preview type="meshLibInstance" name="oculus touch 1:b/y"/>
+<preview type="meshLibInstance" name="oculus touch 1:joystick"/>
+<preview type="meshLibInstance" name="oculus touch 1:menu"/>
+<preview type="mesh" name="oculus touch 2:controller"/>
+<preview type="mesh" name="oculus touch 2:controller left"/>
+<preview type="meshLibInstance" name="oculus touch 2:trigger"/>
+<preview type="meshLibInstance" name="oculus touch 2:grip"/>
+<preview type="meshLibInstance" name="oculus touch 2:a/x"/>
+<preview type="meshLibInstance" name="oculus touch 2:b/y"/>
+<preview type="meshLibInstance" name="oculus touch 2:joystick"/>
+<preview type="meshLibInstance" name="oculus touch 2:menu"/>
+<preview type="mesh" name="touch like:controller"/>
+<preview type="mesh" name="touch like:controller left"/>
+<preview type="meshLibInstance" name="touch like:trigger"/>
+<preview type="meshLibInstance" name="touch like:grip"/>
+<preview type="meshLibInstance" name="touch like:a/x"/>
+<preview type="meshLibInstance" name="touch like:b/y"/>
+<preview type="meshLibInstance" name="touch like:joystick"/>
+<preview type="meshLibInstance" name="touch like:menu"/>
+<preview type="mesh" name="vive controller:controller"/>
+<preview type="mesh" name="vive controller:controller left"/>
+<preview type="meshLibInstance" name="vive controller:trigger"/>
+<preview type="meshLibInstance" name="vive controller:grip"/>
+<preview type="meshLibInstance" name="vive controller:a/x"/>
+<preview type="meshLibInstance" name="vive controller:b/y"/>
+<preview type="meshLibInstance" name="vive controller:joystick"/>
+<preview type="meshLibInstance" name="vive controller:menu"/>
+-->
+
+<!--
+<previewSetup useLibrary="library\hub"/>
+<preview type="mesh" name="hub:pre deactivation scene"/>
+<preview type="mesh" name="hub:profile scene"/>
+<preview type="mesh" name="hub:profile scene rib"/>
+<preview type="mesh" name="hub:terminal scene"/>
+-->
+
+<!--
+<previewSetup useLibrary="library\devices"/>
+<previewSetup useLibrary="library\devices.fullGame"/>
+<previewSetup useLibrary="library\parts"/>
+<previewSetup useLibrary="library\sounds"/>
+<previewSetup useLibrary="library\particles"/>
+<preview type="mesh" name="devices:trash bin"/>
+<preview type="sceneryType" name="devices:trash bin"/>
+<preview type="mesh" name="devices:unloader"/>
+<preview type="sceneryType" name="devices:unloader"/>
+-->
+
+<!--
+<previewSetup useLibrary="library\devices"/>
+<previewSetup useLibrary="library\devices.fullGame"/>
+<previewSetup useLibrary="library\parts"/>
+<previewSetup useLibrary="library\sounds"/>
+<previewSetup useLibrary="library\particles"/>
+<preview type="mesh" name="devices:discharger"/>
+<preview type="sceneryType" name="devices:discharger"/>
+<preview type="mesh" name="devices:steamer"/>
+<preview type="sceneryType" name="devices:steamer"/>
+-->
+
+<!--
+<previewSetup useLibrary="library\devices.fullGame\turrets"/>
+<previewSetup useLibrary="library\parts"/>
+<previewSetup useLibrary="library\sounds"/>
+<preview type="mesh" name="devices:turret 360 armoured"/>
+-->
+
+<!--
+<previewSetup useLibrary="library\devices.fullGame\arms"/>
+<previewSetup useLibrary="library\parts"/>
+<previewSetup useLibrary="library\sounds"/>
+<preview type="mesh" name="devices:factory arm preview"/>
+<preview type="sceneryType" name="devices:factory arm"/>
+<preview type="sceneryType" name="devices:pilgrim tank arm"/>
+<preview type="mesh" name="devices:pilgrim tank arm filler preview"/>
+<preview type="sceneryType" name="devices:pilgrim tank arm filler"/>
+<preview type="sceneryType" name="devices:pilgrim tank arm converter"/>
+-->
+
+<!--
+<previewSetup useLibrary="library\devices\turrets"/>
+<previewSetup useLibrary="library\parts"/>
+<previewSetup useLibrary="library\sounds"/>
+<previewSetup useLibrary="library\npcs\a_tentacle"/>
+<preview type="mesh" name="devices:train top turret"/>
+<preview type="mesh" name="devices:train top turret one gun destroyed"/>
+<preview type="mesh" name="devices:train top turret destroyed"/>
+<preview type="actorType" name="devices:train top turret"/>
+<preview type="mesh" name="devices:train spherical turret destroyed"/>
+<preview type="mesh" name="devices:train spherical turret"/>
+<preview type="actorType" name="devices:train spherical turret"/>
+<preview type="mesh" name="devices:train side turret destroyed"/>
+<preview type="mesh" name="devices:train side turret"/>
+<preview type="actorType" name="devices:train side turret"/>
+<preview type="mesh" name="devices:airship turret"/>
+<preview type="actorType" name="devices:airship turret"/>
+<preview type="mesh" name="devices:turret"/>
+<preview type="actorType" name="devices:turret"/>
+<preview type="mesh" name="devices:big turret"/>
+<preview type="actorType" name="devices:big distant turret"/>
+-->
+
+<!--
+<previewSetup useLibrary="library\devices"/>
+<previewSetup useLibrary="library\parts"/>
+<preview type="mesh" name="devices:terminal"/>
+<preview type="sceneryType" name="devices:terminal"/>
+-->
+
+<!--
+<previewSetup useLibrary="library\devices"/>
+<previewSetup useLibrary="library\parts"/>
+<preview type="mesh" name="devices:door lock"/>
+<preview type="sceneryType" name="devices:door lock"/>
+-->
+
+<!--
+<previewSetup useLibrary="library\devices"/>
+<previewSetup useLibrary="library\parts"/>
+<preview type="mesh" name="devices:ceiling automap"/>
+<preview type="sceneryType" name="devices:ceiling automap"/>
+<preview type="mesh" name="devices:automap"/>
+<preview type="sceneryType" name="devices:automap"/>
+-->
+
+<!--
+<previewSetup useLibrary="library\devices.fullGame"/>
+<previewSetup useLibrary="library\parts"/>
+<preview type="mesh" name="devices:hack box"/>
+<preview type="sceneryType" name="devices:hack box"/>
+-->
+
+<!--
+<previewSetup useLibrary="library\devices.fullGame"/>
+<previewSetup useLibrary="library\parts"/>
+<preview type="mesh" name="devices:refill box"/>
+<preview type="sceneryType" name="devices:refill box"/>
+-->
+
+<!--
+<previewSetup useLibrary="library\devices.fullGame"/>
+<previewSetup useLibrary="library\parts"/>
+<preview type="mesh" name="devices:locker box"/>
+<preview type="sceneryType" name="devices:locker box"/>
+<preview type="mesh" name="devices:data core"/>
+<preview type="itemType" name="devices:data core"/>
+<preview type="lineModel" name="devices:data core"/>
+-->
+
+<!--
+<previewSetup useLibrary="library\devices"/>
+<previewSetup useLibrary="library\parts"/>
+<preview type="mesh" name="pilgrimage devices:workshop room"/>
+<preview type="lineModel" name="pilgrimage devices:workshop line model"/>
+-->
+
+<!--
+<previewSetup useLibrary="library\devices"/>
+<previewSetup useLibrary="library\parts"/>
+<preview type="mesh" name="devices:weapon mixer"/>
+<preview type="mesh" name="devices:weapon mixer container single"/>
+<preview type="sceneryType" name="devices:weapon mixer"/>
+<preview type="lineModel" name="devices:weapon mixer - empty container"/>
+<preview type="temporaryObjectType" name="devices:weapon mixer - swapping parts lightnings"/>
+-->
+
+<!--
+<previewSetup useLibrary="library\devices"/>
+<previewSetup useLibrary="library\parts"/>
+<preview type="mesh" name="devices:devices player only door"/>
+<preview type="mesh" name="devices:devices player only door wing left"/>
+<preview type="mesh" name="devices:devices player only door wing right"/>
+<preview type="mesh" name="devices:upgrade machine single display"/>
+<preview type="mesh" name="devices:upgrade machine"/>
+<preview type="sceneryType" name="devices:upgrade machine"/>
+<preview type="mesh" name="devices:upgrade canister port"/>
+<preview type="mesh" name="devices:upgrade canister"/>
+<preview type="mesh" name="pilgrimage devices:upgrade machine room"/>
+-->
+
+<!--
+<previewSetup useLibrary="library\devices"/>
+<previewSetup useLibrary="library\parts"/>
+<previewSetup useLibrary="library\npcs"/>
+<preview type="temporaryObjectType" name="npcs:duct energy"/>
+<preview type="temporaryObjectType" name="npcs:duct energy, withdraw"/>
+-->
+
+<!--
+<previewSetup useLibrary="library\devices"/>
+<previewSetup useLibrary="library\parts"/>
+<previewSetup useLibrary="library\energy quantums"/>
+<preview type="mesh" name="devices:energy coil broken"/>
+<preview type="sceneryType" name="devices:energy coil broken"/>
+<preview type="mesh" name="devices:energy coil"/>
+<preview type="sceneryType" name="devices:energy coil"/>
+<preview type="temporaryObjectType" name="devices:energy coil, ammo burst"/>
+<preview type="temporaryObjectType" name="devices:energy coil, ammo withdraw"/>
+<preview type="temporaryObjectType" name="devices:energy coil, health withdraw"/>
+<preview type="temporaryObjectType" name="devices:energy coil, ammo idle"/>
+<preview type="temporaryObjectType" name="devices:energy coil, health idle"/>
+-->
+
+<!--
+<previewSetup useLibrary="library\devices"/>
+<previewSetup useLibrary="library\parts"/>
+<preview type="mesh" name="devices:energy kiosk small"/>
+<preview type="sceneryType" name="devices:energy kiosk small"/>
+<preview type="mesh" name="devices:energy kiosk"/>
+<preview type="sceneryType" name="devices:energy kiosk"/>
+<preview type="temporaryObjectType" name="devices:energy kiosk, ammo deposit"/>
+<preview type="temporaryObjectType" name="devices:energy kiosk, ammo withdraw"/>
+<preview type="temporaryObjectType" name="devices:energy kiosk, health deposit"/>
+<preview type="temporaryObjectType" name="devices:energy kiosk, health withdraw"/>
+-->
+
+<!--
+<previewSetup useLibrary="library\devices"/>
+<previewSetup useLibrary="library\parts"/>
+<preview type="mesh" name="devices:permanent upgrade machine"/>
+<preview type="sceneryType" name="devices:permanent upgrade machine"/>
+<preview type="mesh" name="devices:upgrade canister port"/>
+<preview type="mesh" name="devices:upgrade canister"/>
+-->
+
+<!--
+<previewSetup useLibrary="library\devices"/>
+<previewSetup useLibrary="library\parts"/>
+<preview type="mesh" name="devices:exm installer kiosk"/>
+<preview type="sceneryType" name="devices:exm installer kiosk"/>
+<preview type="mesh" name="devices:upgrade canister port"/>
+<preview type="mesh" name="devices:upgrade canister"/>
+-->
+
+<!--
+<previewSetup useLibrary="library\devices"/>
+<previewSetup useLibrary="library\parts"/>
+<previewSetup useLibrary="library\pilgrimage"/>
+<previewSetup useLibrary="library\mesh gen selectors"/>
+<preview type="mesh" name="parts:rectangular dial frame"/>
+<preview type="mesh" name="parts:basic dial knob"/>
+<preview type="sceneryType" name="devices:standard dial knob"/>
+<preview type="sceneryType" name="devices:standard dial"/>
+-->
+
+<!--
+<previewSetup useLibrary="library\props"/>
+<preview type="mesh" name="props:teacup"/>
+<preview type="mesh" name="props:wine glass"/>
+<preview type="mesh" name="props:glass"/>
+<preview type="mesh" name="props:bottle"/>
+-->
+
+<!--
+<previewSetup useLibrary="library\explosions"/>
+<previewSetup useLibrary="library\particles"/>
+<preview type="temporaryObjectType" name="particles:dust"/>
+<preview type="temporaryObjectType" name="particles:fast dust"/>
+<preview type="temporaryObjectType" name="particles:dust glowy"/>
+<preview type="temporaryObjectType" name="particles:fast dust glowy"/>
+<preview type="temporaryObjectType" name="particles:steam"/>
+<preview type="temporaryObjectType" name="explosions:enormous explosion smoke"/>
+-->
+
+-->
+<!--
+<previewSetup useLibrary="library\explosions"/>
+<previewSetup useLibrary="library\explosions.fullGame"/>
+<previewSetup useLibrary="library\particles"/>
+<preview type="temporaryObjectType" name="explosions:heart bleeding"/>
+<preview type="temporaryObjectType" name="explosions:fire trail"/>
+<preview type="temporaryObjectType" name="explosions:enormous fire trail"/>
+<preview type="temporaryObjectType" name="explosions:huge fire trail"/>
+<preview type="temporaryObjectType" name="explosions:tea fire trail"/>
+<preview type="temporaryObjectType" name="explosions:tea big fire trail"/>
+<preview type="temporaryObjectType" name="explosions:tea explosion"/>
+<preview type="temporaryObjectType" name="explosions:tea big explosion"/>
+<preview type="temporaryObjectType" name="explosions:small explosion"/>
+<preview type="temporaryObjectType" name="explosions:normal explosion"/>
+<preview type="temporaryObjectType" name="explosions:explosion smoke"/>
+<preview type="temporaryObjectType" name="explosions:safe small explosion"/>
+<preview type="temporaryObjectType" name="explosions:safe explosion"/>
+<preview type="temporaryObjectType" name="explosions:safe big explosion"/>
+<preview type="temporaryObjectType" name="explosions:big explosion smoke"/>
+<preview type="temporaryObjectType" name="explosions:safe bigger explosion"/>
+<preview type="temporaryObjectType" name="explosions:bigger explosion smoke"/>
+<preview type="temporaryObjectType" name="explosions:safe enormous explosion"/>
+<preview type="temporaryObjectType" name="explosions:enormous explosion smoke"/>
+<preview type="temporaryObjectType" name="explosions:corrosion lightning explosion"/>
+<preview type="temporaryObjectType" name="explosions:corrosion lightning vaporise"/>
+<preview type="temporaryObjectType" name="explosions:corrosion explosion"/>
+<preview type="temporaryObjectType" name="explosions:corrosion explosion big"/>
+<preview type="temporaryObjectType" name="explosions:corrosion explosion small"/>
+<preview type="temporaryObjectType" name="explosions:corrosion explosion very small"/>
+<preview type="temporaryObjectType" name="explosions:power ammo explosion lightning strike"/>
+<preview type="temporaryObjectType" name="explosions:power ammo explosion lightning sphere"/>
+<preview type="temporaryObjectType" name="explosions:power ammo explosion"/>
+<preview type="temporaryObjectType" name="explosions:core explosion"/>
+<preview type="temporaryObjectType" name="explosions:core explosion big"/>
+-->
+
+<!--
+<previewSetup useLibrary="library\crafts\monorail"/>
+<preview type="mesh" name="monorail:cargo cart"/>
+<preview type="mesh" name="monorail:cargo cart loadout - empty"/>
+<preview type="mesh" name="monorail:cargo cart loadout - big container"/>
+<preview type="mesh" name="monorail:cargo cart loadout - two containers"/>
+<preview type="sceneryType" name="monorail:cargo cart"/>
+-->
+
+<!--
+<previewSetup useLibrary="library\places\generic\ring rail station"/>
+<previewSetup useLibrary="library\crafts\monorail"/>
+<preview type="mesh" name="places, ring rail station:ring rail station"/>
+-->
+
+<!--
+<previewSetup useLibrary="library\places\turret bridge"/>
+<preview type="mesh" name="places, turret bridge:turret bridge tower"/>
+<preview type="sceneryType" name="places, turret bridge:turret bridge tower lower"/>
+<preview type="sceneryType" name="places, turret bridge:turret bridge tower higher"/>
+-->
+
+<!--
+<previewSetup useLibrary="library\places\bridge"/>
+<preview type="mesh" name="places, bridge:bridge tower"/>
+-->
+
+<!--
+<previewSetup useLibrary="library\parts"/>
+<preview type="mesh" name="parts:pipe 0ip"/>
+<preview type="mesh" name="parts:pipe 2ip"/>
+<preview type="mesh" name="parts:pipe 3ip"/>
+-->
+
+<!--
+<previewSetup useLibrary="library\logo"/>
+<preview type="mesh" name="logo:logo"/>
+-->
+
+<!--
+<previewSetup useLibrary="library\corridors"/>
+<previewSetup useLibrary="library\places\shared"/>
+<previewSetup useLibrary="library\places"/>
+<preview type="mesh" name="places, shared:shallow shaft"/>
+<preview type="mesh" name="places, shared:shaft"/>
+<preview type="mesh" name="places, shared:shaft capped"/>
+-->
+
+<!--
+<previewSetup useLibrary="library\places\shared"/>
+<preview type="mesh" name="places, shared:beyond shaft door"/>
+-->
+
+<!--
+<previewSetup useLibrary="library\corridors"/>
+<previewSetup useLibrary="library\vistas"/>
+<preview type="mesh" name="vistas:elevator building 01"/>
+<preview type="mesh" name="vistas:elevator wall 01"/>
+<preview type="mesh" name="vistas:city in front 01"/>
+<preview type="mesh" name="vistas:long corridor 01"/>
+<!--
+-->
+
+<!--
+<previewSetup useLibrary="library\windows"/>
+<preview type="mesh" name="windows:rectangular frame"/>
+-->
+
+
+<!--
+<previewSetup useLibrary="library\palace"/>
+<preview type="mesh" name="palace:palace close"/>
+<preview type="mesh" name="palace:palace"/>
+<preview type="mesh" name="palace:palace rotated against environment rotation"/>
+<preview type="mesh" name="palace:palace small"/>
+<preview type="mesh" name="palace:palace old"/>
+<preview type="mesh" name="palace:palace old small"/>
+<preview type="mesh" name="palace:palace old far away"/>
+-->
+
+<!--
+<previewSetup useLibrary="library\parts"/>
+<preview type="mesh" name="parts:outer panel test"/>
+-->
+
+<!--
+<previewSetup useLibrary="library\stations"/>
+<previewSetup useLibrary="library\devices"/>
+<previewSetup useLibrary="library\parts"/>
+<preview type="mesh" name="devices:circular button"/>
+<preview type="sceneryType" name="devices:circular button"/>
+<preview type="mesh" name="parts:rectangular button"/>
+<preview type="sceneryType" name="parts:rectangular button"/>
+-->
+
+<!--
+<previewSetup useLibrary="library\stations"/>
+<previewSetup useLibrary="library\parts"/>
+<preview type="temporaryObjectType" name="stations:station 02 temple palmers"/>
+<preview type="mesh" name="stations:station 02 temple"/>
+<preview type="mesh" name="stations:palmer"/>
+<preview type="mesh" name="stations:palmers"/>
+
+<preview type="mesh" name="stations:station 02"/>
+<preview type="mesh" name="stations:station 02 window to temple frame"/>
+-->
+
+<!--
+<previewSetup useLibrary="library\starting rooms"/>
+<previewSetup useLibrary="library\stations"/>
+<previewSetup useLibrary="library\parts"/>
+<previewSetup useLibrary="library\places"/>
+<previewSetup useLibrary="library\corridors"/>
+<preview type="mesh" name="starting rooms:door frame"/>
+<preview type="mesh" name="starting rooms:door frame with directions"/>
+<preview type="mesh" name="corridors:door directions; half"/>
+<preview type="mesh" name="corridors:door directions; up"/>
+-->
+
+<!--
+<previewSetup useLibrary="library\starting rooms"/>
+<previewSetup useLibrary="library\stations"/>
+<previewSetup useLibrary="library\parts"/>
+<previewSetup useLibrary="library\places"/>
+<previewSetup useLibrary="library\pilgrimage"/>
+<preview type="mesh" name="pilgrimage, 02 injection:cube vestibule"/>
+<preview type="mesh" name="pilgrimage, 03 outer rim:starting room outer rim outer ridge"/>
+<preview type="mesh" name="starting rooms:starting room 00"/>
+<preview type="mesh" name="pilgrimage, 02 injection:void room"/>
+-->
+<!--
+<!--
+<preview type="mesh" name="stations:station 00"/>
+<preview type="mesh" name="stations:station 00 cathedral piece here"/>
+<preview type="mesh" name="stations:station 00 cathedral piece"/>
+<preview type="mesh" name="stations:station 00 separator"/>
+<!--
+<preview type="mesh" name="stations:station 01 background tower 1"/>
+<preview type="mesh" name="stations:station 01 background tower 2"/>
+<preview type="mesh" name="stations:door device"/>
+<previewSetup useLibrary="library\particles"/>
+<preview type="temporaryObjectType" name="stations:door device steam"/>
+<preview type="mesh" name="stations:door wing"/>
+<preview type="mesh" name="stations:door frame"/>
+-->
+<!--
+<preview type="mesh" name="stations:station 01"/>
+<preview type="mesh" name="stations:station 01 background tower 1"/>
+<preview type="mesh" name="stations:station 01 background tower 2"/>
+-->
+
+<!--
+<previewSetup useLibrary="library\stations"/>
+<previewSetup useLibrary="library\seals"/>
+<preview type="mesh" name="seals:seal double vertical wing"/>
+<preview type="mesh" name="seals:seal double vertical frame"/>
+-->
+
+<!--
+<previewSetup useLibrary="library\energy quantums"/>
+<previewSetup useLibrary="library\particles"/>
+<preview type="temporaryObjectType" name="energy quantums:power ammo lightning strike"/>
+<preview type="temporaryObjectType" name="energy quantums:power ammo lightning presence"/>
+<preview type="temporaryObjectType" name="energy quantums:power ammo taken"/>
+<preview type="temporaryObjectType" name="energy quantums:quantum particles around"/>
+<preview type="temporaryObjectType" name="energy quantums:quantum taken"/>
+<preview type="temporaryObjectType" name="energy quantums:ammo quantum taken"/>
+<preview type="temporaryObjectType" name="energy quantums:health quantum taken"/>
+<preview type="temporaryObjectType" name="energy quantums:quantum small discharge"/>
+<preview type="temporaryObjectType" name="energy quantums:ammo quantum small discharge"/>
+<preview type="temporaryObjectType" name="energy quantums:health quantum small discharge"/>
+
+<preview type="itemType" name="energy quantums:power ammo"/>
+<preview type="itemType" name="energy quantums:ammo"/>
+<preview type="itemType" name="energy quantums:health"/>
+
+<preview type="mesh" name="energy quantums:power ammo lightning"/>
+<preview type="mesh" name="energy quantums:quantum"/>
+-->
+
+<!--
+<previewSetup useLibrary="library\corrosion"/>
+<previewSetup useLibrary="library\particles"/>
+<preview type="temporaryObjectType" name="corrosion:corroded"/>
+<preview type="temporaryObjectType" name="corrosion:corrosion burst"/>
+<preview type="temporaryObjectType" name="corrosion:corrosion leaking"/>
+<preview type="temporaryObjectType" name="corrosion:corrosion leak hit"/>
+<preview type="sceneryType" name="corrosion:corrosion leak"/>
+<preview type="mesh" name="corrosion:corrosion leak"/>
+-->
+
+<!--
+<previewSetup useLibrary="library\weapons"/>
+<previewSetup useLibrary="library\parts"/>
+<preview type="mesh" name="weapons:submachine gun"/>
+<preview type="mesh" name="weapons:submachine gun bolt"/>
+<preview type="itemType" name="weapons:submachine gun"/>
+<preview type="temporaryObjectType" name="weapons:submachine gun bolt"/>
+<preview type="mesh" name="weapons:pistol"/>
+<preview type="itemType" name="weapons:pistol"/>
+<preview type="temporaryObjectType" name="weapons:pistol bolt"/>
+<preview type="mesh" name="weapons:pistol bolt"/>
+<preview type="temporaryObjectType" name="weapons:pistol bolt splash"/>
+<preview type="mesh" name="weapons:pistol bolt splash particle"/>
+<preview type="itemType" name="weapons:shotgun"/>
+<preview type="mesh" name="weapons:shotgun"/>
+<preview type="temporaryObjectType" name="weapons:shotgun pellet"/>
+<preview type="mesh" name="weapons:shotgun pellet"/>
+<preview type="temporaryObjectType" name="weapons:shotgun pellet splash"/>
+<preview type="mesh" name="weapons:shotgun pellet splash particle"/>
+-->
+
+<!--
+<preview type="mesh" name="vr:vr controller"/>
+-->
+
+-->
+<!--
+<previewSetup useLibrary="library\pilgrim"/>
+<previewSetup useLibrary="library\parts"/>
+<previewSetup useLibrary="library\lcd letters"/>
+<previewSetup useLibrary="library\weapons"/>
+<previewSetup useLibrary="library\walker libs"/>
+<previewSetup useLibrary="library\devices\interactive elements"/>
+dev/test
+<preview type="actorType" name="pilgrims:actor fake"/>
+<preview type="actorType" name="pilgrims:body preview"/>
+
+<preview type="mesh" name="pilgrims:body full body"/>
+<preview type="mesh" name="pilgrims:body human full body"/>
+<preview type="actorType" name="pilgrims:body human preview"/>
+
+<preview type="mesh" name="pilgrims:body human"/>
+<preview type="mesh" name="pilgrims:body"/>
+<.preview type="mesh" name="pilgrims:hand r"/>
+<.preview type="mesh" name="pilgrims:hand human r"/>
+<.preview type="mesh" name="pilgrims:rest point r"/>
+<.preview type="mesh" name="pilgrims:rest point human r"/>
+<.preview type="mesh" name="pilgrims:hand display"/>
+<.preview type="mesh" name="pilgrims:human forearm display"/>
+
+<.preview type="mesh" name="pilgrims:pilgrim tea box"/>
+<.preview type="itemType" name="pilgrims:pilgrim tea box"/>
+
+<!--
+<preview type="mesh" name="pilgrims:actual hand r"/>
+<preview type="mesh" name="pilgrims:actual hand human r"/>
+<preview type="actorType" name="pilgrims:actor human nursed"/>
+<preview type="actorType" name="pilgrims:body human preview"/>
+dev/test end
+
+<!--
+<preview type="mesh" name="pilgrims:pilgrim tea box"/>
+<preview type="itemType" name="pilgrims:pilgrim tea box"/>
+
+<preview type="mesh" name="pilgrims:body"/>
+<preview type="actorType" name="pilgrims:body preview"/>
+<preview type="mesh" name="pilgrims:hand r"/>
+<preview type="mesh" name="pilgrims:hand l"/>
+<preview type="actorType" name="pilgrims:hand test"/>
+<preview type="mesh" name="pilgrims:body human"/>
+<preview type="actorType" name="pilgrims:body human preview"/>
+<preview type="mesh" name="pilgrims:hand human r"/>
+<preview type="mesh" name="pilgrims:hand human l"/>
+<preview type="actorType" name="pilgrims:hand human test"/>
+
+<preview type="mesh" name="pilgrims:hand display"/>
+<preview type="mesh" name="pilgrims:human forearm display"/>
+
+<preview type="mesh" name="pilgrims:rest point r"/>
+<preview type="mesh" name="pilgrims:rest point l"/>
+<preview type="actorType" name="pilgrims:rest point r"/>
+
+<preview type="mesh" name="pilgrims:rest point human r"/>
+<preview type="mesh" name="pilgrims:rest point human l"/>
+<preview type="actorType" name="pilgrims:rest point human r"/>
+
+<preview type="mesh" name="pilgrims:finger part"/>
+<preview type="mesh" name="pilgrims:controller"/>
+<!--
+<preview type="actorType" name="pilgrims:actor"/>
+-->
+
+<!--
+<previewSetup useLibrary="library\particles"/>
+<preview type="temporaryObjectType" name="particles:big smoke"/>
+-->
+
+<!--
+<previewSetup useLibrary="library\particles.fullGame"/>
+<preview type="temporaryObjectType" name="particles:corrosion shower small"/>
+<preview type="temporaryObjectType" name="particles:corrosion shower"/>
+<preview type="temporaryObjectType" name="particles:corrosion shower large"/>
+<preview type="temporaryObjectType" name="particles:collapse"/>
+<preview type="temporaryObjectType" name="particles:crumble"/>
+<preview type="temporaryObjectType" name="particles:fire"/>
+-->
+
+<!--
+<previewSetup useLibrary="library\particles"/>
+<.previewSetup useLibrary="library\pilgrimage"/>
+<preview type="temporaryObjectType" name="particles:physical violence burst"/>
+<preview type="temporaryObjectType" name="particles:strong physical violence burst"/>
+<preview type="temporaryObjectType" name="particles:black smoke"/>
+<preview type="temporaryObjectType" name="particles:big black smoke"/>
+<preview type="temporaryObjectType" name="particles:bigger black smoke"/>
+<preview type="temporaryObjectType" name="particles:enormous black smoke"/>
+<preview type="temporaryObjectType" name="particles:enormous fast black smoke"/>
+<preview type="temporaryObjectType" name="particles:lightning overcharged"/>
+<preview type="temporaryObjectType" name="particles:lightning overcharged small"/>
+<preview type="temporaryObjectType" name="particles:lightning overcharged very small"/>
+<preview type="temporaryObjectType" name="particles:death"/>
+<preview type="temporaryObjectType" name="particles:death old"/>
+<preview type="temporaryObjectType" name="particles:big smoke"/>
+<preview type="temporaryObjectType" name="particles:steam very big"/>
+<preview type="temporaryObjectType" name="particles:lightning strike"/>
+<preview type="temporaryObjectType" name="particles:lightning strike - no light"/>
+<preview type="temporaryObjectType" name="particles:lightning hit"/>
+<preview type="temporaryObjectType" name="particles:lightning hit small"/>
+<preview type="temporaryObjectType" name="particles:small glass burst"/>
+<preview type="temporaryObjectType" name="particles:steam small"/>
+<preview type="temporaryObjectType" name="particles:steam"/>
+<preview type="temporaryObjectType" name="particles:steam big"/>
+<preview type="temporaryObjectType" name="particles:steam very big"/>
+<preview type="temporaryObjectType" name="particles:vulnerable core big impact burst"/>
+<preview type="temporaryObjectType" name="particles:vulnerable core impact burst"/>
+<preview type="temporaryObjectType" name="particles:vulnerable impact burst"/>
+<preview type="temporaryObjectType" name="particles:vulnerable big impact burst"/>
+<preview type="temporaryObjectType" name="particles:vulnerable small impact burst"/>
+<preview type="temporaryObjectType" name="particles:impact burst"/>
+<preview type="temporaryObjectType" name="particles:reality anchors"/>
+-->
+
+<!--
+<previewSetup useLibrary="library\test"/>
+<previewSetup useLibrary="library\parts"/>
+-->
+<!--
+<preview type="mesh" name="test:convex hull to surfaces"/>
+<preview type="mesh" name="test:mesh to edge"/>
+<preview type="mesh" name="test:test"/>
+-->
+
+<!--
+<previewSetup useLibrary="library\devices"/>
+<previewSetup useLibrary="library\parts"/>
+<previewSetup useLibrary="library\particles"/>
+<previewSetup useLibrary="library\pilgrimage"/>
+<preview type="mesh" name="devices:spawn tower"/>
+<preview type="temporaryObjectType" name="devices:spawn tower smoke"/>
+<preview type="sceneryType" name="devices:spawn tower"/>
+-->
+
+<!--
+<previewSetup useLibrary="library\devices"/>
+<previewSetup useLibrary="library\parts"/>
+<previewSetup useLibrary="library\pilgrimage"/>
+<preview type="mesh" name="devices:solar flower"/>
+<preview type="mesh" name="parts:solar panel"/>
+-->
+
+<!--
+<previewSetup useLibrary="library\devices"/>
+<previewSetup useLibrary="library\parts"/>
+<previewSetup useLibrary="library\pilgrimage"/>
+<previewSetup useLibrary="library\mesh gen selectors"/>
+<preview type="mesh" name="devices:switch panel, wall"/>
+<preview type="mesh" name="devices:switch panel, stand"/>
+<preview type="sceneryType" name="devices:switch panel, wall"/>
+<preview type="sceneryType" name="devices:switch panel, stand"/>
+<preview type="sceneryType" name="devices:control panel, wall"/>
+<preview type="sceneryType" name="devices:info panel, wall"/>
+<preview type="mesh" name="devices:switch panel test"/>
+<preview type="mesh" name="devices:switch panel test, switch"/>
+<preview type="sceneryType" name="devices:switch panel test"/>
+<preview type="mesh" name="devices:seal panel, stand"/>
+<preview type="sceneryType" name="devices:switch panel, small"/>
+<preview type="sceneryType" name="devices:switch panel, wall"/>
+<preview type="mesh" name="devices:standard slider on-off"/>
+<preview type="mesh" name="devices:standard slider on-off handle"/>
+<preview type="sceneryType" name="devices:standard slider on-off"/>
+<preview type="mesh" name="devices:standard slider directional-with-neutral"/>
+<preview type="mesh" name="devices:standard slider directional-with-neutral handle"/>
+<preview type="sceneryType" name="devices:standard slider directional-with-neutral"/>
+-->
+<!--
+<preview type="mesh" name="parts:basic handle"/>
+<preview type="mesh" name="parts:straight handle"/>
+<preview type="mesh" name="parts:rectangular slider frame"/>
+<preview type="mesh" name="devices:control panel, wall"/>
+<preview type="mesh" name="devices:control panel, stand"/>
+<preview type="mesh" name="devices:mini game machine"/>
+<preview type="mesh" name="devices:wall port"/>
+-->
+
+<!--
+<previewSetup useLibrary="library\particles"/>
+<previewSetup useLibrary="library\pilgrimage"/>
+<preview type="mesh" name="particles:environment"/>
+<preview type="mesh" name="particles:environment single particle"/>
+-->
+
+<!--
+<previewSetup useLibrary="library\particles\bleed"/>
+<preview type="temporaryObjectType" name="bleed:bleed explosion"/>
+<preview type="temporaryObjectType" name="bleed:bleeding wound"/>
+-->
+
+<!--
+<previewSetup useLibrary="library\crafts.fullGame\barge"/>
+<previewSetup useLibrary="library\parts"/>
+<previewSetup useLibrary="library\devices.fullGame\turrets"/>
+<preview type="mesh" name="barge:internal bay room"/>
+<preview type="mesh" name="barge:internal bay - door very fake"/>
+<preview type="mesh" name="barge:internal bay - door fake"/>
+<preview type="mesh" name="barge:internal bay - door frame"/>
+<preview type="mesh" name="barge:internal bay - door wing"/>
+<preview type="mesh" name="barge:barge"/>
+<preview type="actorType" name="barge:barge"/>
+<preview type="mesh" name="devices:barge front turret"/>
+<preview type="mesh" name="devices:barge front turret destroyed"/>
+<preview type="mesh" name="devices:barge rear turret"/>
+<preview type="mesh" name="devices:barge rear turret destroyed"/>
+-->
+
+<!--
+<previewSetup useLibrary="library\crafts\airfighter"/>
+<previewSetup useLibrary="library\parts"/>
+<preview type="mesh" name="airfighter:airfighter"/>
+<.preview type="actorType" name="airfighter:airfighter"/>
+-->
+
+<!--
+<previewSetup useLibrary="library\crafts\air traffic"/>
+<previewSetup useLibrary="library\crafts.fullGame\air traffic"/>
+<preview type="temporaryObjectType" name="air traffic:airship plasma"/>
+<preview type="temporaryObjectType" name="air traffic:airship plasma tentacled"/>
+<preview type="mesh" name="air traffic:airship armed single"/>
+<preview type="mesh" name="air traffic:airship tentacled single"/>
+<preview type="temporaryObjectType" name="air traffic:50 airships tentacled in dir"/>
+<preview type="mesh" name="air traffic:airship single"/>
+<preview type="temporaryObjectType" name="air traffic:20 airships in circle"/>
+<preview type="temporaryObjectType" name="air traffic:100 airships guarding palace"/>
+<preview type="temporaryObjectType" name="air traffic:100 airships guarding palace stationary"/>
+<preview type="mesh" name="air traffic:airfighter single"/>
+<preview type="temporaryObjectType" name="air traffic:50 airfighters in circle"/>
+<preview type="temporaryObjectType" name="air traffic:50 airfighters free range"/>
+<preview type="temporaryObjectType" name="air traffic:50 airfighters in dir"/>
+-->
+
+<!--
+<previewSetup useLibrary="library\crafts\airships"/>
+<previewSetup useLibrary="library\devices\turrets"/>
+<previewSetup useLibrary="library\parts"/>
+<previewSetup useLibrary="library\sounds"/>
+<preview type="mesh" name="airships:infested airship"/>
+<preview type="sceneryType" name="airships:infested airship bullshot"/>
+<preview type="sceneryType" name="airships:infested airship craft"/>
+<preview type="mesh" name="airships:warsaw"/>
+<preview type="sceneryType" name="airships:warsaw"/>
+<preview type="mesh" name="devices:airship turret"/>
+<preview type="actorType" name="devices:airship turret"/>
+<preview type="mesh" name="airships:airship"/>
+<preview type="mesh" name="airships:body A"/>
+<preview type="mesh" name="airships:top tower A"/>
+<preview type="mesh" name="airships:top tower B"/>
+<preview type="sceneryType" name="airships:airship"/>
+-->
+
+
+<!-- ->NPCS
+-->
+<previewSetup useLibrary="library\parts"/>
+<previewSetup useLibrary="library\devices"/>
+<previewSetup useLibrary="library\walker libs"/>
+<previewSetup useLibrary="library\mesh gen selectors"/>
+<previewSetup useLibrary="library\physical materials"/>
+<previewSetup useLibrary="library\particles"/>
+<previewSetup useLibrary="library\corrosion"/>
+<previewSetup useLibrary="library\sounds"/>
+<previewSetup useLibrary="library\helper functions"/>
+<previewSetup useLibrary="library\npcs\0_common"/>
+-->
+
+<!--
+<previewSetup useLibrary="library\npcs.fullGame\a_blob"/>
+<preview type="mesh" name="npcs:a_blob"/>
+<preview type="sceneryType" name="npcs:a_blob"/>
+-->
+
+<!--
+<previewSetup useLibrary="library\npcs\a_tentacle"/>
+<preview type="mesh" name="npcs:a_tentacle"/>
+<preview type="sceneryType" name="npcs:a_tentacle"/>
+-->
+
+<!--
+<previewSetup useLibrary="library\npcs.fullGame\a_tentacled common"/>
+<preview type="mesh" name="npcs:a_tentacles small"/>
+<preview type="sceneryType" name="npcs:a_tentacles small"/>
+-->
+
+<!--
+<previewSetup useLibrary="library\npcs\enforcer"/>
+<previewSetup useLibrary="library\npcs.fullGame\a_tentacled common"/>
+<previewSetup useLibrary="library\npcs.fullGame\a_tentacled enforcer"/>
+<preview type="mesh" name="npcs:a_tentacled enforcer"/>
+<preview type="actorType" name="npcs:a_tentacled enforcer"/>
+-->
+
+<!--
+<previewSetup useLibrary="library\npcs\trigger"/>
+<previewSetup useLibrary="library\npcs.fullGame\a_tentacled common"/>
+<previewSetup useLibrary="library\npcs.fullGame\a_tentacled trigger"/>
+<preview type="mesh" name="npcs:a_tentacled trigger"/>
+<preview type="actorType" name="npcs:a_tentacled trigger"/>
+-->
+
+<!--
+<previewSetup useLibrary="library\npcs\h_flea"/>
+<preview type="mesh" name="npcs:h_flea"/>
+-->
+
+<!--
+<previewSetup useLibrary="library\npcs\h_tek"/>
+<preview type="mesh" name="npcs:h_tek"/>
+<preview type="mesh" name="npcs:h_tek throne"/>
+<preview type="actorType" name="npcs:h_tek"/>
+-->
+
+<!--
+<previewSetup useLibrary="library\npcs\h_barge"/>
+<previewSetup useLibrary="library\crafts\monorail"/>
+<previewSetup useLibrary="library\pilgrimage\story\01 arrival"/>
+<preview type="mesh" name="npcs:h_barge"/>
+<preview type="actorType" name="npcs:h_barge"/>
+<preview type="mesh" name="places, arrival:desert"/>
+<preview type="mesh" name="npcs:h_barge over desert"/>
+-->
+
+<!--
+<previewSetup useLibrary="library\npcs.fullGame\spitter"/>
+<previewSetup useLibrary="library\npcs.fullGame\cleanser"/>
+<preview type="mesh" name="npcs:spitter"/>
+<preview type="actorType" name="npcs:spitter"/>
+-->
+
+<!--
+<previewSetup useLibrary="library\npcs.fullGame\bottle"/>
+<previewSetup useLibrary="library\npcs.fullGame\cleanser"/>
+<preview type="mesh" name="npcs:bottle"/>
+<preview type="actorType" name="npcs:bottle"/>
+-->
+
+<!--
+<previewSetup useLibrary="library\npcs.fullGame\barrel"/>
+<previewSetup useLibrary="library\npcs.fullGame\cleanser"/>
+<preview type="mesh" name="npcs:barrel"/>
+<preview type="actorType" name="npcs:barrel"/>
+<preview type="temporaryObjectType" name="npcs:barrel dying"/>
+-->
+
+<!--
+<previewSetup useLibrary="library\npcs.fullGame\cleanser"/>
+<preview type="mesh" name="npcs:cleanser"/>
+<preview type="actorType" name="npcs:cleanser"/>
+<preview type="mesh" name="npcs:cleanser back port"/>
+<preview type="mesh" name="npcs:cleanser canister"/>
+<preview type="sceneryType" name="npcs:cleanser back port"/>
+-->
+<!--
+<previewSetup useLibrary="library\npcs\creeper"/>
+<preview type="mesh" name="npcs:creeper"/>
+<preview type="actorType" name="npcs:creeper"/>
+-->
+<!--
+<previewSetup useLibrary="library\npcs.fullGame\welder"/>
+<preview type="mesh" name="npcs:welder"/>
+<preview type="mesh" name="npcs:welder shield"/>
+<preview type="actorType" name="npcs:welder"/>
+-->
+<!--
+<previewSetup useLibrary="library\npcs\stinger"/>
+<preview type="mesh" name="npcs:stinger"/>
+<preview type="actorType" name="npcs:stinger"/>
+-->
+<!--
+<previewSetup useLibrary="library\npcs\proximity mine"/>
+<previewSetup useLibrary="library\parts"/>
+<preview type="mesh" name="npcs:proximity mine"/>
+<preview type="itemType" name="npcs:proximity mine"/>
+<preview type="lineModel" name="npcs:proximity mine"/>
+-->
+<!--
+<previewSetup useLibrary="library\npcs\shield mushroom"/>
+<previewSetup useLibrary="library\parts"/>
+<preview type="mesh" name="npcs:shield mushroom"/>
+<preview type="itemType" name="npcs:shield mushroom"/>
+<preview type="lineModel" name="npcs:shield mushroom"/>
+<preview type="temporaryObjectType" name="npcs:mushroom attach"/>
+<preview type="temporaryObjectType" name="npcs:mushroom detach"/>
+-->
+<!--
+<previewSetup useLibrary="library\helper functions"/>
+<previewSetup useLibrary="library\npcs\drop capsule"/>
+<previewSetup useLibrary="library\particles"/>
+<preview type="mesh" name="npcs:drop capsule"/>
+<preview type="temporaryObjectType" name="npcs:drop capsule impact"/>
+<preview type="temporaryObjectType" name="npcs:drop capsule trail"/>
+-->
+<!--
+<previewSetup useLibrary="library\helper functions"/>
+<previewSetup useLibrary="library\npcs.fullGame\blob capsule"/>
+<previewSetup useLibrary="library\particles"/>
+<preview type="mesh" name="npcs:blob capsule"/>
+<preview type="temporaryObjectType" name="npcs:blob capsule impact"/>
+<preview type="temporaryObjectType" name="npcs:blob capsule trail"/>
+-->
+<!--
+<previewSetup useLibrary="library\npcs\barker"/>
+<preview type="mesh" name="npcs:barker"/>
+<preview type="actorType" name="npcs:barker"/>
+-->
+<!--
+<previewSetup useLibrary="library\npcs\muezzin"/>
+<preview type="mesh" name="npcs:muezzin"/>
+<preview type="actorType" name="npcs:muezzin"/>
+-->
+<!--
+<previewSetup useLibrary="library\npcs\enforcer"/>
+<preview type="mesh" name="npcs:enforcer"/>
+<preview type="temporaryObjectType" name="npcs:enforcer steam"/>
+<preview type="actorType" name="npcs:enforcer"/>
+-->
+<!--
+<previewSetup useLibrary="library\npcs.fullGame\fender"/>
+<preview type="mesh" name="npcs:fender"/>
+<preview type="mesh" name="npcs:fender shield"/>
+<preview type="actorType" name="npcs:fender"/>
+-->
+<!--
+<previewSetup useLibrary="library\npcs\trigger"/>
+<previewSetup useLibrary="library\npcs\enforcer"/>
+<preview type="mesh" name="npcs:trigger"/>
+<preview type="actorType" name="npcs:trigger"/>
+-->
+<!--
+<previewSetup useLibrary="library\npcs\scourer"/>
+<previewSetup useLibrary="library\exms"/>
+<preview type="mesh" name="npcs:scourer"/>
+<preview type="actorType" name="npcs:scourer"/>
+<preview type="temporaryObjectType" name="npcs:scourer deflect"/>
+-->
+<!--
+<previewSetup useLibrary="library\npcs\camel"/>
+<preview type="actorType" name="npcs:camel"/>
+<preview type="mesh" name="npcs:camel"/>
+<previewSetup useLibrary="library\npcs\overseer"/>
+<preview type="actorType" name="npcs:overseer"/>
+<preview type="mesh" name="npcs:overseer"/>
+-->
+<!--
+<previewSetup useLibrary="library\npcs\rammer"/>
+<preview type="temporaryObjectType" name="npcs:rammer charging"/>
+<preview type="actorType" name="npcs:rammer"/>
+<preview type="mesh" name="npcs:rammer"/>
+-->
+<!--
+<previewSetup useLibrary="library\npcs.fullGame\centipede"/>
+<preview type="mesh" name="npcs:centipede"/>
+<preview type="actorType" name="npcs:centipede"/>
+-->
+<!--
+<previewSetup useLibrary="library\npcs\pester"/>
+<preview type="actorType" name="npcs:pester"/>
+<preview type="mesh" name="npcs:pester"/>
+-->
+<!--
+<previewSetup useLibrary="library\npcs\battery"/>
+<preview type="actorType" name="npcs:battery"/>
+<preview type="mesh" name="npcs:battery"/>
+<preview type="lineModel" name="npcs:battery"/>
+-->
+<!--
+<previewSetup useLibrary="library\npcs\inspecter"/>
+<preview type="actorType" name="npcs:inspecter"/>
+<preview type="mesh" name="npcs:inspecter"/>
+<preview type="lineModel" name="npcs:inspecter"/>
+-->
+<!--
+<previewSetup useLibrary="library\npcs\follower"/>
+<previewSetup useLibrary="library\npcs\inspecter"/>
+<preview type="mesh" name="npcs:follower"/>
+<preview type="actorType" name="npcs:follower"/>
+-->
+<!--
+<previewSetup useLibrary="library\npcs\charger"/>
+<previewSetup useLibrary="library\npcs\barker"/>
+<previewSetup useLibrary="library\energy quantums"/>
+<preview type="mesh" name="npcs:charger"/>
+<preview type="actorType" name="npcs:charger"/>
+<preview type="temporaryObjectType" name="npcs:charger dying"/>
+-->
+<!--
+<previewSetup useLibrary="library\npcs\waiter"/>
+<preview type="mesh" name="npcs:waiter"/>
+<preview type="actorType" name="npcs:waiter"/>
+-->
+
+<!--
+<previewSetup useLibrary="library\walls"/>
+<previewSetup useLibrary="library\pilgrimage"/>
+<preview type="mesh" name="walls:simple wall"/>
+-->
+
+<!--
+<previewSetup useLibrary="library\rooms\02 elements"/>
+<preview type="mesh" name="rooms:balconies corners inner simple balcony"/>
+<preview type="mesh" name="rooms:balconies corners outer simple balcony"/>
+-->
+
+<!--
+<previewSetup useLibrary="library\places"/>
+<previewSetup useLibrary="library\rooms"/>
+<previewSetup useLibrary="library\room utils"/>
+<previewSetup useLibrary="library\pilgrimage"/>
+<previewSetup useLibrary="library\parts"/>
+<preview type="mesh" name="rooms:balconies u balcony"/>
+<preview type="mesh" name="rooms:balconies simple balcony"/>
+<preview type="mesh" name="rooms:balconies corners outer simple balcony"/>
+<preview type="mesh" name="rooms:balconies corners inner simple balcony"/>
+<preview type="mesh" name="rooms:balconies wall layout"/>
+<.preview type="mesh" name="rooms:balconies tower layout looped"/>
+<.preview type="mesh" name="rooms:balconies tower layout linear"/>
+<.preview type="mesh" name="rooms:balconies well layout looped"/>
+<.preview type="mesh" name="rooms:balconies well layout linear"/>
+<.preview type="mesh" name="rooms:balconies wall layout"/>
+<.preview type="mesh" name="rooms:balconies simple layout"/>
+<.preview type="mesh" name="rooms:balconies corners layout"/>
+<.preview type="mesh" name="rooms:rooftop"/>
+<.preview type="mesh" name="rooms:towers simple tower"/>
+<preview type="mesh" name="rooms:room simple"/>
+<preview type="mesh" name="rooms:room simple tower"/>
+-->
+
+<!--
+<previewSetup useLibrary="library\elevators"/>
+<previewSetup useLibrary="library\pilgrimage"/>
+<preview type="mesh" name="elevators:elevator simple wall"/>
+<preview type="mesh" name="elevators:elevator simple floor"/>
+-->
+
+<!--
+<previewSetup useLibrary="library\doors"/>
+<preview type="mesh" name="doors:train"/>
+<preview type="mesh" name="doors:train wing"/>
+<preview type="mesh" name="doors:train fake"/>
+<preview type="sceneryType" name="doors:train fake"/>
+<preview type="mesh" name="doors:v fake"/>
+<preview type="sceneryType" name="doors:v fake"/>
+-->
+
+<!--
+<previewSetup useLibrary="library\pilgrimage\shared"/>
+<preview type="mesh" name="pilgrimage, shared:no door marker"/>
+-->
+
+<!--
+<previewSetup useLibrary="library\helper functions"/>
+<previewSetup useLibrary="library\parts\generic"/>
+<previewSetup useLibrary="library\pilgrimage\story\07 corrosion.fullGame\objects\nurse"/>
+<previewSetup useLibrary="library\parts"/>
+<previewSetup useLibrary="library\mesh gen selectors"/>
+<preview type="sceneryType" name="pilgrimage, 07 corrosion:nurse"/>
+<preview type="mesh" name="pilgrimage, 07 corrosion:nurse"/>
+-->
+
+<!--
+<previewSetup useLibrary="library\helper functions"/>
+<previewSetup useLibrary="library\parts\generic"/>
+<previewSetup useLibrary="library\pilgrimage\story\07 corrosion.fullGame\objects"/>
+<previewSetup useLibrary="library\pilgrimage\story\07 corrosion.fullGame\places"/>
+<previewSetup useLibrary="library\pilgrimage\story\07 corrosion.fullGame\objects\nurse"/>
+<previewSetup useLibrary="library\parts"/>
+<previewSetup useLibrary="library\mesh gen selectors"/>
+<preview type="sceneryType" name="pilgrimage, 07 corrosion:nurse"/>
+<preview type="mesh" name="pilgrimage, 07 corrosion:nurse"/>
+<preview type="mesh" name="pilgrimage, 07 corrosion:nursing bed"/>
+<preview type="sceneryType" name="pilgrimage, 07 corrosion:nursing bed"/>
+<preview type="mesh" name="pilgrimage, 07 corrosion:final elevator"/>
+<preview type="mesh" name="pilgrimage, 07 corrosion:workingRoomBurial room preview"/>
+-->
+
+
+<!--
+<previewSetup useLibrary="library\helper functions"/>
+<previewSetup useLibrary="library\parts\generic"/>
+<previewSetup useLibrary="library\pilgrimage\story\10 up.fullGame\corridors and doors"/>
+<previewSetup useLibrary="library\pilgrimage\story\10 up.fullGame\places"/>
+<previewSetup useLibrary="library\pilgrimage\story\10 up.fullGame\next starting room"/>
+<previewSetup useLibrary="library\places\particular.fullGame\ship"/>
+<previewSetup useLibrary="library\doors\door directions"/>
+<previewSetup useLibrary="library\devices\puzzles"/>
+<previewSetup useLibrary="library\places\elements\spawn room"/>
+<previewSetup useLibrary="library\crafts\monorail"/>
+<preview type="mesh" name="pilgrimage, 10 up:room after crash"/>
+<preview type="mesh" name="pilgrimage, 10 up:hole in wall"/>
+<preview type="mesh" name="pilgrimage, 10 up:launch tunnel"/>
+<preview type="mesh" name="pilgrimage, 10 up:launch tunnel light"/>
+<preview type="mesh" name="pilgrimage, 10 up:launch chamber"/>
+<preview type="mesh" name="pilgrimage, 10 up:launch chamber railmech"/>
+<preview type="mesh" name="pilgrimage, 10 up:launch chamber elevator"/>
+<preview type="mesh" name="pilgrimage, 10 up:launch chamber platform"/>
+<preview type="mesh" name="pilgrimage, 10 up:launch chamber generator"/>
+<preview type="mesh" name="pilgrimage, 10 up:launch chamber display"/>
+<preview type="mesh" name="pilgrimage, 10 up:launch facility door"/>
+<preview type="mesh" name="pilgrimage, 10 up:launch facility door wing"/>
+<preview type="mesh" name="pilgrimage, 10 up:launch facility door fake"/>
+<preview type="mesh" name="pilgrimage, 10 up:launch door"/>
+<preview type="mesh" name="pilgrimage, 10 up:launch door wing"/>
+-->
+
+<!--
+<previewSetup useLibrary="library\helper functions"/>
+<previewSetup useLibrary="library\parts\generic"/>
+<previewSetup useLibrary="library\pilgrimage\story\12 another chance.fullGame\corridors and doors"/>
+<previewSetup useLibrary="library\pilgrimage\story\12 another chance.fullGame\places"/>
+<previewSetup useLibrary="library\places\particular.fullGame\ship"/>
+<previewSetup useLibrary="library\palace"/>
+<previewSetup useLibrary="library\devices\puzzles"/>
+<preview type="mesh" name="pilgrimage, 12 another chance:bridge room"/>
+<preview type="mesh" name="pilgrimage, 12 another chance:wide corridor"/>
+<preview type="mesh" name="pilgrimage, 12 another chance:the fall"/>
+<preview type="mesh" name="pilgrimage, 12 another chance:lock door"/>
+<preview type="mesh" name="pilgrimage, 12 another chance:lock door wing"/>
+<preview type="mesh" name="pilgrimage, 12 another chance:lock door wing side"/>
+<preview type="mesh" name="pilgrimage, 12 another chance:horizontal lock door"/>
+<preview type="mesh" name="pilgrimage, 12 another chance:horizontal lock door wing"/>
+<preview type="mesh" name="pilgrimage, 12 another chance:lock slide"/>
+<preview type="mesh" name="places, ship:nursing container"/>
+-->
+
+<!--
+<previewSetup useLibrary="library\helper functions"/>
+<previewSetup useLibrary="library\pilgrimage\story\13 breach.fullGame"/>
+<preview type="lineModel" name="pilgrimage, 13 breach:exit, for map"/>
+-->
+
+
+<!--
+<previewSetup useLibrary="library\helper functions"/>
+<previewSetup useLibrary="library\pilgrimage\story\13 breach.fullGame\corridors and doors"/>
+<previewSetup useLibrary="library\pilgrimage\story\13 breach.fullGame\places\elements\central element"/>
+<previewSetup useLibrary="library\pilgrimage\story\13 breach.fullGame\places\elements\generic"/>
+<previewSetup useLibrary="library\pilgrimage\story\13 breach.fullGame\places\special places\inner stairs"/>
+<previewSetup useLibrary="library\pilgrimage\story\13 breach.fullGame\places\actual places\side towers"/>
+<previewSetup useLibrary="library\pilgrimage\story\13 breach.fullGame\places\actual places\well"/>
+<preview type="mesh" name="pilgrimage, 13 breach:inner stairs room"/>
+<preview type="mesh" name="pilgrimage, 13 breach:inner stairs; elevator"/>
+<preview type="mesh" name="pilgrimage, 13 breach:central element"/>
+<preview type="mesh" name="pilgrimage, 13 breach:well itself"/>
+<preview type="mesh" name="pilgrimage, 13 breach:towers; main room"/>
+<preview type="mesh" name="pilgrimage, 13 breach:towers; side tower"/>
+-->
+
+<!--
+<previewSetup useLibrary="library\helper functions"/>
+<previewSetup useLibrary="library\parts\generic"/>
+<previewSetup useLibrary="library\pilgrimage\story\13 breach.fullGame"/>
+<previewSetup useLibrary="library\doors\door directions"/>
+<previewSetup useLibrary="library\palace"/>
+<previewSetup useLibrary="library\corridors"/>
+<previewSetup useLibrary="library\rooms\04 small rooms"/>
+<preview type="mesh" name="pilgrimage, 13 breach:tower floors; main room"/>
+<preview type="mesh" name="pilgrimage, 13 breach:tower floors; floor"/>
+<preview type="mesh" name="pilgrimage, 13 breach:entrance door frame / palace top"/>
+<preview type="mesh" name="pilgrimage, 13 breach:palace top - corridor example"/>
+<preview type="mesh" name="pilgrimage, 13 breach:palace top - room example"/>
+<preview type="mesh" name="pilgrimage, 13 breach:slide door"/>
+<preview type="mesh" name="pilgrimage, 13 breach:slide door wing"/>
+<preview type="mesh" name="pilgrimage, 13 breach:outside balcony room"/>
+-->
+
+<!--
+<previewSetup useLibrary="library\helper functions"/>
+<previewSetup useLibrary="library\pilgrimage\story\14 heart.fullGame\starting room"/>
+<preview type="mesh" name="pilgrimage, 14 heart:grand elevator"/>
+<preview type="mesh" name="pilgrimage, 14 heart:grand elevator shaft element"/>
+-->
+
+<!--
+<previewSetup useLibrary="library\helper functions"/>
+<previewSetup useLibrary="library\pilgrimage\story\13 breach.fullGame\places\generic"/>
+<previewSetup useLibrary="library\pilgrimage\story\14 heart.fullGame\places"/>
+<previewSetup useLibrary="library\weapons\projectiles"/>
+<previewSetup useLibrary="library\weapons\vfx - muzzle"/>
+<preview type="mesh" name="pilgrimage, 14 heart:behind door column"/>
+<preview type="mesh" name="pilgrimage, 14 heart:fill up room"/>
+<preview type="mesh" name="pilgrimage, 14 heart:heart room chamber"/>
+<preview type="mesh" name="pilgrimage, 14 heart:heart room generator"/>
+<preview type="mesh" name="pilgrimage, 14 heart:heart room central device"/>
+<preview type="sceneryType" name="pilgrimage, 14 heart:heart room central device"/>
+<preview type="temporaryObjectType" name="pilgrimage, 14 heart:heart room central device splash"/>
+-->
+
+<!--
+<previewSetup useLibrary="library\helper functions"/>
+<previewSetup useLibrary="library\parts\generic"/>
+<previewSetup useLibrary="library\pilgrimage\story\07 corrosion.fullGame\objects"/>
+<previewSetup useLibrary="library\pilgrimage\story\07 corrosion.fullGame\intro\03 ride"/>
+<previewSetup useLibrary="library\pilgrimage\story\07 corrosion.fullGame\corridors and doors"/>
+<previewSetup useLibrary="library\pilgrimage\story\07 corrosion.fullGame\chambers"/>
+<previewSetup useLibrary="library\doors"/> big fake transport door
+<preview type="mesh" name="pilgrimage, 07 corrosion:drop capsule landing room"/>
+<preview type="sceneryType" name="pilgrimage, 07 corrosion:pilgrim tank; interactive with interior"/>
+<preview type="mesh" name="pilgrimage, 07 corrosion:pilgrim tank; interactive with interior"/>
+<preview type="sceneryType" name="pilgrimage, 07 corrosion:pilgrim tank; interactive"/>
+<preview type="mesh" name="pilgrimage, 07 corrosion:pilgrim tank; interactive"/>
+<preview type="sceneryType" name="pilgrimage, 07 corrosion:pilgrim tank"/>
+<preview type="mesh" name="pilgrimage, 07 corrosion:pilgrim tank"/>
+<preview type="mesh" name="pilgrimage, 07 corrosion:pilgrim tank; static"/>
+<preview type="mesh" name="pilgrimage, 07 corrosion:pilgrim tank pillar preview"/>
+<preview type="mesh" name="pilgrimage, 07 corrosion:pilgrim tank pillar distant"/>
+<preview type="mesh" name="pilgrimage, 07 corrosion:pilgrim tank pillar very distant"/>
+<preview type="mesh" name="pilgrimage, 07 corrosion:pilgrim tank pillar at top distant"/>
+<preview type="mesh" name="pilgrimage, 07 corrosion:pilgrim tank pillar at top very distant"/>
+<preview type="mesh" name="pilgrimage, 07 corrosion:chamber at top preview"/>
+<preview type="sceneryType" name="pilgrimage, 07 corrosion:chamber at top preview"/>
+<preview type="mesh" name="pilgrimage, 07 corrosion:chamber door pillar preview"/>
+<preview type="mesh" name="pilgrimage, 07 corrosion:surface elevator ride door fake"/>
+<preview type="mesh" name="pilgrimage, 07 corrosion:surface elevator ride tunnel bit with door"/>
+<preview type="mesh" name="pilgrimage, 07 corrosion:surface elevator ride tunnel bit"/>
+<preview type="mesh" name="pilgrimage, 07 corrosion:surface elevator ride door"/>
+<preview type="mesh" name="pilgrimage, 07 corrosion:surface elevator ride door wing - left"/>
+<preview type="mesh" name="pilgrimage, 07 corrosion:surface elevator ride door wing - right"/>
+<preview type="mesh" name="pilgrimage, 07 corrosion:surface elevator ride tunnel station"/>
+<preview type="mesh" name="pilgrimage, 07 corrosion:surface elevator ride elevator"/>
+<preview type="sceneryType" name="pilgrimage, 07 corrosion:surface elevator ride elevator"/>
+-->
+
+<!--
+<previewSetup useLibrary="library\doors"/>
+<previewSetup useLibrary="library\corridors"/>
+<previewSetup useLibrary="library\room utils"/>
+<previewSetup useLibrary="library\rooms\04 small rooms"/>
+<previewSetup useLibrary="library\pilgrimage\story\07 corrosion.fullGame\! high level regions"/>
+<previewSetup useLibrary="library\pilgrimage\story\07 corrosion.fullGame\corridors and doors"/>
+<previewSetup useLibrary="library\pilgrimage\story\07 corrosion.fullGame\intro\02 collapsing"/>
+<preview type="mesh" name="pilgrimage, 07 corrosion:sand / col.maz.ent"/>
+<preview type="mesh" name="pilgrimage, 07 corrosion:door frame / col.maz.ent"/>
+<preview type="mesh" name="pilgrimage, 07 corrosion:below ground - corridor example"/>
+<preview type="mesh" name="pilgrimage, 07 corrosion:below ground - room example"/>
+<preview type="mesh" name="pilgrimage, 07 corrosion:entrance door frame / below ground"/>
+<preview type="mesh" name="pilgrimage, 07 corrosion:corridor door frame / below ground"/>
+<preview type="mesh" name="pilgrimage, 07 corrosion:pipes - corridor example"/>
+<preview type="mesh" name="pilgrimage, 07 corrosion:pipes - room example"/>
+<preview type="mesh" name="pilgrimage, 07 corrosion:entrance door frame / pipes"/>
+-->
+
+<!--
+<previewSetup useLibrary="library\doors"/>
+<previewSetup useLibrary="library\door bars"/>
+<previewSetup useLibrary="library\corridors"/>
+<previewSetup useLibrary="library\pilgrimage"/>
+<previewSetup useLibrary="library\places"/>
+<previewSetup useLibrary="library\rooms"/>
+<previewSetup useLibrary="library\starting rooms"/>
+<previewSetup useLibrary="library\crafts"/>
+<preview type="mesh" name="corridors:corridor simple 0ip"/>
+<preview type="mesh" name="corridors:corridor simple 1ip"/>
+<preview type="mesh" name="corridors:corridor simple 2ip"/>
+<preview type="mesh" name="corridors:entrance door frame / v"/>
+<preview type="mesh" name="rooms:room simple"/>
+<preview type="mesh" name="corridors:entrance door frame / v"/>
+<preview type="mesh" name="corridors:entrance door frame / udu"/>
+<preview type="mesh" name="corridors:entrance door frame / crouch rect"/>
+<preview type="mesh" name="corridors:entrance door frame / hexagonal"/>
+<preview type="mesh" name="corridors:entrance door frame / trapesoid"/>
+<preview type="mesh" name="corridors:entrance door frame / oct"/>
+<preview type="mesh" name="corridors:entrance door frame / rect"/>
+<preview type="mesh" name="corridors:entrance door frame / rect round"/>
+<preview type="mesh" name="pilgrimage, shared:door frame"/>
+<preview type="mesh" name="pilgrimage, shared:door impassable frame"/>
+<preview type="mesh" name="places, outer rim, inner ridge:door impassable frame"/>
+<preview type="mesh" name="places, outer rim, outer ridge:door impassable frame"/>
+<preview type="mesh" name="doors:v"/>
+<preview type="mesh" name="doors:v wing"/>
+<preview type="mesh" name="doors:slide sideways"/>
+<preview type="mesh" name="doors:slide sideways left wing"/>
+<preview type="mesh" name="doors:slide sideways right wing"/>
+-->
+
+
+<!--
+<previewSetup useLibrary="library\elevators"/>
+<previewSetup useLibrary="library\parts"/>
+<preview type="mesh" name="elevators:cabin with fold-core"/>
+-->
+
+
+-->
+<!--
+<previewSetup useLibrary="library\devices"/>
+<previewSetup useLibrary="library\parts"/>
+<previewSetup useLibrary="library\platforms"/>
+<.previewSetup useLibrary="library\elevators"/>
+<.previewSetup useLibrary="library\pilgrimage"/>
+<preview type="mesh" name="platforms:platform cart point empty"/>
+<preview type="mesh" name="platforms 5:platform"/>
+<preview type="mesh" name="platforms 5:platform cart vertical"/>
+<preview type="mesh" name="platforms 5:platform cart horizontal"/>
+<preview type="mesh" name="platforms 5:platform cart point"/>
+<preview type="mesh" name="platforms 5:platform railing high solid"/>
+<preview type="mesh" name="platforms 5:platform railing low solid"/>
+<preview type="mesh" name="platforms 5:platform railing low transparent"/>
+<preview type="mesh" name="platforms 5:platform cart lane vertical"/>
+<preview type="mesh" name="platforms 5:platform cart lane horizontal"/>
+<preview type="mesh" name="platforms 4:platform cart vertical"/>
+<preview type="mesh" name="platforms 4:platform cart horizontal"/>
+<preview type="mesh" name="platforms 4:platform cart point"/>
+<preview type="mesh" name="platforms 3:platform cart vertical"/>
+<preview type="mesh" name="platforms 3:platform cart horizontal"/>
+<preview type="mesh" name="platforms 3:platform cart point"/>
+<preview type="mesh" name="platforms 2:platform"/>
+<preview type="mesh" name="platforms 2:platform cart vertical"/>
+<preview type="mesh" name="platforms 2:platform cart horizontal"/>
+<preview type="mesh" name="platforms 2:platform cart door"/>
+<preview type="mesh" name="platforms 2:platform cart point"/>
+<preview type="mesh" name="platforms 2:platform railing high solid"/>
+<preview type="mesh" name="platforms 2:platform railing low solid"/>
+<preview type="mesh" name="platforms 2:platform railing low transparent"/>
+<preview type="mesh" name="platforms:platform"/>
+<preview type="mesh" name="platforms:platform cart vertical"/>
+<preview type="mesh" name="platforms:platform cart horizontal"/>
+<preview type="sceneryType" name="platforms:platform cart horizontal"/>
+<preview type="sceneryType" name="platforms:platform cart vertical"/>
+<preview type="mesh" name="elevators:cabin with fold-core"/>
+<preview type="mesh" name="platforms:platform cart lane vertical"/>
+<preview type="mesh" name="platforms:platform cart lane horizontal"/>
+<preview type="mesh" name="platforms:platform panel test"/>
+<preview type="mesh" name="platforms:platform panel"/>
+<preview type="mesh" name="platforms:platform cart point"/>
+<preview type="mesh" name="platforms:platform railing high solid"/>
+<preview type="mesh" name="platforms:platform railing low solid"/>
+<preview type="mesh" name="platforms:platform railing low transparent"/>
+-->
+<!--
+<preview type="mesh" name="platforms:platform panel joint test"/>
+-->
+
+<!--
+<previewSetup useLibrary="library\door bars"/>
+<previewSetup useLibrary="library\doors"/>
+<previewSetup useLibrary="library\pilgrimage"/>
+<preview type="mesh" name="pilgrimage, shared:door frame"/>
+<preview type="mesh" name="pilgrimage, shared:door impassable frame"/>
+-->
+
+<!--
+<previewSetup useLibrary="library\pilgrimage"/>
+<preview type="mesh" name="pilgrimage, shared:view onto vista scenery"/>
+-->
+
+<!--
+<previewSetup noLibrary="true"/>
+<preview type="mesh" name="displays:vr scene example"/>
+-->
+
+<!--
+<previewSetup useLibrary="library\game"/>
+-->
+
+<!--
+<previewSetup noLibrary="true"/>
+<preview type="mesh" name="loader hub:hand ph r"/>
+<preview type="mesh" name="loader hub:hand ph l"/>
+<preview type="mesh" name="loader hub:hand ht r"/>
+<preview type="mesh" name="loader hub:hand ht l"/>
+<preview type="mesh" name="loader hub:hand r"/>
+<preview type="mesh" name="loader hub:hand l"/>
+<preview type="mesh" name="loader hub:scene example"/>
+-->
+
+<!--
+<previewSetup noLibrary="true"/>
+<preview type="mesh" name="loading scenes:start head marker"/>
+<preview type="mesh" name="loading scenes:start head marker close"/>
+<preview type="mesh" name="loading scenes:start head marker far"/>
+<preview type="mesh" name="loading scenes:cubes"/>
+<preview type="mesh" name="loading scenes:temple"/>
+<preview type="mesh" name="loading scenes:palace far away"/>
+<preview type="mesh" name="loading scenes:scene example"/>
+<preview type="mesh" name="loading scenes:hand ph r"/>
+<preview type="mesh" name="loading scenes:hand ph l"/>
+<preview type="mesh" name="loading scenes:hand ht r"/>
+<preview type="mesh" name="loading scenes:hand ht l"/>
+<preview type="mesh" name="loading scenes:hand r"/>
+<preview type="mesh" name="loading scenes:hand l"/>
+-->
+
+<!--
+<previewSetup useLibrary="library\scavenger os\decision maker"/>
+<previewSetup useLibrary="library\menu"/>
+<previewSetup useLibrary="library\displays"/>
+<preview type="displayType" name="menu:menu"/>
+<preview type="displayType" name="displays:loading"/>
+-->
+
+<!--
+<previewSetup useLibrary="library\scavenger os\decision maker"/>
+<previewSetup useLibrary="library\menu"/>
+<preview type="displayType" name="menu:menu"/>
+<preview type="displayType" name="os:decision maker"/>
+-->
+
+<!--
+<previewSetup useLibrary="library\custom upgrades.fullGame"/>
+<preview type="lineModel" name="custom upgrades:ship upgrade"/>
+<preview type="lineModel" name="custom upgrades:armoury enlargement"/>
+-->

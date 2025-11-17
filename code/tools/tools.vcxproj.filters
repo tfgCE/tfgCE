@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="fbx\fbxManager.cpp">
+      <Filter>fbx</Filter>
+    </ClCompile>
+    <ClCompile Include="fbx\fbxImporter.cpp">
+      <Filter>fbx</Filter>
+    </ClCompile>
+    <ClCompile Include="fbx\fbxScene.cpp">
+      <Filter>fbx</Filter>
+    </ClCompile>
+    <ClCompile Include="fbx\fbxMesh3dExtractor.cpp">
+      <Filter>fbx</Filter>
+    </ClCompile>
+    <ClCompile Include="fbx\fbxUtils.cpp">
+      <Filter>fbx</Filter>
+    </ClCompile>
+    <ClCompile Include="tools.cpp" />
+    <ClCompile Include="fbx\fbxSocketsExtractor.cpp">
+      <Filter>fbx</Filter>
+    </ClCompile>
+    <ClCompile Include="fbx\fbxSkeletonExtractor.cpp">
+      <Filter>fbx</Filter>
+    </ClCompile>
+    <ClCompile Include="fbx\fbx.cpp">
+      <Filter>fbx</Filter>
+    </ClCompile>
+    <ClCompile Include="simpleImporters\textureImporter.cpp">
+      <Filter>simpleImporters</Filter>
+    </ClCompile>
+    <ClCompile Include="simpleImporters\simpleImporters.cpp">
+      <Filter>simpleImporters</Filter>
+    </ClCompile>
+    <ClCompile Include="fbx\fbxAnimationSetExtractor.cpp">
+      <Filter>fbx</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="tools.h" />
+    <ClInclude Include="fbx\fbxManager.h">
+      <Filter>fbx</Filter>
+    </ClInclude>
+    <ClInclude Include="fbx\fbxImporter.h">
+      <Filter>fbx</Filter>
+    </ClInclude>
+    <ClInclude Include="fbx\fbxScene.h">
+      <Filter>fbx</Filter>
+    </ClInclude>
+    <ClInclude Include="fbx\fbxLib.h">
+      <Filter>fbx</Filter>
+    </ClInclude>
+    <ClInclude Include="fbx\fbx.h">
+      <Filter>fbx</Filter>
+    </ClInclude>
+    <ClInclude Include="fbx\fbxMesh3dExtractor.h">
+      <Filter>fbx</Filter>
+    </ClInclude>
+    <ClInclude Include="fbx\fbxUtils.h">
+      <Filter>fbx</Filter>
+    </ClInclude>
+    <ClInclude Include="fbx\fbxSocketsExtractor.h">
+      <Filter>fbx</Filter>
+    </ClInclude>
+    <ClInclude Include="fbx\fbxSkeletonExtractor.h">
+      <Filter>fbx</Filter>
+    </ClInclude>
+    <ClInclude Include="simpleImporters\textureImporter.h">
+      <Filter>simpleImporters</Filter>
+    </ClInclude>
+    <ClInclude Include="simpleImporters\simpleImporters.h">
+      <Filter>simpleImporters</Filter>
+    </ClInclude>
+    <ClInclude Include="fbx\fbxAnimationSetExtractor.h">
+      <Filter>fbx</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="fbx">
+      <UniqueIdentifier>{e7fe4a46-7102-4c7e-ac0c-81885bc4c198}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="simpleImporters">
+      <UniqueIdentifier>{c75e5664-5c9a-429d-8dd4-08144d6a66d5}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

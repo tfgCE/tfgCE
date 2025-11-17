@@ -1,0 +1,69 @@
+F5, F6, F7 - time manipulation
+F4 - debug pause
+F3 - one frame forward
+F9 - output recent memory allocations (100)
+F10 - sound very quiet - full
+F11 - switch fallback rendering for VR
+F11+shift - skip display buffer for VR
+
+preview game
+F8 - wireframe display
+
+global
+N - rendering info (binding, shader param states etc)
+
+framework
+I (+rShift) - print contents of scene proxy during preparation (+rejected ones)
+L - post process
+O,P - thread stats (once or keep going on)
+ +CTRL - to output (slows down a bit)
+Q,E - extend arms
+
+tea for god emperor
+F1 - control actor/camera
+F2 - camera actor/debug/debug+offset (+ctrl back)
+F1 hold + F2 - debug camera + controls, camera reset
+F2 hold + F1 - actor camera + controls, camera reset
+Z - debug panel
+X - auto pilot
+C - game settings debug panel
+K - kill enemies in same room
+V - do screenshot (or menu button)
+O,P - thread stats (once or keep going on)
+R - reset debug renderer offset
+Q,E - debug renderer move vertically
+T - debug renderer rotation offset (do not cancel roll)
+keypad minus - scale font in debug ui
+space - marker in an output log
+leftctrl+leftalt + arrow keys - in open world, teleport to adjacent cell (has to exist)
+VR:::
+B buttons - debug panels
+left grip - quick select debug object
+right grip - grab debug panel
+
+subspace scavengers
+F1 - normal camera
+F2 - debug camera
+F8 - open insider (all debug keys should go there!)
+F9 - jump to next round (force this one to end)
+R - reset debug renderer offset
+Q,E - debug renderer move vertically
+T,Y - debug renderer rotation offset
+F - draw collisions (+ctrl type of collision, tea)
+G - draw door holes
+H - draw presence
+J - draw skeletons (tea)
+K - debug camera test collisions (tea)
+V - vr debug (tea)
+5 - vr controls (tea)
+6 - preview for screenshot
+7 - screen shot
+8 - loop time
+9 - switch debug info on/off
+0 - render fpp/tpp
+O,P - thread stats (once or keep going on)
+O + shift - stop and show stats when FPS < 90
+Y,U - render log (once or keep going on)
+Z,X,C - rendering rooms
+F - draw collisions
+G - draw door holes

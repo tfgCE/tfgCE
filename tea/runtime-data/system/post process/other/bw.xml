@@ -1,0 +1,52 @@
+<library group="postProcess">
+	<fragmentShader name="bw simple">
+		<usePostProcessPipeline/>
+		<source>
+			<function name="process">
+				<body>
+					float colourBW =(materialDiffuse.r + materialDiffuse.g + materialDiffuse.b) * 0.333;
+					materialDiffuse.rgba = vec4(colourBW, colourBW, colourBW, 1.0);
+				</body>
+			</function>
+		</source>
+	</fragmentShader>
+	<shaderProgram name="bw simple" fragmentShader="bw simple"/>
+
+	<fragmentShader name="bw">
+		<useWithPostProcessPipeline/>
+		<source>
+			<data>
+				// uniform
+				uniform sampler2D inColour;
+				
+				// output
+				out vec4 colour;
+			</data>
+			<mainBody>
+				vec4 texColour = texture(inColour, varUV);
+				float colourBW =(texColour.r + texColour.g + texColour.b) * 0.333;
+				colour.rgba = vec4(colourBW, colourBW, colourBW, 1.0);
+			</mainBody>
+		</source>
+		<outputs>
+			<output name="colour"/>
+		</outputs>
+	</fragmentShader>
+	<shaderProgram name="bw" fragmentShader="bw"/>
+
+	<postProcess name="bw">
+		<graph>
+			<inputNode name="input">
+				<output name="colour"/>
+			</inputNode>
+			<processorNode name="bw" shaderProgram="bw">
+				<input name="inColour" connectToNode="input" connectToConnector="colour"/>
+			</processorNode>
+			<outputNode name="output">
+				<input name="colour" connectToNode="bw" connectToConnector="colour"/>
+			</outputNode>
+		</graph>
+	</postProcess>
+</library>
+
+

@@ -1,0 +1,18 @@
+<library group="default">
+	<generateTexture file="assets\default.tex" format="rgba8" size="4 32" wrap="clamp">
+		<verticalLines>
+			<line width="4">
+				<colour at="1.0" modulate="1.00">1.0 1.0 1.0 1.0</colour>
+				<colour at="0.0" modulate="0.95">1.0 1.0 1.0 1.0</colour>
+			</line>
+		</verticalLines>
+	</generateTexture>
+	<generateTexture file="assets\white.tex" format="rgba8" size="8 8" wrap="clamp">
+		<verticalLines>
+			<line width="8">
+				<colour at="1.0" modulate="1.00">1.0 1.0 1.0 1.0</colour>
+				<colour at="0.0" modulate="1.00">1.0 1.0 1.0 1.0</colour>
+			</line>
+		</verticalLines>
+	</generateTexture>
+</library>

@@ -1,0 +1,4 @@
+<library group="default">
+	<texture name="default" file="assets\default.tex"/>
+	<texture name="white" file="assets\white.tex"/>
+</library>

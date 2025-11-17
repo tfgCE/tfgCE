@@ -1,0 +1,4546 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="world\room.cpp">
+      <Filter>world</Filter>
+    </ClCompile>
+    <ClCompile Include="world\doorInRoom.cpp">
+      <Filter>world</Filter>
+    </ClCompile>
+    <ClCompile Include="world\door.cpp">
+      <Filter>world</Filter>
+    </ClCompile>
+    <ClCompile Include="world\subWorld.cpp">
+      <Filter>world</Filter>
+    </ClCompile>
+    <ClCompile Include="world\world.cpp">
+      <Filter>world</Filter>
+    </ClCompile>
+    <ClCompile Include="world\doorHole.cpp">
+      <Filter>world</Filter>
+    </ClCompile>
+    <ClCompile Include="render\renderContext.cpp">
+      <Filter>render</Filter>
+    </ClCompile>
+    <ClCompile Include="render\renderCamera.cpp">
+      <Filter>render</Filter>
+    </ClCompile>
+    <ClCompile Include="object\object.cpp">
+      <Filter>object</Filter>
+    </ClCompile>
+    <ClCompile Include="module\modulePresence.cpp">
+      <Filter>module</Filter>
+    </ClCompile>
+    <ClCompile Include="module\module.cpp">
+      <Filter>module</Filter>
+    </ClCompile>
+    <ClCompile Include="module\modules.cpp">
+      <Filter>module</Filter>
+    </ClCompile>
+    <ClCompile Include="interfaces\destroyable.cpp">
+      <Filter>interfaces</Filter>
+    </ClCompile>
+    <ClCompile Include="module\moduleData.cpp">
+      <Filter>module</Filter>
+    </ClCompile>
+    <ClCompile Include="library\libraryStored.cpp">
+      <Filter>library</Filter>
+    </ClCompile>
+    <ClCompile Include="library\libraryName.cpp">
+      <Filter>library</Filter>
+    </ClCompile>
+    <ClCompile Include="library\library.cpp">
+      <Filter>library</Filter>
+    </ClCompile>
+    <ClCompile Include="library\libraryCombinedStore.cpp">
+      <Filter>library</Filter>
+    </ClCompile>
+    <ClCompile Include="library\libraryStore.cpp">
+      <Filter>library</Filter>
+    </ClCompile>
+    <ClCompile Include="object\objectType.cpp">
+      <Filter>object</Filter>
+    </ClCompile>
+    <ClCompile Include="object\actor.cpp">
+      <Filter>object</Filter>
+    </ClCompile>
+    <ClCompile Include="object\actorType.cpp">
+      <Filter>object</Filter>
+    </ClCompile>
+    <ClCompile Include="appearance\meshStatic.cpp">
+      <Filter>appearance</Filter>
+    </ClCompile>
+    <ClCompile Include="module\moduleAppearance.cpp">
+      <Filter>module</Filter>
+    </ClCompile>
+    <ClCompile Include="jobSystem\jobSystemThread.cpp">
+      <Filter>jobSystem</Filter>
+    </ClCompile>
+    <ClCompile Include="jobSystem\jobSystemExecutor.cpp">
+      <Filter>jobSystem</Filter>
+    </ClCompile>
+    <ClCompile Include="jobSystem\jobSystem.cpp">
+      <Filter>jobSystem</Filter>
+    </ClCompile>
+    <ClCompile Include="advance\advanceContext.cpp">
+      <Filter>advance</Filter>
+    </ClCompile>
+    <ClCompile Include="game\game.cpp">
+      <Filter>game</Filter>
+    </ClCompile>
+    <ClCompile Include="render\renderScene.cpp">
+      <Filter>render</Filter>
+    </ClCompile>
+    <ClCompile Include="render\roomProxy.cpp">
+      <Filter>render</Filter>
+    </ClCompile>
+    <ClCompile Include="render\sceneBuildContext.cpp">
+      <Filter>render</Filter>
+    </ClCompile>
+    <ClCompile Include="render\presenceLinkProxy.cpp">
+      <Filter>render</Filter>
+    </ClCompile>
+    <ClCompile Include="world\presenceLink.cpp">
+      <Filter>world</Filter>
+    </ClCompile>
+    <ClCompile Include="module\moduleCollision.cpp">
+      <Filter>module</Filter>
+    </ClCompile>
+    <ClCompile Include="module\moduleMovement.cpp">
+      <Filter>module</Filter>
+    </ClCompile>
+    <ClCompile Include="module\moduleController.cpp">
+      <Filter>module</Filter>
+    </ClCompile>
+    <ClCompile Include="collision\collisionModel.cpp">
+      <Filter>collision</Filter>
+    </ClCompile>
+    <ClCompile Include="world\doorType.cpp">
+      <Filter>world</Filter>
+    </ClCompile>
+    <ClCompile Include="library\libraryPrepareContext.cpp">
+      <Filter>library</Filter>
+    </ClCompile>
+    <ClCompile Include="world\regionGenerator.cpp">
+      <Filter>world</Filter>
+    </ClCompile>
+    <ClCompile Include="world\regionType.cpp">
+      <Filter>world</Filter>
+    </ClCompile>
+    <ClCompile Include="world\roomPart.cpp">
+      <Filter>world</Filter>
+    </ClCompile>
+    <ClCompile Include="world\roomType.cpp">
+      <Filter>world</Filter>
+    </ClCompile>
+    <ClCompile Include="world\roomPartInstance.cpp">
+      <Filter>world</Filter>
+    </ClCompile>
+    <ClCompile Include="debug\previewGame.cpp">
+      <Filter>debug</Filter>
+    </ClCompile>
+    <ClCompile Include="collision\checkCollisionContext.cpp">
+      <Filter>collision</Filter>
+    </ClCompile>
+    <ClCompile Include="interfaces\aiObject.cpp">
+      <Filter>interfaces</Filter>
+    </ClCompile>
+    <ClCompile Include="interfaces\collidable.cpp">
+      <Filter>interfaces</Filter>
+    </ClCompile>
+    <ClCompile Include="render\stats.cpp">
+      <Filter>render</Filter>
+    </ClCompile>
+    <ClCompile Include="collision\physicalMaterial.cpp">
+      <Filter>collision</Filter>
+    </ClCompile>
+    <ClCompile Include="collision\physicalMaterialStub.cpp">
+      <Filter>collision</Filter>
+    </ClCompile>
+    <ClCompile Include="collision\physicalMaterialLoadingContext.cpp">
+      <Filter>collision</Filter>
+    </ClCompile>
+    <ClCompile Include="module\modulePresenceData.cpp">
+      <Filter>module</Filter>
+    </ClCompile>
+    <ClCompile Include="collision\checkSegmentResult.cpp">
+      <Filter>collision</Filter>
+    </ClCompile>
+    <ClCompile Include="world\environment.cpp">
+      <Filter>world</Filter>
+    </ClCompile>
+    <ClCompile Include="world\environmentUsage.cpp">
+      <Filter>world</Filter>
+    </ClCompile>
+    <ClCompile Include="render\environmentProxy.cpp">
+      <Filter>render</Filter>
+    </ClCompile>
+    <ClCompile Include="world\environmentType.cpp">
+      <Filter>world</Filter>
+    </ClCompile>
+    <ClCompile Include="appearance\mesh.cpp">
+      <Filter>appearance</Filter>
+    </ClCompile>
+    <ClCompile Include="appearance\meshSkinned.cpp">
+      <Filter>appearance</Filter>
+    </ClCompile>
+    <ClCompile Include="appearance\skeleton.cpp">
+      <Filter>appearance</Filter>
+    </ClCompile>
+    <ClCompile Include="postProcess\graph\postProcessNode.cpp">
+      <Filter>postProcess\graph</Filter>
+    </ClCompile>
+    <ClCompile Include="postProcess\postProcess.cpp">
+      <Filter>postProcess</Filter>
+    </ClCompile>
+    <ClCompile Include="postProcess\graph\postProcessGraph.cpp">
+      <Filter>postProcess\graph</Filter>
+    </ClCompile>
+    <ClCompile Include="postProcess\graph\postProcessRootNode.cpp">
+      <Filter>postProcess\graph</Filter>
+    </ClCompile>
+    <ClCompile Include="postProcess\graph\postProcessProcessorNode.cpp">
+      <Filter>postProcess\graph</Filter>
+    </ClCompile>
+    <ClCompile Include="pipelines\renderingPipeline.cpp">
+      <Filter>pipelines</Filter>
+    </ClCompile>
+    <ClCompile Include="pipelines\pipelines.cpp">
+      <Filter>pipelines</Filter>
+    </ClCompile>
+    <ClCompile Include="pipelines\postProcessPipeline.cpp">
+      <Filter>pipelines</Filter>
+    </ClCompile>
+    <ClCompile Include="postProcess\graph\postProcessInputNode.cpp">
+      <Filter>postProcess\graph</Filter>
+    </ClCompile>
+    <ClCompile Include="postProcess\graph\postProcessOutputNode.cpp">
+      <Filter>postProcess\graph</Filter>
+    </ClCompile>
+    <ClCompile Include="postProcess\postProcessRenderTargetManager.cpp">
+      <Filter>postProcess</Filter>
+    </ClCompile>
+    <ClCompile Include="postProcess\postProcessRenderTarget.cpp">
+      <Filter>postProcess</Filter>
+    </ClCompile>
+    <ClCompile Include="postProcess\postProcessInstance.cpp">
+      <Filter>postProcess</Filter>
+    </ClCompile>
+    <ClCompile Include="postProcess\graph\postProcessGraphInstance.cpp">
+      <Filter>postProcess\graph</Filter>
+    </ClCompile>
+    <ClCompile Include="postProcess\chain\postProcessChain.cpp">
+      <Filter>postProcess\chain</Filter>
+    </ClCompile>
+    <ClCompile Include="postProcess\chain\postProcessChainElement.cpp">
+      <Filter>postProcess\chain</Filter>
+    </ClCompile>
+    <ClCompile Include="postProcess\chain\postProcessChainOutputElement.cpp">
+      <Filter>postProcess\chain</Filter>
+    </ClCompile>
+    <ClCompile Include="postProcess\postProcessRenderTargetPointer.cpp">
+      <Filter>postProcess</Filter>
+    </ClCompile>
+    <ClCompile Include="postProcess\chain\postProcessChainProcessElement.cpp">
+      <Filter>postProcess\chain</Filter>
+    </ClCompile>
+    <ClCompile Include="postProcess\chain\postProcessChainInputElement.cpp">
+      <Filter>postProcess\chain</Filter>
+    </ClCompile>
+    <ClCompile Include="postProcess\graph\postProcessGraphProcessingContext.cpp">
+      <Filter>postProcess\graph</Filter>
+    </ClCompile>
+    <ClCompile Include="postProcess\chain\postProcessChainProcessingContext.cpp">
+      <Filter>postProcess\chain</Filter>
+    </ClCompile>
+    <ClCompile Include="library\libraryTool.cpp">
+      <Filter>library</Filter>
+    </ClCompile>
+    <ClCompile Include="library\tools\generateTexture.cpp">
+      <Filter>library\tools</Filter>
+    </ClCompile>
+    <ClCompile Include="loaders\loaderZX.cpp">
+      <Filter>loaders</Filter>
+    </ClCompile>
+    <ClCompile Include="loaders\loaderCircles.cpp">
+      <Filter>loaders</Filter>
+    </ClCompile>
+    <ClCompile Include="world\pointOfInterest.cpp">
+      <Filter>world</Filter>
+    </ClCompile>
+    <ClCompile Include="world\pointOfInterestInstance.cpp">
+      <Filter>world</Filter>
+    </ClCompile>
+    <ClCompile Include="world\region.cpp">
+      <Filter>world</Filter>
+    </ClCompile>
+    <ClCompile Include="world\environmentInfo.cpp">
+      <Filter>world</Filter>
+    </ClCompile>
+    <ClCompile Include="game\gameInput.cpp">
+      <Filter>game</Filter>
+    </ClCompile>
+    <ClCompile Include="game\gameInputDefinition.cpp">
+      <Filter>game</Filter>
+    </ClCompile>
+    <ClCompile Include="game\player.cpp">
+      <Filter>game</Filter>
+    </ClCompile>
+    <ClCompile Include="postProcess\chain\postProcessChainDefinition.cpp">
+      <Filter>postProcess\chain</Filter>
+    </ClCompile>
+    <ClCompile Include="render\doorInRoomProxy.cpp">
+      <Filter>render</Filter>
+    </ClCompile>
+    <ClCompile Include="library\libraryStoredReplacer.cpp">
+      <Filter>library</Filter>
+    </ClCompile>
+    <ClCompile Include="library\usedLibraryStoredAny.cpp">
+      <Filter>library</Filter>
+    </ClCompile>
+    <ClCompile Include="world\environmentParams.cpp">
+      <Filter>world</Filter>
+    </ClCompile>
+    <ClCompile Include="library\tools\modifyCurrentEnvironment.cpp">
+      <Filter>library\tools</Filter>
+    </ClCompile>
+    <ClCompile Include="game\tweakingContext.cpp">
+      <Filter>game</Filter>
+    </ClCompile>
+    <ClCompile Include="ai\aiMind.cpp">
+      <Filter>ai</Filter>
+    </ClCompile>
+    <ClCompile Include="ai\aiMindInstance.cpp">
+      <Filter>ai</Filter>
+    </ClCompile>
+    <ClCompile Include="module\moduleAI.cpp">
+      <Filter>module</Filter>
+    </ClCompile>
+    <ClCompile Include="module\moduleAIData.cpp">
+      <Filter>module</Filter>
+    </ClCompile>
+    <ClCompile Include="ai\aiLogic.cpp">
+      <Filter>ai</Filter>
+    </ClCompile>
+    <ClCompile Include="ai\aiLogics.cpp">
+      <Filter>ai</Filter>
+    </ClCompile>
+    <ClCompile Include="ai\registeredAILogic.cpp">
+      <Filter>ai</Filter>
+    </ClCompile>
+    <ClCompile Include="interfaces\aiMindOwner.cpp">
+      <Filter>interfaces</Filter>
+    </ClCompile>
+    <ClCompile Include="ai\aiMindExecution.cpp">
+      <Filter>ai</Filter>
+    </ClCompile>
+    <ClCompile Include="ai\aiITask.cpp">
+      <Filter>ai</Filter>
+    </ClCompile>
+    <ClCompile Include="ai\aiITaskOwner.cpp">
+      <Filter>ai</Filter>
+    </ClCompile>
+    <ClCompile Include="ai\aiLatentTask.cpp">
+      <Filter>ai</Filter>
+    </ClCompile>
+    <ClCompile Include="ai\aiLogicWithLatentTask.cpp">
+      <Filter>ai</Filter>
+    </ClCompile>
+    <ClCompile Include="ai\aiMessage.cpp">
+      <Filter>ai</Filter>
+    </ClCompile>
+    <ClCompile Include="ai\aiMessageQueue.cpp">
+      <Filter>ai</Filter>
+    </ClCompile>
+    <ClCompile Include="ai\aiIMessageHandler.cpp">
+      <Filter>ai</Filter>
+    </ClCompile>
+    <ClCompile Include="ai\aiParam.cpp">
+      <Filter>ai</Filter>
+    </ClCompile>
+    <ClCompile Include="object\item.cpp">
+      <Filter>object</Filter>
+    </ClCompile>
+    <ClCompile Include="object\itemType.cpp">
+      <Filter>object</Filter>
+    </ClCompile>
+    <ClCompile Include="module\moduleMovementOnFloor.cpp">
+      <Filter>module</Filter>
+    </ClCompile>
+    <ClCompile Include="module\moduleAppearanceData.cpp">
+      <Filter>module</Filter>
+    </ClCompile>
+    <ClCompile Include="module\moduleCollisionData.cpp">
+      <Filter>module</Filter>
+    </ClCompile>
+    <ClCompile Include="ai\aiLocomotion.cpp">
+      <Filter>ai</Filter>
+    </ClCompile>
+    <ClCompile Include="ai\movementParameters.cpp">
+      <Filter>ai</Filter>
+    </ClCompile>
+    <ClCompile Include="module\moduleMovementData.cpp">
+      <Filter>module</Filter>
+    </ClCompile>
+    <ClCompile Include="interfaces\worldElementOwner.cpp">
+      <Filter>interfaces</Filter>
+    </ClCompile>
+    <ClCompile Include="pipelines\uiPipeline.cpp">
+      <Filter>pipelines</Filter>
+    </ClCompile>
+    <ClCompile Include="appearance\appearanceController.cpp">
+      <Filter>appearance</Filter>
+    </ClCompile>
+    <ClCompile Include="appearance\appearanceControllerData.cpp">
+      <Filter>appearance</Filter>
+    </ClCompile>
+    <ClCompile Include="appearance\appearanceControllers.cpp">
+      <Filter>appearance</Filter>
+    </ClCompile>
+    <ClCompile Include="framework.cpp" />
+    <ClCompile Include="appearance\appearanceControllerPoseContext.cpp">
+      <Filter>appearance</Filter>
+    </ClCompile>
+    <ClCompile Include="appearance\controllers\ikSolver3.cpp">
+      <Filter>appearance\controllers</Filter>
+    </ClCompile>
+    <ClCompile Include="appearance\controllers\ikSolver2.cpp">
+      <Filter>appearance\controllers</Filter>
+    </ClCompile>
+    <ClCompile Include="appearance\controllers\walker.cpp">
+      <Filter>appearance\controllers</Filter>
+    </ClCompile>
+    <ClCompile Include="appearance\controllers\walkers.cpp">
+      <Filter>appearance\controllers</Filter>
+    </ClCompile>
+    <ClCompile Include="library\customLibraryStoredData.cpp">
+      <Filter>library</Filter>
+    </ClCompile>
+    <ClCompile Include="library\customLibraryDatas.cpp">
+      <Filter>library</Filter>
+    </ClCompile>
+    <ClCompile Include="presence\relativeToPresencePlacement.cpp">
+      <Filter>presence</Filter>
+    </ClCompile>
+    <ClCompile Include="interfaces\presenceObserver.cpp">
+      <Filter>interfaces</Filter>
+    </ClCompile>
+    <ClCompile Include="collision\collisionTrace.cpp">
+      <Filter>collision</Filter>
+    </ClCompile>
+    <ClCompile Include="sound\soundSample.cpp">
+      <Filter>sound</Filter>
+    </ClCompile>
+    <ClCompile Include="sound\soundScene.cpp">
+      <Filter>sound</Filter>
+    </ClCompile>
+    <ClCompile Include="sound\soundCamera.cpp">
+      <Filter>sound</Filter>
+    </ClCompile>
+    <ClCompile Include="sound\soundContext.cpp">
+      <Filter>sound</Filter>
+    </ClCompile>
+    <ClCompile Include="world\worldCamera.cpp">
+      <Filter>world</Filter>
+    </ClCompile>
+    <ClCompile Include="sound\soundSource.cpp">
+      <Filter>sound</Filter>
+    </ClCompile>
+    <ClCompile Include="sound\soundSources.cpp">
+      <Filter>sound</Filter>
+    </ClCompile>
+    <ClCompile Include="module\moduleSound.cpp">
+      <Filter>module</Filter>
+    </ClCompile>
+    <ClCompile Include="presence\presencePath.cpp">
+      <Filter>presence</Filter>
+    </ClCompile>
+    <ClCompile Include="sound\soundSampleInstance.cpp">
+      <Filter>sound</Filter>
+    </ClCompile>
+    <ClCompile Include="loaders\loaderVoidRoom.cpp">
+      <Filter>loaders</Filter>
+    </ClCompile>
+    <ClCompile Include="meshGen\meshGenElementShape.cpp">
+      <Filter>meshGen</Filter>
+    </ClCompile>
+    <ClCompile Include="meshGen\meshGenGenerationContext.cpp">
+      <Filter>meshGen</Filter>
+    </ClCompile>
+    <ClCompile Include="meshGen\meshGenUtils.cpp">
+      <Filter>meshGen</Filter>
+    </ClCompile>
+    <ClCompile Include="meshGen\meshGenElement.cpp">
+      <Filter>meshGen</Filter>
+    </ClCompile>
+    <ClCompile Include="meshGen\meshGenerator.cpp">
+      <Filter>meshGen</Filter>
+    </ClCompile>
+    <ClCompile Include="meshGen\meshGenElementModifier.cpp">
+      <Filter>meshGen</Filter>
+    </ClCompile>
+    <ClCompile Include="meshGen\shapes\basic\meshGenBasicShape_cube.cpp">
+      <Filter>meshGen\shapes\basic</Filter>
+    </ClCompile>
+    <ClCompile Include="meshGen\modifiers\meshGenModifiers.cpp">
+      <Filter>meshGen\modifiers</Filter>
+    </ClCompile>
+    <ClCompile Include="meshGen\shapes\meshGenBasicShapes.cpp">
+      <Filter>meshGen\shapes</Filter>
+    </ClCompile>
+    <ClCompile Include="meshGen\shapes\basic\meshGenBasicShape_sphere.cpp">
+      <Filter>meshGen\shapes\basic</Filter>
+    </ClCompile>
+    <ClCompile Include="meshGen\shapes\basic\meshGenBasicShape_cylinder.cpp">
+      <Filter>meshGen\shapes\basic</Filter>
+    </ClCompile>
+    <ClCompile Include="meshGen\meshGenElementInclude.cpp">
+      <Filter>meshGen</Filter>
+    </ClCompile>
+    <ClCompile Include="meshGen\meshGenElementSet.cpp">
+      <Filter>meshGen</Filter>
+    </ClCompile>
+    <ClCompile Include="meshGen\shapes\advanced\meshGenAdvancedShape_edgesSurfaces.cpp">
+      <Filter>meshGen\shapes\advanced</Filter>
+    </ClCompile>
+    <ClCompile Include="meshGen\shapes\meshGenAdvancedShapes.cpp">
+      <Filter>meshGen\shapes</Filter>
+    </ClCompile>
+    <ClCompile Include="meshGen\customData\meshGenCustomData.cpp">
+      <Filter>meshGen\customData</Filter>
+    </ClCompile>
+    <ClCompile Include="meshGen\customData\meshGenSpline.cpp">
+      <Filter>meshGen\customData</Filter>
+    </ClCompile>
+    <ClCompile Include="meshGen\customData\meshGenEdge.cpp">
+      <Filter>meshGen\customData</Filter>
+    </ClCompile>
+    <ClCompile Include="meshGen\meshGenSubStepDef.cpp">
+      <Filter>meshGen</Filter>
+    </ClCompile>
+    <ClCompile Include="meshGen\meshGenSurfaceDef.cpp">
+      <Filter>meshGen</Filter>
+    </ClCompile>
+    <ClCompile Include="meshGen\meshGenEdgeDef.cpp">
+      <Filter>meshGen</Filter>
+    </ClCompile>
+    <ClCompile Include="meshGen\meshGenNodeDef.cpp">
+      <Filter>meshGen</Filter>
+    </ClCompile>
+    <ClCompile Include="meshGen\shapes\advanced\meshGenAdvancedShape_crossSectionCylindrical.cpp">
+      <Filter>meshGen\shapes\advanced</Filter>
+    </ClCompile>
+    <ClCompile Include="meshGen\shapes\advanced\meshGenAdvancedShape_crossSectionAlong.cpp">
+      <Filter>meshGen\shapes\advanced</Filter>
+    </ClCompile>
+    <ClCompile Include="meshGen\customData\meshGenSplineRef.cpp">
+      <Filter>meshGen\customData</Filter>
+    </ClCompile>
+    <ClCompile Include="meshGen\customData\meshGenEdgeRef.cpp">
+      <Filter>meshGen\customData</Filter>
+    </ClCompile>
+    <ClCompile Include="meshGen\shapes\meshGenShapeUtils.cpp">
+      <Filter>meshGen\shapes</Filter>
+    </ClCompile>
+    <ClCompile Include="meshGen\meshGenUVDef.cpp">
+      <Filter>meshGen</Filter>
+    </ClCompile>
+    <ClCompile Include="meshGen\meshGenGenerationCondition.cpp">
+      <Filter>meshGen</Filter>
+    </ClCompile>
+    <ClCompile Include="meshGen\generationConditions\mggc_parameter.cpp">
+      <Filter>meshGen\generationConditions</Filter>
+    </ClCompile>
+    <ClCompile Include="meshGen\generationConditions\mggc_or.cpp">
+      <Filter>meshGen\generationConditions</Filter>
+    </ClCompile>
+    <ClCompile Include="meshGen\generationConditions\mggc_and.cpp">
+      <Filter>meshGen\generationConditions</Filter>
+    </ClCompile>
+    <ClCompile Include="meshGen\generationConditions\mggc_not.cpp">
+      <Filter>meshGen\generationConditions</Filter>
+    </ClCompile>
+    <ClCompile Include="appearance\controllers\ac_head.cpp">
+      <Filter>appearance\controllers</Filter>
+    </ClCompile>
+    <ClCompile Include="meshGen\modifiers\meshGenModifier_skew.cpp">
+      <Filter>meshGen\modifiers</Filter>
+    </ClCompile>
+    <ClCompile Include="meshGen\modifiers\meshGenModifier_mirror.cpp">
+      <Filter>meshGen\modifiers</Filter>
+    </ClCompile>
+    <ClCompile Include="frameworkRegisteredTypes.cpp" />
+    <ClCompile Include="game\gameConfig.cpp">
+      <Filter>game</Filter>
+    </ClCompile>
+    <ClCompile Include="meshGen\shapes\basic\meshGenBasicShape_convexHull.cpp">
+      <Filter>meshGen\shapes\basic</Filter>
+    </ClCompile>
+    <ClCompile Include="library\libraryLoadingContext.cpp">
+      <Filter>library</Filter>
+    </ClCompile>
+    <ClCompile Include="library\libraryStoredRenamer.cpp">
+      <Filter>library</Filter>
+    </ClCompile>
+    <ClCompile Include="template\template.cpp">
+      <Filter>template</Filter>
+    </ClCompile>
+    <ClCompile Include="template\createFromTemplate.cpp">
+      <Filter>template</Filter>
+    </ClCompile>
+    <ClCompile Include="minigames\platformer\platformerCharacter.cpp">
+      <Filter>minigames\platformer</Filter>
+    </ClCompile>
+    <ClCompile Include="minigames\platformer\platformerRoom.cpp">
+      <Filter>minigames\platformer</Filter>
+    </ClCompile>
+    <ClCompile Include="minigames\platformer\platformerGame.cpp">
+      <Filter>minigames\platformer</Filter>
+    </ClCompile>
+    <ClCompile Include="minigames\platformer\platformerInfo.cpp">
+      <Filter>minigames\platformer</Filter>
+    </ClCompile>
+    <ClCompile Include="minigames\platformer\platformerTile.cpp">
+      <Filter>minigames\platformer</Filter>
+    </ClCompile>
+    <ClCompile Include="pipelines\colourClashPipeline.cpp">
+      <Filter>pipelines</Filter>
+    </ClCompile>
+    <ClCompile Include="library\libraryGlobalReferences.cpp">
+      <Filter>library</Filter>
+    </ClCompile>
+    <ClCompile Include="world\worldObject.cpp">
+      <Filter>world</Filter>
+    </ClCompile>
+    <ClCompile Include="display\drawCommands\displayDrawCommand_border.cpp">
+      <Filter>display\drawCommands</Filter>
+    </ClCompile>
+    <ClCompile Include="display\drawCommands\displayDrawCommand_clearRegion.cpp">
+      <Filter>display\drawCommands</Filter>
+    </ClCompile>
+    <ClCompile Include="display\drawCommands\displayDrawCommand_cls.cpp">
+      <Filter>display\drawCommands</Filter>
+    </ClCompile>
+    <ClCompile Include="display\drawCommands\displayDrawCommand_holdDrawing.cpp">
+      <Filter>display\drawCommands</Filter>
+    </ClCompile>
+    <ClCompile Include="display\drawCommands\displayDrawCommand_textAt.cpp">
+      <Filter>display\drawCommands</Filter>
+    </ClCompile>
+    <ClCompile Include="display\drawCommands\displayDrawCommand_textAtBase.cpp">
+      <Filter>display\drawCommands</Filter>
+    </ClCompile>
+    <ClCompile Include="display\drawCommands\displayDrawCommand_textAtMultiline.cpp">
+      <Filter>display\drawCommands</Filter>
+    </ClCompile>
+    <ClCompile Include="display\drawCommands\displayDrawCommand_texturePart.cpp">
+      <Filter>display\drawCommands</Filter>
+    </ClCompile>
+    <ClCompile Include="display\display.cpp">
+      <Filter>display</Filter>
+    </ClCompile>
+    <ClCompile Include="display\displayButton.cpp">
+      <Filter>display</Filter>
+    </ClCompile>
+    <ClCompile Include="display\displayColourReplacer.cpp">
+      <Filter>display</Filter>
+    </ClCompile>
+    <ClCompile Include="display\displayControl.cpp">
+      <Filter>display</Filter>
+    </ClCompile>
+    <ClCompile Include="display\displayDrawContext.cpp">
+      <Filter>display</Filter>
+    </ClCompile>
+    <ClCompile Include="display\displayHardwareMeshGenerator.cpp">
+      <Filter>display</Filter>
+    </ClCompile>
+    <ClCompile Include="display\displayScrollBar.cpp">
+      <Filter>display</Filter>
+    </ClCompile>
+    <ClCompile Include="display\displaySetup.cpp">
+      <Filter>display</Filter>
+    </ClCompile>
+    <ClCompile Include="display\displayTable.cpp">
+      <Filter>display</Filter>
+    </ClCompile>
+    <ClCompile Include="display\displayText.cpp">
+      <Filter>display</Filter>
+    </ClCompile>
+    <ClCompile Include="display\displayTypes.cpp">
+      <Filter>display</Filter>
+    </ClCompile>
+    <ClCompile Include="display\displayUtils.cpp">
+      <Filter>display</Filter>
+    </ClCompile>
+    <ClCompile Include="display\displayType.cpp">
+      <Filter>display</Filter>
+    </ClCompile>
+    <ClCompile Include="text\localisedString.cpp">
+      <Filter>text</Filter>
+    </ClCompile>
+    <ClCompile Include="text\stringFormatter.cpp">
+      <Filter>text</Filter>
+    </ClCompile>
+    <ClCompile Include="text\textBlock.cpp">
+      <Filter>text</Filter>
+    </ClCompile>
+    <ClCompile Include="text\textBlockGenerator.cpp">
+      <Filter>text</Filter>
+    </ClCompile>
+    <ClCompile Include="text\textBlockInstance.cpp">
+      <Filter>text</Filter>
+    </ClCompile>
+    <ClCompile Include="text\textBlockRef.cpp">
+      <Filter>text</Filter>
+    </ClCompile>
+    <ClCompile Include="text\stringFormatterElement.cpp">
+      <Filter>text</Filter>
+    </ClCompile>
+    <ClCompile Include="text\textDesc.cpp">
+      <Filter>text</Filter>
+    </ClCompile>
+    <ClCompile Include="text\stringFormatterSerialisationHandlers.cpp">
+      <Filter>text</Filter>
+    </ClCompile>
+    <ClCompile Include="time\dateTime.cpp">
+      <Filter>time</Filter>
+    </ClCompile>
+    <ClCompile Include="time\time.cpp">
+      <Filter>time</Filter>
+    </ClCompile>
+    <ClCompile Include="time\dateTimeFormat.cpp">
+      <Filter>time</Filter>
+    </ClCompile>
+    <ClCompile Include="text\stringFormatterSerialisationHandler.cpp">
+      <Filter>text</Filter>
+    </ClCompile>
+    <ClCompile Include="vr\vrMeshes.cpp">
+      <Filter>vr</Filter>
+    </ClCompile>
+    <ClCompile Include="render\sceneRenderContext.cpp">
+      <Filter>render</Filter>
+    </ClCompile>
+    <ClCompile Include="appearance\controllers\ac_vr.cpp">
+      <Filter>appearance\controllers</Filter>
+    </ClCompile>
+    <ClCompile Include="object\temporaryObject.cpp">
+      <Filter>object</Filter>
+    </ClCompile>
+    <ClCompile Include="object\temporaryObjectType.cpp">
+      <Filter>object</Filter>
+    </ClCompile>
+    <ClCompile Include="module\moduleGameplay.cpp">
+      <Filter>module</Filter>
+    </ClCompile>
+    <ClCompile Include="module\moduleCollisionProjectile.cpp">
+      <Filter>module</Filter>
+    </ClCompile>
+    <ClCompile Include="module\moduleMovementProjectile.cpp">
+      <Filter>module</Filter>
+    </ClCompile>
+    <ClCompile Include="module\moduleGameplayProjectile.cpp">
+      <Filter>module</Filter>
+    </ClCompile>
+    <ClCompile Include="module\moduleCustom.cpp">
+      <Filter>module</Filter>
+    </ClCompile>
+    <ClCompile Include="module\moduleMovementHover.cpp">
+      <Filter>module</Filter>
+    </ClCompile>
+    <ClCompile Include="ai\aiTaskHandle.cpp">
+      <Filter>ai</Filter>
+    </ClCompile>
+    <ClCompile Include="ai\aiPerception.cpp">
+      <Filter>ai</Filter>
+    </ClCompile>
+    <ClCompile Include="ai\aiPerceptionRequest.cpp">
+      <Filter>ai</Filter>
+    </ClCompile>
+    <ClCompile Include="ai\aiMessageHandler.cpp">
+      <Filter>ai</Filter>
+    </ClCompile>
+    <ClCompile Include="meshGen\shapes\basic\meshGenBasicShapeData.cpp">
+      <Filter>meshGen\shapes\basic</Filter>
+    </ClCompile>
+    <ClCompile Include="module\moduleMovementPath.cpp">
+      <Filter>module</Filter>
+    </ClCompile>
+    <ClCompile Include="collision\checkCollisionCache.cpp">
+      <Filter>collision</Filter>
+    </ClCompile>
+    <ClCompile Include="meshGen\meshGenElementSocket.cpp">
+      <Filter>meshGen</Filter>
+    </ClCompile>
+    <ClCompile Include="appearance\controllers\ac_atSocket.cpp">
+      <Filter>appearance\controllers</Filter>
+    </ClCompile>
+    <ClCompile Include="appearance\socketID.cpp">
+      <Filter>appearance</Filter>
+    </ClCompile>
+    <ClCompile Include="appearance\controllers\ac_scale.cpp">
+      <Filter>appearance\controllers</Filter>
+    </ClCompile>
+    <ClCompile Include="render\lightSourceProxy.cpp">
+      <Filter>render</Filter>
+    </ClCompile>
+    <ClCompile Include="world\roomGeneratorInfo.cpp">
+      <Filter>world</Filter>
+    </ClCompile>
+    <ClCompile Include="world\roomGeneratorInfoSet.cpp">
+      <Filter>world</Filter>
+    </ClCompile>
+    <ClCompile Include="debug\debugVisualiserUtils.cpp">
+      <Filter>debug</Filter>
+    </ClCompile>
+    <ClCompile Include="wheresMyPoint\wmp_tools.cpp">
+      <Filter>wheresMyPoint</Filter>
+    </ClCompile>
+    <ClCompile Include="wheresMyPoint\wmp_applyBoneRenamer.cpp">
+      <Filter>wheresMyPoint</Filter>
+    </ClCompile>
+    <ClCompile Include="appearance\meshNode.cpp">
+      <Filter>appearance</Filter>
+    </ClCompile>
+    <ClCompile Include="meshGen\meshGenElementMeshNode.cpp">
+      <Filter>meshGen</Filter>
+    </ClCompile>
+    <ClCompile Include="wheresMyPoint\wmp_meshNode.cpp">
+      <Filter>wheresMyPoint</Filter>
+    </ClCompile>
+    <ClCompile Include="meshGen\meshGenElementForMeshNodes.cpp">
+      <Filter>meshGen</Filter>
+    </ClCompile>
+    <ClCompile Include="meshGen\meshGenMeshNodeContext.cpp">
+      <Filter>meshGen</Filter>
+    </ClCompile>
+    <ClCompile Include="meshGen\meshGenElementDropMeshNodes.cpp">
+      <Filter>meshGen</Filter>
+    </ClCompile>
+    <ClCompile Include="nav\navNode.cpp">
+      <Filter>nav</Filter>
+    </ClCompile>
+    <ClCompile Include="nav\navSystem.cpp">
+      <Filter>nav</Filter>
+    </ClCompile>
+    <ClCompile Include="nav\navTask.cpp">
+      <Filter>nav</Filter>
+    </ClCompile>
+    <ClCompile Include="nav\navMesh.cpp">
+      <Filter>nav</Filter>
+    </ClCompile>
+    <ClCompile Include="nav\tasks\navTask_DestroyNavMesh.cpp">
+      <Filter>nav\tasks</Filter>
+    </ClCompile>
+    <ClCompile Include="nav\nodes\navNode_Point.cpp">
+      <Filter>nav\nodes</Filter>
+    </ClCompile>
+    <ClCompile Include="nav\nodes\navNode_ConvexPolygon.cpp">
+      <Filter>nav\nodes</Filter>
+    </ClCompile>
+    <ClCompile Include="nav\tasks\navTask_BuildNavMesh.cpp">
+      <Filter>nav\tasks</Filter>
+    </ClCompile>
+    <ClCompile Include="module\moduleNavElement.cpp">
+      <Filter>module</Filter>
+    </ClCompile>
+    <ClCompile Include="ai\aiNavigation.cpp">
+      <Filter>ai</Filter>
+    </ClCompile>
+    <ClCompile Include="nav\tasks\navTask_FindPath.cpp">
+      <Filter>nav\tasks</Filter>
+    </ClCompile>
+    <ClCompile Include="nav\navPlacementAtNode.cpp">
+      <Filter>nav</Filter>
+    </ClCompile>
+    <ClCompile Include="nav\navPath.cpp">
+      <Filter>nav</Filter>
+    </ClCompile>
+    <ClCompile Include="nav\navNodeRequestor.cpp">
+      <Filter>nav</Filter>
+    </ClCompile>
+    <ClCompile Include="appearance\meshParticles.cpp">
+      <Filter>appearance</Filter>
+    </ClCompile>
+    <ClCompile Include="appearance\controllers\ac_particlesBase.cpp">
+      <Filter>appearance\controllers</Filter>
+    </ClCompile>
+    <ClCompile Include="appearance\controllers\particles\acp_freeRange.cpp">
+      <Filter>appearance\controllers\particles</Filter>
+    </ClCompile>
+    <ClCompile Include="meshGen\meshGenCheckpoint.cpp">
+      <Filter>meshGen</Filter>
+    </ClCompile>
+    <ClCompile Include="meshGen\meshGenElementAppearanceController.cpp">
+      <Filter>meshGen</Filter>
+    </ClCompile>
+    <ClCompile Include="meshGen\meshGenElementBone.cpp">
+      <Filter>meshGen</Filter>
+    </ClCompile>
+    <ClCompile Include="meshGen\bones\meshGenBone_bone.cpp">
+      <Filter>meshGen\bones</Filter>
+    </ClCompile>
+    <ClCompile Include="meshGen\bones\meshGenBones.cpp">
+      <Filter>meshGen\bones</Filter>
+    </ClCompile>
+    <ClCompile Include="meshGen\meshGenElementDoWheresMyPoint.cpp">
+      <Filter>meshGen</Filter>
+    </ClCompile>
+    <ClCompile Include="meshGen\meshGenElementRayCast.cpp">
+      <Filter>meshGen</Filter>
+    </ClCompile>
+    <ClCompile Include="meshGen\meshGenValueDef.cpp">
+      <Filter>meshGen</Filter>
+    </ClCompile>
+    <ClCompile Include="meshGen\meshGenCreateCollisionInfo.cpp">
+      <Filter>meshGen</Filter>
+    </ClCompile>
+    <ClCompile Include="meshGen\meshGenElementPointOfInterest.cpp">
+      <Filter>meshGen</Filter>
+    </ClCompile>
+    <ClCompile Include="appearance\controllers\ac_offset.cpp">
+      <Filter>appearance\controllers</Filter>
+    </ClCompile>
+    <ClCompile Include="appearance\controllers\ac_shake.cpp">
+      <Filter>appearance\controllers</Filter>
+    </ClCompile>
+    <ClCompile Include="world\doorTypeReplacer.cpp">
+      <Filter>world</Filter>
+    </ClCompile>
+    <ClCompile Include="nav\tasks\navTask_GetRandomLocation.cpp">
+      <Filter>nav\tasks</Filter>
+    </ClCompile>
+    <ClCompile Include="appearance\controllers\rotateTowards.cpp">
+      <Filter>appearance\controllers</Filter>
+    </ClCompile>
+    <ClCompile Include="nav\tasks\navTask_GetRandomPath.cpp">
+      <Filter>nav\tasks</Filter>
+    </ClCompile>
+    <ClCompile Include="appearance\controllers\ac_sway.cpp">
+      <Filter>appearance\controllers</Filter>
+    </ClCompile>
+    <ClCompile Include="wheresMyPoint\wmp_debugDrawLine.cpp">
+      <Filter>wheresMyPoint</Filter>
+    </ClCompile>
+    <ClCompile Include="wheresMyPoint\wmp_debugDrawArrow.cpp">
+      <Filter>wheresMyPoint</Filter>
+    </ClCompile>
+    <ClCompile Include="wheresMyPoint\wmp_debugDrawTransform.cpp">
+      <Filter>wheresMyPoint</Filter>
+    </ClCompile>
+    <ClCompile Include="meshGen\generationConditions\mggc_wheresMyPoint.cpp">
+      <Filter>meshGen\generationConditions</Filter>
+    </ClCompile>
+    <ClCompile Include="wheresMyPoint\wmp_makeBoneNameUnique.cpp">
+      <Filter>wheresMyPoint</Filter>
+    </ClCompile>
+    <ClCompile Include="meshGen\shapes\basic\meshGenBasicShape_capsule.cpp">
+      <Filter>meshGen\shapes\basic</Filter>
+    </ClCompile>
+    <ClCompile Include="meshGen\meshGenElementLoop.cpp">
+      <Filter>meshGen</Filter>
+    </ClCompile>
+    <ClCompile Include="appearance\controllers\ac_rotate.cpp">
+      <Filter>appearance\controllers</Filter>
+    </ClCompile>
+    <ClCompile Include="wheresMyPoint\wmp_bonePlacement.cpp">
+      <Filter>wheresMyPoint</Filter>
+    </ClCompile>
+    <ClCompile Include="wheresMyPoint\wmp_isLibraryNameValid.cpp">
+      <Filter>wheresMyPoint</Filter>
+    </ClCompile>
+    <ClCompile Include="wheresMyPoint\wmp_doesBoneExist.cpp">
+      <Filter>wheresMyPoint</Filter>
+    </ClCompile>
+    <ClCompile Include="appearance\controllers\ac_atRotator.cpp">
+      <Filter>appearance\controllers</Filter>
+    </ClCompile>
+    <ClCompile Include="module\custom\mc_display.cpp">
+      <Filter>module\custom</Filter>
+    </ClCompile>
+    <ClCompile Include="meshGen\shapes\advanced\meshGenAdvancedShape_flatDisplay.cpp">
+      <Filter>meshGen\shapes\advanced</Filter>
+    </ClCompile>
+    <ClCompile Include="game\gameInputProxy.cpp">
+      <Filter>game</Filter>
+    </ClCompile>
+    <ClCompile Include="ai\aiLogicData.cpp">
+      <Filter>ai</Filter>
+    </ClCompile>
+    <ClCompile Include="pipelines\displayPipeline.cpp">
+      <Filter>pipelines</Filter>
+    </ClCompile>
+    <ClCompile Include="display\displayDrawCommand.cpp">
+      <Filter>display</Filter>
+    </ClCompile>
+    <ClCompile Include="display\drawCommands\displayDrawCommand_custom.cpp">
+      <Filter>display\drawCommands</Filter>
+    </ClCompile>
+    <ClCompile Include="module\moduleSoundData.cpp">
+      <Filter>module</Filter>
+    </ClCompile>
+    <ClCompile Include="appearance\controllers\ac_bob.cpp">
+      <Filter>appearance\controllers</Filter>
+    </ClCompile>
+    <ClCompile Include="appearance\controllers\ac_footAdjuster.cpp">
+      <Filter>appearance\controllers</Filter>
+    </ClCompile>
+    <ClCompile Include="appearance\controllers\ac_atPlacement.cpp">
+      <Filter>appearance\controllers</Filter>
+    </ClCompile>
+    <ClCompile Include="ai\aiPerceptionRequestLatent.cpp">
+      <Filter>ai</Filter>
+    </ClCompile>
+    <ClCompile Include="object\scenery.cpp">
+      <Filter>object</Filter>
+    </ClCompile>
+    <ClCompile Include="object\sceneryType.cpp">
+      <Filter>object</Filter>
+    </ClCompile>
+    <ClCompile Include="sound\reverb.cpp">
+      <Filter>sound</Filter>
+    </ClCompile>
+    <ClCompile Include="presence\pathStringPulling.cpp">
+      <Filter>presence</Filter>
+    </ClCompile>
+    <ClCompile Include="collision\physicalMaterialMap.cpp">
+      <Filter>collision</Filter>
+    </ClCompile>
+    <ClCompile Include="sound\soundPlayParams.cpp">
+      <Filter>sound</Filter>
+    </ClCompile>
+    <ClCompile Include="debug\testConfig.cpp">
+      <Filter>game</Filter>
+    </ClCompile>
+    <ClCompile Include="appearance\controllers\particles\acp_emitter.cpp">
+      <Filter>appearance\controllers\particles</Filter>
+    </ClCompile>
+    <ClCompile Include="appearance\controllers\ac_particlesUtils.cpp">
+      <Filter>appearance\controllers</Filter>
+    </ClCompile>
+    <ClCompile Include="wheresMyPoint\wmp_uniqueID.cpp">
+      <Filter>wheresMyPoint</Filter>
+    </ClCompile>
+    <ClCompile Include="modulesOwner\modulesOwner.cpp">
+      <Filter>modulesOwner</Filter>
+    </ClCompile>
+    <ClCompile Include="modulesOwner\modulesOwnerVariable.cpp">
+      <Filter>modulesOwner</Filter>
+    </ClCompile>
+    <ClCompile Include="ai\aiSocial.cpp">
+      <Filter>ai</Filter>
+    </ClCompile>
+    <ClCompile Include="module\moduleTemporaryObjects.cpp">
+      <Filter>module</Filter>
+    </ClCompile>
+    <ClCompile Include="module\moduleTemporaryObjectsData.cpp">
+      <Filter>module</Filter>
+    </ClCompile>
+    <ClCompile Include="debug\debugPanel.cpp">
+      <Filter>debug</Filter>
+    </ClCompile>
+    <ClCompile Include="world\doorVRCorridor.cpp">
+      <Filter>world</Filter>
+    </ClCompile>
+    <ClCompile Include="meshGen\generationConditions\mggc_dev.cpp">
+      <Filter>meshGen\generationConditions</Filter>
+    </ClCompile>
+    <ClCompile Include="ai\aiMessageTemplate.cpp">
+      <Filter>ai</Filter>
+    </ClCompile>
+    <ClCompile Include="world\inRoomPlacement.cpp">
+      <Filter>world</Filter>
+    </ClCompile>
+    <ClCompile Include="nav\tasks\navTask_PathTask.cpp">
+      <Filter>nav\tasks</Filter>
+    </ClCompile>
+    <ClCompile Include="general\cooldowns.cpp">
+      <Filter>general</Filter>
+    </ClCompile>
+    <ClCompile Include="world\activationGroup.cpp">
+      <Filter>world</Filter>
+    </ClCompile>
+    <ClCompile Include="world\roomUtils.cpp">
+      <Filter>world</Filter>
+    </ClCompile>
+    <ClCompile Include="module\moduleMovementSwitch.cpp">
+      <Filter>module</Filter>
+    </ClCompile>
+    <ClCompile Include="world\roomGenerators\roomGenerator_roomPieceCombinerInfo.cpp">
+      <Filter>world\roomGenerators</Filter>
+    </ClCompile>
+    <ClCompile Include="world\roomGenerators\roomGenerator_chooseRoomType.cpp">
+      <Filter>world\roomGenerators</Filter>
+    </ClCompile>
+    <ClCompile Include="world\roomPieceCombinerGenerator.cpp">
+      <Filter>world</Filter>
+    </ClCompile>
+    <ClCompile Include="world\roomGenerators\roomGenerator_chooseRoomTypeForCorridor.cpp">
+      <Filter>world\roomGenerators</Filter>
+    </ClCompile>
+    <ClCompile Include="meshGen\modifiers\meshGenModifier_scale.cpp">
+      <Filter>meshGen\modifiers</Filter>
+    </ClCompile>
+    <ClCompile Include="game\delayedObjectCreation.cpp">
+      <Filter>game</Filter>
+    </ClCompile>
+    <ClCompile Include="appearance\controllers\particles\acp_localGravity.cpp">
+      <Filter>appearance\controllers\particles</Filter>
+    </ClCompile>
+    <ClCompile Include="appearance\controllers\ac_particlesContinuous.cpp">
+      <Filter>appearance\controllers</Filter>
+    </ClCompile>
+    <ClCompile Include="appearance\controllers\particles\acp_crumbs.cpp">
+      <Filter>appearance\controllers\particles</Filter>
+    </ClCompile>
+    <ClCompile Include="appearance\controllers\ac_providePlacementFromSocketMS.cpp">
+      <Filter>appearance\controllers</Filter>
+    </ClCompile>
+    <ClCompile Include="appearance\controllers\ac_providePlacementFromBoneMS.cpp">
+      <Filter>appearance\controllers</Filter>
+    </ClCompile>
+    <ClCompile Include="appearance\controllers\ac_readyHumanoidArm.cpp">
+      <Filter>appearance\controllers</Filter>
+    </ClCompile>
+    <ClCompile Include="appearance\controllers\ac_storeBoneOffset.cpp">
+      <Filter>appearance\controllers</Filter>
+    </ClCompile>
+    <ClCompile Include="appearance\controllers\ac_readyHumanoidSpine.cpp">
+      <Filter>appearance\controllers</Filter>
+    </ClCompile>
+    <ClCompile Include="appearance\controllers\ac_alignmentRoll.cpp">
+      <Filter>appearance\controllers</Filter>
+    </ClCompile>
+    <ClCompile Include="appearance\controllers\ac_orientAsOtherBone.cpp">
+      <Filter>appearance\controllers</Filter>
+    </ClCompile>
+    <ClCompile Include="appearance\controllers\ac_atBone.cpp">
+      <Filter>appearance\controllers</Filter>
+    </ClCompile>
+    <ClCompile Include="meshGen\modifiers\meshGenModifier_skinAlong.cpp">
+      <Filter>meshGen\modifiers</Filter>
+    </ClCompile>
+    <ClCompile Include="meshGen\modifiers\meshGenModifier_skinRange.cpp">
+      <Filter>meshGen\modifiers</Filter>
+    </ClCompile>
+    <ClCompile Include="appearance\controllers\ac_dragBoneUp.cpp">
+      <Filter>appearance\controllers</Filter>
+    </ClCompile>
+    <ClCompile Include="appearance\controllers\particles\acp_decal.cpp">
+      <Filter>appearance\controllers\particles</Filter>
+    </ClCompile>
+    <ClCompile Include="module\moduleMovementFastColliding.cpp">
+      <Filter>module</Filter>
+    </ClCompile>
+    <ClCompile Include="rest\rest.cpp">
+      <Filter>rest</Filter>
+    </ClCompile>
+    <ClCompile Include="module\moduleNavElementNode.cpp">
+      <Filter>module</Filter>
+    </ClCompile>
+    <ClCompile Include="sound\soundSourceModifier.cpp">
+      <Filter>sound</Filter>
+    </ClCompile>
+    <ClCompile Include="ai\aiSocialData.cpp">
+      <Filter>ai</Filter>
+    </ClCompile>
+    <ClCompile Include="ai\aiSocialRules.cpp">
+      <Filter>ai</Filter>
+    </ClCompile>
+    <ClCompile Include="render\renderSystem.cpp">
+      <Filter>render</Filter>
+    </ClCompile>
+    <ClCompile Include="world\regionGeneratorInfo.cpp">
+      <Filter>world</Filter>
+    </ClCompile>
+    <ClCompile Include="meshGen\shapes\advanced\meshGenAdvancedShape_lightning.cpp">
+      <Filter>meshGen\shapes\advanced</Filter>
+    </ClCompile>
+    <ClCompile Include="appearance\controllers\ac_particlesMeshParticles.cpp">
+      <Filter>appearance\controllers</Filter>
+    </ClCompile>
+    <ClCompile Include="appearance\controllers\particles\acp_lightning.cpp">
+      <Filter>appearance\controllers\particles</Filter>
+    </ClCompile>
+    <ClCompile Include="module\custom\mc_lightningSpawner.cpp">
+      <Filter>module\custom</Filter>
+    </ClCompile>
+    <ClCompile Include="appearance\controllers\ac_continuousRotation.cpp">
+      <Filter>appearance\controllers</Filter>
+    </ClCompile>
+    <ClCompile Include="appearance\controllers\ac_alignAxes.cpp">
+      <Filter>appearance\controllers</Filter>
+    </ClCompile>
+    <ClCompile Include="debug\previewAILogic.cpp">
+      <Filter>debug</Filter>
+    </ClCompile>
+    <ClCompile Include="appearance\controllers\ac_lean.cpp">
+      <Filter>appearance\controllers</Filter>
+    </ClCompile>
+    <ClCompile Include="appearance\controllers\ac_springPlacementMS.cpp">
+      <Filter>appearance\controllers</Filter>
+    </ClCompile>
+    <ClCompile Include="appearance\controllers\particles\acp_scale.cpp">
+      <Filter>appearance\controllers\particles</Filter>
+    </ClCompile>
+    <ClCompile Include="world\worldSetting.cpp">
+      <Filter>world</Filter>
+    </ClCompile>
+    <ClCompile Include="world\worldSettingCondition.cpp">
+      <Filter>world</Filter>
+    </ClCompile>
+    <ClCompile Include="wheresMyPoint\wmp_chooseLibraryStored.cpp">
+      <Filter>wheresMyPoint</Filter>
+    </ClCompile>
+    <ClCompile Include="wheresMyPoint\wmp_libraryName.cpp">
+      <Filter>wheresMyPoint</Filter>
+    </ClCompile>
+    <ClCompile Include="world\environmentOverlay.cpp">
+      <Filter>world</Filter>
+    </ClCompile>
+    <ClCompile Include="wheresMyPoint\wmp_environment.cpp">
+      <Filter>wheresMyPoint</Filter>
+    </ClCompile>
+    <ClCompile Include="ai\aiEnums.cpp">
+      <Filter>ai</Filter>
+    </ClCompile>
+    <ClCompile Include="meshGen\modifiers\meshGenModifier_setVAlong.cpp">
+      <Filter>meshGen\modifiers</Filter>
+    </ClCompile>
+    <ClCompile Include="meshGen\modifiers\meshGenModifier_setCustomData.cpp">
+      <Filter>meshGen\modifiers</Filter>
+    </ClCompile>
+    <ClCompile Include="module\custom\mc_lcdLetters.cpp">
+      <Filter>module\custom</Filter>
+    </ClCompile>
+    <ClCompile Include="appearance\controllers\ac_lagPlacementMS.cpp">
+      <Filter>appearance\controllers</Filter>
+    </ClCompile>
+    <ClCompile Include="wheresMyPoint\wmp_nominalDoorSize.cpp">
+      <Filter>wheresMyPoint</Filter>
+    </ClCompile>
+    <ClCompile Include="meshGen\meshGenConfig.cpp">
+      <Filter>meshGen</Filter>
+    </ClCompile>
+    <ClCompile Include="meshGen\generationConditions\mggc_allowMoreDetails.cpp">
+      <Filter>meshGen\generationConditions</Filter>
+    </ClCompile>
+    <ClCompile Include="wheresMyPoint\wmp_regionGenerator.cpp">
+      <Filter>wheresMyPoint</Filter>
+    </ClCompile>
+    <ClCompile Include="appearance\controllers\ac_gyro.cpp">
+      <Filter>appearance\controllers</Filter>
+    </ClCompile>
+    <ClCompile Include="meshGen\meshGenElementRandomSet.cpp">
+      <Filter>meshGen</Filter>
+    </ClCompile>
+    <ClCompile Include="time\distance.cpp">
+      <Filter>time</Filter>
+    </ClCompile>
+    <ClCompile Include="appearance\controllers\ac_provideFingerTipPlacementMS.cpp">
+      <Filter>appearance\controllers</Filter>
+    </ClCompile>
+    <ClCompile Include="appearance\meshLibInstance.cpp">
+      <Filter>appearance</Filter>
+    </ClCompile>
+    <ClCompile Include="game\gameUtils.cpp">
+      <Filter>game</Filter>
+    </ClCompile>
+    <ClCompile Include="meshGen\meshGenElementInfo.cpp">
+      <Filter>meshGen</Filter>
+    </ClCompile>
+    <ClCompile Include="meshGen\meshGenGenerationInfo.cpp">
+      <Filter>meshGen</Filter>
+    </ClCompile>
+    <ClCompile Include="meshGen\meshGenElementIncludeStack.cpp">
+      <Filter>meshGen</Filter>
+    </ClCompile>
+    <ClCompile Include="meshGen\modifiers\meshGenModifier_scalePerVertex.cpp">
+      <Filter>meshGen\modifiers</Filter>
+    </ClCompile>
+    <ClCompile Include="appearance\controllers\particles\acp_dissolve.cpp">
+      <Filter>appearance\controllers\particles</Filter>
+    </ClCompile>
+    <ClCompile Include="appearance\controllers\particleModifiers\acpm_scaleEach.cpp">
+      <Filter>appearance\controllers\particleModifiers</Filter>
+    </ClCompile>
+    <ClCompile Include="wheresMyPoint\wmp_makeSocketNameUnique.cpp">
+      <Filter>wheresMyPoint</Filter>
+    </ClCompile>
+    <ClCompile Include="wheresMyPoint\wmp_allowMoreDetails.cpp">
+      <Filter>wheresMyPoint</Filter>
+    </ClCompile>
+    <ClCompile Include="appearance\controllers\ac_tentacle.cpp">
+      <Filter>appearance\controllers</Filter>
+    </ClCompile>
+    <ClCompile Include="appearance\controllers\particleModifiers\acpm_intensityToNumber.cpp">
+      <Filter>appearance\controllers\particleModifiers</Filter>
+    </ClCompile>
+    <ClCompile Include="module\moduleMovementFastCollidingProjectile.cpp">
+      <Filter>module</Filter>
+    </ClCompile>
+    <ClCompile Include="meshGen\generationConditions\mggc_bigEnoughForLOD.cpp">
+      <Filter>meshGen\generationConditions</Filter>
+    </ClCompile>
+    <ClCompile Include="world\worldAddress.cpp">
+      <Filter>world</Filter>
+    </ClCompile>
+    <ClCompile Include="ai\aiHunch.cpp">
+      <Filter>ai</Filter>
+    </ClCompile>
+    <ClCompile Include="latent\functions\latentWaitForTask.cpp">
+      <Filter>latent\functions</Filter>
+    </ClCompile>
+    <ClCompile Include="module\moduleRareAdvance.cpp">
+      <Filter>module</Filter>
+    </ClCompile>
+    <ClCompile Include="meshGen\generationConditions\mggc_gameTags.cpp">
+      <Filter>meshGen\generationConditions</Filter>
+    </ClCompile>
+    <ClCompile Include="world\pseudoRoomRegion.cpp">
+      <Filter>world</Filter>
+    </ClCompile>
+    <ClCompile Include="meshGen\modifiers\meshGenModifier_dropMesh.cpp">
+      <Filter>meshGen\modifiers</Filter>
+    </ClCompile>
+    <ClCompile Include="meshGen\modifiers\meshGenModifier_matchPlacement.cpp">
+      <Filter>meshGen\modifiers</Filter>
+    </ClCompile>
+    <ClCompile Include="wheresMyPoint\wmp_getParameterFromLibraryStored.cpp">
+      <Filter>wheresMyPoint</Filter>
+    </ClCompile>
+    <ClCompile Include="meshGen\meshGenElementGetFromMeshNode.cpp">
+      <Filter>meshGen</Filter>
+    </ClCompile>
+    <ClCompile Include="meshGen\modifiers\meshGenModifier_cut.cpp">
+      <Filter>meshGen\modifiers</Filter>
+    </ClCompile>
+    <ClCompile Include="meshGen\modifiers\meshGenModifierUtils.cpp">
+      <Filter>meshGen\modifiers</Filter>
+    </ClCompile>
+    <ClCompile Include="meshGen\generationConditions\mggc_previewGame.cpp">
+      <Filter>meshGen\generationConditions</Filter>
+    </ClCompile>
+    <ClCompile Include="meshGen\modifiers\meshGenModifier_extract.cpp">
+      <Filter>meshGen\modifiers</Filter>
+    </ClCompile>
+    <ClCompile Include="wheresMyPoint\wmp_randomGenerator.cpp">
+      <Filter>wheresMyPoint</Filter>
+    </ClCompile>
+    <ClCompile Include="world\spaceBlocker.cpp">
+      <Filter>world</Filter>
+    </ClCompile>
+    <ClCompile Include="meshGen\meshGenCreateSpaceBlockerInfo.cpp">
+      <Filter>meshGen</Filter>
+    </ClCompile>
+    <ClCompile Include="object\spaceBlockingObject.cpp">
+      <Filter>object</Filter>
+    </ClCompile>
+    <ClCompile Include="object\spaceBlockingObjectType.cpp">
+      <Filter>object</Filter>
+    </ClCompile>
+    <ClCompile Include="meshGen\modifiers\meshGenModifier_validateSpaceBlocker.cpp">
+      <Filter>meshGen\modifiers</Filter>
+    </ClCompile>
+    <ClCompile Include="meshGen\shapes\advanced\meshGenAdvancedShape_crossSections.cpp">
+      <Filter>meshGen\shapes\advanced</Filter>
+    </ClCompile>
+    <ClCompile Include="module\moduleGameplayPreview.cpp">
+      <Filter>module</Filter>
+    </ClCompile>
+    <ClCompile Include="appearance\controllers\ac_previewControllerTransform.cpp">
+      <Filter>appearance\controllers</Filter>
+    </ClCompile>
+    <ClCompile Include="meshGen\modifiers\meshGenModifier_invertNormals.cpp">
+      <Filter>meshGen\modifiers</Filter>
+    </ClCompile>
+    <ClCompile Include="module\moduleMovementDial.cpp">
+      <Filter>module</Filter>
+    </ClCompile>
+    <ClCompile Include="module\moduleMovementInteractivePart.cpp">
+      <Filter>module</Filter>
+    </ClCompile>
+    <ClCompile Include="loaders\loaderBase.cpp">
+      <Filter>loaders</Filter>
+    </ClCompile>
+    <ClCompile Include="loaders\loaderLoadingLogo.cpp">
+      <Filter>loaders</Filter>
+    </ClCompile>
+    <ClCompile Include="loaders\loaderSequence.cpp">
+      <Filter>loaders</Filter>
+    </ClCompile>
+    <ClCompile Include="loaders\loaderText.cpp">
+      <Filter>loaders</Filter>
+    </ClCompile>
+    <ClCompile Include="appearance\lightSource.cpp">
+      <Filter>appearance</Filter>
+    </ClCompile>
+    <ClCompile Include="module\custom\mc_lightSources.cpp">
+      <Filter>module\custom</Filter>
+    </ClCompile>
+    <ClCompile Include="appearance\controllers\ac_animTransformToVar.cpp">
+      <Filter>appearance\controllers</Filter>
+    </ClCompile>
+    <ClCompile Include="appearance\controllers\ac_applyTransformToVar.cpp">
+      <Filter>appearance\controllers</Filter>
+    </ClCompile>
+    <ClCompile Include="meshGen\shapes\advanced\meshGenAdvancedShape_desert.cpp">
+      <Filter>meshGen\shapes\advanced</Filter>
+    </ClCompile>
+    <ClCompile Include="meshGen\shapes\basic\meshGenBasicShape_boundingBox.cpp">
+      <Filter>meshGen\shapes\basic</Filter>
+    </ClCompile>
+    <ClCompile Include="meshGen\modifiers\meshGenModifier_kaleidoscope.cpp">
+      <Filter>meshGen\modifiers</Filter>
+    </ClCompile>
+    <ClCompile Include="meshGen\modifiers\meshGenModifier_skinAlongChain.cpp">
+      <Filter>meshGen\modifiers</Filter>
+    </ClCompile>
+    <ClCompile Include="meshGen\modifiers\meshGenModifierSelection.cpp">
+      <Filter>meshGen\modifiers</Filter>
+    </ClCompile>
+    <ClCompile Include="meshGen\generationConditions\mggc_bullshotSystem.cpp">
+      <Filter>meshGen\generationConditions</Filter>
+    </ClCompile>
+    <ClCompile Include="meshGen\generationConditions\mggc_lod.cpp">
+      <Filter>meshGen\generationConditions</Filter>
+    </ClCompile>
+    <ClCompile Include="meshGen\generationConditions\mggc_systemTags.cpp">
+      <Filter>meshGen\generationConditions</Filter>
+    </ClCompile>
+    <ClCompile Include="game\bullshotSystem.cpp">
+      <Filter>game</Filter>
+    </ClCompile>
+    <ClCompile Include="nav\navFlags.cpp">
+      <Filter>nav</Filter>
+    </ClCompile>
+    <ClCompile Include="sound\soundSampleTextCache.cpp">
+      <Filter>sound</Filter>
+    </ClCompile>
+    <ClCompile Include="general\cooldownsTimeStampBased.cpp">
+      <Filter>general</Filter>
+    </ClCompile>
+    <ClCompile Include="meshGen\meshGenSimplifyToBoxInfo.cpp">
+      <Filter>meshGen</Filter>
+    </ClCompile>
+    <ClCompile Include="module\custom\mc_temporaryObjectSpawner.cpp">
+      <Filter>module\custom</Filter>
+    </ClCompile>
+    <ClCompile Include="module\custom\mc_lcdLights.cpp">
+      <Filter>module\custom</Filter>
+    </ClCompile>
+    <ClCompile Include="meshGen\modifiers\meshGenModifier_simplifyToBox.cpp">
+      <Filter>meshGen\modifiers</Filter>
+    </ClCompile>
+    <ClCompile Include="appearance\controllers\ac_matchPlacementObject.cpp">
+      <Filter>appearance\controllers</Filter>
+    </ClCompile>
+    <ClCompile Include="appearance\controllers\ac_rotateTowardsObject.cpp">
+      <Filter>appearance\controllers</Filter>
+    </ClCompile>
+    <ClCompile Include="wheresMyPoint\wmp_previewGame.cpp">
+      <Filter>wheresMyPoint</Filter>
+    </ClCompile>
+    <ClCompile Include="world\predefinedRoomOcclusionCulling.cpp">
+      <Filter>world</Filter>
+    </ClCompile>
+    <ClCompile Include="meshGen\modifiers\meshGenModifier_splitMovementCollision.cpp">
+      <Filter>meshGen\modifiers</Filter>
+    </ClCompile>
+    <ClCompile Include="meshGen\meshGenElementMeshProcessor.cpp">
+      <Filter>meshGen</Filter>
+    </ClCompile>
+    <ClCompile Include="meshGen\meshProcessorOperators\meshGenMeshProcessorOperators.cpp">
+      <Filter>meshGen\meshProcessorOperators</Filter>
+    </ClCompile>
+    <ClCompile Include="meshGen\meshProcessorOperators\meshGenMeshProcOp_weld.cpp">
+      <Filter>meshGen\meshProcessorOperators</Filter>
+    </ClCompile>
+    <ClCompile Include="meshGen\meshProcessorOperators\meshGenMeshProcOp_cut.cpp">
+      <Filter>meshGen\meshProcessorOperators</Filter>
+    </ClCompile>
+    <ClCompile Include="meshGen\meshProcessorOperators\meshGenMeshProcOp_split.cpp">
+      <Filter>meshGen\meshProcessorOperators</Filter>
+    </ClCompile>
+    <ClCompile Include="meshGen\meshProcessorOperators\meshGenMeshProcOp_closeConvexGapOnPlane.cpp">
+      <Filter>meshGen\meshProcessorOperators</Filter>
+    </ClCompile>
+    <ClCompile Include="meshGen\meshProcessorOperators\meshGenMeshProcOp_changeMaterial.cpp">
+      <Filter>meshGen\meshProcessorOperators</Filter>
+    </ClCompile>
+    <ClCompile Include="meshGen\meshProcessorOperators\meshGenMeshProcOp_duplicate.cpp">
+      <Filter>meshGen\meshProcessorOperators</Filter>
+    </ClCompile>
+    <ClCompile Include="meshGen\meshProcessorOperators\meshGenMeshProcOp_reverseSurfaces.cpp">
+      <Filter>meshGen\meshProcessorOperators</Filter>
+    </ClCompile>
+    <ClCompile Include="meshGen\meshProcessorOperators\meshGenMeshProcOp_removeSurfaces.cpp">
+      <Filter>meshGen\meshProcessorOperators</Filter>
+    </ClCompile>
+    <ClCompile Include="meshGen\meshProcessorOperators\meshGenMeshProcOp_skin.cpp">
+      <Filter>meshGen\meshProcessorOperators</Filter>
+    </ClCompile>
+    <ClCompile Include="meshGen\meshProcessorOperators\meshGenMeshProcOp_setU.cpp">
+      <Filter>meshGen\meshProcessorOperators</Filter>
+    </ClCompile>
+    <ClCompile Include="meshGen\meshProcessorOperators\meshGenMeshProcOp_extrude.cpp">
+      <Filter>meshGen\meshProcessorOperators</Filter>
+    </ClCompile>
+    <ClCompile Include="meshGen\meshProcessorOperators\meshGenMeshProcOp_select.cpp">
+      <Filter>meshGen\meshProcessorOperators</Filter>
+    </ClCompile>
+    <ClCompile Include="wheresMyPoint\wmp_lod.cpp">
+      <Filter>wheresMyPoint</Filter>
+    </ClCompile>
+    <ClCompile Include="meshGen\meshProcessorOperators\meshGenMeshProcOp_delete.cpp">
+      <Filter>meshGen\meshProcessorOperators</Filter>
+    </ClCompile>
+    <ClCompile Include="meshGen\meshProcessorOperators\meshGenMeshProcOp_deform.cpp">
+      <Filter>meshGen\meshProcessorOperators</Filter>
+    </ClCompile>
+    <ClCompile Include="meshGen\modifiers\meshGenModifier_anyData.cpp">
+      <Filter>meshGen\modifiers</Filter>
+    </ClCompile>
+    <ClCompile Include="meshGen\modifiers\meshGenModifier_dropSpaceBlocker.cpp">
+      <Filter>meshGen\modifiers</Filter>
+    </ClCompile>
+    <ClCompile Include="meshGen\modifiers\meshGenModifier_convexifyMovementCollision.cpp">
+      <Filter>meshGen\modifiers</Filter>
+    </ClCompile>
+    <ClCompile Include="meshGen\meshProcessorOperators\meshGenMeshProcOp_dropVerticesOnPlane.cpp">
+      <Filter>meshGen\meshProcessorOperators</Filter>
+    </ClCompile>
+    <ClCompile Include="meshGen\generationConditions\mggc_slidingLocomotion.cpp">
+      <Filter>meshGen\generationConditions</Filter>
+    </ClCompile>
+    <ClCompile Include="meshGen\meshProcessorOperators\meshGenMeshProcOp_scale.cpp">
+      <Filter>meshGen\meshProcessorOperators</Filter>
+    </ClCompile>
+    <ClCompile Include="module\moduleCollisionHeaded.cpp">
+      <Filter>module</Filter>
+    </ClCompile>
+    <ClCompile Include="module\moduleMovementHoverOld.cpp">
+      <Filter>module</Filter>
+    </ClCompile>
+    <ClCompile Include="general\libraryBasedParameters.cpp">
+      <Filter>general</Filter>
+    </ClCompile>
+    <ClCompile Include="appearance\controllers\particles\acp_dust.cpp">
+      <Filter>appearance\controllers\particles</Filter>
+    </ClCompile>
+    <ClCompile Include="library\tools\generateFontTexture.cpp">
+      <Filter>library\tools</Filter>
+    </ClCompile>
+    <ClCompile Include="meshGen\meshProcessorOperators\meshGenMeshProcOp_scaleVerticesOnPlane.cpp">
+      <Filter>meshGen\meshProcessorOperators</Filter>
+    </ClCompile>
+    <ClCompile Include="wheresMyPoint\wmp_slidingLocomotion.cpp">
+      <Filter>wheresMyPoint</Filter>
+    </ClCompile>
+    <ClCompile Include="appearance\meshDepot.cpp">
+      <Filter>appearance</Filter>
+    </ClCompile>
+    <ClCompile Include="appearance\generatedMeshDeterminants.cpp">
+      <Filter>appearance</Filter>
+    </ClCompile>
+    <ClCompile Include="appearance\controllers\ac_autoBlendBones.cpp">
+      <Filter>appearance\controllers</Filter>
+    </ClCompile>
+    <ClCompile Include="appearance\controllers\ac_combineVariables.cpp">
+      <Filter>appearance\controllers</Filter>
+    </ClCompile>
+    <ClCompile Include="meshGen\meshProcessorOperators\meshGenMeshProcOp_setCustomData.cpp">
+      <Filter>meshGen\meshProcessorOperators</Filter>
+    </ClCompile>
+    <ClCompile Include="appearance\controllers\ac_reorientate.cpp">
+      <Filter>appearance\controllers</Filter>
+    </ClCompile>
+    <ClCompile Include="appearance\controllers\ac_adjustWalkerPlacements.cpp">
+      <Filter>appearance\controllers</Filter>
+    </ClCompile>
+    <ClCompile Include="meshGen\meshProcessorOperators\meshGenMeshProcOp_skinBetween.cpp">
+      <Filter>meshGen\meshProcessorOperators</Filter>
+    </ClCompile>
+    <ClCompile Include="appearance\controllers\ac_poseManager.cpp">
+      <Filter>appearance\controllers</Filter>
+    </ClCompile>
+    <ClCompile Include="appearance\controllers\ac_poseInject.cpp">
+      <Filter>appearance\controllers</Filter>
+    </ClCompile>
+    <ClCompile Include="appearance\controllers\components\acc_keepChildrenWhereTheyWere.cpp">
+      <Filter>appearance\controllers\components</Filter>
+    </ClCompile>
+    <ClCompile Include="appearance\controllers\ac_providePlacementFromOtherIMOSocketMS.cpp">
+      <Filter>appearance\controllers</Filter>
+    </ClCompile>
+    <ClCompile Include="text\localisedCharacters.cpp">
+      <Filter>text</Filter>
+    </ClCompile>
+    <ClCompile Include="loaders\loaderEmpty.cpp">
+      <Filter>loaders</Filter>
+    </ClCompile>
+    <ClCompile Include="appearance\controllers\ac_applyBoneOffset.cpp">
+      <Filter>appearance\controllers</Filter>
+    </ClCompile>
+    <ClCompile Include="appearance\controllers\ac_copyRoomVariables.cpp">
+      <Filter>appearance\controllers</Filter>
+    </ClCompile>
+    <ClCompile Include="wheresMyPoint\wmp_hasDoor.cpp">
+      <Filter>wheresMyPoint</Filter>
+    </ClCompile>
+    <ClCompile Include="meshGen\meshGenElementNamedCheckpoint.cpp">
+      <Filter>meshGen</Filter>
+    </ClCompile>
+    <ClCompile Include="meshGen\meshProcessorOperators\meshGenMeshProcOp_setCustomDataDistanceBased.cpp">
+      <Filter>meshGen\meshProcessorOperators</Filter>
+    </ClCompile>
+    <ClCompile Include="appearance\controllers\particles\acp_orientationOffset.cpp">
+      <Filter>appearance\controllers\particles</Filter>
+    </ClCompile>
+    <ClCompile Include="appearance\controllers\ac_forthAndBackVar.cpp">
+      <Filter>appearance\controllers</Filter>
+    </ClCompile>
+    <ClCompile Include="meshGen\generationConditions\mggc_videoOptions.cpp">
+      <Filter>meshGen\generationConditions</Filter>
+    </ClCompile>
+    <ClCompile Include="appearance\controllers\ac_handToLegs.cpp">
+      <Filter>appearance\controllers</Filter>
+    </ClCompile>
+    <ClCompile Include="module\custom\mc_vrPlacementsProvider.cpp">
+      <Filter>module\custom</Filter>
+    </ClCompile>
+    <ClCompile Include="meshGen\meshProcessorOperators\meshGenMeshProcOp_numberCustomData.cpp">
+      <Filter>meshGen\meshProcessorOperators</Filter>
+    </ClCompile>
+    <ClCompile Include="gameScript\gameScript.cpp">
+      <Filter>gameScript</Filter>
+    </ClCompile>
+    <ClCompile Include="gameScript\gameScriptCondition.cpp">
+      <Filter>gameScript</Filter>
+    </ClCompile>
+    <ClCompile Include="gameScript\gameScriptElement.cpp">
+      <Filter>gameScript</Filter>
+    </ClCompile>
+    <ClCompile Include="gameScript\gameScriptExecution.cpp">
+      <Filter>gameScript</Filter>
+    </ClCompile>
+    <ClCompile Include="gameScript\registeredGameScriptConditions.cpp">
+      <Filter>gameScript</Filter>
+    </ClCompile>
+    <ClCompile Include="gameScript\registeredGameScriptElements.cpp">
+      <Filter>gameScript</Filter>
+    </ClCompile>
+    <ClCompile Include="gameScript\elements\gse_aiMessage.cpp">
+      <Filter>gameScript\elements</Filter>
+    </ClCompile>
+    <ClCompile Include="gameScript\elements\gse_appearance.cpp">
+      <Filter>gameScript\elements</Filter>
+    </ClCompile>
+    <ClCompile Include="gameScript\elements\gse_blendObjectVar.cpp">
+      <Filter>gameScript\elements</Filter>
+    </ClCompile>
+    <ClCompile Include="gameScript\elements\gse_blendRoomVar.cpp">
+      <Filter>gameScript\elements</Filter>
+    </ClCompile>
+    <ClCompile Include="gameScript\elements\gse_ceaseToExist.cpp">
+      <Filter>gameScript\elements</Filter>
+    </ClCompile>
+    <ClCompile Include="gameScript\elements\gse_changeScript.cpp">
+      <Filter>gameScript\elements</Filter>
+    </ClCompile>
+    <ClCompile Include="gameScript\elements\gse_collision.cpp">
+      <Filter>gameScript\elements</Filter>
+    </ClCompile>
+    <ClCompile Include="gameScript\elements\gse_controller.cpp">
+      <Filter>gameScript\elements</Filter>
+    </ClCompile>
+    <ClCompile Include="gameScript\elements\gse_copyObjectVar.cpp">
+      <Filter>gameScript\elements</Filter>
+    </ClCompile>
+    <ClCompile Include="gameScript\elements\gse_copyVar.cpp">
+      <Filter>gameScript\elements</Filter>
+    </ClCompile>
+    <ClCompile Include="gameScript\elements\gse_derandomizeVar.cpp">
+      <Filter>gameScript\elements</Filter>
+    </ClCompile>
+    <ClCompile Include="gameScript\elements\gse_devPause.cpp">
+      <Filter>gameScript\elements</Filter>
+    </ClCompile>
+    <ClCompile Include="gameScript\elements\gse_door.cpp">
+      <Filter>gameScript\elements</Filter>
+    </ClCompile>
+    <ClCompile Include="gameScript\elements\gse_endScript.cpp">
+      <Filter>gameScript\elements</Filter>
+    </ClCompile>
+    <ClCompile Include="gameScript\elements\gse_find.cpp">
+      <Filter>gameScript\elements</Filter>
+    </ClCompile>
+    <ClCompile Include="gameScript\elements\gse_getObjectVar.cpp">
+      <Filter>gameScript\elements</Filter>
+    </ClCompile>
+    <ClCompile Include="gameScript\elements\gse_goSubLabel.cpp">
+      <Filter>gameScript\elements</Filter>
+    </ClCompile>
+    <ClCompile Include="gameScript\elements\gse_goToLabel.cpp">
+      <Filter>gameScript\elements</Filter>
+    </ClCompile>
+    <ClCompile Include="gameScript\elements\gse_goToRandomLabel.cpp">
+      <Filter>gameScript\elements</Filter>
+    </ClCompile>
+    <ClCompile Include="gameScript\elements\gse_info.cpp">
+      <Filter>gameScript\elements</Filter>
+    </ClCompile>
+    <ClCompile Include="gameScript\elements\gse_label.cpp">
+      <Filter>gameScript\elements</Filter>
+    </ClCompile>
+    <ClCompile Include="gameScript\elements\gse_lightningSpawner.cpp">
+      <Filter>gameScript\elements</Filter>
+    </ClCompile>
+    <ClCompile Include="gameScript\elements\gse_lightSource.cpp">
+      <Filter>gameScript\elements</Filter>
+    </ClCompile>
+    <ClCompile Include="gameScript\elements\gse_locomotion.cpp">
+      <Filter>gameScript\elements</Filter>
+    </ClCompile>
+    <ClCompile Include="gameScript\elements\gse_movementControl.cpp">
+      <Filter>gameScript\elements</Filter>
+    </ClCompile>
+    <ClCompile Include="gameScript\elements\gse_movementScripted.cpp">
+      <Filter>gameScript\elements</Filter>
+    </ClCompile>
+    <ClCompile Include="gameScript\elements\gse_output.cpp">
+      <Filter>gameScript\elements</Filter>
+    </ClCompile>
+    <ClCompile Include="gameScript\elements\gse_physicalSensation.cpp">
+      <Filter>gameScript\elements</Filter>
+    </ClCompile>
+    <ClCompile Include="gameScript\elements\gse_presence.cpp">
+      <Filter>gameScript\elements</Filter>
+    </ClCompile>
+    <ClCompile Include="gameScript\elements\gse_presenceForceDisplacementVRAnchor.cpp">
+      <Filter>gameScript\elements</Filter>
+    </ClCompile>
+    <ClCompile Include="gameScript\elements\gse_resetObjectVar.cpp">
+      <Filter>gameScript\elements</Filter>
+    </ClCompile>
+    <ClCompile Include="gameScript\elements\gse_returnSub.cpp">
+      <Filter>gameScript\elements</Filter>
+    </ClCompile>
+    <ClCompile Include="gameScript\elements\gse_roomAppearance.cpp">
+      <Filter>gameScript\elements</Filter>
+    </ClCompile>
+    <ClCompile Include="gameScript\elements\gse_setObjectVar.cpp">
+      <Filter>gameScript\elements</Filter>
+    </ClCompile>
+    <ClCompile Include="gameScript\elements\gse_setPresencePath.cpp">
+      <Filter>gameScript\elements</Filter>
+    </ClCompile>
+    <ClCompile Include="gameScript\elements\gse_setRoomVar.cpp">
+      <Filter>gameScript\elements</Filter>
+    </ClCompile>
+    <ClCompile Include="gameScript\elements\gse_sound.cpp">
+      <Filter>gameScript\elements</Filter>
+    </ClCompile>
+    <ClCompile Include="gameScript\elements\gse_startSubScript.cpp">
+      <Filter>gameScript\elements</Filter>
+    </ClCompile>
+    <ClCompile Include="gameScript\elements\gse_stopSubScript.cpp">
+      <Filter>gameScript\elements</Filter>
+    </ClCompile>
+    <ClCompile Include="gameScript\elements\gse_system.cpp">
+      <Filter>gameScript\elements</Filter>
+    </ClCompile>
+    <ClCompile Include="gameScript\elements\gse_teleport.cpp">
+      <Filter>gameScript\elements</Filter>
+    </ClCompile>
+    <ClCompile Include="gameScript\elements\gse_teleportAllUsingVRAnchor.cpp">
+      <Filter>gameScript\elements</Filter>
+    </ClCompile>
+    <ClCompile Include="gameScript\elements\gse_temporaryObject.cpp">
+      <Filter>gameScript\elements</Filter>
+    </ClCompile>
+    <ClCompile Include="gameScript\elements\gse_timer.cpp">
+      <Filter>gameScript\elements</Filter>
+    </ClCompile>
+    <ClCompile Include="gameScript\elements\gse_trap.cpp">
+      <Filter>gameScript\elements</Filter>
+    </ClCompile>
+    <ClCompile Include="gameScript\elements\gse_trapSub.cpp">
+      <Filter>gameScript\elements</Filter>
+    </ClCompile>
+    <ClCompile Include="gameScript\elements\gse_triggerTrap.cpp">
+      <Filter>gameScript\elements</Filter>
+    </ClCompile>
+    <ClCompile Include="gameScript\elements\gse_var.cpp">
+      <Filter>gameScript\elements</Filter>
+    </ClCompile>
+    <ClCompile Include="gameScript\elements\gse_wait.cpp">
+      <Filter>gameScript\elements</Filter>
+    </ClCompile>
+    <ClCompile Include="gameScript\elements\gse_waitForCondition.cpp">
+      <Filter>gameScript\elements</Filter>
+    </ClCompile>
+    <ClCompile Include="gameScript\elements\gse_waitForObjectCease.cpp">
+      <Filter>gameScript\elements</Filter>
+    </ClCompile>
+    <ClCompile Include="gameScript\elements\gse_yield.cpp">
+      <Filter>gameScript\elements</Filter>
+    </ClCompile>
+    <ClCompile Include="gameScript\conditions\gsc_chance.cpp">
+      <Filter>gameScript\conditions</Filter>
+    </ClCompile>
+    <ClCompile Include="gameScript\conditions\gsc_door.cpp">
+      <Filter>gameScript\conditions</Filter>
+    </ClCompile>
+    <ClCompile Include="gameScript\conditions\gsc_input.cpp">
+      <Filter>gameScript\conditions</Filter>
+    </ClCompile>
+    <ClCompile Include="gameScript\conditions\gsc_logicOps.cpp">
+      <Filter>gameScript\conditions</Filter>
+    </ClCompile>
+    <ClCompile Include="gameScript\conditions\gsc_objectVar.cpp">
+      <Filter>gameScript\conditions</Filter>
+    </ClCompile>
+    <ClCompile Include="gameScript\conditions\gsc_objectVarsEqual.cpp">
+      <Filter>gameScript\conditions</Filter>
+    </ClCompile>
+    <ClCompile Include="gameScript\conditions\gsc_presence.cpp">
+      <Filter>gameScript\conditions</Filter>
+    </ClCompile>
+    <ClCompile Include="gameScript\conditions\gsc_random.cpp">
+      <Filter>gameScript\conditions</Filter>
+    </ClCompile>
+    <ClCompile Include="gameScript\conditions\gsc_relativeLocation.cpp">
+      <Filter>gameScript\conditions</Filter>
+    </ClCompile>
+    <ClCompile Include="gameScript\conditions\gsc_room.cpp">
+      <Filter>gameScript\conditions</Filter>
+    </ClCompile>
+    <ClCompile Include="gameScript\conditions\gsc_roomVar.cpp">
+      <Filter>gameScript\conditions</Filter>
+    </ClCompile>
+    <ClCompile Include="gameScript\conditions\gsc_timer.cpp">
+      <Filter>gameScript\conditions</Filter>
+    </ClCompile>
+    <ClCompile Include="gameScript\conditions\gsc_var.cpp">
+      <Filter>gameScript\conditions</Filter>
+    </ClCompile>
+    <ClCompile Include="gameScript\conditions\gsc_varsEqual.cpp">
+      <Filter>gameScript\conditions</Filter>
+    </ClCompile>
+    <ClCompile Include="module\moduleMovementScripted.cpp">
+      <Filter>module</Filter>
+    </ClCompile>
+    <ClCompile Include="game\poiManager.cpp">
+      <Filter>game</Filter>
+    </ClCompile>
+    <ClCompile Include="game\gameSceneLayer.cpp">
+      <Filter>game</Filter>
+    </ClCompile>
+    <ClCompile Include="game\gameMode.cpp">
+      <Filter>game</Filter>
+    </ClCompile>
+    <ClCompile Include="meshGen\meshGenElementIncludeMesh.cpp">
+      <Filter>meshGen</Filter>
+    </ClCompile>
+    <ClCompile Include="meshGen\shapes\advanced\meshGenAdvancedShape_doorHoleComplement.cpp">
+      <Filter>meshGen\shapes\advanced</Filter>
+    </ClCompile>
+    <ClCompile Include="appearance\animationSet.cpp">
+      <Filter>appearance</Filter>
+    </ClCompile>
+    <ClCompile Include="appearance\animationGraph.cpp">
+      <Filter>appearance</Filter>
+    </ClCompile>
+    <ClCompile Include="appearance\animationGraphNode.cpp">
+      <Filter>appearance</Filter>
+    </ClCompile>
+    <ClCompile Include="appearance\animationGraphNodes.cpp">
+      <Filter>appearance</Filter>
+    </ClCompile>
+    <ClCompile Include="appearance\graphNodes\agn_animationPlayback.cpp">
+      <Filter>appearance\graphNodes</Filter>
+    </ClCompile>
+    <ClCompile Include="appearance\graphNodes\agn_defaultPose.cpp">
+      <Filter>appearance\graphNodes</Filter>
+    </ClCompile>
+    <ClCompile Include="appearance\controllers\ac_animationGraph.cpp">
+      <Filter>appearance\controllers</Filter>
+    </ClCompile>
+    <ClCompile Include="appearance\graphNodes\agn_stateMachine.cpp">
+      <Filter>appearance\graphNodes</Filter>
+    </ClCompile>
+    <ClCompile Include="appearance\graphNodes\stateMachineDecisions\agnsmd_enterState.cpp">
+      <Filter>appearance\graphNodes\stateMachineDecisions</Filter>
+    </ClCompile>
+    <ClCompile Include="appearance\graphNodes\stateMachineDecisions\agnsmd_presence.cpp">
+      <Filter>appearance\graphNodes\stateMachineDecisions</Filter>
+    </ClCompile>
+    <ClCompile Include="appearance\graphNodes\agn_prepareVariables.cpp">
+      <Filter>appearance\graphNodes</Filter>
+    </ClCompile>
+    <ClCompile Include="appearance\graphNodes\agn_blendList.cpp">
+      <Filter>appearance\graphNodes</Filter>
+    </ClCompile>
+    <ClCompile Include="appearance\graphNodes\stateMachineDecisions\agnsmd_movement.cpp">
+      <Filter>appearance\graphNodes\stateMachineDecisions</Filter>
+    </ClCompile>
+    <ClCompile Include="appearance\graphNodes\stateMachineDecisions\agnsmd_currentState.cpp">
+      <Filter>appearance\graphNodes\stateMachineDecisions</Filter>
+    </ClCompile>
+    <ClCompile Include="appearance\graphNodes\agn_randomAnimationPlayback.cpp">
+      <Filter>appearance\graphNodes</Filter>
+    </ClCompile>
+    <ClCompile Include="appearance\graphNodes\agn_atPlacement.cpp">
+      <Filter>appearance\graphNodes</Filter>
+    </ClCompile>
+    <ClCompile Include="appearance\graphNodes\stateMachineDecisions\agnsmd_syncPlaybackPt.cpp">
+      <Filter>appearance\graphNodes\stateMachineDecisions</Filter>
+    </ClCompile>
+    <ClCompile Include="appearance\graphNodes\stateMachineDecisions\agnsmd_controller.cpp">
+      <Filter>appearance\graphNodes\stateMachineDecisions</Filter>
+    </ClCompile>
+    <ClCompile Include="world\roomLayouts\layoutElement.cpp">
+      <Filter>world\roomLayouts</Filter>
+    </ClCompile>
+    <ClCompile Include="world\roomLayouts\layoutSocket.cpp">
+      <Filter>world\roomLayouts</Filter>
+    </ClCompile>
+    <ClCompile Include="world\roomLayouts\objectLayout.cpp">
+      <Filter>world\roomLayouts</Filter>
+    </ClCompile>
+    <ClCompile Include="world\roomLayouts\roomLayout.cpp">
+      <Filter>world\roomLayouts</Filter>
+    </ClCompile>
+    <ClCompile Include="world\roomLayouts\roomLayoutNames.cpp">
+      <Filter>world\roomLayouts</Filter>
+    </ClCompile>
+    <ClCompile Include="world\roomLayouts\wallLayout.cpp">
+      <Filter>world\roomLayouts</Filter>
+    </ClCompile>
+    <ClCompile Include="world\regionLayouts\regionLayout.cpp">
+      <Filter>world\regionLayouts</Filter>
+    </ClCompile>
+    <ClCompile Include="game\sceneLayers\gameSceneLayer_uiCanvas.cpp">
+      <Filter>game\sceneLayers</Filter>
+    </ClCompile>
+    <ClCompile Include="gameScript\elements\gse_tagObjectVar.cpp">
+      <Filter>gameScript\elements</Filter>
+    </ClCompile>
+    <ClCompile Include="library\libraryLoadSummary.cpp">
+      <Filter>library</Filter>
+    </ClCompile>
+    <ClCompile Include="editor\editors\editorBase.cpp">
+      <Filter>editor\editors</Filter>
+    </ClCompile>
+    <ClCompile Include="editor\editors\editorBase2D.cpp">
+      <Filter>editor\editors</Filter>
+    </ClCompile>
+    <ClCompile Include="editor\editors\editorBase3D.cpp">
+      <Filter>editor\editors</Filter>
+    </ClCompile>
+    <ClCompile Include="editor\editors\editorSprite.cpp">
+      <Filter>editor\editors</Filter>
+    </ClCompile>
+    <ClCompile Include="editor\editors\editorSpriteLayout.cpp">
+      <Filter>editor\editors</Filter>
+    </ClCompile>
+    <ClCompile Include="editor\editors\editorVoxelMold.cpp">
+      <Filter>editor\editors</Filter>
+    </ClCompile>
+    <ClCompile Include="library\assetPackage.cpp">
+      <Filter>library</Filter>
+    </ClCompile>
+    <ClCompile Include="gameRetro\gameRetro.cpp">
+      <Filter>gameRetro</Filter>
+    </ClCompile>
+    <ClCompile Include="gameRetro\gameRetroConfig.cpp">
+      <Filter>gameRetro</Filter>
+    </ClCompile>
+    <ClCompile Include="gameRetro\gameRetroInput.cpp">
+      <Filter>gameRetro</Filter>
+    </ClCompile>
+    <ClCompile Include="video\colourClashSprite.cpp">
+      <Filter>video</Filter>
+    </ClCompile>
+    <ClCompile Include="video\colourPalette.cpp">
+      <Filter>video</Filter>
+    </ClCompile>
+    <ClCompile Include="video\font.cpp">
+      <Filter>video</Filter>
+    </ClCompile>
+    <ClCompile Include="video\material.cpp">
+      <Filter>video</Filter>
+    </ClCompile>
+    <ClCompile Include="video\shader.cpp">
+      <Filter>video</Filter>
+    </ClCompile>
+    <ClCompile Include="video\shaderFunctionLib.cpp">
+      <Filter>video</Filter>
+    </ClCompile>
+    <ClCompile Include="video\shaderOfflineUtils.cpp">
+      <Filter>video</Filter>
+    </ClCompile>
+    <ClCompile Include="video\shaderProgram.cpp">
+      <Filter>video</Filter>
+    </ClCompile>
+    <ClCompile Include="video\sprite.cpp">
+      <Filter>video</Filter>
+    </ClCompile>
+    <ClCompile Include="video\spriteLayout.cpp">
+      <Filter>video</Filter>
+    </ClCompile>
+    <ClCompile Include="video\spriteTextureProcessor.cpp">
+      <Filter>video</Filter>
+    </ClCompile>
+    <ClCompile Include="video\texture.cpp">
+      <Filter>video</Filter>
+    </ClCompile>
+    <ClCompile Include="video\textureArray.cpp">
+      <Filter>video</Filter>
+    </ClCompile>
+    <ClCompile Include="video\texturePart.cpp">
+      <Filter>video</Filter>
+    </ClCompile>
+    <ClCompile Include="video\texturePartSequence.cpp">
+      <Filter>video</Filter>
+    </ClCompile>
+    <ClCompile Include="video\texturePartUse.cpp">
+      <Filter>video</Filter>
+    </ClCompile>
+    <ClCompile Include="voxel\voxelMold.cpp">
+      <Filter>voxel</Filter>
+    </ClCompile>
+    <ClCompile Include="editor\editorContext.cpp">
+      <Filter>editor</Filter>
+    </ClCompile>
+    <ClCompile Include="editor\editorGame.cpp">
+      <Filter>editor</Filter>
+    </ClCompile>
+    <ClCompile Include="editor\editorWorkspace.cpp">
+      <Filter>editor</Filter>
+    </ClCompile>
+    <ClCompile Include="editor\sceneLayers\gameSceneLayer_editor.cpp">
+      <Filter>editor\sceneLayers</Filter>
+    </ClCompile>
+    <ClCompile Include="editor\modes\gameMode_editor.cpp">
+      <Filter>editor\modes</Filter>
+    </ClCompile>
+    <ClCompile Include="editor\editors\editorBasicInfo.cpp">
+      <Filter>editor\editors</Filter>
+    </ClCompile>
+    <ClCompile Include="ui\utils\uiGrid1Menu.cpp">
+      <Filter>ui\utils</Filter>
+    </ClCompile>
+    <ClCompile Include="ui\utils\uiGrid2Menu.cpp">
+      <Filter>ui\utils</Filter>
+    </ClCompile>
+    <ClCompile Include="ui\utils\uiListWindow.cpp">
+      <Filter>ui\utils</Filter>
+    </ClCompile>
+    <ClCompile Include="ui\utils\uiQuestionWindow.cpp">
+      <Filter>ui\utils</Filter>
+    </ClCompile>
+    <ClCompile Include="ui\utils\uiTextEditWindow.cpp">
+      <Filter>ui\utils</Filter>
+    </ClCompile>
+    <ClCompile Include="ui\utils\uiUtils.cpp">
+      <Filter>ui\utils</Filter>
+    </ClCompile>
+    <ClCompile Include="ui\uiCanvas.cpp">
+      <Filter>ui</Filter>
+    </ClCompile>
+    <ClCompile Include="ui\uiCanvasButton.cpp">
+      <Filter>ui</Filter>
+    </ClCompile>
+    <ClCompile Include="ui\uiCanvasElement.cpp">
+      <Filter>ui</Filter>
+    </ClCompile>
+    <ClCompile Include="ui\uiCanvasElements.cpp">
+      <Filter>ui</Filter>
+    </ClCompile>
+    <ClCompile Include="ui\uiCanvasInputContext.cpp">
+      <Filter>ui</Filter>
+    </ClCompile>
+    <ClCompile Include="ui\uiCanvasRect.cpp">
+      <Filter>ui</Filter>
+    </ClCompile>
+    <ClCompile Include="ui\uiCanvasRenderContext.cpp">
+      <Filter>ui</Filter>
+    </ClCompile>
+    <ClCompile Include="ui\uiCanvasSetup.cpp">
+      <Filter>ui</Filter>
+    </ClCompile>
+    <ClCompile Include="ui\uiCanvasText.cpp">
+      <Filter>ui</Filter>
+    </ClCompile>
+    <ClCompile Include="ui\uiCanvasUpdateWorktable.cpp">
+      <Filter>ui</Filter>
+    </ClCompile>
+    <ClCompile Include="ui\uiCanvasWindow.cpp">
+      <Filter>ui</Filter>
+    </ClCompile>
+    <ClCompile Include="video\basicDrawRenderingBuffer.cpp">
+      <Filter>video</Filter>
+    </ClCompile>
+    <ClCompile Include="video\spriteGrid.cpp">
+      <Filter>video</Filter>
+    </ClCompile>
+    <ClCompile Include="editor\editors\editorSpriteGrid.cpp">
+      <Filter>editor\editors</Filter>
+    </ClCompile>
+    <ClCompile Include="editor\editors\components\ec_colourPalette.cpp">
+      <Filter>editor\editors\components</Filter>
+    </ClCompile>
+    <ClCompile Include="meshGen\meshProcessorOperators\meshGenMeshProcOp_setCustomDataBetweenPoints.cpp">
+      <Filter>meshGen\meshProcessorOperators</Filter>
+    </ClCompile>
+    <ClCompile Include="meshGen\meshProcessorOperators\meshGenMeshProcOp_setCustomDataNormalBased.cpp">
+      <Filter>meshGen\meshProcessorOperators</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="world">
+      <UniqueIdentifier>{a76ae936-96cf-42c1-b86f-be0d78a999fc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="render">
+      <UniqueIdentifier>{a5c1b6b6-372c-4fac-bdf9-152ea176fbd4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="object">
+      <UniqueIdentifier>{2581a720-d8b9-4e0c-ae77-70abfc0864f1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="interfaces">
+      <UniqueIdentifier>{b1733be4-cc94-4926-9ccb-788a6da33b5e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="module">
+      <UniqueIdentifier>{fe1b5ae8-6103-4983-b528-53dd763aaf92}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="library">
+      <UniqueIdentifier>{f807627d-f0be-43c2-9076-4db6bc7bad26}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="appearance">
+      <UniqueIdentifier>{b8a173e3-fe91-47ff-881e-ddff52a7ccf6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="advance">
+      <UniqueIdentifier>{b506e4bd-5b3b-4883-83ab-075ea5f0b770}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="jobSystem">
+      <UniqueIdentifier>{b50614bd-5b3b-4883-83ab-075ea5f0b770}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="game">
+      <UniqueIdentifier>{1d47c6f7-4523-498b-83f8-1bc66de25356}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="collision">
+      <UniqueIdentifier>{30a05142-9e58-403a-a082-7b38110a764b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="video">
+      <UniqueIdentifier>{01e180e8-97ec-4d67-8854-dbcde1a78eb8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="debug">
+      <UniqueIdentifier>{5c6139a2-de27-4306-a94a-0a758c71fa8b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="postProcess">
+      <UniqueIdentifier>{d65f39d3-679d-4711-8aed-571feb51b018}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="pipelines">
+      <UniqueIdentifier>{a2e26660-5bef-461a-bf28-8a759fa56617}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="postProcess\chain">
+      <UniqueIdentifier>{d495e4be-d400-4ef0-b2b1-819ed1c6c7be}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="postProcess\graph">
+      <UniqueIdentifier>{56cd09a1-b3d9-4389-87c3-607f09707828}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="library\tools">
+      <UniqueIdentifier>{9ac1e1bf-ee03-4a37-a039-e06913f42c45}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="loaders">
+      <UniqueIdentifier>{c55aad8c-afa9-4a93-b09b-a3f16b96e749}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ai">
+      <UniqueIdentifier>{3a8f94de-a183-4ed2-843e-1aabf41b367a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ui">
+      <UniqueIdentifier>{61a74f61-781c-48d1-a5a9-1b24250fd36f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="appearance\controllers">
+      <UniqueIdentifier>{79fa3dda-f96d-46ac-ac24-68abda95b769}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="presence">
+      <UniqueIdentifier>{3949979b-12d7-4caf-9f4e-bfb024832805}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="sound">
+      <UniqueIdentifier>{dd1e6a14-2a17-4290-bc31-8b73451765e3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="meshGen">
+      <UniqueIdentifier>{398c0116-ea98-4f28-be95-26ab1525356f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="meshGen\shapes">
+      <UniqueIdentifier>{cb03c6b4-a265-4be9-af6e-46e0e1b3317f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="meshGen\shapes\basic">
+      <UniqueIdentifier>{ed6e00a0-6cf3-48b0-9167-2505a575a667}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="meshGen\shapes\advanced">
+      <UniqueIdentifier>{ce90554b-b3d0-4668-b764-aa7b735f7b79}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="meshGen\customData">
+      <UniqueIdentifier>{200f0e02-0702-46c4-b244-4c90914f08b6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="meshGen\generationConditions">
+      <UniqueIdentifier>{ad456461-ae11-4f94-8d12-9968c25e0c0e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="template">
+      <UniqueIdentifier>{88a23247-e3e5-4020-979b-fcd40e185649}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="minigames">
+      <UniqueIdentifier>{04fe45a4-8760-479b-ad15-06b6e810cdb9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="minigames\platformer">
+      <UniqueIdentifier>{158a6c4c-42e3-42f8-9884-71c7bf6efc33}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="display">
+      <UniqueIdentifier>{cc2cef5e-ed32-4c36-ba17-f3faf8c174ff}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="display\drawCommands">
+      <UniqueIdentifier>{e4a034b6-6a88-4883-9dd9-2c5c1bcf6a4e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="text">
+      <UniqueIdentifier>{d61fe2f7-08b4-4c93-a0ce-9cf798a4f7e3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="time">
+      <UniqueIdentifier>{5dbbca91-8d70-4d73-8dd5-b899b56b1eb9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="wheresMyPoint">
+      <UniqueIdentifier>{776440a5-b752-4cf4-953c-654f2106acd2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="nav">
+      <UniqueIdentifier>{75aba945-0d3f-48b7-ab87-56f8df346474}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="nav\tasks">
+      <UniqueIdentifier>{bfe5c4e9-addb-4f71-aeaf-8163f2bd2a9e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="nav\nodes">
+      <UniqueIdentifier>{1afb3c42-1c0a-4006-a93f-c3bec552e5c3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="appearance\controllers\particles">
+      <UniqueIdentifier>{df0a7f09-7f35-42fe-b6fc-b1170aee0879}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="meshGen\bones">
+      <UniqueIdentifier>{f0c3baa6-6a7e-4e8a-96ce-85967078b9e0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="vr">
+      <UniqueIdentifier>{feaaaf64-e169-4027-b682-a3bf43f972b4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="module\custom">
+      <UniqueIdentifier>{0b2ac2c0-e031-4aac-bcf6-08f82603b0f4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="modulesOwner">
+      <UniqueIdentifier>{4ed9261f-a401-4a56-824c-8001a89772c9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="general">
+      <UniqueIdentifier>{8f9cd3fa-97e1-4120-b76d-a4e96a29e5f7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="world\roomGenerators">
+      <UniqueIdentifier>{1cd3514a-6320-4cf7-a98f-04e3fed6549e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="rest">
+      <UniqueIdentifier>{8f693f82-a458-4b23-8b1c-83f062bb8667}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="appearance\controllers\particleModifiers">
+      <UniqueIdentifier>{54be89b9-f77f-48a4-81ba-c330975039b2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="meshGen\modifiers">
+      <UniqueIdentifier>{6138fcb2-dda0-4620-a66f-29930c59e45f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="latent">
+      <UniqueIdentifier>{32d3a1d9-a1c1-4a88-8f55-a0d99dd50ec0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="latent\functions">
+      <UniqueIdentifier>{418501c6-af85-4bbd-8b59-3f385eef5991}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="meshGen\meshProcessorOperators">
+      <UniqueIdentifier>{58ed0d4e-9ee4-442d-9b89-d1eb9e10e9d3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="appearance\controllers\components">
+      <UniqueIdentifier>{e979c332-aa00-4137-bf0d-e457cbd4656e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="gameScript">
+      <UniqueIdentifier>{d0ac0953-8550-4049-ac98-62b13a3e03d6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="gameScript\conditions">
+      <UniqueIdentifier>{1f78b7c7-1845-47d5-a791-116ac1d7780d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="gameScript\elements">
+      <UniqueIdentifier>{b931483f-a464-4f80-8dad-20b65bae05d8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="appearance\graphNodes">
+      <UniqueIdentifier>{baf6a5bf-c8e5-4d56-89cb-2480fd591eed}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="appearance\graphNodes\stateMachineDecisions">
+      <UniqueIdentifier>{69ef286f-6ad5-4f21-8029-9e185cf0f067}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="world\roomLayouts">
+      <UniqueIdentifier>{81aa6b3e-2240-4b11-b8ae-0497a06cdbf0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="world\regionLayouts">
+      <UniqueIdentifier>{43eb42a7-98fa-4f47-9948-6157e849abf3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="game\sceneLayers">
+      <UniqueIdentifier>{6934ae80-356c-41ec-851c-3bd0f83b3ce3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="editor">
+      <UniqueIdentifier>{8fa24f12-9001-4b89-8ad5-2a6b53d668cb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="editor\modes">
+      <UniqueIdentifier>{bac32fa0-a55a-44fb-929a-89ddf765b652}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="editor\sceneLayers">
+      <UniqueIdentifier>{a0d40bd8-f17e-478a-bb70-2edaa35b5b1b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="editor\editors">
+      <UniqueIdentifier>{87a80b9b-6605-4ea2-8864-90a67ec43646}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="voxel">
+      <UniqueIdentifier>{1d17665d-4e58-4e51-9709-f4e0afd16c6f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ui\utils">
+      <UniqueIdentifier>{7d557dd8-c41e-4269-86c2-169e508c5d76}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="gameRetro">
+      <UniqueIdentifier>{fd8790d1-9d4e-4883-bdfb-1b494c8de5ad}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="editor\editors\components">
+      <UniqueIdentifier>{a3fe572e-e067-4705-a1f2-45e56661e7eb}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="world\room.h">
+      <Filter>world</Filter>
+    </ClInclude>
+    <ClInclude Include="world\doorInRoom.h">
+      <Filter>world</Filter>
+    </ClInclude>
+    <ClInclude Include="world\door.h">
+      <Filter>world</Filter>
+    </ClInclude>
+    <ClInclude Include="world\subWorld.h">
+      <Filter>world</Filter>
+    </ClInclude>
+    <ClInclude Include="world\world.h">
+      <Filter>world</Filter>
+    </ClInclude>
+    <ClInclude Include="world\doorHole.h">
+      <Filter>world</Filter>
+    </ClInclude>
+    <ClInclude Include="render\renderContext.h">
+      <Filter>render</Filter>
+    </ClInclude>
+    <ClInclude Include="render\renderCamera.h">
+      <Filter>render</Filter>
+    </ClInclude>
+    <ClInclude Include="framework.h" />
+    <ClInclude Include="object\object.h">
+      <Filter>object</Filter>
+    </ClInclude>
+    <ClInclude Include="interfaces\destroyable.h">
+      <Filter>interfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="interfaces\renderable.h">
+      <Filter>interfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="module\modulePresence.h">
+      <Filter>module</Filter>
+    </ClInclude>
+    <ClInclude Include="module\module.h">
+      <Filter>module</Filter>
+    </ClInclude>
+    <ClInclude Include="module\modules.h">
+      <Filter>module</Filter>
+    </ClInclude>
+    <ClInclude Include="module\moduleData.h">
+      <Filter>module</Filter>
+    </ClInclude>
+    <ClInclude Include="interfaces\aiObject.h">
+      <Filter>interfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="module\registeredModule.h">
+      <Filter>module</Filter>
+    </ClInclude>
+    <ClInclude Include="interfaces\collidable.h">
+      <Filter>interfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="library\libraryStored.h">
+      <Filter>library</Filter>
+    </ClInclude>
+    <ClInclude Include="library\libraryLoadingContext.h">
+      <Filter>library</Filter>
+    </ClInclude>
+    <ClInclude Include="library\libraryName.h">
+      <Filter>library</Filter>
+    </ClInclude>
+    <ClInclude Include="library\library.h">
+      <Filter>library</Filter>
+    </ClInclude>
+    <ClInclude Include="library\libraryCombinedStore.h">
+      <Filter>library</Filter>
+    </ClInclude>
+    <ClInclude Include="library\libraryStore.h">
+      <Filter>library</Filter>
+    </ClInclude>
+    <ClInclude Include="interfaces\librarySolver.h">
+      <Filter>interfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="object\objectType.h">
+      <Filter>object</Filter>
+    </ClInclude>
+    <ClInclude Include="object\actor.h">
+      <Filter>object</Filter>
+    </ClInclude>
+    <ClInclude Include="object\actorType.h">
+      <Filter>object</Filter>
+    </ClInclude>
+    <ClInclude Include="appearance\meshStatic.h">
+      <Filter>appearance</Filter>
+    </ClInclude>
+    <ClInclude Include="module\moduleAppearance.h">
+      <Filter>module</Filter>
+    </ClInclude>
+    <ClInclude Include="advance\advanceContext.h">
+      <Filter>advance</Filter>
+    </ClInclude>
+    <ClInclude Include="jobSystem\jobSystem.h">
+      <Filter>jobSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="jobSystem\jobSystemExecutor.h">
+      <Filter>jobSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="jobSystem\jobSystemThread.h">
+      <Filter>jobSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="game\game.h">
+      <Filter>game</Filter>
+    </ClInclude>
+    <ClInclude Include="render\renderScene.h">
+      <Filter>render</Filter>
+    </ClInclude>
+    <ClInclude Include="render\roomProxy.h">
+      <Filter>render</Filter>
+    </ClInclude>
+    <ClInclude Include="render\sceneBuildContext.h">
+      <Filter>render</Filter>
+    </ClInclude>
+    <ClInclude Include="render\presenceLinkProxy.h">
+      <Filter>render</Filter>
+    </ClInclude>
+    <ClInclude Include="world\presenceLink.h">
+      <Filter>world</Filter>
+    </ClInclude>
+    <ClInclude Include="module\moduleCollision.h">
+      <Filter>module</Filter>
+    </ClInclude>
+    <ClInclude Include="module\moduleMovement.h">
+      <Filter>module</Filter>
+    </ClInclude>
+    <ClInclude Include="module\moduleController.h">
+      <Filter>module</Filter>
+    </ClInclude>
+    <ClInclude Include="collision\collisionModel.h">
+      <Filter>collision</Filter>
+    </ClInclude>
+    <ClInclude Include="world\doorType.h">
+      <Filter>world</Filter>
+    </ClInclude>
+    <ClInclude Include="library\libraryPrepareContext.h">
+      <Filter>library</Filter>
+    </ClInclude>
+    <ClInclude Include="library\libraryUtils.h">
+      <Filter>library</Filter>
+    </ClInclude>
+    <ClInclude Include="world\regionGenerator.h">
+      <Filter>world</Filter>
+    </ClInclude>
+    <ClInclude Include="world\regionType.h">
+      <Filter>world</Filter>
+    </ClInclude>
+    <ClInclude Include="world\roomPart.h">
+      <Filter>world</Filter>
+    </ClInclude>
+    <ClInclude Include="world\roomType.h">
+      <Filter>world</Filter>
+    </ClInclude>
+    <ClInclude Include="world\roomPartInstance.h">
+      <Filter>world</Filter>
+    </ClInclude>
+    <ClInclude Include="debug\previewGame.h">
+      <Filter>debug</Filter>
+    </ClInclude>
+    <ClInclude Include="collision\checkCollisionContext.h">
+      <Filter>collision</Filter>
+    </ClInclude>
+    <ClInclude Include="render\stats.h">
+      <Filter>render</Filter>
+    </ClInclude>
+    <ClInclude Include="collision\physicalMaterial.h">
+      <Filter>collision</Filter>
+    </ClInclude>
+    <ClInclude Include="collision\physicalMaterialStub.h">
+      <Filter>collision</Filter>
+    </ClInclude>
+    <ClInclude Include="collision\physicalMaterialLoadingContext.h">
+      <Filter>collision</Filter>
+    </ClInclude>
+    <ClInclude Include="module\modulePresenceData.h">
+      <Filter>module</Filter>
+    </ClInclude>
+    <ClInclude Include="collision\checkSegmentResult.h">
+      <Filter>collision</Filter>
+    </ClInclude>
+    <ClInclude Include="world\environment.h">
+      <Filter>world</Filter>
+    </ClInclude>
+    <ClInclude Include="world\environmentUsage.h">
+      <Filter>world</Filter>
+    </ClInclude>
+    <ClInclude Include="render\environmentProxy.h">
+      <Filter>render</Filter>
+    </ClInclude>
+    <ClInclude Include="world\environmentType.h">
+      <Filter>world</Filter>
+    </ClInclude>
+    <ClInclude Include="appearance\mesh.h">
+      <Filter>appearance</Filter>
+    </ClInclude>
+    <ClInclude Include="appearance\meshSkinned.h">
+      <Filter>appearance</Filter>
+    </ClInclude>
+    <ClInclude Include="appearance\skeleton.h">
+      <Filter>appearance</Filter>
+    </ClInclude>
+    <ClInclude Include="postProcess\graph\postProcessGraph.h">
+      <Filter>postProcess\graph</Filter>
+    </ClInclude>
+    <ClInclude Include="postProcess\graph\postProcessNode.h">
+      <Filter>postProcess\graph</Filter>
+    </ClInclude>
+    <ClInclude Include="postProcess\postProcess.h">
+      <Filter>postProcess</Filter>
+    </ClInclude>
+    <ClInclude Include="postProcess\graph\postProcessRootNode.h">
+      <Filter>postProcess\graph</Filter>
+    </ClInclude>
+    <ClInclude Include="postProcess\graph\postProcessProcessorNode.h">
+      <Filter>postProcess\graph</Filter>
+    </ClInclude>
+    <ClInclude Include="pipelines\renderingPipeline.h">
+      <Filter>pipelines</Filter>
+    </ClInclude>
+    <ClInclude Include="pipelines\pipelines.h">
+      <Filter>pipelines</Filter>
+    </ClInclude>
+    <ClInclude Include="pipelines\postProcessPipeline.h">
+      <Filter>pipelines</Filter>
+    </ClInclude>
+    <ClInclude Include="postProcess\graph\postProcessInputNode.h">
+      <Filter>postProcess\graph</Filter>
+    </ClInclude>
+    <ClInclude Include="postProcess\graph\postProcessOutputNode.h">
+      <Filter>postProcess\graph</Filter>
+    </ClInclude>
+    <ClInclude Include="postProcess\postProcessRenderTargetManager.h">
+      <Filter>postProcess</Filter>
+    </ClInclude>
+    <ClInclude Include="postProcess\postProcessRenderTarget.h">
+      <Filter>postProcess</Filter>
+    </ClInclude>
+    <ClInclude Include="postProcess\postProcessInstance.h">
+      <Filter>postProcess</Filter>
+    </ClInclude>
+    <ClInclude Include="postProcess\graph\postProcessGraphInstance.h">
+      <Filter>postProcess\graph</Filter>
+    </ClInclude>
+    <ClInclude Include="postProcess\chain\postProcessChain.h">
+      <Filter>postProcess\chain</Filter>
+    </ClInclude>
+    <ClInclude Include="postProcess\chain\postProcessChainElement.h">
+      <Filter>postProcess\chain</Filter>
+    </ClInclude>
+    <ClInclude Include="postProcess\chain\postProcessChainOutputElement.h">
+      <Filter>postProcess\chain</Filter>
+    </ClInclude>
+    <ClInclude Include="postProcess\postProcessRenderTargetPointer.h">
+      <Filter>postProcess</Filter>
+    </ClInclude>
+    <ClInclude Include="postProcess\chain\postProcessChainProcessElement.h">
+      <Filter>postProcess\chain</Filter>
+    </ClInclude>
+    <ClInclude Include="postProcess\chain\postProcessChainInputElement.h">
+      <Filter>postProcess\chain</Filter>
+    </ClInclude>
+    <ClInclude Include="postProcess\graph\postProcessGraphProcessingContext.h">
+      <Filter>postProcess\graph</Filter>
+    </ClInclude>
+    <ClInclude Include="postProcess\chain\postProcessChainProcessingContext.h">
+      <Filter>postProcess\chain</Filter>
+    </ClInclude>
+    <ClInclude Include="postProcess\graph\iPostProcessGraphProcessingInputRenderTargetsProvider.h">
+      <Filter>postProcess\graph</Filter>
+    </ClInclude>
+    <ClInclude Include="library\libraryTool.h">
+      <Filter>library</Filter>
+    </ClInclude>
+    <ClInclude Include="library\tools\libraryTools.h">
+      <Filter>library\tools</Filter>
+    </ClInclude>
+    <ClInclude Include="loaders\loaderZX.h">
+      <Filter>loaders</Filter>
+    </ClInclude>
+    <ClInclude Include="loaders\loaderCircles.h">
+      <Filter>loaders</Filter>
+    </ClInclude>
+    <ClInclude Include="world\pointOfInterest.h">
+      <Filter>world</Filter>
+    </ClInclude>
+    <ClInclude Include="world\pointOfInterestInstance.h">
+      <Filter>world</Filter>
+    </ClInclude>
+    <ClInclude Include="loaders\iLoader.h">
+      <Filter>loaders</Filter>
+    </ClInclude>
+    <ClInclude Include="world\region.h">
+      <Filter>world</Filter>
+    </ClInclude>
+    <ClInclude Include="library\usedLibraryStored.h">
+      <Filter>library</Filter>
+    </ClInclude>
+    <ClInclude Include="world\environmentInfo.h">
+      <Filter>world</Filter>
+    </ClInclude>
+    <ClInclude Include="game\gameInput.h">
+      <Filter>game</Filter>
+    </ClInclude>
+    <ClInclude Include="game\gameInputDefinition.h">
+      <Filter>game</Filter>
+    </ClInclude>
+    <ClInclude Include="game\player.h">
+      <Filter>game</Filter>
+    </ClInclude>
+    <ClInclude Include="postProcess\chain\postProcessChainDefinition.h">
+      <Filter>postProcess\chain</Filter>
+    </ClInclude>
+    <ClInclude Include="render\doorInRoomProxy.h">
+      <Filter>render</Filter>
+    </ClInclude>
+    <ClInclude Include="library\libraryStoredReplacer.h">
+      <Filter>library</Filter>
+    </ClInclude>
+    <ClInclude Include="library\usedLibraryStoredAny.h">
+      <Filter>library</Filter>
+    </ClInclude>
+    <ClInclude Include="world\environmentParams.h">
+      <Filter>world</Filter>
+    </ClInclude>
+    <ClInclude Include="game\tweakingContext.h">
+      <Filter>game</Filter>
+    </ClInclude>
+    <ClInclude Include="ai\aiMind.h">
+      <Filter>ai</Filter>
+    </ClInclude>
+    <ClInclude Include="ai\aiMindInstance.h">
+      <Filter>ai</Filter>
+    </ClInclude>
+    <ClInclude Include="module\moduleAI.h">
+      <Filter>module</Filter>
+    </ClInclude>
+    <ClInclude Include="module\moduleAIData.h">
+      <Filter>module</Filter>
+    </ClInclude>
+    <ClInclude Include="ai\aiLogic.h">
+      <Filter>ai</Filter>
+    </ClInclude>
+    <ClInclude Include="ai\aiLogics.h">
+      <Filter>ai</Filter>
+    </ClInclude>
+    <ClInclude Include="ai\registeredAILogic.h">
+      <Filter>ai</Filter>
+    </ClInclude>
+    <ClInclude Include="interfaces\aiMindOwner.h">
+      <Filter>interfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="ai\aiMindExecution.h">
+      <Filter>ai</Filter>
+    </ClInclude>
+    <ClInclude Include="ai\aiITask.h">
+      <Filter>ai</Filter>
+    </ClInclude>
+    <ClInclude Include="ai\aiITaskOwner.h">
+      <Filter>ai</Filter>
+    </ClInclude>
+    <ClInclude Include="ai\aiLatentTask.h">
+      <Filter>ai</Filter>
+    </ClInclude>
+    <ClInclude Include="ai\aiLogicWithLatentTask.h">
+      <Filter>ai</Filter>
+    </ClInclude>
+    <ClInclude Include="ai\aiMessage.h">
+      <Filter>ai</Filter>
+    </ClInclude>
+    <ClInclude Include="ai\aiMessageQueue.h">
+      <Filter>ai</Filter>
+    </ClInclude>
+    <ClInclude Include="ai\aiIMessageHandler.h">
+      <Filter>ai</Filter>
+    </ClInclude>
+    <ClInclude Include="ai\aiParam.h">
+      <Filter>ai</Filter>
+    </ClInclude>
+    <ClInclude Include="object\item.h">
+      <Filter>object</Filter>
+    </ClInclude>
+    <ClInclude Include="object\itemType.h">
+      <Filter>object</Filter>
+    </ClInclude>
+    <ClInclude Include="module\moduleMovementOnFloor.h">
+      <Filter>module</Filter>
+    </ClInclude>
+    <ClInclude Include="module\moduleAppearanceData.h">
+      <Filter>module</Filter>
+    </ClInclude>
+    <ClInclude Include="module\moduleCollisionData.h">
+      <Filter>module</Filter>
+    </ClInclude>
+    <ClInclude Include="ai\aiLocomotion.h">
+      <Filter>ai</Filter>
+    </ClInclude>
+    <ClInclude Include="ai\movementParameters.h">
+      <Filter>ai</Filter>
+    </ClInclude>
+    <ClInclude Include="module\moduleMovementData.h">
+      <Filter>module</Filter>
+    </ClInclude>
+    <ClInclude Include="interfaces\worldElementOwner.h">
+      <Filter>interfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="pipelines\uiPipeline.h">
+      <Filter>pipelines</Filter>
+    </ClInclude>
+    <ClInclude Include="postProcess\graph\postProcessGraphProcessingInputRenderTargetsProvider.h">
+      <Filter>postProcess\graph</Filter>
+    </ClInclude>
+    <ClInclude Include="postProcess\graph\postProcessGraphProcessingResolutionProvider.h">
+      <Filter>postProcess\graph</Filter>
+    </ClInclude>
+    <ClInclude Include="postProcess\graph\iPostProcessGraphProcessingResolutionProvider.h">
+      <Filter>postProcess\graph</Filter>
+    </ClInclude>
+    <ClInclude Include="appearance\appearanceController.h">
+      <Filter>appearance</Filter>
+    </ClInclude>
+    <ClInclude Include="appearance\appearanceControllerData.h">
+      <Filter>appearance</Filter>
+    </ClInclude>
+    <ClInclude Include="appearance\appearanceControllers.h">
+      <Filter>appearance</Filter>
+    </ClInclude>
+    <ClInclude Include="appearance\appearanceControllerPoseContext.h">
+      <Filter>appearance</Filter>
+    </ClInclude>
+    <ClInclude Include="interfaces\presenceObserver.h">
+      <Filter>interfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="appearance\controllers\ikSolver3.h">
+      <Filter>appearance\controllers</Filter>
+    </ClInclude>
+    <ClInclude Include="appearance\controllers\ikSolver2.h">
+      <Filter>appearance\controllers</Filter>
+    </ClInclude>
+    <ClInclude Include="appearance\controllers\ikUtils.h">
+      <Filter>appearance\controllers</Filter>
+    </ClInclude>
+    <ClInclude Include="appearance\controllers\walker.h">
+      <Filter>appearance\controllers</Filter>
+    </ClInclude>
+    <ClInclude Include="appearance\controllers\walkers.h">
+      <Filter>appearance\controllers</Filter>
+    </ClInclude>
+    <ClInclude Include="library\customLibraryStoredData.h">
+      <Filter>library</Filter>
+    </ClInclude>
+    <ClInclude Include="library\customLibraryDatas.h">
+      <Filter>library</Filter>
+    </ClInclude>
+    <ClInclude Include="presence\relativeToPresencePlacement.h">
+      <Filter>presence</Filter>
+    </ClInclude>
+    <ClInclude Include="collision\collisionTrace.h">
+      <Filter>collision</Filter>
+    </ClInclude>
+    <ClInclude Include="sound\soundSample.h">
+      <Filter>sound</Filter>
+    </ClInclude>
+    <ClInclude Include="sound\soundScene.h">
+      <Filter>sound</Filter>
+    </ClInclude>
+    <ClInclude Include="sound\soundCamera.h">
+      <Filter>sound</Filter>
+    </ClInclude>
+    <ClInclude Include="sound\soundContext.h">
+      <Filter>sound</Filter>
+    </ClInclude>
+    <ClInclude Include="world\worldCamera.h">
+      <Filter>world</Filter>
+    </ClInclude>
+    <ClInclude Include="sound\soundSource.h">
+      <Filter>sound</Filter>
+    </ClInclude>
+    <ClInclude Include="sound\soundSources.h">
+      <Filter>sound</Filter>
+    </ClInclude>
+    <ClInclude Include="module\moduleSound.h">
+      <Filter>module</Filter>
+    </ClInclude>
+    <ClInclude Include="presence\presencePath.h">
+      <Filter>presence</Filter>
+    </ClInclude>
+    <ClInclude Include="sound\soundSampleInstance.h">
+      <Filter>sound</Filter>
+    </ClInclude>
+    <ClInclude Include="loaders\loaderVoidRoom.h">
+      <Filter>loaders</Filter>
+    </ClInclude>
+    <ClInclude Include="meshGen\meshGen.h">
+      <Filter>meshGen</Filter>
+    </ClInclude>
+    <ClInclude Include="meshGen\meshGenElement.h">
+      <Filter>meshGen</Filter>
+    </ClInclude>
+    <ClInclude Include="meshGen\meshGenElementShape.h">
+      <Filter>meshGen</Filter>
+    </ClInclude>
+    <ClInclude Include="meshGen\meshGenGenerationContext.h">
+      <Filter>meshGen</Filter>
+    </ClInclude>
+    <ClInclude Include="meshGen\shapes\meshGenBasicShapes.h">
+      <Filter>meshGen\shapes</Filter>
+    </ClInclude>
+    <ClInclude Include="meshGen\meshGenUtils.h">
+      <Filter>meshGen</Filter>
+    </ClInclude>
+    <ClInclude Include="meshGen\meshGenerator.h">
+      <Filter>meshGen</Filter>
+    </ClInclude>
+    <ClInclude Include="meshGen\meshGenElementModifier.h">
+      <Filter>meshGen</Filter>
+    </ClInclude>
+    <ClInclude Include="meshGen\modifiers\meshGenModifiers.h">
+      <Filter>meshGen\modifiers</Filter>
+    </ClInclude>
+    <ClInclude Include="meshGen\meshGenElementInclude.h">
+      <Filter>meshGen</Filter>
+    </ClInclude>
+    <ClInclude Include="meshGen\meshGenElementSet.h">
+      <Filter>meshGen</Filter>
+    </ClInclude>
+    <ClInclude Include="meshGen\shapes\meshGenAdvancedShapes.h">
+      <Filter>meshGen\shapes</Filter>
+    </ClInclude>
+    <ClInclude Include="meshGen\customData\meshGenCustomData.h">
+      <Filter>meshGen\customData</Filter>
+    </ClInclude>
+    <ClInclude Include="meshGen\customData\meshGenSpline.h">
+      <Filter>meshGen\customData</Filter>
+    </ClInclude>
+    <ClInclude Include="meshGen\customData\meshGenEdge.h">
+      <Filter>meshGen\customData</Filter>
+    </ClInclude>
+    <ClInclude Include="meshGen\meshGenSubStepDef.h">
+      <Filter>meshGen</Filter>
+    </ClInclude>
+    <ClInclude Include="library\customLibraryDataLookup.h">
+      <Filter>library</Filter>
+    </ClInclude>
+    <ClInclude Include="library\libraryStoreTaggedObjects.h">
+      <Filter>library</Filter>
+    </ClInclude>
+    <ClInclude Include="library\libraryLoadLevel.h">
+      <Filter>library</Filter>
+    </ClInclude>
+    <ClInclude Include="meshGen\meshGenSurfaceDef.h">
+      <Filter>meshGen</Filter>
+    </ClInclude>
+    <ClInclude Include="meshGen\meshGenEdgeDef.h">
+      <Filter>meshGen</Filter>
+    </ClInclude>
+    <ClInclude Include="meshGen\meshGenNodeDef.h">
+      <Filter>meshGen</Filter>
+    </ClInclude>
+    <ClInclude Include="meshGen\customData\meshGenSplineRef.h">
+      <Filter>meshGen\customData</Filter>
+    </ClInclude>
+    <ClInclude Include="meshGen\customData\meshGenEdgeRef.h">
+      <Filter>meshGen\customData</Filter>
+    </ClInclude>
+    <ClInclude Include="meshGen\customData\meshGenRefLookup.h">
+      <Filter>meshGen\customData</Filter>
+    </ClInclude>
+    <ClInclude Include="meshGen\shapes\meshGenShapeUtils.h">
+      <Filter>meshGen\shapes</Filter>
+    </ClInclude>
+    <ClInclude Include="meshGen\shapes\advanced\meshGenAdvancedShape_edgesSurfaces.h">
+      <Filter>meshGen\shapes\advanced</Filter>
+    </ClInclude>
+    <ClInclude Include="meshGen\meshGenUVDef.h">
+      <Filter>meshGen</Filter>
+    </ClInclude>
+    <ClInclude Include="meshGen\meshGenValueDef.h">
+      <Filter>meshGen</Filter>
+    </ClInclude>
+    <ClInclude Include="meshGen\meshGenGenerationCondition.h">
+      <Filter>meshGen</Filter>
+    </ClInclude>
+    <ClInclude Include="meshGen\generationConditions\mggc_parameter.h">
+      <Filter>meshGen\generationConditions</Filter>
+    </ClInclude>
+    <ClInclude Include="meshGen\generationConditions\mggc_or.h">
+      <Filter>meshGen\generationConditions</Filter>
+    </ClInclude>
+    <ClInclude Include="meshGen\generationConditions\mggc_and.h">
+      <Filter>meshGen\generationConditions</Filter>
+    </ClInclude>
+    <ClInclude Include="meshGen\generationConditions\mggc_not.h">
+      <Filter>meshGen\generationConditions</Filter>
+    </ClInclude>
+    <ClInclude Include="appearance\controllers\ac_head.h">
+      <Filter>appearance\controllers</Filter>
+    </ClInclude>
+    <ClInclude Include="frameworkRegisteredTypes.h" />
+    <ClInclude Include="game\gameConfig.h">
+      <Filter>game</Filter>
+    </ClInclude>
+    <ClInclude Include="library\libraryStoredRenamer.h">
+      <Filter>library</Filter>
+    </ClInclude>
+    <ClInclude Include="template\template.h">
+      <Filter>template</Filter>
+    </ClInclude>
+    <ClInclude Include="template\createFromTemplate.h">
+      <Filter>template</Filter>
+    </ClInclude>
+    <ClInclude Include="minigames\platformer\platformerCharacter.h">
+      <Filter>minigames\platformer</Filter>
+    </ClInclude>
+    <ClInclude Include="minigames\platformer\platformerRoom.h">
+      <Filter>minigames\platformer</Filter>
+    </ClInclude>
+    <ClInclude Include="minigames\platformer\platformerGame.h">
+      <Filter>minigames\platformer</Filter>
+    </ClInclude>
+    <ClInclude Include="minigames\platformer\platformerInfo.h">
+      <Filter>minigames\platformer</Filter>
+    </ClInclude>
+    <ClInclude Include="minigames\platformer\platformerTile.h">
+      <Filter>minigames\platformer</Filter>
+    </ClInclude>
+    <ClInclude Include="pipelines\colourClashPipeline.h">
+      <Filter>pipelines</Filter>
+    </ClInclude>
+    <ClInclude Include="game\gameObject.h">
+      <Filter>game</Filter>
+    </ClInclude>
+    <ClInclude Include="game\gameObjectPtr.h">
+      <Filter>game</Filter>
+    </ClInclude>
+    <ClInclude Include="library\libraryGlobalReferences.h">
+      <Filter>library</Filter>
+    </ClInclude>
+    <ClInclude Include="world\worldObject.h">
+      <Filter>world</Filter>
+    </ClInclude>
+    <ClInclude Include="display\drawCommands\displayDrawCommand_border.h">
+      <Filter>display\drawCommands</Filter>
+    </ClInclude>
+    <ClInclude Include="display\drawCommands\displayDrawCommand_clearRegion.h">
+      <Filter>display\drawCommands</Filter>
+    </ClInclude>
+    <ClInclude Include="display\drawCommands\displayDrawCommand_cls.h">
+      <Filter>display\drawCommands</Filter>
+    </ClInclude>
+    <ClInclude Include="display\drawCommands\displayDrawCommand_holdDrawing.h">
+      <Filter>display\drawCommands</Filter>
+    </ClInclude>
+    <ClInclude Include="display\drawCommands\displayDrawCommand_textAt.h">
+      <Filter>display\drawCommands</Filter>
+    </ClInclude>
+    <ClInclude Include="display\drawCommands\displayDrawCommand_textAtBase.h">
+      <Filter>display\drawCommands</Filter>
+    </ClInclude>
+    <ClInclude Include="display\drawCommands\displayDrawCommand_textAtMultiline.h">
+      <Filter>display\drawCommands</Filter>
+    </ClInclude>
+    <ClInclude Include="display\drawCommands\displayDrawCommand_texturePart.h">
+      <Filter>display\drawCommands</Filter>
+    </ClInclude>
+    <ClInclude Include="display\display.h">
+      <Filter>display</Filter>
+    </ClInclude>
+    <ClInclude Include="display\displayButton.h">
+      <Filter>display</Filter>
+    </ClInclude>
+    <ClInclude Include="display\displayColourReplacer.h">
+      <Filter>display</Filter>
+    </ClInclude>
+    <ClInclude Include="display\displayControl.h">
+      <Filter>display</Filter>
+    </ClInclude>
+    <ClInclude Include="display\displayDrawCommand.h">
+      <Filter>display</Filter>
+    </ClInclude>
+    <ClInclude Include="display\displayDrawCommands.h">
+      <Filter>display</Filter>
+    </ClInclude>
+    <ClInclude Include="display\displayDrawContext.h">
+      <Filter>display</Filter>
+    </ClInclude>
+    <ClInclude Include="display\displayHardwareMeshGenerator.h">
+      <Filter>display</Filter>
+    </ClInclude>
+    <ClInclude Include="display\displayScrollBar.h">
+      <Filter>display</Filter>
+    </ClInclude>
+    <ClInclude Include="display\displaySetup.h">
+      <Filter>display</Filter>
+    </ClInclude>
+    <ClInclude Include="display\displayTable.h">
+      <Filter>display</Filter>
+    </ClInclude>
+    <ClInclude Include="display\displayText.h">
+      <Filter>display</Filter>
+    </ClInclude>
+    <ClInclude Include="display\displayTypes.h">
+      <Filter>display</Filter>
+    </ClInclude>
+    <ClInclude Include="display\displayUtils.h">
+      <Filter>display</Filter>
+    </ClInclude>
+    <ClInclude Include="display\displayType.h">
+      <Filter>display</Filter>
+    </ClInclude>
+    <ClInclude Include="text\localisedString.h">
+      <Filter>text</Filter>
+    </ClInclude>
+    <ClInclude Include="text\stringFormatter.h">
+      <Filter>text</Filter>
+    </ClInclude>
+    <ClInclude Include="text\textBlock.h">
+      <Filter>text</Filter>
+    </ClInclude>
+    <ClInclude Include="text\textBlockGenerator.h">
+      <Filter>text</Filter>
+    </ClInclude>
+    <ClInclude Include="text\textBlockInstance.h">
+      <Filter>text</Filter>
+    </ClInclude>
+    <ClInclude Include="text\textBlockRef.h">
+      <Filter>text</Filter>
+    </ClInclude>
+    <ClInclude Include="text\stringFormatterElement.h">
+      <Filter>text</Filter>
+    </ClInclude>
+    <ClInclude Include="text\textDesc.h">
+      <Filter>text</Filter>
+    </ClInclude>
+    <ClInclude Include="text\stringFormatterSerialisationHandlers.h">
+      <Filter>text</Filter>
+    </ClInclude>
+    <ClInclude Include="time\dateTime.h">
+      <Filter>time</Filter>
+    </ClInclude>
+    <ClInclude Include="time\time.h">
+      <Filter>time</Filter>
+    </ClInclude>
+    <ClInclude Include="time\dateTimeFormat.h">
+      <Filter>time</Filter>
+    </ClInclude>
+    <ClInclude Include="text\stringFormatterSerialisationHandler.h">
+      <Filter>text</Filter>
+    </ClInclude>
+    <ClInclude Include="display\displayTableStoredState.h">
+      <Filter>display</Filter>
+    </ClInclude>
+    <ClInclude Include="vr\vrMeshes.h">
+      <Filter>vr</Filter>
+    </ClInclude>
+    <ClInclude Include="render\sceneRenderContext.h">
+      <Filter>render</Filter>
+    </ClInclude>
+    <ClInclude Include="appearance\controllers\ac_vr.h">
+      <Filter>appearance\controllers</Filter>
+    </ClInclude>
+    <ClInclude Include="object\temporaryObject.h">
+      <Filter>object</Filter>
+    </ClInclude>
+    <ClInclude Include="object\temporaryObjectType.h">
+      <Filter>object</Filter>
+    </ClInclude>
+    <ClInclude Include="module\moduleGameplay.h">
+      <Filter>module</Filter>
+    </ClInclude>
+    <ClInclude Include="module\moduleCollisionProjectile.h">
+      <Filter>module</Filter>
+    </ClInclude>
+    <ClInclude Include="module\moduleMovementProjectile.h">
+      <Filter>module</Filter>
+    </ClInclude>
+    <ClInclude Include="module\moduleGameplayProjectile.h">
+      <Filter>module</Filter>
+    </ClInclude>
+    <ClInclude Include="module\moduleCustom.h">
+      <Filter>module</Filter>
+    </ClInclude>
+    <ClInclude Include="module\moduleMovementHover.h">
+      <Filter>module</Filter>
+    </ClInclude>
+    <ClInclude Include="ai\aiTaskHandle.h">
+      <Filter>ai</Filter>
+    </ClInclude>
+    <ClInclude Include="ai\aiPerception.h">
+      <Filter>ai</Filter>
+    </ClInclude>
+    <ClInclude Include="ai\aiPerceptionRequest.h">
+      <Filter>ai</Filter>
+    </ClInclude>
+    <ClInclude Include="ai\aiMessageHandler.h">
+      <Filter>ai</Filter>
+    </ClInclude>
+    <ClInclude Include="meshGen\shapes\basic\meshGenBasicShapeData.h">
+      <Filter>meshGen\shapes\basic</Filter>
+    </ClInclude>
+    <ClInclude Include="collision\againstCollision.h">
+      <Filter>collision</Filter>
+    </ClInclude>
+    <ClInclude Include="module\moduleMovementPath.h">
+      <Filter>module</Filter>
+    </ClInclude>
+    <ClInclude Include="collision\checkCollisionCache.h">
+      <Filter>collision</Filter>
+    </ClInclude>
+    <ClInclude Include="meshGen\meshGenElementSocket.h">
+      <Filter>meshGen</Filter>
+    </ClInclude>
+    <ClInclude Include="appearance\controllers\ac_atSocket.h">
+      <Filter>appearance\controllers</Filter>
+    </ClInclude>
+    <ClInclude Include="appearance\socketID.h">
+      <Filter>appearance</Filter>
+    </ClInclude>
+    <ClInclude Include="appearance\controllers\ac_scale.h">
+      <Filter>appearance\controllers</Filter>
+    </ClInclude>
+    <ClInclude Include="render\renderCustomisation.h">
+      <Filter>render</Filter>
+    </ClInclude>
+    <ClInclude Include="game\gameCustomisation.h">
+      <Filter>game</Filter>
+    </ClInclude>
+    <ClInclude Include="library\libraryCustomisation.h">
+      <Filter>library</Filter>
+    </ClInclude>
+    <ClInclude Include="render\lightSourceProxy.h">
+      <Filter>render</Filter>
+    </ClInclude>
+    <ClInclude Include="appearance\lightSource.h">
+      <Filter>appearance</Filter>
+    </ClInclude>
+    <ClInclude Include="world\roomGeneratorInfo.h">
+      <Filter>world</Filter>
+    </ClInclude>
+    <ClInclude Include="world\roomGeneratorInfoSet.h">
+      <Filter>world</Filter>
+    </ClInclude>
+    <ClInclude Include="debug\debugVisualiserUtils.h">
+      <Filter>debug</Filter>
+    </ClInclude>
+    <ClInclude Include="wheresMyPoint\wmp_tools.h">
+      <Filter>wheresMyPoint</Filter>
+    </ClInclude>
+    <ClInclude Include="wheresMyPoint\wmp_applyBoneRenamer.h">
+      <Filter>wheresMyPoint</Filter>
+    </ClInclude>
+    <ClInclude Include="appearance\appearanceControllerPtr.h">
+      <Filter>appearance</Filter>
+    </ClInclude>
+    <ClInclude Include="appearance\meshNode.h">
+      <Filter>appearance</Filter>
+    </ClInclude>
+    <ClInclude Include="meshGen\meshGenElementMeshNode.h">
+      <Filter>meshGen</Filter>
+    </ClInclude>
+    <ClInclude Include="wheresMyPoint\wmp_meshNode.h">
+      <Filter>wheresMyPoint</Filter>
+    </ClInclude>
+    <ClInclude Include="meshGen\meshGenElementForMeshNodes.h">
+      <Filter>meshGen</Filter>
+    </ClInclude>
+    <ClInclude Include="meshGen\meshGenMeshNodeContext.h">
+      <Filter>meshGen</Filter>
+    </ClInclude>
+    <ClInclude Include="meshGen\meshGenElementDropMeshNodes.h">
+      <Filter>meshGen</Filter>
+    </ClInclude>
+    <ClInclude Include="nav\navNode.h">
+      <Filter>nav</Filter>
+    </ClInclude>
+    <ClInclude Include="nav\navSystem.h">
+      <Filter>nav</Filter>
+    </ClInclude>
+    <ClInclude Include="nav\navDeclarations.h">
+      <Filter>nav</Filter>
+    </ClInclude>
+    <ClInclude Include="nav\navTask.h">
+      <Filter>nav</Filter>
+    </ClInclude>
+    <ClInclude Include="nav\navMesh.h">
+      <Filter>nav</Filter>
+    </ClInclude>
+    <ClInclude Include="nav\tasks\navTask_DestroyNavMesh.h">
+      <Filter>nav\tasks</Filter>
+    </ClInclude>
+    <ClInclude Include="nav\nodes\navNode_Point.h">
+      <Filter>nav\nodes</Filter>
+    </ClInclude>
+    <ClInclude Include="nav\nodes\navNode_ConvexPolygon.h">
+      <Filter>nav\nodes</Filter>
+    </ClInclude>
+    <ClInclude Include="nav\tasks\navTask_BuildNavMesh.h">
+      <Filter>nav\tasks</Filter>
+    </ClInclude>
+    <ClInclude Include="module\moduleNavElement.h">
+      <Filter>module</Filter>
+    </ClInclude>
+    <ClInclude Include="ai\aiNavigation.h">
+      <Filter>ai</Filter>
+    </ClInclude>
+    <ClInclude Include="nav\tasks\navTask_FindPath.h">
+      <Filter>nav\tasks</Filter>
+    </ClInclude>
+    <ClInclude Include="nav\navPlacementAtNode.h">
+      <Filter>nav</Filter>
+    </ClInclude>
+    <ClInclude Include="nav\navPath.h">
+      <Filter>nav</Filter>
+    </ClInclude>
+    <ClInclude Include="nav\navNodeRequestor.h">
+      <Filter>nav</Filter>
+    </ClInclude>
+    <ClInclude Include="appearance\meshParticles.h">
+      <Filter>appearance</Filter>
+    </ClInclude>
+    <ClInclude Include="appearance\controllers\ac_particlesBase.h">
+      <Filter>appearance\controllers</Filter>
+    </ClInclude>
+    <ClInclude Include="appearance\controllers\particles\acp_freeRange.h">
+      <Filter>appearance\controllers\particles</Filter>
+    </ClInclude>
+    <ClInclude Include="meshGen\meshGenCheckpoint.h">
+      <Filter>meshGen</Filter>
+    </ClInclude>
+    <ClInclude Include="meshGen\meshGenElementAppearanceController.h">
+      <Filter>meshGen</Filter>
+    </ClInclude>
+    <ClInclude Include="meshGen\meshGenElementBone.h">
+      <Filter>meshGen</Filter>
+    </ClInclude>
+    <ClInclude Include="meshGen\bones\meshGenBones.h">
+      <Filter>meshGen\bones</Filter>
+    </ClInclude>
+    <ClInclude Include="meshGen\meshGenElementDoWheresMyPoint.h">
+      <Filter>meshGen</Filter>
+    </ClInclude>
+    <ClInclude Include="meshGen\meshGenElementRayCast.h">
+      <Filter>meshGen</Filter>
+    </ClInclude>
+    <ClInclude Include="meshGen\meshGenCreateCollisionInfo.h">
+      <Filter>meshGen</Filter>
+    </ClInclude>
+    <ClInclude Include="meshGen\meshGenParam.h">
+      <Filter>meshGen</Filter>
+    </ClInclude>
+    <ClInclude Include="meshGen\meshGenElementPointOfInterest.h">
+      <Filter>meshGen</Filter>
+    </ClInclude>
+    <ClInclude Include="appearance\controllers\ac_offset.h">
+      <Filter>appearance\controllers</Filter>
+    </ClInclude>
+    <ClInclude Include="appearance\controllers\ac_shake.h">
+      <Filter>appearance\controllers</Filter>
+    </ClInclude>
+    <ClInclude Include="world\doorTypeReplacer.h">
+      <Filter>world</Filter>
+    </ClInclude>
+    <ClInclude Include="nav\tasks\navTask_GetRandomLocation.h">
+      <Filter>nav\tasks</Filter>
+    </ClInclude>
+    <ClInclude Include="appearance\controllers\rotateTowards.h">
+      <Filter>appearance\controllers</Filter>
+    </ClInclude>
+    <ClInclude Include="nav\tasks\navTask_GetRandomPath.h">
+      <Filter>nav\tasks</Filter>
+    </ClInclude>
+    <ClInclude Include="appearance\controllers\ac_sway.h">
+      <Filter>appearance\controllers</Filter>
+    </ClInclude>
+    <ClInclude Include="wheresMyPoint\wmp_debugDrawLine.h">
+      <Filter>wheresMyPoint</Filter>
+    </ClInclude>
+    <ClInclude Include="wheresMyPoint\wmp_debugDrawArrow.h">
+      <Filter>wheresMyPoint</Filter>
+    </ClInclude>
+    <ClInclude Include="wheresMyPoint\wmp_debugDrawTransform.h">
+      <Filter>wheresMyPoint</Filter>
+    </ClInclude>
+    <ClInclude Include="meshGen\generationConditions\mggc_wheresMyPoint.h">
+      <Filter>meshGen\generationConditions</Filter>
+    </ClInclude>
+    <ClInclude Include="wheresMyPoint\wmp_makeBoneNameUnique.h">
+      <Filter>wheresMyPoint</Filter>
+    </ClInclude>
+    <ClInclude Include="meshGen\meshGenElementLoop.h">
+      <Filter>meshGen</Filter>
+    </ClInclude>
+    <ClInclude Include="appearance\controllers\ac_rotate.h">
+      <Filter>appearance\controllers</Filter>
+    </ClInclude>
+    <ClInclude Include="wheresMyPoint\wmp_bonePlacement.h">
+      <Filter>wheresMyPoint</Filter>
+    </ClInclude>
+    <ClInclude Include="wheresMyPoint\wmp_isLibraryNameValid.h">
+      <Filter>wheresMyPoint</Filter>
+    </ClInclude>
+    <ClInclude Include="wheresMyPoint\wmp_doesBoneExist.h">
+      <Filter>wheresMyPoint</Filter>
+    </ClInclude>
+    <ClInclude Include="appearance\controllers\ac_atRotator.h">
+      <Filter>appearance\controllers</Filter>
+    </ClInclude>
+    <ClInclude Include="module\custom\mc_display.h">
+      <Filter>module\custom</Filter>
+    </ClInclude>
+    <ClInclude Include="debugSettings.h" />
+    <ClInclude Include="game\gameInputProxy.h">
+      <Filter>game</Filter>
+    </ClInclude>
+    <ClInclude Include="ai\aiLogicData.h">
+      <Filter>ai</Filter>
+    </ClInclude>
+    <ClInclude Include="pipelines\displayPipeline.h">
+      <Filter>pipelines</Filter>
+    </ClInclude>
+    <ClInclude Include="display\drawCommands\displayDrawCommand_custom.h">
+      <Filter>display\drawCommands</Filter>
+    </ClInclude>
+    <ClInclude Include="module\moduleSoundData.h">
+      <Filter>module</Filter>
+    </ClInclude>
+    <ClInclude Include="appearance\controllers\ac_bob.h">
+      <Filter>appearance\controllers</Filter>
+    </ClInclude>
+    <ClInclude Include="appearance\controllers\ac_footAdjuster.h">
+      <Filter>appearance\controllers</Filter>
+    </ClInclude>
+    <ClInclude Include="appearance\controllers\ac_atPlacement.h">
+      <Filter>appearance\controllers</Filter>
+    </ClInclude>
+    <ClInclude Include="ai\aiPerceptionRequestLatent.h">
+      <Filter>ai</Filter>
+    </ClInclude>
+    <ClInclude Include="object\scenery.h">
+      <Filter>object</Filter>
+    </ClInclude>
+    <ClInclude Include="object\sceneryType.h">
+      <Filter>object</Filter>
+    </ClInclude>
+    <ClInclude Include="sound\reverb.h">
+      <Filter>sound</Filter>
+    </ClInclude>
+    <ClInclude Include="presence\pathStringPulling.h">
+      <Filter>presence</Filter>
+    </ClInclude>
+    <ClInclude Include="presence\pathSettings.h">
+      <Filter>presence</Filter>
+    </ClInclude>
+    <ClInclude Include="collision\physicalMaterialMap.h">
+      <Filter>collision</Filter>
+    </ClInclude>
+    <ClInclude Include="sound\soundPlayParams.h">
+      <Filter>sound</Filter>
+    </ClInclude>
+    <ClInclude Include="debug\testConfig.h">
+      <Filter>game</Filter>
+    </ClInclude>
+    <ClInclude Include="appearance\controllers\particles\acp_emitter.h">
+      <Filter>appearance\controllers\particles</Filter>
+    </ClInclude>
+    <ClInclude Include="appearance\controllers\ac_particlesUtils.h">
+      <Filter>appearance\controllers</Filter>
+    </ClInclude>
+    <ClInclude Include="wheresMyPoint\wmp_uniqueID.h">
+      <Filter>wheresMyPoint</Filter>
+    </ClInclude>
+    <ClInclude Include="modulesOwner\modulesOwner.h">
+      <Filter>modulesOwner</Filter>
+    </ClInclude>
+    <ClInclude Include="modulesOwner\modulesOwnerVariable.h">
+      <Filter>modulesOwner</Filter>
+    </ClInclude>
+    <ClInclude Include="ai\aiSocial.h">
+      <Filter>ai</Filter>
+    </ClInclude>
+    <ClInclude Include="module\moduleTemporaryObjects.h">
+      <Filter>module</Filter>
+    </ClInclude>
+    <ClInclude Include="module\moduleTemporaryObjectsData.h">
+      <Filter>module</Filter>
+    </ClInclude>
+    <ClInclude Include="debug\debugPanel.h">
+      <Filter>debug</Filter>
+    </ClInclude>
+    <ClInclude Include="world\pointOfInterestTypes.h">
+      <Filter>world</Filter>
+    </ClInclude>
+    <ClInclude Include="nav\navLatentUtils.h">
+      <Filter>nav</Filter>
+    </ClInclude>
+    <ClInclude Include="world\doorVRCorridor.h">
+      <Filter>world</Filter>
+    </ClInclude>
+    <ClInclude Include="meshGen\generationConditions\mggc_dev.h">
+      <Filter>meshGen\generationConditions</Filter>
+    </ClInclude>
+    <ClInclude Include="ai\aiMessageTemplate.h">
+      <Filter>ai</Filter>
+    </ClInclude>
+    <ClInclude Include="world\inRoomPlacement.h">
+      <Filter>world</Filter>
+    </ClInclude>
+    <ClInclude Include="nav\tasks\navTask_PathTask.h">
+      <Filter>nav\tasks</Filter>
+    </ClInclude>
+    <ClInclude Include="general\cooldowns.h">
+      <Filter>general</Filter>
+    </ClInclude>
+    <ClInclude Include="world\activationGroup.h">
+      <Filter>world</Filter>
+    </ClInclude>
+    <ClInclude Include="world\roomUtils.h">
+      <Filter>world</Filter>
+    </ClInclude>
+    <ClInclude Include="module\moduleMovementSwitch.h">
+      <Filter>module</Filter>
+    </ClInclude>
+    <ClInclude Include="ai\aiObjectVariables.h">
+      <Filter>ai</Filter>
+    </ClInclude>
+    <ClInclude Include="world\roomGenerators\roomGenerator_roomPieceCombinerInfo.h">
+      <Filter>world\roomGenerators</Filter>
+    </ClInclude>
+    <ClInclude Include="world\roomGenerators\roomGenerator_chooseRoomType.h">
+      <Filter>world\roomGenerators</Filter>
+    </ClInclude>
+    <ClInclude Include="world\roomPieceCombinerGenerator.h">
+      <Filter>world</Filter>
+    </ClInclude>
+    <ClInclude Include="world\roomGenerators\roomGenerator_chooseRoomTypeForCorridor.h">
+      <Filter>world\roomGenerators</Filter>
+    </ClInclude>
+    <ClInclude Include="world\roomGenerators\roomGenerator_chooseRoomTypeForCorridor_list.h">
+      <Filter>world\roomGenerators</Filter>
+    </ClInclude>
+    <ClInclude Include="game\delayedObjectCreation.h">
+      <Filter>game</Filter>
+    </ClInclude>
+    <ClInclude Include="appearance\controllers\particles\acp_localGravity.h">
+      <Filter>appearance\controllers\particles</Filter>
+    </ClInclude>
+    <ClInclude Include="appearance\controllers\ac_particlesContinuous.h">
+      <Filter>appearance\controllers</Filter>
+    </ClInclude>
+    <ClInclude Include="appearance\controllers\particles\acp_crumbs.h">
+      <Filter>appearance\controllers\particles</Filter>
+    </ClInclude>
+    <ClInclude Include="module\moduleEnums.h">
+      <Filter>module</Filter>
+    </ClInclude>
+    <ClInclude Include="appearance\controllers\ac_providePlacementFromSocketMS.h">
+      <Filter>appearance\controllers</Filter>
+    </ClInclude>
+    <ClInclude Include="appearance\controllers\ac_providePlacementFromBoneMS.h">
+      <Filter>appearance\controllers</Filter>
+    </ClInclude>
+    <ClInclude Include="appearance\controllers\ac_readyHumanoidArm.h">
+      <Filter>appearance\controllers</Filter>
+    </ClInclude>
+    <ClInclude Include="appearance\controllers\ac_storeBoneOffset.h">
+      <Filter>appearance\controllers</Filter>
+    </ClInclude>
+    <ClInclude Include="appearance\controllers\ac_readyHumanoidSpine.h">
+      <Filter>appearance\controllers</Filter>
+    </ClInclude>
+    <ClInclude Include="appearance\controllers\ac_alignmentRoll.h">
+      <Filter>appearance\controllers</Filter>
+    </ClInclude>
+    <ClInclude Include="appearance\controllers\ac_orientAsOtherBone.h">
+      <Filter>appearance\controllers</Filter>
+    </ClInclude>
+    <ClInclude Include="appearance\controllers\ac_atBone.h">
+      <Filter>appearance\controllers</Filter>
+    </ClInclude>
+    <ClInclude Include="appearance\controllers\ac_dragBoneUp.h">
+      <Filter>appearance\controllers</Filter>
+    </ClInclude>
+    <ClInclude Include="appearance\controllers\particles\acp_decal.h">
+      <Filter>appearance\controllers\particles</Filter>
+    </ClInclude>
+    <ClInclude Include="module\moduleMovementFastColliding.h">
+      <Filter>module</Filter>
+    </ClInclude>
+    <ClInclude Include="rest\rest.h">
+      <Filter>rest</Filter>
+    </ClInclude>
+    <ClInclude Include="module\moduleNavElementNode.h">
+      <Filter>module</Filter>
+    </ClInclude>
+    <ClInclude Include="sound\soundSourceModifier.h">
+      <Filter>sound</Filter>
+    </ClInclude>
+    <ClInclude Include="ai\aiSocialData.h">
+      <Filter>ai</Filter>
+    </ClInclude>
+    <ClInclude Include="ai\aiSocialRules.h">
+      <Filter>ai</Filter>
+    </ClInclude>
+    <ClInclude Include="render\renderSystem.h">
+      <Filter>render</Filter>
+    </ClInclude>
+    <ClInclude Include="world\regionGeneratorInfo.h">
+      <Filter>world</Filter>
+    </ClInclude>
+    <ClInclude Include="appearance\controllers\ac_particlesMeshParticles.h">
+      <Filter>appearance\controllers</Filter>
+    </ClInclude>
+    <ClInclude Include="appearance\controllers\particles\acp_lightning.h">
+      <Filter>appearance\controllers\particles</Filter>
+    </ClInclude>
+    <ClInclude Include="module\custom\mc_lightningSpawner.h">
+      <Filter>module\custom</Filter>
+    </ClInclude>
+    <ClInclude Include="appearance\controllers\ac_continuousRotation.h">
+      <Filter>appearance\controllers</Filter>
+    </ClInclude>
+    <ClInclude Include="appearance\controllers\ac_alignAxes.h">
+      <Filter>appearance\controllers</Filter>
+    </ClInclude>
+    <ClInclude Include="debug\previewAILogic.h">
+      <Filter>debug</Filter>
+    </ClInclude>
+    <ClInclude Include="appearance\controllers\ac_lean.h">
+      <Filter>appearance\controllers</Filter>
+    </ClInclude>
+    <ClInclude Include="appearance\controllers\ac_springPlacementMS.h">
+      <Filter>appearance\controllers</Filter>
+    </ClInclude>
+    <ClInclude Include="appearance\controllers\particles\acp_scale.h">
+      <Filter>appearance\controllers\particles</Filter>
+    </ClInclude>
+    <ClInclude Include="world\worldSetting.h">
+      <Filter>world</Filter>
+    </ClInclude>
+    <ClInclude Include="world\worldSettingCondition.h">
+      <Filter>world</Filter>
+    </ClInclude>
+    <ClInclude Include="wheresMyPoint\wmp_chooseLibraryStored.h">
+      <Filter>wheresMyPoint</Filter>
+    </ClInclude>
+    <ClInclude Include="wheresMyPoint\wmp_libraryName.h">
+      <Filter>wheresMyPoint</Filter>
+    </ClInclude>
+    <ClInclude Include="world\environmentOverlay.h">
+      <Filter>world</Filter>
+    </ClInclude>
+    <ClInclude Include="wheresMyPoint\wmp_environment.h">
+      <Filter>wheresMyPoint</Filter>
+    </ClInclude>
+    <ClInclude Include="ai\aiEnums.h">
+      <Filter>ai</Filter>
+    </ClInclude>
+    <ClInclude Include="module\custom\mc_lcdLetters.h">
+      <Filter>module\custom</Filter>
+    </ClInclude>
+    <ClInclude Include="presence\pathUtils.h">
+      <Filter>presence</Filter>
+    </ClInclude>
+    <ClInclude Include="appearance\controllers\ac_lagPlacementMS.h">
+      <Filter>appearance\controllers</Filter>
+    </ClInclude>
+    <ClInclude Include="wheresMyPoint\wmp_nominalDoorSize.h">
+      <Filter>wheresMyPoint</Filter>
+    </ClInclude>
+    <ClInclude Include="meshGen\meshGenConfig.h">
+      <Filter>meshGen</Filter>
+    </ClInclude>
+    <ClInclude Include="meshGen\generationConditions\mggc_allowMoreDetails.h">
+      <Filter>meshGen\generationConditions</Filter>
+    </ClInclude>
+    <ClInclude Include="wheresMyPoint\wmp_regionGenerator.h">
+      <Filter>wheresMyPoint</Filter>
+    </ClInclude>
+    <ClInclude Include="appearance\controllers\ac_gyro.h">
+      <Filter>appearance\controllers</Filter>
+    </ClInclude>
+    <ClInclude Include="meshGen\meshGenElementRandomSet.h">
+      <Filter>meshGen</Filter>
+    </ClInclude>
+    <ClInclude Include="time\distance.h">
+      <Filter>time</Filter>
+    </ClInclude>
+    <ClInclude Include="appearance\controllers\ac_provideFingerTipPlacementMS.h">
+      <Filter>appearance\controllers</Filter>
+    </ClInclude>
+    <ClInclude Include="appearance\meshLibInstance.h">
+      <Filter>appearance</Filter>
+    </ClInclude>
+    <ClInclude Include="game\gameUtils.h">
+      <Filter>game</Filter>
+    </ClInclude>
+    <ClInclude Include="meshGen\meshGenElementInfo.h">
+      <Filter>meshGen</Filter>
+    </ClInclude>
+    <ClInclude Include="meshGen\meshGenGenerationInfo.h">
+      <Filter>meshGen</Filter>
+    </ClInclude>
+    <ClInclude Include="meshGen\meshGenElementIncludeStack.h">
+      <Filter>meshGen</Filter>
+    </ClInclude>
+    <ClInclude Include="meshGen\meshGenTypes.h">
+      <Filter>meshGen</Filter>
+    </ClInclude>
+    <ClInclude Include="appearance\controllers\particles\acp_dissolve.h">
+      <Filter>appearance\controllers\particles</Filter>
+    </ClInclude>
+    <ClInclude Include="appearance\controllers\particleModifiers\acpm_scaleEach.h">
+      <Filter>appearance\controllers\particleModifiers</Filter>
+    </ClInclude>
+    <ClInclude Include="wheresMyPoint\wmp_makeSocketNameUnique.h">
+      <Filter>wheresMyPoint</Filter>
+    </ClInclude>
+    <ClInclude Include="wheresMyPoint\wmp_allowMoreDetails.h">
+      <Filter>wheresMyPoint</Filter>
+    </ClInclude>
+    <ClInclude Include="appearance\controllers\ac_tentacle.h">
+      <Filter>appearance\controllers</Filter>
+    </ClInclude>
+    <ClInclude Include="appearance\controllers\particleModifiers\acpm_intensityToNumber.h">
+      <Filter>appearance\controllers\particleModifiers</Filter>
+    </ClInclude>
+    <ClInclude Include="module\moduleMovementFastCollidingProjectile.h">
+      <Filter>module</Filter>
+    </ClInclude>
+    <ClInclude Include="meshGen\generationConditions\mggc_bigEnoughForLOD.h">
+      <Filter>meshGen\generationConditions</Filter>
+    </ClInclude>
+    <ClInclude Include="world\worldAddress.h">
+      <Filter>world</Filter>
+    </ClInclude>
+    <ClInclude Include="ai\aiHunch.h">
+      <Filter>ai</Filter>
+    </ClInclude>
+    <ClInclude Include="latent\functions\latentFunctions.h">
+      <Filter>latent\functions</Filter>
+    </ClInclude>
+    <ClInclude Include="latent\latent.h">
+      <Filter>latent</Filter>
+    </ClInclude>
+    <ClInclude Include="module\moduleRareAdvance.h">
+      <Filter>module</Filter>
+    </ClInclude>
+    <ClInclude Include="jobSystem\jobSystemsImmediateJobPerformer.h">
+      <Filter>jobSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="meshGen\generationConditions\mggc_gameTags.h">
+      <Filter>meshGen\generationConditions</Filter>
+    </ClInclude>
+    <ClInclude Include="world\pseudoRoomRegion.h">
+      <Filter>world</Filter>
+    </ClInclude>
+    <ClInclude Include="wheresMyPoint\wmp_getParameterFromLibraryStored.h">
+      <Filter>wheresMyPoint</Filter>
+    </ClInclude>
+    <ClInclude Include="meshGen\meshGenElementGetFromMeshNode.h">
+      <Filter>meshGen</Filter>
+    </ClInclude>
+    <ClInclude Include="meshGen\modifiers\meshGenModifierUtils.h">
+      <Filter>meshGen\modifiers</Filter>
+    </ClInclude>
+    <ClInclude Include="meshGen\generationConditions\mggc_previewGame.h">
+      <Filter>meshGen\generationConditions</Filter>
+    </ClInclude>
+    <ClInclude Include="wheresMyPoint\wmp_randomGenerator.h">
+      <Filter>wheresMyPoint</Filter>
+    </ClInclude>
+    <ClInclude Include="world\spaceBlocker.h">
+      <Filter>world</Filter>
+    </ClInclude>
+    <ClInclude Include="meshGen\meshGenCreateSpaceBlockerInfo.h">
+      <Filter>meshGen</Filter>
+    </ClInclude>
+    <ClInclude Include="object\spaceBlockingObject.h">
+      <Filter>object</Filter>
+    </ClInclude>
+    <ClInclude Include="object\spaceBlockingObjectType.h">
+      <Filter>object</Filter>
+    </ClInclude>
+    <ClInclude Include="module\moduleGameplayPreview.h">
+      <Filter>module</Filter>
+    </ClInclude>
+    <ClInclude Include="appearance\controllers\ac_previewControllerTransform.h">
+      <Filter>appearance\controllers</Filter>
+    </ClInclude>
+    <ClInclude Include="module\moduleMovementDial.h">
+      <Filter>module</Filter>
+    </ClInclude>
+    <ClInclude Include="module\moduleMovementInteractivePart.h">
+      <Filter>module</Filter>
+    </ClInclude>
+    <ClInclude Include="loaders\loaderBase.h">
+      <Filter>loaders</Filter>
+    </ClInclude>
+    <ClInclude Include="loaders\loaderLoadingLogo.h">
+      <Filter>loaders</Filter>
+    </ClInclude>
+    <ClInclude Include="loaders\loaderSequence.h">
+      <Filter>loaders</Filter>
+    </ClInclude>
+    <ClInclude Include="loaders\loaderText.h">
+      <Filter>loaders</Filter>
+    </ClInclude>
+    <ClInclude Include="module\custom\mc_lightSources.h">
+      <Filter>module\custom</Filter>
+    </ClInclude>
+    <ClInclude Include="appearance\controllers\ac_applyTransformToVar.h">
+      <Filter>appearance\controllers</Filter>
+    </ClInclude>
+    <ClInclude Include="appearance\controllers\ac_animTransformToVar.h">
+      <Filter>appearance\controllers</Filter>
+    </ClInclude>
+    <ClInclude Include="meshGen\modifiers\meshGenModifier_mirror.h">
+      <Filter>meshGen\modifiers</Filter>
+    </ClInclude>
+    <ClInclude Include="meshGen\modifiers\meshGenModifierSelection.h">
+      <Filter>meshGen\modifiers</Filter>
+    </ClInclude>
+    <ClInclude Include="meshGen\generationConditions\mggc_bullshotSystem.h">
+      <Filter>meshGen\generationConditions</Filter>
+    </ClInclude>
+    <ClInclude Include="meshGen\generationConditions\mggc_lod.h">
+      <Filter>meshGen\generationConditions</Filter>
+    </ClInclude>
+    <ClInclude Include="meshGen\generationConditions\mggc_systemTags.h">
+      <Filter>meshGen\generationConditions</Filter>
+    </ClInclude>
+    <ClInclude Include="game\bullshotSystem.h">
+      <Filter>game</Filter>
+    </ClInclude>
+    <ClInclude Include="nav\navFlags.h">
+      <Filter>nav</Filter>
+    </ClInclude>
+    <ClInclude Include="sound\soundSampleTextCache.h">
+      <Filter>sound</Filter>
+    </ClInclude>
+    <ClInclude Include="general\cooldownsTimeStampBased.h">
+      <Filter>general</Filter>
+    </ClInclude>
+    <ClInclude Include="meshGen\meshGenSimplifyToBoxInfo.h">
+      <Filter>meshGen</Filter>
+    </ClInclude>
+    <ClInclude Include="module\custom\mc_temporaryObjectSpawner.h">
+      <Filter>module\custom</Filter>
+    </ClInclude>
+    <ClInclude Include="module\custom\mc_lcdLights.h">
+      <Filter>module\custom</Filter>
+    </ClInclude>
+    <ClInclude Include="appearance\controllers\ac_matchPlacementObject.h">
+      <Filter>appearance\controllers</Filter>
+    </ClInclude>
+    <ClInclude Include="appearance\controllers\ac_rotateTowardsObject.h">
+      <Filter>appearance\controllers</Filter>
+    </ClInclude>
+    <ClInclude Include="wheresMyPoint\wmp_previewGame.h">
+      <Filter>wheresMyPoint</Filter>
+    </ClInclude>
+    <ClInclude Include="world\predefinedRoomOcclusionCulling.h">
+      <Filter>world</Filter>
+    </ClInclude>
+    <ClInclude Include="meshGen\meshGenElementMeshProcessor.h">
+      <Filter>meshGen</Filter>
+    </ClInclude>
+    <ClInclude Include="meshGen\meshProcessorOperators\meshGenMeshProcOp_weld.h">
+      <Filter>meshGen\meshProcessorOperators</Filter>
+    </ClInclude>
+    <ClInclude Include="meshGen\meshProcessorOperators\meshGenMeshProcOp_cut.h">
+      <Filter>meshGen\meshProcessorOperators</Filter>
+    </ClInclude>
+    <ClInclude Include="meshGen\meshProcessorOperators\meshGenMeshProcOp_split.h">
+      <Filter>meshGen\meshProcessorOperators</Filter>
+    </ClInclude>
+    <ClInclude Include="meshGen\meshProcessorOperators\meshGenMeshProcOp_closeConvexGapOnPlane.h">
+      <Filter>meshGen\meshProcessorOperators</Filter>
+    </ClInclude>
+    <ClInclude Include="meshGen\meshProcessorOperators\meshGenMeshProcOp_changeMaterial.h">
+      <Filter>meshGen\meshProcessorOperators</Filter>
+    </ClInclude>
+    <ClInclude Include="meshGen\meshProcessorOperators\meshGenMeshProcOp_duplicate.h">
+      <Filter>meshGen\meshProcessorOperators</Filter>
+    </ClInclude>
+    <ClInclude Include="meshGen\meshProcessorOperators\meshGenMeshProcOp_reverseSurfaces.h">
+      <Filter>meshGen\meshProcessorOperators</Filter>
+    </ClInclude>
+    <ClInclude Include="meshGen\meshProcessorOperators\meshGenMeshProcOp_removeSurfaces.h">
+      <Filter>meshGen\meshProcessorOperators</Filter>
+    </ClInclude>
+    <ClInclude Include="meshGen\meshProcessorOperators\meshGenMeshProcOp_skin.h">
+      <Filter>meshGen\meshProcessorOperators</Filter>
+    </ClInclude>
+    <ClInclude Include="meshGen\meshProcessorOperators\meshGenMeshProcOp_setU.h">
+      <Filter>meshGen\meshProcessorOperators</Filter>
+    </ClInclude>
+    <ClInclude Include="meshGen\meshProcessorOperators\meshGenMeshProcOp_extrude.h">
+      <Filter>meshGen\meshProcessorOperators</Filter>
+    </ClInclude>
+    <ClInclude Include="meshGen\meshProcessorOperators\meshGenMeshProcOp_select.h">
+      <Filter>meshGen\meshProcessorOperators</Filter>
+    </ClInclude>
+    <ClInclude Include="wheresMyPoint\wmp_lod.h">
+      <Filter>wheresMyPoint</Filter>
+    </ClInclude>
+    <ClInclude Include="meshGen\meshProcessorOperators\meshGenMeshProcOp_delete.h">
+      <Filter>meshGen\meshProcessorOperators</Filter>
+    </ClInclude>
+    <ClInclude Include="meshGen\meshProcessorOperators\meshGenMeshProcOp_deform.h">
+      <Filter>meshGen\meshProcessorOperators</Filter>
+    </ClInclude>
+    <ClInclude Include="meshGen\meshProcessorOperators\meshGenMeshProcOp_dropVerticesOnPlane.h">
+      <Filter>meshGen\meshProcessorOperators</Filter>
+    </ClInclude>
+    <ClInclude Include="meshGen\generationConditions\mggc_slidingLocomotion.h">
+      <Filter>meshGen\generationConditions</Filter>
+    </ClInclude>
+    <ClInclude Include="meshGen\meshProcessorOperators\meshGenMeshProcOp_scale.h">
+      <Filter>meshGen\meshProcessorOperators</Filter>
+    </ClInclude>
+    <ClInclude Include="module\moduleCollisionHeaded.h">
+      <Filter>module</Filter>
+    </ClInclude>
+    <ClInclude Include="module\moduleMovementHoverOld.h">
+      <Filter>module</Filter>
+    </ClInclude>
+    <ClInclude Include="general\libraryBasedParameters.h">
+      <Filter>general</Filter>
+    </ClInclude>
+    <ClInclude Include="appearance\controllers\particles\acp_dust.h">
+      <Filter>appearance\controllers\particles</Filter>
+    </ClInclude>
+    <ClInclude Include="meshGen\meshProcessorOperators\meshGenMeshProcOp_scaleVerticesOnPlane.h">
+      <Filter>meshGen\meshProcessorOperators</Filter>
+    </ClInclude>
+    <ClInclude Include="wheresMyPoint\wmp_slidingLocomotion.h">
+      <Filter>wheresMyPoint</Filter>
+    </ClInclude>
+    <ClInclude Include="appearance\meshDepot.h">
+      <Filter>appearance</Filter>
+    </ClInclude>
+    <ClInclude Include="appearance\generatedMeshDeterminants.h">
+      <Filter>appearance</Filter>
+    </ClInclude>
+    <ClInclude Include="appearance\controllers\ac_autoBlendBones.h">
+      <Filter>appearance\controllers</Filter>
+    </ClInclude>
+    <ClInclude Include="appearance\controllers\ac_combineVariables.h">
+      <Filter>appearance\controllers</Filter>
+    </ClInclude>
+    <ClInclude Include="meshGen\meshProcessorOperators\meshGenMeshProcOp_setCustomData.h">
+      <Filter>meshGen\meshProcessorOperators</Filter>
+    </ClInclude>
+    <ClInclude Include="appearance\controllers\ac_reorientate.h">
+      <Filter>appearance\controllers</Filter>
+    </ClInclude>
+    <ClInclude Include="appearance\controllers\ac_adjustWalkerPlacements.h">
+      <Filter>appearance\controllers</Filter>
+    </ClInclude>
+    <ClInclude Include="meshGen\meshProcessorOperators\meshGenMeshProcOp_skinBetween.h">
+      <Filter>meshGen\meshProcessorOperators</Filter>
+    </ClInclude>
+    <ClInclude Include="appearance\controllers\ac_poseManager.h">
+      <Filter>appearance\controllers</Filter>
+    </ClInclude>
+    <ClInclude Include="appearance\controllers\ac_poseInject.h">
+      <Filter>appearance\controllers</Filter>
+    </ClInclude>
+    <ClInclude Include="appearance\controllers\components\acc_keepChildrenWhereTheyWere.h">
+      <Filter>appearance\controllers\components</Filter>
+    </ClInclude>
+    <ClInclude Include="appearance\controllers\ac_providePlacementFromOtherIMOSocketMS.h">
+      <Filter>appearance\controllers</Filter>
+    </ClInclude>
+    <ClInclude Include="text\localisedCharacters.h">
+      <Filter>text</Filter>
+    </ClInclude>
+    <ClInclude Include="loaders\loaderEmpty.h">
+      <Filter>loaders</Filter>
+    </ClInclude>
+    <ClInclude Include="appearance\controllers\ac_applyBoneOffset.h">
+      <Filter>appearance\controllers</Filter>
+    </ClInclude>
+    <ClInclude Include="render\renderEnums.h">
+      <Filter>render</Filter>
+    </ClInclude>
+    <ClInclude Include="appearance\controllers\ac_copyRoomVariables.h">
+      <Filter>appearance\controllers</Filter>
+    </ClInclude>
+    <ClInclude Include="wheresMyPoint\wmp_hasDoor.h">
+      <Filter>wheresMyPoint</Filter>
+    </ClInclude>
+    <ClInclude Include="meshGen\meshGenElementNamedCheckpoint.h">
+      <Filter>meshGen</Filter>
+    </ClInclude>
+    <ClInclude Include="meshGen\meshProcessorOperators\meshGenMeshProcOp_setCustomDataDistanceBased.h">
+      <Filter>meshGen\meshProcessorOperators</Filter>
+    </ClInclude>
+    <ClInclude Include="appearance\controllers\particles\acp_orientationOffset.h">
+      <Filter>appearance\controllers\particles</Filter>
+    </ClInclude>
+    <ClInclude Include="appearance\controllers\ac_forthAndBackVar.h">
+      <Filter>appearance\controllers</Filter>
+    </ClInclude>
+    <ClInclude Include="meshGen\generationConditions\mggc_videoOptions.h">
+      <Filter>meshGen\generationConditions</Filter>
+    </ClInclude>
+    <ClInclude Include="appearance\controllers\ac_handToLegs.h">
+      <Filter>appearance\controllers</Filter>
+    </ClInclude>
+    <ClInclude Include="module\custom\mc_vrPlacementsProvider.h">
+      <Filter>module\custom</Filter>
+    </ClInclude>
+    <ClInclude Include="meshGen\meshProcessorOperators\meshGenMeshProcOp_numberCustomData.h">
+      <Filter>meshGen\meshProcessorOperators</Filter>
+    </ClInclude>
+    <ClInclude Include="gameScript\gameScript.h">
+      <Filter>gameScript</Filter>
+    </ClInclude>
+    <ClInclude Include="gameScript\gameScriptCondition.h">
+      <Filter>gameScript</Filter>
+    </ClInclude>
+    <ClInclude Include="gameScript\gameScriptElement.h">
+      <Filter>gameScript</Filter>
+    </ClInclude>
+    <ClInclude Include="gameScript\gameScriptExecution.h">
+      <Filter>gameScript</Filter>
+    </ClInclude>
+    <ClInclude Include="gameScript\registeredGameScriptConditions.h">
+      <Filter>gameScript</Filter>
+    </ClInclude>
+    <ClInclude Include="gameScript\registeredGameScriptElements.h">
+      <Filter>gameScript</Filter>
+    </ClInclude>
+    <ClInclude Include="gameScript\elements\gse_aiMessage.h">
+      <Filter>gameScript\elements</Filter>
+    </ClInclude>
+    <ClInclude Include="gameScript\elements\gse_appearance.h">
+      <Filter>gameScript\elements</Filter>
+    </ClInclude>
+    <ClInclude Include="gameScript\elements\gse_blendObjectVar.h">
+      <Filter>gameScript\elements</Filter>
+    </ClInclude>
+    <ClInclude Include="gameScript\elements\gse_blendRoomVar.h">
+      <Filter>gameScript\elements</Filter>
+    </ClInclude>
+    <ClInclude Include="gameScript\elements\gse_ceaseToExist.h">
+      <Filter>gameScript\elements</Filter>
+    </ClInclude>
+    <ClInclude Include="gameScript\elements\gse_changeScript.h">
+      <Filter>gameScript\elements</Filter>
+    </ClInclude>
+    <ClInclude Include="gameScript\elements\gse_collision.h">
+      <Filter>gameScript\elements</Filter>
+    </ClInclude>
+    <ClInclude Include="gameScript\elements\gse_controller.h">
+      <Filter>gameScript\elements</Filter>
+    </ClInclude>
+    <ClInclude Include="gameScript\elements\gse_copyObjectVar.h">
+      <Filter>gameScript\elements</Filter>
+    </ClInclude>
+    <ClInclude Include="gameScript\elements\gse_copyVar.h">
+      <Filter>gameScript\elements</Filter>
+    </ClInclude>
+    <ClInclude Include="gameScript\elements\gse_derandomizeVar.h">
+      <Filter>gameScript\elements</Filter>
+    </ClInclude>
+    <ClInclude Include="gameScript\elements\gse_devPause.h">
+      <Filter>gameScript\elements</Filter>
+    </ClInclude>
+    <ClInclude Include="gameScript\elements\gse_door.h">
+      <Filter>gameScript\elements</Filter>
+    </ClInclude>
+    <ClInclude Include="gameScript\elements\gse_endScript.h">
+      <Filter>gameScript\elements</Filter>
+    </ClInclude>
+    <ClInclude Include="gameScript\elements\gse_find.h">
+      <Filter>gameScript\elements</Filter>
+    </ClInclude>
+    <ClInclude Include="gameScript\elements\gse_getObjectVar.h">
+      <Filter>gameScript\elements</Filter>
+    </ClInclude>
+    <ClInclude Include="gameScript\elements\gse_goSubLabel.h">
+      <Filter>gameScript\elements</Filter>
+    </ClInclude>
+    <ClInclude Include="gameScript\elements\gse_goToLabel.h">
+      <Filter>gameScript\elements</Filter>
+    </ClInclude>
+    <ClInclude Include="gameScript\elements\gse_goToRandomLabel.h">
+      <Filter>gameScript\elements</Filter>
+    </ClInclude>
+    <ClInclude Include="gameScript\elements\gse_info.h">
+      <Filter>gameScript\elements</Filter>
+    </ClInclude>
+    <ClInclude Include="gameScript\elements\gse_label.h">
+      <Filter>gameScript\elements</Filter>
+    </ClInclude>
+    <ClInclude Include="gameScript\elements\gse_lightningSpawner.h">
+      <Filter>gameScript\elements</Filter>
+    </ClInclude>
+    <ClInclude Include="gameScript\elements\gse_lightSource.h">
+      <Filter>gameScript\elements</Filter>
+    </ClInclude>
+    <ClInclude Include="gameScript\elements\gse_locomotion.h">
+      <Filter>gameScript\elements</Filter>
+    </ClInclude>
+    <ClInclude Include="gameScript\elements\gse_movementControl.h">
+      <Filter>gameScript\elements</Filter>
+    </ClInclude>
+    <ClInclude Include="gameScript\elements\gse_movementScripted.h">
+      <Filter>gameScript\elements</Filter>
+    </ClInclude>
+    <ClInclude Include="gameScript\elements\gse_output.h">
+      <Filter>gameScript\elements</Filter>
+    </ClInclude>
+    <ClInclude Include="gameScript\elements\gse_physicalSensation.h">
+      <Filter>gameScript\elements</Filter>
+    </ClInclude>
+    <ClInclude Include="gameScript\elements\gse_presence.h">
+      <Filter>gameScript\elements</Filter>
+    </ClInclude>
+    <ClInclude Include="gameScript\elements\gse_presenceForceDisplacementVRAnchor.h">
+      <Filter>gameScript\elements</Filter>
+    </ClInclude>
+    <ClInclude Include="gameScript\elements\gse_resetObjectVar.h">
+      <Filter>gameScript\elements</Filter>
+    </ClInclude>
+    <ClInclude Include="gameScript\elements\gse_returnSub.h">
+      <Filter>gameScript\elements</Filter>
+    </ClInclude>
+    <ClInclude Include="gameScript\elements\gse_roomAppearance.h">
+      <Filter>gameScript\elements</Filter>
+    </ClInclude>
+    <ClInclude Include="gameScript\elements\gse_setObjectVar.h">
+      <Filter>gameScript\elements</Filter>
+    </ClInclude>
+    <ClInclude Include="gameScript\elements\gse_setPresencePath.h">
+      <Filter>gameScript\elements</Filter>
+    </ClInclude>
+    <ClInclude Include="gameScript\elements\gse_setRoomVar.h">
+      <Filter>gameScript\elements</Filter>
+    </ClInclude>
+    <ClInclude Include="gameScript\elements\gse_sound.h">
+      <Filter>gameScript\elements</Filter>
+    </ClInclude>
+    <ClInclude Include="gameScript\elements\gse_startSubScript.h">
+      <Filter>gameScript\elements</Filter>
+    </ClInclude>
+    <ClInclude Include="gameScript\elements\gse_stopSubScript.h">
+      <Filter>gameScript\elements</Filter>
+    </ClInclude>
+    <ClInclude Include="gameScript\elements\gse_system.h">
+      <Filter>gameScript\elements</Filter>
+    </ClInclude>
+    <ClInclude Include="gameScript\elements\gse_teleport.h">
+      <Filter>gameScript\elements</Filter>
+    </ClInclude>
+    <ClInclude Include="gameScript\elements\gse_teleportAllUsingVRAnchor.h">
+      <Filter>gameScript\elements</Filter>
+    </ClInclude>
+    <ClInclude Include="gameScript\elements\gse_temporaryObject.h">
+      <Filter>gameScript\elements</Filter>
+    </ClInclude>
+    <ClInclude Include="gameScript\elements\gse_timer.h">
+      <Filter>gameScript\elements</Filter>
+    </ClInclude>
+    <ClInclude Include="gameScript\elements\gse_trap.h">
+      <Filter>gameScript\elements</Filter>
+    </ClInclude>
+    <ClInclude Include="gameScript\elements\gse_trapSub.h">
+      <Filter>gameScript\elements</Filter>
+    </ClInclude>
+    <ClInclude Include="gameScript\elements\gse_triggerTrap.h">
+      <Filter>gameScript\elements</Filter>
+    </ClInclude>
+    <ClInclude Include="gameScript\elements\gse_var.h">
+      <Filter>gameScript\elements</Filter>
+    </ClInclude>
+    <ClInclude Include="gameScript\elements\gse_wait.h">
+      <Filter>gameScript\elements</Filter>
+    </ClInclude>
+    <ClInclude Include="gameScript\elements\gse_waitForCondition.h">
+      <Filter>gameScript\elements</Filter>
+    </ClInclude>
+    <ClInclude Include="gameScript\elements\gse_waitForObjectCease.h">
+      <Filter>gameScript\elements</Filter>
+    </ClInclude>
+    <ClInclude Include="gameScript\elements\gse_yield.h">
+      <Filter>gameScript\elements</Filter>
+    </ClInclude>
+    <ClInclude Include="gameScript\conditions\gsc_chance.h">
+      <Filter>gameScript\conditions</Filter>
+    </ClInclude>
+    <ClInclude Include="gameScript\conditions\gsc_door.h">
+      <Filter>gameScript\conditions</Filter>
+    </ClInclude>
+    <ClInclude Include="gameScript\conditions\gsc_input.h">
+      <Filter>gameScript\conditions</Filter>
+    </ClInclude>
+    <ClInclude Include="gameScript\conditions\gsc_logicOps.h">
+      <Filter>gameScript\conditions</Filter>
+    </ClInclude>
+    <ClInclude Include="gameScript\conditions\gsc_objectVar.h">
+      <Filter>gameScript\conditions</Filter>
+    </ClInclude>
+    <ClInclude Include="gameScript\conditions\gsc_objectVarsEqual.h">
+      <Filter>gameScript\conditions</Filter>
+    </ClInclude>
+    <ClInclude Include="gameScript\conditions\gsc_presence.h">
+      <Filter>gameScript\conditions</Filter>
+    </ClInclude>
+    <ClInclude Include="gameScript\conditions\gsc_random.h">
+      <Filter>gameScript\conditions</Filter>
+    </ClInclude>
+    <ClInclude Include="gameScript\conditions\gsc_relativeLocation.h">
+      <Filter>gameScript\conditions</Filter>
+    </ClInclude>
+    <ClInclude Include="gameScript\conditions\gsc_room.h">
+      <Filter>gameScript\conditions</Filter>
+    </ClInclude>
+    <ClInclude Include="gameScript\conditions\gsc_roomVar.h">
+      <Filter>gameScript\conditions</Filter>
+    </ClInclude>
+    <ClInclude Include="gameScript\conditions\gsc_timer.h">
+      <Filter>gameScript\conditions</Filter>
+    </ClInclude>
+    <ClInclude Include="gameScript\conditions\gsc_var.h">
+      <Filter>gameScript\conditions</Filter>
+    </ClInclude>
+    <ClInclude Include="gameScript\conditions\gsc_varsEqual.h">
+      <Filter>gameScript\conditions</Filter>
+    </ClInclude>
+    <ClInclude Include="module\moduleMovementScripted.h">
+      <Filter>module</Filter>
+    </ClInclude>
+    <ClInclude Include="game\poiManager.h">
+      <Filter>game</Filter>
+    </ClInclude>
+    <ClInclude Include="game\gameSceneLayer.h">
+      <Filter>game</Filter>
+    </ClInclude>
+    <ClInclude Include="game\gameMode.h">
+      <Filter>game</Filter>
+    </ClInclude>
+    <ClInclude Include="meshGen\meshGenElementIncludeMesh.h">
+      <Filter>meshGen</Filter>
+    </ClInclude>
+    <ClInclude Include="library\usedLibraryStoredOrTagged.h">
+      <Filter>library</Filter>
+    </ClInclude>
+    <ClInclude Include="appearance\animationSet.h">
+      <Filter>appearance</Filter>
+    </ClInclude>
+    <ClInclude Include="appearance\animationGraph.h">
+      <Filter>appearance</Filter>
+    </ClInclude>
+    <ClInclude Include="appearance\animationGraphNode.h">
+      <Filter>appearance</Filter>
+    </ClInclude>
+    <ClInclude Include="appearance\animationGraphNodes.h">
+      <Filter>appearance</Filter>
+    </ClInclude>
+    <ClInclude Include="appearance\graphNodes\agn_animationPlayback.h">
+      <Filter>appearance\graphNodes</Filter>
+    </ClInclude>
+    <ClInclude Include="appearance\graphNodes\agn_defaultPose.h">
+      <Filter>appearance\graphNodes</Filter>
+    </ClInclude>
+    <ClInclude Include="appearance\controllers\ac_animationGraph.h">
+      <Filter>appearance\controllers</Filter>
+    </ClInclude>
+    <ClInclude Include="appearance\graphNodes\agn_stateMachine.h">
+      <Filter>appearance\graphNodes</Filter>
+    </ClInclude>
+    <ClInclude Include="appearance\graphNodes\stateMachineDecisions\agnsmd_enterState.h">
+      <Filter>appearance\graphNodes\stateMachineDecisions</Filter>
+    </ClInclude>
+    <ClInclude Include="appearance\graphNodes\stateMachineDecisions\agnsmd_presence.h">
+      <Filter>appearance\graphNodes\stateMachineDecisions</Filter>
+    </ClInclude>
+    <ClInclude Include="appearance\graphNodes\agn_prepareVariables.h">
+      <Filter>appearance\graphNodes</Filter>
+    </ClInclude>
+    <ClInclude Include="appearance\graphNodes\agn_blendList.h">
+      <Filter>appearance\graphNodes</Filter>
+    </ClInclude>
+    <ClInclude Include="appearance\graphNodes\stateMachineDecisions\agnsmd_movement.h">
+      <Filter>appearance\graphNodes\stateMachineDecisions</Filter>
+    </ClInclude>
+    <ClInclude Include="appearance\graphNodes\stateMachineDecisions\agnsmd_currentState.h">
+      <Filter>appearance\graphNodes\stateMachineDecisions</Filter>
+    </ClInclude>
+    <ClInclude Include="appearance\graphNodes\agn_randomAnimationPlayback.h">
+      <Filter>appearance\graphNodes</Filter>
+    </ClInclude>
+    <ClInclude Include="appearance\graphNodes\agn_atPlacement.h">
+      <Filter>appearance\graphNodes</Filter>
+    </ClInclude>
+    <ClInclude Include="appearance\graphNodes\stateMachineDecisions\agnsmd_syncPlaybackPt.h">
+      <Filter>appearance\graphNodes\stateMachineDecisions</Filter>
+    </ClInclude>
+    <ClInclude Include="appearance\graphNodes\stateMachineDecisions\agnsmd_controller.h">
+      <Filter>appearance\graphNodes\stateMachineDecisions</Filter>
+    </ClInclude>
+    <ClInclude Include="world\roomLayouts\layoutElement.h">
+      <Filter>world\roomLayouts</Filter>
+    </ClInclude>
+    <ClInclude Include="world\roomLayouts\layoutSocket.h">
+      <Filter>world\roomLayouts</Filter>
+    </ClInclude>
+    <ClInclude Include="world\roomLayouts\objectLayout.h">
+      <Filter>world\roomLayouts</Filter>
+    </ClInclude>
+    <ClInclude Include="world\roomLayouts\roomLayout.h">
+      <Filter>world\roomLayouts</Filter>
+    </ClInclude>
+    <ClInclude Include="world\roomLayouts\roomLayoutNames.h">
+      <Filter>world\roomLayouts</Filter>
+    </ClInclude>
+    <ClInclude Include="world\roomLayouts\wallLayout.h">
+      <Filter>world\roomLayouts</Filter>
+    </ClInclude>
+    <ClInclude Include="world\regionLayouts\regionLayout.h">
+      <Filter>world\regionLayouts</Filter>
+    </ClInclude>
+    <ClInclude Include="gameScript\elements\gse_tagObjectVar.h">
+      <Filter>gameScript\elements</Filter>
+    </ClInclude>
+    <ClInclude Include="game\sceneLayers\gameSceneLayer_uiCanvas.h">
+      <Filter>game\sceneLayers</Filter>
+    </ClInclude>
+    <ClInclude Include="library\libraryLoadSummary.h">
+      <Filter>library</Filter>
+    </ClInclude>
+    <ClInclude Include="editor\editors\editorBase.h">
+      <Filter>editor\editors</Filter>
+    </ClInclude>
+    <ClInclude Include="editor\editors\editorBase2D.h">
+      <Filter>editor\editors</Filter>
+    </ClInclude>
+    <ClInclude Include="editor\editors\editorBase3D.h">
+      <Filter>editor\editors</Filter>
+    </ClInclude>
+    <ClInclude Include="editor\editors\editorSprite.h">
+      <Filter>editor\editors</Filter>
+    </ClInclude>
+    <ClInclude Include="editor\editors\editorSpriteLayout.h">
+      <Filter>editor\editors</Filter>
+    </ClInclude>
+    <ClInclude Include="editor\editors\editorVoxelMold.h">
+      <Filter>editor\editors</Filter>
+    </ClInclude>
+    <ClInclude Include="library\assetPackage.h">
+      <Filter>library</Filter>
+    </ClInclude>
+    <ClInclude Include="gameRetro\gameRetro.h">
+      <Filter>gameRetro</Filter>
+    </ClInclude>
+    <ClInclude Include="gameRetro\gameRetroConfig.h">
+      <Filter>gameRetro</Filter>
+    </ClInclude>
+    <ClInclude Include="gameRetro\gameRetroInput.h">
+      <Filter>gameRetro</Filter>
+    </ClInclude>
+    <ClInclude Include="video\colourClashSprite.h">
+      <Filter>video</Filter>
+    </ClInclude>
+    <ClInclude Include="video\colourPalette.h">
+      <Filter>video</Filter>
+    </ClInclude>
+    <ClInclude Include="video\font.h">
+      <Filter>video</Filter>
+    </ClInclude>
+    <ClInclude Include="video\material.h">
+      <Filter>video</Filter>
+    </ClInclude>
+    <ClInclude Include="video\shader.h">
+      <Filter>video</Filter>
+    </ClInclude>
+    <ClInclude Include="video\shaderFunctionLib.h">
+      <Filter>video</Filter>
+    </ClInclude>
+    <ClInclude Include="video\shaderOfflineUtils.h">
+      <Filter>video</Filter>
+    </ClInclude>
+    <ClInclude Include="video\shaderProgram.h">
+      <Filter>video</Filter>
+    </ClInclude>
+    <ClInclude Include="video\sprite.h">
+      <Filter>video</Filter>
+    </ClInclude>
+    <ClInclude Include="video\spriteLayout.h">
+      <Filter>video</Filter>
+    </ClInclude>
+    <ClInclude Include="video\spriteTextureProcessor.h">
+      <Filter>video</Filter>
+    </ClInclude>
+    <ClInclude Include="video\texture.h">
+      <Filter>video</Filter>
+    </ClInclude>
+    <ClInclude Include="video\textureArray.h">
+      <Filter>video</Filter>
+    </ClInclude>
+    <ClInclude Include="video\texturePart.h">
+      <Filter>video</Filter>
+    </ClInclude>
+    <ClInclude Include="video\texturePartSequence.h">
+      <Filter>video</Filter>
+    </ClInclude>
+    <ClInclude Include="video\texturePartUse.h">
+      <Filter>video</Filter>
+    </ClInclude>
+    <ClInclude Include="voxel\voxelMold.h">
+      <Filter>voxel</Filter>
+    </ClInclude>
+    <ClInclude Include="editor\editorContext.h">
+      <Filter>editor</Filter>
+    </ClInclude>
+    <ClInclude Include="editor\editorGame.h">
+      <Filter>editor</Filter>
+    </ClInclude>
+    <ClInclude Include="editor\editorWorkspace.h">
+      <Filter>editor</Filter>
+    </ClInclude>
+    <ClInclude Include="editor\sceneLayers\gameSceneLayer_editor.h">
+      <Filter>editor\sceneLayers</Filter>
+    </ClInclude>
+    <ClInclude Include="editor\modes\gameMode_editor.h">
+      <Filter>editor\modes</Filter>
+    </ClInclude>
+    <ClInclude Include="editor\editors\editorBasicInfo.h">
+      <Filter>editor\editors</Filter>
+    </ClInclude>
+    <ClInclude Include="ui\utils\uiGrid1Menu.h">
+      <Filter>ui\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="ui\utils\uiGrid2Menu.h">
+      <Filter>ui\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="ui\utils\uiListWindow.h">
+      <Filter>ui\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="ui\utils\uiQuestionWindow.h">
+      <Filter>ui\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="ui\utils\uiTextEditWindow.h">
+      <Filter>ui\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="ui\utils\uiUtils.h">
+      <Filter>ui\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="ui\uiCanvas.h">
+      <Filter>ui</Filter>
+    </ClInclude>
+    <ClInclude Include="ui\uiCanvasButton.h">
+      <Filter>ui</Filter>
+    </ClInclude>
+    <ClInclude Include="ui\uiCanvasElement.h">
+      <Filter>ui</Filter>
+    </ClInclude>
+    <ClInclude Include="ui\uiCanvasElements.h">
+      <Filter>ui</Filter>
+    </ClInclude>
+    <ClInclude Include="ui\uiCanvasInputContext.h">
+      <Filter>ui</Filter>
+    </ClInclude>
+    <ClInclude Include="ui\uiCanvasRect.h">
+      <Filter>ui</Filter>
+    </ClInclude>
+    <ClInclude Include="ui\uiCanvasRenderContext.h">
+      <Filter>ui</Filter>
+    </ClInclude>
+    <ClInclude Include="ui\uiCanvasSetup.h">
+      <Filter>ui</Filter>
+    </ClInclude>
+    <ClInclude Include="ui\uiCanvasText.h">
+      <Filter>ui</Filter>
+    </ClInclude>
+    <ClInclude Include="ui\uiCanvasUpdateWorktable.h">
+      <Filter>ui</Filter>
+    </ClInclude>
+    <ClInclude Include="ui\uiCanvasWindow.h">
+      <Filter>ui</Filter>
+    </ClInclude>
+    <ClInclude Include="video\basicDrawRenderingBuffer.h">
+      <Filter>video</Filter>
+    </ClInclude>
+    <ClInclude Include="video\spriteGrid.h">
+      <Filter>video</Filter>
+    </ClInclude>
+    <ClInclude Include="editor\editors\editorSpriteGrid.h">
+      <Filter>editor\editors</Filter>
+    </ClInclude>
+    <ClInclude Include="editor\editors\components\ec_colourPalette.h">
+      <Filter>editor\editors\components</Filter>
+    </ClInclude>
+    <ClInclude Include="meshGen\meshProcessorOperators\meshGenMeshProcOp_setCustomDataBetweenPoints.h">
+      <Filter>meshGen\meshProcessorOperators</Filter>
+    </ClInclude>
+    <ClInclude Include="meshGen\meshProcessorOperators\meshGenMeshProcOp_setCustomDataNormalBased.h">
+      <Filter>meshGen\meshProcessorOperators</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="world\doorHole.inl">
+      <Filter>world</Filter>
+    </None>
+    <None Include="module\registeredModule.inl">
+      <Filter>module</Filter>
+    </None>
+    <None Include="library\libraryCombinedStore.inl">
+      <Filter>library</Filter>
+    </None>
+    <None Include="library\libraryStore.inl">
+      <Filter>library</Filter>
+    </None>
+    <None Include="library\library.inl">
+      <Filter>library</Filter>
+    </None>
+    <None Include="debug\previewGame.inl">
+      <Filter>debug</Filter>
+    </None>
+    <None Include="library\usedLibraryStored.inl">
+      <Filter>library</Filter>
+    </None>
+    <None Include="library\libraryStoredReplacer.inl">
+      <Filter>library</Filter>
+    </None>
+    <None Include="appearance\controllers\ikUtils.inl">
+      <Filter>appearance\controllers</Filter>
+    </None>
+    <None Include="module\moduleAppearance.inl">
+      <Filter>module</Filter>
+    </None>
+    <None Include="appearance\controllers\walkers.inl">
+      <Filter>appearance\controllers</Filter>
+    </None>
+    <None Include="world\doorInRoom.inl">
+      <Filter>world</Filter>
+    </None>
+    <None Include="meshGen\meshGenGenerationContext.inl">
+      <Filter>meshGen</Filter>
+    </None>
+    <None Include="library\customLibraryDataLookup.inl">
+      <Filter>library</Filter>
+    </None>
+    <None Include="library\libraryStoreTaggedObjects.inl">
+      <Filter>library</Filter>
+    </None>
+    <None Include="meshGen\customData\meshGenRefLookup.inl">
+      <Filter>meshGen\customData</Filter>
+    </None>
+    <None Include="meshGen\meshGenValueDefImpl.inl">
+      <Filter>meshGen</Filter>
+    </None>
+    <None Include="library\libraryStoredRenamer.inl">
+      <Filter>library</Filter>
+    </None>
+    <None Include="game\gameObject.inl">
+      <Filter>game</Filter>
+    </None>
+    <None Include="game\gameObjectPtr.inl">
+      <Filter>game</Filter>
+    </None>
+    <None Include="module\moduleDataImpl.inl">
+      <Filter>module</Filter>
+    </None>
+    <None Include="module\moduleMovementImpl.inl">
+      <Filter>module</Filter>
+    </None>
+    <None Include="world\roomGeneratorInfo.inl">
+      <Filter>world</Filter>
+    </None>
+    <None Include="meshGen\meshGenParamImpl.inl">
+      <Filter>meshGen</Filter>
+    </None>
+    <None Include="module\moduleAppearanceImpl.inl">
+      <Filter>module</Filter>
+    </None>
+    <None Include="collision\checkCollisionCache.inl">
+      <Filter>collision</Filter>
+    </None>
+    <None Include="ai\aiParam.inl">
+      <Filter>ai</Filter>
+    </None>
+    <None Include="modulesOwner\modulesOwnerImpl.inl">
+      <Filter>modulesOwner</Filter>
+    </None>
+    <None Include="modulesOwner\modulesOwnerVariable.inl">
+      <Filter>modulesOwner</Filter>
+    </None>
+    <None Include="general\cooldowns.inl">
+      <Filter>general</Filter>
+    </None>
+    <None Include="ai\aiLogic.inl">
+      <Filter>ai</Filter>
+    </None>
+    <None Include="meshGen\customData\meshGenSplineRefImpl.inl">
+      <Filter>meshGen\customData</Filter>
+    </None>
+    <None Include="meshGen\customData\meshGenSplineImpl.inl">
+      <Filter>meshGen\customData</Filter>
+    </None>
+    <None Include="world\roomRegionVariables.inl">
+      <Filter>world</Filter>
+    </None>
+    <None Include="general\cooldownsTimeStampBased.inl">
+      <Filter>general</Filter>
+    </None>
+    <None Include="jobSystem\jobSystem.inl">
+      <Filter>jobSystem</Filter>
+    </None>
+    <None Include="library\usedLibraryStoredOrTagged.inl">
+      <Filter>library</Filter>
+    </None>
+    <None Include="editor\editors\editorBaseImpl.inl">
+      <Filter>editor\editors</Filter>
+    </None>
+    <None Include="library\assetPackage.inl">
+      <Filter>library</Filter>
+    </None>
+    <None Include="editor\editorGame.inl">
+      <Filter>editor</Filter>
+    </None>
+    <None Include="ui\utils\uiListWindowImpl.inl">
+      <Filter>ui\utils</Filter>
+    </None>
+  </ItemGroup>
+</Project>

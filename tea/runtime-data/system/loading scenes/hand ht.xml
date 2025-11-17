@@ -1,0 +1,558 @@
+<library group="loading scenes">
+	<meshSkinned name="hand ht r"
+		meshGenerator="hand ht r">
+	</meshSkinned>
+	<meshGenerator
+		name="hand ht r">
+		<indexFormat>
+			<element/>
+		</indexFormat>
+		<vertexFormat>
+			<normal/>
+			<textureUV/>
+			<skinning/>
+		</vertexFormat>
+		<materials>
+			<material index="0" material="main">
+				<float name="voxelSize">0.0075</float>
+				<colour name="emissiveColour" a="0.0">right_hand</colour>
+				<colour name="emissiveBaseColour">right_hand</colour>
+				<float name="emissivePower">1.0</float>
+			</material>
+		</materials>
+		<mainElement>
+			<set>
+				<elements>
+					<set>
+						<elements>
+							<include meshGenerator="actual hand ht r">
+								<parameters>
+									<bool name="mirrored">false</bool>
+									<vector3 name="autoPlacement" y="-0.04"/>
+								</parameters>
+							</include>
+						</elements>
+					</set>
+				</elements>
+			</set>
+		</mainElement>
+	</meshGenerator>
+
+	<meshSkinned name="hand ht l"
+		meshGenerator="hand ht l">
+	</meshSkinned>
+	
+	<meshGenerator
+		name="hand ht l">
+		<indexFormat>
+			<element/>
+		</indexFormat>
+		<vertexFormat>
+			<normal/>
+			<textureUV/>
+			<skinning/>
+		</vertexFormat>
+		<materials>
+			<material index="0" material="main">
+				<float name="voxelSize">0.0075</float>
+				<colour name="emissiveColour" a="0.0">left_hand</colour>
+				<colour name="emissiveBaseColour">left_hand</colour>
+				<float name="emissivePower">1.0</float>
+			</material>
+		</materials>
+		<mainElement>
+			<set>
+				<elements>
+					<set>
+						<elements>
+							<include meshGenerator="actual hand ht r">
+								<parameters>
+									<bool name="mirrored">true</bool>
+									<vector3 name="autoPlacement" y="-0.04"/>
+								</parameters>
+							</include>
+							<modifier type="mirror"/>
+						</elements>
+					</set>
+				</elements>
+			</set>
+		</mainElement>
+	</meshGenerator>
+
+	<meshGenerator
+		name="actual hand ht r">
+		<indexFormat>
+			<element/>
+		</indexFormat>
+		<vertexFormat>
+			<normal/>
+			<textureUV/>
+			<skinning/>
+		</vertexFormat>
+		<mainElement>
+			<set>
+				<parameters>
+					<float name="uHand">1t256</float>
+					<float name="uHandAccent">8t256</float>
+					<float name="uHandEmissive">6t256</float>
+					<float name="forceSmoothingAngleLimit">80</float>
+					<name name="autoSkinningBone">root</name>
+				</parameters>
+				<optionalParameters>
+					<float name="radius">0.03</float>
+					<float name="thickness">0.02</float>
+					<vector3 name="at" y="0.03" x="-0.005" z="0.01"/>
+					<vector3 name="fingerAt" y="0.09 " x="-0.03"/>
+					<float name="fingerTipLength">0.025</float>
+					<float name="fingerMidLength">0.025</float>
+					<float name="fingerBaseLength">0.03</float>
+					<float name="fingerRadius">0.005</float>
+				</optionalParameters>
+				<elements>
+					<bone name="root">
+						<bone name="pointerBase" placementParam="at">
+							<wheresMyPoint>
+								<transform>
+									<location x="-0.025" y="0.10"/>
+								</transform>
+								<store as="at"/>
+							</wheresMyPoint>
+							<bone name="pointerMid" placementParam="at">
+								<wheresMyPoint>
+									<transform>
+										<location x="-0.025" y="0.12"/>
+									</transform>
+									<store as="at"/>
+								</wheresMyPoint>
+								<bone name="pointerTip" placementParam="at">
+									<wheresMyPoint>
+										<transform>
+											<location x="-0.025" y="0.16"/>
+										</transform>
+										<store as="at"/>
+									</wheresMyPoint>
+								</bone>
+							</bone>
+						</bone>
+						<bone name="middleBase" placementParam="at">
+							<wheresMyPoint>
+								<transform>
+									<location x="-0.01" y="0.10"/>
+								</transform>
+								<store as="at"/>
+							</wheresMyPoint>
+							<bone name="middleMid" placementParam="at">
+								<wheresMyPoint>
+									<transform>
+										<location x="-0.01" y="0.12"/>
+									</transform>
+									<store as="at"/>
+								</wheresMyPoint>
+								<bone name="middleTip" placementParam="at">
+									<wheresMyPoint>
+										<transform>
+											<location x="-0.01" y="0.16"/>
+										</transform>
+										<store as="at"/>
+									</wheresMyPoint>
+								</bone>
+							</bone>
+						</bone>
+						<bone name="ringBase" placementParam="at">
+							<wheresMyPoint>
+								<transform>
+									<location x="0.005" y="0.10"/>
+								</transform>
+								<store as="at"/>
+							</wheresMyPoint>
+							<bone name="ringMid" placementParam="at">
+								<wheresMyPoint>
+									<transform>
+										<location x="0.005" y="0.12"/>
+									</transform>
+									<store as="at"/>
+								</wheresMyPoint>
+								<bone name="ringTip" placementParam="at">
+									<wheresMyPoint>
+										<transform>
+											<location x="0.005" y="0.16"/>
+										</transform>
+										<store as="at"/>
+									</wheresMyPoint>
+								</bone>
+							</bone>
+						</bone>
+						<bone name="pinkyBase" placementParam="at">
+							<wheresMyPoint>
+								<transform>
+									<location x="0.03" y="0.10"/>
+								</transform>
+								<store as="at"/>
+							</wheresMyPoint>
+							<bone name="pinkyMid" placementParam="at">
+								<wheresMyPoint>
+									<transform>
+										<location x="0.03" y="0.12"/>
+									</transform>
+									<store as="at"/>
+								</wheresMyPoint>
+								<bone name="pinkyTip" placementParam="at">
+									<wheresMyPoint>
+										<transform>
+											<location x="0.03" y="0.16"/>
+										</transform>
+										<store as="at"/>
+									</wheresMyPoint>
+								</bone>
+							</bone>
+						</bone>
+						<bone name="thumbBase" placementParam="at">
+							<wheresMyPoint>
+								<transform>
+									<location x="-0.05" y="0.05"/>
+								</transform>
+								<store as="at"/>
+							</wheresMyPoint>
+							<bone name="thumbMid" placementParam="at">
+								<wheresMyPoint>
+									<transform>
+										<location x="-0.05" y="0.07"/>
+									</transform>
+									<store as="at"/>
+								</wheresMyPoint>
+								<bone name="thumbTip" placementParam="at">
+									<wheresMyPoint>
+										<transform>
+											<location x="-0.05" y="0.10"/>
+										</transform>
+										<store as="at"/>
+									</wheresMyPoint>
+								</bone>
+							</bone>
+						</bone>
+					</bone>
+					<shape type="cross section cylindrical">
+						<wheresMyPoint>
+							<copyStore as="csRadius" from="radius"/>
+							<restore from="at"/>
+							<access field="z">
+								<sub><restore from="thickness"/><half/></sub>
+							</access>
+							<store as="csStartsAt"/>
+							<restore from="at"/>
+							<access field="z">
+								<add><restore from="thickness"/><half/></add>
+							</access>
+							<store as="csEndsAt"/>
+						</wheresMyPoint>
+						<halfCrossSectionSpline>
+							<refPoint name="height" y="0.02"/>
+							<refPoint name="radius" x="0.05"/>
+							<u uParam="uHand"/>
+							<point x="0.04" y="0.02"/>
+							<point x="0.057" y="0.015"/>
+							<u uParam="uHandAccent"/>
+							<!--<point x="0.058" y="0.012"/>-->
+							<!--<point x="0.059" y="0.008"/>-->
+							<point x="0.06" y="0.005"/>
+							<u uParam="uHand"/>
+							<point x="0.05" y="0.00"/>
+							<point x="0.03" y="0.005"/>
+							<u uParam="uHandEmissive"/>
+							<point x="0.035" y="0.01"/>
+							<point x="0.04" y="0.02"/>
+						</halfCrossSectionSpline>
+						<cylinderSubStep stepLength="0.005"/>
+						<halfCrossSectionSubStep stepLength="0.1"/>
+					</shape>
+					<socket name="pointer">
+						<wheresMyPoint>
+							<transform>
+								<location>
+									<restore from="mirrored"/>
+									<if>
+										<true>
+											<restore from="fingerAt"/>
+											<access field="x">
+												<negate/>
+											</access>
+										</true>
+										<false>
+											<restore from="fingerAt"/>
+										</false>
+									</if>
+									<access field="y">
+										<add><restore from="fingerTipLength"/></add>
+									</access>
+								</location>
+								<forward y="1"/>
+								<up>
+									<restore from="mirrored"/>
+									<if>
+										<true>
+											<vector3 x="1"/>
+										</true>
+										<false>
+											<vector3 x="-1"/>
+										</false>
+									</if>
+								</up>
+							</transform>
+							<store as="autoPlacement"/>
+						</wheresMyPoint>
+					</socket>
+					<include meshGenerator="finger tip ht">
+						<parameters>
+							<name name="fingerBone">pointerTip</name>
+						</parameters>
+					</include>
+					<.include meshGenerator="finger mid ht">
+						<parameters>
+							<name name="fingerBone">pointerMid</name>
+						</parameters>
+					</include>
+					<include meshGenerator="finger base ht">
+						<parameters>
+							<float name="fingerMidLength">0.022</float>
+							<name name="fingerBone">pointerBase</name>
+						</parameters>
+					</include>
+					<include meshGenerator="finger tip ht">
+						<parameters>
+							<name name="fingerBone">middleTip</name>
+						</parameters>
+					</include>
+					<.include meshGenerator="finger mid ht">
+						<parameters>
+							<float name="fingerMidLength">0.03</float>
+							<name name="fingerBone">middleMid</name>
+						</parameters>
+					</include>
+					<include meshGenerator="finger base ht">
+						<parameters>
+							<name name="fingerBone">middleBase</name>
+						</parameters>
+					</include>
+					<include meshGenerator="finger tip ht">
+						<parameters>
+							<name name="fingerBone">ringTip</name>
+						</parameters>
+					</include>
+					<.include meshGenerator="finger mid ht">
+						<parameters>
+							<float name="fingerMidLength">0.03</float>
+							<name name="fingerBone">ringMid</name>
+						</parameters>
+					</include>
+					<include meshGenerator="finger base ht">
+						<parameters>
+							<name name="fingerBone">ringBase</name>
+						</parameters>
+					</include>
+					<include meshGenerator="finger tip ht">
+						<parameters>
+							<name name="fingerBone">pinkyTip</name>
+						</parameters>
+					</include>
+					<.include meshGenerator="finger mid ht">
+						<parameters>
+							<float name="fingerMidLength">0.025</float>
+							<name name="fingerBone">pinkyMid</name>
+						</parameters>
+					</include>
+					<include meshGenerator="finger base ht">
+						<parameters>
+							<float name="fingerBaseLength">0.025</float>
+							<name name="fingerBone">pinkyBase</name>
+						</parameters>
+					</include>
+					<include meshGenerator="finger tip ht">
+						<parameters>
+							<name name="fingerBone">thumbTip</name>
+						</parameters>
+					</include>
+					<include meshGenerator="finger mid ht">
+						<parameters>
+							<float name="fingerMidLength">0.03</float>
+							<name name="fingerBone">thumbMid</name>
+						</parameters>
+					</include>
+					<.include meshGenerator="finger base ht">
+						<parameters>
+							<float name="fingerBaseLength">0.03</float>
+							<name name="fingerBone">thumbBase</name>
+						</parameters>
+					</include>
+				</elements>
+			</set>
+		</mainElement>
+	</meshGenerator>
+
+	<meshGenerator
+		name="finger tip ht">
+		<mainElement>
+			<set>
+				<elements>
+					<modifier type="skeleton">
+						<bonePlacements>
+							<getTransform boneParam="fingerBone" parameter="bone_placement"/>
+						</bonePlacements>
+					</modifier>
+					<doWheresMyPoint>
+						<copyStore from="fingerBone" to="autoSkinningBone"/>
+						<copyStore from="bone_placement" to="autoPlacement"/>
+					</doWheresMyPoint>
+					<shape type="cross section cylindrical">
+						<wheresMyPoint>
+							<copyStore as="csRadius" from="fingerRadius"/>
+							<vector3/>
+							<store as="csEndsAt"/>
+							<access field="y">
+								<sub><restore from="fingerTipLength"/></sub>
+							</access>
+							<store as="csStartsAt"/>
+						</wheresMyPoint>
+						<halfCrossSectionSpline>
+							<refPoint name="height" y="0.1"/>
+							<refPoint name="radius" x="0.01"/>
+							<u uParam="uHand"/>
+							<point x="0.0" y="0.1"/>
+							<curve x="0.01" y="0.07">
+								<withRoundSeparation/>
+								<p12 x="0.01" y="0.1"/>
+							</curve>
+							<point x="0.01" y="0.07"/>
+							<u uParam="uHandEmissive"/>
+							<point x="0.01" y="0.055"/>
+							<u uParam="uHandAccent"/>
+							<point x="0.01" y="0.04"/>
+							<u uParam="uHand"/>
+							<point x="0.01" y="0.03"/>
+							<curve x="0.00" y="0.00">
+								<withRoundSeparation/>
+								<p12 x="0.01" y="0.00"/>
+							</curve>
+							<u uParam="uHandAccent"/>
+						</halfCrossSectionSpline>
+						<cylinderSubStep stepLength="0.0025"/>
+						<halfCrossSectionSubStep stepLength="0.0025"/>
+					</shape>
+				</elements>
+			</set>
+		</mainElement>
+	</meshGenerator>
+
+	<meshGenerator
+		name="finger mid ht">
+		<mainElement>
+			<set>
+				<elements>
+					<modifier type="skeleton">
+						<bonePlacements>
+							<getTransform boneParam="fingerBone" parameter="bone_placement"/>
+						</bonePlacements>
+					</modifier>
+					<doWheresMyPoint>
+						<copyStore from="fingerBone" to="autoSkinningBone"/>
+						<copyStore from="bone_placement" to="autoPlacement"/>
+					</doWheresMyPoint>
+					<shape type="cross section cylindrical">
+						<wheresMyPoint>
+							<copyStore as="csRadius" from="fingerRadius"/>
+							<vector3/>
+							<access field="y">
+								<sub><restore from="fingerRadius"/></sub>
+							</access>
+							<store as="csStartsAt"/>
+							<access field="y">
+								<add><restore from="fingerMidLength"/></add>
+							</access>
+							<store as="csEndsAt"/>
+						</wheresMyPoint>
+						<halfCrossSectionSpline>
+							<refPoint name="height" y="0.1"/>
+							<refPoint name="radius" x="0.01"/>
+							<u uParam="uHand"/>
+							<point x="0.0" y="0.1"/>
+							<curve x="0.01" y="0.07">
+								<withRoundSeparation/>
+								<p12 x="0.01" y="0.1"/>
+							</curve>
+							<point x="0.01" y="0.07"/>
+							<u uParam="uHandEmissive"/>
+							<point x="0.01" y="0.055"/>
+							<u uParam="uHandAccent"/>
+							<point x="0.01" y="0.04"/>
+							<u uParam="uHand"/>
+							<point x="0.01" y="0.03"/>
+							<curve x="0.00" y="0.00">
+								<withRoundSeparation/>
+								<p12 x="0.01" y="0.00"/>
+							</curve>
+							<u uParam="uHandAccent"/>
+						</halfCrossSectionSpline>
+						<cylinderSubStep stepLength="0.0025"/>
+						<halfCrossSectionSubStep stepLength="0.0025"/>
+					</shape>
+				</elements>
+			</set>
+		</mainElement>
+	</meshGenerator>
+
+	<meshGenerator
+		name="finger base ht">
+		<mainElement>
+			<set>
+				<elements>
+					<modifier type="skeleton">
+						<bonePlacements>
+							<getTransform boneParam="fingerBone" parameter="bone_placement"/>
+						</bonePlacements>
+					</modifier>
+					<doWheresMyPoint>
+						<copyStore from="fingerBone" to="autoSkinningBone"/>
+						<copyStore from="bone_placement" to="autoPlacement"/>
+					</doWheresMyPoint>
+					<shape type="cross section cylindrical">
+						<wheresMyPoint>
+							<copyStore as="csRadius" from="fingerRadius"/>
+							<vector3/>
+							<access field="y">
+								<sub><restore from="fingerRadius"/></sub>
+							</access>
+							<store as="csStartsAt"/>
+							<access field="y">
+								<add><restore from="fingerBaseLength"/></add>
+							</access>
+							<store as="csEndsAt"/>
+						</wheresMyPoint>
+						<halfCrossSectionSpline>
+							<refPoint name="height" y="0.1"/>
+							<refPoint name="radius" x="0.01"/>
+							<u uParam="uHand"/>
+							<point x="0.0" y="0.1"/>
+							<curve x="0.01" y="0.07">
+								<withRoundSeparation/>
+								<p12 x="0.01" y="0.1"/>
+							</curve>
+							<point x="0.01" y="0.07"/>
+							<u uParam="uHandEmissive"/>
+							<point x="0.01" y="0.055"/>
+							<u uParam="uHandAccent"/>
+							<point x="0.01" y="0.04"/>
+							<u uParam="uHand"/>
+							<point x="0.01" y="0.03"/>
+							<curve x="0.00" y="0.00">
+								<withRoundSeparation/>
+								<p12 x="0.01" y="0.00"/>
+							</curve>
+							<u uParam="uHandAccent"/>
+						</halfCrossSectionSpline>
+						<cylinderSubStep stepLength="0.0025"/>
+						<halfCrossSectionSubStep stepLength="0.0025"/>
+					</shape>
+				</elements>
+			</set>
+		</mainElement>
+	</meshGenerator>
+</library>

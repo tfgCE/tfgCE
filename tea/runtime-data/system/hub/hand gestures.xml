@@ -1,0 +1,78 @@
+<library group="hub hand gestures">
+	<texture name="hand gestures" file="assets\hand gestures.tex" importFromFile="assets\_source\hand gestures.tga" filteringMag="nearest" filteringMin="nearest" wrap="clamp"/> 
+
+	<texturePart name="open hand" texture="hand gestures">
+		<uv0 x="0t512" ty="63t512"/>
+		<uv1 x="63t512" ty="0t512"/>
+		<uvAnchor x="32t512" ty="32t512"/>
+	</texturePart>
+
+	<texturePart name="grab" texture="hand gestures">
+		<uv0 x="64t512" ty="63t512"/>
+		<uv1 x="127t512" ty="0t512"/>
+		<uvAnchor x="96t512" ty="32t512"/>
+	</texturePart>
+
+	<texturePart name="grab alt" texture="hand gestures">
+		<uv0 x="128t512" ty="63t512"/>
+		<uv1 x="191t512" ty="0t512"/>
+		<uvAnchor x="160t512" ty="32t512"/>
+	</texturePart>
+
+	<texturePart name="open menu" texture="hand gestures">
+		<uv0 x="192t512" ty="63t512"/>
+		<uv1 x="255t512" ty="0t512"/>
+		<uvAnchor x="224t512" ty="32t512"/>
+	</texturePart>
+	
+	<texturePart name="release" texture="hand gestures">
+		<uv0 x="256t512" ty="63t512"/>
+		<uv1 x="319t512" ty="0t512"/>
+		<uvAnchor x="288t512" ty="32t512"/>
+	</texturePart>
+	
+	<texturePart name="shoot thumb" texture="hand gestures">
+		<uv0 x="320t512" ty="63t512"/>
+		<uv1 x="383t512" ty="0t512"/>
+		<uvAnchor x="352t512" ty="32t512"/>
+	</texturePart>
+
+	--
+	
+	<texturePart name="pull energy" texture="hand gestures">
+		<uv0 x="0t512" ty="127t512"/>
+		<uv1 x="63t512" ty="64t512"/>
+		<uvAnchor x="32t512" ty="96t512"/>
+	</texturePart>
+
+	<texturePart name="deploy main equipment" texture="hand gestures">
+		<uv0 x="64t512" ty="127t512"/>
+		<uv1 x="127t512" ty="64t512"/>
+		<uvAnchor x="96t512" ty="96t512"/>
+	</texturePart>
+
+	<texturePart name="use EXM" texture="hand gestures">
+		<uv0 x="128t512" ty="127t512"/>
+		<uv1 x="191t512" ty="64t512"/>
+		<uvAnchor x="160t512" ty="96t512"/>
+	</texturePart>
+
+	<texturePart name="shoot" texture="hand gestures">
+		<uv0 x="192t512" ty="127t512"/>
+		<uv1 x="255t512" ty="64t512"/>
+		<uvAnchor x="224t512" ty="96t512"/>
+	</texturePart>
+
+	<texturePart name="select" texture="hand gestures">
+		<uv0 x="256t512" ty="127t512"/>
+		<uv1 x="319t512" ty="64t512"/>
+		<uvAnchor x="288t512" ty="96t512"/>
+	</texturePart>
+
+	<texturePart name="show overlay info" texture="hand gestures">
+		<uv0 x="320t512" ty="127t512"/>
+		<uv1 x="383t512" ty="64t512"/>
+		<uvAnchor x="352t512" ty="96t512"/>
+	</texturePart>
+
+</library>

@@ -1,0 +1,30 @@
+-->
+<!--
+<libraryLoadSetupExclude path="library\crafts"/>
+<libraryLoadSetupExclude path="library\devices"/>
+<libraryLoadSetupExclude path="library\devices.fullGame"/>
+<libraryLoadSetupExclude path="library\music"/>
+<libraryLoadSetupExclude path="library\npcs"/>
+<libraryLoadSetupExclude path="library\npcs.fullGame"/>
+<libraryLoadSetupExclude path="library\particles"/>
+<libraryLoadSetupExclude path="library\particles.fullGame"/>
+<.libraryLoadSetupExclude path="library\pilgrimage"/>
+<libraryLoadSetupExclude path="library\pilgrimage\story\01 arrival"/>
+<libraryLoadSetupExclude path="library\pilgrimage\story\02 injection"/>
+<libraryLoadSetupExclude path="library\pilgrimage\story\03 outer rim"/>
+<libraryLoadSetupExclude path="library\pilgrimage\story\04 train station"/>
+<libraryLoadSetupExclude path="library\pilgrimage\story\05 train ride"/>
+<libraryLoadSetupExclude path="library\pilgrimage\story\06 ship.fullGame"/>
+<libraryLoadSetupExclude path="library\pilgrimage\story\07 corrosion.fullGame"/>
+<libraryLoadSetupExclude path="library\pilgrimage\story\10 up.fullGame"/>
+<libraryLoadSetupExclude path="library\pilgrimage\story\12 another chance.fullGame"/>
+<libraryLoadSetupExclude path="library\pilgrimage\story\15 tea for god.fullGame"/>
+<libraryLoadSetupExclude path="library\pilgrimage\story\16 back at ship.fullGame"/>
+<.libraryLoadSetupExclude path="library\places\generic"/>
+
+<libraryLoadSetupInclude path="library\pilgrimage\story\xx template"/>
+<libraryLoadSetupInclude path="library\places\generic vr rooms"/>
+<.libraryLoadSetupInclude path="library\npcs\drop capsule"/>
+<.libraryLoadSetupInclude path="library\npcs\h_tek"/>
+
+-->

@@ -1,0 +1,7 @@
+<library group="datania">
+	<.generateTexture file="ssao noise.tex" format="rgba8" size="64 64" wrap="repeat">
+		<noise/>
+	</generateTexture>
+</library>
+
+

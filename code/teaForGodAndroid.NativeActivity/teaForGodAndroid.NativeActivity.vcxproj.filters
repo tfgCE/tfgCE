@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="android_native_app_glue.c">
+      <Filter>src</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="libs">
+      <UniqueIdentifier>{115be420-6c03-4fcb-92d1-3c375442e64b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="libs\oculus">
+      <UniqueIdentifier>{f3da3375-021b-44b0-b52a-dba6562e44f0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="libs\vive">
+      <UniqueIdentifier>{46ba5714-8515-4083-af50-838e194dfc32}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="libs\bhaptics">
+      <UniqueIdentifier>{78162557-54d0-46d2-956f-6a6fa4bec3c5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="libs\fmod">
+      <UniqueIdentifier>{4ed244de-bf52-431a-bbba-82bd83baa4fd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src">
+      <UniqueIdentifier>{fd6a9c29-2dcb-452c-a4a6-f171e1640cd4}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <Library Include="..\..\externals\code\openxr\lib\oculus\arm64\release\libopenxr_loader.so">
+      <Filter>libs\oculus</Filter>
+    </Library>
+    <Library Include="..\..\externals\code\ovrMobile\VrApi\Libs\Android\ARM64-v8a\Release\libvrapi.so">
+      <Filter>libs\oculus</Filter>
+    </Library>
+    <Library Include="..\..\externals\code\openxr\lib\vive\arm64\release\libopenxr_loader.so">
+      <Filter>libs\vive</Filter>
+    </Library>
+    <Library Include="..\..\externals\code\bhaptics_android\lib\arm64-v8a\libbhaptics-native-lib.so">
+      <Filter>libs\bhaptics</Filter>
+    </Library>
+    <Library Include="..\..\externals\code\fmod_android\api\lowLevel\lib\arm64-v8a\libfmod.so">
+      <Filter>libs\fmod</Filter>
+    </Library>
+    <Library Include="..\..\externals\code\fmod_android\api\studio\lib\arm64-v8a\libfmodstudio.so">
+      <Filter>libs\fmod</Filter>
+    </Library>
+    <Library Include="..\..\externals\code\wavevr\lib\android\arm64-v8a\libwvr_api.so">
+      <Filter>libs\vive</Filter>
+    </Library>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="android_native_app_glue.h">
+      <Filter>src</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

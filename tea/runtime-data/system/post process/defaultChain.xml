@@ -1,0 +1,20 @@
+<library group="postProcessChain">
+	<postProcessChainDefinition name="default">
+		fxaa and bloom only
+		<!--
+		for vr, no vignette required
+		<postProcess name="postProcess:vignette" disallows="vr"/>
+		<.notUsed_postProcess name="postProcess:ssao"/>
+		-->
+		<postProcess name="postProcess:fxaa" requires="fxaa"/>
+		<postProcess name="postProcess:bloom" requires="bloom"/>
+		<!--
+		<postProcess name="postProcess:vignette for movement" requires="vignetteForMovement"/>
+		-->
+	</postProcessChainDefinition>
+	<postProcessChainDefinition name="fxaa">
+		<postProcess name="postProcess:fxaa"/>
+	</postProcessChainDefinition>
+	<postProcessChainDefinition name="empty">
+	</postProcessChainDefinition>
+</library>

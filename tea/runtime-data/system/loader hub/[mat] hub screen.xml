@@ -1,0 +1,121 @@
+<library group="loader hub">
+	shader used to display "hub screen"
+	<vertexShader name="hub screen">
+		<useWithStatic/>
+		<useRenderingPipeline/>
+		<source>
+			<function name="process_post">
+				<body>
+					// empty, we don't do light, material nor emissive, we just display a display
+				</body>
+			</function>
+		</source>
+	</vertexShader>
+
+	<fragmentShader name="hub screen">
+		<useWithRenderingPipeline/>
+		<source>
+			<data>
+				uniform sampler2D inDisplay;
+				uniform HIGHP vec2 inDisplaySize;
+				uniform HIGHP vec2 inDisplayTexelSize;
+				uniform HIGHP float inDisplayTexelNoiseInv;
+				uniform HIGHP float time;
+				uniform float showScreen;
+			</data>
+			<defaultValues>
+				<float name="showScreen">1</float>
+				<float name="inDisplayTexelNoiseInv">0.25</float> four pixels
+			</defaultValues>
+			<function name="dissolve_noise">
+				<header>float dissolve_noise(HIGHP vec2 _pos)</header>
+				<body>
+					HIGHP vec2 p = vec2(_pos.x * 54.234, _pos.y * 94.345);
+
+					p = fract(p * vec2(5.3987, 5.4421));
+					p += dot(p.yx, p.xy + vec2(21.5351, 14.3137));
+
+					HIGHP float pxy = p.x * p.y;
+					HIGHP float tri = (fract(pxy * 95.4307) + fract(pxy * 75.04961)) * 0.5;
+					return tri;
+				</body>
+			</function>
+			<mainBody>
+				// fill output
+				vec4 display = texture(inDisplay, varUV, -0.5);
+				// without proper mipmaping it doesn't look good, that's why we don't have shadow mask
+				colour.rgb = display.rgb;
+			/*
+				float varColourAvg = (varColour.r + varColour.g + varColour.b) * 0.333;
+				colour.a = display.a
+			#ifndef MAKE_IT_FASTER
+									 * varColourAvg
+			#endif
+									 * showScreen;
+			#ifdef MAKE_IT_FASTER
+				HIGHP vec2 posForNoise = varUV;
+				posForNoise = round(posForNoise * inDisplaySize * inDisplayTexelNoiseInv);
+				float noise = dissolve_noise(posForNoise);
+				//   this is to  // colour.rgb += vec3(1,1,1) * (1.0 - colour.a);
+				// test the grid // colour.a = 1.0;
+				colour.a -= noise * (1.0 - varColourAvg) * 3.0; // add some disolve
+				colour.a *= clamp(varColourAvg / 0.4, 0.0, 1.0); // make sure that edges won't appear
+				colour.a -= noise * 0.3; // for appearing
+			#endif
+
+			*/
+				float varColourAvg = (varColour.r + varColour.g + varColour.b) * 0.333;
+				colour.a = display.a
+									 * showScreen;
+				{
+					//colour.a *= varColourAvg;
+				}
+				// one or the other
+				{
+					HIGHP vec2 posForNoise = varUV;
+					posForNoise = round(posForNoise * inDisplaySize * inDisplayTexelNoiseInv);
+					float noise = dissolve_noise(posForNoise);
+					//   this is to  // colour.rgb += vec3(1,1,1) * (1.0 - colour.a);
+					// test the grid // colour.a = 1.0;
+					float altA = colour.a;
+					altA -= noise * (1.0 - varColourAvg) * 3.0; // add some disolve
+					altA *= clamp(varColourAvg / 0.4, 0.0, 1.0); // make sure that edges won't appear
+					altA -= noise * 0.3; // for appearing
+					altA *= 5.0 * showScreen; // to depend more on dissolve
+					altA = clamp(altA, 0.0, 1.0);
+			#ifndef MAKE_IT_FASTER
+					// we want to use normal blending inside our main screen and dissolve only for borders
+					float applyAlt = clamp((1.0 - varColourAvg) * 2.0, 0.0, 1.0);
+					colour.a = colour.a * (1.0 - applyAlt) + altA * applyAlt;
+			#else
+					colour.a = altA;
+			#endif
+				}
+
+			#ifdef MAKE_IT_FASTER
+				// 0.03 - it is better to alter show screen of HubScreen to hide screens below
+				// the second part is to have sharper font and images inside main screen and use dissolve at the borders only
+				if (colour.a &lt; 0.03 + clamp((varColourAvg * showScreen - 0.8) / (1.0 - 0.8), 0.0, 1.0) * 0.5)
+				{
+					discard;
+				}
+			#endif
+				// normalDepth not used/required
+
+				float mulInFront = dot(varNormal, varPosition) &lt;=0.0 ? 1.0 : 0.7;
+				colour.rgba *= mulInFront;
+			</mainBody>
+		</source>
+	</fragmentShader>
+
+	<material name="hub screen"
+		vertexShaderStatic="hub screen"
+		fragmentShader="hub screen"
+		depthMask="false" srcBlendOp="srcAlpha" destBlendOp="oneMinusSrcAlpha"
+		faceDisplay="both">
+		<for systemTagRequired="lowGraphics" depthMask="true" srcBlendOp="one" destBlendOp="zero"/>
+		<useWithStaticMesh/>
+		<.useWithSkinnedMesh/>
+		<allowIndividualInstances/>
+	</material>
+</library>

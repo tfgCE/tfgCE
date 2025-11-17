@@ -1,0 +1,78 @@
+<library>
+  <mainConfig>
+  	<allowVR>false</allowVR>
+  	<forceVR>false</forceVR> true openvr/steamvr oculus openxr
+  	<.immobileVR>true</immobileVR>
+	<.immobileVRSize x="10" y="10"/>
+    <video>
+      for recording
+      <resolution x="2560" y="1440"/> horizontal
+      <.resolution x="1080" y="1920"/> vertical
+	</video>
+  </mainConfig>
+  <gameConfig>
+	---- horizontal
+    full screen external with small pip
+	<.secondaryView show="true" mainSize="1.000000" mainSizeAuto="false" mainAtX="1.00000" mainAtY="1.00000" mainZoom="true" pip="true"  pipSwap="true"  pipSize="0.40" secondaryAtX="1.0" secondaryAtY="0.0" secondaryZoom="true"/>
+    large main with external with quite big pip
+	<.secondaryView show="true" mainSize="0.700000" mainSizeAuto="false" mainAtX="0.00000" mainAtY="1.00000" mainZoom="true" pip="true"  pipSwap="true"  pipSize="0.70" secondaryAtX="1.0" secondaryAtY="1.0" secondaryZoom="true"/>
+    large main with small pip
+	<.secondaryView show="true" mainSize="0.750000" mainSizeAuto="false" mainAtX="1.00000" mainAtY="1.00000" mainZoom="true" pip="true"  pipSwap="false" pipSize="0.60" secondaryAtX="0.0" secondaryAtY="0.1" secondaryZoom="true"/>
+	full screen main view
+	<secondaryView show="false" mainSize="1.0" mainAtX="0.50000" mainAtY="0.50000" mainZoom="true"/>
+	---- vertical
+    vertical fpp top, iso bottom
+	<.secondaryView show="true" mainSize="0.650000" mainSizeAuto="false" mainAtX="0.50000" mainAtY="1.00000" mainZoom="true" pip="false" pipSwap="false" pipSize="0.30" secondaryAtX="0.5" secondaryAtY="0.0" secondaryZoom="true"/>
+	<.externalView showBoundary="back walls"/>
+  </gameConfig>
+  <mainConfig systemTagRequired="pc">
+  	<.threadLimit>16</threadLimit>
+  	<.threadLimit>3</threadLimit> temp
+  	<.threadsUseAffinityMask>false</threadsUseAffinityMask>
+  	<.mainThreadsPriority>higher</mainThreadsPriority>
+  	<.otherThreadsPriority>higher</otherThreadsPriority>
+	<.allowExtraThreads>true</allowExtraThreads>
+	<.systemReservedThreads>0</systemReservedThreads>
+	<.pretendVRInputSystem>test_oculusTouch</pretendVRInputSystem> test_oculusTouch test_viveWand test_holographicWand test_knuckles
+	<vrMap>
+		<margin>0.0</margin>
+		<offset x="0" y="0"/>
+	</vrMap>
+  	<sound
+		developmentVolumeVR="0.3"
+		developmentVolumeNonVR="0.1"
+		>
+      <prefer device="HTC-VIVE"/>
+	  <.prefer deviceForRecording="HTC-VIVE"/>
+	  <prefer deviceForRecording="Realtek High Definition Audio"/>
+	</sound>
+  </mainConfig>
+  <mainConfig systemTagRequired="quest or vive or pico">
+  </mainConfig>
+  <gameConfig>
+  	<roomGenerationInfo>
+		<keepSettings/>
+  		<.preferBiggerTiles>auto</preferBiggerTiles>
+  		<testVR>true</testVR>
+  		<!--
+  		<testPlayAreaRectSize x="1.8" y="1.2"/> true minimal size
+  		<testPlayAreaRectSize x="2.0" y="1.5"/> 
+  		<testPlayAreaRectSize x="2.0" y="2.0"/> 
+  		<testPlayAreaRectSize x="2.5" y="2.5"/> 
+  		<testPlayAreaRectSize x="3.0" y="3.0"/> 
+  		<testPlayAreaRectSize x="4.0" y="3.0"/> maximal vive size
+  
+  		<testPlayAreaRectSize x="2.0" y="1.5"/> minimal size
+  		<testPlayAreaRectSize x="3.75" y="3.0"/> default final size
+  		<testPlayAreaRectSize x="2.3" y="2.2"/> living room
+  		
+  		<testPlayAreaRectSize x="2.326" y="1.674"/> generation issues
+		<testPlayAreaRectSize x="2.84" y="1.81"/> generation issues
+
+  		<testPlayAreaRectSize x="5.0" y="5.0"/> larger
+  		-->
+  		<testPlayAreaRectSize x="3.3" y="3.3"/> larger
+		<.forceTestPlayAreaRectSize/> uncomment to force using testPlayAreaRectSize even if VR is on
+  	</roomGenerationInfo>
+  </gameConfig>
+</library>

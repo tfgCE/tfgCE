@@ -1,0 +1,7 @@
+<library group="default">
+	<texture name="default font" file="assets\default font.tex" importFromFile="assets\_source\default font.tga" filteringMag="nearest"/>
+	<font name="default">
+		<fixedSize x="8" y="8" spacingx="1" spacingy="1"/>
+		<texture use="default font"><ansi/></texture>
+	</font>
+</library>

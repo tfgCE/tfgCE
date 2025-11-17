@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="budget.cpp" />
+    <ClCompile Include="category.cpp" />
+    <ClCompile Include="entry.cpp" />
+    <ClCompile Include="date.cpp" />
+    <ClCompile Include="raport.cpp" />
+    <ClCompile Include="number.cpp" />
+    <ClCompile Include="crypto.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="budget.h" />
+    <ClInclude Include="entry.h" />
+    <ClInclude Include="date.h" />
+    <ClInclude Include="category.h" />
+    <ClInclude Include="raport.h" />
+    <ClInclude Include="number.h" />
+    <ClInclude Include="crypto.h" />
+  </ItemGroup>
+</Project>

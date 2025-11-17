@@ -1,0 +1,5 @@
+1. Run ! setup.bat
+
+2. Make sure to copy to this dir:
+	tea_for_god_open.keystore
+	password is passwordgoeshere

@@ -1,0 +1,6 @@
+from most outer to most inner:
+
+WS - world/room space
+OS - object space (appearance has mesh instance that ~may~ have placement - thus MS can be different than object space)
+MS - mesh/model space (in most cases OS and MS should be the same)
+LS - local space (bones local)

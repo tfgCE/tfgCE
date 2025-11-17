@@ -1,0 +1,296 @@
+<library group="loading scenes">
+	<meshGenerator
+		name="cubes"
+		use1AsSubStepBase="1"
+		>
+		<disallowVerticesOptimisation/>
+		<indexFormat>
+			<element/>
+		</indexFormat>
+		<vertexFormat>
+			<normal/>
+			<textureUV/>
+		</vertexFormat>
+		<materials>
+			<material index="0" material="cubes"> 
+				<float name="voxelSize">20.0</float>
+				<float name="emissivePower">0.0</float>
+				<colour name="emissiveColour">airship_lights</colour>
+				<colour name="emissiveBaseColour">airship_lights_base</colour>
+				<float name="retroOffset">0.3</float>
+			</material>
+		</materials>
+		<mainElement>
+			<set>
+				<generationCondition>
+					<or>
+						<not><dev/></not>
+						<previewGame/>
+					</or>
+				</generationCondition>
+				<parameters>
+					<float name="smoothingAngleLimit">0</float>
+				</parameters>
+				<elements>
+					<set>
+						<parameters>
+							<float name="autoU">21t256</float>
+							<vector3 name="autoPlacement" z="10"/>
+						</parameters>
+						<elements>
+							<loop> pillar
+								<startWMP>
+									<allowMoreDetails/>
+									<if>
+										<true><int>20</int></true>
+										<false><int>15</int></false>
+									</if>
+									<$amount />
+									<int>0</int>
+									<$idx />
+								</startWMP>
+								<loopElements>
+									<shape type="cube">
+										<wheresMyPoint>
+											<floatRandom min="4" max="8"/>
+											<store as="size"/>
+											<transform>
+												<location y="20">
+													<*z>
+														<@idx /><toFloat/>
+														<div><@amount /><decrease/><toFloat/></div>
+														<mul>2</mul>
+														<sub>1</sub>
+														<add><floatRandom min="-0.05" max="0.05"/></add>
+														
+														<mul>30</mul>
+													</*z>
+												</location>
+												<forward>
+													<*x><floatRandom min="-1" max="1"/></*x>
+													<*y><floatRandom min="0.7" max="1"/></*y>
+													<*z><floatRandom min="-0.7" max="0.7"/></*z>
+												</forward>
+												<up z="1"/>
+											</transform>
+											<$autoPlacement />
+										</wheresMyPoint>
+									</shape>
+								</loopElements>
+								<nextWMP>
+									<@idx />
+									<increase/>
+									<$idx />
+
+									<lessThan><@amount /></lessThan>
+								</nextWMP>
+							</loop>
+							<loop> floor
+								<startWMP>
+									<allowMoreDetails/>
+									<if>
+										<true><int>8</int></true>
+										<false><int>4</int></false>
+									</if>
+									<$amount />
+									<int>0</int>
+									<$idx />
+								</startWMP>
+								<loopElements>
+									<shape type="cube">
+										<parameters>
+											<vector3 name="atPt" x="0.5" y="0.5" z="1"/>
+											<bool name="withoutBottom">true</bool>
+										</parameters>
+										<wheresMyPoint>
+											<@idx /><toFloat/>
+											<div><@amount /><decrease/><toFloat/></div>
+											<mul>1</mul>
+											<add><floatRandom min="-0.05" max="0.05"/></add>
+											
+											<mul>50</mul>
+											<add>5</add>
+											<mul><vector3 x="1" y="1" z="0.1"/></mul>
+											<store as="size"/>
+											<transform>
+												<location z="-30">
+													<*y>
+														<@idx /><toFloat/>
+														<div><@amount /><decrease/><toFloat/></div>
+														<mul>1</mul>
+														<add><floatRandom min="-0.05" max="0.05"/></add>
+														
+														<mul>50</mul>
+													</*y>
+												</location>
+												<forward>
+													<*x><floatRandom min="-1" max="1"/></*x>
+													<*y><floatRandom min="0.7" max="1"/></*y>
+													<*z><floatRandom min="-0.2" max="0.2"/></*z>
+												</forward>
+												<up z="1"/>
+											</transform>
+											<$autoPlacement />
+										</wheresMyPoint>
+									</shape>
+
+								</loopElements>
+								<nextWMP>
+									<@idx />
+									<increase/>
+									<$idx />
+
+									<lessThan><@amount /></lessThan>
+								</nextWMP>
+							</loop>
+							<loop> ceiling
+								<startWMP>
+									<allowMoreDetails/>
+									<if>
+										<true><int>8</int></true>
+										<false><int>4</int></false>
+									</if>
+									<$amount />
+									<int>0</int>
+									<$idx />
+								</startWMP>
+								<loopElements>
+									<shape type="cube">
+										<parameters>
+											<vector3 name="atPt" x="0.5" y="0.5" z="0"/>
+											<bool name="withoutTop">true</bool>
+										</parameters>
+										<wheresMyPoint>
+											<@idx /><toFloat/>
+											<div><@amount /><decrease/><toFloat/></div>
+											<mul>1</mul>
+											<add><floatRandom min="-0.05" max="0.05"/></add>
+											
+											<mul>50</mul>
+											<add>5</add>
+											<mul><vector3 x="1" y="1" z="0.1"/></mul>
+											<store as="size"/>
+											<transform>
+												<location z="30">
+													<*y>
+														<@idx /><toFloat/>
+														<div><@amount /><decrease/><toFloat/></div>
+														<mul>1</mul>
+														<add><floatRandom min="-0.05" max="0.05"/></add>
+														
+														<mul>50</mul>
+													</*y>
+												</location>
+												<forward>
+													<*x><floatRandom min="-1" max="1"/></*x>
+													<*y><floatRandom min="0.7" max="1"/></*y>
+													<*z><floatRandom min="-0.2" max="0.2"/></*z>
+												</forward>
+												<up z="1"/>
+											</transform>
+											<$autoPlacement />
+										</wheresMyPoint>
+									</shape>
+
+								</loopElements>
+								<nextWMP>
+									<@idx />
+									<increase/>
+									<$idx />
+
+									<lessThan><@amount /></lessThan>
+								</nextWMP>
+							</loop>
+							<loop> back
+								<.generationCondition>
+									<allowMoreDetails/>
+								</generationCondition>
+								<startWMP>
+									<allowMoreDetails/>
+									<if>
+										<true><int>8</int></true>
+										<false><int>4</int></false>
+									</if>
+									<$amount />
+									<int>0</int>
+									<$idx />
+								</startWMP>
+								<loopElements>
+									<shape type="cube">
+										<parameters>
+											<vector3 name="atPt" x="0.5" y="0.0" z="0.5"/>
+											<vector3 name="size" x="50" y="5" z="50"/>
+											<bool name="withoutFar">true</bool>
+										</parameters>
+										<wheresMyPoint>
+											<transform>
+												<location x="10" y="45">
+													<*z>
+														<@idx /><toFloat/>
+														<div><@amount /><decrease/><toFloat/></div>
+														<mul>2</mul>
+														<sub>1</sub>
+														<add><floatRandom min="-0.05" max="0.05"/></add>
+														
+														<mul>30</mul>
+													</*z>
+												</location>
+												<forward>
+													<*x><floatRandom min="-0.7" max="0.7"/></*x>
+													<*y><floatRandom min="1.0" max="1"/></*y>
+													<*z><floatRandom min="-0.4" max="0.4"/></*z>
+												</forward>
+												<up z="1"/>
+											</transform>
+											<$autoPlacement />
+										</wheresMyPoint>
+									</shape>
+								</loopElements>
+								<nextWMP>
+									<@idx />
+									<increase/>
+									<$idx />
+
+									<lessThan><@amount /></lessThan>
+								</nextWMP>
+							</loop>
+							<shape type="cube"> everything around
+								<parameters>
+									<vector3 name="size" x="60" y="100" z="60"/>
+									<bool name="reverseSurfaces">true</bool>
+								</parameters>
+							</shape>
+						</elements>
+					</set>
+					<!--
+					<modifier type="makeMirror">
+						<dir x="-1" y="-0.5"/>
+						<point x="12" y="50"/>
+					</modifier>
+					<modifier type="makeMirror">
+						<dir y="-1" x="0.21"/>
+						<point x="20" y="60"/>
+					</modifier>
+					<modifier type="makeMirror">
+						<dir y="-1" x="-0.15"/>
+						<point x="10" y="117"/>
+					</modifier>
+					-->
+					<modifier type="kaleidoscope"
+						amount="5"/>
+				</elements>
+			</set>
+		</mainElement>
+	</meshGenerator>
+
+	<previewOnly>
+		<meshStatic name="cubes"
+			meshGenerator="cubes"
+			generateLODs="1">
+			<meshGeneratorParameters>
+			</meshGeneratorParameters>
+		</meshStatic>
+	</previewOnly>
+</library>
+
+

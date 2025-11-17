@@ -1,0 +1,89 @@
+<library group="materials">
+	<generateTexture>
+		<texture idx="0" file="assets/tracking device.tex" format="rgb10a2" size="16 256" wrap="clamp" filteringMag="linear"/>
+		<texture idx="1" file="assets/tracking device_p.tex" format="rgba8" wrap="clamp"/>
+		<texture idx="2" file="assets/tracking device_v.tex" format="rgba8" wrap="clamp"/>
+
+		lvv = little/low voxel variations
+		
+		metal smooth		white, metallic, lvv
+		<verticalLines textureIdx="0"> colour
+			<line u="0" width="16">
+				<colour at="1.00" modulate="0.40">0.950 0.950 0.950 1.000</colour>
+				<colour at="0.75" modulate="0.40">0.925 0.925 0.925 1.000</colour>
+				<colour at="0.25" modulate="0.30">0.900 0.900 0.900 1.000</colour>
+				<colour at="0.00" modulate="0.40">0.950 0.950 0.950 1.000</colour>
+			</line>
+		</verticalLines>
+		<verticalLines textureIdx="1"> properties
+			<line u="0" width="16">
+				<mask>r</mask> roughness
+				<colour at="1.000">0.040</colour>
+				<colour at="0.000">0.040</colour>
+
+				<mask>g</mask> metallic
+				<colour at="1.000">0.000</colour>
+				<colour at="0.000">0.000</colour>
+
+				<mask>b</mask> tint
+				<colour at="1.000">0.000</colour>
+				<colour at="0.000">0.000</colour>
+
+				<mask>a</mask> emissive
+				<colour at="1.000">0.200</colour>
+				<colour at="0.000">0.200</colour>
+			</line>
+		</verticalLines>
+		<verticalLines textureIdx="2"> voxel
+			<line u="0" width="16">
+				<mask>r</mask> colour
+				<normal at="1.000"> 0.020</normal>
+				<normal at="0.900"> 0.010</normal>
+				<normal at="0.200">-0.010</normal>
+				<normal at="0.000">-0.020</normal>
+
+				<mask>g</mask> roughness
+				<normal at="1.000"> 0.020</normal>
+				<normal at="0.800">-0.010</normal>
+				<normal at="0.400"> 0.020</normal>
+				<normal at="0.000">-0.010</normal>
+
+				<mask>b</mask> metallic
+				<normal at="1.000"> 0.000</normal>
+				<normal at="0.800"> 0.000</normal>
+				<normal at="0.400"> 0.000</normal>
+				<normal at="0.000"> 0.000</normal>
+			</line>
+		</verticalLines>
+	</generateTexture>
+	<generateTexture>
+		<texture idx="0" file="assets/tracking device left.tex" format="rgb10a2" size="16 256" wrap="clamp" filteringMag="linear"/>
+
+		lvv = little/low voxel variations
+		
+		metal smooth		white, metallic, lvv
+		<verticalLines textureIdx="0"> colour
+			<line u="0" width="16">
+				<colour at="1.00" modulate="0.60">0.250 0.250 0.950 1.000</colour>
+				<colour at="0.75" modulate="0.60">0.225 0.225 0.925 1.000</colour>
+				<colour at="0.25" modulate="0.40">0.200 0.200 0.900 1.000</colour>
+				<colour at="0.00" modulate="0.60">0.250 0.250 0.950 1.000</colour>
+			</line>
+		</verticalLines>
+	</generateTexture>
+	<generateTexture>
+		<texture idx="0" file="assets/tracking device right.tex" format="rgb10a2" size="16 256" wrap="clamp" filteringMag="linear"/>
+
+		lvv = little/low voxel variations
+		
+		metal smooth		white, metallic, lvv
+		<verticalLines textureIdx="0"> colour
+			<line u="0" width="16">
+				<colour at="1.00" modulate="0.60">0.950 0.250 0.250 1.000</colour>
+				<colour at="0.75" modulate="0.60">0.925 0.225 0.225 1.000</colour>
+				<colour at="0.25" modulate="0.40">0.900 0.200 0.200 1.000</colour>
+				<colour at="0.00" modulate="0.60">0.950 0.250 0.250 1.000</colour>
+			</line>
+		</verticalLines>
+	</generateTexture>
+</library>

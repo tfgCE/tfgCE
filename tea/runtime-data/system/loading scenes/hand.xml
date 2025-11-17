@@ -1,0 +1,363 @@
+<library group="loading scenes">
+	<meshStatic name="hand r"
+		meshGenerator="hand r">
+	</meshStatic>
+	<meshGenerator
+		name="hand r">
+		<indexFormat>
+			<element/>
+		</indexFormat>
+		<vertexFormat>
+			<normal/>
+			<textureUV/>
+		</vertexFormat>
+		<materials>
+			<material index="0" material="main">
+				<float name="voxelSize">0.0075</float>
+				<colour name="emissiveColour" a="0.0">right_hand</colour>
+				<colour name="emissiveBaseColour">right_hand</colour>
+				<float name="emissivePower">1.0</float>
+			</material>
+		</materials>
+		<mainElement>
+			<set>
+				<elements>
+					<set>
+						<elements>
+							<include meshGenerator="actual hand r">
+								<parameters>
+									<bool name="mirrored">false</bool>
+									<vector3 name="autoPlacement" y="-0.04"/>
+								</parameters>
+							</include>
+						</elements>
+					</set>
+				</elements>
+			</set>
+		</mainElement>
+	</meshGenerator>
+
+	<meshStatic name="hand l"
+		meshGenerator="hand l">
+	</meshStatic>
+	
+	<meshGenerator
+		name="hand l">
+		<indexFormat>
+			<element/>
+		</indexFormat>
+		<vertexFormat>
+			<normal/>
+			<textureUV/>
+		</vertexFormat>
+		<materials>
+			<material index="0" material="main">
+				<float name="voxelSize">0.0075</float>
+				<colour name="emissiveColour" a="0.0">left_hand</colour>
+				<colour name="emissiveBaseColour">left_hand</colour>
+				<float name="emissivePower">1.0</float>
+			</material>
+		</materials>
+		<mainElement>
+			<set>
+				<elements>
+					<set>
+						<elements>
+							<include meshGenerator="actual hand r">
+								<parameters>
+									<bool name="mirrored">true</bool>
+									<vector3 name="autoPlacement" y="-0.04"/>
+								</parameters>
+							</include>
+							<modifier type="mirror"/>
+						</elements>
+					</set>
+				</elements>
+			</set>
+		</mainElement>
+	</meshGenerator>
+
+	<meshGenerator
+		name="actual hand r">
+		<indexFormat>
+			<element/>
+		</indexFormat>
+		<vertexFormat>
+			<normal/>
+			<textureUV/>
+		</vertexFormat>
+		<mainElement>
+			<set>
+				<parameters>
+					<float name="uHand">1t256</float>
+					<float name="uHandAccent">8t256</float>
+					<float name="uHandEmissive">6t256</float>
+					<float name="forceSmoothingAngleLimit">80</float>
+				</parameters>
+				<optionalParameters>
+					<float name="radius">0.04</float>
+					<float name="thickness">0.02</float>
+					<vector3 name="at" y="0.06" x="-0.005"/>
+					<vector3 name="fingerAt" y="0.09 " x="-0.03"/>
+					<float name="fingerLength">0.1</float>
+					<float name="fingerRadius">0.011</float>
+				</optionalParameters>
+				<elements>
+					<shape type="cross section cylindrical">
+						<wheresMyPoint>
+							<copyStore as="csRadius" from="radius"/>
+							<restore from="at"/>
+							<access field="z">
+								<sub><restore from="thickness"/><half/></sub>
+							</access>
+							<store as="csStartsAt"/>
+							<restore from="at"/>
+							<access field="z">
+								<add><restore from="thickness"/><half/></add>
+							</access>
+							<store as="csEndsAt"/>
+						</wheresMyPoint>
+						<halfCrossSectionSpline>
+							<refPoint name="height" y="0.02"/>
+							<refPoint name="radius" x="0.05"/>
+							<u uParam="uHand"/>
+							<point x="0.04" y="0.02"/>
+							<point x="0.057" y="0.015"/>
+							<u uParam="uHandAccent"/>
+							<!--<point x="0.058" y="0.012"/>-->
+							<!--<point x="0.059" y="0.008"/>-->
+							<point x="0.06" y="0.005"/>
+							<u uParam="uHand"/>
+							<point x="0.05" y="0.00"/>
+							<point x="0.03" y="0.005"/>
+							<u uParam="uHandEmissive"/>
+							<point x="0.035" y="0.01"/>
+							<point x="0.04" y="0.02"/>
+						</halfCrossSectionSpline>
+						<cylinderSubStep stepLength="0.005"/>
+						<halfCrossSectionSubStep stepLength="0.1"/>
+					</shape>
+					<socket name="pointer">
+						<wheresMyPoint>
+							<transform>
+								<location>
+									<restore from="mirrored"/>
+									<if>
+										<true>
+											<restore from="fingerAt"/>
+											<access field="x">
+												<negate/>
+											</access>
+										</true>
+										<false>
+											<restore from="fingerAt"/>
+										</false>
+									</if>
+									<access field="y">
+										<add><restore from="fingerLength"/></add>
+									</access>
+								</location>
+								<forward y="1"/>
+								<up>
+									<restore from="mirrored"/>
+									<if>
+										<true>
+											<vector3 x="1"/>
+										</true>
+										<false>
+											<vector3 x="-1"/>
+										</false>
+									</if>
+								</up>
+							</transform>
+							<store as="autoPlacement"/>
+						</wheresMyPoint>
+					</socket>
+					<shape type="cross section cylindrical">
+						<wheresMyPoint>
+							<copyStore as="csRadius" from="fingerRadius"/>
+							<restore from="fingerAt"/>
+							<store as="csStartsAt"/>
+							<restore from="fingerAt"/>
+							<access field="y">
+								<add><restore from="fingerLength"/></add>
+							</access>
+							<store as="csEndsAt"/>
+						</wheresMyPoint>
+						<halfCrossSectionSpline>
+							<refPoint name="height" y="0.1"/>
+							<refPoint name="radius" x="0.01"/>
+							<u uParam="uHandAccent"/>
+							<point x="0.0" y="0.1"/>
+							<point x="0.002" y="0.1"/>
+							<u uParam="uHand"/>
+							<curve x="0.01" y="0.09">
+								<withRoundSeparation/>
+								<p12 x="0.01" y="0.1"/>
+							</curve>
+							<point x="0.01" y="0.07"/>
+							<u uParam="uHandEmissive"/>
+							<point x="0.01" y="0.065"/>
+							<u uParam="uHandAccent"/>
+							<point x="0.01" y="0.055"/>
+							<u uParam="uHand"/>
+							<point x="0.01" y="0.03"/>
+							<curve x="0.0045" y="0.02">
+								<withRoundSeparation/>
+								<p12 x="0.01" y="0.02"/>
+							</curve>
+							<u uParam="uHandAccent"/>
+							<point x="0.0045" y="0.0"/>
+						</halfCrossSectionSpline>
+						<cylinderSubStep stepLength="0.0025"/>
+						<halfCrossSectionSubStep stepLength="0.0025"/>
+					</shape>
+					<shape type="edges and surfaces">
+						<debugDrawEdges/>
+						<nodes>
+							fl---mf---fr
+							|		   |
+							|		   |
+							ml		  mr
+							|		   |
+							|		   |
+							bl---mb---br
+							<node id="fl">
+								<wheresMyPoint>
+									<restore from="at"/>
+									<access field="x"><add><restore from="radius"/><mul>-0.35</mul></add></access>
+									<access field="y"><add><restore from="radius"/><mul>1.9</mul></add></access>
+									<access field="z"><add><restore from="thickness"/><mul>-2.3</mul></add></access>
+								</wheresMyPoint>
+							</node>
+							<node id="mf">
+								<wheresMyPoint>
+									<restore from="at"/>
+									<access field="x"><add><restore from="radius"/><mul>0.2</mul></add></access>
+									<access field="y"><add><restore from="radius"/><mul>1.9</mul></add></access>
+									<access field="z"><add><restore from="thickness"/><mul>-2.2</mul></add></access>
+								</wheresMyPoint>
+							</node>
+							<node id="fr">
+								<wheresMyPoint>
+									<restore from="at"/>
+									<access field="x"><add><restore from="radius"/><mul>0.9</mul></add></access>
+									<access field="y"><add><restore from="radius"/><mul>1.3</mul></add></access>
+									<access field="z"><add><restore from="thickness"/><mul>-1.8</mul></add></access>
+								</wheresMyPoint>
+							</node>
+							<node id="ml">
+								<wheresMyPoint>
+									<restore from="at"/>
+									<access field="x"><add><restore from="radius"/><mul>-0.2</mul></add></access>
+									<access field="y"><add><restore from="radius"/><mul>2.3</mul></add></access>
+									<access field="z"><add><restore from="thickness"/><mul>-0.5</mul></add></access>
+								</wheresMyPoint>
+							</node>
+							<node id="mr">
+								<wheresMyPoint>
+									<restore from="at"/>
+									<access field="x"><add><restore from="radius"/><mul>1.1</mul></add></access>
+									<access field="y"><add><restore from="radius"/><mul>1.3</mul></add></access>
+									<access field="z"><add><restore from="thickness"/><mul>-0.5</mul></add></access>
+								</wheresMyPoint>
+							</node>
+							<node id="bl">
+								<wheresMyPoint>
+									<restore from="at"/>
+									<access field="x"><add><restore from="radius"/><mul>-0.2</mul></add></access>
+									<access field="y"><add><restore from="radius"/><mul>1.3</mul></add></access>
+									<access field="z"><add><restore from="thickness"/><mul>0.25</mul></add></access>
+								</wheresMyPoint>
+							</node>
+							<node id="mb">
+								<wheresMyPoint>
+									<restore from="at"/>
+									<access field="x"><add><restore from="radius"/><mul>0.6</mul></add></access>
+									<access field="y"><add><restore from="radius"/><mul>1.3</mul></add></access>
+									<access field="z"><add><restore from="thickness"/><mul>0.45</mul></add></access>
+								</wheresMyPoint>
+							</node>
+							<node id="br">
+								<wheresMyPoint>
+									<restore from="at"/>
+									<access field="x"><add><restore from="radius"/><mul>1.2</mul></add></access>
+									<access field="y"><add><restore from="radius"/><mul>0.6</mul></add></access>
+									<access field="z"><add><restore from="thickness"/><mul>0.25</mul></add></access>
+								</wheresMyPoint>
+							</node>
+						</nodes>
+						<edges>
+							<subStep stepLength="0.005"/>
+							<edge id="fl->fr" bothTowards="mf"/>
+							<edge id="fr->br" bothTowards="mr"/>
+							<edge id="br->bl" bothTowards="mb"/>
+							<edge id="bl->fl" bothTowards="ml"/>
+						</edges>
+						<edgeRefs>
+							<edgeRef id="side">
+								<edge>
+									<crossSectionSpline>
+										<u uParam="uHandAccent"/>
+										<point x="0.001" y="0.002"/>
+										<point x="0.001" y="-0.002"/>
+										<point x="-0.00" y="-0.003"/>
+										<u uParam="uHand"/>
+										<point x="-0.002" y="-0.001"/>
+										<u uParam="uHandEmissive"/>
+										<point x="-0.002" y="0.001"/>
+										<u uParam="uHand"/>
+										<point x="-0.00" y="0.003"/>
+										<u uParam="uHandAccent"/>
+										<point x="0.001" y="0.002"/>
+									</crossSectionSpline>
+									<crossSectionSubStep stepLength="0.01"/>
+									<edgeSubStep stepLength="0.005"/>
+								</edge>
+							</edgeRef>
+						</edgeRefs>
+						<generateEdgeMeshes>
+							<edgeMesh
+								cornerRadius="0.0"
+								useEdgeRef="side"
+								normalAlignment="right normal"
+								cutCorner="false">
+								<edges>
+									<edge id="fl->fr"/>
+									<edge id="fr->br"/>
+									<edge id="br->bl"/>
+									<edge id="bl->fl"/>
+								</edges>
+							</edgeMesh>
+						</generateEdgeMeshes>
+						<surfaces>
+							<addInnerGrid/>
+
+							<surface id="t" inSurfaceGroup="top">
+								<edge id="fl->fr"/>
+								<edge id="fr->br"/>
+								<edge id="br->bl"/>
+								<edge id="bl->fl"/>
+							</surface>
+							<surface id="b" inSurfaceGroup="bottom">
+								<edge id="fl->fr" reversed="true"/>
+								<edge id="bl->fl"/>
+								<edge id="br->bl"/>
+								<edge id="fr->br"/>
+							</surface>
+						</surfaces>
+						<generateSurfaceMeshes>
+							<surfaceMesh uParam="uHand" extrusionSurfaceGroup="top" extrusion="0.002">
+								<surface id="t"/>
+							</surfaceMesh>
+							<surfaceMesh uParam="uHand" extrusionSurfaceGroup="bottom" extrusion="0.002">
+								<surface id="b"/>
+							</surfaceMesh>
+						</generateSurfaceMeshes>
+						
+					</shape>
+				</elements>
+			</set>
+		</mainElement>
+	</meshGenerator>
+</library>

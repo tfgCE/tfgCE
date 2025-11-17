@@ -1,0 +1,80 @@
+<library group="displays">
+	gfx
+
+	<textureArray name="overlay system 24x32" file="assets\overlay system 24x32.tex"/>
+	<textureArray name="overlay system 24x32 [ch_s]" file="assets\overlay system 24x32 [ch_s].tex"/>
+	<textureArray name="overlay system 24x32 [ch_t]" file="assets\overlay system 24x32 [ch_t].tex"/>
+	<textureArray name="overlay system 24x32 [ja]" file="assets\overlay system 24x32 [ja].tex"/>
+	<textureArray name="overlay system 24x32 [ko]" file="assets\overlay system 24x32 [ko].tex"/>
+	<textureArray name="overlay system 24x32 [crl]" file="assets\overlay system 24x32 [crl].tex"/>
+	<texture name="overlay system 24x32 special" file="assets\overlay system 24x32 special.tex" importFromFile="assets\_source\default 24x32 special.tga" filteringMag="linear" filteringMin="linear" wrap="clamp" addBorder="1.8"/>
+	
+	<font name="overlay system 24x32">
+		<variableWidth x="24" y="32" spacingx="4" spacingy="4" verticalMargin="4" baseLinePt="0.28"/>
+		<texture use="overlay system 24x32">
+			<compressCharacters/>
+			<rowAnsi/>
+			<rowLocalisedCharacters setId="latin"/>			
+		</texture>
+		<texture use="overlay system 24x32 special">
+			<row>✚🗲💥→°🔋♦🪙↟☼☇🟢</row> health, ammo, damage, arrow, degree, storage, experience, merit points, fast-melee, plasma, lightning, corrosion
+			<row>◯⇑⇓⇐⇒🔒⅟¾½¼⌖👁👂♥😠💣</row> navigation guidance, nav up, nav down, nav left, nav right, locked to head, armour 100%, armour 75%, armour 50%, armour 25%, critical/weak point (health), (no) eye, (no) ear, heart (ally), angry (enemy), explodable
+			<row>🔧⚠🗢🗱🖄🛡✊⋯ℹ⏱😕👀⤻☐☑</row> use/tool, caution, eat/drink/kiss, overchargable, explodable (overcharged), shield (energy), melee, three dots, information, stopwatch, confused, sight movement based, ricochete, off, on
+			<row>↑↓⤊⤋⇡⇣⇞⇟≚⊛</row> inc better, dec better, inc much better, dec much better, inc worse, dec worse, inc much worse, dec much worse, weapon stat info replace, weapon stat info special
+		</texture>
+		<texture use="overlay system 24x32 [ch_s]">
+			<rowLocalisedCharacters setId="chinese_simplified"/>
+		</texture>
+		<texture use="overlay system 24x32 [ch_t]">
+			<rowLocalisedCharacters setId="chinese_traditional"/>
+		</texture>
+		<texture use="overlay system 24x32 [ja]">
+			<rowLocalisedCharacters setId="japanese"/>
+		</texture>
+		<texture use="overlay system 24x32 [ko]">
+			<rowLocalisedCharacters setId="korean"/>
+		</texture>
+		<texture use="overlay system 24x32 [crl]">
+			<rowLocalisedCharacters setId="cyrillic"/>
+		</texture>
+		<colourCharacters>✚🗲💥♦🪙☼☇🟢</colourCharacters>
+		<colourCharacters>⇑⇓⇐⇒⅟¾½¼⌖👁👂♥😠💣</colourCharacters>
+		<colourCharacters>⚠🗱🖄🛡⤻</colourCharacters>
+		<colourCharacters>↑↓⤊⤋⇡⇣⇞⇟≚⊛</colourCharacters>
+	</font>
+	<font name="overlay system 24x32 stats">
+		<variableWidth x="24" y="32" spacingx="4" spacingy="4" verticalMargin="4" baseLinePt="0.28"/>
+		<texture use="overlay system 24x32">
+			<compressCharacters/>
+			<rowAnsi/>
+			<rowLocalisedCharacters setId="latin"/>
+		</texture>
+		<texture use="overlay system 24x32 special">
+			<row>✚🗲💥→°🔋♦🪙↟☼☇🟢</row> health, ammo, damage, arrow, degree, storage, experience, merit points, fast-melee, plasma, lightning, corrosion
+			<row>◯⇑⇓⇐⇒🔒⅟¾½¼⌖👁👂♥😠💣</row> navigation guidance, nav up, nav down, nav left, nav right, locked to head, armour 100%, armour 75%, armour 50%, armour 25%, critical/weak point (health), (no) eye, (no) ear, heart (ally), angry (enemy), explodable
+			<row>🔧⚠🗢🗱🖄🛡✊⋯ℹ⏱😕👀⤻☐☑</row> use/tool, caution, eat/drink/kiss, overchargable, explodable (overcharged), shield (energy), melee, three dots, information, stopwatch, confused, sight movement based, ricochete, off, on
+			<row>↑↓⤊⤋⇡⇣⇞⇟≚⊛</row> inc better, dec better, inc much better, dec much better, inc worse, dec worse, inc much worse, dec much worse, weapon stat info replace, weapon stat info special
+		</texture>
+		<texture use="overlay system 24x32 [ch_s]">
+			<rowLocalisedCharacters setId="chinese_simplified"/>
+		</texture>
+		<texture use="overlay system 24x32 [ch_t]">
+			<rowLocalisedCharacters setId="chinese_traditional"/>
+		</texture>
+		<texture use="overlay system 24x32 [ja]">
+			<rowLocalisedCharacters setId="japanese"/>
+		</texture>
+		<texture use="overlay system 24x32 [ko]">
+			<rowLocalisedCharacters setId="korean"/>
+		</texture>
+		<texture use="overlay system 24x32 [crl]">
+			<rowLocalisedCharacters setId="cyrillic"/>
+		</texture>
+		<fixedWidthCharacters>0123456789 .</fixedWidthCharacters>
+		<colourCharacters>✚🗲💥♦🪙☼☇🟢</colourCharacters>
+		<colourCharacters>⇑⇓⇐⇒⅟¾½¼⌖👁👂♥😠💣</colourCharacters>
+		<colourCharacters>⚠🗱🖄🛡⤻</colourCharacters>
+		<colourCharacters>↑↓⤊⤋⇡⇣⇞⇟≚⊛</colourCharacters>
+	</font>
+
+</library>

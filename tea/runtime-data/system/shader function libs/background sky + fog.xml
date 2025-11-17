@@ -1,0 +1,102 @@
+<library group="shader function libs">
+	<shaderFunctionLib name="background sky + fog">
+		<dependsOn>
+			<shaderFunctionLib name="shader function libs:background sky + fog"/>
+		</dependsOn>
+		<source>
+			requires:
+				HIGHP vec3 prcLightDir
+			<data>
+				// background
+				uniform HIGHP vec3 backgroundUp; // view space
+				uniform HIGHP vec3 backgroundAnchor; // view space
+				uniform vec2 /*segment01*/ backgroundUseFogSeg;
+				
+				uniform LOWP float uniformBackgroundFog;
+				uniform LOWP vec4 uniformBackgroundFogColour;
+
+				// sky
+				uniform LOWP vec4 /*colour*/ backgroundSkyColourOntoLight;
+				uniform LOWP vec4 /*colour*/ backgroundSkyColourAwayLight;
+				uniform LOWP vec4 /*colour*/ backgroundSkyColourUp;
+				uniform vec2 /*segment01*/ backgroundSkyUseColourUpSeg;
+
+				// fog
+				uniform LOWP vec4 /*colour*/ backgroundFogColourOntoLight;
+				uniform LOWP vec4 /*colour*/ backgroundFogColourAwayLight;
+				uniform LOWP vec4 /*colour*/ backgroundFogColourDown;
+				uniform vec2 /*segment01*/ backgroundFogUseColourDownSeg;
+			</data>
+			<defaultValues>
+				// background
+				<vector3 name="backgroundUp" x="0" y="0" z="1"/>
+				<vector3 name="backgroundAnchor" x="0" y="0" z="0"/>
+				segment01<vector2  name="backgroundUseFogSeg" x="0.1" y="-5.0"/>
+				
+				<float name="uniformBackgroundFog">0</float>
+				<colour name="uniformBackgroundFogColour" r="0" g="0" b="0" a="1"/>
+
+				
+				// sky
+				<colour name="backgroundSkyColourOntoLight" r="1.0" g="0.6" b="0.3" a="1"/>
+				<colour name="backgroundSkyColourAwayLight" r="0.3" g="0.5" b="1.0" a="1"/>
+				<colour name="backgroundSkyColourUp" r="0.2" g="0.2" b="1.0" a="1"/>
+				segment01<vector2 name="backgroundSkyUseColourUpSeg" x="0.3" y="1.4285"/>
+
+
+				// fog
+				<colour name="backgroundFogColourOntoLight" r="1.0" g="0.6" b="0.3" a="1"/>
+				<colour name="backgroundFogColourAwayLight" r="0.3" g="0.5" b="1.0" a="1"/>
+				<colour name="backgroundFogColourDown" r="0.2" g="0.2" b="1.0" a="1"/>
+				segment01<vector2 name="backgroundFogUseColourDownSeg" x="-0.3" y="-1.4285"/>
+			</defaultValues>
+			<function name="adjust_background_sky_colour">
+				<header>LOWP vec3 adjust_background_sky_colour(LOWP vec3 _skyColour, HIGHP float _withLight)</header>
+				<body>
+					return _skyColour;
+				</body>
+			</function>
+			<function name="adjust_background_use_fog">
+				0 sky
+				1 fog
+				<header>LOWP float adjust_background_use_fog(LOWP float _useFog)</header>
+				<body>
+					return _useFog;
+				</body>
+			</function>
+			<function name="calculate_background_colour_for">
+				<header>vec3 calculate_background_colour_for(HIGHP vec3 _positionNormalised)</header>
+				<body>
+					vec3 backgroundColour;
+					vec3 backgroundFogColour;
+					CALCULATE_BACKGROUND_COLOUR(backgroundColour, backgroundFogColour, _positionNormalised);
+					return backgroundColour;
+					//HIGHP float pnWithLight = dot(prcLightDir, _positionNormalised);
+					//float pnWithUp = dot(backgroundUp, _positionNormalised);
+					//float pnWithLightNormalised = pnWithLight * 0.5 + 0.5;
+                    //
+					//// calculate pure sky colour
+					//float useSkyUp = clamped_to_local_of_segment01(pnWithUp, backgroundSkyUseColourUpSeg) * backgroundSkyColourUp.a;
+					//LOWP vec3 actualSkyColour = blend_rgb(pnWithLightNormalised, backgroundSkyColourOntoLight.rgb, backgroundSkyColourAwayLight.rgb);
+					//actualSkyColour = blend_rgb(useSkyUp, actualSkyColour, backgroundSkyColourUp.rgb);
+					//actualSkyColour = adjust_background_sky_colour(actualSkyColour, pnWithLight);
+					//
+					//// calculate pure fog colour
+					//float useFogDown = clamped_to_local_of_segment01(pnWithUp, backgroundFogUseColourDownSeg) * backgroundFogColourDown.a;
+					//LOWP vec3 actualFogColour = blend_rgb(pnWithLightNormalised, backgroundFogColourOntoLight.rgb, backgroundFogColourAwayLight.rgb);
+					//actualFogColour = blend_rgb(useFogDown, actualFogColour, backgroundFogColourDown.rgb);
+					//
+					//// how it should blend between sky and fog
+					//float useFog = clamped_to_local_of_segment01(pnWithUp, backgroundUseFogSeg);
+					//useFog = linear01_to_quadratic01(useFog); // make it softer
+					//useFog = adjust_background_use_fog(useFog);
+                    //
+					//vec3 backgroundColour;
+					//backgroundColour = blend_rgb(useFog, actualSkyColour, actualFogColour);
+                    //
+					//return backgroundColour;
+				</body>
+			</function>
+		</source>
+	</shaderFunctionLib>
+</library>

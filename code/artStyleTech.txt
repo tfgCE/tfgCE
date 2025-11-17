@@ -1,0 +1,28 @@
+
+1.	LIGHT / REFLECTION
+	All objects have "light/reflection" calculated against viewer.
+	This uses texture with:
+		X/U	used as colour/type of material
+		Y/V	used as light/reflection value
+			0 is parallel to viewer sight
+			1 is perpendicular to viewer
+		RGB	is actual colour of object
+		A	is value used for fresnel
+			1.0 - A is how much of fresnel is added
+	Vertex shader outputs varLight that is also used by fragment shader to calculate how
+	each light texture is applied (see light textures)
+		
+2.	GLOBAL / DOMINANT LIGHT
+	All object in Room are lighted by single global/dominant light
+	Light uses textures:
+		R MODULATE - modulates RGB colour (multiplies each component)
+		G MODIFY - modifies RGB colour (turns into gray-scale and then into colour)
+		B FRESNEL - only fresnel
+	each one:
+		X/U used as some fluctuation/randomisation? THINK - TODO
+		Y/V used as actual light
+			0 is opposite of light
+			1 is towards light
+		RGB	colour modifies objects colour (it modulates desaturated value (R+G+B) / 3)
+		A	how much does it affect objects colour (it is increased by object's alpha)
+		

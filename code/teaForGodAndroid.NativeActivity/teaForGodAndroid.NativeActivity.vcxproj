@@ -1,0 +1,534 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|ARM64">
+      <Configuration>Debug</Configuration>
+      <Platform>ARM64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Profiler|ARM64">
+      <Configuration>Profiler</Configuration>
+      <Platform>ARM64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Dev|ARM64">
+      <Configuration>Dev</Configuration>
+      <Platform>ARM64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|ARM64">
+      <Configuration>Release</Configuration>
+      <Platform>ARM64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="ReleaseOculus|ARM64">
+      <Configuration>ReleaseOculus</Configuration>
+      <Platform>ARM64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="ReleaseAndroid|ARM64">
+      <Configuration>ReleaseAndroid</Configuration>
+      <Platform>ARM64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="ReleaseVive|ARM64">
+      <Configuration>ReleaseVive</Configuration>
+      <Platform>ARM64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="ReleasePico|ARM64">
+      <Configuration>ReleasePico</Configuration>
+      <Platform>ARM64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{dc1c7ff7-c044-463c-b946-c7298734e2f5}</ProjectGuid>
+    <Keyword>Android</Keyword>
+    <RootNamespace>teaForGodAndroid</RootNamespace>
+    <DefaultLanguage>en-US</DefaultLanguage>
+    <MinimumVisualStudioVersion>14.0</MinimumVisualStudioVersion>
+    <ApplicationType>Android</ApplicationType>
+    <ApplicationTypeRevision>3.0</ApplicationTypeRevision>
+    <ProjectName>teaForGodAndroid.NativeActivity</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>Clang_5_0</PlatformToolset>
+    <AndroidAPILevel>android-23</AndroidAPILevel>
+    <CharacterSet>Unicode</CharacterSet>
+    <UseOfStl>c++_shared</UseOfStl>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Dev|ARM64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>Clang_5_0</PlatformToolset>
+    <AndroidAPILevel>android-23</AndroidAPILevel>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+    <UseOfStl>c++_shared</UseOfStl>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>Clang_5_0</PlatformToolset>
+    <AndroidAPILevel>android-23</AndroidAPILevel>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+    <UseOfStl>c++_shared</UseOfStl>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseOculus|ARM64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>Clang_5_0</PlatformToolset>
+    <AndroidAPILevel>android-23</AndroidAPILevel>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+    <UseOfStl>c++_shared</UseOfStl>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseAndroid|ARM64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>Clang_5_0</PlatformToolset>
+    <AndroidAPILevel>android-23</AndroidAPILevel>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+    <UseOfStl>c++_shared</UseOfStl>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseVive|ARM64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>Clang_5_0</PlatformToolset>
+    <AndroidAPILevel>android-23</AndroidAPILevel>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+    <UseOfStl>c++_shared</UseOfStl>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ReleasePico|ARM64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>Clang_5_0</PlatformToolset>
+    <AndroidAPILevel>android-23</AndroidAPILevel>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+    <UseOfStl>c++_shared</UseOfStl>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Profiler|ARM64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>Clang_5_0</PlatformToolset>
+    <AndroidAPILevel>android-23</AndroidAPILevel>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+    <UseOfStl>c++_shared</UseOfStl>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|ARM64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Dev|ARM64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|ARM64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='ReleaseOculus|ARM64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='ReleaseAndroid|ARM64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='ReleaseVive|ARM64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='ReleasePico|ARM64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Profiler|ARM64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM64'">
+    <IncludePath>$(SolutionDir)externals\code\ovrMobile\VrApi\Include;$(SolutionDir)externals\code\fmod_android\api\lowLevel\inc;$(SolutionDir)externals\code\fmod_android\api\studio\inc;$(IncludePath)</IncludePath>
+    <OutDir>$(SolutionDir)runtime\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)temp\intermediate\$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Dev|ARM64'">
+    <IncludePath>$(SolutionDir)externals\code\ovrMobile\VrApi\Include;$(SolutionDir)externals\code\fmod_android\api\lowLevel\inc;$(SolutionDir)externals\code\fmod_android\api\studio\inc;$(IncludePath)</IncludePath>
+    <OutDir>$(SolutionDir)runtime\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)temp\intermediate\$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM64'">
+    <IncludePath>$(SolutionDir)externals\code\ovrMobile\VrApi\Include;$(SolutionDir)externals\code\fmod_android\api\lowLevel\inc;$(SolutionDir)externals\code\fmod_android\api\studio\inc;$(IncludePath)</IncludePath>
+    <OutDir>$(SolutionDir)runtime\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)temp\intermediate\$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseOculus|ARM64'">
+    <IncludePath>$(SolutionDir)externals\code\ovrMobile\VrApi\Include;$(SolutionDir)externals\code\fmod_android\api\lowLevel\inc;$(SolutionDir)externals\code\fmod_android\api\studio\inc;$(IncludePath)</IncludePath>
+    <OutDir>$(SolutionDir)runtime\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)temp\intermediate\$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseAndroid|ARM64'">
+    <IncludePath>$(SolutionDir)externals\code\ovrMobile\VrApi\Include;$(SolutionDir)externals\code\fmod_android\api\lowLevel\inc;$(SolutionDir)externals\code\fmod_android\api\studio\inc;$(IncludePath)</IncludePath>
+    <OutDir>$(SolutionDir)runtime\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)temp\intermediate\$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseVive|ARM64'">
+    <IncludePath>$(SolutionDir)externals\code\wavevr\include;$(SolutionDir)externals\code\viveport\include;$(SolutionDir)externals\code\fmod_android\api\lowLevel\inc;$(SolutionDir)externals\code\fmod_android\api\studio\inc;$(IncludePath)</IncludePath>
+    <OutDir>$(SolutionDir)runtime\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)temp\intermediate\$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ReleasePico|ARM64'">
+    <IncludePath>$(SolutionDir)externals\code\fmod_android\api\lowLevel\inc;$(SolutionDir)externals\code\fmod_android\api\studio\inc;$(IncludePath)</IncludePath>
+    <OutDir>$(SolutionDir)runtime\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)temp\intermediate\$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Profiler|ARM64'">
+    <IncludePath>$(SolutionDir)externals\code\ovrMobile\VrApi\Include;$(SolutionDir)externals\code\fmod_android\api\lowLevel\inc;$(SolutionDir)externals\code\fmod_android\api\studio\inc;$(IncludePath)</IncludePath>
+    <OutDir>$(SolutionDir)runtime\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)temp\intermediate\$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM64'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>_DEBUG;AN_64;AN_LITTLE_ENDIAN;AN_CLANG;AN_ANDROID;AN_FMOD;AN_GLES;AN_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+      <TreatWarningAsError>true</TreatWarningAsError>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <MinimalRebuild>false</MinimalRebuild>
+      <DebugInformationFormat>FullDebug</DebugInformationFormat>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <PrecompiledHeaderFile>
+      </PrecompiledHeaderFile>
+      <ExceptionHandling>UnwindTables</ExceptionHandling>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <LibraryDependencies>%(LibraryDependencies);GLESv3;EGL;bzip2;vrapi;openxr_loader;m;stdc++;fmod;fmodstudio;</LibraryDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)runtime\$(Configuration);$(SolutionDir)externals\code\bzip2\lib\arm64;$(SolutionDir)externals\code\ovrMobile\VrApi\Libs\Android\arm64-v8a\Debug;$(SolutionDir)externals\code\openxr\lib\oculus\arm64\debug;$(SolutionDir)externals\code\fmod_android\api\lowLevel\lib\arm64-v8a;$(SolutionDir)externals\code\fmod_android\api\studio\lib\arm64-v8a;$(SolutionDir)externals\code\bhaptics_android\lib\arm64-v8a;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>$(SolutionDir)runtime\$(Platform)\$(Configuration)\libteaForGod.a;$(SolutionDir)runtime\$(Platform)\$(Configuration)\libframework.a;$(SolutionDir)runtime\$(Platform)\$(Configuration)\libtools.a;$(SolutionDir)runtime\$(Platform)\$(Configuration)\libcore.a;</AdditionalDependencies>
+      <WholeArchiveBegin>true</WholeArchiveBegin>
+      <AdditionalOptions>-llog %(AdditionalOptions)</AdditionalOptions>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Dev|ARM64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>NDEBUG;AN_64;AN_LITTLE_ENDIAN;AN_CLANG;AN_ANDROID;AN_FMOD;AN_GLES;AN_DEV;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+      <TreatWarningAsError>true</TreatWarningAsError>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <MinimalRebuild>false</MinimalRebuild>
+      <DebugInformationFormat>FullDebug</DebugInformationFormat>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <PrecompiledHeaderFile>
+      </PrecompiledHeaderFile>
+      <ExceptionHandling>UnwindTables</ExceptionHandling>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <LibraryDependencies>%(LibraryDependencies);GLESv3;EGL;bzip2;vrapi;openxr_loader;m;stdc++;fmod;fmodstudio;</LibraryDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)runtime\$(Configuration);$(SolutionDir)externals\code\bzip2\lib\arm64;$(SolutionDir)externals\code\ovrMobile\VrApi\Libs\Android\arm64-v8a\Release;$(SolutionDir)externals\code\openxr\lib\oculus\arm64\release;$(SolutionDir)externals\code\fmod_android\api\lowLevel\lib\arm64-v8a;$(SolutionDir)externals\code\fmod_android\api\studio\lib\arm64-v8a;$(SolutionDir)externals\code\bhaptics_android\lib\arm64-v8a;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>$(SolutionDir)runtime\$(Platform)\$(Configuration)\libteaForGod.a;$(SolutionDir)runtime\$(Platform)\$(Configuration)\libframework.a;$(SolutionDir)runtime\$(Platform)\$(Configuration)\libtools.a;$(SolutionDir)runtime\$(Platform)\$(Configuration)\libcore.a;</AdditionalDependencies>
+      <WholeArchiveBegin>true</WholeArchiveBegin>
+      <AdditionalOptions>-llog %(AdditionalOptions)</AdditionalOptions>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>NDEBUG;AN_64;AN_LITTLE_ENDIAN;AN_CLANG;AN_ANDROID;AN_FMOD;AN_GLES;AN_RELEASE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+      <TreatWarningAsError>true</TreatWarningAsError>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <MinimalRebuild>false</MinimalRebuild>
+      <DebugInformationFormat>FullDebug</DebugInformationFormat>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <PrecompiledHeaderFile>
+      </PrecompiledHeaderFile>
+      <ExceptionHandling>UnwindTables</ExceptionHandling>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <LibraryDependencies>%(LibraryDependencies);GLESv3;EGL;bzip2;vrapi;openxr_loader;m;stdc++;fmod;fmodstudio;</LibraryDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)runtime\$(Configuration);$(SolutionDir)externals\code\bzip2\lib\arm64;$(SolutionDir)externals\code\ovrMobile\VrApi\Libs\Android\arm64-v8a\Release;$(SolutionDir)externals\code\openxr\lib\oculus\arm64\release;$(SolutionDir)externals\code\fmod_android\api\lowLevel\lib\arm64-v8a;$(SolutionDir)externals\code\fmod_android\api\studio\lib\arm64-v8a;$(SolutionDir)externals\code\bhaptics_android\lib\arm64-v8a;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>$(SolutionDir)runtime\$(Platform)\$(Configuration)\libteaForGod.a;$(SolutionDir)runtime\$(Platform)\$(Configuration)\libframework.a;$(SolutionDir)runtime\$(Platform)\$(Configuration)\libtools.a;$(SolutionDir)runtime\$(Platform)\$(Configuration)\libcore.a;</AdditionalDependencies>
+      <WholeArchiveBegin>true</WholeArchiveBegin>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseOculus|ARM64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>AN_OCULUS_ONLY;AN_OCULUS;NDEBUG;AN_64;AN_LITTLE_ENDIAN;AN_CLANG;AN_ANDROID;AN_QUEST;AN_VRAPI;AN_FMOD;AN_GLES;AN_RELEASE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+      <TreatWarningAsError>true</TreatWarningAsError>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <MinimalRebuild>false</MinimalRebuild>
+      <DebugInformationFormat>FullDebug</DebugInformationFormat>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <PrecompiledHeaderFile>
+      </PrecompiledHeaderFile>
+      <ExceptionHandling>UnwindTables</ExceptionHandling>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <LibraryDependencies>%(LibraryDependencies);GLESv3;EGL;bzip2;vrapi;openxr_loader;m;stdc++;fmod;fmodstudio;</LibraryDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)runtime\$(Configuration);$(SolutionDir)externals\code\bzip2\lib\arm64;$(SolutionDir)externals\code\ovrMobile\VrApi\Libs\Android\arm64-v8a\Release;$(SolutionDir)externals\code\openxr\lib\oculus\arm64\release;$(SolutionDir)externals\code\fmod_android\api\lowLevel\lib\arm64-v8a;$(SolutionDir)externals\code\fmod_android\api\studio\lib\arm64-v8a;$(SolutionDir)externals\code\bhaptics_android\lib\arm64-v8a;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>$(SolutionDir)runtime\$(Platform)\$(Configuration)\libteaForGod.a;$(SolutionDir)runtime\$(Platform)\$(Configuration)\libframework.a;$(SolutionDir)runtime\$(Platform)\$(Configuration)\libtools.a;$(SolutionDir)runtime\$(Platform)\$(Configuration)\libcore.a;</AdditionalDependencies>
+      <WholeArchiveBegin>true</WholeArchiveBegin>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseAndroid|ARM64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>NDEBUG;AN_64;AN_LITTLE_ENDIAN;AN_CLANG;AN_ANDROID;AN_FMOD;AN_GLES;AN_RELEASE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+      <TreatWarningAsError>true</TreatWarningAsError>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <MinimalRebuild>false</MinimalRebuild>
+      <DebugInformationFormat>FullDebug</DebugInformationFormat>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <PrecompiledHeaderFile>
+      </PrecompiledHeaderFile>
+      <ExceptionHandling>UnwindTables</ExceptionHandling>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <LibraryDependencies>%(LibraryDependencies);GLESv3;EGL;bzip2;openxr_loader;m;stdc++;fmod;fmodstudio;</LibraryDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)runtime\$(Configuration);$(SolutionDir)externals\code\bzip2\lib\arm64;$(SolutionDir)externals\code\openxr\lib\oculus\arm64\release;$(SolutionDir)externals\code\fmod_android\api\lowLevel\lib\arm64-v8a;$(SolutionDir)externals\code\fmod_android\api\studio\lib\arm64-v8a;$(SolutionDir)externals\code\bhaptics_android\lib\arm64-v8a;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>$(SolutionDir)runtime\$(Platform)\$(Configuration)\libteaForGod.a;$(SolutionDir)runtime\$(Platform)\$(Configuration)\libframework.a;$(SolutionDir)runtime\$(Platform)\$(Configuration)\libtools.a;$(SolutionDir)runtime\$(Platform)\$(Configuration)\libcore.a;</AdditionalDependencies>
+      <WholeArchiveBegin>true</WholeArchiveBegin>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseVive|ARM64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>AN_VIVE_ONLY;AN_VIVEPORT;NDEBUG;AN_64;AN_LITTLE_ENDIAN;AN_CLANG;AN_ANDROID;AN_VIVE;AN_FMOD;AN_GLES;AN_RELEASE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+      <TreatWarningAsError>true</TreatWarningAsError>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <MinimalRebuild>false</MinimalRebuild>
+      <DebugInformationFormat>FullDebug</DebugInformationFormat>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <PrecompiledHeaderFile>
+      </PrecompiledHeaderFile>
+      <ExceptionHandling>UnwindTables</ExceptionHandling>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <LibraryDependencies>%(LibraryDependencies);GLESv3;EGL;bzip2;openxr_loader;wvr_api;m;stdc++;fmod;fmodstudio;</LibraryDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)runtime\$(Configuration);$(SolutionDir)externals\code\wavevr\lib\android\arm64-v8a;$(SolutionDir)externals\code\viveport\lib\arm64;$(SolutionDir)externals\code\bzip2\lib\arm64;$(SolutionDir)externals\code\openxr\lib\vive\arm64\release;$(SolutionDir)externals\code\fmod_android\api\lowLevel\lib\arm64-v8a;$(SolutionDir)externals\code\fmod_android\api\studio\lib\arm64-v8a;$(SolutionDir)externals\code\bhaptics_android\lib\arm64-v8a;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>$(SolutionDir)runtime\$(Platform)\$(Configuration)\libteaForGod.a;$(SolutionDir)runtime\$(Platform)\$(Configuration)\libframework.a;$(SolutionDir)runtime\$(Platform)\$(Configuration)\libtools.a;$(SolutionDir)runtime\$(Platform)\$(Configuration)\libcore.a;</AdditionalDependencies>
+      <WholeArchiveBegin>true</WholeArchiveBegin>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='ReleasePico|ARM64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>AN_PICO_ONLY;AN_PICO;NDEBUG;AN_64;AN_LITTLE_ENDIAN;AN_CLANG;AN_ANDROID;AN_PICO;AN_FMOD;AN_GLES;AN_RELEASE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+      <TreatWarningAsError>true</TreatWarningAsError>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <MinimalRebuild>false</MinimalRebuild>
+      <DebugInformationFormat>FullDebug</DebugInformationFormat>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <PrecompiledHeaderFile>
+      </PrecompiledHeaderFile>
+      <ExceptionHandling>UnwindTables</ExceptionHandling>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <LibraryDependencies>%(LibraryDependencies);GLESv3;EGL;bzip2;openxr_loader;m;stdc++;fmod;fmodstudio;</LibraryDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)runtime\$(Configuration);$(SolutionDir)externals\code\bzip2\lib\arm64;$(SolutionDir)externals\code\openxr\lib\pico\arm64\release;$(SolutionDir)externals\code\fmod_android\api\lowLevel\lib\arm64-v8a;$(SolutionDir)externals\code\fmod_android\api\studio\lib\arm64-v8a;$(SolutionDir)externals\code\bhaptics_android\lib\arm64-v8a;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>$(SolutionDir)runtime\$(Platform)\$(Configuration)\libteaForGod.a;$(SolutionDir)runtime\$(Platform)\$(Configuration)\libframework.a;$(SolutionDir)runtime\$(Platform)\$(Configuration)\libtools.a;$(SolutionDir)runtime\$(Platform)\$(Configuration)\libcore.a;</AdditionalDependencies>
+      <WholeArchiveBegin>true</WholeArchiveBegin>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Profiler|ARM64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>NDEBUG;AN_64;AN_LITTLE_ENDIAN;AN_CLANG;AN_ANDROID;AN_FMOD;AN_GLES;AN_PROFILER;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+      <TreatWarningAsError>true</TreatWarningAsError>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <MinimalRebuild>false</MinimalRebuild>
+      <DebugInformationFormat>FullDebug</DebugInformationFormat>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <PrecompiledHeaderFile>
+      </PrecompiledHeaderFile>
+      <ExceptionHandling>UnwindTables</ExceptionHandling>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <LibraryDependencies>%(LibraryDependencies);GLESv3;EGL;bzip2;vrapi;openxr_loader;m;stdc++;fmod;fmodstudio;</LibraryDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)runtime\$(Configuration);$(SolutionDir)externals\code\bzip2\lib\arm64;$(SolutionDir)externals\code\ovrMobile\VrApi\Libs\Android\arm64-v8a\Release;$(SolutionDir)externals\code\openxr\lib\oculus\arm64\release;$(SolutionDir)externals\code\fmod_android\api\lowLevel\lib\arm64-v8a;$(SolutionDir)externals\code\fmod_android\api\studio\lib\arm64-v8a;$(SolutionDir)externals\code\bhaptics_android\lib\arm64-v8a;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>$(SolutionDir)runtime\$(Platform)\$(Configuration)\libteaForGod.a;$(SolutionDir)runtime\$(Platform)\$(Configuration)\libframework.a;$(SolutionDir)runtime\$(Platform)\$(Configuration)\libtools.a;$(SolutionDir)runtime\$(Platform)\$(Configuration)\libcore.a;</AdditionalDependencies>
+      <WholeArchiveBegin>true</WholeArchiveBegin>
+      <AdditionalOptions>-llog %(AdditionalOptions)</AdditionalOptions>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="android_native_app_glue.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="android_native_app_glue.c" />
+    <ClCompile Include="main.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Library Include="..\..\externals\code\ovrMobile\VrApi\Libs\Android\ARM64-v8a\Release\libvrapi.so">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|ARM64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Dev|ARM64'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|ARM64'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseOculus|ARM64'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseAndroid|ARM64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseVive|ARM64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleasePico|ARM64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Profiler|ARM64'">false</ExcludedFromBuild>
+      <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Dev|ARM64'">true</DeploymentContent>
+      <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|ARM64'">true</DeploymentContent>
+      <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Release|ARM64'">true</DeploymentContent>
+      <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='ReleaseOculus|ARM64'">true</DeploymentContent>
+      <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='ReleaseAndroid|ARM64'">false</DeploymentContent>
+      <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='ReleaseVive|ARM64'">false</DeploymentContent>
+      <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='ReleasePico|ARM64'">false</DeploymentContent>
+      <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Profiler|ARM64'">true</DeploymentContent>
+    </Library>
+    <Library Include="..\..\externals\code\openxr\lib\oculus\arm64\release\libopenxr_loader.so">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|ARM64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Dev|ARM64'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|ARM64'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseOculus|ARM64'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseAndroid|ARM64'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseVive|ARM64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleasePico|ARM64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Profiler|ARM64'">false</ExcludedFromBuild>
+      <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Dev|ARM64'">true</DeploymentContent>
+      <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|ARM64'">true</DeploymentContent>
+      <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Release|ARM64'">true</DeploymentContent>
+      <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='ReleaseOculus|ARM64'">true</DeploymentContent>
+      <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='ReleaseAndroid|ARM64'">true</DeploymentContent>
+      <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='ReleaseVive|ARM64'">false</DeploymentContent>
+      <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='ReleasePico|ARM64'">false</DeploymentContent>
+      <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Profiler|ARM64'">true</DeploymentContent>
+    </Library>
+    <Library Include="..\..\externals\code\openxr\lib\vive\arm64\release\libopenxr_loader.so">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|ARM64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Dev|ARM64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|ARM64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseOculus|ARM64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseAndroid|ARM64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseVive|ARM64'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleasePico|ARM64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Profiler|ARM64'">true</ExcludedFromBuild>
+      <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Dev|ARM64'">false</DeploymentContent>
+      <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|ARM64'">false</DeploymentContent>
+      <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Release|ARM64'">false</DeploymentContent>
+      <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='ReleaseOculus|ARM64'">false</DeploymentContent>
+      <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='ReleaseAndroid|ARM64'">false</DeploymentContent>
+      <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='ReleaseVive|ARM64'">true</DeploymentContent>
+      <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='ReleasePico|ARM64'">false</DeploymentContent>
+      <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Profiler|ARM64'">false</DeploymentContent>
+    </Library>
+    <Library Include="..\..\externals\code\openxr\lib\pico\arm64\release\libopenxr_loader.so">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|ARM64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Dev|ARM64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|ARM64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseOculus|ARM64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseAndroid|ARM64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseVive|ARM64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleasePico|ARM64'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Profiler|ARM64'">false</ExcludedFromBuild>
+      <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Dev|ARM64'">false</DeploymentContent>
+      <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|ARM64'">false</DeploymentContent>
+      <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Release|ARM64'">false</DeploymentContent>
+      <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='ReleaseOculus|ARM64'">false</DeploymentContent>
+      <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='ReleaseAndroid|ARM64'">false</DeploymentContent>
+      <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='ReleaseVive|ARM64'">false</DeploymentContent>
+      <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='ReleasePico|ARM64'">true</DeploymentContent>
+      <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Profiler|ARM64'">false</DeploymentContent>
+    </Library>
+    <Library Include="..\..\externals\code\wavevr\lib\android\arm64-v8a\libwvr_api.so">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|ARM64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Dev|ARM64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|ARM64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseOculus|ARM64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseAndroid|ARM64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseVive|ARM64'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleasePico|ARM64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Profiler|ARM64'">false</ExcludedFromBuild>
+      <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Dev|ARM64'">false</DeploymentContent>
+      <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|ARM64'">false</DeploymentContent>
+      <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Release|ARM64'">false</DeploymentContent>
+      <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='ReleaseOculus|ARM64'">false</DeploymentContent>
+      <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='ReleaseAndroid|ARM64'">false</DeploymentContent>
+      <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='ReleaseVive|ARM64'">true</DeploymentContent>
+      <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='ReleasePico|ARM64'">false</DeploymentContent>
+      <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Profiler|ARM64'">false</DeploymentContent>
+    </Library>
+    <Library Include="..\..\externals\code\fmod_android\api\lowLevel\lib\arm64-v8a\libfmod.so" />
+    <Library Include="..\..\externals\code\fmod_android\api\studio\lib\arm64-v8a\libfmodstudio.so" />
+    <Library Include="..\..\externals\code\bhaptics_android\lib\arm64-v8a\libbhaptics-native-lib.so">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|ARM64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Dev|ARM64'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|ARM64'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseOculus|ARM64'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseAndroid|ARM64'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseVive|ARM64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleasePico|ARM64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Profiler|ARM64'">false</ExcludedFromBuild>
+      <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Dev|ARM64'">true</DeploymentContent>
+      <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|ARM64'">true</DeploymentContent>
+      <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Release|ARM64'">true</DeploymentContent>
+      <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='ReleaseOculus|ARM64'">true</DeploymentContent>
+      <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='ReleaseAndroid|ARM64'">true</DeploymentContent>
+      <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='ReleaseVive|ARM64'">false</DeploymentContent>
+      <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='ReleasePico|ARM64'">false</DeploymentContent>
+      <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Profiler|ARM64'">true</DeploymentContent>
+    </Library>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

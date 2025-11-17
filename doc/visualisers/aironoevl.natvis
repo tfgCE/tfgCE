@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- https://msdn.microsoft.com/en-us/library/75w45ekt.aspx -->
+<AutoVisualizer xmlns="http://schemas.microsoft.com/vstudio/debugger/natvis/2010">
+	<!-- general -->
+	<Type Name="Name">
+		<!-- char -->
+		<!--
+		<DisplayString>{natvisNameStorage->elements[index]->name.data.elements,sb}</DisplayString>
+		<StringView>natvisNameStorage->elements[index]->name.data.elements,s</StringView>
+		-->
+		<!-- wchar_t -->
+		<DisplayString Condition="index != -1">{natVisNameStorage->elements[index].name,sub}</DisplayString>
+		<DisplayString Condition="index == -1">--invalid--</DisplayString>
+		<StringView>natVisNameStorage->elements[index].name,su</StringView>
+	</Type>
+	<Type Name="String">
+		<!-- char -->
+		<!--
+		<DisplayString>{data.elements,sb}</DisplayString>
+		<StringView>data.elements,s</StringView>
+		-->
+		<!-- wchar_t -->
+		<DisplayString>{data.elements,sub}</DisplayString>
+		<StringView>data.elements,su</StringView>
+	</Type>
+	<Type Name="Tags">
+		<DisplayString>{natVis}</DisplayString>
+	</Type>
+	<Type Name="TagCondition">
+		<DisplayString>{natVis}</DisplayString>
+	</Type>
+	<!-- containers -->
+	<Type Name="Array&lt;*&gt;">
+		<Expand>
+			<Item Name="size">numElements</Item>
+			<Item Name="reserved">reservedElements</Item>
+			<IndexListItems>
+				<Size>numElements</Size>
+				<ValueNode>elements[$i]</ValueNode>
+			</IndexListItems>
+		</Expand>
+	</Type>
+	<Type Name="ArrayStatic&lt;*&gt;">
+		<Expand>
+			<Item Name="size">numElements</Item>
+			<IndexListItems>
+				<Size>numElements</Size>
+				<ValueNode>elements[$i]</ValueNode>
+			</IndexListItems>
+		</Expand>
+	</Type>
+	<Type Name="ArrayStack&lt;*&gt;">
+		<Expand>
+			<Item Name="size">numElements</Item>
+			<IndexListItems>
+				<Size>numElements</Size>
+				<ValueNode>elements[$i]</ValueNode>
+			</IndexListItems>
+		</Expand>
+	</Type>
+	<Type Name="List&lt;*&gt;">
+		<Expand>
+			<Item Name="size">numElements</Item>
+			<LinkedListItems>
+				<Size>numElements</Size>
+				<HeadPointer>first</HeadPointer>
+				<NextPointer>next</NextPointer>
+				<ValueNode>element</ValueNode>
+			</LinkedListItems>
+		</Expand>
+	</Type>
+	<!-- io -->
+	<Type Name="IO::Digested">
+		<DisplayString>{intValue[0],h}:{intValue[1],h}:{intValue[2],h}:{intValue[3],h}</DisplayString>
+		<Expand>
+			<Item Name="v0">intValue[0],h</Item>
+			<Item Name="v1">intValue[1],h</Item>
+			<Item Name="v2">intValue[2],h</Item>
+			<Item Name="v3">intValue[3],h</Item>
+		</Expand>
+	</Type>
+	<!-- piece combiner -->
+	<Type Name="PieceCombiner::Generator&lt;*&gt;">
+		<DisplayString>:: pieces:{allPieceInstances.numElements} connectors:{allConnectorInstances.numElements} steps:{steps.numElements}</DisplayString>
+	</Type>
+	<Type Name="PieceCombiner::Piece&lt;*&gt;">
+		<DisplayString>::</DisplayString>
+		<Expand>
+			<Item Name="def">def</Item>
+			<Item Name="connectors">connectors</Item>
+			<Item Name="ext-int map">externalToInternalConnectorMap</Item>
+		</Expand>
+	</Type>
+	<Type Name="PieceCombiner::Connector&lt;*&gt;">
+		<DisplayString>:: {type}[{priority}] {name} {linkName} -> {linkWith}{linkWithAlt}</DisplayString>
+		<Expand>
+			<Item Name="type">type</Item>
+			<Item Name="priority">priority</Item>
+			<Item Name="name">name</Item>
+			<Item Name="link name">linkName</Item>
+			<Item Name="link with">linkWith</Item>
+			<Item Name="link with alt">linkWithAlt</Item>
+			<Item Name="can create new pieces">canCreateNewPieces</Item>
+			<Item Name="create new piece mark">createNewPieceMark</Item>
+			<Item Name="required count">requiredCount</Item>
+			<Item Name="optional count">optionalCount</Item>
+			<Item Name="connector tag">connectorTag</Item>
+			<Item Name="inherit connector tag">inheritConnectorTag</Item>
+			<Item Name="provide connector tag">provideConnectorTag</Item>
+			<Item Name="inherit provid econnector tag">inheritProvideConnectorTag</Item>
+		</Expand>
+	</Type>
+	<Type Name="PieceCombiner::GenerationSpace&lt;*&gt;">
+		<DisplayString>:: pieces:{pieces.numElements} connectors:{connectors.numElements} owner:{owner}</DisplayString>
+		<Expand>
+			<Item Name="owner">owner</Item>
+			<Item Name="contains pieces" Condition="pieces.numElements != 0">pieces</Item>
+			<Item Name="contains connectors" Condition="connectors.numElements != 0">connectors</Item>
+		</Expand>
+	</Type>
+	<Type Name="PieceCombiner::PieceInstance&lt;*&gt;">
+		<DisplayString>:: "{desc}"  connectors:{ownedConnectors.numElements}</DisplayString>
+		<Expand>
+			<Item Name="desc">desc</Item>
+			<Item Name="data">data</Item>
+			<Item Name="connector tag">connectorTag</Item>
+			<Item Name="provide connector tag">provideConnectorTag</Item>
+			<Item Name="inside of">inGenerationSpace->owner</Item>
+			<Item Name="connectors">ownedConnectors</Item>
+			<Item Name="contains pieces" Condition="generationSpace->pieces.numElements != 0">generationSpace->pieces</Item>
+		</Expand>
+	</Type>
+	<Type Name="PieceCombiner::ConnectorInstance&lt;*&gt;">
+		<DisplayString Condition="connectedTo != 0">:: [name:{connector->name}] "{desc}"  [{connector->type}] [link:{connector->linkName}] connected</DisplayString>
+		<DisplayString Condition="blockCount > 0">:: [name:{connector->name}] "{desc}"  [{connector->type}] [link:{connector->linkName}] blocked</DisplayString>
+		<DisplayString Condition="connectedTo == 0">:: [name:{connector->name}] "{desc}"  [{connector->type}] [link:{connector->linkName}] not connected</DisplayString>
+		<Expand>
+			<Item Name="desc">desc</Item>
+			<Item Name="data">data</Item>
+			<Item Name="connector">connector</Item>
+			<Item Name="connector tag">connectorTag</Item>
+			<Item Name="provide connector tag">provideConnectorTag</Item>
+			<Item Name="owner">owner</Item>
+			<Item Name="inside of">inGenerationSpace->owner</Item>
+			<Item Name="side">side</Item>
+			<Item Name="is optional">isOptional</Item>
+			<Item Name="is infinite">isInfinite</Item>
+			<Item Name="outer">isOuter</Item>
+			<Item Name="connected to">connectedTo</Item>
+			<Item Name="blocked">blockCount</Item>
+			<Item Name="internalExternal">internalExternalConnector</Item>
+		</Expand>
+	</Type>
+	<!-- piece combiner steps -->
+	<Type Name="PieceCombiner::GenerationSteps::Checkpoint&lt;*&gt;">
+		<DisplayString>checkpoint</DisplayString>
+	</Type>
+	<Type Name="PieceCombiner::GenerationSteps::CreatePieceInstance&lt;*&gt;">
+		<DisplayString>create piece instance</DisplayString>
+	</Type>
+	<Type Name="PieceCombiner::GenerationSteps::CreateConnectorInstance&lt;*&gt;">
+		<DisplayString>create connector instance</DisplayString>
+	</Type>
+	<Type Name="PieceCombiner::GenerationSteps::Connect&lt;*&gt;">
+		<DisplayString>connect</DisplayString>
+	</Type>
+	<Type Name="PieceCombiner::GenerationSteps::BlockWith&lt;*&gt;">
+		<DisplayString>block with</DisplayString>
+	</Type>
+	<Type Name="PieceCombiner::GenerationSteps::Disconnect&lt;*&gt;">
+		<DisplayString>disconnect</DisplayString>
+	</Type>
+	<Type Name="PieceCombiner::GenerationSteps::MoveToSpace&lt;*&gt;">
+		<DisplayString>move to space</DisplayString>
+	</Type>
+	<Type Name="PieceCombiner::GenerationSteps::ConnectInternalExternal&lt;*&gt;">
+		<DisplayString>connect internal external</DisplayString>
+	</Type>
+	<!-- memory -->
+	<Type Name="RefCountObjectPtr&lt;*&gt;">
+		<Expand>
+			<ExpandedItem>value</ExpandedItem>
+		</Expand>
+	</Type>
+	<Type Name="SafePtr&lt;*&gt;">
+		<Expand>
+			<ExpandedItem>point.value->safeObject->object</ExpandedItem>
+		</Expand>
+	</Type>
+	<!-- collision -->
+	<Type Name="Collision::Flags">
+		<DisplayString>{natVis}</DisplayString>
+	</Type>
+	<!-- framework -->
+	<Type Name="Framework::LibraryName">
+		<DisplayString>{group}:{name}</DisplayString>
+	</Type>
+	<Type Name="Framework::LibraryStored">
+		<DisplayString>{name}</DisplayString>
+	</Type>
+	<Type Name="Framework::UsedLibraryStored&lt;*&gt;">
+		<DisplayString>{name}</DisplayString>
+		<Expand>
+			<ExpandedItem>value</ExpandedItem>
+		</Expand>
+	</Type>
+	<Type Name="Framework::Nav::Flags">
+		<DisplayString>{natVis}</DisplayString>
+	</Type>
+	<Type Name="Framework::Game::WorldJob">
+		<DisplayString Condition="async==0">SYNC {jobName,sub}</DisplayString>
+		<DisplayString Condition="async!=0">ASYNC {jobName,sub}</DisplayString>
+	</Type>
+	<Type Name="Framework::TextDescBuilder::TextDescElementRef">
+		<Expand>
+			<ExpandedItem>element</ExpandedItem>
+		</Expand>
+	</Type>
+	<Type Name="Framework::GameObjectPtr&lt;*&gt;">
+		<Expand>
+			<Item Name="id">id</Item>
+			<ExpandedItem>natVis</ExpandedItem>
+		</Expand>
+	</Type>
+	<Type Name="Framework::WorldSettingCondition">
+		<DisplayString>{natVis}</DisplayString>
+	</Type>
+	<!-- tea for god -->
+	<Type Name="TeaForGodEmperor::Energy">
+		<DisplayString>{(float)energy / (float)factor, g}</DisplayString>
+	</Type>
+	<Type Name="TeaForGodEmperor::EnergyCoef">
+		<DisplayString>{(float)coef / (float)factor, g}</DisplayString>
+	</Type>
+	<!-- subspace scavengers -->
+	<Type Name="SubspaceScavengers::Time">
+		<DisplayString Condition="isNone == 0">{hour}:{minute}:{second} ({ms})</DisplayString>
+		<DisplayString Condition="isNone != 0">invalid</DisplayString>
+	</Type>
+	<Type Name="SubspaceScavengers::DateTime">
+		<DisplayString Condition="isNone == 0">{year}/{month}/{day} {hour}:{minute}:{second} ({ms})</DisplayString>
+		<DisplayString Condition="isNone != 0">invalid</DisplayString>
+	</Type>
+</AutoVisualizer>

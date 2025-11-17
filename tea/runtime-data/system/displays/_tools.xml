@@ -1,0 +1,309 @@
+<library group="displays">
+	<generateFontTexture>
+		<!--
+		<texture file="assets/h_display 24x32.tex"
+			format="rgba8" wrap="clamp" filteringMag="linear" filteringMin="linear"
+			fontFile="assets/_source/PressStart2P-Regular.ttf">
+			<gridSize x="32" y="6"/>
+			<gridCharacterSize x="32" y="40"/>
+			<characterSize x="24" y="24"/>
+			<baseLine>2</baseLine>
+			<compressCharacters/>
+			<monochromatic/>
+			
+			<rowAnsi/>
+			<rowLocalisedCharacters setId="latin"/>
+		</texture>
+		-->
+		<texture file="assets/h_display 16x16.tex"
+			format="rgba8" wrap="clamp" filteringMag="linear" filteringMin="linear"
+			fontFile="assets/_source/PressStart2P-Regular.ttf">
+			<gridSize x="32" y="6"/>
+			<gridCharacterSize x="20" y="24"/>
+			<characterSize x="16" y="16"/>
+			<baseLine>0</baseLine>
+			<compressCharacters/>
+			<monochromatic/>
+			
+			<rowAnsi/>
+			<rowLocalisedCharacters setId="latin"/>
+		</texture>
+		<texture file="assets/h_display 16x16 [ch_s].tex"
+			format="rgba8" wrap="clamp" filteringMag="linear" filteringMin="linear"
+			fontFile="assets/_source/NotoSansSC-Regular.otf">
+			<gridSize x="32" y="25"/>
+			<gridCharacterSize x="20" y="24"/>
+			<characterSize x="16" y="14"/>
+			<baseLine>4</baseLine>
+			<compressCharacters/>
+			<monochromatic/>
+			
+			<rowLocalisedCharacters setId="chinese_simplified"/>
+		</texture>
+		<texture file="assets/h_display 16x16 [ch_t].tex"
+			format="rgba8" wrap="clamp" filteringMag="linear" filteringMin="linear"
+			fontFile="assets/_source/NotoSansTC-Regular.otf">
+			<gridSize x="32" y="14"/>
+			<gridCharacterSize x="20" y="24"/>
+			<characterSize x="18" y="14"/>
+			<baseLine>4</baseLine>
+			<compressCharacters/>
+			<monochromatic/>
+			
+			<rowLocalisedCharacters setId="chinese_traditional"/>
+		</texture>
+		<texture file="assets/h_display 16x16 [ja].tex"
+			format="rgba8" wrap="clamp" filteringMag="linear" filteringMin="linear"
+			fontFile="assets/_source/NotoSansJP-Regular.otf">
+			<gridSize x="32" y="10"/>
+			<gridCharacterSize x="20" y="24"/>
+			<characterSize x="18" y="14"/>
+			<baseLine>4</baseLine>
+			<compressCharacters/>
+			<monochromatic/>
+			
+			<rowLocalisedCharacters setId="japanese"/>
+		</texture>
+		<texture file="assets/h_display 16x16 [ko].tex"
+			format="rgba8" wrap="clamp" filteringMag="linear" filteringMin="linear"
+			fontFile="assets/_source/NotoSansKR-Regular.otf">
+			<gridSize x="32" y="25"/>
+			<gridCharacterSize x="20" y="24"/>
+			<characterSize x="18" y="14"/>
+			<baseLine>4</baseLine>
+			<compressCharacters/>
+			<monochromatic/>
+			
+			<rowLocalisedCharacters setId="korean"/>
+		</texture>
+		<texture file="assets/h_display 16x16 [crl].tex"
+			format="rgba8" wrap="clamp" filteringMag="linear" filteringMin="linear"
+			fontFile="assets/_source/basis33.ttf">
+			<gridSize x="32" y="6"/>
+			<gridCharacterSize x="20" y="24"/>
+			<characterSize x="28" y="28"/>
+			<makeBold x="2" y="2"/>
+			<baseLine>8</baseLine>
+			<!--
+			fontFile="assets/_source/NotoSans-Regular.ttf">
+			<gridSize x="32" y="6"/>
+			<gridCharacterSize x="20" y="24"/>
+			<characterSize x="18" y="16"/>
+			<baseLine>3</baseLine>
+			-->
+			<compressCharacters/>
+			<monochromatic/>
+			
+			<rowLocalisedCharacters setId="cyrillic"/>
+		</texture>
+		-->
+		<!--
+		<texture file="assets/h_display 24x32.tex"
+			format="rgba8" wrap="clamp" filteringMag="linear" filteringMin="linear"
+			fontFile="assets/_source/Video.ttf">
+			<gridSize x="32" y="6"/>
+			<gridCharacterSize x="32" y="40"/>
+			<characterSize x="40" y="30"/>
+			<baseLine>12</baseLine>
+			<compressCharacters/>
+			<monochromatic/>
+			
+			<rowAnsi/>
+			<rowLocalisedCharacters setId="latin"/>
+		</texture>
+		<texture file="assets/h_display 16x16.tex"
+			format="rgba8" wrap="clamp" filteringMag="linear" filteringMin="linear"
+			fontFile="assets/_source/Video.ttf">
+			<gridSize x="32" y="6"/>
+			<gridCharacterSize x="20" y="20"/>
+			<characterSize x="20" y="15"/>
+			<baseLine>6</baseLine>
+			<compressCharacters/>
+			<monochromatic/>
+			
+			<rowAnsi/>
+			<rowLocalisedCharacters setId="latin"/>
+		</texture>
+		-->
+		
+		<texture file="assets/default 24x32.tex"
+			format="rgba8" wrap="clamp" filteringMag="linear" filteringMin="linear"
+			fontFile="assets/_source/neuropolitical rg.ttf"
+			_fontFile="assets/_source/neuropol x rg.otf">
+			<gridSize x="32" y="6"/>
+			<gridCharacterSize x="32" y="40"/>
+			<characterSize x="22" y="28"/>
+			<baseLine>6</baseLine>
+			<compressCharacters/>
+			
+			<rowAnsi/>
+			<rowLocalisedCharacters setId="latin"/>
+		</texture>
+		<texture file="assets/overlay system 24x32.tex"
+			format="rgba8" wrap="clamp" filteringMag="linear" filteringMin="linear"
+			fontFile="assets/_source/neuropolitical rg.ttf"
+			_fontFile="assets/_source/neuropol x rg.otf">
+			<gridSize x="32" y="6"/>
+			<gridCharacterSize x="32" y="40"/>
+			<characterSize x="22" y="28"/>
+			<baseLine>6</baseLine>
+			<compressCharacters/>
+			<addBorder>1.8</addBorder>
+			<smoothBorder/>
+			
+			<rowAnsi/>
+			<rowLocalisedCharacters setId="latin"/>
+		</texture>
+
+		<texture file="assets/default 24x32 [ch_s].tex"
+			format="rgba8" wrap="clamp" filteringMag="linear" filteringMin="linear"
+			fontFile="assets/_source/NotoSansSC-Regular.otf">
+			<gridSize x="32" y="25"/>
+			<gridCharacterSize x="32" y="40"/>
+			<characterSize x="24" y="25"/>
+			<baseLine>4</baseLine>
+			<compressCharacters/>
+			<useFullSourceThreshold>0.4</useFullSourceThreshold>
+			
+			<rowLocalisedCharacters setId="chinese_simplified"/>
+		</texture>
+		<texture file="assets/overlay system 24x32 [ch_s].tex"
+			format="rgba8" wrap="clamp" filteringMag="linear" filteringMin="linear"
+			fontFile="assets/_source/NotoSansSC-Regular.otf">
+			<gridSize x="32" y="25"/>
+			<gridCharacterSize x="32" y="40"/>
+			<characterSize x="24" y="25"/>
+			<baseLine>4</baseLine>
+			<compressCharacters/>
+			<useFullSourceThreshold>0.4</useFullSourceThreshold>
+			<addBorder>1.8</addBorder>
+			
+			<rowLocalisedCharacters setId="chinese_simplified"/>
+		</texture>
+		
+		<texture file="assets/default 24x32 [ch_t].tex"
+			format="rgba8" wrap="clamp" filteringMag="linear" filteringMin="linear"
+			fontFile="assets/_source/NotoSansTC-Regular.otf">
+			<gridSize x="32" y="14"/>
+			<gridCharacterSize x="32" y="40"/>
+			<characterSize x="24" y="25"/>
+			<baseLine>4</baseLine>
+			<compressCharacters/>
+			<useFullSourceThreshold>0.4</useFullSourceThreshold>
+			
+			<rowLocalisedCharacters setId="chinese_traditional"/>
+		</texture>
+		<texture file="assets/overlay system 24x32 [ch_t].tex"
+			format="rgba8" wrap="clamp" filteringMag="linear" filteringMin="linear"
+			fontFile="assets/_source/NotoSansTC-Regular.otf">
+			<gridSize x="32" y="14"/>
+			<gridCharacterSize x="32" y="40"/>
+			<characterSize x="24" y="25"/>
+			<baseLine>4</baseLine>
+			<compressCharacters/>
+			<useFullSourceThreshold>0.4</useFullSourceThreshold>
+			<addBorder>1.8</addBorder>
+			
+			<rowLocalisedCharacters setId="chinese_traditional"/>
+		</texture>
+		
+		<texture file="assets/default 24x32 [ja].tex"
+			format="rgba8" wrap="clamp" filteringMag="linear" filteringMin="linear"
+			fontFile="assets/_source/NotoSansJP-Regular.otf">
+			<gridSize x="32" y="10"/>
+			<gridCharacterSize x="32" y="40"/>
+			<characterSize x="24" y="25"/>
+			<baseLine>4</baseLine>
+			<compressCharacters/>
+			<useFullSourceThreshold>0.4</useFullSourceThreshold>
+			
+			<rowLocalisedCharacters setId="japanese"/>
+		</texture>
+		<texture file="assets/overlay system 24x32 [ja].tex"
+			format="rgba8" wrap="clamp" filteringMag="linear" filteringMin="linear"
+			fontFile="assets/_source/NotoSansJP-Regular.otf">
+			<gridSize x="32" y="10"/>
+			<gridCharacterSize x="32" y="40"/>
+			<characterSize x="24" y="25"/>
+			<baseLine>4</baseLine>
+			<compressCharacters/>
+			<useFullSourceThreshold>0.4</useFullSourceThreshold>
+			<addBorder>1.8</addBorder>
+			
+			<rowLocalisedCharacters setId="japanese"/>
+		</texture>
+		
+		<texture file="assets/default 24x32 [ko].tex"
+			format="rgba8" wrap="clamp" filteringMag="linear" filteringMin="linear"
+			fontFile="assets/_source/NotoSansKR-Regular.otf">
+			<gridSize x="32" y="25"/>
+			<gridCharacterSize x="32" y="40"/>
+			<characterSize x="24" y="25"/>
+			<baseLine>4</baseLine>
+			<compressCharacters/>
+			<useFullSourceThreshold>0.4</useFullSourceThreshold>
+			
+			<rowLocalisedCharacters setId="korean"/>
+		</texture>
+		<texture file="assets/overlay system 24x32 [ko].tex"
+			format="rgba8" wrap="clamp" filteringMag="linear" filteringMin="linear"
+			fontFile="assets/_source/NotoSansKR-Regular.otf">
+			<gridSize x="32" y="25"/>
+			<gridCharacterSize x="32" y="40"/>
+			<characterSize x="24" y="25"/>
+			<baseLine>4</baseLine>
+			<compressCharacters/>
+			<useFullSourceThreshold>0.4</useFullSourceThreshold>
+			<addBorder>1.8</addBorder>
+			
+			<rowLocalisedCharacters setId="korean"/>
+		</texture>
+
+		<texture file="assets/default 24x32 [crl].tex"
+			format="rgba8" wrap="clamp" filteringMag="linear" filteringMin="linear"
+			fontFile="assets/_source/neuropol x rg.otf">
+			<gridSize x="32" y="6"/>
+			<gridCharacterSize x="32" y="40"/>
+			<characterSize x="22" y="28"/>
+			<.makeBold x="2" y="2"/>
+			<baseLine>6</baseLine>
+			<compressCharacters/>
+			<useFullSourceThreshold>0.4</useFullSourceThreshold>
+			
+			<rowLocalisedCharacters setId="cyrillic"/>
+		</texture>
+		<texture file="assets/overlay system 24x32 [crl].tex"
+			format="rgba8" wrap="clamp" filteringMag="linear" filteringMin="linear"
+			fontFile="assets/_source/neuropol x rg.otf">
+			<gridSize x="32" y="6"/>
+			<gridCharacterSize x="32" y="40"/>
+			<characterSize x="22" y="28"/>
+			<.makeBold x="2" y="2"/>
+			<baseLine>6</baseLine>
+			<compressCharacters/>
+			<useFullSourceThreshold>0.4</useFullSourceThreshold>
+			<addBorder>1.8</addBorder>
+			
+			<rowLocalisedCharacters setId="cyrillic"/>
+		</texture>
+
+	</generateFontTexture>
+
+	<!--
+	<generateFontTexture>
+		<texture file="assets/language selection.tex"
+			format="rgba8" wrap="clamp" filteringMag="linear" filteringMin="linear"
+			fontFile="assets/_source/NotoSansSC-Regular.otf">
+			<gridSize x="2" y="1"/>
+			<gridCharacterSize x="80" y="100"/>
+			<characterSize x="60" y="64"/>
+			<baseLine>8</baseLine>
+			<compressCharacters/>
+			<useFullSourceThreshold>0.4</useFullSourceThreshold>
+			<addBorder>1.8</addBorder>
+			
+			<row>A文</row>
+		</texture>
+	</generateFontTexture>
+	-->
+</library>

@@ -1,0 +1,9 @@
+<library group="default">
+	<material name="default" fragmentShader="defaultRendering">
+		<useWithStaticMesh/>
+		<useWithSkinnedMesh/>
+		<params>
+			<texture name="inMaterial"/>
+		</params>
+	</material>
+</library>

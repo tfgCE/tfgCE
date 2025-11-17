@@ -1,0 +1,228 @@
+<library group="loading scenes">
+	<meshStatic
+		name="start head marker"
+		meshGenerator="start head marker">
+		<materials>
+			<material index="0" material="marker">
+				<colour name="markerColour" a="0.5">loader_hub_start_head_marker</colour>
+				<colour name="emissiveColour" a="0.0">loader_hub_start_head_marker</colour>
+				<colour name="emissiveBaseColour">loader_hub_start_head_marker</colour>
+				<float name="emissivePower">1.0</float>
+			</material>
+		</materials>
+	</meshStatic>
+	<meshGenerator
+		name="start head marker"
+		use1AsSubStepBase="1"
+		generateLODs="1">
+		<indexFormat>
+			<element/>
+		</indexFormat>
+		<vertexFormat>
+			<normal/>
+			<textureUV/>
+		</vertexFormat>
+		<mainElement>
+			<set>
+				<parameters>
+					<float name="uCross">0t32</float>
+					<float name="forceSmoothingAngleLimit">40</float>
+				</parameters>
+				<optionalParameters>
+					<float name="cross size">0.4</float>
+					<float name="above ground">0.02</float>
+					<float name="cross thickness">0.02</float>
+				</optionalParameters>
+				<elements>
+					<set> marker
+						<parameters>
+							<int name="materialIndex">0</int>
+						</parameters>
+						<elements>
+							<.shape type="edges and surfaces"> cross
+								<nodes>
+									 c3      c0
+									   \    /
+										\  /
+										 \/
+										 /\
+										/  \
+									   /    \
+									 c2      c1
+									<node id="c0">
+										<wheresMyPoint>
+											<vector3/>
+											<access field="x"><restore from="cross size"/><half/></access>
+											<access field="y"><restore from="cross size"/><half/></access>
+											<access field="z"><restore from="above ground"/></access>
+										</wheresMyPoint>
+									</node>
+									<node id="c1">
+										<wheresMyPoint>
+											<vector3/>
+											<access field="x"><restore from="cross size"/><half/></access>
+											<access field="y"><restore from="cross size"/><half/><negate/></access>
+											<access field="z"><restore from="above ground"/></access>
+										</wheresMyPoint>
+									</node>
+									<node id="c2">
+										<wheresMyPoint>
+											<vector3/>
+											<access field="x"><restore from="cross size"/><half/><negate/></access>
+											<access field="y"><restore from="cross size"/><half/><negate/></access>
+											<access field="z"><restore from="above ground"/></access>
+										</wheresMyPoint>
+									</node>
+									<node id="c3">
+										<wheresMyPoint>
+											<vector3/>
+											<access field="x"><restore from="cross size"/><half/><negate/></access>
+											<access field="y"><restore from="cross size"/><half/></access>
+											<access field="z"><restore from="above ground"/></access>
+										</wheresMyPoint>
+									</node>
+								</nodes>
+								<edges>
+									<edge id="c0->c2"/>
+									<edge id="c1->c3"/>
+								</edges>
+								<edgeRefs>
+									<edgeRef id="side">
+										<edge>
+											<crossSectionSpline>
+												<u uParam="uCross"/>
+												<point x="-0.5" y="0.0"/>
+												<point x="0" y="0.5"/>
+												<point x="0.5" y="0.0"/>
+												<point x="0.0" y="-0.5"/>
+												<point x="-0.5" y="0.0"/>
+											</crossSectionSpline>
+											<crossSectionSubStep stepLength="0.02"/>
+											<edgeSubStep stepLength="0.04"/>
+										</edge>
+									</edgeRef>
+								</edgeRefs>
+								<generateEdgeMeshes>
+									<edgeMesh useEdgeRef="side" normalAlignment="ref dir" scaleCrossSectionParam="cross thickness">
+										<refDirForNormal z="1.0"/> 
+										<edges>
+											<edge id="c0->c2">
+												<crossSection pt="0" scale="0"/>
+												<crossSection pt="0" dist="0.02" />
+												<crossSection pt="1" dist="-0.02" />
+												<crossSection pt="1" scale="0"/>
+											</edge>
+										</edges>
+									</edgeMesh>
+									<edgeMesh useEdgeRef="side" normalAlignment="ref dir" scaleCrossSectionParam="cross thickness">
+										<refDirForNormal z="1.0"/> 
+										<edges>
+											<edge id="c1->c3">
+												<crossSection pt="0" scale="0"/>
+												<crossSection pt="0" dist="0.02" />
+												<crossSection pt="1" dist="-0.02" />
+												<crossSection pt="1" scale="0"/>
+											</edge>
+										</edges>
+									</edgeMesh>
+								</generateEdgeMeshes>
+							</shape>
+							<set> feet
+								<parameters>
+									<float name="cross size">0.3</float>
+								</parameters>
+								<elements>
+									<shape type="edges and surfaces">
+										<nodes>
+											 c0 c01 c1
+											 
+											 c3	c2
+											<node id="c0">
+												<wheresMyPoint>
+													<vector3/>
+													<access field="x"><restore from="cross size"/><mul>-0.7</mul></access>
+													<access field="y"><restore from="cross size"/><mul>0.3</mul></access>
+													<access field="z"><restore from="above ground"/></access>
+												</wheresMyPoint>
+											</node>
+											<node id="c01">
+												<wheresMyPoint>
+													<vector3/>
+													<access field="x"><restore from="cross size"/><mul>-0.5</mul></access>
+													<access field="y"><restore from="cross size"/><mul>0.5</mul></access>
+													<access field="z"><restore from="above ground"/></access>
+												</wheresMyPoint>
+											</node>
+											<node id="c1">
+												<wheresMyPoint>
+													<vector3/>
+													<access field="x"><restore from="cross size"/><mul>-0.3</mul></access>
+													<access field="y"><restore from="cross size"/><mul>0.55</mul></access>
+													<access field="z"><restore from="above ground"/></access>
+												</wheresMyPoint>
+											</node>
+											<node id="c2">
+												<wheresMyPoint>
+													<vector3/>
+													<access field="x"><restore from="cross size"/><mul>-0.15</mul></access>
+													<access field="y"><restore from="cross size"/><mul>-0.5</mul></access>
+													<access field="z"><restore from="above ground"/></access>
+												</wheresMyPoint>
+											</node>
+											<node id="c3">
+												<wheresMyPoint>
+													<vector3/>
+													<access field="x"><restore from="cross size"/><mul>-0.4</mul></access>
+													<access field="y"><restore from="cross size"/><mul>-0.55</mul></access>
+													<access field="z"><restore from="above ground"/></access>
+												</wheresMyPoint>
+											</node>
+										</nodes>
+										<edges>
+											<edge id="c0->c01"/>
+											<edge id="c01->c1"/>
+											<edge id="c1->c2"/>
+											<edge id="c2->c3"/>
+											<edge id="c3->c0"/>
+										</edges>
+										<edgeRefs>
+											<edgeRef id="side">
+												<edge>
+													<crossSectionSpline>
+														<u uParam="uCross"/>
+														<point x="-0.5" y="0.0"/>
+														<point x="0" y="0.5"/>
+														<point x="0.5" y="0.0"/>
+														<point x="0.0" y="-0.5"/>
+														<point x="-0.5" y="0.0"/>
+													</crossSectionSpline>
+													<crossSectionSubStep stepLength="0.02"/>
+													<edgeSubStep stepLength="0.015"/>
+												</edge>
+											</edgeRef>
+										</edgeRefs>
+										<generateEdgeMeshes>
+											<edgeMesh useEdgeRef="side" normalAlignment="ref dir" scaleCrossSectionParam="cross thickness" cornerRadius="0.05">
+												<refDirForNormal z="1.0"/> 
+												<edges>
+													<edge id="c0->c01"/>
+													<edge id="c01->c1"/>
+													<edge id="c1->c2"/>
+													<edge id="c2->c3"/>
+													<edge id="c3->c0"/>
+												</edges>
+											</edgeMesh>
+										</generateEdgeMeshes>
+									</shape>
+									<modifier type="makeMirror">
+										<dir x="-1"/>
+									</modifier>
+								</elements>
+							</set>
+						</elements>
+					</set>
+				</elements>
+			</set>
+		</mainElement>
+	</meshGenerator>
+</library>

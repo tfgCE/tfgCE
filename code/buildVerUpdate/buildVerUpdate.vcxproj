@@ -1,0 +1,232 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Profiler|x64">
+      <Configuration>Profiler</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Dev|x64">
+      <Configuration>Dev</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{27A6408C-349F-4188-B62D-5209BD9C5ABE}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>buildVerUpdate</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup>
+    <PreferredToolArchitecture>x64</PreferredToolArchitecture>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='Dev|x64'">
+    <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='Profiler|x64'">
+    <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+    <OutDir>$(SolutionDir)runtime\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)temp\intermediate\$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    <LibraryPath>$(SolutionDir)externals\code\glew\lib\Release\x64;$(SolutionDir)externals\code\sdl2\lib\x86\;$(SolutionDir)externals\code\sdl2_net\lib\x86\;$(SolutionDir)externals\code\ovr\Lib\Windows\x64\Release\VS2017\;$(SolutionDir)externals\code\openvr\lib\win64\;$(SolutionDir)externals\code\openxr\lib\oculus\x64\debug\;$(SolutionDir)runtime\$(Platform)\$(Configuration)\;$(SolutionDir)externals\code\fbxsdk\lib\vs2013\x86\debug;$(SolutionDir)externals\code\fmod\api\fsbank\lib;$(SolutionDir)externals\code\fmod\api\lowLevel\lib;$(SolutionDir)externals\code\fmod\api\fsbank\lib\x86;$(SolutionDir)externals\code\fmod\api\lowLevel\lib\x86;$(SolutionDir)externals\code\fmod\api\studio\lib\x86;$(SolutionDir)externals\code\bhaptics_windows\lib\x64;$(SolutionDir)externals\code\freetype\lib\win64;$(LibraryPath)</LibraryPath>
+    <IncludePath>$(SolutionDir)externals\code\glew\include;$(SolutionDir)externals\code\sdl2\include;$(SolutionDir)externals\code\sdl2_net\include;$(SolutionDir)externals\code\ovr\Include;$(SolutionDir)externals\code\openvr\headers;$(SolutionDir)externals\code\openxr\include;$(SolutionDir)externals\code\fmod\api\lowLevel\inc;$(SolutionDir)externals\code\fmod\api\studio\inc;$(SolutionDir)externals\code\fbxsdk\include;$(IncludePath)</IncludePath>
+    <ExecutablePath>$(SolutionDir)externals\runtime\x64;$(ExecutablePath)</ExecutablePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Dev|x64'">
+    <LinkIncremental>false</LinkIncremental>
+    <OutDir>$(SolutionDir)runtime\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)temp\intermediate\$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    <LibraryPath>$(SolutionDir)externals\code\glew\lib\Release\x64;$(SolutionDir)externals\code\sdl2\lib\x64\;$(SolutionDir)externals\code\sdl2_net\lib\x64\;$(SolutionDir)externals\code\ovr\Lib\Windows\x64\Release\VS2017\;$(SolutionDir)externals\code\openvr\lib\win64\;$(SolutionDir)externals\code\openxr\lib\oculus\x64\release\;$(SolutionDir)runtime\$(Platform)\$(Configuration)\;$(SolutionDir)externals\code\fbxsdk\lib\vs2013\x64\release;$(SolutionDir)externals\code\fmod\api\fsbank\lib;$(SolutionDir)externals\code\fmod\api\lowLevel\lib;$(SolutionDir)externals\code\fmod\api\fsbank\lib\x64;$(SolutionDir)externals\code\fmod\api\lowLevel\lib\x64;$(SolutionDir)externals\code\fmod\api\studio\lib\x64;$(SolutionDir)externals\code\bhaptics_windows\lib\x64;$(SolutionDir)externals\code\freetype\lib\win64;$(LibraryPath)</LibraryPath>
+    <IncludePath>$(SolutionDir)externals\code\glew\include;$(SolutionDir)externals\code\sdl2\include;$(SolutionDir)externals\code\sdl2_net\include;$(SolutionDir)externals\code\ovr\Include;$(SolutionDir)externals\code\openvr\headers;$(SolutionDir)externals\code\openxr\include;$(SolutionDir)externals\code\fmod\api\lowLevel\inc;$(SolutionDir)externals\code\fmod\api\studio\inc;$(SolutionDir)externals\code\fbxsdk\include;$(IncludePath)</IncludePath>
+    <ExecutablePath>$(SolutionDir)externals\runtime\x64;$(ExecutablePath)</ExecutablePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+    <OutDir>$(SolutionDir)runtime\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)temp\intermediate\$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    <LibraryPath>$(SolutionDir)externals\code\glew\lib\Release\x64;$(SolutionDir)externals\code\sdl2\lib\x64\;$(SolutionDir)externals\code\sdl2_net\lib\x64\;$(SolutionDir)externals\code\ovr\Lib\Windows\x64\Release\VS2017\;$(SolutionDir)externals\code\openvr\lib\win64\;$(SolutionDir)externals\code\openxr\lib\oculus\x64\release\;$(SolutionDir)runtime\$(Platform)\$(Configuration)\;$(SolutionDir)externals\code\fmod\api\fsbank\lib;$(SolutionDir)externals\code\fmod\api\lowLevel\lib;$(SolutionDir)externals\code\fmod\api\fsbank\lib\x64;$(SolutionDir)externals\code\fmod\api\lowLevel\lib\x64;$(SolutionDir)externals\code\fmod\api\studio\lib\x64;$(SolutionDir)externals\code\bhaptics_windows\lib\x64;$(SolutionDir)externals\code\freetype\lib\win64;$(LibraryPath)</LibraryPath>
+    <IncludePath>$(SolutionDir)externals\code\glew\include;$(SolutionDir)externals\code\sdl2\include;$(SolutionDir)externals\code\sdl2_net\include;$(SolutionDir)externals\code\ovr\Include;$(SolutionDir)externals\code\openvr\headers;$(SolutionDir)externals\code\openxr\include;$(SolutionDir)externals\code\fmod\api\lowLevel\inc;$(SolutionDir)externals\code\fmod\api\studio\inc;$(IncludePath)</IncludePath>
+    <ExecutablePath>$(SolutionDir)externals\runtime\x64;$(ExecutablePath)</ExecutablePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Profiler|x64'">
+    <LinkIncremental>false</LinkIncremental>
+    <OutDir>$(SolutionDir)runtime\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)temp\intermediate\$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    <LibraryPath>$(SolutionDir)externals\code\glew\lib\Release\x64;$(SolutionDir)externals\code\sdl2\lib\x64\;$(SolutionDir)externals\code\sdl2_net\lib\x64\;$(SolutionDir)externals\code\ovr\Lib\Windows\x64\Release\VS2017\;$(SolutionDir)externals\code\openvr\lib\win64\;$(SolutionDir)externals\code\openxr\lib\oculus\x64\release\;$(SolutionDir)runtime\$(Platform)\$(Configuration)\;$(SolutionDir)externals\code\fmod\api\fsbank\lib;$(SolutionDir)externals\code\fmod\api\lowLevel\lib;$(SolutionDir)externals\code\fmod\api\fsbank\lib\x64;$(SolutionDir)externals\code\fmod\api\lowLevel\lib\x64;$(SolutionDir)externals\code\fmod\api\studio\lib\x64;$(SolutionDir)externals\code\bhaptics_windows\lib\x64;$(SolutionDir)externals\code\freetype\lib\win64;$(LibraryPath)</LibraryPath>
+    <IncludePath>$(SolutionDir)externals\code\glew\include;$(SolutionDir)externals\code\sdl2\include;$(SolutionDir)externals\code\sdl2_net\include;$(SolutionDir)externals\code\ovr\Include;$(SolutionDir)externals\code\openvr\headers;$(SolutionDir)externals\code\openxr\include;$(SolutionDir)externals\code\fmod\api\lowLevel\inc;$(SolutionDir)externals\code\fmod\api\studio\inc;$(IncludePath)</IncludePath>
+    <ExecutablePath>$(SolutionDir)externals\runtime\x64;$(ExecutablePath)</ExecutablePath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>AN_LITTLE_ENDIAN;AN_WINDOWS;AN_64;AN_SDL;AN_GL;new;AN_DEBUG;WIN64;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <TreatWarningAsError>true</TreatWarningAsError>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <MinimalRebuild>false</MinimalRebuild>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>ws2_32.lib;legacy_stdio_definitions.lib;dbghelp.lib;LibOVR.lib;openvr_api.lib;openxr_loaderd.lib;winmm.lib;SDL2.lib;SDL2main.lib;SDL2_net.lib;OpenGL32.Lib;glew32.lib;glew32s.lib;core.lib;fmodL_vc.lib;fmodstudioL_vc.lib;freetype.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <CustomBuildStep>
+      <Command>
+      </Command>
+      <Message>Copying DLLs</Message>
+    </CustomBuildStep>
+    <PostBuildEvent>
+      <Command>call "$(SolutionDir)._buildTools\copy_dlls_to_runtime.bat" "$(Platform)" "$(SolutionDir)" "$(ProjectName)" "$(Configuration)"</Command>
+    </PostBuildEvent>
+    <PostBuildEvent>
+      <Message>Copying DLLs</Message>
+    </PostBuildEvent>
+    <Manifest>
+      <EnableDpiAwareness>PerMonitorHighDPIAware</EnableDpiAwareness>
+    </Manifest>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Dev|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>AN_LITTLE_ENDIAN;AN_WINDOWS;AN_64;AN_SDL;AN_GL;new;AN_DEV;WIN64;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <TreatWarningAsError>true</TreatWarningAsError>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <MinimalRebuild>false</MinimalRebuild>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>ws2_32.lib;legacy_stdio_definitions.lib;dbghelp.lib;LibOVR.lib;openvr_api.lib;openxr_loader.lib;winmm.lib;SDL2.lib;SDL2main.lib;SDL2_net.lib;OpenGL32.Lib;glew32.lib;glew32s.lib;core.lib;fmod_vc.lib;fmodstudio_vc.lib;freetype.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <PostBuildEvent>
+      <Command>call "$(SolutionDir)._buildTools\copy_dlls_to_runtime.bat" "$(Platform)" "$(SolutionDir)" "$(ProjectName)" "$(Configuration)"</Command>
+    </PostBuildEvent>
+    <PostBuildEvent>
+      <Message>Copying DLLs</Message>
+    </PostBuildEvent>
+    <CustomBuildStep>
+      <Command>
+      </Command>
+      <Message>Copying DLLs</Message>
+    </CustomBuildStep>
+    <Manifest>
+      <EnableDpiAwareness>PerMonitorHighDPIAware</EnableDpiAwareness>
+    </Manifest>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Profiler|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>AN_LITTLE_ENDIAN;AN_WINDOWS;AN_64;AN_SDL;AN_GL;new;AN_PROFILER;WIN64;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <TreatWarningAsError>true</TreatWarningAsError>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <MinimalRebuild>false</MinimalRebuild>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>ws2_32.lib;legacy_stdio_definitions.lib;dbghelp.lib;LibOVR.lib;openvr_api.lib;openxr_loader.lib;winmm.lib;SDL2.lib;SDL2main.lib;SDL2_net.lib;OpenGL32.Lib;glew32.lib;glew32s.lib;core.lib;fmod_vc.lib;fmodstudio_vc.lib;freetype.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <PostBuildEvent>
+      <Command>call "$(SolutionDir)._buildTools\copy_dlls_to_runtime.bat" "$(Platform)" "$(SolutionDir)" "$(ProjectName)" "$(Configuration)"</Command>
+    </PostBuildEvent>
+    <PostBuildEvent>
+      <Message>Copying DLLs</Message>
+    </PostBuildEvent>
+    <CustomBuildStep>
+      <Command>
+      </Command>
+      <Message>Copying DLLs</Message>
+    </CustomBuildStep>
+    <Manifest>
+      <EnableDpiAwareness>PerMonitorHighDPIAware</EnableDpiAwareness>
+    </Manifest>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>AN_LITTLE_ENDIAN;AN_WINDOWS;AN_64;AN_SDL;AN_GL;new;AN_RELEASE;WIN64;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <TreatWarningAsError>true</TreatWarningAsError>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <MinimalRebuild>false</MinimalRebuild>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>ws2_32.lib;legacy_stdio_definitions.lib;dbghelp.lib;LibOVR.lib;openvr_api.lib;openxr_loader.lib;winmm.lib;SDL2.lib;SDL2main.lib;SDL2_net.lib;OpenGL32.Lib;glew32.lib;glew32s.lib;core.lib;fmod_vc.lib;fmodstudio_vc.lib;freetype.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <PostBuildEvent>
+      <Command>call "$(SolutionDir)._buildTools\copy_dlls_to_runtime.bat" "$(Platform)" "$(SolutionDir)" "$(ProjectName)" "$(Configuration)"</Command>
+    </PostBuildEvent>
+    <PostBuildEvent>
+      <Message>Copying DLLs</Message>
+    </PostBuildEvent>
+    <CustomBuildStep>
+      <Command>
+      </Command>
+      <Message>Copying DLLs</Message>
+    </CustomBuildStep>
+    <Manifest>
+      <EnableDpiAwareness>PerMonitorHighDPIAware</EnableDpiAwareness>
+    </Manifest>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="buildVerUpdate.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="buildVerUpdate.h" />
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

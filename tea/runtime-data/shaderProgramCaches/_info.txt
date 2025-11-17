@@ -1,0 +1,10 @@
+this directory should contain files called
+
+	shaderProgramCache.[platform]
+	
+examples:
+
+	shaderProgramCache.quest
+	shaderProgramCache.quest2
+	
+this will end up in the final build and will be loaded on the target platform (if available) to avoid recompilation of the shaders

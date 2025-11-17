@@ -1,0 +1,73 @@
+<library group="hub">
+	<messageSet name="game loading tips" tags="loadingTips">
+		<message id="experience rules mode">
+			experience rules work the best as an introduction to vr and to the game~
+			~
+			levels are linear, there are no devices to use, ammo is infinite and health regenerates~
+			~
+			there is no story, no voiceovers, no overlay info 
+		</message>
+		<message id="simple rules mode">
+			standard rules focus on action and adventure~
+			~
+			resource management is simplified and there are less things to learn~
+			~
+			while the navigation is simplified (when compared to advanced rules), it is still possible to go in any direction you desire
+		</message>
+		<message id="complex rules mode">
+			advanced rules introduce more gameplay mechanisms~
+			~
+			besides resource management, there are numerous devices whose purpose has to be discovered by the player~
+			~
+			the navigation does not provide a path towards the objective - requires the use of the map
+		</message>
+		<message id="map">
+			the map gives a simplified overview of the region around you~
+			~
+			the world is divided into cells and to move from one cell to another, you have to follow the door direction displays~
+			~
+			door direction displays show absolute directions, ie. up on the door direction display is up on the map
+		</message>
+		<message id="weapons">
+			weapons use common energy storages~
+			~
+			this means that they don't have their own storages but share storage in your arm~
+			~
+			each weapon is made of interchangeable parts that affect its stats and features
+		</message>
+		<message id="weapons 2">
+			your primary weapons are attached to your forearms~
+			~
+			if you release them, they are holstered there~
+			~
+			to replace your primary weapon, remove it from your forearm~
+		</message>
+		<message id="right weapons">
+			some weapons may be ineffective against certain targets~
+			~
+			examples:~
+			~
+			- discharge weapon won't penetrate shield~
+			~
+			- non-piercing projectile won't do damage to fully armoured target
+		</message>
+		<message id="friends and foes">
+			not all entities you meet are hostile~
+			~
+			some may even be turned to your side~
+			~
+			try picking them up, examine them,~
+			look for buttons, levers and handles~
+		</message>
+		<message id="blind and deaf robots">
+			some robots don't have visual or audio sensors~
+			~
+			they don't see you, neither they hear you~
+		</message>
+		<message id="energy">
+			the primary source for energy are wall-mounted dispensers~
+			~
+			you can get access to extra energy via upgrades or inside some of the robots
+		</message>
+	</messageSet>
+</library>

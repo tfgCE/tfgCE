@@ -1,0 +1,5 @@
+1. Keystore file is tea_for_god_open with password passwordgoeshere. This is not the actual keystore used for tea for god.
+   It was generated for convenience.
+2. Setup path to jar.exe in environment variables, it might be C:\Program Files\Android\jdk\microsoft_dist_openjdk_1.8.0.25\bin
+3. No FBX support ATM. It was used only for importing things until I moved completely to proc-gen or importing by other means.
+   You need to add fbx to externals and uncomment USE_FBX

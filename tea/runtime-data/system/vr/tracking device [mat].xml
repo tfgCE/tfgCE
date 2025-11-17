@@ -1,0 +1,49 @@
+<library group="vr">
+	textures
+	========
+	
+	<texture name="tracking device" file="assets/tracking device.tex"/>
+	<texture name="tracking device left" file="assets/tracking device left.tex"/>
+	<texture name="tracking device right" file="assets/tracking device right.tex"/>
+	<texture name="tracking device_p" file="assets/tracking device_p.tex"/>
+	<texture name="tracking device_v" file="assets/tracking device_v.tex"/>
+
+	materials
+	=========
+	
+	<material name="tracking device" fragmentShader="default:defaultRendering">
+		<useWithStaticMesh/>
+		<useWithSkinnedMesh/>
+		<useWithSkinnedToSingleBoneMesh/>
+		<params>
+			<texture name="inMaterialColour" use="tracking device"/>
+			<texture name="inMaterialProp" use="tracking device_p"/>
+			<texture name="inMaterialVoxel" use="tracking device_v"/>
+		</params>
+	</material>
+	
+	<material name="tracking device left" fragmentShader="default:defaultRendering">
+		<useWithStaticMesh/>
+		<useWithSkinnedMesh/>
+		<useWithSkinnedToSingleBoneMesh/>
+		<params>
+			<texture name="inMaterialColour" use="tracking device left"/>
+			<texture name="inMaterialProp" use="tracking device_p"/>
+			<texture name="inMaterialVoxel" use="tracking device_v"/>
+		</params>
+	</material>
+
+	<material name="tracking device right" fragmentShader="default:defaultRendering">
+		<useWithStaticMesh/>
+		<useWithSkinnedMesh/>
+		<useWithSkinnedToSingleBoneMesh/>
+		<params>
+			<texture name="inMaterialColour" use="tracking device right"/>
+			<texture name="inMaterialProp" use="tracking device_p"/>
+			<texture name="inMaterialVoxel" use="tracking device_v"/>
+		</params>
+	</material>
+
+	</library>
+
+

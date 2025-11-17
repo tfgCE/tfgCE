@@ -1,0 +1,26 @@
+<library group="shader function libs">
+	<shaderFunctionLib name="anti banding">
+		<source>
+			<function name="apply_anti_banding_to">
+				to be used with rendering pipeline
+				<header>vec3 apply_anti_banding_to(vec3 _colour)</header>
+				<body>
+					HIGHP vec2 p = vec2(varPosition.x * 54.234 + varPosition.z * 23.252, varPosition.y * 94.345 + varPosition.z * 12.579);
+
+					p += vec2( 0.07 * fract( time ) );
+					p = fract(p * vec2(5.3987, 5.4421));
+					p += dot(p.yx, p.xy + vec2(21.5351, 14.3137));
+
+					HIGHP float pxy = p.x * p.y;
+					float tri = (fract(pxy * 95.4307) + fract(pxy * 75.04961)) * 0.5; 
+			#ifdef MAKE_IT_FASTER
+					_colour.rgb += (-0.5 + tri * 2.0) * 0.01; // stronger
+			#else
+					_colour.rgb += 0.00390625 * (-0.5 + tri * 2.0);
+			#endif
+					return _colour;
+				</body>
+			</function>
+		</source>
+	</shaderFunctionLib>
+</library>

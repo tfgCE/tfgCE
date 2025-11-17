@@ -1,0 +1,116 @@
+<library>
+	flags
+	: if not used as mask, they have to be defined through masks as basic values -> mask with a single value
+	: add "reject" to mask, so the flag does not end up in default/all collision flags
+		world
+		actor
+		item
+
+		actorBlocker
+		smallActorBlocker
+		itemBlocker
+		projectileBlocker
+		projectileCorrosionBlocker
+		projectileShieldBlocker
+		energyQuantumBlocker
+		orbItemBlocker
+		ikBlocker
+		ikRejecter
+		smallIKBlocker
+		smallIKRejecter
+		presenceBlocker
+		presenceRejecter
+		smallPresenceBlocker
+		smallPresenceRejecter
+		playerBlocker
+		visionBlocker				* blocks vision, glass is movement blocker but does not block vision, actors'n'co should block vision
+		explosionBlocker			* blocks explosion only (can also be used to confirm if we should explode - by mines, etc)
+		interactionBlocker
+		preciseInteractionBlocker	* fingers only
+		energyQuantumConsumer
+		energyQuantumExploder
+		orbItemConsumer
+		nonAttachable				* disallows attaching (plants: shield, proximity etc)
+		worldBoundary				* disallows going through (keep pilgrim in world)
+		pilgrimOverlayInfoBlocker	* blocks pilgrim overlay info traces
+		safeHeadBlocker
+	<collisionMasks>
+		<mask name="actorCollisionFlags">actor actorBlocker itemBlocker projectileBlocker visionBlocker</mask>
+		<mask name="smallActorCollisionFlags">actor smallActorBlocker projectileBlocker visionBlocker itemBlocker</mask>
+		<mask name="itemCollisionFlags">item itemBlocker projectileBlocker visionBlocker smallActorBlocker</mask>
+		<mask name="sceneryCollisionFlags">actor actorBlocker itemBlocker energyQuantumBlocker orbItemBlocker projectileBlocker visionBlocker smallActorBlocker</mask>
+		<mask name="temporaryObjectCollisionFlags"><!--nothing--></mask>
+
+		<mask name="objects">actor item</mask>
+
+		<mask name="inHandItemFlags">item actorBlocker itemBlocker smallActorBlocker projectileBlocker visionBlocker interactionBlocker</mask>
+		<mask name="inHandItemNonInteractiveFlags">item actorBlocker itemBlocker smallActorBlocker projectileBlocker visionBlocker</mask>
+
+		<mask name="actorCollidesWithFlags">actorBlocker</mask>
+		<mask name="smallActorCollidesWithFlags">smallActorBlocker</mask>
+		<mask name="itemCollidesWithFlags">itemBlocker</mask>
+		<mask name="sceneryCollidesWithFlags"><!--nothing--></mask>
+		<mask name="temporaryObjectCollidesWithFlags"><!--nothing--></mask>
+		<mask name="energyQuantumCollidesWithFlags">energyQuantumBlocker</mask>
+		<mask name="orbItemCollidesWithFlags">orbItemBlocker</mask>
+
+		<mask name="collidesWithEverythingFlags">actorBlocker smallActorBlocker itemBlocker energyQuantumBlocker orbItemBlocker</mask>
+		
+		<mask name="energyQuantumFlags">energyQuantumBlocker energyQuantumConsumer energyQuantumExploder</mask> <!-- all energy quantum/orb related flags -->
+
+		<mask name="orbItemFlags">orbItemBlocker orbItemConsumer</mask> <!-- all orb item related flags -->
+		
+		<mask name="interactionCollisionFlags">none</mask>
+		<mask name="interactionCollidesWithFlags">interactionBlocker</mask>
+
+		<mask name="preciseInteractionCollisionFlags">none</mask>
+		<mask name="preciseInteractionCollidesWithFlags">preciseInteractionBlocker</mask>
+
+		<mask name="energyCanBeConsumedCollidesWithFlags">energyQuantumConsumer</mask>
+		<mask name="energyCanExplodeCollidesWithFlags">energyQuantumExploder</mask>
+		
+		<mask name="orbCanBePickedUpCollidesWithFlags">orbItemConsumer</mask>
+		
+		<mask name="mineTriggerDetectionFlags">actor</mask>
+		
+		<mask name="playerCollidesWithFlags">playerBlocker</mask> <!-- just player specific, actor etc still applies -->
+		<mask name="playerSlidingLocomotionCollidesWithFlags">playerSlidingLocomotionBlocker</mask> <!-- player specific and only if sliding locomotion is on -->
+
+		<mask name="projectileCollidesWithFlags">projectileBlocker projectileCorrosionBlocker projectileShieldBlocker</mask>
+		<mask name="throughShieldProjectileCollidesWithFlags">projectileCorrosionBlocker projectileBlocker</mask>
+		<mask name="throughShieldAndCorrosionProjectileCollidesWithFlags">projectileBlocker</mask>
+
+		<mask name="ikTrace">ikBlocker ikRejecter</mask>
+		<mask name="ikTraceReject">ikRejecter</mask>
+
+		<mask name="presenceTrace">presenceBlocker presenceRejecter</mask>
+		<mask name="presenceTraceReject">presenceRejecter</mask>
+
+		<mask name="smallIKTrace">smallIKBlocker smallIKRejecter</mask>
+		<mask name="smallIKTraceReject">smallIKRejecter</mask>
+
+		<mask name="smallPresenceTrace">smallPresenceBlocker smallPresenceRejecter</mask>
+		<mask name="smallPresenceTraceReject">smallPresenceRejecter</mask>
+
+		<mask name="visionTrace">visionBlocker</mask>
+
+		<mask name="explosionTrace">explosionBlocker</mask>
+		
+		<mask name="attachTraceReject">nonAttachable</mask>
+		
+		<mask name="keepInWorld">worldBoundary</mask>
+		
+		<mask name="pilgrimOverlayInfoTrace">pilgrimOverlayInfoBlocker</mask>
+		<mask name="pilgrimOverlayInfoTraceBlocker">pilgrimOverlayInfoBlocker</mask>
+
+		flags for world
+		<mask name="worldFlags">world</mask> only parts of the world - note that if has worldSolidFlags, includes these but using this one can be used to avoid hitting actor, item etc
+		<mask name="worldSolidFlags">world worldBoundary actorBlocker smallActorBlocker itemBlocker projectileBlocker energyQuantumBlocker orbItemBlocker ikBlocker smallIKBlocker presenceBlocker smallPresenceBlocker visionBlocker explosionBlocker playerBlocker playerSlidingLocomotionBlocker safeHeadBlocker</mask>
+		<mask name="worldSolidFlagsNotBigActors">world smallActorBlocker itemBlocker projectileBlocker energyQuantumBlocker orbItemBlocker smallIKBlocker smallPresenceBlocker visionBlocker explosionBlocker</mask>
+		<mask name="worldSolidFlagsNoIK">world worldBoundary actorBlocker smallActorBlocker itemBlocker projectileBlocker energyQuantumBlocker orbItemBlocker ikRejecter presenceBlocker smallPresenceBlocker visionBlocker explosionBlocker playerBlocker playerSlidingLocomotionBlocker safeHeadBlocker</mask>
+
+		<mask name="collidesWithWorldSolid">world</mask>
+
+		<mask name="pointOfInterestCollidesWithFlags">world</mask>
+	</collisionMasks>
+</library>

@@ -1,0 +1,3783 @@
+<library>
+	
+	mainSettings.cpp uses shaderOptionsId to choose which rendering method to use
+	
+	job settings
+	<._load filter="workers on all"/>
+	<_load filter="workers on two">
+		<!--	two threads do the most of the job while the third does occassional work - async, nav, background tasks
+				this also allows operating system to utilise the third thread as it has lower priority set -->
+	</_load>
+	
+	<mainSettings>
+		<configSave>
+			<!-- no retro anymore
+			<for changedExtraRequestedSystemTag="retro">
+				<dontSave>mainConfig_videoConfig_msaa</dontSave>
+				<dontSave>mainConfig_videoConfig_vrResolution</dontSave>
+				<dontSave>mainConfig_videoConfig_vrFoveatedRenderingLevel</dontSave>
+			</for>
+			-->
+		</configSave>
+
+		<settings>
+			main
+			<allowImporting>true</allowImporting>
+			<allowTools>true</allowTools>
+			<disallowNoImportFilesPresent>true</disallowNoImportFilesPresent>
+			<!--
+			<forceReimporting>true</forceReimporting>
+			<forceReimportingUsingTools>true</forceReimportingUsingTools>
+			-->
+			<discardDataAfterBuildingBufferObjects>false</discardDataAfterBuildingBufferObjects>
+			<renderFenceAtEndOfFrame>false</renderFenceAtEndOfFrame>
+			
+			rendering pipeline
+			<renderingPipelineUsesSeparateBuffersForPositionAndNormal>false</renderingPipelineUsesSeparateBuffersForPositionAndNormal> not used right now (fill_position_normal_output)
+			<renderingPipelineUsesAlphaChannelForDepth>false</renderingPipelineUsesAlphaChannelForDepth> not used right now (fill_position_normal_output)
+			<renderingPipelineUsesColourVertexAttributes>true</renderingPipelineUsesColourVertexAttributes>
+
+			other rendering
+			<defaultTextureWrap>clamp</defaultTextureWrap>
+			<defaultTextureFiltering>linear</defaultTextureFiltering>
+			
+			data
+			<vertexDataPadding>32</vertexDataPadding>
+			<vertexDataNormalPacked>true</vertexDataNormalPacked>
+			<vertexDataUVDataType>uint16</vertexDataUVDataType>
+			
+			job system
+			<jobSystem>
+				have jobs on any thread as we don't really care who will take care of them but we want to have as many parallel as possible
+				<worker percentage="100%" cores="1, 99999" allowOnMainThread="true" preferMainThread="false" /> any thread (immediate)
+				<prepareRender percentage="100%" cores="2, 99999" allowOnMainThread="true" preferMainThread="true" /> any thread (immediate)
+				<game percentage="100%" cores="1" allowOnMainThread="true" preferMainThread="false" /> one other thread, so it's always the same (async)
+				<sound percentage="100%" cores="1, 99999" allowOnMainThread="true" preferMainThread="false" /> any thread (async)
+				<asyncWorker percentage="100%" cores="1, 99999" allowOnMainThread="false" preferMainThread="false" /> any thread (not main thread) (async)
+				<loadingWorker percentage="100%" cores="1, 5" allowOnMainThread="false" preferMainThread="false" /> not on main thread (async) works better when less workers 
+				<preparingWorker percentage="100%" cores="1, 99999" allowOnMainThread="false" preferMainThread="false" /> not on main thread (async)
+				<background percentage="25%" cores="1, 99999" allowOnMainThread="false" preferMainThread="false" /> no more than 25% of threads but at least one (not main thread) (async)
+				<gameBackground cores="1" allowOnMainThread="false" preferMainThread="false" preferExtraSeparateThread="true"/> one (not main thread, prefer being alone on a thread) (async)
+				<render percentage="0%" cores="1, 1" allowOnMainThread="true" preferMainThread="true" /> main thread! (async)
+				<system percentage="0%" cores="1, 1" allowOnMainThread="true" preferMainThread="true" /> main thread! (async)
+			</jobSystem>
+			
+			sound channels
+			<soundChannels>
+				<sound tags="world game audioDuckOnVoiceover" volume="0.7">
+					<compressor threshold="-5.0" attack="0.10" release="0.5" ratio="1.5"/>
+				</sound>
+				<environment tags="world game audioDuckOnVoiceover" volume="0.5"/>
+				<music reverb="false" tags="game" volume="0.5"/>
+				<voiceover reverb="false" tags="game" volume="0.65"/>
+				<pilgrimOverlay reverb="false" tags="game audioDuckOnVoiceover" volume="0.8"/>
+				<ui reverb="false" volume="0.8"/>
+			</soundChannels>
+			<defaultSoundChannel>sound</defaultSoundChannel>
+			<audioDuckSourceChannel>voiceover</audioDuckSourceChannel>
+			
+			<audioDuck level="0.5" fadeTime="1.5"/>
+
+			mesh gen
+			<meshGenSmoothing>true</meshGenSmoothing>
+
+			note: globalDesaturate is used for health indicator
+			<setShaderOptions>
+					unifiedFog
+					specular reflections -allowSkippableReflections 
+					alphaDithering
+					light fog emissive
+					material materialProp -vertexLight -vertexMaterial -vertexEmissive
+					voxel voxelUneveness 
+					globalTint globalDesaturate
+					autoTextures antiBanding 
+					coneLights=0 pointLights=8 stickPointLights -simpleConePointLights
+					brighterLightsInFog
+			</setShaderOptions>
+			<setShaderOptions id="high">
+					specular reflections
+					alphaDithering
+					light fog emissive
+					material materialProp
+					voxel voxelUneveness 
+					globalTint globalDesaturate
+					autoTextures antiBanding 
+					coneLights=0 pointLights=8 stickPointLights -simpleConePointLights
+					brighterLightsInFog
+			</setShaderOptions>
+			<setShaderOptions id="low">
+					makeItFaster unifiedFog
+					-specular reflections simpleReflections
+					alphaDithering
+					light fog emissive
+					material materialProp vertexLight vertexMaterial vertexEmissive -vertexVoxel
+					voxel simpleVoxel
+					globalTint globalDesaturate 
+					autoTextures antiBanding
+					-coneLights pointLights=3 -stickPointLights -simpleConePointLights
+			</setShaderOptions>
+			<setShaderOptions id="ultra low">
+					makeItFaster unifiedFog
+					-specular reflections simpleReflections
+					-alphaDithering
+					light fog emissive
+					material materialProp vertexLight vertexMaterial vertexEmissive -vertexVoxel
+					-voxel 
+					globalTint -globalDesaturate 
+					autoTextures -antiBanding
+					-coneLights -pointLights -stickPointLights -simpleConePointLights
+			</setShaderOptions>
+
+			this is to map texture to a vertex value
+			<vertexTextureColourMapping shaderOptions="vertexMaterial material" fragmentSamplerInput="inMaterialColour" customVertexData="inOMaterial" atV="1.0" dataType="uint8"/>
+			<vertexTextureColourMapping shaderOptions="vertexMaterial materialProp" fragmentSamplerInput="inMaterialProp" customVertexData="inOMaterialProp" atV="1.0" dataType="uint8"/>
+			<vertexTextureColourMapping shaderOptions="vertexVoxel voxel" fragmentSamplerInput="inMaterialVoxel" customVertexData="inOMaterialVoxel0" atV="0.2" dataType="uint8"/>
+			<vertexTextureColourMapping shaderOptions="vertexVoxel voxel" fragmentSamplerInput="inMaterialVoxel" customVertexData="inOMaterialVoxel1" atV="0.8" dataType="uint8"/>
+		</settings>
+		<settings systemTagRequired="quest or quest2 or quest3 or questPro or vive or pico">
+			<doSoundOnGameThread>true</doSoundOnGameThread>
+
+			job system
+			<jobSystem>
+				<_section filter="workers on all">
+					render and system should be on main thread
+					<render percentage="0%" cores="1, 1" allowOnMainThread="true" preferMainThread="true" /> main thread! (async)
+					<system percentage="0%" cores="1, 1" allowOnMainThread="true" preferMainThread="true" /> main thread! (async)
+
+					second main thread
+					<game percentage="100%" cores="1" allowOnMainThread="true" preferMainThread="false" /> one other thread, so it's always the same (async)
+
+					main jobs that are constantly ticking, can be done on any threads
+					<worker percentage="100%" cores="1, 99999" allowOnMainThread="true" preferMainThread="false" /> any thread (immediate)
+					<prepareRender percentage="100%" cores="2, 99999" allowOnMainThread="true" preferMainThread="true" /> any thread (immediate)
+					<sound percentage="100%" cores="1, 99999" allowOnMainThread="true" preferMainThread="false" /> any thread (async)
+
+					secondary jobs on the third thread
+					<asyncWorker percentage="100%" cores="1" allowOnMainThread="false" preferMainThread="false" preferExtraSeparateThread="true" avoidBeingWithJobList="render, game"/> one (not main thread, prefer being alone on a thread) (async)
+					<background percentage="25%" cores="1, 99999" allowOnMainThread="false" preferMainThread="false" avoidBeingWithJobList="render, game"/> no more than 25% of threads but at least one (not main thread) (async)
+					<gameBackground cores="1" allowOnMainThread="false" preferMainThread="false" preferExtraSeparateThread="true" avoidBeingWithJobList="render, game"/> one (not main thread, prefer being alone on a thread) (async)
+
+					not during the game, loading and preparing
+					<loadingWorker percentage="100%" cores="1, 5" allowOnMainThread="false" preferMainThread="false" /> not on main thread (async) works better when less workers 
+					<preparingWorker percentage="100%" cores="1, 99999" allowOnMainThread="false" preferMainThread="false" /> not on main thread (async)
+				</_section>
+
+				<_section filter="workers on two">
+					render and system should be on main thread
+					<render percentage="0%" cores="1, 1" allowOnMainThread="true" preferMainThread="true" /> main thread! (async)
+					<system percentage="0%" cores="1, 1" allowOnMainThread="true" preferMainThread="true" /> main thread! (async)
+
+					second main thread
+					<game percentage="100%" cores="1" allowOnMainThread="true" preferMainThread="false" /> one other thread, so it's always the same (async)
+					
+					main jobs that are constantly ticking should be done on two main threads
+					<worker percentage="100%" cores="2" allowOnMainThread="true" preferMainThread="true" bundleWithJobList="render, game"/> place only on render and main - avoid async as it could be used for anything else
+					<prepareRender percentage="100%" cores="2" allowOnMainThread="true" preferMainThread="true" bundleWithJobList="render, game"/> any thread (immediate)
+					<sound percentage="100%" cores="2" allowOnMainThread="true" bundleWithJobList="render, game"/> any thread (async)
+
+					secondary jobs on the third thread
+					<asyncWorker percentage="100%" cores="1" allowOnMainThread="false" preferMainThread="false" preferExtraSeparateThread="true" avoidBeingWithJobList="render, game"/> one (not main thread, prefer being alone on a thread) (async)
+					<background percentage="25%" cores="1, 99999" allowOnMainThread="false" preferMainThread="false" /> no more than 25% of threads but at least one (not main thread) (async)
+					<gameBackground cores="1" allowOnMainThread="false" preferMainThread="false" preferExtraSeparateThread="true" avoidBeingWithJobList="render, game"/> one (not main thread, prefer being alone on a thread) (async)
+					
+					not during the game, loading and preparing
+					<loadingWorker percentage="100%" cores="1, 5" allowOnMainThread="false" preferMainThread="false" /> not on main thread (async) works better when less workers 
+					<preparingWorker percentage="100%" cores="1, 99999" allowOnMainThread="false" preferMainThread="false" /> not on main thread (async)
+				</_section>
+			</jobSystem>
+		</settings>
+		<settings systemTagRequired="quest and (not quest2) and (not quest3) and (not questPro)">
+			<setShaderOptions>
+					makeItFaster unifiedFog
+					unifiedFog
+					-specular reflections allowSkippableReflections
+					
+					-simpleReflections simplifiedBackgroundForReflections
+					
+					alphaDithering
+					light fog emissive
+					material materialProp vertexLight vertexMaterial vertexEmissive -vertexVoxel
+					-voxel -simpleVoxel 
+					globalTint globalDesaturate
+					autoTextures antiBanding
+					-coneLights pointLights=3 -stickPointLights -simpleConePointLights
+			</setShaderOptions>
+			<setShaderOptions id="low">
+					makeItFaster unifiedFog
+					-specular reflections allowSkippableReflections simpleReflections
+					alphaDithering
+					light fog emissive
+					material materialProp vertexLight vertexMaterial vertexEmissive -vertexVoxel
+					-voxel -simpleVoxel 
+					globalTint globalDesaturate 
+					autoTextures antiBanding
+					-coneLights pointLights=1 -stickPointLights -simpleConePointLights
+			</setShaderOptions>
+			<setShaderOptions id="ultra low">
+					makeItFaster unifiedFog
+					-specular reflections allowSkippableReflections simpleReflections
+					-alphaDithering
+					light fog emissive
+					material materialProp vertexLight vertexMaterial vertexEmissive -vertexVoxel
+					-voxel 
+					globalTint -globalDesaturate 
+					autoTextures -antiBanding
+					-coneLights -pointLights -stickPointLights --simpleConePointLights
+			</setShaderOptions>
+		</settings>
+		<settings systemTagRequired="quest2 or quest3 or questPro">
+			<setShaderOptions>
+					makeItFaster unifiedFog
+					-specular reflections allowSkippableReflections 
+					
+					-simpleReflections simplifiedBackgroundForReflections
+					
+					alphaDithering
+					light fog emissive
+					material materialProp vertexLight vertexMaterial vertexEmissive
+					voxel   
+					globalTint globalDesaturate 
+					autoTextures antiBanding
+					coneLights=0 pointLights=5 -stickPointLights -simpleConePointLights
+			</setShaderOptions>
+			<setShaderOptions id="low">
+					makeItFaster unifiedFog
+					-specular reflections allowSkippableReflections simpleReflections -simplifiedBackgroundForReflections
+					-alphaDithering
+					light fog emissive
+					material materialProp vertexLight vertexMaterial vertexEmissive
+					voxel
+					globalTint globalDesaturate 
+					autoTextures antiBanding
+					-coneLights pointLights=3 -stickPointLights -simpleConePointLights
+			</setShaderOptions>
+			<setShaderOptions id="ultra low">
+					makeItFaster unifiedFog
+					-specular reflections allowSkippableReflections simpleReflections
+					-alphaDithering
+					light fog emissive
+					material materialProp vertexLight vertexMaterial vertexEmissive -vertexVoxel
+					voxel simpleVoxel
+					globalTint -globalDesaturate 
+					autoTextures -antiBanding
+					-coneLights -pointLights -stickPointLights --simpleConePointLights
+			</setShaderOptions>
+		</settings>
+		<settings systemTagRequired="pico">
+			<setShaderOptions>
+					makeItFaster unifiedFog
+					-specular reflections allowSkippableReflections
+					
+					-simpleReflections simplifiedBackgroundForReflections
+					
+					alphaDithering
+					light fog emissive
+					material materialProp vertexLight vertexMaterial vertexEmissive
+					voxel   
+					globalTint globalDesaturate 
+					autoTextures antiBanding
+					coneLights=0 pointLights=5 -stickPointLights -simpleConePointLights
+			</setShaderOptions>
+			<setShaderOptions id="low">
+					makeItFaster unifiedFog
+					-specular reflections allowSkippableReflections simpleReflections -simplifiedBackgroundForReflections
+					-alphaDithering
+					light fog emissive
+					material materialProp vertexLight vertexMaterial vertexEmissive
+					voxel
+					globalTint globalDesaturate 
+					autoTextures antiBanding
+					-coneLights pointLights=3 -stickPointLights -simpleConePointLights
+			</setShaderOptions>
+			<setShaderOptions id="ultra low">
+					makeItFaster unifiedFog
+					-specular reflections allowSkippableReflections simpleReflections
+					-alphaDithering
+					light fog emissive
+					material materialProp vertexLight vertexMaterial vertexEmissive -vertexVoxel
+					voxel simpleVoxel
+					globalTint -globalDesaturate 
+					autoTextures -antiBanding
+					-coneLights -pointLights -stickPointLights --simpleConePointLights
+			</setShaderOptions>
+		</settings>
+		<settings systemTagRequired="vive">
+			<setShaderOptions>
+					makeItFaster unifiedFog
+					-specular reflections allowSkippableReflections
+					
+					simpleReflections -simplifiedBackgroundForReflections
+					
+					alphaDithering
+					light fog emissive
+					material materialProp vertexLight vertexMaterial vertexEmissive -vertexVoxel
+					voxel
+					globalTint -globalDesaturate 
+					autoTextures antiBanding
+					-coneLights pointLights=3 -stickPointLights -simpleConePointLights
+			</setShaderOptions>
+			<setShaderOptions id="low">
+					makeItFaster unifiedFog
+					-specular reflections allowSkippableReflections simpleReflections -simplifiedBackgroundForReflections
+					-alphaDithering
+					light fog emissive
+					material materialProp vertexLight vertexMaterial vertexEmissive
+					voxel
+					globalTint globalDesaturate 
+					autoTextures antiBanding
+					-coneLights pointLights=3 -stickPointLights simpleConePointLights
+			</setShaderOptions>
+			<setShaderOptions id="ultra low">
+					makeItFaster unifiedFog
+					-specular reflections allowSkippableReflections simpleReflections
+					-alphaDithering
+					light fog emissive
+					material materialProp vertexLight vertexMaterial vertexEmissive -vertexVoxel
+					voxel simpleVoxel
+					globalTint -globalDesaturate 
+					autoTextures -antiBanding
+					-coneLights -pointLights -stickPointLights -simpleConePointLights
+			</setShaderOptions>
+		</settings>
+		
+		extra system tags to modify aesthetics
+		<settings systemTagRequired="retro">
+			only simpleReflections as without it is all too flat (and dark)
+			no background calculations, just discards fragments with fog
+			<forcedShaderOptions>
+					retro
+					alphaDithering
+					specular=0 reflections simpleReflections
+					antiBanding=0
+			</forcedShaderOptions>
+		</settings>
+		<settings systemTagRequired="noDitheredTransparency">
+			<forcedShaderOptions>
+					alphaDithering=0
+			</forcedShaderOptions>
+		</settings>
+	</mainSettings>
+
+	<foveatedRenderingPresets>
+		--complexity--
+		level  density
+		  1		1.0000
+		  2		0.5000
+		  3		0.2500
+		  4		0.1250
+		  5		0.0625
+	
+		coverage relative to full tiles
+		11.42| 36.25|30.81
+		-----+------+-----
+		31.50|100.00|85.00
+		-----+------+-----
+		 7.64| 24.25|20.61
+	
+		QUEST 2	VRAPI levels
+		1				20,54
+			33333333
+			33111113
+			31111112
+			31111112
+			33111113
+		2				16,75
+			33333333
+			33311133
+			33111113
+			33111113
+			33311133
+		3				14,96
+			33333333
+			33111133
+			33111133
+			33211133
+			33333333
+		4				12,96
+			33333333
+			33322333
+			33111133
+			33111133
+			33333333
+			
+		here (some 4s might be 5 but it shouldn't matter much)
+		1				17,47
+			43222234
+			32111123
+			32111123
+			32111123
+			43222234
+		2				16,28
+			44333344
+			42111124
+			42111124
+			42111124
+			44333344
+		3				14,60
+			44444444
+			43211234
+			42111124
+			42111124
+			44333344
+		4				14,04
+			44444444
+			43211234
+			42111124
+			43111134
+			44433444
+		5				13,98
+			44444444
+			43211234
+			42111124
+			43111134
+			44444444
+		6				12,04
+			44444444
+			43322334
+			43111134
+			43111134
+			44433444
+	
+		<foveatedRenderingSetup for="0.00" minDensity="1.0">
+			<focalPoint atX="0.00000" atY="0.000" gainX="0.00000" gainY="0.00000" foveArea="0.00"/>
+			<focalPoint atX="0.00000" atY="0.000" gainX="0.00000" gainY="0.00000" foveArea="0.00"/>
+		</foveatedRenderingSetup>
+		<foveatedRenderingSetup for="0.25" minDensity="0.124">
+			43222234
+			32111123
+			32111123
+			32111123
+			43222234
+			<focalPoint atX="0.00000" atY="-0.21000" offsetXLeft="0.00000" offsetXRight="-0.06000" gainX="15.90000" gainY="4.40000" foveArea="1.00"/>
+			<focalPoint atX="0.00000" atY="0.17000" offsetXLeft="0.00000" offsetXRight="-0.06000" gainX="15.90000" gainY="4.40000" foveArea="1.00"/>
+		</foveatedRenderingSetup>
+		<foveatedRenderingSetup for="0.50" minDensity="0.124">
+			44333344
+			42111124
+			42111124
+			42111124
+			44333344
+			<focalPoint atX="0.00000" atY="0.07000" offsetXLeft="0.00000" offsetXRight="-0.06000" gainX="18.40000" gainY="11.10000" foveArea="2.30"/>
+			<focalPoint atX="0.00000" atY="0.00000" offsetXLeft="0.00000" offsetXRight="-0.06000" gainX="9.50000" gainY="4.70000" foveArea="2.70"/>
+		</foveatedRenderingSetup>
+		<foveatedRenderingSetup for="0.75" minDensity="0.124">
+			44444444
+			43211234
+			42111124
+			42111124
+			44333344
+			<focalPoint atX="0.00000" atY="-0.21000" offsetXLeft="0.00000" offsetXRight="-0.06000" gainX="6.20000" gainY="6.30000" foveArea="2.30"/>
+			<focalPoint atX="0.00000" atY="0.02000" offsetXLeft="0.00000" offsetXRight="-0.06000" gainX="7.30000" gainY="8.00000" foveArea="1.00"/>
+		</foveatedRenderingSetup>
+		<foveatedRenderingSetup for="1.00" minDensity="0.0624">
+			44444444
+			43211234
+			42111124
+			43111134
+			44433444
+			<focalPoint atX="0.00000" atY="-0.04000" offsetXLeft="0.00000" offsetXRight="-0.06000" gainX="4.90000" gainY="10.30000" foveArea="2.30"/>
+			<focalPoint atX="0.00000" atY="-0.11000" offsetXLeft="0.00000" offsetXRight="-0.06000" gainX="5.40000" gainY="6.00000" foveArea="2.30"/>
+		</foveatedRenderingSetup>
+		<foveatedRenderingSetup for="1.25" minDensity="0.0624">
+			44444444
+			43211234
+			42111124
+			43111134
+			44444444
+			<focalPoint atX="0.00000" atY="-0.01000" offsetXLeft="0.00000" offsetXRight="-0.06000" gainX="5.10000" gainY="12.00000" foveArea="2.30"/>
+			<focalPoint atX="0.00000" atY="-0.11000" offsetXLeft="0.00000" offsetXRight="-0.06000" gainX="5.80000" gainY="9.70000" foveArea="2.30"/>
+		</foveatedRenderingSetup>
+		<foveatedRenderingSetup for="1.50" minDensity="0.0624">
+			44444444
+			43322334
+			43111134
+			43111134
+			44433444
+			<focalPoint atX="0.00000" atY="0.06000" offsetXLeft="0.00000" offsetXRight="-0.06000" gainX="4.20000" gainY="23.50000" foveArea="0.00"/>
+			<focalPoint atX="0.00000" atY="-0.19000" offsetXLeft="0.00000" offsetXRight="-0.06000" gainX="6.40000" gainY="9.80000" foveArea="2.00"/>
+
+		</foveatedRenderingSetup>
+		<foveatedRenderingSetup for="1.75" minDensity="0.0">
+			44444444
+			43322334
+			43111134
+			43111134
+			44433444
+			<focalPoint atX="0.00000" atY="0.06000" offsetXLeft="0.00000" offsetXRight="-0.06000" gainX="80.00000" gainY="80.00000" foveArea="0.00"/>
+			<focalPoint atX="0.00000" atY="-0.19000" offsetXLeft="0.00000" offsetXRight="-0.06000" gainX="80.0000" gainY="80.00000" foveArea="2.00"/>
+
+		</foveatedRenderingSetup>
+	</foveatedRenderingPresets>
+	
+	<foveatedRenderingPresets systemTagRequired="quest2 or quest3"> do not modify, works fine on quest2
+		--complexity--
+		level  density
+		  1		1.0000
+		  2		0.5000
+		  3		0.2500
+		  4		0.1250
+		  5		0.0625
+	
+		coverage relative to full tiles
+		11.42| 36.25|30.81
+		-----+------+-----
+		31.50|100.00|85.00
+		-----+------+-----
+		 7.64| 24.25|20.61
+	
+		QUEST 2	VRAPI levels
+		1				20,54
+			33333333
+			33111113
+			31111112
+			31111112
+			33111113
+		2				16,75
+			33333333
+			33311133
+			33111113
+			33111113
+			33311133
+		3				14,96
+			33333333
+			33111133
+			33111133
+			33211133
+			33333333
+		4				12,96
+			33333333
+			33322333
+			33111133
+			33111133
+			33333333
+			
+		here (some 4s might be 5 but it shouldn't matter much)
+		1				17,47
+			43222234
+			32111123
+			32111123
+			32111123
+			43222234
+		2				16,28
+			44333344
+			42111124
+			42111124
+			42111124
+			44333344
+		3				14,60
+			44444444
+			43211234
+			42111124
+			42111124
+			44333344
+		4				14,04
+			44444444
+			43211234
+			42111124
+			43111134
+			44433444
+		5				13,98
+			44444444
+			43211234
+			42111124
+			43111134
+			44444444
+		6				12,04
+			44444444
+			43322334
+			43111134
+			43111134
+			44433444
+	
+		<foveatedRenderingSetup for="0.00" minDensity="1.0">
+			<focalPoint atX="0.00000" atY="0.000" gainX="0.00000" gainY="0.00000" foveArea="0.00"/>
+			<focalPoint atX="0.00000" atY="0.000" gainX="0.00000" gainY="0.00000" foveArea="0.00"/>
+		</foveatedRenderingSetup>
+		<foveatedRenderingSetup for="0.25" minDensity="0.124">
+			43222234
+			32111123
+			32111123
+			32111123
+			43222234
+			<focalPoint atX="0.00000" atY="-0.21000" offsetXLeft="0.00000" offsetXRight="-0.06000" gainX="15.90000" gainY="4.40000" foveArea="1.00"/>
+			<focalPoint atX="0.00000" atY="0.17000" offsetXLeft="0.00000" offsetXRight="-0.06000" gainX="15.90000" gainY="4.40000" foveArea="1.00"/>
+		</foveatedRenderingSetup>
+		<foveatedRenderingSetup for="0.50" minDensity="0.124">
+			44333344
+			42111124
+			42111124
+			42111124
+			44333344
+			<focalPoint atX="0.00000" atY="0.07000" offsetXLeft="0.00000" offsetXRight="-0.06000" gainX="18.40000" gainY="11.10000" foveArea="2.30"/>
+			<focalPoint atX="0.00000" atY="0.00000" offsetXLeft="0.00000" offsetXRight="-0.06000" gainX="9.50000" gainY="4.70000" foveArea="2.70"/>
+		</foveatedRenderingSetup>
+		<foveatedRenderingSetup for="0.75" minDensity="0.124">
+			44444444
+			43211234
+			42111124
+			42111124
+			44333344
+			<focalPoint atX="0.00000" atY="-0.21000" offsetXLeft="0.00000" offsetXRight="-0.06000" gainX="6.20000" gainY="6.30000" foveArea="2.30"/>
+			<focalPoint atX="0.00000" atY="0.02000" offsetXLeft="0.00000" offsetXRight="-0.06000" gainX="7.30000" gainY="8.00000" foveArea="1.00"/>
+		</foveatedRenderingSetup>
+		<foveatedRenderingSetup for="1.00" minDensity="0.0624">
+			44444444
+			43211234
+			42111124
+			43111134
+			44433444
+			<focalPoint atX="0.00000" atY="-0.04000" offsetXLeft="0.00000" offsetXRight="-0.06000" gainX="4.90000" gainY="10.30000" foveArea="2.30"/>
+			<focalPoint atX="0.00000" atY="-0.11000" offsetXLeft="0.00000" offsetXRight="-0.06000" gainX="5.40000" gainY="6.00000" foveArea="2.30"/>
+		</foveatedRenderingSetup>
+		<foveatedRenderingSetup for="1.25" minDensity="0.0624">
+			44444444
+			43211234
+			42111124
+			43111134
+			44444444
+			<focalPoint atX="0.00000" atY="-0.01000" offsetXLeft="0.00000" offsetXRight="-0.06000" gainX="5.10000" gainY="12.00000" foveArea="2.30"/>
+			<focalPoint atX="0.00000" atY="-0.11000" offsetXLeft="0.00000" offsetXRight="-0.06000" gainX="5.80000" gainY="9.70000" foveArea="2.30"/>
+		</foveatedRenderingSetup>
+		<foveatedRenderingSetup for="1.50" minDensity="0.0624">
+			44444444
+			43322334
+			43111134
+			43111134
+			44433444
+			<focalPoint atX="0.00000" atY="0.06000" offsetXLeft="0.00000" offsetXRight="-0.06000" gainX="4.20000" gainY="23.50000" foveArea="0.00"/>
+			<focalPoint atX="0.00000" atY="-0.19000" offsetXLeft="0.00000" offsetXRight="-0.06000" gainX="6.40000" gainY="9.80000" foveArea="2.00"/>
+
+		</foveatedRenderingSetup>
+		<foveatedRenderingSetup for="1.75" minDensity="0.0">
+			44444444
+			43322334
+			43111134
+			43111134
+			44433444
+			<focalPoint atX="0.00000" atY="0.06000" offsetXLeft="0.00000" offsetXRight="-0.06000" gainX="80.00000" gainY="80.00000" foveArea="0.00"/>
+			<focalPoint atX="0.00000" atY="-0.19000" offsetXLeft="0.00000" offsetXRight="-0.06000" gainX="80.0000" gainY="80.00000" foveArea="2.00"/>
+
+		</foveatedRenderingSetup>
+	</foveatedRenderingPresets>
+	
+	<foveatedRenderingPresets systemTagRequired="questPro">
+		<foveatedRenderingSetup for="0.00" minDensity="1.0">
+			<focalPoint atX="0.00000" atY="0.000" gainX="0.00000" gainY="0.00000" foveArea="0.00"/>
+			<focalPoint atX="0.00000" atY="0.000" gainX="0.00000" gainY="0.00000" foveArea="0.00"/>
+		</foveatedRenderingSetup>
+		<foveatedRenderingSetup for="0.25" minDensity="0.0624">
+			432234
+			311113
+			311113
+			311113
+			311113
+			421124
+			432234
+			<focalPoint atX="0.04000" atY="0.00000" offsetXLeft="0.00000" offsetXRight="0.00000" gainX="3.00000" gainY="3.10000" foveArea="0.40"/>
+			<focalPoint atX="0.04000" atY="-0.14000" offsetXLeft="0.00000" offsetXRight="0.00000" gainX="3.50000" gainY="2.50000" foveArea="0.00"/>
+		</foveatedRenderingSetup>
+		<foveatedRenderingSetup for="0.50" minDensity="0.0624">
+			433334
+			421124
+			311113
+			311113
+			421124
+			432234
+			444444
+			<focalPoint atX="0.04000" atY="-0.03000" offsetXLeft="0.00000" offsetXRight="0.00000" gainX="4.60000" gainY="8.30000" foveArea="2.20"/>
+			<focalPoint atX="0.04000" atY="-0.05000" offsetXLeft="0.00000" offsetXRight="0.00000" gainX="3.50000" gainY="3.50000" foveArea="0.00"/>
+		</foveatedRenderingSetup>
+		<foveatedRenderingSetup for="0.75" minDensity="0.0624">
+			443344
+			421124
+			421124
+			421124
+			421124
+			432234
+			443344
+			<focalPoint atX="0.04000" atY="0.20000" offsetXLeft="0.00000" offsetXRight="0.00000" gainX="5.80000" gainY="6.40000" foveArea="2.20"/>
+			<focalPoint atX="0.04000" atY="-0.14000" offsetXLeft="0.00000" offsetXRight="0.00000" gainX="4.70000" gainY="3.50000" foveArea="0.00"/>
+		</foveatedRenderingSetup>
+		<foveatedRenderingSetup for="1.00" minDensity="0.0624">
+			443344
+			432234
+			421124
+			421124
+			421124
+			432234
+			443344
+			<focalPoint atX="0.04000" atY="-0.05000" offsetXLeft="0.00000" offsetXRight="0.00000" gainX="5.70000" gainY="8.30000" foveArea="2.20"/>
+			<focalPoint atX="0.04000" atY="-0.14000" offsetXLeft="0.00000" offsetXRight="0.00000" gainX="4.70000" gainY="3.50000" foveArea="0.00"/>
+		</foveatedRenderingSetup>
+		<foveatedRenderingSetup for="1.25" minDensity="0.0624">
+			444444
+			442244
+			421124
+			421124
+			431134
+			443344
+			444444
+			<focalPoint atX="0.04000" atY="0.00000" offsetXLeft="0.00000" offsetXRight="0.00000" gainX="5.70000" gainY="7.80000" foveArea="1.80"/>
+			<focalPoint atX="0.04000" atY="-0.16000" offsetXLeft="0.00000" offsetXRight="0.00000" gainX="5.30000" gainY="5.50000" foveArea="0.00"/>
+		</foveatedRenderingSetup>
+		<foveatedRenderingSetup for="1.50" minDensity="0.0624">
+			444444
+			442244
+			421124
+			421124
+			432234
+			444444
+			444444
+			<focalPoint atX="0.04000" atY="0.01000" offsetXLeft="0.00000" offsetXRight="0.00000" gainX="5.70000" gainY="7.80000" foveArea="1.80"/>
+			<focalPoint atX="0.04000" atY="-0.07000" offsetXLeft="0.00000" offsetXRight="0.00000" gainX="5.30000" gainY="8.00000" foveArea="0.00"/>
+		</foveatedRenderingSetup>
+		<foveatedRenderingSetup for="1.75" minDensity="0.0">
+			444444
+			443344
+			421124
+			421124
+			442244
+			444444
+			444444
+			<focalPoint atX="0.04000" atY="0.01000" offsetXLeft="0.00000" offsetXRight="0.00000" gainX="5.70000" gainY="9.50000" foveArea="1.80"/>
+			<focalPoint atX="0.04000" atY="-0.07000" offsetXLeft="0.00000" offsetXRight="0.00000" gainX="6.40000" gainY="8.00000" foveArea="0.00"/>
+
+		</foveatedRenderingSetup>
+	</foveatedRenderingPresets>
+	
+	<foveatedRenderingPresets systemTagRequired="pico">
+		<foveatedRenderingSetup for="0.00" minDensity="1.0">
+			<focalPoint atX="0.00000" atY="0.000" gainX="0.00000" gainY="0.00000" foveArea="0.00"/>
+			<focalPoint atX="0.00000" atY="0.000" gainX="0.00000" gainY="0.00000" foveArea="0.00"/>
+		</foveatedRenderingSetup>
+		<foveatedRenderingSetup for="0.25" minDensity="0.124">
+			4422244
+			4211124
+			4211124
+			4211124
+			4422244
+			<focalPoint atX="0.00000" atY="0.05000" offsetXLeft="0.00000" offsetXRight="0.00000" gainX="4.60000" gainY="6.00000" foveArea="4.80"/>
+			<focalPoint atX="0.00000" atY="0.02000" offsetXLeft="0.00000" offsetXRight="0.00000" gainX="6.60000" gainY="6.40000" foveArea="2.10"/>
+		</foveatedRenderingSetup>
+		<foveatedRenderingSetup for="0.50" minDensity="0.124">
+			4443444
+			4311134
+			4311134
+			4311134
+			4433344
+			<focalPoint atX="0.00000" atY="0.05000" offsetXLeft="0.00000" offsetXRight="0.00000" gainX="4.90000" gainY="7.40000" foveArea="2.30"/>
+			<focalPoint atX="0.00000" atY="0.02000" offsetXLeft="0.00000" offsetXRight="0.00000" gainX="6.60000" gainY="6.40000" foveArea="2.10"/>
+		</foveatedRenderingSetup>
+		<foveatedRenderingSetup for="0.75" minDensity="0.124">
+			4444444
+			4421244
+			4311134
+			4311134
+			4443444
+			<focalPoint atX="0.00000" atY="-0.04000" offsetXLeft="0.00000" offsetXRight="0.00000" gainX="8.30000" gainY="8.20000" foveArea="2.30"/>
+			<focalPoint atX="0.00000" atY="0.01000" offsetXLeft="0.00000" offsetXRight="0.00000" gainX="4.90000" gainY="10.70000" foveArea="2.30"/>
+			<!--
+			4443444
+			4421244
+			4311134
+			4311134
+			4433344
+			<focalPoint atX="0.00000" atY="-0.02000" offsetXLeft="0.00000" offsetXRight="0.00000" gainX="4.90000" gainY="7.40000" foveArea="1.00"/>
+			<focalPoint atX="0.00000" atY="0.09000" offsetXLeft="0.00000" offsetXRight="0.00000" gainX="17.30000" gainY="7.40000" foveArea="2.30"/>
+			-->
+		</foveatedRenderingSetup>
+		<foveatedRenderingSetup for="1.00" minDensity="0.0624">
+			4444444
+			4421244
+			4411144
+			4411144
+			4443444
+			<focalPoint atX="0.00000" atY="-0.04000" offsetXLeft="0.00000" offsetXRight="0.00000" gainX="8.30000" gainY="8.20000" foveArea="2.30"/>
+			<focalPoint atX="0.00000" atY="0.01000" offsetXLeft="0.00000" offsetXRight="0.00000" gainX="5.40000" gainY="10.70000" foveArea="2.30"/>
+			<!--
+			4444444
+			4421244
+			4311134
+			4311134
+			4443444
+			<focalPoint atX="0.00000" atY="-0.04000" offsetXLeft="0.00000" offsetXRight="0.00000" gainX="8.30000" gainY="8.20000" foveArea="2.30"/>
+			<focalPoint atX="0.00000" atY="0.01000" offsetXLeft="0.00000" offsetXRight="0.00000" gainX="4.90000" gainY="10.70000" foveArea="2.30"/>
+			-->
+		</foveatedRenderingSetup>
+		<foveatedRenderingSetup for="1.25" minDensity="0.0624">
+			4444444
+			4421244
+			4421144
+			4421144
+			4443444
+			<focalPoint atX="-0.16000" atY="-0.04000" offsetXLeft="0.00000" offsetXRight="0.00000" gainX="10.60000" gainY="9.00000" foveArea="2.30"/>
+			<focalPoint atX="0.00000" atY="0.05000" offsetXLeft="0.00000" offsetXRight="0.00000" gainX="12.00000" gainY="7.90000" foveArea="3.50"/>
+			<!--
+			4444444
+			4431344
+			4311134
+			4311134
+			4443444
+			<focalPoint atX="0.00000" atY="-0.04000" offsetXLeft="0.00000" offsetXRight="0.00000" gainX="4.90000" gainY="10.30000" foveArea="2.30"/>
+			<focalPoint atX="0.00000" atY="-0.04000" offsetXLeft="0.00000" offsetXRight="0.00000" gainX="13.20000" gainY="7.70000" foveArea="2.30"/>
+			-->
+		</foveatedRenderingSetup>
+		<foveatedRenderingSetup for="1.50" minDensity="0.0624">
+			4444444
+			4431244
+			4421144
+			4421144
+			4443444
+			<focalPoint atX="0.00000" atY="-0.04000" offsetXLeft="0.00000" offsetXRight="0.00000" gainX="10.60000" gainY="8.20000" foveArea="2.30"/>
+			<focalPoint atX="-0.11000" atY="0.01000" offsetXLeft="0.00000" offsetXRight="0.00000" gainX="9.20000" gainY="10.70000" foveArea="3.50"/>
+			<!--
+			4444444
+			4421244
+			4311134
+			4311134
+			4444444
+			<focalPoint atX="0.00000" atY="-0.04000" offsetXLeft="0.00000" offsetXRight="0.00000" gainX="4.90000" gainY="10.30000" foveArea="2.30"/>
+			<focalPoint atX="0.00000" atY="0.08000" offsetXLeft="0.00000" offsetXRight="0.00000" gainX="4.60000" gainY="15.50000" foveArea="2.30"/>
+			-->
+		</foveatedRenderingSetup>
+		<foveatedRenderingSetup for="1.75" minDensity="0.0">
+			4444444
+			4421244
+			4421144
+			4421144
+			4443444
+			<focalPoint atX="0.00000" atY="-0.02000" offsetXLeft="0.00000" offsetXRight="0.00000" gainX="10.90000" gainY="9.10000" foveArea="2.30"/>
+			<focalPoint atX="-0.11000" atY="0.01000" offsetXLeft="0.00000" offsetXRight="0.00000" gainX="9.20000" gainY="16.00000" foveArea="3.50"/>
+			<!--
+			4444444
+			4432344
+			4311134
+			4311134
+			4443444
+			<focalPoint atX="0.00000" atY="-0.04000" offsetXLeft="0.00000" offsetXRight="0.00000" gainX="4.90000" gainY="10.30000" foveArea="2.30"/>
+			<focalPoint atX="0.00000" atY="-0.06000" offsetXLeft="0.00000" offsetXRight="0.00000" gainX="13.20000" gainY="8.30000" foveArea="2.30"/>
+			-->
+		</foveatedRenderingSetup>
+	</foveatedRenderingPresets>
+
+	<foveatedRenderingPresets systemTagRequired="vive">
+		<foveatedRenderingSetup for="0.00" minDensity="1.0">
+			<focalPoint atX="0.00000" atY="0.000" gainX="0.00000" gainY="0.00000" foveArea="0.00"/>
+			<focalPoint atX="0.00000" atY="0.000" gainX="0.00000" gainY="0.00000" foveArea="0.00"/>
+		</foveatedRenderingSetup>
+		<foveatedRenderingSetup for="0.25" minDensity="0.124">
+			44324
+			43113
+			42112
+			42112
+			44213
+			<focalPoint atX="0.12000" atY="-0.04000" offsetXLeft="0.00000" offsetXRight="0.00000" gainX="6.10000" gainY="6.60000" foveArea="2.30"/>
+			<focalPoint atX="0.03000" atY="0.02000" offsetXLeft="0.00000" offsetXRight="-0.02000" gainX="18.00000" gainY="3.20000" foveArea="0.00"/>
+		</foveatedRenderingSetup>
+		<foveatedRenderingSetup for="0.50" minDensity="0.124">
+			44444
+			43113
+			42112
+			42112
+			44223
+			<focalPoint atX="0.12000" atY="-0.04000" offsetXLeft="0.00000" offsetXRight="0.00000" gainX="6.10000" gainY="6.60000" foveArea="2.30"/>
+			<focalPoint atX="0.05000" atY="0.02000" offsetXLeft="0.00000" offsetXRight="-0.02000" gainX="40.00000" gainY="40.00000" foveArea="0.00"/>
+		</foveatedRenderingSetup>
+		<foveatedRenderingSetup for="0.75" minDensity="0.124">
+			44444
+			44223
+			43112
+			43112
+			44223
+			<focalPoint atX="0.08000" atY="-0.09000" offsetXLeft="0.00000" offsetXRight="0.00000" gainX="6.70000" gainY="7.10000" foveArea="2.00"/>>
+			<focalPoint atX="0.05000" atY="0.02000" offsetXLeft="0.00000" offsetXRight="-0.02000" gainX="40.00000" gainY="40.00000" foveArea="0.00"/>
+		</foveatedRenderingSetup>
+		<foveatedRenderingSetup for="1.00" minDensity="0.0624">
+			44444
+			44224
+			43112
+			43112
+			44334
+			<focalPoint atX="0.09000" atY="-0.04000" offsetXLeft="0.00000" offsetXRight="-0.01000" gainX="7.10000" gainY="9.00000" foveArea="2.30"/>
+			<focalPoint atX="0.00000" atY="-0.11000" offsetXLeft="0.00000" offsetXRight="0.00000" gainX="40.00000" gainY="40.00000" foveArea="2.30"/>
+		</foveatedRenderingSetup>
+		<foveatedRenderingSetup for="1.25" minDensity="0.0624">
+			44444
+			44334
+			43113
+			43113
+			44334
+			<focalPoint atX="0.11000" atY="-0.07000" offsetXLeft="0.00000" offsetXRight="-0.02000" gainX="8.00000" gainY="9.30000" foveArea="2.30"/>
+			<focalPoint atX="0.00000" atY="-0.11000" offsetXLeft="0.00000" offsetXRight="0.00000" gainX="40.00000" gainY="40.00000" foveArea="2.30"/>
+		</foveatedRenderingSetup>
+		<foveatedRenderingSetup for="1.50" minDensity="0.0624">
+			44444
+			44324
+			44213
+			44213
+			44434
+			<focalPoint atX="-0.02000" atY="-0.08000" offsetXLeft="0.00000" offsetXRight="-0.02000" gainX="12.40000" gainY="7.80000" foveArea="0.00"/>
+			<focalPoint atX="0.05000" atY="0.02000" offsetXLeft="0.00000" offsetXRight="-0.02000" gainX="22.10000" gainY="9.90000" foveArea="1.00"/>
+		</foveatedRenderingSetup>
+		<foveatedRenderingSetup for="1.75" minDensity="0.0">
+			44444
+			44434
+			44213
+			44213
+			44434
+			<focalPoint atX="-0.02000" atY="-0.08000" offsetXLeft="0.00000" offsetXRight="-0.02000" gainX="12.40000" gainY="8.80000" foveArea="0.00"/>
+			<focalPoint atX="0.00000" atY="-1.00000" offsetXLeft="0.00000" offsetXRight="0.00000" gainX="40.00000" gainY="40.00000" foveArea="0.00"/>
+		</foveatedRenderingSetup>
+	</foveatedRenderingPresets>
+	
+	<primitivesPipeline>
+		<vertexShader2D>
+			<data>
+				// uniforms
+				uniform mat4 modelViewMatrix;
+				uniform mat4 projectionMatrix;
+				uniform vec4 modelViewClipPlanes[CLIP_PLANE_COUNT];
+				uniform int modelViewClipPlanesCount;
+				
+				// input
+				in HIGHP vec2 inAPosition;
+				in vec2 inOUV;
+				in LOWP vec4 inOColour;
+				
+				// output
+				out vec2 varUV;
+				out LOWP vec4 varColour;
+				out HIGHP vec2 varModelPosition;
+
+				#ifndef GLES
+				out float gl_ClipDistance[CLIP_PLANE_COUNT];
+				#endif
+			</data>
+			<mainBody>
+				// calculate position
+				HIGHP vec4 prcPosition;
+				
+				prcPosition.xyzw = vec4(inAPosition.x, inAPosition.y, 0.0, 1.0);
+
+				prcPosition = modelViewMatrix * prcPosition;
+				HIGHP vec4 clipPosition = prcPosition;
+
+				// fill output
+				gl_Position = projectionMatrix * prcPosition;
+				
+				// just copy
+				varUV = inOUV;
+				varColour = inOColour;
+				varModelPosition = inAPosition;
+
+				// apply clipping
+				APPLY_CLIPPING;
+			</mainBody>
+		</vertexShader2D>
+
+		<vertexShader3D>
+			<data>
+				// uniforms
+				uniform mat4 modelViewMatrix;
+				uniform mat4 projectionMatrix;
+				uniform vec4 modelViewClipPlanes[CLIP_PLANE_COUNT];
+				uniform int modelViewClipPlanesCount;
+				
+				// input
+				in HIGHP vec3 inAPosition;
+				in vec2 inOUV;
+				in LOWP vec4 inOColour;
+				
+				// output
+				out vec2 varUV;
+				out LOWP vec4 varColour;
+				out HIGHP vec3 varModelPosition;
+				
+				#ifndef GLES
+				out float gl_ClipDistance[CLIP_PLANE_COUNT];
+				#endif
+			</data>
+			<mainBody>
+				// calculate position
+				HIGHP vec4 prcPosition;
+				
+				prcPosition.xyz = inAPosition;
+				prcPosition.w = 1.0;
+
+				prcPosition = modelViewMatrix * prcPosition;
+				HIGHP vec4 clipPosition = prcPosition;
+				
+				// fill output
+				gl_Position = projectionMatrix * prcPosition;
+				
+				// just copy
+				varUV = inOUV;
+				varColour = inOColour;
+				varModelPosition = inAPosition;
+
+				// apply clipping
+				APPLY_CLIPPING;
+			</mainBody>
+		</vertexShader3D>
+		<defaultVertexShader>
+		</defaultVertexShader>
+		
+		fragment shader
+		<fragmentShaderBasic>
+			<data>
+				// input
+				in LOWP vec4 varColour;
+				
+				// output
+				out vec4 colour;
+			</data>
+			<mainBody>
+				colour = varColour;
+			</mainBody>
+		</fragmentShaderBasic>
+		
+		fragment shader
+		<fragmentShaderWithTexture>
+			<data>
+				// uniforms
+				uniform sampler2D inTexture;
+			#ifdef RETRO
+				uniform float ignoreRetro;
+			#endif
+			
+				// input
+				in vec2 varUV;
+				in LOWP vec4 varColour;
+				
+				// output
+				out vec4 colour;
+			</data>
+			<defaultValues>
+				<float name="ignoreRetro">0</float>
+			</defaultValues>
+			<mainBody>
+				LOWP vec4 prcColour = texture(inTexture, varUV).rgba;
+				prcColour.rgba *= varColour.rgba;
+				colour = prcColour;
+				
+			#ifdef RETRO
+				float maxgb = max(colour.g, colour.b);
+				float c = max(colour.r, maxgb);
+				float limitc = 1.0;//min(1.0, 1.0 + maxgb - colour.r * 0.15);
+				float offmin = 0.1;
+				float offmax = 1.2;
+				c = mix(offmin, offmax, c);
+				c = clamp(c, 0.0, 1.0);
+				c = 1.0 - c;
+				c = c * c;
+				c = 1.0 - c;
+				float off = 0.5;
+				c = -off + (1.0 + off * 2.0) * c;
+				c = clamp(c, 0.0, limitc);
+				c = floor(c);
+				colour.rgb = mix(vec3(0.212, 0.200, 0.106), vec3(0.792, 0.82, 0.878), c);
+				colour = mix(colour, prcColour, ignoreRetro);
+				colour.a = floor(colour.a + 0.75);
+			#endif
+			</mainBody>
+		</fragmentShaderWithTexture>
+
+		<fragmentShaderWithoutTexture>
+			<data>
+			#ifdef RETRO
+				uniform float ignoreRetro;
+			#endif
+
+				// input
+				in LOWP vec4 varColour;
+				
+				// output
+				out vec4 colour;
+			</data>
+			<defaultValues>
+				<float name="ignoreRetro">0</float>
+			</defaultValues>
+			<mainBody>
+				colour = varColour;
+
+			#ifdef RETRO
+				float maxgb = max(colour.g, colour.b);
+				float c = max(colour.r, maxgb);
+				float limitc = 1.0;//min(1.0, 1.0 + maxgb - colour.r * 0.15);
+				float offmin = 0.1;
+				float offmax = 1.2;
+				c = mix(offmin, offmax, c);
+				c = clamp(c, 0.0, 1.0);
+				c = 1.0 - c;
+				c = c * c;
+				c = 1.0 - c;
+				float off = 0.5;
+				c = -off + (1.0 + off * 2.0) * c;
+				c = clamp(c, 0.0, limitc);
+				c = floor(c);
+				colour.rgb = mix(vec3(0.212, 0.200, 0.106), vec3(0.792, 0.82, 0.878), c);
+				colour = mix(colour, varColour, ignoreRetro);
+				colour.a = floor(colour.a + 0.75);
+			#endif
+			</mainBody>
+		</fragmentShaderWithoutTexture>
+
+		<fragmentShaderWithTextureDiscardsBlending>
+			<data>
+				// uniforms
+				uniform sampler2D inTexture;
+			#ifdef RETRO
+				uniform float ignoreRetro;
+			#endif
+				
+				// input
+				in vec2 varUV;
+				in LOWP vec4 varColour;
+				
+				// output
+				out vec4 colour;
+			</data>
+			<defaultValues>
+				<float name="ignoreRetro">0</float>
+			</defaultValues>
+			<mainBody>
+				LOWP vec4 prcColour = texture(inTexture, varUV).rgba;
+				prcColour.rgba *= varColour.rgba;
+				colour = prcColour;
+				
+			#ifdef RETRO
+				float maxgb = max(colour.g, colour.b);
+				float c = max(colour.r, maxgb);
+				float limitc = 1.0;//min(1.0, 1.0 + maxgb - colour.r * 0.15);
+				float offmin = 0.1;
+				float offmax = 1.2;
+				c = mix(offmin, offmax, c);
+				c = clamp(c, 0.0, 1.0);
+				c = 1.0 - c;
+				c = c * c;
+				c = 1.0 - c;
+				float off = 0.5;
+				c = -off + (1.0 + off * 2.0) * c;
+				c = clamp(c, 0.0, limitc);
+				c = floor(c);
+				colour.rgb = mix(vec3(0.212, 0.200, 0.106), vec3(0.792, 0.82, 0.878), c);
+				colour = ignoreRetro * prcColour + (1.0 - ignoreRetro) * colour;
+				colour.a = floor(colour.a + 0.75);
+			#endif
+
+				if (colour.a &lt; 0.5) discard;
+			</mainBody>
+		</fragmentShaderWithTextureDiscardsBlending>
+
+		<fragmentShaderWithoutTextureDiscardsBlending>
+			<data>
+			#ifdef RETRO
+				uniform float ignoreRetro;
+			#endif
+
+				// input
+				in LOWP vec4 varColour;
+				
+				// output
+				out vec4 colour;
+			</data>
+			<defaultValues>
+				<float name="ignoreRetro">0</float>
+			</defaultValues>
+			<mainBody>
+				colour = varColour;
+				
+			#ifdef RETRO
+				float maxgb = max(colour.g, colour.b);
+				float c = max(colour.r, maxgb);
+				float limitc = 1.0;//min(1.0, 1.0 + maxgb - colour.r * 0.15);
+				float offmin = 0.1;
+				float offmax = 1.2;
+				c = mix(offmin, offmax, c);
+				c = clamp(c, 0.0, 1.0);
+				c = 1.0 - c;
+				c = c * c;
+				c = 1.0 - c;
+				float off = 0.5;
+				c = -off + (1.0 + off * 2.0) * c;
+				c = clamp(c, 0.0, limitc);
+				c = floor(c);
+				colour.rgb = mix(vec3(0.212, 0.200, 0.106), vec3(0.792, 0.82, 0.878), c);
+				colour = mix(colour, varColour, ignoreRetro);
+				colour.a = floor(colour.a + 0.75);
+			#endif
+
+				if (colour.a &lt; 0.5) discard;
+			</mainBody>
+		</fragmentShaderWithoutTextureDiscardsBlending>
+
+		fragment shader - "use with primitives"
+		<useWithPrimitivesFragmentShader>
+			<data>
+				// uniforms
+				
+				// input
+				in LOWP vec4 varColour;
+
+				// output
+				out vec4 colour;
+			</data>
+		</useWithPrimitivesFragmentShader>
+	
+	</primitivesPipeline>
+	
+	<renderingPipeline>
+		we use centroid for varPosition as we are not interested in derivatives (due to centre replaced there may be no varPositions for some samples)
+		this solves issues with edges (while using multisampling) shimmering
+		
+		similarly we use centroid for
+			varLightApply, varLightColourInfluence, varModLight - to avoid shimmering on small round surfaces
+			varNormal - to avoid shimmering
+		
+		vertex shader - static
+		<vertexShaderStatic>
+			<data>
+				// uniforms
+				uniform mat3 normalMatrix;
+				uniform mat3 normalVRMatrix;
+				uniform mat4 modelViewMatrix;
+				uniform mat4 projectionMatrix;
+				uniform vec4 modelViewClipPlanes[CLIP_PLANE_COUNT];
+				uniform int modelViewClipPlanesCount;
+				uniform float scaleOutPosition; // to avoid near/far planes
+			#ifdef WITH_LIGHT
+			#ifdef VERTEX_LIGHT
+				uniform HIGHP vec3 lightDir; // direction in which light travels -- in view space (just as normal and position is)
+				uniform vec4 lightModulateColourOnto;
+				uniform vec4 lightModulateColourMid;
+				uniform vec4 lightModulateColourAway;
+			#endif
+			#endif
+			#ifdef VERTEX_EMISSIVE
+			#ifdef WITH_EMISSIVE
+				// emissive
+				uniform vec4 emissiveColour; // alpha to override (if 0 will be use (base + (emi - base) * material))
+				uniform vec4 emissiveBaseColour; // alpha to work as minimum value, if 0 is set will allow emissive colour to be less
+				uniform float emissivePower;
+			#endif
+			#endif
+				
+				// input
+				in HIGHP vec3 inAPosition;
+				in vec3 inONormal;
+				in vec2 inOUV;
+				in LOWP vec3 inOColour;
+			#ifdef VERTEX_MATERIAL
+			#ifdef WITH_MATERIAL
+				in LOWP vec4 inOMaterial;
+			#endif
+			#ifdef WITH_MATERIAL_PROP
+				in LOWP vec4 inOMaterialProp;
+			#endif
+			#endif
+			#ifdef VERTEX_VOXEL
+			#ifdef WITH_VOXEL
+				in LOWP vec4 inOMaterialVoxel0;
+				in LOWP vec4 inOMaterialVoxel1;
+			#endif
+			#endif
+				
+				// process variables
+				HIGHP vec4 prcPosition;
+				vec4 prcNormal;
+				vec2 prcUV;
+				LOWP vec3 prcColour;
+			#ifdef WITH_LIGHT
+			#ifdef VERTEX_LIGHT
+				HIGHP vec3 prcLightDir;
+			#endif
+			#endif
+			#ifdef VERTEX_EMISSIVE
+			#ifdef WITH_EMISSIVE
+				// emissive
+				LOWP vec4 prcEmissiveColour;
+				LOWP vec4 prcEmissiveBaseColour;
+				LOWP float prcEmissivePower;
+			#endif
+			#endif
+				
+				// output
+				out HIGHP vec3 varModelPosition;
+				out HIGHP vec3 varNoisePosition;
+				centroid out vec3 varNormal;
+				centroid out HIGHP vec3 varPosition;
+				centroid out HIGHP vec4 varProjectedPosition;
+				centroid out HIGHP vec3 varVRPosition;
+				out vec2 varUV;
+				out LOWP vec3 varColour;
+			#ifdef VERTEX_MATERIAL
+			#ifdef WITH_MATERIAL
+				out LOWP vec4 varMaterial;
+			#endif
+			#ifdef WITH_MATERIAL_PROP
+				out LOWP vec4 varMaterialProp;
+			#endif
+			#endif
+			#ifdef VERTEX_VOXEL
+			#ifdef WITH_VOXEL
+				out LOWP vec4 varMaterialVoxel0;
+				out LOWP vec4 varMaterialVoxel1;
+			#endif
+			#endif
+			#ifdef WITH_LIGHT
+			#ifdef VERTEX_LIGHT
+			#ifdef VERTEX_EMISSIVE
+				centroid out LOWP float varLightApply;
+				centroid out LOWP vec3 varLightColourInfluence;
+			#else
+				centroid out LOWP vec4 varModLight;
+			#endif
+			#endif
+			#endif
+				
+			#ifndef GLES
+				out float gl_ClipDistance[CLIP_PLANE_COUNT];
+			#endif
+			</data>
+			<defaultValues>
+				<float name="scaleOutPosition">1.0</float>
+				// uniforms [light]
+				<vector3 name="lightDir" x="0" y="0" z="0"/>
+				<colour name="lightModulateColourOnto" r="1.0" g="1.0" b="0.8" a="1"/>
+				<colour name="lightModulateColourMid"  r="0.9" g="0.9" b="0.9" a="1"/>
+				<colour name="lightModulateColourAway" r="0.8" g="0.8" b="1.0" a="1"/>
+
+				<colour name="emissiveColour" r="1" g="1" b="1" a="0"/>
+				<colour name="emissiveBaseColour" r="0" g="0" b="0" a="0"/>
+				<float name="emissivePower">0.0</float>
+			</defaultValues>
+			<function name="process_pre">
+				<header>void process_pre()</header>
+			</function>
+			<function name="process_light">
+				<header>void process_light()</header>
+			</function>
+			<function name="process">
+				<header>void process()</header>
+			</function>
+			<function name="process_post_lighting">
+				<header>void process_post_lighting()</header>
+				<body>
+				#ifdef VERTEX_LIGHT
+				#ifdef WITH_LIGHT
+					MEDIUMP float prcOntoLight = dot(-prcLightDir, varNormal);
+					MEDIUMP float prcOntoLightNormalised = fma(prcOntoLight, 0.5, 0.5);
+					
+					LOWP float useOnto = clamp(fma(prcOntoLightNormalised, 2.0, -1.0), 0.0, 1.0);
+					LOWP float useAway = clamp(fma(prcOntoLightNormalised, -2.0, 1.0), 0.0, 1.0 - useOnto);
+					LOWP float useMid = 1.0 - useOnto - useAway;
+					
+					// modulate
+					LOWP vec4 modLightOnto = useOnto * lightModulateColourOnto;
+					LOWP vec4 modLightMid  = useMid  * lightModulateColourMid;
+					LOWP vec4 modLightAway = useAway * lightModulateColourAway;
+					LOWP vec4 prcModLight = modLightOnto + modLightMid + modLightAway;
+
+				#ifdef VERTEX_EMISSIVE
+					varLightApply = prcModLight.a
+				#ifdef WITH_MATERIAL_PROP
+						* (1.0 - varMaterialProp.a)
+				#endif
+					;
+						
+					varLightColourInfluence = prcModLight.rgb * varLightApply;
+				#else
+					varModLight = prcModLight;
+				#endif
+				#endif
+				#endif
+				</body>
+			</function>
+			<function name="process_post_material">
+				<header>void process_post_material()</header>
+				<body>
+				#ifdef VERTEX_MATERIAL
+				#ifdef WITH_MATERIAL
+					varMaterial = inOMaterial;
+				#endif
+				#ifdef WITH_MATERIAL_PROP
+					varMaterialProp = inOMaterialProp;
+				#endif
+				#endif
+				#ifdef VERTEX_VOXEL
+				#ifdef WITH_VOXEL
+					varMaterialVoxel0 = inOMaterialVoxel0;
+					varMaterialVoxel1 = inOMaterialVoxel1;
+				#endif
+				#endif
+				</body>
+			</function>
+			<function name="process_post_emissive">
+				<header>void process_post_emissive()</header>
+				<body>
+			#ifdef VERTEX_EMISSIVE
+			#ifdef WITH_EMISSIVE
+			#ifdef WITH_MATERIAL_PROP
+					// modify actual prcMaterialEmissive (varMaterialProp.a) as we will use it later to have light affecting or not affecting us
+					varMaterialProp.a = varMaterialProp.a * prcEmissivePower;
+			#endif
+			#ifdef WITH_MATERIAL
+					// we apply material to colour BEFORE emissive is applied
+					varColour.rgb *= varMaterial.rgb;
+			#endif
+					LOWP vec3 useEmissiveColour = mix(mix(prcEmissiveBaseColour.rgb, prcEmissiveColour.rgb, varColour.rgb), prcEmissiveColour.rgb, prcEmissiveColour.a);
+					useEmissiveColour = max(useEmissiveColour, prcEmissiveBaseColour.a * prcEmissiveBaseColour.rgb);
+			#ifdef WITH_MATERIAL_PROP
+					varColour.rgb = mix(varColour.rgb, useEmissiveColour, varMaterialProp.a);
+			#endif
+			#ifdef WITH_MATERIAL
+					// because of that, material is treated as material+emissive and normal colour should be white
+					varMaterial.rgb = varColour.rgb;
+			#endif
+					varColour.rgb = vec3(1.0, 1.0, 1.0);
+			#endif
+			#endif
+				</body>
+			</function>
+			<function name="process_post">
+				<header>void process_post()</header>
+				<body>
+				#ifdef VERTEX_MATERIAL
+					process_post_material();
+				#endif
+				#ifdef VERTEX_EMISSIVE
+					process_post_emissive();
+				#endif
+				#ifdef VERTEX_LIGHT
+					process_post_lighting();
+				#endif
+				</body>
+			</function>
+			<function name="process_pre_model_view_transform">
+				<header>void process_pre_model_view_transform()</header>
+			</function>
+			<function name="get_emissive_values">
+				<header>void get_emissive_values()</header>
+				<body>
+			#ifdef VERTEX_EMISSIVE
+			#ifdef WITH_EMISSIVE
+					prcEmissiveColour = emissiveColour;
+					prcEmissiveBaseColour = emissiveBaseColour;
+					prcEmissivePower = emissivePower;
+			#endif
+			#endif
+				</body>
+			</function>
+			<mainBody>
+				// ready data for processing
+				prcPosition.xyz = inAPosition;
+				prcPosition.w = 1.0;
+				prcNormal.xyz = inONormal;
+				prcNormal.w = 0.0; // no location affected
+				prcUV = inOUV;
+				prcColour = inOColour;
+			#ifdef WITH_LIGHT
+			#ifdef VERTEX_LIGHT
+				prcLightDir = lightDir;
+			#endif
+			#endif
+				process_pre();
+				
+				get_emissive_values();
+
+				// alter prcLightDir
+				process_light(); // default: empty
+
+				// process
+				process();
+
+				// store model position
+				varModelPosition = prcPosition.xyz;
+				
+				process_pre_model_view_transform();
+
+				varNoisePosition = prcPosition.xyz;
+
+				// fill output
+				prcPosition = modelViewMatrix * prcPosition;
+				HIGHP vec4 clipPosition = prcPosition;
+				varPosition = prcPosition.xyz;
+				gl_Position = projectionMatrix * (prcPosition * scaleOutPosition);
+				varProjectedPosition = gl_Position;
+				varNormal = normalize(normalMatrix * prcNormal.xyz);
+				varVRPosition = transpose(normalVRMatrix) * varPosition;
+				varUV = prcUV;
+				varColour = prcColour;
+				
+				process_post();
+				
+				// apply clipping
+				APPLY_CLIPPING;
+			</mainBody>
+		</vertexShaderStatic>
+		<defaultVertexShaderStatic>
+		</defaultVertexShaderStatic>
+		
+		vertex shader - skinned
+		<vertexShaderSkinned>
+			<data>
+				// uniforms
+				uniform mat3 normalMatrix;
+				uniform mat3 normalVRMatrix;
+				uniform mat4 modelViewMatrix;
+				uniform mat4 projectionMatrix;
+				uniform vec4 modelViewClipPlanes[CLIP_PLANE_COUNT];
+				uniform int modelViewClipPlanesCount;
+				uniform float scaleOutPosition; // to avoid near/far planes
+			#ifdef WITH_LIGHT
+			#ifdef VERTEX_LIGHT
+				uniform HIGHP vec3 lightDir; // direction in which light travels -- in view space (just as normal and position is)
+				uniform vec4 lightModulateColourOnto;
+				uniform vec4 lightModulateColourMid;
+				uniform vec4 lightModulateColourAway;
+			#endif
+			#endif
+			#ifdef VERTEX_EMISSIVE
+			#ifdef WITH_EMISSIVE
+				// emissive
+				uniform vec4 emissiveColour; // alpha to override (if 0 will be use (base + (emi - base) * material))
+				uniform vec4 emissiveBaseColour;
+				uniform float emissivePower;
+			#endif
+			#endif
+				
+				//
+				UNIFORM_MATRIX_ARRAY(inSkinningBones, 120);
+				
+				// input
+				in HIGHP vec3 inAPosition;
+				in vec3 inONormal;
+				in vec2 inOUV;
+				in LOWP vec3 inOColour;
+				//in int inSkinningNum;
+				in ivec4 inOSkinningIndices;
+				in vec4 inOSkinningWeights;
+			#ifdef VERTEX_MATERIAL
+			#ifdef WITH_MATERIAL
+				in LOWP vec4 inOMaterial;
+			#endif
+			#ifdef WITH_MATERIAL_PROP
+				in LOWP vec4 inOMaterialProp;
+			#endif
+			#endif
+			#ifdef VERTEX_VOXEL
+			#ifdef WITH_VOXEL
+				in LOWP vec4 inOMaterialVoxel0;
+				in LOWP vec4 inOMaterialVoxel1;
+			#endif
+			#endif
+				
+				// process variables
+				HIGHP vec4 prcPosition;
+				vec4 prcNormal;
+				vec2 prcUV;
+				LOWP vec3 prcColour;
+			#ifdef WITH_LIGHT
+			#ifdef VERTEX_LIGHT
+				HIGHP vec3 prcLightDir;
+			#endif
+			#endif
+			#ifdef VERTEX_EMISSIVE
+			#ifdef WITH_EMISSIVE
+				// emissive
+				LOWP vec4 prcEmissiveColour;
+				LOWP vec4 prcEmissiveBaseColour;
+				LOWP float prcEmissivePower;
+			#endif
+			#endif
+				
+				// output
+				out HIGHP vec3 varModelPosition;
+				out HIGHP vec3 varNoisePosition;
+				centroid out vec3 varNormal;
+				centroid out HIGHP vec3 varPosition;
+				centroid out HIGHP vec4 varProjectedPosition;
+				centroid out HIGHP vec3 varVRPosition;
+				out vec2 varUV;
+				out LOWP vec3 varColour;
+			#ifdef VERTEX_MATERIAL
+			#ifdef WITH_MATERIAL
+				out LOWP vec4 varMaterial;
+			#endif
+			#ifdef WITH_MATERIAL_PROP
+				out LOWP vec4 varMaterialProp;
+			#endif
+			#endif
+			#ifdef VERTEX_VOXEL
+			#ifdef WITH_VOXEL
+				out LOWP vec4 varMaterialVoxel0;
+				out LOWP vec4 varMaterialVoxel1;
+			#endif
+			#endif
+			#ifdef WITH_LIGHT
+			#ifdef VERTEX_LIGHT
+			#ifdef VERTEX_EMISSIVE
+				centroid out LOWP float varLightApply;
+				centroid out LOWP vec3 varLightColourInfluence;
+			#else
+				centroid out LOWP vec4 varModLight;
+			#endif
+			#endif
+			#endif
+
+			#ifndef GLES
+				out float gl_ClipDistance[CLIP_PLANE_COUNT];
+			#endif
+			</data>
+			<defaultValues>
+				<float name="scaleOutPosition">1.0</float>
+				// uniforms [light]
+				<vector3 name="lightDir" x="0" y="0" z="0"/>
+				<colour name="lightModulateColourOnto" r="1.0" g="1.0" b="0.8" a="1"/>
+				<colour name="lightModulateColourMid"  r="0.9" g="0.9" b="0.9" a="1"/>
+				<colour name="lightModulateColourAway" r="0.8" g="0.8" b="1.0" a="1"/>
+
+				<colour name="emissiveColour" r="1" g="1" b="1" a="0"/>
+				<colour name="emissiveBaseColour" r="0" g="0" b="0" a="0"/>
+				<float name="emissivePower">0.0</float>
+			</defaultValues>
+			<function name="process_pre">
+				<header>void process_pre()</header>
+			</function>
+			<function name="process_light">
+				<header>void process_light()</header>
+			</function>
+			<function name="process">
+				<header>void process()</header>
+			</function>
+			<function name="process_post_lighting">
+				<header>void process_post_lighting()</header>
+				<body>
+				#ifdef VERTEX_LIGHT
+				#ifdef WITH_LIGHT
+					MEDIUMP float prcOntoLight = dot(-prcLightDir, varNormal);
+					MEDIUMP float prcOntoLightNormalised = fma(prcOntoLight, 0.5, 0.5);
+					
+					LOWP float useOnto = clamp(fma(prcOntoLightNormalised, 2.0, -1.0), 0.0, 1.0);
+					LOWP float useAway = clamp(fma(prcOntoLightNormalised, -2.0, 1.0), 0.0, 1.0 - useOnto);
+					LOWP float useMid = 1.0 - useOnto - useAway;
+					
+					// modulate
+					LOWP vec4 modLightOnto = useOnto * lightModulateColourOnto;
+					LOWP vec4 modLightMid  = useMid  * lightModulateColourMid;
+					LOWP vec4 modLightAway = useAway * lightModulateColourAway;
+					LOWP vec4 prcModLight = modLightOnto + modLightMid + modLightAway;
+				
+				#ifdef VERTEX_EMISSIVE
+					varLightApply = prcModLight.a
+				#ifdef WITH_MATERIAL_PROP
+						* (1.0 - varMaterialProp.a)
+				#endif
+					;
+						
+					varLightColourInfluence = prcModLight.rgb * varLightApply;
+				#else
+					varModLight = prcModLight;
+				#endif
+				#endif
+				#endif
+				</body>
+			</function>
+			<function name="process_post_material">
+				<header>void process_post_material()</header>
+				<body>
+				#ifdef VERTEX_MATERIAL
+				#ifdef WITH_MATERIAL
+					varMaterial = inOMaterial;
+				#endif
+				#ifdef WITH_MATERIAL_PROP
+					varMaterialProp = inOMaterialProp;
+				#endif
+				#endif
+				#ifdef VERTEX_VOXEL
+				#ifdef WITH_VOXEL
+					varMaterialVoxel0 = inOMaterialVoxel0;
+					varMaterialVoxel1 = inOMaterialVoxel1;
+				#endif
+				#endif
+				</body>
+			</function>
+			<function name="process_post_emissive">
+				<header>void process_post_emissive()</header>
+				<body>
+			#ifdef VERTEX_EMISSIVE
+			#ifdef WITH_EMISSIVE
+			#ifdef WITH_MATERIAL_PROP
+					// modify actual prcMaterialEmissive (varMaterialProp.a) as we will use it later to have light affecting or not affecting us
+					varMaterialProp.a = varMaterialProp.a * prcEmissivePower;
+			#endif
+			#ifdef WITH_MATERIAL
+					// we apply material to colour BEFORE emissive is applied
+					varColour.rgb *= varMaterial.rgb;
+			#endif
+					LOWP vec3 useEmissiveColour = mix(mix(prcEmissiveBaseColour.rgb, prcEmissiveColour.rgb, varColour.rgb), prcEmissiveColour.rgb, prcEmissiveColour.a);
+					useEmissiveColour = max(useEmissiveColour, prcEmissiveBaseColour.a * prcEmissiveBaseColour.rgb);
+			#ifdef WITH_MATERIAL_PROP
+					varColour.rgb = mix(varColour.rgb, useEmissiveColour, varMaterialProp.a);
+			#endif
+			#ifdef WITH_MATERIAL
+					// because of that, material is treated as material+emissive and normal colour should be white
+					varMaterial.rgb = varColour.rgb;
+			#endif
+					varColour.rgb = vec3(1.0, 1.0, 1.0);
+			#endif
+			#endif
+				</body>
+			</function>
+			<function name="process_post">
+				<header>void process_post()</header>
+				<body>
+				#ifdef VERTEX_MATERIAL
+					process_post_material();
+				#endif
+				#ifdef VERTEX_EMISSIVE
+					process_post_emissive();
+				#endif
+				#ifdef VERTEX_LIGHT
+					process_post_lighting();
+				#endif
+				</body>
+			</function>
+			<function name="process_pre_model_view_transform">
+				<header>void process_pre_model_view_transform()</header>
+			</function>
+			<function name="get_emissive_values">
+				<header>void get_emissive_values()</header>
+				<body>
+			#ifdef VERTEX_EMISSIVE
+			#ifdef WITH_EMISSIVE
+					prcEmissiveColour = emissiveColour;
+					prcEmissiveBaseColour = emissiveBaseColour;
+					prcEmissivePower = emissivePower;
+			#endif
+			#endif
+				</body>
+			</function>
+			<mainBody>
+				// ready data for processing
+				prcPosition.xyz = inAPosition;
+				prcPosition.w = 1.0;
+				prcNormal.xyz = inONormal;
+				prcNormal.w = 0.0; // no location affected
+				prcUV = inOUV;
+				prcColour = inOColour;
+			#ifdef WITH_LIGHT
+			#ifdef VERTEX_LIGHT
+				prcLightDir = lightDir;
+			#endif
+			#endif
+				process_pre();
+				
+				get_emissive_values();
+
+				// alter prcLightDir
+				process_light(); // default: empty
+				
+				// process
+				process();
+
+				// store model position
+				varModelPosition = prcPosition.xyz;
+				varNoisePosition = prcPosition.xyz; // as it is in model
+				
+				// do skinning (do it after process, as we may want to process values in model space?)
+				ivec4 curIndices = inOSkinningIndices;
+				vec4 curWeights = inOSkinningWeights;
+
+				{
+					mat4 bone0;
+					mat4 bone1;
+					mat4 bone2;
+					mat4 bone3;
+					READ_FROM_UNIFORM_MATRIX_ARRAY(bone0, inSkinningBones, curIndices.x);
+					READ_FROM_UNIFORM_MATRIX_ARRAY(bone1, inSkinningBones, curIndices.y);
+					READ_FROM_UNIFORM_MATRIX_ARRAY(bone2, inSkinningBones, curIndices.z);
+					READ_FROM_UNIFORM_MATRIX_ARRAY(bone3, inSkinningBones, curIndices.w);
+					prcPosition = curWeights.x * (bone0 * prcPosition)
+								+ curWeights.y * (bone1 * prcPosition)
+								+ curWeights.z * (bone2 * prcPosition)
+								+ curWeights.w * (bone3 * prcPosition);
+					prcNormal = curWeights.x * (bone0 * prcNormal)
+							  + curWeights.y * (bone1 * prcNormal)
+							  + curWeights.z * (bone2 * prcNormal)
+							  + curWeights.w * (bone3 * prcNormal);
+				}
+				
+				process_pre_model_view_transform();
+				
+				// fill output
+				prcPosition = modelViewMatrix * prcPosition;
+				HIGHP vec4 clipPosition = prcPosition;
+				varPosition = prcPosition.xyz;
+				gl_Position = projectionMatrix * (prcPosition * scaleOutPosition);
+				varProjectedPosition = gl_Position;
+				varNormal = normalize(normalMatrix * prcNormal.xyz);
+				varVRPosition = transpose(normalVRMatrix) * varPosition;
+				varUV = prcUV;
+				varColour = prcColour;
+							
+				process_post();
+				
+				// apply clipping
+				APPLY_CLIPPING;
+			</mainBody>
+		</vertexShaderSkinned>
+		<defaultVertexShaderSkinned>
+		</defaultVertexShaderSkinned>
+		
+		vertex shader - skinned to 1 bone
+		<vertexShaderSkinnedToSingleBone>
+			<data>
+				// uniforms
+				uniform mat3 normalMatrix;
+				uniform mat3 normalVRMatrix;
+				uniform mat4 modelViewMatrix;
+				uniform mat4 projectionMatrix;
+				uniform vec4 modelViewClipPlanes[CLIP_PLANE_COUNT];
+				uniform int modelViewClipPlanesCount;
+				uniform float scaleOutPosition; // to avoid near/far planes
+				//
+				UNIFORM_MATRIX_ARRAY(inSkinningBones, 120);
+			#ifdef WITH_LIGHT
+			#ifdef VERTEX_LIGHT
+				uniform HIGHP vec3 lightDir; // direction in which light travels -- in view space (just as normal and position is)
+				uniform vec4 lightModulateColourOnto;
+				uniform vec4 lightModulateColourMid;
+				uniform vec4 lightModulateColourAway;
+			#endif
+			#endif
+			#ifdef VERTEX_EMISSIVE
+			#ifdef WITH_EMISSIVE
+				// emissive
+				uniform vec4 emissiveColour; // alpha to override (if 0 will be use (base + (emi - base) * material))
+				uniform vec4 emissiveBaseColour;
+				uniform float emissivePower;
+			#endif
+			#endif
+				
+				// input
+				in HIGHP vec3 inAPosition;
+				in vec3 inONormal;
+				in vec2 inOUV;
+				in LOWP vec3 inOColour;
+				//in int inSkinningNum;
+				in int inOSkinningIndex;
+			#ifdef VERTEX_MATERIAL
+			#ifdef WITH_MATERIAL
+				in LOWP vec4 inOMaterial;
+			#endif
+			#ifdef WITH_MATERIAL_PROP
+				in LOWP vec4 inOMaterialProp;
+			#endif
+			#endif
+			#ifdef VERTEX_VOXEL
+			#ifdef WITH_VOXEL
+				in LOWP vec4 inOMaterialVoxel0;
+				in LOWP vec4 inOMaterialVoxel1;
+			#endif
+			#endif
+				
+				// process variables
+				HIGHP vec4 prcPosition;
+				vec4 prcNormal;
+				vec2 prcUV;
+				LOWP vec3 prcColour;
+			#ifdef WITH_LIGHT
+			#ifdef VERTEX_LIGHT
+				HIGHP vec3 prcLightDir;
+			#endif
+			#endif
+			#ifdef VERTEX_EMISSIVE
+			#ifdef WITH_EMISSIVE
+				// emissive
+				LOWP vec4 prcEmissiveColour;
+				LOWP vec4 prcEmissiveBaseColour;
+				LOWP float prcEmissivePower;
+			#endif
+			#endif
+				
+				// output
+				out HIGHP vec3 varModelPosition;
+				out HIGHP vec3 varNoisePosition;
+				centroid out vec3 varNormal;
+				centroid out HIGHP vec3 varPosition;
+				centroid out HIGHP vec4 varProjectedPosition;
+				centroid out HIGHP vec3 varVRPosition;
+				out vec2 varUV;
+				out LOWP vec3 varColour;
+			#ifdef VERTEX_MATERIAL
+			#ifdef WITH_MATERIAL
+				out LOWP vec4 varMaterial;
+			#endif
+			#ifdef WITH_MATERIAL_PROP
+				out LOWP vec4 varMaterialProp;
+			#endif
+			#endif
+			#ifdef VERTEX_VOXEL
+			#ifdef WITH_VOXEL
+				out LOWP vec4 varMaterialVoxel0;
+				out LOWP vec4 varMaterialVoxel1;
+			#endif
+			#endif
+			#ifdef WITH_LIGHT
+			#ifdef VERTEX_LIGHT
+			#ifdef VERTEX_EMISSIVE
+				centroid out LOWP float varLightApply;
+				centroid out LOWP vec3 varLightColourInfluence;
+			#else
+				centroid out LOWP vec4 varModLight;
+			#endif
+			#endif
+			#endif
+
+			#ifndef GLES
+				out float gl_ClipDistance[CLIP_PLANE_COUNT];
+			#endif
+			</data>
+			<defaultValues>
+				<float name="scaleOutPosition">1.0</float>
+				// uniforms [light]
+				<vector3 name="lightDir" x="0" y="0" z="0"/>
+				<colour name="lightModulateColourOnto" r="1.0" g="1.0" b="0.8" a="1"/>
+				<colour name="lightModulateColourMid"  r="0.9" g="0.9" b="0.9" a="1"/>
+				<colour name="lightModulateColourAway" r="0.8" g="0.8" b="1.0" a="1"/>
+
+				<colour name="emissiveColour" r="1" g="1" b="1" a="0"/>
+				<colour name="emissiveBaseColour" r="0" g="0" b="0" a="0"/>
+				<float name="emissivePower">0.0</float>
+			</defaultValues>
+			<function name="process_pre">
+				<header>void process_pre()</header>
+			</function>
+			<function name="process_light">
+				<header>void process_light()</header>
+			</function>
+			<function name="process">
+				<header>void process()</header>
+			</function>
+			<function name="process_post_lighting">
+				<header>void process_post_lighting()</header>
+				<body>
+				#ifdef VERTEX_LIGHT
+				#ifdef WITH_LIGHT
+					MEDIUMP float prcOntoLight = dot(-prcLightDir, varNormal);
+					MEDIUMP float prcOntoLightNormalised = fma(prcOntoLight, 0.5, 0.5);
+					
+					LOWP float useOnto = clamp(fma(prcOntoLightNormalised, 2.0, -1.0), 0.0, 1.0);
+					LOWP float useAway = clamp(fma(prcOntoLightNormalised, -2.0, 1.0), 0.0, 1.0 - useOnto);
+					LOWP float useMid = 1.0 - useOnto - useAway;
+					
+					// modulate
+					LOWP vec4 modLightOnto = useOnto * lightModulateColourOnto;
+					LOWP vec4 modLightMid  = useMid  * lightModulateColourMid;
+					LOWP vec4 modLightAway = useAway * lightModulateColourAway;
+					LOWP vec4 prcModLight = modLightOnto + modLightMid + modLightAway;
+
+				#ifdef VERTEX_EMISSIVE
+					varLightApply = prcModLight.a
+				#ifdef WITH_MATERIAL_PROP
+						* (1.0 - varMaterialProp.a)
+				#endif
+					;
+						
+					varLightColourInfluence = prcModLight.rgb * varLightApply;
+				#else
+					varModLight = prcModLight;
+				#endif
+				#endif
+				#endif
+				</body>
+			</function>
+			<function name="process_post_material">
+				<header>void process_post_material()</header>
+				<body>
+				#ifdef VERTEX_MATERIAL
+				#ifdef WITH_MATERIAL
+					varMaterial = inOMaterial;
+				#endif
+				#ifdef WITH_MATERIAL_PROP
+					varMaterialProp = inOMaterialProp;
+				#endif
+				#endif
+				#ifdef VERTEX_VOXEL
+				#ifdef WITH_VOXEL
+					varMaterialVoxel0 = inOMaterialVoxel0;
+					varMaterialVoxel1 = inOMaterialVoxel1;
+				#endif
+				#endif
+				</body>
+			</function>
+			<function name="process_post_emissive">
+				<header>void process_post_emissive()</header>
+				<body>
+			#ifdef VERTEX_EMISSIVE
+			#ifdef WITH_EMISSIVE
+			#ifdef WITH_MATERIAL_PROP
+					// modify actual prcMaterialEmissive (varMaterialProp.a) as we will use it later to have light affecting or not affecting us
+					varMaterialProp.a = varMaterialProp.a * prcEmissivePower;
+			#endif
+			#ifdef WITH_MATERIAL
+					// we apply material to colour BEFORE emissive is applied
+					varColour.rgb *= varMaterial.rgb;
+			#endif
+					LOWP vec3 useEmissiveColour = mix(mix(prcEmissiveBaseColour.rgb, prcEmissiveColour.rgb, varColour.rgb), prcEmissiveColour.rgb, prcEmissiveColour.a);
+					useEmissiveColour = max(useEmissiveColour, prcEmissiveBaseColour.a * prcEmissiveBaseColour.rgb);
+			#ifdef WITH_MATERIAL_PROP
+					varColour.rgb = mix(varColour.rgb, useEmissiveColour, varMaterialProp.a);
+			#endif
+			#ifdef WITH_MATERIAL
+					// because of that, material is treated as material+emissive and normal colour should be white
+					varMaterial.rgb = varColour.rgb;
+			#endif
+					varColour.rgb = vec3(1.0, 1.0, 1.0);
+			#endif
+			#endif
+				</body>
+			</function>
+			<function name="process_post">
+				<header>void process_post()</header>
+				<body>
+				#ifdef VERTEX_MATERIAL
+					process_post_material();
+				#endif
+				#ifdef VERTEX_EMISSIVE
+					process_post_emissive();
+				#endif
+				#ifdef VERTEX_LIGHT
+					process_post_lighting();
+				#endif
+				</body>
+			</function>
+			<function name="process_pre_model_view_transform">
+				<header>void process_pre_model_view_transform()</header>
+			</function>
+			<function name="get_emissive_values">
+				<header>void get_emissive_values()</header>
+				<body>
+			#ifdef VERTEX_EMISSIVE
+			#ifdef WITH_EMISSIVE
+					prcEmissiveColour = emissiveColour;
+					prcEmissiveBaseColour = emissiveBaseColour;
+					prcEmissivePower = emissivePower;
+			#endif
+			#endif
+				</body>
+			</function>
+			<mainBody>
+				// ready data for processing
+				prcPosition.xyz = inAPosition;
+				prcPosition.w = 1.0;
+				prcNormal.xyz = inONormal;
+				prcNormal.w = 0.0; // no location affected
+				prcUV = inOUV;
+				prcColour = inOColour;
+			#ifdef WITH_LIGHT
+			#ifdef VERTEX_LIGHT
+				prcLightDir = lightDir;
+			#endif
+			#endif
+				process_pre();
+				
+				get_emissive_values();
+
+				// alter prcLightDir
+				process_light(); // default: empty
+
+				// process
+				process();
+
+				// store model position
+				varModelPosition = prcPosition.xyz;
+				
+				// do skinning (do it after process, as we may want to process values in model space?)
+				{
+					mat4 bone;
+					READ_FROM_UNIFORM_MATRIX_ARRAY(bone, inSkinningBones, inOSkinningIndex);
+
+					varNoisePosition = prcPosition.xyz * length(bone[0].xyz); // skinned are scaled, apply scale here
+			
+					prcPosition = bone * prcPosition;
+					prcNormal = bone * prcNormal;
+				}
+
+				process_pre_model_view_transform();
+				
+				// fill output
+				prcPosition = modelViewMatrix * prcPosition;
+				HIGHP vec4 clipPosition = prcPosition;
+				varPosition = prcPosition.xyz;
+				gl_Position = projectionMatrix * (prcPosition * scaleOutPosition);
+				varProjectedPosition = gl_Position;
+				varNormal = normalize(normalMatrix * prcNormal.xyz);
+				varVRPosition = transpose(normalVRMatrix) * varPosition;
+				varUV = prcUV;
+				varColour = prcColour;
+
+				process_post();
+				
+				// apply clipping
+				APPLY_CLIPPING;
+			</mainBody>
+		</vertexShaderSkinnedToSingleBone>
+		<defaultVertexShaderSkinnedToSingleBone>
+		</defaultVertexShaderSkinnedToSingleBone>
+
+		fragment shader
+		<fragmentShader>
+			<data>
+				// uniforms
+				// used textures:
+				uniform sampler2D inMaterialColour; // rgb10a2
+						// rgb - colour
+						// a - alpha component (if blending is on, note in most cases it is 2 bit!)
+				uniform sampler2D inMaterialProp; // property (onto observer) - rgba8
+						// r - roughness (0, very sharp, 1, goes smoothly) (square value is used)
+						// g - metallic (0, non metallic - no specular, 1, metallic full specular)
+						// b - tint
+						// a - emissive 
+				uniform sampler2D inMaterialVoxel; // rgba8
+						// r - voxel noise (lightness)
+						// g - voxel noise (roughness offset)
+						// b - voxel noise (metallic offset)
+						// a - voxel noise (flat - uneven)
+				uniform HIGHP float time; // anti banding here?
+
+				uniform HIGHP float individual; // individual offset for some stuff
+				
+				uniform HIGHP vec3 eyeOffset; // eye offset to the head/main camera, in that space
+				
+				// uniforms [light]
+			#ifndef VERTEX_LIGHT
+				uniform vec4 lightModulateColourOnto;
+				uniform vec4 lightModulateColourMid;
+				uniform vec4 lightModulateColourAway;
+			#else
+			#ifdef RETRO
+				uniform vec4 lightModulateColourOnto;
+				uniform vec4 lightModulateColourMid;
+				uniform vec4 lightModulateColourAway;
+			#endif
+			#endif
+				uniform HIGHP vec3 lightDir; // direction in which light travels -- in view space (just as normal and position is)
+				// rest moved to vertex shaders
+				uniform float fresnelStrength;
+
+				uniform HIGHP float lightSpecularSide; // if opposite, will pretend sun is on the other side
+				uniform float lightSpecularStrength;
+				uniform /* colour */ vec4 lightSpecularColour; // alpha component is ignored
+
+				uniform HIGHP float lightSpecularSizeDot; // mostly to increase light source size, can't be zero!
+
+				// emissive
+				uniform vec4 emissiveColour; // alpha to override (if 0 will be use (base + (emi - base) * material))
+				uniform vec4 emissiveBaseColour;
+				uniform float emissivePower;
+				
+				// global tint, desaturate
+				uniform vec4 globalTint;
+				uniform vec4 globalDesaturate; // only alpha is used right now?
+				uniform vec4 globalDesaturateChangeInto;
+				
+				// cone lights
+			#ifdef CONE_LIGHTS
+				const int MAX_CONE_LIGHTS = 2;
+				uniform int coneLightsCount;
+				UNIFORM_MATRIX_ARRAY(coneLights, MAX_CONE_LIGHTS);
+				/*
+			 	 *	
+				 *	[0][0] [0][1] [0][2] [0][3]
+				 *	position============ [rsrv]		reserved for priority
+				 *
+				 *	[1][0] [1][1] [1][2] [1][3]
+				 *	light_dir===========
+				 *
+				 *	[2][0] [2][1] [2][2] [2][3]
+				 *	colour==============
+				 *
+				 *	[3][0] [3][1] [3][2] [3][3]
+				 *	power= 1/dst^ in-dp  oi-dpi		inner dot product, (0 - 1) / (outer-dp - inner-dp)
+				 */
+			#endif
+				
+				// multi lights
+			#ifdef POINT_LIGHTS
+				const int MAX_LIGHTS = 8;
+				uniform int lightsCount;
+				UNIFORM_MATRIX_ARRAY(lights, MAX_LIGHTS);
+				/*
+			 	 *	
+				 *	[0][0] [0][1] [0][2] [0][3]
+				 *	position============ [rsrv]		reserved for priority
+				 *
+				 *	[1][0] [1][1] [1][2] [1][3]
+				 *	colour==============
+				 *
+				 *	[2][0] [2][1] [2][2] [2][3]
+				 *	power= 1/dst^
+				 *
+				 *	[3][0] [3][1] [3][2] [3][3]
+				 *	light_dir=========== 1/2 length
+				 */
+			#endif
+				
+				// uniforms [how distance modifies colour]
+				uniform HIGHP float distanceModCoef; // 1.0 / distance at which it gets fully desaturaded (well, using above values, we can desaturate into background colour)
+				// and still set background sky colour with backgroundSkyUseColourUpSeg set to (2,3) as it will be used for reflections
+				uniform HIGHP float fogDistanceCoef; // 1.0 / distance at which it gets fully fogged
+				uniform HIGHP float aboveFogDistanceCoef; // 1.0 / distance at which it gets fully fogged (above the fog)
+				uniform HIGHP float aboveFogHeightCoef; // 1.0 / distance at which it gets fully fogged (above the fog)
+				
+				uniform LOWP float applyFogSoFar; // use with caution only for very specific zones
+				uniform HIGHP float fogSoFarDistance; // to allow using different type of fog beyond a door
+				uniform LOWP float fogSoFarAmountRaw; // if we shouldn't start at exact place as we change type of fog, this is pre 1 - sqr(1-fog)
+				uniform LOWP vec3 fogSoFarColour;
+
+				/*
+				 *	unless we use uniformBackgroundFog + uniformBackgroundFogColour
+				 *	we have basically two colours:
+				 *
+				 *		1. background sky - pure sky colour (backgroundSky)
+				 *		2. background fog - fog that is supposed to be below us (backgroundFog)
+				 *	
+				 *	we calculate our background colour that also works as fog colour
+				 *	we blend these two depending on position normal (backgroundUseFogSeg, it should be going down)
+				 *	if we want to be deep into the fog (down), backgroundUseFogSeg should start higher (if above 1 and length not reaching 1, full fog)
+				 *
+				 *	then we calculate how much fog do we apply, to understand this, we need to explain three various fogs we use
+				 *
+				 *		1. normal fog - this is in a certain distance - gets overriden by "below fog" and "above fog"
+				 *				this is a sphere around us that enforces fog at a certain distance
+				 *			uses:	fogDistanceCoef (disappear in distance)
+				 *		2. below fog - this is full fog below
+				 *				this is for everything below a certain level (world/anchor based) to enforce fog
+				 *			uses:	useBackgroundVerticalForFogSeg (against anchored position, background up)
+				 *		3. above fog - this is a different fog, that does not use down background fog (uses background sky)
+				 *				this is above a certain level to allow objects be visible from a distance
+				 *				it composes of two things: relative angle and world along up dir
+				 *				out of two, the maximum value is used
+				 *			uses:	aboveFogHeightCoef (to make high things disappear in the sky)
+				 *					aboveFogDistanceCoef (as fogDistanceCoef)
+				 * 					useAboveFog_posNormUpSeg (against position normalised) (make things use "above fog" when at a certain angle)
+				 *					useAboveFog_verticalSeg (against anchored position, background up) (make things things use "above fog" when at a certain altitude)
+				 *
+				 *		note, certain things look ok if used in the right conditions
+				 *		1. below fog looks good if looked at from above or slightly below upper boundary (where the fog is not forced)
+				 *		2. above fog looks good with verticalSeg only when above its lower boundary - ideally we should then not use posNormUpSeg
+				 *			if we mix both at lower boundary with thin boundary, we may have objects closer use fuller fog than distant objects
+				 *			it should be safe though to use lower boundary that is higher than ALL objects that we may see (or to not use verticalSeg at all then)
+				 */
+
+				// use background for fog
+				uniform vec2 /*segment01*/ useBackgroundVerticalForFogSeg; // against anchored position, background up; along up dir - always use
+
+				// don't use fog (at all)
+				uniform vec2 /*segment01*/ useAboveFog_posNormUpSeg; // against position normalised; this is to make a circle above us with sky purely visible
+				uniform vec2 /*segment01*/ useAboveFog_verticalSeg; // against anchored position; this is to make above fog being used above certain altitude, useful when being high above ground
+
+				// background
+				uniform HIGHP vec3 backgroundUp; // view space
+				uniform HIGHP vec3 backgroundAnchor; // view space
+				uniform vec2 /*segment01*/ backgroundUseFogSeg;
+				
+				uniform LOWP float uniformBackgroundFog;
+				uniform LOWP vec4 uniformBackgroundFogColour;
+				
+				// sky
+				uniform LOWP vec4 /*colour*/ backgroundSkyColourOntoLight;
+				uniform LOWP vec4 /*colour*/ backgroundSkyColourAwayLight;
+				uniform LOWP vec4 /*colour*/ backgroundSkyColourUp;
+				uniform LOWP vec4 /*colour*/ backgroundReflectionsSkyColourUp; // alpha - how much do we mix in
+				uniform vec2 /*segment01*/ backgroundSkyUseColourUpSeg;
+
+				// fog
+				uniform LOWP vec4 /*colour*/ backgroundFogColourOntoLight;
+				uniform LOWP vec4 /*colour*/ backgroundFogColourAwayLight;
+				uniform LOWP vec4 /*colour*/ backgroundFogColourDown;
+				uniform LOWP vec4 /*colour*/ backgroundReflectionsFogColourDown; // alpha - how much do we mix in
+				uniform vec2 /*segment01*/ backgroundFogUseColourDownSeg;
+				
+				uniform HIGHP float voxelSize;
+				uniform HIGHP float voxelSizeInv; // 1.0 / voxelSize
+				uniform HIGHP float maxVoxelDistanceCoef; // 1.0 / max voxel distance, should be calculated automatically using render target resolution
+				uniform LOWP float reflectiveness; // whole object factor
+				
+				uniform vec2 inOutputTexelSize;
+				uniform vec2 inOutputSize;
+				uniform float inOutputTexelSizeFoved;
+				uniform float inOutputSizeFoved;
+
+			#ifdef RETRO
+				uniform float retroOffset;
+				uniform float meshRetroOffset;
+			#endif
+
+				// input
+				in HIGHP vec3 varModelPosition;
+				in HIGHP vec3 varNoisePosition;
+				centroid in vec3 varNormal;
+				centroid in HIGHP vec3 varPosition;
+				centroid in HIGHP vec4 varProjectedPosition;
+				centroid in HIGHP vec3 varVRPosition;
+				in vec2 varUV;
+				in LOWP vec3 varColour;
+			#ifdef VERTEX_MATERIAL
+				in LOWP vec4 varMaterial;
+				in LOWP vec4 varMaterialProp;
+			#endif
+			#ifdef VERTEX_VOXEL
+				in LOWP vec4 varMaterialVoxel0;
+				in LOWP vec4 varMaterialVoxel1;
+			#endif
+			
+			#ifdef WITH_LIGHT
+			#ifdef VERTEX_LIGHT
+			#ifdef VERTEX_EMISSIVE
+				centroid in LOWP float varLightApply;
+				centroid in LOWP vec3 varLightColourInfluence;
+			#else
+				centroid in LOWP vec4 varModLight;
+			#endif
+			#endif
+			#endif
+				
+				// process variables
+				HIGHP vec3 prcLightDir;
+				HIGHP vec3 prcPosition;
+				HIGHP float prcPositionDistance;
+				HIGHP vec3 prcPositionNormalised; // relative to camera position
+				HIGHP float prcPositionAlongBackgroundUp; // dot(backgroundUp, prcPosition);
+				HIGHP float prcPositionAlongBackgroundUpAnchorRel; // dot(backgroundUp, prcPosition - backgroundAnchor);
+				HIGHP float prcPositionNormalisedAlongBackgroundUp; // dot(backgroundUp, prcPositionNormalised);
+				vec3 prcNormal;
+				vec2 prcUV; // orignal uv, as it came in
+				vec2 prcMaterialUV; // uv to read from material
+				LOWP vec4 prcColour;
+				LOWP vec4 prcMatColour;
+				vec3 prcReflectionDir; // dir from point in which we reflect from our position
+				vec3 prcBackgroundColour;
+				vec3 prcBackgroundFogColour;
+				vec3 prcLastCallBackgroundColour;
+				vec3 prcLastCallBackgroundFogColour;
+				LOWP vec4 prcEmissiveColour;
+				LOWP vec4 prcEmissiveBaseColour;
+				LOWP float prcEmissivePower;
+				LOWP float prcMaterialRoughness;
+				LOWP float prcMaterialMetallic;
+				LOWP float prcMaterialTint;
+				LOWP float prcMaterialEmissive;
+				LOWP float prcReflectiveness;
+				// normal facing observer
+				LOWP float prcOntoObserver; 
+			#ifndef VERTEX_LIGHT
+				// normal facing light
+				LOWP float prcOntoLight;
+				LOWP float prcOntoLightNormalised;
+			#endif
+			#ifdef WITH_LIGHT
+			#ifdef VERTEX_LIGHT
+			#ifdef VERTEX_EMISSIVE
+				LOWP float prcLightApply;
+			#endif
+			#endif
+			#endif
+				//
+				LOWP float prcSpecularApplied;
+			#ifdef RETRO
+				LOWP float prcRetroRandomValue;
+				LOWP float prcRetroRandomValue2;
+				LOWP float prcRetroOffset;
+			#endif
+				
+				LOWP float prcApplyVoxel;
+				HIGHP float prcVoxelId; // holds info about voxel identification
+				LOWP float prcVoxelRand; // rand value 0-1 taken from id
+				
+			#ifdef RETRO
+				LOWP float prcApplyFog;
+				LOWP float prcRetroUseFog;
+			#endif
+
+				// output
+				out vec4 colour;
+			</data>
+			<defaultValues>
+				REMEMBER TO ADD PARAMS TO "sky box:default fallback", so we always have some default values in environment
+			
+				<vector3 name="eyeOffset" x="0" y="0" z="0"/>
+				
+				// uniforms [light]
+				<vector3 name="lightDir" x="0" y="0" z="0"/>
+				<colour name="lightModulateColourOnto" r="1.0" g="1.0" b="0.8" a="1"/>
+				<colour name="lightModulateColourMid"  r="0.9" g="0.9" b="0.9" a="1"/>
+				<colour name="lightModulateColourAway" r="0.8" g="0.8" b="1.0" a="1"/>
+
+				<float name="fresnelStrength">1.0</float>
+
+				<float name="lightSpecularSide">1.0</float>
+				<float name="lightSpecularStrength">0.0</float>
+				<colour name="lightSpecularColour">white</colour>
+
+				<float name="lightSpecularSizeDot">0.0000001</float>
+
+				<colour name="emissiveColour" r="1" g="1" b="1" a="0"/>
+				<colour name="emissiveBaseColour" r="0" g="0" b="0" a="0"/>
+				<float name="emissivePower">1.0</float>
+				
+				<colour name="globalTint" r="1" g="1" b="1" a="0"/>
+				<colour name="globalDesaturate" r="1" g="1" b="1" a="0"/>
+				<colour name="globalDesaturateChangeInto" r="1" g="1" b="1" a="0"/>
+				
+				<int name="coneLightsCount">0</int>
+				
+				<int name="lightsCount">0</int>
+				
+				<float name="distanceModCoef">0.0001</float>
+				<float name="fogDistanceCoef">0.0</float>
+				<float name="aboveFogDistanceCoef">0.000035</float> ~28k
+				<float name="aboveFogHeightCoef">0.00009</float> ~11.1k
+
+				<float name="applyFogSoFar">1</float>
+				<float name="fogSoFarDistance">0</float>
+				<float name="fogSoFarAmountRaw">0</float>
+				<vector3 name="fogSoFarColour" x="0" y="0" z="0"/>
+
+				segment01<vector2 name="useBackgroundVerticalForFogSeg" x="0.0" y="0.0"/> none
+
+				 use fog (at all)
+				<!--segment01<vector2 name="useAboveFog_posNormUpSeg" x="0.05" y="2.5"/> 1.0 / (0.45 - 0.05)-->
+				segment01<vector2 name="useAboveFog_posNormUpSeg" x="0.0" y="2.6"/> 1.0 / (0.45 - 0.0)
+				segment01<vector2 name="useAboveFog_verticalSeg" x="9000.0" y="0.0001"/> high above
+
+				round
+				<vector3 name="backgroundUp" x="0" y="0" z="1"/>
+				<vector3 name="backgroundAnchor" x="0" y="0" z="0"/>
+				segment01<vector2 name="backgroundUseFogSeg" x="0.1" y="-5.0"/>
+				
+				<float name="uniformBackgroundFog">0</float>
+				<colour name="uniformBackgroundFogColour" r="0" g="0" b="0" a="1"/>
+
+				
+				<colour name="backgroundSkyColourOntoLight" r="1.0" g="0.6" b="0.3" a="1"/>
+				<colour name="backgroundSkyColourAwayLight" r="0.3" g="0.5" b="1.0" a="1"/>
+				<colour name="backgroundSkyColourUp" r="0.2" g="0.2" b="1.0" a="1"/>
+				<colour name="backgroundReflectionsSkyColourUp" r="0.0" g="0.0" b="0.0" a="0"/>
+				segment01<vector2 name="backgroundSkyUseColourUpSeg" x="0.3" y="1.4285"/>
+
+				
+				<colour name="backgroundFogColourOntoLight" r="1.0" g="0.6" b="0.3" a="1"/>
+				<colour name="backgroundFogColourAwayLight" r="0.3" g="0.5" b="1.0" a="1"/>
+				<colour name="backgroundFogColourDown" r="0.2" g="0.2" b="1.0" a="1"/>
+				<colour name="backgroundReflectionsFogColourDown" r="0.0" g="0.0" b="0.0" a="0"/>
+				segment01<vector2 name="backgroundFogUseColourDownSeg" x="-0.3" y="-1.4285"/>
+				
+				<float name="voxelSize">0.01</float>
+				<float name="voxelSizeInv">0.0</float>
+				<float name="maxVoxelDistanceCoef">0.0</float>
+				<float name="reflectiveness">1.0</float>
+
+				<float name="retroOffset">0</float>
+				<float name="meshRetroOffset">0</float>
+			</defaultValues>
+			<for systemTagRequired="quest and (not quest2) and (not quest3) and (not questPro)">
+				<defaultValues>
+					segment01<vector2 name="useAboveFog_posNormUpSeg" x="0.0" y="2.2"/> 1.0 / (0.55 - 0.00)
+				</defaultValues>
+			</for>
+			<for systemTagRequired="quest2 or quest3 or questPro or vive or pico">
+				<defaultValues>
+					segment01<vector2 name="useAboveFog_posNormUpSeg" x="0.0" y="2.4"/> 1.0 / (0.50 - 0.00)
+				</defaultValues>
+			</for>
+			utils
+			background functions
+			<function name="adjust_background_sky_colour">
+				<header>vec3 adjust_background_sky_colour(vec3 _skyColour, HIGHP float _withLight)</header>
+				<body>
+					return _skyColour;
+				</body>
+			</function>
+			<function name="adjust_background_use_fog">
+				0 sky
+				1 fog
+				<header>float adjust_background_use_fog(float _useFog)</header>
+				<body>
+					return _useFog;
+				</body>
+			</function>
+			<function name="calculate_background_colour_for">
+				<header>vec3 calculate_background_colour_for(HIGHP vec3 _positionNormalised)</header>
+				<body>
+			#ifdef RETRO
+					prcLastCallBackgroundColour = prcColour.rgb;
+			#else
+					CALCULATE_BACKGROUND_COLOUR(prcLastCallBackgroundColour, prcLastCallBackgroundFogColour, _positionNormalised);
+			#endif
+					return prcLastCallBackgroundColour;
+				</body>
+			</function>
+			<function name="calculate_background_force_unified_colour_for"> use instead of calculate_background_colour_for
+				<header>vec3 calculate_background_force_unified_colour_for(HIGHP vec3 _positionNormalised)</header>
+				<body>
+			#ifdef RETRO
+					prcLastCallBackgroundColour = prcColour.rgb;
+			#else
+					LOWP vec3 fogColour = uniformBackgroundFogColour.rgb;
+					prcLastCallBackgroundColour = fogColour;
+					prcLastCallBackgroundFogColour = fogColour;
+			#endif
+					return prcLastCallBackgroundColour;
+				</body>
+			</function>
+			<function name="calculate_background_colour_for_reflections">
+				<header>LOWP vec3 calculate_background_colour_for_reflections(vec3 _positionNormalised)</header>
+				<body>
+					//if (uniformBackgroundFog &gt;= 0.5)
+					//{
+					//	return uniformBackgroundFogColour;
+					//}
+			#ifdef WITH_REFLECTIONS
+			#ifdef SIMPLE_REFLECTIONS
+					LOWP float pnWithUp = dot(backgroundUp, _positionNormalised);
+
+					LOWP vec3 actualSkyColour = backgroundSkyColourUp.rgb;
+					LOWP vec3 actualFogColour = backgroundFogColourDown.rgb;
+					
+					// how it should blend between sky and fog
+					LOWP float useFog = clamped_to_local_of_segment01(pnWithUp, backgroundUseFogSeg);
+
+					LOWP vec3 backgroundColour;
+					backgroundColour = blend_rgb(useFog, actualSkyColour, actualFogColour);
+					backgroundColour = blend_rgb(backgroundReflectionsFogColourDown.a, backgroundColour, backgroundReflectionsFogColourDown.rgb);
+					return backgroundColour;
+			#else // -SIMPLE_REFLECTIONS
+			#ifdef SIMPLIFIED_BACKGROUND_FOR_REFLECTIONS
+					LOWP float pnWithUp = dot(backgroundUp, _positionNormalised);
+
+					LOWP vec3 actualSkyColour = backgroundSkyColourUp.rgb;
+					LOWP vec3 actualFogColour = backgroundFogColourDown.rgb;
+					
+					// how it should blend between sky and fog
+					LOWP float useFog = clamped_to_local_of_segment01(pnWithUp, backgroundUseFogSeg);
+
+					LOWP vec3 backgroundColour;
+					backgroundColour = blend_rgb(useFog, actualSkyColour, actualFogColour);
+					LOWP float pnWithUpNormalised = (pnWithUp + 1.0) * 0.5;
+			#else // -SIMPLIFIED_BACKGROUND_FOR_REFLECTIONS
+					LOWP vec3 backgroundColour = calculate_background_colour_for(_positionNormalised);
+					LOWP float pnWithUp = dot(backgroundUp, _positionNormalised);
+					LOWP float pnWithUpNormalised = (pnWithUp + 1.0) * 0.5;
+			#endif // -SIMPLIFIED_BACKGROUND_FOR_REFLECTIONS
+					LOWP vec4 backgroundReflectionsColour = blend_rgba(pnWithUpNormalised, backgroundReflectionsFogColourDown, backgroundReflectionsSkyColourUp);
+					backgroundColour = blend_rgb(backgroundReflectionsColour.a, backgroundColour, backgroundReflectionsColour.rgb);
+					return backgroundColour;
+			#endif // -SIMPLE_REFLECTIONS
+			#else // -WITH_REFLECTIONS
+					return backgroundReflectionsFogColourDown;
+			#endif // -WITH_REFLECTIONS
+				</body>
+			</function>
+			<function name="calculate_background_colour">
+				<header>void calculate_background_colour()</header>
+				<body>
+					prcBackgroundColour = calculate_background_colour_for(prcPositionNormalised);
+					prcBackgroundFogColour = prcLastCallBackgroundFogColour;
+				</body>
+			</function>
+			actual functions
+			<function name="process_pre">
+				<header>void process_pre()</header>
+			</function>
+			<function name="process_colour">
+				<header>void process_colour()</header>
+			</function>
+			<function name="process_light">
+				<header>void process_light()</header>
+			</function>
+			<function name="calculate_position_related">
+				<header>void calculate_position_related()</header>
+				<body>
+					prcPositionDistance = length(prcPosition);
+					prcPositionNormalised = prcPosition / prcPositionDistance;
+				</body>
+			</function>
+			<function name="process_position_normal">
+				<header>void process_position_normal()</header>
+			</function>
+			<function name="calculate_onto_observer">
+				<header>void calculate_onto_observer()</header>
+				<body>
+					prcOntoObserver = clamp(dot(prcPositionNormalised, -prcNormal), 0.0, 1.0);
+					prcPositionAlongBackgroundUp = dot(backgroundUp, prcPosition);
+					prcPositionAlongBackgroundUpAnchorRel = dot(backgroundUp, prcPosition - backgroundAnchor);
+					prcPositionNormalisedAlongBackgroundUp = dot(backgroundUp, prcPositionNormalised);
+				</body>
+			</function>
+			<function name="calculate_onto_light">
+				<header>void calculate_onto_light()</header>
+				<body>
+			#ifndef VERTEX_LIGHT
+					prcOntoLight = dot(-prcLightDir, prcNormal);
+					prcOntoLightNormalised = fma(prcOntoLight, 0.5, 0.5);
+			#endif
+				</body>
+			</function>
+			<function name="calculate_reflection_dir">
+				<header>void calculate_reflection_dir()</header>
+				<body>
+			#ifdef WITH_REFLECTIONS
+			#ifndef SIMPLE_REFLECTIONS
+					// it's just reflected by normal
+					prcReflectionDir = reflect(prcPositionNormalised, prcNormal); /* prcPositionNormalised - prcNormal * (dot(prcPositionNormalised, prcNormal) * 2.0) */
+			#endif
+			#endif
+				</body>
+			</function>
+			<function name="process_material_uv">
+				<header>void process_material_uv()</header>
+				<body>
+					prcMaterialUV = prcUV;
+					prcMaterialUV.y = prcOntoObserver;
+				</body>
+			</function>
+			<function name="get_simplified_material_values">
+				<header>void get_simplified_material_values()</header>
+				<body>
+					prcColour.rgba = prcMaterialUV.y * prcColour;
+					prcMaterialRoughness = 0.5;
+					prcMaterialMetallic = 0.0;
+					prcMaterialTint = 0.0;
+					prcMaterialEmissive = 0.0;
+				</body>
+			</function>
+			<function name="read_material_colour_from_texture">
+				<header>vec4 read_material_colour_from_texture()</header>
+				<body>
+					vec2 useUV = prcMaterialUV;
+					return texture(inMaterialColour, useUV).rgba;
+				</body>
+			</function>
+			<function name="read_material_colour">
+				<header>vec4 read_material_colour()</header>
+				<body>
+			#ifdef VERTEX_MATERIAL
+					return varMaterial;
+			#else
+					return read_material_colour_from_texture();
+			#endif
+				</body>
+			</function>
+			<function name="read_material_prop_from_texture">
+				<header>vec4 read_material_prop_from_texture()</header>
+				<body>
+					vec2 useUV = prcMaterialUV;
+					return texture(inMaterialProp, useUV).rgba;
+				</body>
+			</function>
+			<function name="read_material_prop">
+				<header>vec4 read_material_prop()</header>
+				<body>
+			#ifdef VERTEX_MATERIAL
+					return varMaterialProp;
+			#else
+					return read_material_prop_from_texture();
+			#endif
+				</body>
+			</function>
+			<function name="get_material_values">
+				<header>void get_material_values()</header>
+				<body>
+					// read from in/var or samplers/textures
+					prcMatColour = read_material_colour() * prcColour;
+					prcColour.rgba = prcMatColour;
+
+					// process properties
+			#ifdef WITH_MATERIAL_PROP
+					vec4 tempMaterialProp = read_material_prop();
+					prcMaterialRoughness = tempMaterialProp.r;
+					prcMaterialMetallic = tempMaterialProp.g;
+			#ifdef WITH_REFLECTIONS
+					prcMaterialTint = tempMaterialProp.b;
+			#else
+					prcMaterialTint = tempMaterialProp.b * reflectiveness;
+			#endif
+					prcMaterialEmissive = tempMaterialProp.a;
+			#else
+					prcMaterialRoughness = 0.5;
+					prcMaterialMetallic = 0.0;
+					prcMaterialTint = 0.0;
+					prcMaterialEmissive = 0.0;
+			#endif
+				</body>
+			</function>
+			<function name="process_material">
+				<header>void process_material()</header>
+			</function>
+			<function name="process_material_post_voxel">
+				<header>void process_material_post_voxel()</header>
+			</function>
+			<function name="calculate_voxel_shape_cube_using">
+				<header>HIGHP vec2 calculate_voxel_shape_cube_using(HIGHP vec3 modPos)</header>
+				<body>
+					modPos = floor(modPos * voxelSizeInv) * voxelSize;
+					HIGHP vec2 p = vec2(modPos.x * 54.234 + modPos.z * 23.252 + individual, modPos.y * 94.345 + modPos.z * 12.579 - individual);
+					//
+					return p;
+				</body>
+			</function>
+			<function name="calculate_voxel_shape_cube">
+				<header>HIGHP vec2 calculate_voxel_shape_cube()</header>
+				<body>
+					// cubes
+					HIGHP vec3 modPos = varModelPosition + vec3(0.0001, 0.0001, 0.0001);
+					return calculate_voxel_shape_cube_using(modPos);
+				</body>
+			</function>
+			<function name="calculate_voxel_shape_hex_using">
+				<header>HIGHP vec2 calculate_voxel_shape_hex_using(HIGHP vec3 modPos)</header>
+				<body>
+					float hexWidth = voxelSize;
+					float halfHexWidth = hexWidth * 0.5;
+					float hexRadius = halfHexWidth;
+					
+					float sin60 = 0.87;
+					
+					//
+					//					c     c+1
+					//
+					//	     	r+1	+'''*C''+---+--------------
+					//				:\     /'   :   rds * sin60
+					//	    1	r+1	:D+---+E' *B:--------------
+					//				:/xxxx:\'   :   rds * sin60
+					//   dy 0	r	+...*A:.+---+--------------
+					//				|   |   |   |
+					//				|rds|rds|rds|
+					//	
+					//			 	  1	2  
+					//			 dx	0 / / 1
+					//				  3	3
+					//
+					//	A (c,   r)
+					//	B (c+1, r)
+					//	C (c,   r + 1)
+					//	D (c-1, r)
+					//	E (c+1, r)
+					//
+					// as above but we're deling only in quarter of that
+					// and we move between various quarters
+					//	qTL	qTR	
+					//	qBL	qBR	
+					//
+					// note that column index is fine but we're dealing here with twice as dense r (will be adjusting r though)					
+					// quarters			working coords					adjusted coords				final coords (that half is fine by us atm)
+					//	qTL	qTR			(c  ,r+1)	(c+1,r+1)			(c  ,r+2)	(c+1, r+1)		(c  ,r+1)	(c+1, r+0.5)
+					//	qBL	qBR			(c  ,r  )	(c+1,r  )			(c  ,r  )	(c+1, r+1)		(c  ,r  )	(c+1, r+0.5)
+				
+					modPos.y /= hexRadius * sin60;
+					modPos.x /= hexRadius * 1.5;
+					modPos.x += 0.66666667;
+					
+					float row = floor(modPos.y);
+					float column = floor(modPos.x);
+					
+					float dy = modPos.y - row;
+					float dx = modPos.x - column;
+					
+					if (mod(column + row, 2.0) == 1.0)
+					{
+						// qTL v qBR		(c is odd) xor (r is odd)
+						dy = 1.0 - dy;
+						// qTL and qBR are upside down versions of qBL and qTR
+					}
+					
+					//
+					//		+----+--------+
+					//		+lft/         +
+					//		+  /          +
+					//		+ /    main   +
+					//		+/            +
+					//		+-------------+
+					//
+					
+					float a = 1.0 / 0.333333333;
+				
+					float left = dy > dx * a? 1.0 : 0.0;
+
+					// for qTL or qBR we may want to move up 
+					// for left it depends on column and row values
+					//   odd  |          |     |     |           |
+					//	c r l | info     | col | row | coords	 | adjusted
+					// -------+----------+-----+-----+-----------+-----------
+					//	0 0 0 | qBL main |  0  |  0  | (c  ,r  ) | (c  ,r  )
+					//	1 0 0 | qBR main |  0  | +1  | (c+1,r  ) | (c+1,r+1)
+					//	0 1 0 | qTL main |  0  | +1  | (c  ,r+1) | (c  ,r+2)
+					//	1 1 0 | qTR main |  0  |  0  | (c+1,r+1) | (c+1,r+1)
+					//	0 0 1 | qBL left | -1  | +1  | (c  ,r  ) | (c-1,r+1)
+					//	1 0 1 | qBR left | -1  |  0  | (c+1,r  ) | (c  ,r  )
+					//	0 1 1 | qTL left | -1  |  0  | (c  ,r+1) | (c-1,r+1) 
+					//	1 1 1 | qTR left | -1  | +1  | (c+1,r+1) | (c  ,r+2)
+					// from this we see that we need odd number of conditions to increase r
+					// change column POST changing row as it affects the check for odd number
+					
+					row += (mod(column + row + left, 2.0) == 1.0)? 1.0 : 0.0;
+					column -= left;
+
+					vec2 r = vec2(column, row / 2.0);
+					float alt = modPos.z * voxelSizeInv;
+					modPos = vec3(r.x, r.y, alt);
+					HIGHP vec2 p = vec2(modPos.x * 54.234 + modPos.z * 23.252 + individual, modPos.y * 94.345 + modPos.z * 12.579 - individual);
+					//
+					return p;
+				</body>
+			</function>
+			<function name="calculate_voxel_shape_hex">
+				<header>HIGHP vec2 calculate_voxel_shape_hex()</header>
+				<body>
+					// hexes
+					HIGHP vec3 modPos = varModelPosition + vec3(0.0001, 0.0001, 0.0001);
+					return calculate_voxel_shape_hex_using(modPos);
+				</body>
+			</function>
+			<function name="calculate_voxel_shape">
+				<header>HIGHP vec2 calculate_voxel_shape()</header>
+				<body>
+					return calculate_voxel_shape_cube();
+				</body>
+			</function>
+			<function name="ready_voxel">
+				calculates prcVoxelId and prcVoxelRand basing on calculate_voxel_shape
+				<header>void ready_voxel()</header>
+				<body>
+					HIGHP vec2 p = calculate_voxel_shape();
+					
+					p = fract(p * vec2(5.3987, 5.4421));
+					p += dot(p.yx, p.xy + vec2(21.5351, 14.3137));
+
+					HIGHP float pxy = p.x * p.y;
+					prcVoxelId = pxy;
+					LOWP float voxRand = fract(pxy * 92.258);
+					prcVoxelRand = voxRand;
+				</body>
+			</function>
+			<function name="apply_voxel">
+				<header>void apply_voxel()</header>
+				<body>
+			#ifdef WITH_VOXEL
+					ready_voxel();
+					
+			#ifdef VERTEX_VOXEL
+					LOWP vec4 voxelData0 = varMaterialVoxel0;
+					LOWP vec4 voxelData1 = varMaterialVoxel1;
+					LOWP vec4 voxelData = voxelData0 * (1.0 - prcVoxelRand) + prcVoxelRand * voxelData1;
+					LOWP float alterColour = (voxelData.r - 0.5) * 2.0;
+					LOWP float alterRoughness = (voxelData.g - 0.5) * 2.0;
+					LOWP float alterMetallic = (voxelData.b - 0.5) * 2.0;
+			#ifdef VOXEL_UNEVENESS
+					LOWP float uneveness = voxelData.a * 0.3;
+			#endif
+			#else
+			#ifndef SIMPLE_VOXEL
+					vec2 voxUseUV = vec2(prcMaterialUV.x, prcVoxelRand);
+					LOWP vec4 voxelData = texture(inMaterialVoxel, voxUseUV).rgba;
+					LOWP float alterColour = (voxelData.r - 0.5) * 2.0;
+					LOWP float alterRoughness = (voxelData.g - 0.5) * 2.0;
+					LOWP float alterMetallic = (voxelData.b - 0.5) * 2.0;
+			#ifdef VOXEL_UNEVENESS
+					LOWP float uneveness = voxelData.a * 0.3;
+			#endif
+			#else
+					LOWP float alterColour = 0.06 * prcVoxelRand * (1.0 - 0.8 * prcMaterialRoughness);
+					LOWP float alterRoughness = 0.06 * prcVoxelRand * (1.0 - 0.8 * prcMaterialRoughness);
+					LOWP float alterMetallic = 0.06 * prcVoxelRand * (1.0 - 0.8 * prcMaterialRoughness);
+			#ifdef VOXEL_UNEVENESS
+					LOWP float uneveness = 0.0;
+			#endif
+			#endif
+			#endif
+					LOWP float applyDist = clamp((1.0 - prcPositionDistance * maxVoxelDistanceCoef), 0.0, 1.0);
+					LOWP float apply = min(1.0, prcOntoObserver * 2.0) * applyDist * prcApplyVoxel;
+					{
+						LOWP float colourTop = max(prcColour.r, max(prcColour.g, prcColour.b));
+						LOWP float newColourTop = max(0.0, colourTop + apply * alterColour);
+						prcColour.rgb *= newColourTop / max(0.01, colourTop);
+					}
+					prcMaterialRoughness = clamp(prcMaterialRoughness + apply * alterRoughness, 0.0, 1.0);
+					prcMaterialMetallic = max(prcMaterialMetallic + apply * alterMetallic, 0.0);
+					
+			#ifdef VOXEL_UNEVENESS
+					prcNormal.x += prcApplyVoxel * uneveness * (fract(prcVoxelId * 25.123) - 0.5);
+					prcNormal.y += prcApplyVoxel * uneveness * (fract(prcVoxelId * 9.48) - 0.5);
+					prcNormal.z += prcApplyVoxel * uneveness * (fract(prcVoxelId * 85.28) - 0.5);
+					prcNormal = normalize(prcNormal);
+			#endif
+			#endif
+				</body>
+			</function>
+			<function name="process_reflections">
+				<header>void process_reflections(vec3 matDiffuse)</header>
+				<!-- if you want to skip reflections, it is enough to override this function and leave it empty -->
+				<body>
+			#ifdef WITH_REFLECTIONS
+					{	// reflected
+						LOWP vec3 diffuse = prcColour.rgb;
+
+						LOWP float reflectionApply = clamp(prcReflectiveness, 0.0, 1.0);
+			#ifdef SIMPLE_REFLECTIONS
+						LOWP vec3 reflected = calculate_background_colour_for_reflections(prcNormal);
+			#else
+						LOWP vec3 reflected = calculate_background_colour_for_reflections(prcReflectionDir);
+			#endif
+
+						reflected = reflected * blend_rgb(prcMaterialTint, vec3(1,1,1), matDiffuse);
+						
+						diffuse = diffuse + reflectionApply * reflected;
+						
+						prcColour.rgb = diffuse;
+					}
+			#endif // WITH_REFLECTIONS
+				</body>
+			</function>
+			<function name="process_specular">
+				<header>void process_specular()</header>
+				<!-- if you want to skip specular, it is enough to override this function and leave it empty -->
+				<body>
+			#ifdef WITH_SPECULAR
+					{	// specular
+					
+						// use reflection dir and compare to light dir
+						HIGHP float specularPower = clamp(dot(-prcReflectionDir, (prcLightDir * sign(lightSpecularSide))), 0.0, 1.0);
+						
+						// apply offset to specular power
+						{
+							/*
+							 *	turn this
+							 *			     .|.
+							 *			    : | :
+							 *			  ,'  |  ',
+							 *		   --'	  |    '--
+							 *	into this
+							 *			   .+-|-+.
+							 *			  :	| | | :
+							 *			 ,'	| | | ',
+							 *		   --	+-|-+   --
+							 *	this is good enough approximation and works nicely for very high size dot values (which is expected)
+							 */
+							specularPower = specularPower / lightSpecularSizeDot;
+						}
+						specularPower = clamp(specularPower, 0.0, 1.0);
+
+						//	this should change as it does not make any sense
+						//	roughness should make it smaller in amplitude and larger in surface
+						//	metallic should not affect this at all?
+						//
+						//	roughness + metallic -> specular ?
+						//
+						//	metallic tells highest amount
+						//	roughness tells about fall off
+						//	use square of roughness to give more flexibility when it comes to setting values
+						//
+						float useMaterialRoughness = prcMaterialRoughness * prcMaterialRoughness;
+						float specComp = max(0.0, (1.0 - specularPower) / max(0.000001, useMaterialRoughness));
+						float specularApply = clamp(prcMaterialMetallic * (1.0 - sqrt(specComp)), 0.0, 1.0);
+						
+						specularApply *= clamp(lightSpecularStrength, 0.0, 1.0);
+						prcSpecularApplied = specularApply;
+						
+						prcColour.rgb = blend_rgb(specularApply, prcColour.rgb, lightSpecularColour.rgb);
+					}
+			#endif // WITH_SPECULAR
+				</body>
+			</function>
+			<function name="process_lights">
+				<header>vec3 process_lights(LOWP vec3 colourInfluence)</header>
+				<!-- if you want to skip lights, it is enough to override this function and have only "return colourInfluence;" inside -->
+				<body>
+			#ifdef ANY_LIGHTS
+					{	// lights
+						LOWP float generalLightInfluence = max(max(0.05f, colourInfluence.r), max(colourInfluence.g, colourInfluence.b));
+						LOWP float colourInfluenceWeight = generalLightInfluence;
+						//LOWP float baseColourInfluenceWeight = colourInfluenceWeight;
+						LOWP float applyLightInfluence = clamp(1.4 - generalLightInfluence * 1.2, 0.0, 1.0);
+			
+			#ifdef CONE_LIGHTS
+						// add cone lights
+						for(int i = 0; i &lt; coneLightsCount; ++ i)
+						{
+							mat4 light;
+							READ_FROM_UNIFORM_MATRIX_ARRAY(light, coneLights, i);
+
+							HIGHP vec3 lightPosition = vec3(light[0][0], light[0][1], light[0][2]);
+							HIGHP vec3 lightDir = vec3(light[1][0], light[1][1], light[1][2]);
+							HIGHP float lightPower = light[3][0];
+							HIGHP float lightDistSqInv = light[3][1];
+							HIGHP float lightInnerDot = light[3][2];
+							HIGHP float lightInnerOuterDotInv = light[3][3];
+							
+							HIGHP vec3 toLight = lightPosition - prcPosition;
+							HIGHP float toLightDistanceSquare = dot(toLight, toLight);
+			#ifdef SIMPLE_CONE_POINT_LIGHTS
+							//HIGHP float influenceFromNormal = (dot(toLight, prcNormal) &lt; 0.0? 0.0 : 1.0);
+							HIGHP float influenceFromNormal = max(0.0, dot(toLight, prcNormal));
+							influenceFromNormal = (influenceFromNormal * influenceFromNormal) / toLightDistanceSquare;
+							influenceFromNormal = 1.0 - influenceFromNormal;
+							influenceFromNormal = fma(-influenceFromNormal, influenceFromNormal, 1.0);
+			#else // -SIMPLE_CONE_POINT_LIGHTS
+							HIGHP vec3 toLightNormalised = normalize(toLight);
+							HIGHP float influenceFromNormal = clamp(dot(toLightNormalised, prcNormal), 0.0, 1.0);
+			#endif // SIMPLE_CONE_POINT_LIGHTS
+			
+							HIGHP float lightInfluence = influenceFromNormal
+													   * max(0.0, 1.0 - toLightDistanceSquare * lightDistSqInv)
+													   * lightPower
+													   * applyLightInfluence;
+							
+							float dotProduct = dot(-toLight, lightDir);
+							float dotInfluence = clamp(1.0 - (dotProduct - lightInnerDot) * lightInnerOuterDotInv, 0.0, 1.0);
+							
+							colourInfluence += vec3(light[2][0], light[2][1], light[2][2]) * lightInfluence;
+							colourInfluenceWeight += lightInfluence;
+						}
+			#endif // CONE_LIGHTS
+
+			#ifdef POINT_LIGHTS
+						// add other lights
+						for(int i = 0; i &lt; lightsCount; ++ i)
+						{
+							mat4 light;
+							READ_FROM_UNIFORM_MATRIX_ARRAY(light, lights, i);
+
+							HIGHP vec3 lightPosition = vec3(light[0][0], light[0][1], light[0][2]);
+							
+			#ifdef STICK_POINT_LIGHTS
+							vec3 lightStick = vec3(light[3][0], light[3][1], light[3][2]);
+							float lightHalfLength = light[3][3];
+							HIGHP vec3 toPrcPosition = prcPosition - lightPosition;
+							HIGHP float alongLightStick = dot(lightStick, toPrcPosition);
+							alongLightStick = clamp(alongLightStick, -lightHalfLength, lightHalfLength);
+							lightPosition = lightPosition + lightStick * alongLightStick;
+			#endif // STICK_POINT_LIGHTS
+							
+							HIGHP vec3 toLight = lightPosition - prcPosition;
+							HIGHP float toLightDistanceSquare = dot(toLight, toLight);
+
+							HIGHP float lightPower = light[2][0];
+							HIGHP float lightDistSqInv = light[2][1];
+			#ifdef SIMPLE_CONE_POINT_LIGHTS
+							//HIGHP float influenceFromNormal = (dot(toLight, prcNormal) &lt; 0.0? 0.0 : 1.0);
+							HIGHP float influenceFromNormal = max(0.0, dot(toLight, prcNormal));
+							influenceFromNormal = (influenceFromNormal * influenceFromNormal) / toLightDistanceSquare;
+							influenceFromNormal = 1.0 - influenceFromNormal;
+							influenceFromNormal = fma(-influenceFromNormal, influenceFromNormal, 1.0);
+			#else // -SIMPLE_CONE_POINT_LIGHTS
+							HIGHP vec3 toLightNormalised = normalize(toLight);
+							HIGHP float influenceFromNormal = clamp(dot(toLightNormalised, prcNormal), 0.0, 1.0);
+			#endif // SIMPLE_CONE_POINT_LIGHTS
+			
+							HIGHP float lightInfluence = influenceFromNormal
+													   * max(0.0, 1.0 - toLightDistanceSquare * lightDistSqInv)
+													   * lightPower
+													   * applyLightInfluence;
+												 
+							colourInfluence += vec3(light[1][0], light[1][1], light[1][2]) * lightInfluence;
+							colourInfluenceWeight += lightInfluence;
+						}
+			#endif // POINT_LIGHTS
+			
+						//float clampedWeight = min(1.0, colourInfluenceWeight); // limit
+						//colourInfluence *= (colourInfluenceWeight &gt; clampedWeight? colourInfluenceWeight / clampedWeight : 1.0);
+						
+						// total weight should not exceed 1.0
+						colourInfluence *= ((colourInfluenceWeight &gt; 1.0)? (1.0 / colourInfluenceWeight) : 1.0);
+						
+						return colourInfluence;
+					}
+			#else // ANY_LIGHTS
+					return colourInfluence;
+			#endif // -ANY_LIGHTS
+				</body>
+			</function>
+			<function name="apply_modulate_and_specular_light_and_reflectiveness_to_colour">
+				<header>void apply_modulate_and_specular_light_and_reflectiveness_to_colour()</header>
+				<body>
+					vec3 matDiffuse = prcColour.rgb;
+					
+					prcColour.rgb *= 1.0 - prcMaterialTint;
+					
+					{	// diffuse
+						LOWP vec3 diffuse = prcColour.rgb;
+
+			#ifndef VERTEX_LIGHT
+						LOWP float useOnto = clamp(prcOntoLightNormalised * 2.0 - 1.0, 0.0, 1.0);
+						LOWP float useAway = clamp(1.0 - prcOntoLightNormalised * 2.0, 0.0, 1.0 - useOnto);
+						LOWP float useMid = 1.0 - useOnto - useAway;
+						
+						// modulate
+						LOWP vec4 modLight = useOnto * lightModulateColourOnto
+										   + useMid  * lightModulateColourMid
+										   + useAway * lightModulateColourAway;
+
+						LOWP float modApply = fma(modLight.a, -prcMaterialEmissive, modLight.a); /* modLight.a * (1.0 - prcMaterialEmissive) */ // 0 full emissive, 1 no emissive
+						
+						LOWP vec3 colourInfluence = modLight.rgb * modApply;
+
+			#else // +VERTEX_LIGHT
+			#ifdef VERTEX_EMISSIVE
+						LOWP float modApply = prcLightApply;
+						LOWP vec3 colourInfluence = varLightColourInfluence;
+			#else // -VERTEX_EMISSIVE
+						LOWP vec4 modLight = varModLight;
+						LOWP float modApply = fma(modLight.a, -prcMaterialEmissive, modLight.a); /* modLight.a * (1.0 - prcMaterialEmissive) */ // 0 full emissive, 1 no emissive
+						
+						LOWP vec3 colourInfluence = modLight.rgb * modApply;
+			#endif // VERTEX_EMISSIVE
+			#endif // VERTEX_LIGHT
+
+						colourInfluence = process_lights(colourInfluence);
+			
+						// apply influence
+						diffuse = colourInfluence.rgb * diffuse + diffuse * (1.0 - modApply);
+						
+						prcColour.rgb = diffuse;
+					}
+			
+			#ifdef WITH_REFLECTIONS
+					process_reflections(matDiffuse);
+			#endif // WITH_REFLECTIONS
+			
+			#ifdef WITH_SPECULAR
+					process_specular();
+			#endif // WITH_SPECULAR
+				</body>
+			</function>
+			<function name="get_emissive_values">
+				<header>void get_emissive_values()</header>
+				<body>
+			#ifdef WITH_EMISSIVE
+					prcEmissiveColour = emissiveColour;
+					prcEmissiveBaseColour = emissiveBaseColour;
+					prcEmissivePower = emissivePower;
+			#endif
+				</body>
+			</function>
+			<function name="calculate_emissive_calculations">
+				<header>void calculate_emissive_calculations()</header>
+				<body>
+					// modify actual prcMaterialEmissive as we will use it later to have light affecting or not affecting us
+					// for VERTEX_EMISSIVE it is done on vertex side
+					prcMaterialEmissive = prcMaterialEmissive * prcEmissivePower;
+					LOWP vec3 useEmissiveColour = mix(mix(prcEmissiveBaseColour.rgb, prcEmissiveColour.rgb, prcColour.rgb), prcEmissiveColour.rgb, prcEmissiveColour.a);
+					useEmissiveColour = max(useEmissiveColour, prcEmissiveBaseColour.a * prcEmissiveBaseColour.rgb);
+					prcColour.rgb = mix(prcColour.rgb, useEmissiveColour, prcMaterialEmissive);
+				</body>
+			</function>
+			<function name="calculate_emissive">
+				<header>void calculate_emissive()</header>
+				<body>
+			#ifndef VERTEX_EMISSIVE
+					calculate_emissive_calculations();
+			#endif
+				</body>
+			</function>
+			<function name="calculate_reflectiveness">
+				<header>void calculate_reflectiveness()</header>
+				<body>
+			#ifdef WITH_REFLECTIONS
+					// in general this is a mix of fresnel and metallic, roughness
+					// fresnel first
+					prcReflectiveness = fresnelStrength * 0.4
+									  * clamp((1.0 - prcOntoObserver * (0.5 + (prcMaterialRoughness + prcMaterialMetallic * 3.0))) * fma(prcMaterialMetallic, 0.5, 0.65),
+											  max(0.0, fma(prcMaterialMetallic, 0.9, -0.2)),
+											  fma(prcMaterialMetallic, -0.6, 0.9));
+					// now just pure metallic
+					prcReflectiveness += prcMaterialMetallic;
+					// clamp and apply reflectiveness
+					prcReflectiveness = clamp(prcReflectiveness, 0.0, 1.0);
+					prcReflectiveness *= reflectiveness;
+			#endif					
+				</body>
+			</function>
+			<function name="apply_light_to_colour">
+				<header>void apply_light_to_colour()</header>
+				<body>
+					// modulate and specular
+					apply_modulate_and_specular_light_and_reflectiveness_to_colour();
+				</body>
+			</function>
+			<function name="apply_distance_to_colour">
+				<header>void apply_distance_to_colour()</header>
+				<body>
+					// pure background first, desat to it
+					LOWP float colourBW = (prcColour.r + prcColour.g + prcColour.b) * 0.333;
+					LOWP float desat = min(prcPositionDistance * distanceModCoef, 1.0);
+					desat = 1.0 - desat;
+					desat = desat * desat;
+					desat = 1.0 - desat;
+			#ifndef MAKE_IT_FASTER
+					LOWP vec3 distanceModColour = prcBackgroundColour;
+			#else
+					// prcBackgroundColour is not available yet
+					LOWP vec3 distanceModColour = vec3(colourBW, colourBW, colourBW);
+			#endif
+					prcColour.rgb = mix(prcColour.rgb, distanceModColour, desat);
+				</body>
+			</function>
+			<function name="calculate_apply_fog_pack">
+				<header>vec3 calculate_apply_fog_pack()</header>
+				<body>
+					HIGHP float offsetDistance = max(0.0, prcPositionDistance - fogSoFarDistance * applyFogSoFar);
+					LOWP float applyLowFog = min(fogSoFarAmountRaw * applyFogSoFar + offsetDistance * fogDistanceCoef, 1.0);
+					LOWP float useAboveFog_posNorm = to_local_of_segment01(prcPositionNormalisedAlongBackgroundUp, useAboveFog_posNormUpSeg);
+					LOWP float useAboveFog_vert = to_local_of_segment01(prcPositionAlongBackgroundUpAnchorRel, useAboveFog_verticalSeg);
+					LOWP float useAboveFog = clamp(max(useAboveFog_posNorm, useAboveFog_vert), 0.0, 1.0);
+					LOWP float applyAboveFog = min(fogSoFarAmountRaw * applyFogSoFar + offsetDistance * aboveFogDistanceCoef + prcPositionAlongBackgroundUpAnchorRel * aboveFogHeightCoef, 1.0);
+					LOWP float applyFogRaw = mix(applyLowFog, applyAboveFog, useAboveFog);
+					LOWP float applyFog = 1.0f - (1.0f - applyFogRaw) * (1.0f - applyFogRaw);
+					return vec3(applyFog, applyFogRaw, useAboveFog);
+				</body>
+			</function>
+			<function name="calculate_apply_fog">
+				<header>float calculate_apply_fog()</header>
+				<body>
+					return calculate_apply_fog_pack().x;
+				</body>
+			</function>
+			<function name="calculate_apply_fog_simple_pack">
+				<header>vec3 calculate_apply_fog_simple_pack()</header>
+				<body>
+					LOWP float applyLowFog = min(prcPositionDistance * fogDistanceCoef, 1.0);
+					LOWP float useAboveFog = 0.0;
+					LOWP float applyFogRaw = applyLowFog;
+					LOWP float applyFog = 1.0f - (1.0f - applyFogRaw) * (1.0f - applyFogRaw);
+					return vec3(applyFog, applyFogRaw, useAboveFog);
+				</body>
+			</function>
+			<function name="calculate_apply_fog_simple">
+				<header>float calculate_apply_fog_simple()</header>
+				<body>
+					return calculate_apply_fog_simple_pack().x;
+				</body>
+			</function>
+			<function name="calculate_force_use_background_for_fog">
+				<header>float calculate_force_use_background_for_fog()</header>
+				<body>
+					float useBk = 0.0;
+					useBk = clamped_to_local_of_segment01(prcPositionAlongBackgroundUpAnchorRel, useBackgroundVerticalForFogSeg);
+					return useBk;
+				</body>
+			</function>
+			<function name="calculate_force_use_background_for_fog_limit">
+				<header>float calculate_force_use_background_for_fog_limit(float _applyFog)</header>
+				<body>
+					return (1.0 - _applyFog);
+				</body>
+			</function>
+			<function name="apply_fog_to_colour">
+				<header>float apply_fog_to_colour()</header>
+				<body>
+					// note: do not forget to change in shaders that base on fog
+					// todo: maybe but parts of it into functions? but we can't include functions here...
+
+					LOWP vec3 mixFogColour;
+					LOWP float mixFogAmount;
+					CALCULATE_FOG(mixFogColour, mixFogAmount);
+
+			#ifdef BRIGHTER_LIGHTS_IN_FOG
+					mixFogAmount = mix(mixFogAmount, mixFogAmount * mixFogAmount * mixFogAmount, clamp(prcEmissivePower, 0.0, 1.0));
+			#endif
+
+					prcColour.rgb = mix(prcColour.rgb, mixFogColour, mixFogAmount);
+					
+					return mixFogAmount;
+				</body>
+			</function>
+			if required just use instead of apply_fog_to_colour
+			<function name="apply_fog_simple_to_colour">
+				<header>float apply_fog_simple_to_colour()</header>
+				<body>
+					// note: do not forget to change in shaders that base on fog
+					// todo: maybe but parts of it into functions? but we can't include functions here...
+
+					LOWP vec3 mixFogColour;
+					LOWP float mixFogAmount;
+					CALCULATE_FOG_SIMPLE(mixFogColour, mixFogAmount);
+
+			#ifdef BRIGHTER_LIGHTS_IN_FOG
+					mixFogAmount = mix(mixFogAmount, mixFogAmount * mixFogAmount * mixFogAmount, clamp(prcEmissivePower, 0.0, 1.0));
+			#endif
+
+					prcColour.rgb = mix(prcColour.rgb, mixFogColour, mixFogAmount);
+					
+					return mixFogAmount;
+				</body>
+			</function>
+			<function name="global_colour_mod_desaturate">
+				<header>void global_colour_mod_desaturate(float usedFog)</header>
+				<body>
+			#ifdef WITH_GLOBAL_DESATURATE
+					if (globalDesaturate.a > 0.0)
+					{
+						float desatValue = (colour.r + colour.g + colour.b) * 0.333;
+						desatValue = 0.2 + 1.2 * (desatValue - 0.2); // contrast
+						vec3 desaturated = vec3(desatValue, desatValue, desatValue)
+										 * (vec3(1,1,1) * (1.0 - globalDesaturateChangeInto.a) +
+											globalDesaturateChangeInto.rgb * globalDesaturateChangeInto.a)
+										 ;
+						// keep red "max(0" because of keepColour exceeding 1 - on purpose
+						float keepColour = clamp(10.0 * (prcMatColour.r - max(prcMatColour.g, prcMatColour.b)), 0.0, 3.0) * (1.0 - usedFog);
+						float applyGlobalDesaturate = max(0.0, globalDesaturate.a * (1.0 - prcMaterialEmissive) * (1.0 - keepColour));
+						colour.rgb = colour.rgb * (1.0 - applyGlobalDesaturate)
+								   + desaturated * min(1.0, applyGlobalDesaturate);
+					}
+			#endif
+				</body>
+			</function>
+			<function name="global_colour_mod_tint">
+				<header>void global_colour_mod_tint()</header>
+				<body>
+			#ifdef WITH_GLOBAL_TINT
+					colour.rgb = blend_rgb(globalTint.a, colour.rgb, globalTint.rgb);
+			#endif
+				</body>
+			</function>
+			<function name="global_colour_mod">
+				<header>void global_colour_mod(float usedFog)</header>
+				<body>
+					global_colour_mod_desaturate(usedFog);
+					global_colour_mod_tint();
+				</body>
+			</function>
+			<function name="final_colour_touch">
+				<header>void final_colour_touch()</header>
+				<body>
+				</body>
+			</function>
+			<function name="apply_anti_banding">
+				<header>void apply_anti_banding()</header>
+				<body>
+					// anti banding here?
+					colour.rgb = apply_anti_banding_to(colour.rgb);
+				</body>
+			</function>
+			<function name="post_anti_banding">
+				<header>void post_anti_banding()</header>
+				<body>
+			#ifdef RETRO
+					float maxl = max(lightModulateColourOnto.r, max(lightModulateColourOnto.g, lightModulateColourOnto.b));
+					maxl = max(maxl, (lightModulateColourAway.r, max(lightModulateColourAway.g, lightModulateColourAway.b)));
+					
+					float maxgb = max(colour.g, colour.b);
+					float c = max(colour.r, maxgb);
+					float limitc = min(1.0, 1.0 + maxgb - colour.r * 0.07);
+					float offmin = fma(maxl, -0.75, 0.35);
+					float offmax = fma(maxl, -0.80, 1.80);
+					c = mix(offmin, offmax, c);
+					c = clamp(c, 0.0, 1.0);
+					c = 1.0 - c;
+					c = c * c;
+					c = 1.0 - c;
+					c += prcRetroOffset + retroOffset + meshRetroOffset;
+					float off = 0.5;
+					c = -off + (1.0 + off * 2.0) * c;
+					c = c + (0.5 - prcRetroRandomValue);
+					c = clamp(c, 0.0, limitc);
+					c = floor(c);
+					colour.rgb = mix(vec3(0.212, 0.200, 0.106), vec3(0.792, 0.82, 0.878), c);
+					
+					// to update the fog as we skip background colour
+					prcApplyFog = calculate_apply_fog();
+					float useBk = calculate_force_use_background_for_fog();
+					prcApplyFog = mix(prcApplyFog, 1.0, useBk);
+			
+					if (prcApplyFog * prcApplyFog * prcRetroUseFog &gt;= 0.4 + 0.6 * prcRetroRandomValue)
+					{
+						discard;
+					}
+			
+					colour.a = floor(colour.a + 0.75);
+			#endif
+				</body>
+			</function>
+			<function name="flat_retro_process">
+				<header>void flat_retro_process()</header>
+				<body>
+			#ifdef RETRO
+					float maxgb = max(colour.g, colour.b);
+					float c = max(colour.r, maxgb);
+					float limitc = min(1.0, 1.0 + maxgb - colour.r * 0.07);
+					float offmin = 0.1;
+					float offmax = 1.2;
+					c = mix(offmin, offmax, c);
+					c = clamp(c, 0.0, 1.0);
+					c = 1.0 - c;
+					c = c * c;
+					c = 1.0 - c;
+					c += prcRetroOffset;
+					float off = 0.5;
+					c = -off + (1.0 + off * 2.0) * c;
+					c = clamp(c, 0.0, limitc);
+					c = floor(c);
+					colour.rgb = mix(vec3(0.212, 0.200, 0.106), vec3(0.792, 0.82, 0.878), c);
+					colour.a = floor(colour.a + 0.75);
+			#endif
+				</body>
+			</function>
+			random values
+			<function name="prepare_random_value_fixed">
+				<header>void prepare_random_value_fixed()</header>
+				<body>
+					HIGHP vec2 pos = varProjectedPosition.xy; 
+					pos.xy /= varProjectedPosition.z; 
+					pos = inOutputSize + floor(pos * inOutputSize) * inOutputTexelSize; 
+					HIGHP vec2 p = vec2(pos.x * 54.234 + pos.y * 23.252, pos.y * 94.345 + pos.x * 12.579); 
+
+					p = fract(p * vec2(5.3987, 5.4421)); 
+					p += dot(p.yx, p.xy + vec2(21.5351, 14.3137)); 
+
+					HIGHP float pxy = p.x * p.y; 
+					prcRandomValue = (fract(pxy * 95.4307) + fract(pxy * 75.04961)) * 0.5; 
+				</body>
+			</function>
+			<function name="create_noise_close_faster()">
+				<header>float create_noise_close_faster()</header>
+				<body>
+				#ifndef MAKE_IT_FASTER
+					return create_noise();
+				#else
+					{
+						HIGHP vec3 pos = varNoisePosition;
+						
+						// world based
+						HIGHP float fixedSize = 200.0f;
+						HIGHP float fixedSizeInv = 0.005f;
+
+						pos = floor(pos * fixedSize) * fixedSizeInv;
+						HIGHP vec2 p = vec2(pos.x * 54.234 + pos.y * 23.252, pos.y * 94.345 + pos.z * 12.579);
+
+						p = fract(p * vec2(5.3987, 5.4421));
+						p += dot(p.yx, p.xy + vec2(21.5351, 14.3137));
+
+						HIGHP float pxy = p.x * p.y;
+						return (fract(pxy * 95.4307) + fract(pxy * 75.04961)) * 0.5; 
+					}
+				#endif
+				</body>
+			</function>
+			<function name="create_noise()">
+				<header>float create_noise()</header>
+				<body>
+					// world based
+					HIGHP float dist = length(varPosition);
+					HIGHP float orgbase = log2(dist * 2.0);
+					HIGHP float selectValue = 0.0;
+					HIGHP float off = 0.0;
+
+					HIGHP float base = orgbase;
+					base = floor(base);
+					float distCoef = exp2(base);
+					
+					bool closer = false;
+					{
+						HIGHP vec3 initpos = varNoisePosition;
+
+						// world based
+						HIGHP float initfixedSize = 0.25 * inOutputSizeFoved / distCoef;
+						HIGHP float initfixedSizeInv = 1.0 / initfixedSize;
+
+						initpos = floor(initpos * initfixedSize) * initfixedSizeInv;
+						HIGHP vec2 initp = vec2(initpos.x * 12.4802 + initpos.y * 23.252, initpos.y * 94.345 + initpos.z * 12.579);
+
+						initp = fract(initp * vec2(6.354, 2.253));
+						initp += dot(initp.yx, initp.xy + vec2(12.52, 31.234));
+
+						HIGHP float initpxy = initp.x * initp.y;
+						selectValue = (fract(initpxy * 95.4307) + fract(initpxy * 75.04961)) * 0.5; 
+
+						float v = fma(selectValue, 0.8, 0.1);
+						float ref = fract(orgbase);
+						closer = v &gt; ref;
+						off = closer? 1.0 : 0.5;
+					}
+					
+					{
+						HIGHP vec3 pos = varNoisePosition;
+						
+						// world based
+						HIGHP float fixedSize = off * inOutputSizeFoved / distCoef;
+						HIGHP float fixedSizeInv = 1.0 / fixedSize;
+
+						pos = floor(pos * fixedSize) * fixedSizeInv;
+						HIGHP vec2 p = vec2(pos.x * 54.234 + pos.y * 23.252, pos.y * 94.345 + pos.z * 12.579);
+
+						p = fract(p * vec2(5.3987, 5.4421));
+						p += dot(p.yx, p.xy + vec2(21.5351, 14.3137));
+
+						HIGHP float pxy = p.x * p.y;
+						return (fract(pxy * 95.4307) + fract(pxy * 75.04961)) * 0.5; 
+					}
+				</body>
+			</function>
+			<function name="prepare_random_value_fixed_vr">
+				<header>void prepare_random_value_fixed_vr()</header>
+				<body>
+					/*
+					HIGHP vec3 pos = normalize(varVRPosition); 
+
+					pos -= eyeOffset / varPosition.z;
+					pos = normalize(pos);
+					*/
+					HIGHP vec3 pos = normalize(varVRPosition + eyeOffset); // pos - (-eyeOffset)
+					
+					//pos = pos + vec3(0.0001, 0.0001, 0.0001);
+
+					HIGHP float fixedSize = inOutputSizeFoved;
+					HIGHP float fixedSizeInv = inOutputTexelSizeFoved;
+
+					pos = floor(pos * fixedSize) * fixedSizeInv;
+					HIGHP vec2 p = vec2(pos.x * 54.234 + pos.y * 23.252, pos.y * 94.345 + pos.z * 12.579);
+
+					p = fract(p * vec2(5.3987, 5.4421));
+					p += dot(p.yx, p.xy + vec2(21.5351, 14.3137));
+
+					HIGHP float pxy = p.x * p.y;
+					prcRandomValue = (fract(pxy * 95.4307) + fract(pxy * 75.04961)) * 0.5; 
+					
+				#ifdef RETRO
+					if (fract(prcRandomValue * 6.0) &lt; 0.75)
+					{
+						prcRandomValue = create_noise();
+					}
+				#endif
+				</body>
+			</function>
+			easy access
+			<function name="prepare_random_value_normal">
+				<header>void prepare_random_value_normal()</header>
+				<body>
+					// if not used, won't be compiled
+					prepare_random_value_random(varPosition, time);
+				</body>
+			</function>
+			<function name="prepare_random_value_for_alpha_dithering">
+				<header>void prepare_random_value_for_alpha_dithering()</header>
+				<body>
+					// if not used, won't be compiled
+					//prepare_random_value_fixed();
+					prepare_random_value_fixed_vr();
+				</body>
+			</function>
+			<function name="prepare_random_value">
+				<header>void prepare_random_value()</header>
+				<body>
+					prepare_random_value_normal();
+				</body>
+			</function>
+			<function name="perform_main">
+				<header>void perform_main()</header>
+				<body>
+					handle_external_view_planes(varPosition);
+					
+				#ifdef RETRO
+					prcRetroOffset = 0.0;
+					prcRetroUseFog = 1.0;
+					prepare_random_value_fixed_vr();
+					prcRetroRandomValue = prcRandomValue;
+				#endif
+
+					prepare_random_value(); // if not used, won't be compiled
+					
+					// setup temporary variables
+					prcPosition = varPosition;
+				#ifdef MAKE_IT_FASTER
+					prcNormal = varNormal;
+				#else
+					prcNormal = normalize(varNormal);
+				#endif
+					prcUV = varUV;
+					prcColour = vec4(varColour, 1.0);
+					prcLightDir = lightDir;
+					prcApplyVoxel = 1.0;
+				#ifdef WITH_LIGHT
+				#ifdef VERTEX_LIGHT
+				#ifdef VERTEX_EMISSIVE
+					prcLightApply = varLightApply;
+				#endif
+				#endif
+				#endif
+					get_emissive_values();
+
+					process_pre(); // default: empty
+					
+					process_colour(); // default: empty
+					
+					process_light(); // default: empty
+
+					// calculate "onto observer"
+					calculate_position_related();
+
+					// process position and normal
+					process_position_normal(); // default: empty
+
+					// calculate "onto observer"
+					calculate_onto_observer();
+
+			#ifdef WITH_MATERIAL
+					// calculate uv for material
+					process_material_uv();
+
+					// get all material values
+					get_material_values();
+			#else
+					get_simplified_material_values();
+			#endif
+
+					// process material
+					process_material(); // default: empty
+
+					// apply voxel (to material values, disabled inside if required)
+					apply_voxel();
+
+					// post voxel operation
+					process_material_post_voxel(); // default: empty
+			
+			#ifdef WITH_LIGHT
+					// ready to calculate light, calculate "onto light"
+					calculate_onto_light();
+			#endif
+
+			#ifdef WITH_REFLECTIONS
+					// calculate reflection dir
+					calculate_reflection_dir();
+			#endif
+
+			#ifdef WITH_EMISSIVE
+					// calculate emissive using params
+					calculate_emissive();
+			#endif
+					
+			#ifdef WITH_REFLECTIONS
+					// calculate reflectiveness
+					calculate_reflectiveness();
+			#endif
+					
+			#ifndef MAKE_IT_FASTER
+			#ifndef RETRO
+					// background colour
+					calculate_background_colour();
+			#endif
+			#endif
+					
+			#ifdef WITH_LIGHT
+					// use global light
+					apply_light_to_colour();
+			#endif
+
+			#ifndef RETRO
+			#ifdef WITH_FOG
+					// desaturate
+					apply_distance_to_colour();
+			#endif
+			#endif
+					
+			#ifdef RETRO
+					// skip apply fog to colour as for retro we will be discarding it, ignore calculating background colour at all (above)
+					float usedFog = 0.0;
+			#else
+			#ifdef WITH_FOG
+					// apply fog settings (from environment)
+					float usedFog = apply_fog_to_colour();
+			#else
+					float usedFog = 0.0;
+			#endif
+			#endif
+				
+					// fill output
+					colour.rgba = prcColour.rgba;
+					
+					// desaturate and tint
+					global_colour_mod(usedFog);
+
+					final_colour_touch(); // default: empty
+
+			#ifndef RETRO
+			#ifdef WITH_ANTI_BANDING
+					apply_anti_banding();
+			#endif
+			#endif
+			
+					post_anti_banding();
+				</body>
+			</function>
+			<mainBody>
+				perform_main();
+			</mainBody>
+		</fragmentShader>
+		<defaultFragmentShader>
+		</defaultFragmentShader>
+
+		fragment shader - "use with rendering"
+		<useWithRenderingFragmentShader>
+			<data>
+				// uniforms
+				uniform vec2 inOutputTexelSize;
+				uniform vec2 inOutputSize;
+				uniform float inOutputTexelSizeFoved;
+				uniform float inOutputSizeFoved;
+				
+			#ifdef RETRO
+				uniform vec4 lightModulateColourOnto;
+				uniform vec4 lightModulateColourMid;
+				uniform vec4 lightModulateColourAway;
+			#endif
+
+				// input
+				in HIGHP vec3 varModelPosition;
+				centroid in vec3 varNormal;
+				in LOWP vec3 varColour;
+				centroid in HIGHP vec3 varPosition;
+				centroid in HIGHP vec4 varProjectedPosition;
+				centroid in HIGHP vec3 varVRPosition;
+				in vec2 varUV;
+
+				// process variables
+				//HIGHP vec3 prcLightDir;
+				//HIGHP vec3 prcPosition;
+				//vec3 prcNormal;
+				
+				// output
+				out vec4 colour;
+			</data>
+			<function name="flat_retro_process">
+				<header>void flat_retro_process()</header>
+				<body>
+			#ifdef RETRO
+					float maxgb = max(colour.g, colour.b);
+					float c = max(colour.r, maxgb);
+					float limitc = min(1.0, 1.0 + maxgb - colour.r * 0.07);
+					float offmin = 0.1;
+					float offmax = 1.2;
+					c = mix(offmin, offmax, c);
+					c = clamp(c, 0.0, 1.0);
+					c = 1.0 - c;
+					c = c * c;
+					c = 1.0 - c;
+					float off = 0.5;
+					c = -off + (1.0 + off * 2.0) * c;
+					c = clamp(c, 0.0, limitc);
+					c = floor(c);
+					colour.rgb = mix(vec3(0.212, 0.200, 0.106), vec3(0.792, 0.82, 0.878), c);
+					colour.a = floor(colour.a + 0.75);
+			#endif
+				</body>
+			</function>
+		</useWithRenderingFragmentShader>
+		
+		<outputDefinition>
+			rgb : alpha - as anti banding is applied here, we no longer have need to use rgb10a2
+			<output name="colour" videoFormat="rgba8" baseVideoFormat="rgba" videoFormatData="unsignedByte"/>
+		</outputDefinition>
+	</renderingPipeline>
+</library>

@@ -1,0 +1,436 @@
+<library>
+	<colour name="handBlack"    r="0.050" g="0.040" b="0.100"/>
+	<colour name="handCyan"     r="0.141" g="0.878" b="0.820"/>
+	<colour name="handRed"      r="0.950" g="0.150" b="0.080"/>
+	<colour name="handGreen"    r="0.210" g="0.900" b="0.060"/>
+	<colour name="handBlue"     r="0.060" g="0.140" b="0.800"/>
+	<colour name="handBlueDark" r="0.030" g="0.070" b="0.400"/>
+	<colour name="handYellow"   r="0.878" g="0.820" b="0.141"/>
+	<colour name="handWhite"    r="0.950" g="0.950" b="0.950"/>
+	<colour name="handEcru"     r="0.937" g="0.922" b="0.886"/>
+	<colour name="handGreyDark" r="0.230" g="0.230" b="0.230"/>
+
+	<colour name="handDistColour"				r="0.900" g="0.900" b="0.900"/>
+	<colour name="handDistColourInactive"		r="0.400" g="0.400" b="0.400"/>
+
+	<colour name="statsInfoDiffPlus"			r="0.000" g="0.700" b="0.000"/>
+	<colour name="statsInfoDiffMinus"			r="0.800" g="0.000" b="0.000"/>
+	<colour name="statsInfoChanged"				r="0.800" g="0.700" b="0.000"/>
+	
+	<colour name="handHealth"					r="0.950" g="0.400" b="0.400"/>
+	<colour name="handHealthNotFull"			r="0.900" g="0.050" b="0.450"/>
+	<colour name="handHealthExtra"				r="1.000" g="0.600" b="0.600"/>
+	<colour name="handWeapon"					r="0.400" g="0.400" b="0.950"/>
+	<colour name="handWeaponNotFull"			r="0.900" g="0.050" b="0.450"/>
+	<colour name="handWeaponExtra"				r="0.600" g="0.600" b="1.000"/>
+	<colour name="handWeaponInterim"			r="0.400" g="0.900" b="0.450"/>
+	<colour name="handWeaponInterimNotFull"		r="0.900" g="0.050" b="0.450"/>
+	<colour name="handWeaponInterimExtra"		r="0.600" g="1.000" b="0.600"/>
+	<colour name="handOtherEquipment"			r="0.400" g="0.400" b="0.950"/>
+	<colour name="handOtherEquipmentNotFull"	r="0.900" g="0.050" b="0.450"/>
+	<colour name="handOtherEquipmentExtra"		r="0.600" g="0.600" b="1.000"/>
+	
+	<colour name="handWord"						r="0.850" g="0.850" b="0.850"/>
+	<colour name="handWordHighlight"			r="0.950" g="0.450" b="0.450"/>
+		
+	<colour name="doorDeviceInk"				r="1.000" g="0.950" b="0.800"/>
+	<colour name="doorDevicePaper"				r="0.250" g="0.100" b="0.050"/>
+	
+	<colour name="energy_kiosk_empty"				r="0.200" g="1.000" b="0.200"/>
+	<colour name="energy_kiosk_active"				r="0.800" g="1.000" b="0.800"/>
+	<colour name="energy_kiosk_wrong_item"			r="1.000" g="0.200" b="0.200"/>
+	<colour name="energy_kiosk_display_inactive"	r="0.500" g="0.550" b="0.800"/>
+	<colour name="energy_kiosk_display_active"		r="0.800" g="0.850" b="1.000"/>
+	<colour name="energy_kiosk_display_wrong_item"	r="1.000" g="0.600" b="0.600"/>
+
+	<colour name="trash_bin_empty"				r="1.000" g="0.200" b="0.200"/>
+	<colour name="trash_bin_active"				r="1.000" g="0.600" b="0.200"/>
+
+	<colour name="energy_coil_empty"			r="0.200" g="1.000" b="0.200"/>
+	<colour name="energy_coil_active"			r="0.800" g="1.000" b="0.800"/>
+
+	<colour name="upgrade_canister_ready"		r="0.800" g="0.900" b="1.000"/>
+	<colour name="upgrade_canister_held"		r="0.700" g="0.800" b="1.000"/>
+	<colour name="upgrade_canister_used"		r="1.000" g="0.800" b="0.700"/>
+
+	<colour name="terminal_empty"				r="0.200" g="0.400" b="1.000"/>
+	<colour name="terminal_active"				r="1.000" g="0.400" b="0.200"/>
+
+	<!--
+	red to press, yellow pushed, blue busy
+	<colour name="switchPulse"					r="1.000" g="0.250" b="0.200"/>
+	<colour name="switchReady"					r="0.600" g="0.150" b="0.100"/>
+	<colour name="switchActive"					r="1.000" g="0.850" b="0.200"/>
+	<colour name="switchBusy"					r="0.200" g="0.250" b="1.000"/>
+	-->
+	
+	yellow to press, white pushed, blue busy
+	<colour name="switchPulse"					r="1.000" g="0.850" b="0.200"/>
+	<colour name="switchReady"					r="0.900" g="0.650" b="0.100"/>
+	<colour name="switchActive"					r="1.000" g="0.950" b="0.800"/>
+	<colour name="switchBusy"					r="0.200" g="0.250" b="1.000"/>
+	<colour name="switchBad"					r="0.900" g="0.100" b="0.100"/>
+	<colour name="switchOperating"				r="0.850" g="0.850" b="1.000"/>
+	
+	<colour name="controlPanel_warning"			r="1.000" g="0.150" b="0.100"/>
+	<colour name="sealPanel_warning"			r="1.000" g="0.150" b="0.100"/>
+	<colour name="sealPanel_ok"					r="0.150" g="1.000" b="0.100"/>
+	<colour name="sealPanel_indicator"			r="1.000" g="0.150" b="0.100"/>
+	<colour name="sealPanel_outIndicator"		r="0.350" g="0.450" b="1.000"/>
+	
+	<colour name="ai_normal"					r="1.000" g="0.500" b="0.200"/>
+	<colour name="ai_attack"					r="1.000" g="0.100" b="0.100"/>
+	<colour name="ai_friendly"					r="0.200" g="0.500" b="1.000"/>
+	<colour name="ai_confused"					r="0.000" g="0.000" b="0.000"/>
+	<colour name="ai_tentacled"					r="1.000" g="0.200" b="0.900"/>
+	
+	<colour name="throne"						r="0.300" g="0.900" b="1.000" a="1"/>
+	<colour name="palace_interior_top"			r="0.698" g="0.860" b="1.000" a="1"/>
+	
+	<colour name="rammer_charge"				r="1.000" g="0.400" b="0.200" a="0.000"/>
+	<colour name="rammer_charge_base"			r="1.000" g="0.100" b="0.100"/>
+	
+	<colour name="weapon_normal"				r="0.000" g="0.000" b="0.000" a="0.000"/>
+	<colour name="weapon_locked"				r="0.300" g="1.000" b="0.300"/>
+	<colour name="weapon_ready"					r="0.700" g="0.700" b="1.000"/>
+	<colour name="weapon_overheating"			r="1.000" g="0.200" b="0.100"/>
+	
+	<colour name="weapon_sight"					r="0.200" g="0.500" b="1.000"/>
+
+	<colour name="vulnerable_impact"			r="1.000" g="1.000" b="1.000" a="0.000"/>
+	<colour name="vulnerable_impact_base"		r="0.900" g="0.900" b="0.550"/>
+
+	<colour name="normal_explosion"				r="1.000" g="1.000" b="0.500" a="0.000"/>
+	<colour name="normal_explosion_base"		r="0.900" g="0.300" b="0.150"/>
+
+	<colour name="left_hand"					r="0.300" g="0.300" b="1.000" a="0.200"/>
+	<colour name="right_hand"					r="1.000" g="0.300" b="0.300" a="0.200"/>
+
+	<colour name="deflection_active"					r="1.000" g="0.650" b="0.300"/>
+
+	emissives
+
+	<colour name="lockIndicator_locked"					r="0.900" g="0.100" b="0.100"/>
+	<colour name="lockIndicator_open"					r="0.100" g="0.900" b="0.100"/>
+	<colour name="lockIndicator_opening"				r="0.100" g="0.900" b="0.100"/>
+	<colour name="lockIndicator_overriding"				r="0.900" g="0.900" b="0.100"/>
+	
+	<colour name="sparkles"								r="1.000" g="1.000" b="0.800"/>
+	<colour name="sparkles_base"						r="1.000" g="0.800" b="0.300"/>
+
+	<colour name="beacon_light"							r="0.900" g="0.100" b="0.090" a="0.000"/>
+	<colour name="beacon_light_base"					r="1.000" g="0.300" b="0.200" a="0.000"/>
+		
+	<colour name="h_engine"								r="0.7" g="0.3" b="0.1" a="0"/>
+	<colour name="h_engine_base"						r="0.7" g="0.3" b="0.1" a="0"/>
+
+	<colour name="engine"								r="0.7" g="0.3" b="0.1" a="0"/>
+	<colour name="engine_base"							r="0.7" g="0.3" b="0.1" a="0"/>
+
+	<colour name="arrival_light"						r="0.95" g="0.95" b="1.00" a="0.0"/>
+	<colour name="arrival_light_base"					r="0.30" g="0.30" b="0.40"/>
+	
+	<colour name="airship_lights"						r="0.161" g="0.399" b="0.848" a="0.000"/>
+	<colour name="airship_lights_base"					r="0.423" g="0.912" b="1.000" a="0.000"/>
+	<colour name="airship_aggressive_lights"			r="0.848" g="0.000" b="0.000" a="0.000"/>
+	<colour name="airship_aggressive_lights_base"		r="1.000" g="0.000" b="0.000" a="0.000"/>
+		
+	<.colour name="corrosion"							r="0.569" g="0.942" b="0.161" a="0.000"/>
+	<colour name="corrosion"							r="0.399" g="0.848" b="0.161" a="1.000"/>
+	<colour name="corrosion_glow"						r="0.280" g="0.680" b="0.100" a="1.000"/>
+	<colour name="corrosion_em"							r="0.399" g="0.848" b="0.161" a="0.000"/>
+	<colour name="corrosion_em_base"					r="0.912" g="1.000" b="0.423" a="0.000"/>
+	<colour name="corrosion_solid_em_base"				r="0.480" g="0.880" b="0.200" a="0.000"/>
+
+	<colour name="plasma_blast"							r="1.000" g="0.550" b="0.200"/>
+	<colour name="crimson_plasma_projectile"			r="0.860" g="0.100" b="0.240"/>
+	<colour name="orange_plasma_projectile"				r="1.000" g="0.600" b="0.300"/>
+	<colour name="red_plasma_projectile"				r="1.000" g="0.400" b="0.300"/>
+	<colour name="yellow_plasma_projectile"				r="1.000" g="1.000" b="0.400"/>
+	<colour name="airship_plasma_projectile"			r="1.000" g="1.000" b="0.900"/>
+
+	<colour name="tentacle_blood"						r="0.620" g="0.120" b="0.100"/>
+	<colour name="tentacled_plasma_projectile"			r="0.920" g="0.100" b="0.900"/>
+	<colour name="tentacled_plasma_projectile_base"		r="1.000" g="0.300" b="1.000"/>
+		
+	<colour name="blue_plasma_projectile"				r="0.500" g="0.600" b="1.000"/>
+	<colour name="green_plasma_projectile"				r="0.300" g="1.000" b="0.500"/>
+
+	<colour name="red_plasma"							r="1.000" g="0.600" b="0.300"/>
+	<colour name="red_plasma_base"						r="1.000" g="0.300" b="0.300"/>
+		
+		
+	<colour name="red_laser"							r="1.000" g="0.600" b="0.300"/>
+	<colour name="red_laser_base"						r="1.000" g="0.300" b="0.300"/>
+		
+	<colour name="blue_laser"							r="0.500" g="0.800" b="1.000"/>
+	<colour name="blue_laser_base"						r="0.500" g="0.500" b="1.000"/>
+		
+	<colour name="green_laser"							r="0.300" g="1.000" b="0.600"/>
+	<colour name="green_laser_base"						r="0.300" g="1.000" b="0.300"/>
+		
+	<colour name="tentacled_plasma"						r="1.000" g="0.600" b="0.900"/>
+	<colour name="tentacled_plasma_base"				r="1.000" g="0.300" b="0.900"/>
+	
+	<colour name="data_block"							r="0.990" g="0.980" b="0.800" a="0.000"/>
+	<colour name="data_block_base"						r="0.900" g="0.850" b="0.400"/>
+
+	<colour name="crystalite"							r="0.800" g="0.990" b="0.980" a="0.000"/>
+	<colour name="crystalite_base"						r="0.400" g="0.900" b="0.850"/>
+		
+	<colour name="weapon_mixer_emis"					r="1.000" g="0.900" b="0.400"/>
+	<colour name="weapon_mixer_emis_base"				r="0.900" g="0.700" b="0.100"/>
+	<colour name="weapon_mixer_swap_emis"				r="0.900" g="0.900" b="1.000"/>
+	<colour name="weapon_mixer_swap_emis_base"			r="0.300" g="0.400" b="0.900"/>
+
+	<colour name="weapon_part"							r="0.800" g="0.990" b="0.980" a="0.000"/>
+	<colour name="weapon_part_base"						r="0.400" g="0.900" b="0.850"/>
+		
+	<colour name="energy_core"							r="0.950" g="0.400" b="0.400" a="0.000"/>
+	<colour name="energy_core_base"						r="0.600" g="0.150" b="0.150"/>
+		
+	<colour name="energy_bomb"							r="0.990" g="0.950" b="0.800" a="0.000"/>
+	<colour name="energy_bomb_base"						r="0.700" g="0.600" b="0.200"/>
+		
+	<colour name="reactor_energy"						r="0.400" g="0.600" b="0.950" a="0.000"/>
+	<colour name="reactor_energy_base"					r="0.150" g="0.250" b="0.600"/>
+	<colour name="reactor_energy_dark"					r="0.300" g="0.400" b="0.750" a="0.000"/>
+	<colour name="reactor_energy_dark_base"				r="0.100" g="0.200" b="0.500"/>
+		
+	<colour name="pre_explode_core"						r="0.600" g="0.150" b="0.150" a="0.000"/>
+	<colour name="pre_explode_core_base"				r="0.250" g="0.050" b="0.050"/>
+		
+	<colour name="bleed_core"							r="0.250" g="0.100" b="0.100" a="0.000"/>
+	<colour name="bleed_core_base"						r="0.040" g="0.010" b="0.010"/>
+		
+	<colour name="physical_violence"					r="0.600" g="0.150" b="0.150" a="0.000"/>
+	<colour name="physical_violence_base"				r="0.250" g="0.050" b="0.050"/>
+	
+	<colour name="energy_quantum_ammo"					r="0.950" g="0.950" b="1.000" a="0.000"/>
+	<colour name="energy_quantum_ammo_base"				r="0.500" g="0.500" b="1.000"/>
+
+	<colour name="energy_quantum_power_ammo"			r="1.000" g="0.950" b="1.000" a="0.000"/>
+	<colour name="energy_quantum_power_ammo_base"		r="1.000" g="0.500" b="1.000"/>
+	
+	<colour name="lightning"							r="0.950" g="0.950" b="1.000" a="0.000"/>
+	<colour name="lightning_base"						r="0.700" g="0.700" b="1.000"/>
+
+	<colour name="energy_quantum_health"				r="1.000" g="1.000" b="0.600" a="0.000"/>
+	<colour name="energy_quantum_health_base"			r="1.000" g="0.500" b="0.500"/>
+
+	<colour name="weapon_part_schematic_layout"					r="0.700" g="0.700" b="0.700"/>
+	<colour name="weapon_part_schematic_connector_matches"		r="0.200" g="0.300" b="0.900"/>
+	<colour name="weapon_part_schematic_connector_mandatory"	r="0.900" g="0.200" b="0.200"/>
+
+	<colour name="weapon_part_schematic_damaged" 	    r="1.000" g="0.200" b="0.200"/>
+	<colour name="weapon_part_schematic_interior"       r="0.100" g="0.100" b="0.150"/> (same as loader_hub_background)
+	<colour name="weapon_part_schematic_outline"		r="0.900" g="0.900" b="0.900"/>
+	<colour name="weapon_part_schematic_detail"			r="0.650" g="0.650" b="0.650"/>
+	<colour name="weapon_part_schematic_background"		r="0.400" g="0.400" b="0.400"/>
+	<colour name="weapon_part_schematic_plasma"			r="0.900" g="0.200" b="0.200"/>
+	<colour name="weapon_part_schematic_corrosion"		r="0.200" g="0.900" b="0.200"/>
+	<colour name="weapon_part_schematic_lightning"		r="0.700" g="0.800" b="1.000"/>
+	<colour name="weapon_part_schematic_chassis"		r="0.300" g="0.300" b="0.300"/>
+	<colour name="weapon_part_schematic_chamber"		r="0.800" g="0.300" b="0.900"/>
+	<colour name="weapon_part_schematic_storage"		r="0.200" g="0.300" b="0.900"/>
+	<colour name="weapon_part_schematic_storage_speed"	r="0.800" g="0.800" b="1.000"/>
+	<colour name="weapon_part_schematic_magazine"		r="0.600" g="0.700" b="0.950"/>
+	<colour name="weapon_part_schematic_magazine_speed"	r="0.800" g="0.900" b="1.000"/>
+	<colour name="weapon_part_schematic_magazine_cool"	r="0.300" g="0.300" b="0.300"/>
+	<colour name="weapon_part_schematic_damage"			r="0.950" g="0.100" b="0.100"/>
+	<colour name="weapon_part_schematic_special" 	    r="0.550" g="0.300" b="0.550"/>
+	<colour name="weapon_part_schematic_armour_pierce"	r="0.950" g="0.900" b="0.200"/>
+	<colour name="weapon_part_schematic_cont_fire"		r="0.400" g="0.200" b="0.800"/>
+	<colour name="weapon_part_schematic_projectile"		r="0.650" g="0.650" b="0.650"/>
+	<colour name="weapon_part_schematic_multiple_proj"	r="0.950" g="0.700" b="0.200"/>
+	<colour name="weapon_part_schematic_single_proj"	r="0.250" g="0.850" b="0.550"/>
+	<colour name="weapon_part_schematic_proj_spread"	r="0.800" g="0.600" b="0.200"/>
+	<colour name="weapon_part_schematic_proj_no_spread"	r="0.200" g="0.800" b="0.600"/>
+	<colour name="weapon_part_schematic_proj_neg_spread"r="0.600" g="0.200" b="0.800"/>
+	<colour name="weapon_part_schematic_proj_speed"		r="0.400" g="0.200" b="0.800"/>
+
+	??
+
+	<colour name="shield_normal"			r="1.000" g="0.500" b="0.200"/>
+	<colour name="shield_depleted"			r="1.000" g="1.000" b="1.000"/>
+	<colour name="shield_activated"			r="1.000" g="0.900" b="0.500"/>
+
+	<colour name="grenade_safe"				r="0.000" g="1.000" b="0.400"/>
+	<colour name="grenade_armed"			r="1.000" g="0.000" b="0.000"/>
+	
+	<colour name="energy_deposit"			r="1.000" g="0.800" b="0.000"/>
+	<colour name="energy_withdraw"			r="0.000" g="0.400" b="1.000"/>
+
+	<!-- light
+	<colour name="loader_hub_background"        r="0.700" g="0.700" b="0.700"/>
+	<colour name="loader_hub_background_light"  r="0.990" g="0.990" b="0.990"/>
+	<colour name="loader_hub_fog"        		r="0.850" g="0.850" b="0.850"/>
+	<colour name="loader_hub_floor"             r="0.800" g="0.800" b="0.800"/>
+	<colour name="loader_hub_floor_emissive"    r="0.800" g="0.800" b="0.800"/>
+	<colour name="loader_hub_floor_accent"      r="0.995" g="0.995" b="0.995"/>
+	<colour name="loader_hub_hand"              r="0.700" g="0.700" b="0.700"/>
+	<colour name="loader_hub_hand_accent"       r="0.250" g="0.250" b="0.250"/>
+	<colour name="loader_hub_fade"              r="0.100" g="0.100" b="0.100"/>
+	<colour name="loader_hub_fade_terminal"     r="0.900" g="0.920" b="0.990"/>
+	<colour name="loader_hub_start_head_marker" r="0.995" g="0.295" b="0.295"/>
+	<colour name="loader_hub_stats_header"      r="0.000" g="0.000" b="1.000"/>
+	<colour name="loader_hub_stats_info"        r="1.000" g="0.000" b="0.000"/>
+	-->
+	<colour name="loader_hub_background"            r="0.100" g="0.100" b="0.150"/>
+	<colour name="loader_hub_background_light"      r="0.200" g="0.200" b="0.200"/>
+	<colour name="loader_hub_fog"        		    r="0.020" g="0.020" b="0.070"/>
+	<colour name="loader_hub_floor"                 r="0.250" g="0.250" b="0.250"/>
+	<colour name="loader_hub_floor_emissive"        r="1.000" g="1.000" b="0.300"/>
+	<colour name="loader_hub_floor_accent"          r="0.495" g="0.495" b="0.495"/>
+	<colour name="loader_hub_hand"                  r="0.300" g="0.300" b="0.300"/>
+	<colour name="loader_hub_hand_accent"           r="0.050" g="0.050" b="0.050"/>
+	<colour name="loader_hub_fade"                  r="0.000" g="0.000" b="0.000"/> always fade to black?
+	<colour name="loader_hub_fade_terminal"         r="0.900" g="0.920" b="0.990"/>
+	<colour name="loader_hub_start_head_marker"     r="0.995" g="0.295" b="0.295"/>
+	<colour name="loader_hub_stats_header"          r="0.500" g="0.500" b="1.000"/>
+	<colour name="loader_hub_stats_name"            r="1.000" g="1.000" b="0.500"/>
+	<colour name="loader_hub_stats_info"            r="1.000" g="0.500" b="0.500"/>
+	<colour name="loader_hub_stats_info_core"       r="0.500" g="0.500" b="1.000"/>
+	<colour name="loader_hub_stats_unlock_required" r="1.000" g="0.250" b="0.250"/>
+
+	<colour name="loader_hub_pre_deactivation_emissive"	r="0.900" g="0.200" b="0.200"/>
+
+	<colour name="input_prompt_controller" 				r="0.200" g="0.200" b="0.200"/>
+	<colour name="input_prompt_normal"     				r="0.400" g="0.400" b="0.800"/>
+	<colour name="input_prompt_highlight"  				r="1.000" g="0.200" b="0.200"/>
+
+	<colour name="weapon_part_transfer_chance_full"		r="0.200" g="1.000" b="0.200"/>
+	<colour name="weapon_part_transfer_chance_high"		r="0.900" g="0.950" b="0.200"/>
+	<colour name="weapon_part_transfer_chance_medium"	r="0.950" g="0.600" b="0.200"/>
+	<colour name="weapon_part_transfer_chance_low"		r="0.900" g="0.200" b="0.200"/>
+	<colour name="weapon_part_transfer_chance_no"		r="0.500" g="0.050" b="0.050"/>
+
+	<colour name="map_overlay_here"						r="1.000" g="0.000" b="0.000"/>
+	<colour name="map_overlay_important"				r="1.000" g="0.000" b="0.000"/>
+	<colour name="map_overlay_highlight"				r="0.700" g="0.950" b="1.000"/>
+	<colour name="map_overlay_knownExits"				r="0.300" g="0.300" b="0.300"/>
+	<colour name="map_overlay_knownDevices"				r="0.550" g="0.550" b="0.620"/>
+	<colour name="map_overlay_knownExits_autoMapOnly"	r="0.550" g="0.550" b="0.580"/>
+	<colour name="map_overlay_knownDevices_autoMapOnly"	r="0.700" g="0.700" b="0.850"/>
+	<colour name="map_overlay_visited"					r="0.990" g="0.920" b="0.490"/>
+	<colour name="map_overlay_lineModel"				r="0.450" g="0.450" b="0.450" a="0.700"/>
+	<colour name="map_overlay_long_distance_detection"	r="0.300" g="1.000" b="0.400"/>
+	<colour name="map_overlay_long_distance_direction"	r="1.000" g="0.700" b="0.300"/>
+	<colour name="map_overlay_health"					r="1.000" g="0.500" b="0.500"/>
+	<colour name="map_overlay_ammo"						r="0.500" g="0.500" b="1.000"/>
+	<colour name="map_overlay_automap"					r="0.500" g="1.000" b="0.750"/>
+	<colour name="map_overlay_upgradeMachine"			r="1.000" g="1.000" b="0.500"/>
+	<colour name="map_overlay_workshop"					r="1.000" g="0.500" b="1.000"/>
+	<colour name="map_overlay_details"					r="0.700" g="0.700" b="0.700"/>
+	<colour name="map_overlay_corrosion"				r="0.600" g="1.000" b="0.600" a="0.500"/>
+	<colour name="map_overlay_hackBox"					r="0.000" g="0.600" b="1.000"/>
+	<colour name="map_overlay_lockerBox"				r="0.000" g="0.600" b="1.000"/>
+	<colour name="map_overlay_wallBox"					r="0.000" g="0.600" b="1.000"/>
+
+	<colour name="door_lock_button_not_locked"			r="0.700" g="0.700" b="0.700"/>
+	<colour name="door_lock_button_locked"				r="0.700" g="0.000" b="0.000"/>
+	<colour name="door_lock_auto_open"					r="0.900" g="0.900" b="0.900"/>
+	<colour name="door_lock_auto_closed"				r="0.200" g="0.200" b="0.950"/>
+	<colour name="door_lock_locked"						r="1.000" g="0.250" b="0.250"/>
+
+	<colour name="subtitle_device_subtitles_on"			r="0.250" g="1.000" b="0.250"/>
+	<colour name="subtitle_device_subtitles_off"		r="1.000" g="0.250" b="0.250"/>
+
+	<colour name="hi_activated_automap"					r="0.500" g="1.000" b="0.750"/>
+	<colour name="hi_activated_upgrade_canister"		r="1.000" g="1.000" b="0.500"/>
+	<colour name="hi_activated_upgrade_canister_health"	r="1.000" g="0.500" b="0.500"/>
+	<colour name="hi_activated_upgrade_canister_ammo"	r="0.500" g="0.500" b="1.000"/>
+	
+	<colour name="hi_activated_upgrade_canister_mgp"	r="0.500" g="1.000" b="0.500"/>
+
+	<colour name="pilgrimage_unlockable"				r="0.500" g="1.000" b="0.700"/>
+	<colour name="ship_upgrade_unlockable"				r="1.000" g="0.500" b="1.000"/>
+	<colour name="buy_weapon_unlockable"				r="1.000" g="0.700" b="0.500"/>
+	
+	<colour name="exm_installer_select"					r="1.000" g="0.500" b="0.500"/>
+	<colour name="exm_integral"							r="0.600" g="0.800" b="0.600"/>
+	<colour name="exm_permanent"						r="0.700" g="0.700" b="0.700"/>
+	<colour name="exm_passive"							r="0.500" g="0.700" b="1.000"/>
+	<colour name="exm_active"							r="1.000" g="1.000" b="0.500"/>
+	
+	<colour name="pocket"								r="0.9" g="0.4" b="0.9"/>
+
+	<colour name="gun_supercharger"						r="0.400" g="0.400" b="1.000"/>
+	<colour name="gun_retaliator"						r="1.000" g="0.400" b="0.400"/>
+
+	<colour name="exm_push"								r="0.700" g="0.700" b="1.000"/>
+	<colour name="exm_pull"								r="1.000" g="0.700" b="1.000"/>
+	
+	<colour name="pilgrim_fad_health"					r="1.000" g="0.400" b="0.400"/>
+	<colour name="pilgrim_fad_ammo"						r="0.400" g="0.400" b="1.000"/>
+	
+	<colour name="pilgrim_overlay_warning"				r="1.000" g="0.600" b="0.600"/>
+	<colour name="pilgrim_overlay_system"				r="0.950" g="0.950" b="1.000"/>
+	
+	<colour name="pilgrim_overlay_charge"				r="0.800" g="0.800" b="0.800"/>
+	<colour name="pilgrim_overlay_health"				r="1.000" g="0.400" b="0.400"/>
+	<colour name="pilgrim_overlay_ammo"					r="0.400" g="0.400" b="1.000"/>
+	<colour name="pilgrim_overlay_replace_exm"			r="1.000" g="0.400" b="0.400"/>
+	<colour name="pilgrim_overlay_install_exm"			r="0.700" g="0.700" b="0.700"/>
+	<colour name="pilgrim_overlay_active_exm"			r="1.000" g="0.000" b="0.000"/>
+	<colour name="pilgrim_overlay_active_exm_cooldown"	r="0.000" g="0.000" b="1.000"/>
+	<colour name="pilgrim_overlay_automap"				r="0.500" g="1.000" b="0.750"/>
+	<colour name="pilgrim_overlay_automap_weak"			r="0.500" g="1.000" b="0.750" a="0.5"/>
+	<colour name="pilgrim_overlay_fill_storage"			r="0.300" g="1.000" b="0.300"/>
+	<colour name="pilgrim_overlay_armour"				r="0.700" g="0.700" b="0.700"/>
+	<colour name="pilgrim_overlay_weapon"				r="0.700" g="0.700" b="0.700"/>
+	<colour name="pilgrim_overlay_damage"				r="1.000" g="0.400" b="0.400"/>
+	<colour name="pilgrim_overlay_explosion"			r="1.000" g="0.600" b="0.400"/>
+	<colour name="pilgrim_overlay_enemy"				r="1.000" g="0.400" b="0.400"/>
+	<colour name="pilgrim_overlay_corrosion"			r="0.600" g="1.000" b="0.600"/>
+	<colour name="pilgrim_overlay_lightning"			r="0.700" g="0.800" b="1.000"/>
+	<colour name="pilgrim_overlay_projectile"			r="1.000" g="0.900" b="0.400"/>
+	
+	<colour name="pilgrim_overlay_weaponPart_damaged"	r="1.000" g="0.200" b="0.200"/>
+	
+	<colour name="pilgrim_overlay_cell_info_enter_from"	r="1.000" g="1.000" b="1.000"/>
+
+	<colour name="pilgrim_overlay_investigate__damage"	r="1.000" g="0.400" b="0.400"/>
+	
+	<colour name="pilgrim_overlay_mission_title"		r="1.000" g="1.000" b="0.400"/>
+	<colour name="pilgrim_overlay_mission_selected"		r="0.400" g="1.000" b="0.400"/>
+	<colour name="pilgrim_overlay_mission_success"		r="0.400" g="1.000" b="1.000"/>
+	<colour name="pilgrim_overlay_mission_failed"		r="1.000" g="0.400" b="0.400"/>
+	<colour name="pilgrim_overlay_mission_result"		r="0.400" g="0.400" b="1.000"/>
+	
+	<colour name="pilgrim_overlay_item"					r="0.800" g="0.800" b="0.800"/>
+	<colour name="pilgrim_overlay_item_darker"			r="0.500" g="0.500" b="0.500"/>
+	<colour name="pilgrim_overlay_item_dark"			r="0.200" g="0.200" b="0.200"/>
+	<colour name="pilgrim_overlay_item_eye"				r="1.000" g="1.000" b="0.500"/>
+	<colour name="pilgrim_overlay_item_button"			r="1.000" g="0.500" b="0.500"/>
+	<colour name="pilgrim_overlay_item_danger"			r="1.000" g="0.200" b="0.200"/>
+	<colour name="pilgrim_overlay_item_shield"			r="1.000" g="0.500" b="0.200"/>
+
+	<colour name="gameModifiers_title_on"				r="1.000" g="0.950" b="0.400"/>
+	<colour name="gameModifiers_title_off"				r="0.950" g="0.900" b="0.500" a="0.95"/>
+	<colour name="gameModifiers_desc_on"				r="0.950" g="0.950" b="0.950"/>
+	<colour name="gameModifiers_desc_off"				r="0.700" g="0.700" b="0.700" a="0.8"/>
+
+	<colour name="noDoorMarker_blocked"					r="0.900" g="0.000" b="0.000" a="0.9"/>
+	<colour name="noDoorMarker_pending"					r="0.700" g="0.700" b="1.000" a="0.9"/>
+	
+	https://www.cinema5d.com/film-color-schemes-cinematic-color-design/
+	
+	complementary
+	http://paletton.com/#uid=7020u0kllllaFw0g0qFqFg0w0aF
+	<!--
+	<colour name="mainColour_main"			r="1.000" g="1.000" b="1.000"/>
+	<colour name="mainColour_first"			r="0.667" g="0.247" b="0.224"/>
+	<colour name="mainColour_second"		r="0.173" g="0.518" b="0.216"/>
+	<colour name="mainColour_third"			r="0.667" g="0.431" b="0.224"/>
+	<colour name="mainColour_fourth"		r="0.137" g="0.380" b="0.404"/>
+	<!--
+	-->
+	<colour name="mainColour_main"			r="1.000" g="0.950" b="0.950"/>
+	<colour name="mainColour_first"			r="0.828" g="0.328" b="0.300"/>
+	<colour name="mainColour_second"		r="0.243" g="0.636" b="0.292"/>
+	<colour name="mainColour_third"			r="0.745" g="0.513" b="0.310"/>
+	<colour name="mainColour_fourth"		r="0.137" g="0.380" b="0.404"/>
+	-->
+
+</library>

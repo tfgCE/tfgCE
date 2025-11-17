@@ -1,0 +1,29 @@
+<library group="loader hub">
+
+	<texture name="icons" file="assets\icons.tex" importFromFile="assets\_source\icons.tga" filteringMag="nearest" filteringMin="nearest" wrap="clamp"/> 
+
+	<texturePart name="cursor right" texture="icons">
+		<uv0 x="0t256" ty="255t256"/>
+		<uv1 x="31t256" ty="192t256"/>
+		<uvAnchor x="2t256" ty="194t256"/>
+	</texturePart>
+
+	<texturePart name="cursor left" texture="icons">
+		<uv0 x="32t256" ty="255t256"/>
+		<uv1 x="63t256" ty="192t256"/>
+		<uvAnchor x="61t256" ty="194t256"/>
+	</texturePart>
+
+	<texturePart name="help icon" texture="icons">
+		<uv0 x="0t256" ty="190t256"/>
+		<uv1 x="31t256" ty="160t256"/>
+		<uvAnchor x="15.5t256" ty="175.5t256"/>
+	</texturePart>
+
+	<texturePart name="tip restart at any chapter" texture="icons">
+		<uv0 x="0t256" ty="154t256"/>
+		<uv1 x="63t256" ty="96t256"/>
+		<uvAnchor x="31t256" ty="127.5t256"/>
+	</texturePart>
+
+</library>

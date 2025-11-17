@@ -1,0 +1,38 @@
+#pragma once
+
+#include "..\globalSettings.h"
+
+#define WITH_PHYSICAL_SENSATIONS
+
+#ifdef WITH_PHYSICAL_SENSATIONS
+#define PHYSICAL_SENSATIONS_OWO
+#ifdef AN_ANDROID
+#ifdef AN_QUEST
+#define PHYSICAL_SENSATIONS_BHAPTICS_JAVA
+#endif
+#endif
+#ifdef AN_WINDOWS
+#define PHYSICAL_SENSATIONS_BHAPTICS_WINDOWS
+#endif
+
+// to test UI on windows builds
+/*
+#ifdef AN_DEVELOPMENT
+#ifndef PHYSICAL_SENSATIONS_BHAPTICS_JAVA
+#define PHYSICAL_SENSATIONS_BHAPTICS_JAVA
+#endif
+#endif
+*/
+
+#ifdef PHYSICAL_SENSATIONS_BHAPTICS_JAVA
+	#define PHYSICAL_SENSATIONS_BHAPTICS
+#else
+	#ifdef PHYSICAL_SENSATIONS_BHAPTICS_WINDOWS
+		#define PHYSICAL_SENSATIONS_BHAPTICS
+	#endif
+#endif
+
+
+#define LOG_PHYSICAL_SENSATIONS
+
+#endif

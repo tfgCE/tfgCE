@@ -1,0 +1,18 @@
+combat suit
+energy dispensers
+transfer station
+
+
+transfer kiosk (energy kiosk)
+hollow (bay/hole in energy kiosk)
+weapon cell (weapon part)
+
+
+energy orb (not quantum)
+(not in use) operator (profile)
+(not in use) subject (game slot)
+data chunk (data block segment)
+knowledge (experience)
+apparatus grid (exm maze)
+data block assembly (data block assembly)
+fuse data block/chunk (buy)

@@ -1,0 +1,20 @@
+<library group="shader function libs">
+	<shaderFunctionLib name="interpolation">
+		various interpolations
+		
+		<source>
+			<function name="linear01_to_quadratic01">
+				<header>float linear01_to_quadratic01(float _a)</header>
+				<body>
+					_a = (_a - 0.5) * 2.0;
+					float signA = sign(_a);
+					_a = 1.0 - abs(_a);
+					_a = _a * _a;
+					_a = signA * (1.0 - _a);
+					_a = (_a + 1.0) * 0.5;
+					return _a;
+				</body>
+			</function>
+		</source>
+	</shaderFunctionLib>
+</library>

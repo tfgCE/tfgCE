@@ -1,0 +1,33 @@
+<library group="displays">
+	gfx
+	
+	<!--
+	<textureArray name="h_display 24x32" file="assets\h_display 24x32.tex"/>
+	<textureArray name="h_display 24x32 [ch_s]" file="assets\h_display 24x32 [ch_s].tex"/>
+
+	<font name="h_display 24x32">
+		<variableWidth x="24" y="32" spacingx="4" spacingy="4" verticalMargin="4" baseLinePt="0.26"/>
+		<texture use="h_display 24x32">
+			<compressCharacters/>
+			<rowAnsi/>
+			<rowLocalisedCharacters setId="latin"/>
+		</texture>
+		<texture use="h_display 24x32 [ch_s]">
+			<rowLocalisedCharacters setId="chinese_simplified"/>
+		</texture>
+	</font>
+
+	<font name="h_display 24x32 fixed">
+		<fixedSize x="24" y="32" spacingx="4" spacingy="4" verticalMargin="4" baseLinePt="0.26"/>
+		<texture use="h_display 24x32">
+			<compressCharacters/>
+			<rowAnsi/>
+			<rowLocalisedCharacters setId="latin"/>
+		</texture>
+		<texture use="h_display 24x32 [ch_s]">
+			<rowLocalisedCharacters setId="chinese_simplified"/>
+		</texture>
+	</font>
+	-->
+	
+</library>

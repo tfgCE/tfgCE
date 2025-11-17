@@ -1,0 +1,10 @@
+<library group="fonts">
+
+	<texture name="tfg" file="assets\tfg.tex" importFromFile="assets\_source\tfg.tga" filteringMag="linear" filteringMin="linearMipMapLinear" wrap="clamp" withMipMaps="true"/>
+
+	<font name="tfg">
+		<variableWidth x="120" y="120" spacingx="25" spacingy="25" leftMargin="5" rightMargin="5"/>
+		<texture use="tfg"><ansi/></texture>
+	</font>
+
+</library>

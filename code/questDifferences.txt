@@ -1,0 +1,21 @@
+1. displays:
+	- no shadowmasks for displays
+	- simplier postprocess
+2. general shader:
+	- voxel alterations are hard coded
+	- simplified reflections (no full background)
+	- no speculars (sqrt)
+	- lowp for colours, uses and other minor stuff
+	- background is used less often
+	- no normalizations
+3. mesh generation:
+	- less sub divisions (much less)
+	- less details
+	- not generating particular edge meshes at all or without cross sections
+4. other custom:
+	- less palmers in temple station
+	- no clouds
+	- almost no blending! the only one left is on the displays
+	- pilgrim has simpler meshes
+	- added "unified fog" to not calculate fog for objects per pixel but per object, done for devices, npcs, pilgrim
+	- health colour is used via global tint

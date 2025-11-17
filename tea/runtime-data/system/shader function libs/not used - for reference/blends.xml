@@ -1,0 +1,21 @@
+<library group="shader function libs">
+	<shaderFunctionLib name="blends">
+		various blends
+			_alpha at 0 gives _a
+			_alpha at 1 gives _b
+		<source>
+			<function name="blend_rgb">
+				<header>vec3 blend_rgb(float _alpha, vec3 _a, vec3 _b)</header>
+				<body>
+					return _a * (1.0 - _alpha) + _b * _alpha;
+				</body>
+			</function>
+			<function name="blend_rgba">
+				<header>vec4 blend_rgba(float _alpha, vec4 _a, vec4 _b)</header>
+				<body>
+					return _a * (1.0 - _alpha) + _b * _alpha;
+				</body>
+			</function>
+		</source>
+	</shaderFunctionLib>
+</library>

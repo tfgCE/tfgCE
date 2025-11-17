@@ -1,0 +1,153 @@
+<library group="loading scenes">
+	shaders
+	=======
+	
+	<fragmentShader name="cubes">
+		<useRenderingPipeline/>
+		<source>
+			<function name="calculate_emissive">
+				<body>
+					prcMaterialEmissive = 0.0;
+				</body>
+			</function>
+			<function name="calculate_reflection_dir">
+				<body>
+					// nothing
+				</body>
+			</function>
+			<function name="calculate_reflectiveness">
+				<body>
+					prcReflectiveness = 0.0;
+				</body>
+			</function>
+			<function name="apply_voxel">
+				<body>
+					// nothing
+				</body>
+			</function>
+			<function name="apply_modulate_and_specular_light_and_reflectiveness_to_colour">
+				<header>void apply_modulate_and_specular_light_and_reflectiveness_to_colour()</header>
+				<body>
+					vec3 matDiffuse = prcColour.rgb;
+					
+					prcColour.rgb *= 1.0 - prcMaterialTint;
+					
+					{	// diffuse
+						LOWP vec3 diffuse = prcColour.rgb;
+
+			#ifndef VERTEX_LIGHT
+						LOWP float useOnto = clamp(prcOntoLightNormalised * 2.0 - 1.0, 0.0, 1.0);
+						LOWP float useAway = clamp(1.0 - prcOntoLightNormalised * 2.0, 0.0, 1.0 - useOnto);
+						LOWP float useMid = 1.0 - useOnto - useAway;
+						
+						// modulate
+						LOWP vec4 modLight = useOnto * lightModulateColourOnto
+										   + useMid  * lightModulateColourMid
+										   + useAway * lightModulateColourAway;
+
+						LOWP float modApply = modLight.a * (1.0 - prcMaterialEmissive); // 0 full emissive, 1 no emissive
+						
+						LOWP vec3 colourInfluence = modLight.rgb * modApply;
+
+			#else // +VERTEX_LIGHT
+			#ifdef VERTEX_EMISSIVE
+						LOWP float modApply = prcLightApply;
+						LOWP vec3 colourInfluence = varLightColourInfluence;
+			#else // -VERTEX_EMISSIVE
+						LOWP vec4 modLight = varModLight;
+						LOWP float modApply = modLight.a * (1.0 - prcMaterialEmissive);
+						
+						LOWP vec3 colourInfluence = modLight.rgb * modApply;
+			#endif // VERTEX_EMISSIVE
+			#endif // VERTEX_LIGHT
+			
+						// apply influence
+						diffuse = colourInfluence.rgb * diffuse + diffuse * (1.0 - modApply);
+						
+						prcColour.rgb = diffuse;
+					}
+					
+			#ifdef WITH_REFLECTIONS_A
+					{	// reflected
+						LOWP vec3 diffuse = prcColour.rgb;
+
+						LOWP float reflectionApply = clamp(prcReflectiveness, 0.0, 1.0);
+			#ifdef SIMPLE_REFLECTIONS
+						LOWP vec3 reflected = calculate_background_colour_for_reflections(prcNormal);
+			#else
+						LOWP vec3 reflected = calculate_background_colour_for_reflections(prcReflectionDir);
+			#endif
+
+						reflected = reflected * blend_rgb(prcMaterialTint, vec3(1,1,1), matDiffuse);
+						
+						diffuse = diffuse + reflectionApply * reflected;
+						
+						prcColour.rgb = diffuse;
+					}
+			#endif // WITH_REFLECTIONS_A
+
+				</body>
+			</function>
+			<.function name="process_material_uv">
+				<body>
+					// nothing
+				</body>
+			</function>
+			<.function name="get_material_values">
+				<body>
+					get_simplified_material_values();
+				</body>
+			</function>
+			<function name="apply_distance_to_colour">
+				<body>
+					// don't, just fog
+				</body>
+			</function>
+			<function name="calculate_background_colour_for">
+				<body>
+					return vec3(0,0,0); // it makes the world really dark but let's try the performance
+				</body>
+			</function>
+			<function name="calculate_background_colour_for_reflections">
+				<body>
+					return calculate_background_colour_for(_positionNormalised);
+				</body>
+			</function>
+			<function name="post_anti_banding">
+				<body>
+			#ifdef RETRO
+					colour.rgb *= 2.5;
+					prcRetroUseFog = 0.0;
+			#endif
+					CALL_BASE;
+				</body>
+			</function>
+		</source>
+	</fragmentShader>
+
+	materials
+	=========
+	
+	<material name="cubes"
+		fragmentShader="cubes"
+		.fragmentShader="default:defaultRendering"
+		>
+		<useWithStaticMesh/>
+		<.useWithSkinnedMesh/>
+		<.useWithSkinnedToSingleBoneMesh/>
+		<allowIndividualInstances/>
+		<params>
+			<texture name="inMaterialColour" use="main"/>
+			<texture name="inMaterialProp" use="main_p"/>
+			<texture name="inMaterialVoxel" use="main_v"/>
+			
+			has to have all parameters that anyone may change
+			<float name="voxelSize">0.05</float>
+			<float name="reflectiveness">1.0</float>
+			<float name="emissivePower">1.0</float>
+		</params>
+	</material>
+
+</library>
+
+

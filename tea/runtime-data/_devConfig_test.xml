@@ -1,0 +1,411 @@
+<library>
+  <._section>
+    <skipLoading folder="library\pilgrimage\open world\01 arrival"/>
+    <skipLoading folder="library\pilgrimage\open world\02 injection"/>
+    <skipLoading folder="library\pilgrimage\open world\03 outer rim"/>
+  </_section>
+  <testConfig>
+	<.params>
+	</params>
+	<.params>
+		<bool name="testPilgrimageGameScript">true</bool>
+		<vectorInt2 name="testOpenWorldCell" x="1" y="1"/>
+		<int name="testCellRoomIdx">3</int>
+		room's name is "balconies "places, balconies:balconies main room" : "fdd44c23:11472b31""
+		room's tags are "openWorldX openWorldY cellRoomIdx=3.000"
+		<vector3 name="testCellRoomLocation" x="-4.260" y="0.308" z="1.139"/>
+		<rotator3 name="testCellRoomRotation" pitch="-0.001" yaw="-84.333" roll="-0.000"/>
+		<vector3 name="testCellRoomVRLocation" x="0.177" y="0.285" z="-0.000"/>
+		<rotator3 name="testCellRoomVRRotation" pitch="0.000" yaw="-84.333" roll="-0.000"/>
+		<int name="testObjectiveIdx">5</int>
+		<libraryName name="testGameDefinition">game definition:main</libraryName>
+		<libraryName name="testGameSubDefinition">game definition:continue</libraryName>
+		<libraryName name="testPilgrimage">pilgrimage, 03 outer rim:pilgrimage</libraryName>
+		<vectorInt2 name="testSeed" x="0" y="1691634040"/>
+		<bool name="testImmobileVR">false</bool>
+		<bool name="testImmobileVRAuto">false</bool>
+		<vector2 name="testPlayArea" x="2.24" y="1.30"/>
+		<float name="testScaling">1.000000000</float>
+		<name name="testPreferredTileSize">auto</name>
+		<float name="testTileSize">0.649999976</float>
+		<float name="testDoorHeight">2.000000000</float>
+		<bool name="testAllowCrouch">false</bool>
+		<bool name="testAllowAnyCrouch">true</bool>
+		<string name="testGenerationTags">gm_invincible=0 gm_vulnerable=0 gm_highEnergy=0 gm_lowEnergy=0 gm_fewerEnemies=0 gm_navigator=0 gm_noEnemies=0 gm_tougherEnemies=0 gm_noOne=0 gm_meanerEnemies=0 allowAnyCrouch</string>
+		<string name="testDifficultySettings">playerImmortal=0 weaponInfinite=0 armourIneffective=0 armourEffectivenessLimit autoMapOnly=0 pathOnly=0 npcs=3.000 playerDamageGiven playerDamageTaken aiReactionTime aiMean=0 aiSpeedBasedModifier=0 allowTelegraphOnSpawn=0.050 allowAnnouncePresence=0 forceMissChanceOnLowHealth=0.200 forceHitChanceOnFullHealth=0.100 blockSpawningInVisitedRoomsTime=240.000 spawnCountModifier lootHealth lootAmmo</string>
+	</params>
+	<.params> lots of variants - main story
+
+		<bool name="testPilgrimageGameScript">true</bool>
+
+		test seed
+		<!--
+		<int name="testSeed">124563263</int>
+		<int name="testSeed">53683567</int>
+		-->
+		<int name="testSeed">57839475</int>
+
+		game mode/definition
+		<.libraryName name="testGameDefinition">game definition:experience</libraryName>
+		<libraryName name="testGameDefinition">game definition:arcade</libraryName>
+		<.libraryName name="testGameDefinition">game definition:main</libraryName>
+		
+		<libraryName name="testGameSubDefinition">game definition:continue</libraryName>
+		<.libraryName name="testGameSubDefinition">game definition:checkpoints</libraryName>
+		<.libraryName name="testGameSubDefinition">game definition:runs</libraryName>
+		
+		<.libraryName name="testPilgrim">demo robot:demo robot</libraryName>
+		<.libraryName name="testPilgrim">npcs:enforcer</libraryName>
+		<.libraryName name="testPilgrim">npcs:barker</libraryName>
+		
+		pilgrimages and where we start in them
+		<._section> 01 arrival
+			<libraryName name="testPilgrimage">pilgrimage, 01 arrival:pilgrimage</libraryName>
+		</_section>
+		
+		<._section> 02 injection
+			<libraryName name="testPilgrimage">pilgrimage, 02 injection:pilgrimage</libraryName>
+				<.vectorInt2 name="testOpenWorldCell" x="0" y="3"/> bridge
+				<.vectorInt2 name="testOpenWorldCell" x="0" y="4"/> grand elevator
+		</_section>
+		
+		<._section> 03 outer rim
+			<libraryName name="testPilgrimage">pilgrimage, 03 outer rim:pilgrimage</libraryName>
+			<.libraryName name="testPilgrimage">pilgrimage, 03 outer rim:pilgrimage (exp.rul)</libraryName>
+			<.libraryName name="testPilgrimage">pilgrimage, 03 outer rim:pilgrimage (weap ok)</libraryName>
+				<.vectorInt2 name="testOpenWorldCell" x="0" y="0"/>
+				<.vectorInt2 name="testOpenWorldCell" x="1" y="1"/>
+				<.vectorInt2 name="testOpenWorldCell" x="2" y="1"/>
+				<.vectorInt2 name="testOpenWorldCell" x="0" y="1"/>
+				<.vectorInt2 name="testOpenWorldCell" x="3" y="4"/>
+				<.vectorInt2 name="testOpenWorldCell" x="-1" y="2"/>
+				<.vectorInt2 name="testOpenWorldCell" x="-2" y="1"/>
+				<.vectorInt2 name="testOpenWorldCell" x="2" y="6"/>
+				<.vectorInt2 name="testOpenWorldCell" x="0" y="2"/>
+				<.vectorInt2 name="testOpenWorldCell" x="5" y="3"/>
+				<.vectorInt2 name="testOpenWorldCell" x="3" y="4"/>
+				<.vectorInt2 name="testOpenWorldCell" x="1" y="3"/>
+				<.vectorInt2 name="testOpenWorldCell" x="-1" y="4"/>
+				<.int name="testObjectiveIdx">0</int>
+				<.int name="testObjectiveIdx">2</int>
+				<.tags name="testStoryFacts">
+					03_done_s1
+					03_wasOutside
+					03_infestedAirshipChased
+					03_havenRoomReached					
+				</tags>
+		</_section>
+		
+		<._section> 04 train station
+			<libraryName name="testPilgrimage">pilgrimage, 04 train station:pilgrimage</libraryName>
+			<.string name="testGeneralProgressProfile">a_reachedTrain=10</string>
+			<.string name="testGeneralProgressGameSlot">a_reachedTrain=10</string>
+		</_section>
+
+		<._section> 05 train
+			<libraryName name="testPilgrimage">pilgrimage, 05 train ride:pilgrimage</libraryName>
+				-->
+				<!--
+				<vectorInt2 name="testOpenWorldCell" x="0" y="0"/> exterior
+				<name name="testStartInRoomTag">trainRide00Bext</name> exterior
+				-->
+				<!--
+				<vectorInt2 name="testOpenWorldCell" x="0" y="1"/>
+				<name name="testStartInRoomTag">turretRoom</name> turret room
+				-->
+				-->
+				<!--
+				<vectorInt2 name="testOpenWorldCell" x="0" y="1"/>
+				<name name="testStartInRoomTag">trainCarConnector</name> connector at the end of engine
+				-->
+				<!--
+				<vectorInt2 name="testOpenWorldCell" x="0" y="2"/> upgrade room
+				<name name="testStartInRoomTag">cargoBayBridgeRoom</name> bay bridge if present
+				-->
+				<!--
+				<vectorInt2 name="testOpenWorldCell" x="0" y="3"/>
+				<name name="testStartInRoomTag">trainRide03Fext</name> exterior (airship on side)
+				-->
+				<!--
+				<vectorInt2 name="testOpenWorldCell" x="0" y="3"/>
+				<name name="testStartInRoomTag">trainCarConnector</name> connector at the end
+				-->
+				<!--
+				<vectorInt2 name="testOpenWorldCell" x="0" y="4"/>
+				<name name="testStartInRoomTag">rideOverAContainer</name> over a container
+				-->
+				<!--
+				<vectorInt2 name="testOpenWorldCell" x="0" y="4"/>
+				<name name="testStartInRoomTag">turretRoom</name> turret room (airship shooting at us)
+				-->
+				<!--
+				<vectorInt2 name="testOpenWorldCell" x="0" y="5"/>
+				<name name="testStartInRoomTag">trainRide05Fext</name> exterior (tunnel)
+				-->
+				<!--
+				<vectorInt2 name="testOpenWorldCell" x="0" y="5"/>
+				<name name="testStartInRoomTag">trainCarConnector</name> connector at the end
+				-->
+				<!--
+				<vectorInt2 name="testOpenWorldCell" x="0" y="6"/>
+				<name name="testStartInRoomTag">trainRide06Bext</name> exterior (tentacle monster)
+				-->
+				<!--
+				<vectorInt2 name="testOpenWorldCell" x="0" y="7"/>
+				<name name="testStartInRoomTag">trainCarConnector</name> connector at the end
+				-->
+				<!--
+				<vectorInt2 name="testOpenWorldCell" x="0" y="8"/> small area that serves as an entrance, voice elevator
+				-->
+				<!--
+				<vectorInt2 name="testOpenWorldCell" x="0" y="9"/>
+				<name name="testStartInRoomTag">trainRide05_dropCapsuleBay</name>
+				-->
+				<!--
+				<int name="testObjectiveIdx">3</int> post y=2
+				<name name="testObjectiveId">exit</name>
+				-->
+				<tags name="testStoryFacts">
+					_05_vestibule_door_open
+					_05_train_01_done
+					_05_train_turret0B_destroyed
+					__05_s2_pesters_done
+					_05_train_turret0F_destroyed
+					_05_train_turret0LB_destroyed
+					_05_train_turret0LF_destroyed
+					_05_train_turret1R_destroyed
+					_05_train_turret1T_destroyed
+					_does_not_happen_05_train_turret2T_destroyed
+					_does_not_happen_05_train_turret2R_destroyed
+				</tags>
+		</_section>
+
+		<._section> 06 ship
+			<libraryName name="testPilgrimage">pilgrimage, 06 ship:pilgrimage</libraryName>
+				-->
+				<!--
+				<name name="testStartInRoomTag">voiceEmittersRoom</name>
+				<vectorInt2 name="testOpenWorldCell" x="-1" y="4"/>
+				-->
+				<!--
+				<name name="testStartInRoomTag">dischargeZoneChamber</name>
+				<vectorInt2 name="testOpenWorldCell" x="-1" y="2"/>
+				-->
+				<!--
+				<vectorInt2 name="testOpenWorldCell" x="1" y="-2"/>
+				<vectorInt2 name="testOpenWorldCell" x="-1" y="2"/>
+				<vectorInt2 name="testOpenWorldCell" x="1" y="0"/>
+				-->
+				<!--
+				<name name="testObjectiveId">reactor</name>
+				<vectorInt2 name="testOpenWorldCell" x="0" y="-3"/>
+				<.name name="testStartInRoomTag">shipDuctsRoom</name> before reactor!
+				<name name="testStartInRoomTag">brokenCoilsRoom</name> post reactor, before core shaft
+				-->
+				<tags name="testStoryFacts">
+					06_drop_capsule_crashed
+					06_drop_capsule_door_open
+					06_reactor_location_known
+					_06_reactor_overloaded
+					_06_reactor_elevator_at_top
+					_06_reactor_centipede_killed
+				</tags>
+		</_section>
+
+		<._section> 07 corrosion
+			<libraryName name="testPilgrimage">pilgrimage, 07 corrosion:pilgrimage</libraryName>
+				-->
+				<!--
+				<name name="testStartInRoomTag">surfaceElevatorRideRoom</name>
+				<vectorInt2 name="testOpenWorldCell" x="0" y="0"/>
+				<tags name="testStoryFacts">
+					07_arms_malfunction
+					_07_arms_repaired
+					07_broken_airship_done
+					07_left_and_collapsed
+				</tags>
+				-->
+				
+				<!--
+				<.vectorInt2 name="testOpenWorldCell" x="1" y="0"/>
+				<.vectorInt2 name="testOpenWorldCell" x="0" y="1"/>
+				<.vectorInt2 name="testOpenWorldCell" x="2" y="1"/>
+				<.vectorInt2 name="testOpenWorldCell" x="0" y="2"/>
+				<.vectorInt2 name="testOpenWorldCell" x="-1" y="2"/>
+				<.vectorInt2 name="testOpenWorldCell" x="2" y="2"/>
+				<.vectorInt2 name="testOpenWorldCell" x="0" y="3"/>
+				<.vectorInt2 name="testOpenWorldCell" x="-5" y="3"/> burial advanced
+				<.vectorInt2 name="testOpenWorldCell" x="-4" y="3"/> burial standard
+				<.name name="testObjectiveId">exit</name>
+				<tags name="testStoryFacts">
+					07_arms_malfunction
+					07_arms_repaired
+					07_broken_airship_done
+					07_left_and_collapsed
+					07_surface_elevator_ride_voiceover
+					07_surface_elevator_ride_voiceover_done
+					07_entered_map
+				</tags>
+				-->
+		</_section>
+
+		<._section> 10 up
+			<libraryName name="testPilgrimage">pilgrimage, 10 up:pilgrimage</libraryName>
+				
+				<!--
+				-->
+				<name name="testStartInRoomTag">bargeInternalBayRoom</name>
+				<tags name="testStoryFacts">
+					10_pilgrimInBarge
+				</tags>
+				-->
+
+				<.name name="testObjectiveId">exit</name>
+				<tags name="testStoryFacts">
+				</tags>
+		</_section>
+
+		<._section> 12 another chance
+			<libraryName name="testPilgrimage">pilgrimage, 12 another chance:pilgrimage</libraryName>
+				-->
+				<!--
+				<vectorInt2 name="testOpenWorldCell" x="0" y="0"/>
+				<name name="testStartInRoomTag">finalLock</name>
+				<tags name="testStoryFacts">
+					10rac_done
+					10rac_noLeftHand
+					12_voiceover_done
+					played_voiceover_12
+				</tags>
+				-->
+				<!--
+				<vectorInt2 name="testOpenWorldCell" x="0" y="1"/>
+				<name name="testStartInRoomTag">preparationRoom</name>
+				<libraryName name="testPilgrim">pilgrims:actor</libraryName>
+				<tags name="testStoryFacts">
+					12_voiceover_done
+					12_done_s1
+					12_pilgrimIsMetal
+					00_pilgrimInPreparationRoom					
+				</tags>
+				-->
+				
+				<.name name="testObjectiveId">exit</name>
+		</_section>
+
+		<._section> up drop capsule
+			<libraryName name="testPilgrimage">pilgrimage, up drop capsule:pilgrimage</libraryName>
+		</_section>
+
+		<._section> 13 breach
+			<libraryName name="testPilgrimage">pilgrimage, 13 breach:pilgrimage</libraryName>
+				-->
+				<.vectorInt2 name="testOpenWorldCell" x="2" y="-4"/>
+				<.vectorInt2 name="testOpenWorldCell" x="-1" y="-5"/>
+				<.vectorInt2 name="testOpenWorldCell" x="-2" y="-4"/>
+				<.vectorInt2 name="testOpenWorldCell" x="-5" y="-4"/>
+				<vectorInt2 name="testOpenWorldCell" x="0" y="-1"/> before inner stairs close to the end
+				<!--
+				<name name="testStartInRoomTag">surfaceElevatorRideRoom</name>
+				<vectorInt2 name="testOpenWorldCell" x="0" y="0"/>
+				-->
+				<.name name="testObjectiveId">exit</name>
+				<tags name="testStoryFacts">
+				</tags>
+		</_section>
+
+		<._section> 14 heart
+			<libraryName name="testPilgrimage">pilgrimage, 14 heart:pilgrimage</libraryName>
+				-->
+				<!--
+				-->
+				
+				<.name name="testObjectiveId">exit</name>
+				<tags name="testStoryFacts">
+				</tags>
+		</_section>
+
+		<._section> 15 tea for god
+			<libraryName name="testPilgrimage">pilgrimage, 15 tea for god:pilgrimage</libraryName>
+				-->
+				<!--
+				-->
+				
+				<.name name="testObjectiveId">exit</name>
+				<tags name="testStoryFacts">
+				</tags>
+		</_section>
+
+		<._section> 16 back at ship
+			<libraryName name="testPilgrimage">pilgrimage, 16 back at ship:pilgrimage</libraryName>
+				-->
+				<!--
+				<vectorInt2 name="testOpenWorldCell" x="0" y="0"/>
+				<name name="testStartInRoomTag">finalLock</name>
+				-->
+				
+				<.name name="testObjectiveId">exit</name>
+				<tags name="testStoryFacts">
+				</tags>
+		</_section>
+
+	</params>
+	<params> play area sizes
+		
+		comment out to test vr/immobile vr
+		<!--
+		-->
+		<.float name="testTileSize">0.686666667</float>
+		<.vector2 name="testPlayArea" x="2.25" y="2.06"/>
+
+		<.float name="testTileSize">1</float>
+		<.vector2 name="testPlayArea" x="3" y="3"/>
+
+		<.float name="testTileSize">1</float>
+		<.vector2 name="testPlayArea" x="5" y="5"/>
+
+		<.vector2 name="testPlayArea" x="1.8" y="1.2"/> smallest!
+		<.vector2 name="testPlayArea" x="5" y="5"/>
+		
+		<.vector2 name="testPlayArea" x="2.33" y="1.65"/>
+
+		<.vector2 name="testPlayArea" x="3.30" y="3.30"/>
+		<.vector2 name="testPlayArea" x="3.90" y="3.30"/>
+
+		<.vector2 name="testPlayArea" x="3.31" y="2.5"/>
+		<.float name="testTileSize">0.824999988</float>
+
+		<.vector2 name="testPlayArea" x="4.00" y="4.00"/>
+		<.vector2 name="testPlayArea" x="6.00" y="6.00"/>
+		<.float name="testTileSize">0.8</float>
+
+		<.vector2 name="testPlayArea" x="10.00" y="10.00"/>
+
+		<!--
+		custom settings and difficulty (should go hand in hand)
+		<float name="testScaling">1.0</float>
+		<name name="testPreferredTileSize">auto</name>
+		<float name="testDoorHeight">2.500000000</float>
+		-->
+
+	</params>
+	<params> make it easier
+
+		<bool name="testAllowCrouch">true</bool>
+		<bool name="testAllowAnyCrouch">true</bool>
+
+		invincible
+		<!--
+		<string name="testGenerationTags">gm_invincible=1 gm_vulnerable=0</string>
+		<string name="testDifficultySettings">playerImmortal=1 weaponInfinite=1 </string>
+		-->
+
+		invincible, no hostiles
+		<!--
+		<string name="testGenerationTags">gm_invincible=1 gm_vulnerable=0 gm_noEnemies=1</string>
+		<string name="testDifficultySettings">playerImmortal=1 weaponInfinite=1 npcs=1.000</string>
+		-->
+
+	</params>
+  </testConfig>
+</library>

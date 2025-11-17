@@ -1,0 +1,200 @@
+<library group="postProcess">
+	<fragmentShader name="apply blur">
+		<useWithPostProcessPipeline/>
+		<source>
+			<data>
+				// uniform
+				uniform sampler2D inData;
+				uniform sampler2D inBlur;
+
+				uniform float applyBlurOriginalAmount;
+				uniform float applyBlurBlurredAmount;
+				
+				// output
+				out vec4 outData;
+			</data>
+			<defaultValues>
+				<float name="applyBlurOriginalAmount">0.0</float>
+				<float name="applyBlurBlurredAmount">1.0</float>
+			</defaultValues>
+			<mainBody>
+				outData = texture(inData, varUV).rgba;
+				outData.rgb = outData.rgb * applyBlurOriginalAmount + texture(inBlur, varUV).rgb * applyBlurBlurredAmount;
+			</mainBody>
+		</source>
+		<outputs>
+			<output name="outData" filtering="linear"/>
+		</outputs>
+	</fragmentShader>
+	<fragmentShader name="blur-7 h">
+		<useWithPostProcessPipeline/>
+		<source>
+			<data>
+				// uniform
+				uniform sampler2D inData;
+				
+				// output
+				out vec4 outData;
+			</data>
+			<mainBody>
+				outData = 0.2500 * texture(inData, varUV) +
+						  0.1500 * texture(inData, varUV + inOutputTexelSize * vec2(-1.0, 0.0)) + 
+						  0.1500 * texture(inData, varUV + inOutputTexelSize * vec2( 1.0, 0.0)) +
+						  0.1250 * texture(inData, varUV + inOutputTexelSize * vec2(-2.0, 0.0)) +
+						  0.1250 * texture(inData, varUV + inOutputTexelSize * vec2( 2.0, 0.0)) +
+						  0.1000 * texture(inData, varUV + inOutputTexelSize * vec2(-3.0, 0.0)) +
+						  0.1000 * texture(inData, varUV + inOutputTexelSize * vec2( 3.0, 0.0));
+			</mainBody>
+		</source>
+		<outputs>
+			<output name="outData"/>
+		</outputs>
+	</fragmentShader>
+	<shaderProgram name="blur-7 h" fragmentShader="blur-7 h"/>
+
+	<fragmentShader name="blur-7 v">
+		<useWithPostProcessPipeline/>
+		<source>
+			<data>
+				// uniform
+				uniform sampler2D inData;
+				
+				// output
+				out vec4 outData;
+			</data>
+			<mainBody>
+				outData = 0.2500 * texture(inData, varUV) +
+						  0.1500 * texture(inData, varUV + inOutputTexelSize * vec2(0.0, -1.0)) + 
+						  0.1500 * texture(inData, varUV + inOutputTexelSize * vec2(0.0,  1.0)) +
+						  0.1250 * texture(inData, varUV + inOutputTexelSize * vec2(0.0, -2.0)) +
+						  0.1250 * texture(inData, varUV + inOutputTexelSize * vec2(0.0,  2.0)) +
+						  0.1000 * texture(inData, varUV + inOutputTexelSize * vec2(0.0, -3.0)) +
+						  0.1000 * texture(inData, varUV + inOutputTexelSize * vec2(0.0,  3.0));
+			</mainBody>
+		</source>
+		<outputs>
+			<output name="outData"/>
+		</outputs>
+	</fragmentShader>
+	<shaderProgram name="blur-7 v" fragmentShader="blur-7 v"/>
+
+	<fragmentShader name="blur-5 h">
+		<useWithPostProcessPipeline/>
+		<source>
+			<data>
+				// uniform
+				uniform sampler2D inData;
+				
+				// output
+				out vec4 outData;
+			</data>
+			<mainBody>
+				outData = 0.3000 * texture(inData, varUV) +
+						  0.2500 * texture(inData, varUV + inOutputTexelSize * vec2(-1.0, 0.0)) + 
+						  0.2500 * texture(inData, varUV + inOutputTexelSize * vec2( 1.0, 0.0)) +
+						  0.1250 * texture(inData, varUV + inOutputTexelSize * vec2(-2.0, 0.0)) +
+						  0.1250 * texture(inData, varUV + inOutputTexelSize * vec2( 2.0, 0.0));
+			</mainBody>
+		</source>
+		<outputs>
+			<output name="outData"/>
+		</outputs>
+	</fragmentShader>
+	<shaderProgram name="blur-5 h" fragmentShader="blur-5 h"/>
+
+	<fragmentShader name="blur-5 v">
+		<useWithPostProcessPipeline/>
+		<source>
+			<data>
+				// uniform
+				uniform sampler2D inData;
+				
+				// output
+				out vec4 outData;
+			</data>
+			<mainBody>
+				outData = 0.3500 * texture(inData, varUV) +
+						  0.2000 * texture(inData, varUV + inOutputTexelSize * vec2(0.0, -1.0)) + 
+						  0.2000 * texture(inData, varUV + inOutputTexelSize * vec2(0.0,  1.0)) +
+						  0.1250 * texture(inData, varUV + inOutputTexelSize * vec2(0.0, -2.0)) +
+						  0.1250 * texture(inData, varUV + inOutputTexelSize * vec2(0.0,  2.0));
+			</mainBody>
+		</source>
+		<outputs>
+			<output name="outData"/>
+		</outputs>
+	</fragmentShader>
+	<shaderProgram name="blur-5 v" fragmentShader="blur-5 v"/>
+
+	<postProcess name="blur-7">
+		<graph>
+			<inputNode name="input">
+				<output name="colour"/>
+			</inputNode>
+			<processorNode name="blur-7 h" shaderProgram="blur-7 h">
+				<input name="inData" connectToNode="input" connectToConnector="colour"/>
+			</processorNode>
+			<processorNode name="blur-7 v" shaderProgram="blur-7 v">
+				<input name="inData" connectToNode="blur-7 h" connectToConnector="outData"/>
+			</processorNode>
+			<outputNode name="output">
+				<input name="colour" connectToNode="blur-7 v" connectToConnector="outData"/>
+			</outputNode>
+		</graph>
+	</postProcess>
+
+	<postProcess name="blur-7 x2">
+		<graph>
+			<inputNode name="input">
+				<output name="colour"/>
+			</inputNode>
+			<processorNode name="scale down" shaderProgram="scale down">
+				<input name="inData" connectToNode="input" connectToConnector="colour"/>
+			</processorNode>
+			<processorNode name="blur-7 h" shaderProgram="blur-7 h">
+				<input name="inData" connectToNode="scale down" connectToConnector="outData"/>
+			</processorNode>
+			<processorNode name="blur-7 v" shaderProgram="blur-7 v">
+				<input name="inData" connectToNode="blur-7 h" connectToConnector="outData"/>
+			</processorNode>
+			<processorNode name="scale up" shaderProgram="scale up">
+				<input name="inData" connectToNode="blur-7 v" connectToConnector="outData"/>
+			</processorNode>
+			<outputNode name="output">
+				<input name="colour" connectToNode="scale up" connectToConnector="outData"/>
+			</outputNode>
+		</graph>
+	</postProcess>
+
+	<postProcess name="blur-7 x4">
+		<graph>
+			<inputNode name="input">
+				<output name="colour"/>
+			</inputNode>
+			<processorNode name="scale down" shaderProgram="scale down">
+				<input name="inData" connectToNode="input" connectToConnector="colour"/>
+			</processorNode>
+			<processorNode name="scale down 2" shaderProgram="scale down">
+				<input name="inData" connectToNode="scale down" connectToConnector="outData"/>
+			</processorNode>
+			<processorNode name="blur-7 h" shaderProgram="blur-7 h">
+				<input name="inData" connectToNode="scale down" connectToConnector="outData"/>
+			</processorNode>
+			<processorNode name="blur-7 v" shaderProgram="blur-7 v">
+				<input name="inData" connectToNode="blur-7 h" connectToConnector="outData"/>
+			</processorNode>
+			<processorNode name="scale up" shaderProgram="scale up">
+				<input name="inData" connectToNode="blur-7 v" connectToConnector="outData"/>
+			</processorNode>
+			<processorNode name="scale up 2" shaderProgram="scale up">
+				<input name="inData" connectToNode="scale up" connectToConnector="outData"/>
+			</processorNode>
+			<outputNode name="output">
+				<input name="colour" connectToNode="scale up 2" connectToConnector="outData"/>
+			</outputNode>
+		</graph>
+	</postProcess>
+
+</library>
+
+

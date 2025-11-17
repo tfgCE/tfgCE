@@ -1,0 +1,30 @@
+<library group="loading scenes">
+	textures
+	========
+	
+	<texture name="main" file="assets/main.tex"/>
+	<texture name="main_p" file="assets/main_p.tex"/>
+	<texture name="main_v" file="assets/main_v.tex"/>
+
+	materials
+	=========
+	
+	<material name="main"
+		fragmentShader="default:defaultRendering">
+		<useWithStaticMesh/>
+		<useWithSkinnedMesh/>
+		<useWithSkinnedToSingleBoneMesh/>
+		<allowIndividualInstances/>
+		<params>
+			<texture name="inMaterialColour" use="main"/>
+			<texture name="inMaterialProp" use="main_p"/>
+			<texture name="inMaterialVoxel" use="main_v"/>
+			
+			has to have all parameters that anyone may change
+			<float name="voxelSize">0.05</float>
+			<float name="reflectiveness">1.0</float>
+			<float name="emissivePower">1.0</float>
+		</params>
+	</material>
+	
+</library>

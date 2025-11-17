@@ -1,0 +1,232 @@
+<.library group="postProcess">
+	<fragmentShader name="calculate ssao">
+		<!--
+			This implementation relies on normals but to ignore samples that are aligned with main sample.
+			This works well for finding corners but may not work with parallel surfaces.
+		-->
+		<useWithPostProcessPipeline/>
+		<source>
+			<data>
+				// uniform
+				uniform sampler2D inData;
+				uniform sampler2D noise;
+				uniform float ssaoRadius = 0.25;
+
+				// all rays are in half-space facing us (to work nicely with inNormalSpaceMatrix)
+				vec3 rays[32] = vec3[](vec3(-0.87603110, 0.11165470, 0.31735426),
+									   vec3(0.41105029, -0.09741227, 0.23121741),
+									   vec3(0.72014731, 0.55008417, 0.27059573),
+									   vec3(0.09910528, 0.00636561, 0.93679792),
+									   vec3(-0.38104385, -0.12641697, 0.76986986),
+									   vec3(0.06741999, -0.00749719, 0.96522975),
+									   vec3(-0.64928621, -0.16147424, 0.49421063),
+									   vec3(0.48868793, 0.51463211, 0.43097168),
+									   vec3(-0.24216798, -0.72755492, 0.46954310),
+									   vec3(0.31816924, 0.33983067, 0.67119926),
+									   vec3(0.55737835, 0.33603773, 0.19460811),
+									   vec3(0.04462593, -0.40575325, 0.71756601),
+									   vec3(0.54880327, -0.44000438, 0.28549582),
+									   vec3(0.40516716, 0.40753174, 0.61119652),
+									   vec3(-0.06904773, -0.05987260, 0.91973549),
+									   vec3(-0.05409962, -0.17752600, 0.87344509),
+									   vec3(-0.38875681, 0.33141902, 0.69109547),
+									   vec3(0.15983838, 0.34764847, 0.38427511),
+									   vec3(-0.02173726, -0.42484462, 0.56175584),
+									   vec3(-0.02366132, 0.25270221, 0.81911308),
+									   vec3(0.19439411, -0.22530547, 0.46866715),
+									   vec3(0.19758882, -0.37851754, 0.72495204),
+									   vec3(-0.18382625, 0.74369818, 0.07094249),
+									   vec3(0.66420335, -0.40785402, 0.43504852),
+									   vec3(-0.01030941, -0.55430526, 0.53806442),
+									   vec3(-0.58258277, 0.74296832, 0.22053954),
+									   vec3(0.14679918, -0.14991169, 0.85715801),
+									   vec3(0.86182213, 0.33832538, 0.25178510),
+									   vec3(0.39270061, 0.10014983, 0.76041663),
+									   vec3(0.68746680, -0.05364530, 0.53864318),
+									   vec3(0.60994422, -0.24824618, 0.49584383),
+									   vec3(0.26255238, 0.36861110, 0.55730951));
+
+				// output
+				out vec4 outAO;
+			</data>
+			<mainBody>
+				vec4 inDataSampled = texture(inData, varUV);
+				float inDataDepth = -(inDataSampled.z * 256.0 + inDataSampled.a) * 0.5; // (get to 128 meters range)
+				vec3 dataNormal;
+				dataNormal.xy = inDataSampled.xy * 2.0 - 1.0;
+				// this is when normal is packed as xy
+				dataNormal.z = sqrt(max(0.0, 1.0 - dataNormal.x*dataNormal.x - dataNormal.y*dataNormal.y));
+				
+				// high noise - we will blur it
+				vec3 rvec = vec3(normalize(texture(noise, vec2(varUV.x * 300.0, varUV.y * 300.0)).rg * 2.0 - 1.0), 0.0);
+				vec3 tangent = normalize(rvec - dataNormal * dot(rvec, dataNormal));
+				vec3 bitangent = cross(dataNormal, tangent);
+
+				float scaleRay = ssaoRadius;
+				mat3 inNormalSpaceMatrix = mat3(tangent, bitangent, dataNormal) * scaleRay;
+				
+				// get location of our current fragment in view space (using view ray) note minuses to be in opengl view space
+				vec3 originVS = vec3(varViewRay, -1.0) * -inDataDepth;
+				
+				float ssao = 0.0;
+				
+				for(int i = 0; i &lt; 16; i++)
+				{
+					// get ray in front of our tested fragment
+					vec3 ray3d = inNormalSpaceMatrix * rays[i];
+
+					// calculate offset (by ray) location to sample depth
+					vec4 sampleVS = vec4(originVS + ray3d, 1.0);
+					vec4 sampleTC = projectionMatrix3D * sampleVS;
+					sampleTC.xy /= sampleTC.w;
+					sampleTC.xy = sampleTC.xy * 0.5 + 0.5;
+
+					// sample it
+					vec4 atRaySampled = texture(inData, sampleTC.xy);
+					float atRaySampledDepth = -(atRaySampled.z * 256.0 + atRaySampled.a) * 0.5 - 0.02; // + closer (get to 128 meters range and add little value to get rid of noise)
+					
+					// if sampled location is closer to camera than place for what we sampled, it means that it is ocludded
+					float rangeCheck = abs(atRaySampledDepth - inDataDepth) &lt; ssaoRadius ? 1.0 : 0.0;
+					ssao += (atRaySampledDepth &gt; sampleVS.z? 1.0 : 0.0) * rangeCheck;
+				}
+				
+				//ssao *= 0.03125; // 32
+				ssao *= 0.0625; // 16
+				//ssao *= 0.125; // 8
+				//ssao *= 0.25; // 4
+								
+				// test z
+				//ssao = -originVS.z / 20.0;
+				
+				outAO.rgb = vec3((ssao - 0.1) / 0.9); // to eliminate noise
+				outAO.a = 1.0;
+			</mainBody>
+		</source>
+		<outputs sizeMultiplier="0.25">
+			<output name="outAO" videoFormat="r8" baseVideoFormat="r" videoFormatData="unsignedByte" filtering="linear"/>
+		</outputs>
+	</fragmentShader>
+	<texture name="ssao postprocess noise" file="ssao noise.tex" wrap="repeat"/>
+	<shaderProgram name="calculate ssao" fragmentShader="calculate ssao">
+		<params>
+			<texture name="noise" use="ssao postprocess noise"/>
+		</params>
+	</shaderProgram>
+
+	<fragmentShader name="ssao blur-7 h">
+		<useWithPostProcessPipeline/>
+		<source>
+			<data>
+				// uniform
+				uniform sampler2D inAO;
+				
+				// output
+				out vec4 outAO;
+			</data>
+			<mainBody>
+				outAO = 0.2500 * texture(inAO, varUV) +
+						0.1500 * texture(inAO, varUV + inOutputTexelSize * vec2(-1.0, 0.0)) + 
+						0.1500 * texture(inAO, varUV + inOutputTexelSize * vec2( 1.0, 0.0)) +
+						0.1250 * texture(inAO, varUV + inOutputTexelSize * vec2(-2.0, 0.0)) +
+						0.1250 * texture(inAO, varUV + inOutputTexelSize * vec2( 2.0, 0.0)) +
+						0.1000 * texture(inAO, varUV + inOutputTexelSize * vec2(-3.0, 0.0)) +
+						0.1000 * texture(inAO, varUV + inOutputTexelSize * vec2( 3.0, 0.0));
+			</mainBody>
+		</source>
+		<outputs>
+			<output name="outAO" videoFormat="r8" baseVideoFormat="r" videoFormatData="unsignedByte" filtering="linear"/>
+		</outputs>
+	</fragmentShader>
+	<shaderProgram name="ssao blur-7 h" fragmentShader="ssao blur-7 h"/>
+
+	<fragmentShader name="ssao blur-7 v">
+		<useWithPostProcessPipeline/>
+		<source>
+			<data>
+				// uniform
+				uniform sampler2D inAO;
+				
+				// output
+				out vec4 outAO;
+			</data>
+			<mainBody>
+				outAO = 0.2500 * texture(inAO, varUV) +
+						0.1500 * texture(inAO, varUV + inOutputTexelSize * vec2(0.0, -1.0)) + 
+						0.1500 * texture(inAO, varUV + inOutputTexelSize * vec2(0.0,  1.0)) +
+						0.1250 * texture(inAO, varUV + inOutputTexelSize * vec2(0.0, -2.0)) +
+						0.1250 * texture(inAO, varUV + inOutputTexelSize * vec2(0.0,  2.0)) +
+						0.1000 * texture(inAO, varUV + inOutputTexelSize * vec2(0.0, -3.0)) +
+						0.1000 * texture(inAO, varUV + inOutputTexelSize * vec2(0.0,  3.0));
+			</mainBody>
+		</source>
+		<outputs>
+			<output name="outAO" videoFormat="r8" baseVideoFormat="r" videoFormatData="unsignedByte" filtering="linear"/>
+		</outputs>
+	</fragmentShader>
+	<shaderProgram name="ssao blur-7 v" fragmentShader="ssao blur-7 v"/>
+
+	<fragmentShader name="apply ssao">
+		<useWithPostProcessPipeline/>
+		<source>
+			<data>
+				// uniform
+				uniform sampler2D inRGB;
+				uniform sampler2D inAO;
+
+				// output
+				out vec4 outData;
+			</data>
+			<mainBody>
+				//outData = texture(inRGB, varUV).rgba * vec4(vec3(1.0 - 0.6 * min(0.8, 1.5 * texture(inAO, varUV).r)), 1.0);
+				outData = texture(inRGB, varUV).rgba * vec4(vec3(1.0 - 0.2 * texture(inAO, varUV).r), 1.0);
+				//outData = vec4(vec3(texture(inAO, varUV).r), 1.0) + 0.2 * texture(inRGB, varUV).rgba;
+				//outData = vec4(vec3(texture(inAO, varUV).r), 1.0);
+				// test z
+				//outData.rgb = varUV.x &lt; 0.5? texture(inRGB, varUV).rgb : vec3(texture(inAO, varUV).r);
+				//outData.a = 1.0f;
+				/*
+				outData = texture(inRGB, varUV).rgba;
+				//float test = min(1.0, 3.75 * texture(inAO, varUV).r);
+				float test = texture(inAO, varUV).r;
+				outData.r = test;
+				outData.gb *= 1.0 - test;
+				*/
+			</mainBody>
+		</source>
+		<outputs>
+			<output name="outData" filtering="linear"/>
+		</outputs>
+	</fragmentShader>
+	<shaderProgram name="apply ssao" fragmentShader="apply ssao"/>
+
+	<postProcess name="ssao">
+		<graph>
+			<inputNode name="input">
+				<output name="colour"/>
+				<output name="normalDepth"/>
+			</inputNode>
+			<processorNode name="calculate ssao" shaderProgram="calculate ssao">
+				<input name="inData" connectToNode="input" connectToConnector="normalDepth"/>
+			</processorNode>
+
+			<processorNode name="blur h" shaderProgram="ssao blur-7 h">
+				<input name="inAO" connectToNode="calculate ssao" connectToConnector="outAO"/>
+			</processorNode>
+			<processorNode name="blur v" shaderProgram="ssao blur-7 v">
+				<input name="inAO" connectToNode="blur h" connectToConnector="outAO"/>
+			</processorNode>
+
+			<processorNode name="apply ssao" shaderProgram="apply ssao">
+				<input name="inRGB" connectToNode="input" connectToConnector="colour"/>
+				<input name="inAO" connectToNode="blur v" connectToConnector="outAO"/>
+			</processorNode>
+			
+			<outputNode name="output">
+				<input name="colour" connectToNode="apply ssao" connectToConnector="outData"/>
+			</outputNode>
+			
+		</graph>
+	</postProcess>
+</library>
+
+

@@ -1,0 +1,71 @@
+<library group="shader function libs">
+	<shaderFunctionLib name="retro basic">
+		<source>
+			<function name="retro_basic_process_full">
+				<header>void retro_basic_process_full(float _limitVertical, float _min, float _max)</header>
+				<body>
+				#ifdef RETRO
+					float prcRetroRandomValue;
+					float full = 1.0;
+					{
+						HIGHP vec3 pos = normalize(varVRPosition); 
+
+						//pos = pos + vec3(0.0001, 0.0001, 0.0001);
+
+						full = 1.0 - abs(_limitVertical * pos.z);
+						
+						HIGHP float fixedSize = inOutputSizeFoved;
+						HIGHP float fixedSizeInv = inOutputTexelSizeFoved;
+
+						pos = floor(pos * fixedSize) * fixedSizeInv;
+						HIGHP vec2 p = vec2(pos.x * 54.234 + pos.y * 23.252, pos.y * 94.345 + pos.z * 12.579);
+
+						p = fract(p * vec2(5.3987, 5.4421));
+						p += dot(p.yx, p.xy + vec2(21.5351, 14.3137));
+
+						HIGHP float pxy = p.x * p.y;
+						prcRetroRandomValue = (fract(pxy * 95.4307) + fract(pxy * 75.04961)) * 0.5; 
+					}
+
+					float maxl = max(lightModulateColourOnto.r, max(lightModulateColourOnto.g, lightModulateColourOnto.b));
+					maxl = max(maxl, (lightModulateColourAway.r, max(lightModulateColourAway.g, lightModulateColourAway.b)));
+					
+					float maxgb = max(colour.g, colour.b);
+					float c = max(colour.r, maxgb);
+					float limitc = min(1.0, 1.0 + maxgb - colour.r * 0.15);
+					float offmin = _min;
+					float offmax = _max;
+					c = mix(offmin, offmax, c);
+					c = c * full;
+					c = clamp(c, 0.0, 1.0);
+					c = 1.0 - c;
+					c = c * c;
+					c = 1.0 - c;
+					float off = 0.5;
+					c = -off + (1.0 + off * 2.0) * c;
+					c = c + 1.0 * (0.5 - prcRetroRandomValue);
+					c = clamp(c, 0.0, limitc);
+					c = floor(c);
+					colour.rgb = mix(vec3(0.212, 0.200, 0.106), vec3(0.792, 0.82, 0.878), c);
+				#endif
+				</body>
+			</function>
+			<function name="retro_basic_process_sky">
+				<header>void retro_basic_process_sky(float _limitVertical)</header>
+				<body>
+				#ifdef RETRO
+					retro_basic_process_full(_limitVertical, -0.1, 1.2);
+				#endif
+				</body>
+			</function>
+			<function name="retro_basic_process">
+				<header>void retro_basic_process(float _min, float _max)</header>
+				<body>
+				#ifdef RETRO
+					retro_basic_process_full(0.0f, _min, _max);
+				#endif
+				</body>
+			</function>
+		</source>
+	</shaderFunctionLib>
+</library>

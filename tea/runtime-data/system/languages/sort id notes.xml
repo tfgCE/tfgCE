@@ -1,0 +1,8 @@
+<library group="languages">
+	<!--
+		sortIds are grouped
+			20_		asian languages
+			50_		latin
+			70_		cyrillic
+	-->
+</library>

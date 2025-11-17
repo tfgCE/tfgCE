@@ -1,0 +1,12 @@
+<library group="default">
+	<modifyCurrentEnvironment>
+		<params>
+			<!--
+			<invertedFloat name="inFogDistCoef">700.0</invertedFloat>
+			<vector2 name="allowUsingFogInBackground" x="875" y="-0.0025"/>
+			<segment01 name="backgroundUseFogSeg" start="0.2" length="-0.45"/>
+			<float name="lightSpecularPowerOffset">0.2</float>
+			-->
+		</params>
+	</modifyCurrentEnvironment>
+</library>

@@ -1,0 +1,352 @@
+<library group="loader hub">
+	<generateTexture>
+		<texture idx="0" file="assets/scene.tex" format="rgb10a2" size="32 256" wrap="clamp" filteringMag="linear"/>
+		<texture idx="1" file="assets/scene p.tex" format="rgba8" wrap="clamp"/>
+		<texture idx="2" file="assets/scene v.tex" format="rgba8" wrap="clamp"/>
+
+		all
+		<verticalLines textureIdx="0">
+			<line u="0" width="16">
+				<colour at="1.0" modulate="1.00">1.000 1.000 1.000 1.000</colour>
+				<colour at="0.0" modulate="0.90">1.000 1.000 1.000 1.000</colour>
+			</line>
+		</verticalLines>
+		<verticalLines textureIdx="1"> properties
+			<line u="0" width="16">
+				<mask>r</mask> roughness
+				<colour at="1.000">0.300</colour>
+				<colour at="0.000">0.300</colour>
+
+				<mask>g</mask> metallic
+				<colour at="1.000">0.500</colour>
+				<colour at="0.000">0.450</colour>
+
+				<mask>b</mask> tint
+				<colour at="1.000">0.000</colour>
+				<colour at="0.200">0.000</colour>
+				<colour at="0.000">0.000</colour>
+
+				<mask>a</mask> emissive
+				<colour at="1.000">0.000</colour>
+				<colour at="0.000">0.000</colour>
+			</line>
+		</verticalLines>
+		<verticalLines textureIdx="2"> voxel
+			<line u="0" width="16">
+				<mask>r</mask> colour
+				<normal at="1.000"> 0.0005</normal>
+				<normal at="0.000">-0.0005</normal>
+
+				<mask>g</mask> roughness
+				<normal at="1.000"> 0.0005</normal>
+				<normal at="0.000"> 0.0005</normal>
+
+				<mask>b</mask> metallic
+				<normal at="1.000"> 0.000</normal>
+				<normal at="0.900">-0.000</normal>
+				<normal at="0.200"> 0.000</normal>
+				<normal at="0.000">-0.000</normal>
+			</line>
+		</verticalLines>
+
+		0 background
+		<verticalLines textureIdx="0">
+			<line u="0" width="1">
+				<colour at="1.0" modulate="1.00">loader_hub_background</colour>
+				<colour at="0.9" modulate="0.95">loader_hub_background</colour>
+				<colour at="0.7" modulate="0.95">loader_hub_background</colour>
+				<colour at="0.0" modulate="0.90">loader_hub_background</colour>
+			</line>
+		</verticalLines>
+		<verticalLines textureIdx="1"> properties
+			<line u="0" width="1">
+				<mask>r</mask> roughness
+				<colour at="1.000">0.300</colour>
+				<colour at="0.000">0.300</colour>
+
+				<mask>g</mask> metallic
+				<colour at="1.000">0.000</colour>
+				<colour at="0.000">0.000</colour>
+
+				<mask>b</mask> tint
+				<colour at="1.000">0.000</colour>
+				<colour at="0.200">0.000</colour>
+				<colour at="0.000">0.000</colour>
+
+				<mask>a</mask> emissive
+				<colour at="1.000">0.000</colour>
+				<colour at="0.000">0.000</colour>
+			</line>
+		</verticalLines>
+		<verticalLines textureIdx="2"> voxel
+			<line u="0" width="1">
+				<mask>r</mask> colour
+				<normal at="1.000"> 0.04</normal>
+				<normal at="0.000">-0.04</normal>
+
+				<mask>g</mask> roughness
+				<normal at="1.000"> 0.001</normal>
+				<normal at="0.000"> 0.001</normal>
+
+				<mask>b</mask> metallic
+				<normal at="1.000"> 0.000</normal>
+				<normal at="0.900">-0.00100</normal>
+				<normal at="0.200"> 0.00100</normal>
+				<normal at="0.000">-0.00100</normal>
+			</line>
+		</verticalLines>
+
+		1 floor
+		<verticalLines textureIdx="0">
+			<line u="1" width="1">
+				<colour at="1.00" modulate="1.00">loader_hub_floor</colour>
+				<colour at="0.85" modulate="0.95">loader_hub_floor</colour>
+				<colour at="0.00" modulate="0.90">loader_hub_floor</colour>
+			</line>
+		</verticalLines>
+
+		2 floor accent
+		<verticalLines textureIdx="0">
+			<line u="2" width="1">
+				<colour at="1.0" modulate="1.00">loader_hub_floor_accent</colour>
+				<colour at="0.9" modulate="0.97">loader_hub_floor_accent</colour>
+				<colour at="0.7" modulate="0.97">loader_hub_floor_accent</colour>
+				<colour at="0.0" modulate="0.95">loader_hub_floor_accent</colour>
+			</line>
+		</verticalLines>
+	
+		3 hand
+		<verticalLines textureIdx="0">
+			<line u="3" width="1">
+				<colour at="1.00" modulate="1.00">loader_hub_hand</colour>
+				<colour at="0.85" modulate="0.95">loader_hub_hand</colour>
+				<colour at="0.00" modulate="0.90">loader_hub_hand</colour>
+			</line>
+		</verticalLines>
+
+		4 hand accent
+		<verticalLines textureIdx="0">
+			<line u="4" width="1">
+				<colour at="1.0" modulate="1.00">loader_hub_hand_accent</colour>
+				<colour at="0.9" modulate="0.95">loader_hub_hand_accent</colour>
+				<colour at="0.7" modulate="0.95">loader_hub_hand_accent</colour>
+				<colour at="0.0" modulate="0.90">loader_hub_hand_accent</colour>
+			</line>
+		</verticalLines>
+
+		3 and 4
+		<verticalLines textureIdx="1"> properties
+			<line u="3" width="2">
+				<mask>r</mask> roughness
+				<colour at="1.000">0.100</colour>
+				<colour at="0.000">0.100</colour>
+
+				<mask>g</mask> metallic
+				<colour at="1.000">0.800</colour>
+				<colour at="0.000">0.800</colour>
+
+				<mask>b</mask> tint
+				<colour at="1.000">0.000</colour>
+				<colour at="0.200">0.000</colour>
+				<colour at="0.000">0.000</colour>
+
+				<mask>a</mask> emissive
+				<colour at="1.000">0.000</colour>
+				<colour at="0.000">0.000</colour>
+			</line>
+		</verticalLines>
+
+		5 hand emissive
+		<verticalLines textureIdx="0">
+			<line u="5" width="1">
+				<colour at="1.00" modulate="1.00">0.090 0.090 0.090 1.000</colour>
+				<colour at="0.75" modulate="1.00">0.100 0.100 0.100 1.000</colour>
+				<colour at="0.25" modulate="0.90">0.100 0.100 0.100 1.000</colour>
+				<colour at="0.00" modulate="1.00">0.090 0.090 0.090 1.000</colour>
+			</line>
+		</verticalLines>
+		<verticalLines textureIdx="1"> properties
+			<line u="5" width="1">
+				<mask>r</mask> roughness
+				<colour at="1.000">0.180</colour>
+				<colour at="0.000">0.180</colour>
+
+				<mask>g</mask> metallic
+				<colour at="1.000">0.400</colour>
+				<colour at="0.000">0.600</colour>
+
+				<mask>b</mask> tint
+				<colour at="1.000">0.000</colour>
+				<colour at="0.000">0.000</colour>
+
+				<mask>a</mask> emissive
+				<colour at="1.000">0.800</colour>
+				<colour at="0.000">0.200</colour>
+			</line>
+		</verticalLines>
+		<verticalLines textureIdx="2"> voxel
+			<line u="5" width="1">
+				<mask>r</mask> colour
+				<normal at="1.000">0.000</normal>
+				<normal at="0.000">0.000</normal>
+
+				<mask>g</mask> roughness
+				<normal at="1.000">0.000</normal>
+				<normal at="0.000">0.000</normal>
+
+				<mask>b</mask> metallic
+				<normal at="1.000">0.000</normal>
+				<normal at="0.000">0.000</normal>
+				
+				<mask>a</mask> uneveness
+				<colour at="1.000"> 0.000</colour>
+				<colour at="0.000"> 0.000</colour>
+			</line>
+		</verticalLines>
+
+		6 floor accent
+		<verticalLines textureIdx="0">
+			<line u="6" width="1">
+				<colour at="1.0" modulate="1.00">loader_hub_start_head_marker</colour>
+				<colour at="0.9" modulate="0.97">loader_hub_start_head_marker</colour>
+				<colour at="0.7" modulate="0.97">loader_hub_start_head_marker</colour>
+				<colour at="0.0" modulate="0.95">loader_hub_start_head_marker</colour>
+			</line>
+		</verticalLines>
+		<verticalLines textureIdx="1"> properties
+			<line u="6" width="1">
+				<mask>r</mask> roughness
+				<colour at="1.000">0.180</colour>
+				<colour at="0.000">0.180</colour>
+
+				<mask>g</mask> metallic
+				<colour at="1.000">0.400</colour>
+				<colour at="0.000">0.600</colour>
+
+				<mask>b</mask> tint
+				<colour at="1.000">0.000</colour>
+				<colour at="0.000">0.000</colour>
+
+				<mask>a</mask> emissive
+				<colour at="1.000">0.800</colour>
+				<colour at="0.000">0.200</colour>
+			</line>
+		</verticalLines>
+		<verticalLines textureIdx="2"> voxel
+			<line u="6" width="1">
+				<mask>r</mask> colour
+				<normal at="1.000">0.000</normal>
+				<normal at="0.000">0.000</normal>
+
+				<mask>g</mask> roughness
+				<normal at="1.000">0.000</normal>
+				<normal at="0.000">0.000</normal>
+
+				<mask>b</mask> metallic
+				<normal at="1.000">0.000</normal>
+				<normal at="0.000">0.000</normal>
+				
+				<mask>a</mask> uneveness
+				<colour at="1.000"> 0.000</colour>
+				<colour at="0.000"> 0.000</colour>
+			</line>
+		</verticalLines>
+
+		7 light background
+		<verticalLines textureIdx="0">
+			<line u="7" width="1">
+				<colour at="1.0" modulate="1.00">loader_hub_background_light</colour>
+				<colour at="0.9" modulate="0.95">loader_hub_background_light</colour>
+				<colour at="0.7" modulate="0.95">loader_hub_background_light</colour>
+				<colour at="0.0" modulate="0.90">loader_hub_background_light</colour>
+			</line>
+		</verticalLines>
+		<verticalLines textureIdx="1"> properties
+			<line u="7" width="1">
+				<mask>r</mask> roughness
+				<colour at="1.000">0.300</colour>
+				<colour at="0.000">0.300</colour>
+
+				<mask>g</mask> metallic
+				<colour at="1.000">0.000</colour>
+				<colour at="0.000">0.000</colour>
+
+				<mask>b</mask> tint
+				<colour at="1.000">0.000</colour>
+				<colour at="0.200">0.000</colour>
+				<colour at="0.000">0.000</colour>
+
+				<mask>a</mask> emissive
+				<colour at="1.000">0.000</colour>
+				<colour at="0.000">0.000</colour>
+			</line>
+		</verticalLines>
+		<verticalLines textureIdx="2"> voxel
+			<line u="7" width="1">
+				<mask>r</mask> colour
+				<normal at="1.000"> 0.04</normal>
+				<normal at="0.000">-0.04</normal>
+
+				<mask>g</mask> roughness
+				<normal at="1.000"> 0.001</normal>
+				<normal at="0.000"> 0.001</normal>
+
+				<mask>b</mask> metallic
+				<normal at="1.000"> 0.000</normal>
+				<normal at="0.900">-0.00100</normal>
+				<normal at="0.200"> 0.00100</normal>
+				<normal at="0.000">-0.00100</normal>
+			</line>
+		</verticalLines>
+
+		8 light background (no voxels)
+		<verticalLines textureIdx="0">
+			<line u="8" width="1">
+				<colour at="1.0" modulate="1.00">loader_hub_background_light</colour>
+				<colour at="0.9" modulate="0.95">loader_hub_background_light</colour>
+				<colour at="0.7" modulate="0.95">loader_hub_background_light</colour>
+				<colour at="0.0" modulate="0.90">loader_hub_background_light</colour>
+			</line>
+		</verticalLines>
+		<verticalLines textureIdx="1"> properties
+			<line u="8" width="1">
+				<mask>r</mask> roughness
+				<colour at="1.000">0.300</colour>
+				<colour at="0.000">0.300</colour>
+
+				<mask>g</mask> metallic
+				<colour at="1.000">0.000</colour>
+				<colour at="0.000">0.000</colour>
+
+				<mask>b</mask> tint
+				<colour at="1.000">0.000</colour>
+				<colour at="0.200">0.000</colour>
+				<colour at="0.000">0.000</colour>
+
+				<mask>a</mask> emissive
+				<colour at="1.000">0.000</colour>
+				<colour at="0.000">0.000</colour>
+			</line>
+		</verticalLines>
+		<verticalLines textureIdx="2"> voxel
+			<line u="8" width="1">
+				<mask>r</mask> colour
+				<normal at="1.000">0.0</normal>
+				<normal at="0.000">0.0</normal>
+
+				<mask>g</mask> roughness
+				<normal at="1.000">0.00</normal>
+				<normal at="0.000">0.00</normal>
+
+				<mask>b</mask> metallic
+				<normal at="1.000">0.000</normal>
+				<normal at="0.900">0.000</normal>
+				<normal at="0.200">0.000</normal>
+				<normal at="0.000">0.000</normal>
+			</line>
+		</verticalLines>
+
+	</generateTexture>
+</library>
+
+

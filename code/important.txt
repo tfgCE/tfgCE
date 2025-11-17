@@ -1,0 +1,3 @@
+1.	Try to keep default asset names in game projects.
+	They should not be set nor in core, nor in framework.
+	

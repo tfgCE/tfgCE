@@ -1,0 +1,39 @@
+<library group="pilgrimage, environment templates">
+	<pilgrimage name="clear">
+		<template/>
+		
+		<!-- we use 24 part cycles for a day (easier to think about part=hour) -->
+		<environmentCycleSpeed>0.013333</environmentCycleSpeed> <!-- cycle count / cycle length
+																 24 / (10 min * 60 s) = 24 /  600 = 0,04		ten minutes for whole day, tau ceti like
+																 24 / (20 min * 60 s) = 24 / 1200 = 0,02
+																 24 / (30 min * 60 s) = 24 / 1800 = 0,01333
+																 24 / (40 min * 60 s) = 24 / 2400 = 0,01
+																 or more minutes for whole day -->
+		<environments>
+			<environment name="outside" type="sky box:04 dusty sunrise"/> will be replaced with the cycle
+			<environment name="inside" type="sky box:inside"/>
+			<environment name="inside shaft" type="sky box:inside"/>
+			<environment name="inside haven" type="sky box:interior haven"/>
+			<environment name="inside workshop" type="sky box:interior workshop"/>
+		</environments>
+		<environmentCycle name="outside"
+			normaliseToCycleCount="24">
+			<putEven param="starsPt"
+					 range="0 to 1"/>
+			00 <environment type="sky box:00 midnight"/>
+			01 <environment type="sky box:01 late night"/>
+			02 <environment type="sky box:02 before dawn"/>
+			03 <environment type="sky box:03 dusty dawn"/>
+			04 <environment type="sky box:04 dusty sunrise"/>
+			05 <environment type="sky box:05 dusty morning"/>
+			06 <environment type="sky box:06 dusty noon"/>
+			07 <environment type="sky box:07 dusty afternoon"/>
+			08 <environment type="sky box:08 dusty dusk"/>
+			09 <environment type="sky box:09 dusty twilight"/>
+			10 <environment type="sky box:10 night begins"/>
+			11 <environment type="sky box:11 early night"/>
+			<!--<keepParam> param to keep </keepParam> if param is to be kept-->
+		</environmentCycle>
+	</pilgrimage>
+</library>
+

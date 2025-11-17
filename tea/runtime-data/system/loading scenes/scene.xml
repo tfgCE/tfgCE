@@ -1,0 +1,135 @@
+<library group="loading scenes">
+	<meshGenerator
+		name="scene">
+		<customParameters>
+			<float name="voxelSizeCoef">1</float>
+		</customParameters>
+		<indexFormat>
+			<element/>
+		</indexFormat>
+		<vertexFormat>
+			<normal/>
+			<textureUV/>
+		</vertexFormat>
+		<materials>
+			<material index="0" material="main">
+				<float name="voxelSize">0.01</float>
+				won't get to actual instance
+			</material>
+		</materials>
+		<mainElement>
+			<set>
+				<parameters>
+					<float name="uFloor">8t256</float>
+					<float name="uFloorAccent">8t256</float>
+					<float name="uFloorEmissive">1t256</float>
+					<float name="forceSmoothingAngleLimit">40</float>
+				</parameters>
+				<optionalParameters>
+					<float name="floor width">2</float> <!--x axis-->
+					<float name="floor length">1.5</float> <!--y axis-->
+					<float name="floor height">1.0</float> <!--z axis-->
+				</optionalParameters>
+				<elements>
+					<!--
+					<shape type="cube">
+						<parameters>
+							<vector3 name="atPt" x="0.5" y="0.5" z="1.0"/>
+						</parameters>
+						<wheresMyPoint>
+							<copyStore from="uFloor" as="autoU"/>
+							<vector3/>
+							<access field="x"><restore from="floor width"/></access>
+							<access field="y"><restore from="floor length"/></access>
+							<access field="z"><restore from="height"/></access>
+							<store as="size"/>
+						</wheresMyPoint>
+					</shape>
+					-->
+					<shape type="edges and surfaces">
+						<nodes>
+							c3--------c0
+							|		   |
+							|		   |
+							|		   |
+							|		   |
+							c2--------c1
+							<node id="c0">
+								<wheresMyPoint>
+									<vector3/>
+									<access field="x"><restore from="floor width"/><half/></access>
+									<access field="y"><restore from="floor length"/><half/></access>
+								</wheresMyPoint>
+							</node>
+							<node id="c1">
+								<wheresMyPoint>
+									<vector3/>
+									<access field="x"><restore from="floor width"/><half/></access>
+									<access field="y"><restore from="floor length"/><half/><negate/></access>
+								</wheresMyPoint>
+							</node>
+							<node id="c2">
+								<wheresMyPoint>
+									<vector3/>
+									<access field="x"><restore from="floor width"/><half/><negate/></access>
+									<access field="y"><restore from="floor length"/><half/><negate/></access>
+								</wheresMyPoint>
+							</node>
+							<node id="c3">
+								<wheresMyPoint>
+									<vector3/>
+									<access field="x"><restore from="floor width"/><half/><negate/></access>
+									<access field="y"><restore from="floor length"/><half/></access>
+								</wheresMyPoint>
+							</node>
+						</nodes>
+						<edges>
+							<edge id="c0->c1"/>
+							<edge id="c1->c2"/>
+							<edge id="c2->c3"/>
+							<edge id="c3->c0"/>
+						</edges>
+						<edgeRefs>
+							<edgeRef id="side">
+								<edge>
+									<crossSectionSpline>
+										<u uParam="uFloorAccent"/>
+										<point x="0.05" y="-0.05"/>
+										<point x="0" y="-0.05"/>
+										<point x="0" y="0.01"/>
+										<point x="0.03" y="0.01"/>
+										<u uParam="uFloorEmissive"/>
+										<point x="0.07" y="0.01"/>
+										<u uParam="uFloorAccent"/>
+										<point x="0.1" y="0.01"/>
+										<point x="0.05" y="-0.05"/>
+									</crossSectionSpline>
+									<crossSectionSubStep stepLength="0.02"/>
+									<edgeSubStep stepLength="0.04"/>
+								</edge>
+							</edgeRef>
+						</edgeRefs>
+						<generateEdgeMeshes>
+							<edgeMesh cornerRadius="0.0" useEdgeRef="side" normalAlignment="ref dir" cutCorner="false">
+								<refDirForNormal z="1.0"/> 
+								<edges>
+									<edge id="c0->c1"/>
+									<edge id="c1->c2"/>
+									<edge id="c2->c3"/>
+									<edge id="c3->c0"/>
+								</edges>
+								<.generateSurfaceMesh uParam="uFloor" extrusionSurfaceGroup="side a"/>
+							</edgeMesh>
+						</generateEdgeMeshes>
+					</shape>
+				</elements>
+			</set>
+		</mainElement>
+	</meshGenerator>
+	<previewOnly>
+		<meshStatic
+			name="scene example"
+			meshGenerator="scene">
+		</meshStatic>
+	</previewOnly>
+</library>
