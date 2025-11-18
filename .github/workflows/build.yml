@@ -25,6 +25,6 @@ jobs:
         msbuild-architecture: x64
 
     - name: Build all
-      run: cd ._buildTools.tea/ && .\create_build_tea_full_all.bat
+      run: cd ._buildTools.tea/ && .\create_build_tea_full_pc_steam.bat
 
     
