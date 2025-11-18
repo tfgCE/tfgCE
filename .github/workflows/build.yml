@@ -8,18 +8,33 @@ on:
 
 jobs:
   build:
-    runs-on: windows-latest
+    strategy:
+      matrix:
+        os: [windows-latest]
+        configuration: [Release, ReleaseAndroid]
+        arch: [x64, ARM64]
+
+    runs-on: ${{ matrix.os }}
 
     steps:
     - name: Checkout repository
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
       with:
         submodules: 'true'
 
     - name: Setup MSBuild
+      if: runner.os == 'Windows'
       uses: microsoft/setup-msbuild@v1.1
       with:
-        msbuild-architecture: x64
+        msbuild-architecture: ${{ matrix.arch }}
 
     - name: Build solution
-      run: msbuild aironoevl.sln /p:Configuration=Release /p:Platform=x64
+      if: runner.os == 'Windows'
+      run: msbuild aironoevl.sln /p:Configuration=${{ matrix.configuration }} /p:Platform=${{ matrix.arch }}
+
+    - name: Upload Artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: tfgCE-${{ matrix.os }}-${{ matrix.configuration }}
+        path: runtime/${{ matrix.arch }}/${{ matrix.configuration }}/
+    
