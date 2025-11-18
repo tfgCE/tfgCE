@@ -7,15 +7,30 @@ on:
     branches: [ main ]
 
 jobs:
-  build:
+  build-windows:
     strategy:
       matrix:
-        os: [windows-latest]
-        configuration: [Release, ReleaseAndroid]
-        arch: [x64, ARM64]
+        configuration: [Release]
+    runs-on: windows-latest
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      with:
+        submodules: 'true'
+    - name: Setup MSBuild
+      uses: microsoft/setup-msbuild@v1.1
+      with:
+        msbuild-architecture: x64
+    - name: Build Windows solution
+      run: msbuild aironoevl.sln /p:Configuration=${{ matrix.configuration }} /p:Platform=x64
+    - name: Upload Windows Artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: tfgCE-windows-${{ matrix.configuration }}
+        path: runtime/x64/${{ matrix.configuration }}/
 
-    runs-on: ${{ matrix.os }}
-
+  build-quest:
+    runs-on: windows-latest
     steps:
     - name: Checkout repository
       uses: actions/checkout@v4
@@ -23,18 +38,12 @@ jobs:
         submodules: 'true'
 
     - name: Setup MSBuild
-      if: runner.os == 'Windows'
       uses: microsoft/setup-msbuild@v1.1
       with:
-        msbuild-architecture: ${{ matrix.arch }}
+        msbuild-architecture: ARM64
 
-    - name: Build solution
-      if: runner.os == 'Windows'
-      run: msbuild aironoevl.sln /p:Configuration=${{ matrix.configuration }} /p:Platform=${{ matrix.arch }}
+    - name: Build (Quest)
+      run: msbuild aironoevl.sln /t:teaForGodQuest /p:Configuration=ReleaseOculus /p:Platform=ARM64
 
-    - name: Upload Artifact
-      uses: actions/upload-artifact@v4
-      with:
-        name: tfgCE-${{ matrix.os }}-${{ matrix.configuration }}
-        path: runtime/${{ matrix.arch }}/${{ matrix.configuration }}/
-    
+    - name: Tree for debug
+      run: tree /F
