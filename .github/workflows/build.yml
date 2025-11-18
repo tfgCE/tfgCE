@@ -24,27 +24,7 @@ jobs:
       with:
         msbuild-architecture: x64
 
-    - name: Build preview
-      run: ._buildTools.tea/_log_create_build_tea_full_all.bat
+    - name: Build all
+      run: cd ._buildTools.tea/ && create_build_tea_full_all.bat
 
-    - name: tree
-      run: tree /F
-
-  # build-quest:
-  #   runs-on: windows-latest
-  #   steps:
-  #   - name: Checkout repository
-  #     uses: actions/checkout@v4
-  #     with:
-  #       submodules: 'true'
-
-  #   - name: Setup MSBuild
-  #     uses: microsoft/setup-msbuild@v1.1
-  #     with:
-  #       msbuild-architecture: ARM64
-
-  #   - name: Build (Quest)
-  #     run: msbuild aironoevl.sln /t:teaForGodQuest /p:Configuration=ReleaseOculus /p:Platform=ARM64
-
-  #   - name: Tree for debug
-  #     run: tree /F
+    
